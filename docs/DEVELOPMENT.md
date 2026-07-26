@@ -50,7 +50,21 @@ python tools/build_release.py
 - `CHANGELOG.md`
 - README 与发布文案中的版本信息
 
-实机验证通过并由维护者确认后，才能创建正式 Git 标签和 GitHub Release。
+实机验证通过并由维护者确认后，才能创建正式 Git 标签和 GitHub Release。GitHub Release 只放更新说明，不挂发布包附件；下载入口只有 Steam 创意工坊（物品 ID `3767025052`）。
+
+## 工坊上传
+
+使用 steamcmd（装在 `F:\steamcmd`，配置 `F:\steamcmd\hoi4_ocs_workshop.vdf`）：
+
+```powershell
+# 暂存内容 = 仓库根目录的 MOD 内容（common、events、localisation、descriptor.mod、
+# thumbnail.png、LICENSE、NOTICE.md）原样复制到
+# F:\steamcmd\workshop_content\OCS_one_click_sandbox_start_v2_0\
+# 登录与 Steam Guard 由用户本人完成：
+F:\steamcmd\steamcmd.exe +login <Steam用户名> +workshop_build_item F:\steamcmd\hoi4_ocs_workshop.vdf +quit
+```
+
+上传前确认暂存目录与仓库逐文件一致，并更新 VDF 里的 `changenote`。
 
 ## 许可证边界
 
