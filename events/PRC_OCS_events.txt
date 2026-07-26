@@ -1,0 +1,133 @@
+add_namespace = PRC_OCS
+
+country_event = {
+	id = PRC_OCS.1
+	title = PRC_OCS.1.t
+	desc = PRC_OCS.1.d
+	picture = GFX_report_event_generic_research
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.1.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.2
+	title = PRC_OCS.2.t
+	desc = PRC_OCS.2.d
+	picture = GFX_report_event_generic_construction_site
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.2.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.3
+	title = PRC_OCS.3.t
+	desc = PRC_OCS.3.d
+	picture = GFX_report_event_generic_construction_site
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.3.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.4
+	title = PRC_OCS.4.t
+	desc = PRC_OCS.4.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.4.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.5
+	title = PRC_OCS.5.t
+	desc = PRC_OCS.5.d
+	picture = GFX_report_event_generic_naval_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.5.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.6
+	title = PRC_OCS.6.t
+	desc = PRC_OCS.6.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.6.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.7
+	title = PRC_OCS.7.t
+	desc = PRC_OCS.7.d
+	picture = GFX_report_event_generic_research
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.7.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.8
+	title = PRC_OCS.8.t
+	desc = PRC_OCS.8.d
+	picture = GFX_report_event_generic_army
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.8.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.9
+	title = PRC_OCS.9.t
+	desc = PRC_OCS.9.d
+	picture = GFX_report_event_generic_army
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.9.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.10
+	title = PRC_OCS.10.t
+	desc = PRC_OCS.10.d
+	picture = GFX_report_event_generic_construction_site
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.10.a
+	}
+}
+
+country_event = {
+	id = PRC_OCS.11
+	title = PRC_OCS.11.t
+	desc = PRC_OCS.11.d
+	picture = GFX_report_event_generic_army
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.11.a
+	}
+}

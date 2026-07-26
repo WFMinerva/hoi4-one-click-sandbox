@@ -1,0 +1,2974 @@
+﻿PRC_OCS_research_all_effect = {
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		improved_ship_hull_light = 1
+		advanced_ship_hull_light = 1
+		smoke_generator = 1
+		basic_depth_charges = 1
+		improved_depth_charges = 1
+		advanced_depth_charges = 1
+		modern_depth_charges = 1
+		sonar = 1
+		improved_sonar = 1
+		advanced_sonar = 1
+		modern_sonar = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		improved_ship_hull_cruiser = 1
+		advanced_ship_hull_cruiser = 1
+		basic_cruiser_armor_scheme = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		improved_ship_hull_heavy = 1
+		advanced_ship_hull_heavy = 1
+		basic_heavy_armor_scheme = 1
+		improved_heavy_armor_scheme = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
+		improved_ship_hull_carrier = 1
+		advanced_ship_hull_carrier = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		improved_ship_hull_submarine = 1
+		advanced_ship_hull_submarine = 1
+		basic_submarine_snorkel = 1
+		improved_submarine_snorkel = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_light_shell = 1
+		improved_light_battery = 1
+		improved_light_shell = 1
+		advanced_light_battery = 1
+		basic_heavy_battery = 1
+		improved_heavy_battery = 1
+		advanced_heavy_battery = 1
+		basic_heavy_shell = 1
+		improved_heavy_shell = 1
+		basic_dp_light_battery = 1
+		improved_dp_light_battery = 1
+		advanced_dp_light_battery = 1
+		basic_torpedo = 1
+		magnetic_detonator = 1
+		homing_torpedo = 1
+		improved_ship_torpedo_launcher = 1
+		advanced_ship_torpedo_launcher = 1
+		modern_ship_torpedo_launcher = 1
+		damage_control_1 = 1
+		damage_control_2 = 1
+		damage_control_3 = 1
+		fire_control_methods_1 = 1
+		fire_control_methods_2 = 1
+		fire_control_methods_3 = 1
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		improved_submarine_mine_laying = 1
+		improved_naval_mines = 1
+		degaussing = 1
+		advanced_naval_mines = 1
+		airdrop_mines_bba = 1
+		airsweep_mines_bba = 1
+		mtg_transport = 1
+		mtg_landing_craft = 1
+		mtg_tank_landing_craft = 1
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		amphibious_tank_chassis = 1
+		amphibious_drive = 1
+		advanced_light_tank_chassis = 1
+		basic_medium_tank_chassis = 1
+		improved_medium_tank_chassis = 1
+		advanced_medium_tank_chassis = 1
+		main_battle_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		improved_heavy_tank_chassis = 1
+		advanced_heavy_tank_chassis = 1
+		super_heavy_tank_chassis = 1
+		armor_tech_1 = 1
+		armor_tech_2 = 1
+		armor_tech_3 = 1
+		armor_tech_4 = 1
+		engine_tech_1 = 1
+		engine_tech_2 = 1
+		engine_tech_3 = 1
+		engine_tech_4 = 1
+		gw_artillery = 1
+		interwar_artillery = 1
+		artillery1 = 1
+		artillery2 = 1
+		artillery3 = 1
+		artillery4 = 1
+		artillery5 = 1
+		rocket_artillery = 1
+		rocket_artillery2 = 1
+		rocket_artillery3 = 1
+		rocket_artillery4 = 1
+		interwar_antiair = 1
+		antiair1 = 1
+		antiair2 = 1
+		antiair3 = 1
+		antiair4 = 1
+		antiair5 = 1
+		interwar_antitank = 1
+		antitank1 = 1
+		antitank2 = 1
+		antitank3 = 1
+		antitank4 = 1
+		antitank5 = 1
+		bba_early_transport_plane = 1
+		bba_improved_transport_plane = 1
+		bba_strategic_airlifter = 1
+		iw_small_airframe = 1
+		basic_small_airframe = 1
+		improved_small_airframe = 1
+		advanced_small_airframe = 1
+		iw_medium_airframe = 1
+		basic_medium_airframe = 1
+		improved_medium_airframe = 1
+		advanced_medium_airframe = 1
+		iw_large_airframe = 1
+		basic_large_airframe = 1
+		improved_large_airframe = 1
+		advanced_large_airframe = 1
+		early_bombs = 1
+		heavy_bombs = 1
+		armor_piercing_bombs = 1
+		photo_reconnaisance = 1
+		air_torpedoe_1 = 1
+		air_torpedoe_2 = 1
+		air_torpedoe_3 = 1
+		aa_lmg = 1
+		survivability_studies = 1
+		aa_hmg = 1
+		aa_cannon_1 = 1
+		aa_cannon_2 = 1
+		aa_cannon_3 = 1
+		engines_1 = 1
+		engines_2 = 1
+		engines_3 = 1
+		engines_4 = 1
+		range_improvements = 1
+		aircraft_construction = 1
+		electronic_mechanical_engineering = 1
+		radio = 1
+		improved_radio = 1
+		advanced_radio = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		improved_computing_machine = 1
+		advanced_computing_machine = 1
+		basic_fire_control_system = 1
+		improved_fire_control_system = 1
+		advanced_fire_control_system = 1
+		basic_fortification_tech = 1
+		land_fort_tech_1 = 1
+		land_fort_tech_2 = 1
+		coastal_fort_tech_1 = 1
+		coastal_fort_tech_2 = 1
+		experimental_rockets = 1
+		atomic_research = 1
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		assembly_line_production = 1
+		flexible_line = 1
+		streamlined_line = 1
+		improved_equipment_conversion = 1
+		advanced_equipment_conversion = 1
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+		concentrated_industry3 = 1
+		concentrated_industry4 = 1
+		concentrated_industry5 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+		dispersed_industry4 = 1
+		dispersed_industry5 = 1
+		fuel_silos = 1
+		fuel_refining = 1
+		fuel_refining2 = 1
+		fuel_refining3 = 1
+		fuel_refining4 = 1
+		fuel_refining5 = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		advanced_oil_processing = 1
+		modern_oil_processing = 1
+		rubber_processing = 1
+		improved_rubber_processing = 1
+		advanced_rubber_processing = 1
+		modern_rubber_processing = 1
+		construction1 = 1
+		excavation1 = 1
+		construction2 = 1
+		excavation2 = 1
+		construction3 = 1
+		excavation3 = 1
+		construction4 = 1
+		excavation4 = 1
+		construction5 = 1
+		excavation5 = 1
+		infantry_weapons = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		improved_infantry_weapons = 1
+		improved_infantry_weapons_2 = 1
+		infantry_at = 1
+		infantry_at2 = 1
+		advanced_infantry_weapons = 1
+		advanced_infantry_weapons2 = 1
+		paratroopers = 1
+		paratroopers2 = 1
+		paratroopers3 = 1
+		marines = 1
+		marines2 = 1
+		marines3 = 1
+		tech_mountaineers = 1
+		tech_mountaineers2 = 1
+		tech_mountaineers3 = 1
+		rangers_tech = 1
+		rangers_tech2 = 1
+		rangers_tech3 = 1
+		night_vision = 1
+		night_vision2 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+		support_weapons3 = 1
+		support_weapons4 = 1
+		tech_trucks = 1
+		motorised_infantry = 1
+		motorized_rocket_unit = 1
+		armored_car1 = 1
+		armored_car2 = 1
+		armored_car3 = 1
+		armored_car_at_upgrade = 1
+		mechanised_infantry = 1
+		militia_tech = 1
+		amphibious_mechanized_infantry = 1
+		amphibious_mechanized_infantry_2 = 1
+		mechanised_infantry2 = 1
+		mechanised_infantry3 = 1
+		tech_support = 1
+		tech_engineers = 1
+		tech_engineers2 = 1
+		tech_engineers3 = 1
+		tech_engineers4 = 1
+		tech_recon = 1
+		tech_recon2 = 1
+		tech_recon3 = 1
+		tech_recon4 = 1
+		tech_military_police = 1
+		tech_military_police2 = 1
+		tech_military_police3 = 1
+		tech_military_police4 = 1
+		tech_maintenance_company = 1
+		tech_maintenance_company2 = 1
+		tech_maintenance_company3 = 1
+		tech_maintenance_company4 = 1
+		tech_field_hospital = 1
+		tech_field_hospital2 = 1
+		tech_field_hospital3 = 1
+		tech_field_hospital4 = 1
+		tech_logistics_company = 1
+		tech_logistics_company2 = 1
+		tech_logistics_company3 = 1
+		tech_logistics_company4 = 1
+		tech_signal_company = 1
+		tech_signal_company2 = 1
+		tech_signal_company3 = 1
+		tech_signal_company4 = 1
+		basic_train = 1
+		railway_gun = 1
+		wartime_train = 1
+		armored_train = 1
+		popup = no
+	}
+}
+
+PRC_OCS_configure_doctrines_effect = {
+	set_grand_doctrine = mass_assault
+	set_grand_doctrine = new_base_strike
+	set_grand_doctrine = new_battlefield_support
+	set_grand_doctrine = special_forces_quality
+	set_sub_doctrine = peoples_war
+	set_sub_doctrine = self_propelled_support
+	set_sub_doctrine = tank_destroyer_force
+	set_sub_doctrine = guerilla_war
+	set_sub_doctrine = submarine_fleet_operations
+	set_sub_doctrine = support_integrated_operations
+	set_sub_doctrine = massed_carrier_fleet
+	set_sub_doctrine = naval_gunfire_support
+	set_sub_doctrine = air_subdoctrine_fighter_central_field
+	set_sub_doctrine = air_subdoctrine_naval_strike_tactics
+	set_sub_doctrine = air_subdoctrine_tactical_battlefield_support
+	set_sub_doctrine = air_subdoctrine_open_ocean_air_patrol
+	set_sub_doctrine = marines_2
+}
+
+PRC_OCS_configure_spirits_effect = {
+	add_ideas = branch_independence_spirit
+	add_ideas = battlefield_air_interdiction_spirit
+	add_ideas = mass_assault_academy_spirit
+	add_ideas = living_off_the_land_army_spirit
+	add_ideas = direct_fire_support_army_spirit
+	add_ideas = base_strike_academy_spirit
+	add_ideas = naval_reform_spirit
+	add_ideas = fleet_defense_navy_spirit
+}
+
+# v2.0a generic core: every existing MIO receives a large, trait-agnostic
+# boost. Specific trait paths remain country-specific; PRC retains its verified
+# four-organization setup below. The all-DLC project baseline includes AAT.
+PRC_OCS_boost_all_mios_effect = {
+	if = {
+		limit = { has_dlc = "Arms Against Tyranny" }
+		every_military_industrial_organization = {
+			add_mio_size = 10
+			add_mio_funds = 10000
+		}
+	}
+}
+
+PRC_OCS_appoint_advisors_effect = {
+	add_ideas = PRC_shao_shiping # political_advisor
+	add_ideas = PRC_zhou_enlai # political_advisor
+	add_ideas = PRC_mao_zedong # political_advisor
+	add_ideas = PRC_liu_bocheng # theorist
+	add_ideas = PRC_zhu_de # army_chief
+	add_ideas = PRC_luo_shunchu # navy_chief
+	add_ideas = PRC_liu_yalou # air_chief
+	add_ideas = PRC_li_xiannian # high_command
+	add_ideas = PRC_yang_zhicheng # high_command
+	add_ideas = PRC_xu_xiangqian # high_command
+}
+
+PRC_OCS_configure_mios_effect = {
+	mio:PRC_peoples_aviation_company_of_china_organization = {
+		complete_mio_trait = generic_mio_trait_conservative_designs
+		complete_mio_trait = generic_mio_trait_fighter_aircraft_specialists
+		complete_mio_trait = generic_mio_trait_bomber_aircraft_specialists
+		complete_mio_trait = generic_mio_trait_naval_aircraft_specialists
+		complete_mio_trait = PRC_peoples_aviation_company_of_china_transport_planes_trait
+		complete_mio_trait = generic_mio_trait_agility_wing_design
+		complete_mio_trait = generic_mio_trait_bomb_trucks
+		complete_mio_trait = generic_mio_trait_naval_strike
+		complete_mio_trait = generic_mio_trait_fighter_aircraft_production
+		complete_mio_trait = generic_mio_trait_bomber_aircraft_production
+		complete_mio_trait = generic_mio_trait_naval_aircraft_production
+		complete_mio_trait = PRC_peoples_aviation_company_of_china_power_of_monopoly_trait
+	}
+	mio:PRC_ordenance_bureau_organization = {
+		complete_mio_trait = generic_mio_trait_mobile_limbers
+		complete_mio_trait = generic_mio_trait_rapid_fire
+		complete_mio_trait = generic_mio_trait_advanced_barrel_forging
+		complete_mio_trait = generic_mio_trait_big_guns
+		complete_mio_trait = generic_mio_trait_improved_hydraulic_recoil_system
+		complete_mio_trait = generic_mio_trait_sliding_breech_block
+		complete_mio_trait = generic_mio_trait_gun_mass_production
+		complete_mio_trait = generic_mio_trait_super_charges
+		complete_mio_trait = generic_mio_trait_advanced_trajectory_calculations
+		complete_mio_trait = generic_mio_trait_light_weight_barrels
+	}
+	mio:PRC_cmc_military_industry_bureau_organization = {
+		complete_mio_trait = generic_mio_trait_drum_pattern_sights
+		complete_mio_trait = generic_mio_trait_reinforced_stocks
+		complete_mio_trait = generic_mio_trait_heavy_anti_armor_ammunition
+		complete_mio_trait = generic_mio_trait_quality_materials
+		complete_mio_trait = generic_mio_trait_advanced_barrel_forging
+		complete_mio_trait = generic_mio_trait_semi_auto
+		complete_mio_trait = generic_mio_trait_vehicle_mounted_capabilities
+		complete_mio_trait = generic_mio_trait_improved_small_arms_bullet_design
+		complete_mio_trait = generic_mio_trait_mass_rifle_production
+		complete_mio_trait = generic_mio_trait_medium_machineguns
+		complete_mio_trait = generic_mio_trait_anti_vechicle_land_mines
+	}
+	mio:PRC_first_automative_works_organization = {
+		complete_mio_trait = generic_mio_trait_steel_cargo_bed
+		complete_mio_trait = generic_mio_trait_medium_machinegun_mounts
+		complete_mio_trait = generic_mio_trait_closed_chassi
+		complete_mio_trait = PRC_first_automative_works_soviet_advisors_trait
+		complete_mio_trait = generic_mio_trait_all_wheel_drive
+		complete_mio_trait = generic_mio_trait_armored_pulpit_mount
+		complete_mio_trait = generic_mio_trait_bulletproof_panels
+		complete_mio_trait = generic_mio_trait_high_powered_engine
+		complete_mio_trait = generic_mio_trait_heavy_machinegun_mount
+		complete_mio_trait = generic_mio_trait_light_flame_projectors
+		complete_mio_trait = generic_mio_trait_land_mine_racks
+	}
+}
+
+PRC_OCS_create_variants_effect = {
+	create_equipment_variant = {
+		name = "反坦克装甲车"
+		type = armored_car_at_equipment
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_first_automative_works_organization
+		upgrades = {
+			tank_gun_upgrade = 5
+			tank_armor_upgrade = 5
+			ac_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "机械化装备 III型"
+		type = mechanized_equipment_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_first_automative_works_organization
+		upgrades = {
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+			mech_cost_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "43式重型坦克"
+		type = heavy_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = sloped_armor
+			special_type_slot_3 = smoke_launchers
+			special_type_slot_4 = easy_maintenance
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 12
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "43式重型自行反坦克炮"
+		type = heavy_tank_destroyer_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_super_heavy_cannon
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = sloped_armor
+			special_type_slot_3 = smoke_launchers
+			special_type_slot_4 = extra_ammo_storage
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 8
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "43式重型自行加榴炮"
+		type = heavy_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_howitzer
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = secondary_turret_hmg
+			special_type_slot_4 = secondary_turret_hmg
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "中型两栖坦克 III型"
+		type = medium_tank_amphibious_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = easy_maintenance
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = amphibious_drive
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 7
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+	create_equipment_variant = {
+		name = "43式喷火预备"
+		type = medium_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_high_velocity_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = stabilizer
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 5
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "43式自行反坦克炮"
+		type = medium_tank_destroyer_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = wet_ammo_storage
+			special_type_slot_2 = armor_skirts
+			special_type_slot_3 = sloped_armor
+			special_type_slot_4 = easy_maintenance
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 13
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "41式自行加榴炮"
+		type = light_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = additional_machine_guns
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_light_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "59式"
+		type = modern_tank_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = wet_ammo_storage
+			special_type_slot_3 = easy_maintenance
+			special_type_slot_4 = sloped_armor
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_cast_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 15
+			tank_nsb_armor_upgrade = 13
+		}
+	}
+	create_equipment_variant = {
+		name = "现代自行反坦克炮"
+		type = modern_tank_destroyer_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = easy_maintenance
+			special_type_slot_3 = auto_loader
+			special_type_slot_4 = wet_ammo_storage
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 10
+		}
+	}
+	create_equipment_variant = {
+		name = "PLZ 59"
+		type = modern_tank_artillery_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = additional_machine_guns
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "基础型两栖坦克"
+		type = amphibious_tank_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = armor_skirts
+			special_type_slot_3 = wet_ammo_storage
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 6
+		}
+	}
+	create_equipment_variant = {
+		name = "先进型海上巡逻机"
+		type = large_plane_maritime_patrol_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			fixed_auxiliary_weapon_slot_1 = torpedo_mounting_3
+			engine_type_slot = engine_4_6x
+			special_type_slot_1 = cannon_defense_turret_2x
+			special_type_slot_2 = hmg_defense_turret_2x
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting_3
+			special_type_slot_3 = fuel_tanks_large
+			special_type_slot_4 = flying_boat_large
+		}
+	}
+	create_equipment_variant = {
+		name = "H-7"
+		type = large_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = large_bomb_bay
+			fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+			engine_type_slot = engine_4_6x
+			special_type_slot_1 = fuel_tanks_large
+			special_type_slot_2 = fuel_tanks_large
+			fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+			special_type_slot_3 = bomb_sights_2
+			fixed_auxiliary_weapon_slot_3 = large_bomb_bay
+			special_type_slot_4 = radio_navigation_2
+			fixed_auxiliary_weapon_slot_4 = large_bomb_bay
+			special_type_slot_5 = fuel_tanks_large
+		}
+	}
+	create_equipment_variant = {
+		name = "先进型侦察机"
+		type = medium_plane_scout_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = recon_camera
+			engine_type_slot = engine_4_4x
+			special_type_slot_1 = fuel_tanks_medium
+			special_type_slot_2 = fuel_tanks_medium
+			special_type_slot_3 = demining_coil
+			special_type_slot_4 = flying_boat_medium
+			special_type_slot_5 = fuel_tanks_medium
+		}
+	}
+	create_equipment_variant = {
+		name = "舰载海军轰炸机 III型"
+		type = cv_small_plane_naval_bomber_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "P12"
+		type = small_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = aircraft_cannon_2_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_1x
+			special_type_slot_1 = armor_plate_small
+			special_type_slot_2 = cannon_defense_turret
+			special_type_slot_3 = armor_plate_small
+			special_type_slot_4 = self_sealing_fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "24型"
+		type = small_plane_cas_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = tank_buster_2
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = dive_brakes_small
+			special_type_slot_2 = armor_plate_small
+			fixed_auxiliary_weapon_slot_2 = rocket_rails
+			special_type_slot_3 = self_sealing_fuel_tanks_small
+			fixed_auxiliary_weapon_slot_3 = rocket_rails
+			special_type_slot_4 = drop_tanks
+		}
+	}
+	create_equipment_variant = {
+		name = "Y-3"
+		type = small_plane_naval_bomber_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			engine_type_slot = engine_4_1x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+			special_type_slot_4 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "43式自行加榴炮"
+		type = medium_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_howitzer
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "41式"
+		type = light_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_light_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 10
+		}
+	}
+}
+
+PRC_OCS_create_templates_effect = {
+	division_template = {
+		name = "集团军总部"
+		priority = 1
+		is_army_hq = yes
+		template_counter = 121
+		regiments = {
+			hq_paratrooper = { x = 0 y = 0 }
+			hq_paratrooper = { x = 0 y = 1 }
+			hq_paratrooper = { x = 0 y = 2 }
+			hq_paratrooper = { x = 0 y = 3 }
+		}
+		support = {
+			hq_support_company = { x = 0 y = 0 }
+			hq_naval_liaison = { x = 0 y = 1 }
+			hq_air_liaison = { x = 0 y = 2 }
+			hq_specops = { x = 0 y = 3 }
+		}
+	}
+	division_template = {
+		name = "主力伞兵师"
+		division_names_group = CHI_PAR_01
+		priority = 1
+		regiments = {
+			paratrooper = { x = 0 y = 0 }
+			paratrooper = { x = 0 y = 1 }
+			paratrooper = { x = 0 y = 2 }
+			paratrooper = { x = 1 y = 0 }
+			paratrooper = { x = 1 y = 1 }
+			paratrooper = { x = 1 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+		}
+		support = {
+			engineer = { x = 0 y = 0 }
+			recon = { x = 0 y = 1 }
+			field_hospital = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			military_police = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力纯步师"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 0 y = 3 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			militia = { x = 1 y = 3 }
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+			militia = { x = 2 y = 2 }
+			militia = { x = 2 y = 3 }
+			militia = { x = 3 y = 0 }
+			militia = { x = 3 y = 1 }
+			militia = { x = 3 y = 2 }
+			militia = { x = 4 y = 0 }
+			militia = { x = 4 y = 1 }
+			militia = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			field_guns = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "装甲师"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			mechanized = { x = 0 y = 0 }
+			mechanized = { x = 0 y = 1 }
+			mechanized = { x = 0 y = 2 }
+			mechanized = { x = 0 y = 3 }
+			mechanized = { x = 1 y = 0 }
+			mechanized = { x = 1 y = 1 }
+			mechanized = { x = 1 y = 2 }
+			mechanized = { x = 1 y = 3 }
+			medium_sp_artillery_brigade = { x = 2 y = 0 }
+			medium_sp_artillery_brigade = { x = 2 y = 1 }
+			medium_sp_artillery_brigade = { x = 2 y = 2 }
+			medium_sp_artillery_brigade = { x = 2 y = 3 }
+			medium_sp_artillery_brigade = { x = 3 y = 0 }
+			medium_sp_artillery_brigade = { x = 3 y = 1 }
+			medium_sp_artillery_brigade = { x = 3 y = 2 }
+			medium_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			mot_fire_support = { x = 0 y = 0 }
+			mot_fire_support = { x = 1 y = 0 }
+			medium_tank_destroyer_support = { x = 2 y = 0 }
+			medium_tank_destroyer_support = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "守家小马"
+		priority = 0
+		regiments = {
+			cavalry = { x = 0 y = 0 }
+		}
+		support = {
+			military_police = { x = 0 y = 0 }
+		}
+	}
+	division_template = {
+		name = "海军陆战队装甲师"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			amphibious_medium_armor = { x = 0 y = 0 }
+			amphibious_medium_armor = { x = 0 y = 1 }
+			amphibious_medium_armor = { x = 0 y = 2 }
+			amphibious_medium_armor = { x = 0 y = 3 }
+			amphibious_medium_armor = { x = 1 y = 0 }
+			amphibious_medium_armor = { x = 1 y = 1 }
+			amphibious_medium_armor = { x = 1 y = 2 }
+			amphibious_medium_armor = { x = 1 y = 3 }
+			amphibious_mechanized = { x = 2 y = 0 }
+			amphibious_mechanized = { x = 2 y = 1 }
+			amphibious_mechanized = { x = 2 y = 2 }
+			amphibious_mechanized = { x = 2 y = 3 }
+			amphibious_mechanized = { x = 3 y = 0 }
+			amphibious_mechanized = { x = 3 y = 1 }
+			amphibious_mechanized = { x = 3 y = 2 }
+			amphibious_mechanized = { x = 4 y = 0 }
+			amphibious_mechanized = { x = 4 y = 1 }
+			amphibious_mechanized = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			medium_tank_destroyer_support = { x = 0 y = 0 }
+			medium_tank_destroyer_support = { x = 1 y = 0 }
+			mot_fire_support = { x = 2 y = 0 }
+			mot_fire_support = { x = 3 y = 0 }
+			mot_fire_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			pioneer_support = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			signal_company = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "卫戍部队"
+		division_names_group = PRC_MEC_01
+		priority = 1
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+			militia = { x = 2 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			field_hospital = { x = 0 y = 3 }
+			logistics_company = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力步坦师"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 0 y = 3 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			militia = { x = 1 y = 3 }
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+			militia = { x = 2 y = 2 }
+			militia = { x = 2 y = 3 }
+			militia = { x = 3 y = 0 }
+			militia = { x = 3 y = 1 }
+			militia = { x = 3 y = 2 }
+			light_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+}
+
+# v2.0b generic equipment designs. These preserve the verified v1.2c modules
+# and upgrades but remove PRC-specific design teams and use neutral names.
+PRC_OCS_create_generic_variants_effect = {
+	create_equipment_variant = {
+		name = "通用反坦克装甲车"
+		type = armored_car_at_equipment
+		parent_version = 0
+		allow_without_tech = yes
+		upgrades = {
+			tank_gun_upgrade = 5
+			tank_armor_upgrade = 5
+			ac_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "通用机械化装备 III型"
+		type = mechanized_equipment_3
+		parent_version = 0
+		allow_without_tech = yes
+		upgrades = {
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+			mech_cost_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "先进重型坦克"
+		type = heavy_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = sloped_armor
+			special_type_slot_3 = smoke_launchers
+			special_type_slot_4 = easy_maintenance
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 12
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "先进重型自行反坦克炮"
+		type = heavy_tank_destroyer_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_super_heavy_cannon
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = sloped_armor
+			special_type_slot_3 = smoke_launchers
+			special_type_slot_4 = extra_ammo_storage
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 8
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "先进重型自行火炮"
+		type = heavy_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_howitzer
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = secondary_turret_hmg
+			special_type_slot_4 = secondary_turret_hmg
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "先进中型两栖坦克"
+		type = medium_tank_amphibious_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = easy_maintenance
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = amphibious_drive
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 7
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+	create_equipment_variant = {
+		name = "先进中型坦克"
+		type = medium_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_high_velocity_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = stabilizer
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 5
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "先进中型自行反坦克炮"
+		type = medium_tank_destroyer_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = wet_ammo_storage
+			special_type_slot_2 = armor_skirts
+			special_type_slot_3 = sloped_armor
+			special_type_slot_4 = easy_maintenance
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 13
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "先进轻型自行火炮"
+		type = light_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = additional_machine_guns
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_light_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "现代主战坦克"
+		type = modern_tank_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = wet_ammo_storage
+			special_type_slot_3 = easy_maintenance
+			special_type_slot_4 = sloped_armor
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_cast_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 15
+			tank_nsb_armor_upgrade = 13
+		}
+	}
+	create_equipment_variant = {
+		name = "现代自行反坦克炮"
+		type = modern_tank_destroyer_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = easy_maintenance
+			special_type_slot_3 = auto_loader
+			special_type_slot_4 = wet_ammo_storage
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 10
+		}
+	}
+	create_equipment_variant = {
+		name = "现代自行火炮"
+		type = modern_tank_artillery_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = additional_machine_guns
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "现代两栖坦克"
+		type = amphibious_tank_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = armor_skirts
+			special_type_slot_3 = wet_ammo_storage
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 6
+		}
+	}
+	create_equipment_variant = {
+		name = "先进海上巡逻机"
+		type = large_plane_maritime_patrol_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			fixed_auxiliary_weapon_slot_1 = torpedo_mounting_3
+			engine_type_slot = engine_4_6x
+			special_type_slot_1 = cannon_defense_turret_2x
+			special_type_slot_2 = hmg_defense_turret_2x
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting_3
+			special_type_slot_3 = fuel_tanks_large
+			special_type_slot_4 = flying_boat_large
+		}
+	}
+	create_equipment_variant = {
+		name = "先进战略轰炸机"
+		type = large_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = large_bomb_bay
+			fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+			engine_type_slot = engine_4_6x
+			special_type_slot_1 = fuel_tanks_large
+			special_type_slot_2 = fuel_tanks_large
+			fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+			special_type_slot_3 = bomb_sights_2
+			fixed_auxiliary_weapon_slot_3 = large_bomb_bay
+			special_type_slot_4 = radio_navigation_2
+			fixed_auxiliary_weapon_slot_4 = large_bomb_bay
+			special_type_slot_5 = fuel_tanks_large
+		}
+	}
+	create_equipment_variant = {
+		name = "先进侦察机"
+		type = medium_plane_scout_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = recon_camera
+			engine_type_slot = engine_4_4x
+			special_type_slot_1 = fuel_tanks_medium
+			special_type_slot_2 = fuel_tanks_medium
+			special_type_slot_3 = demining_coil
+			special_type_slot_4 = flying_boat_medium
+			special_type_slot_5 = fuel_tanks_medium
+		}
+	}
+	create_equipment_variant = {
+		name = "先进舰载海军轰炸机"
+		type = cv_small_plane_naval_bomber_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "先进战斗机"
+		type = small_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = aircraft_cannon_2_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_1x
+			special_type_slot_1 = armor_plate_small
+			special_type_slot_2 = cannon_defense_turret
+			special_type_slot_3 = armor_plate_small
+			special_type_slot_4 = self_sealing_fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "先进近距支援机"
+		type = small_plane_cas_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = tank_buster_2
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = dive_brakes_small
+			special_type_slot_2 = armor_plate_small
+			fixed_auxiliary_weapon_slot_2 = rocket_rails
+			special_type_slot_3 = self_sealing_fuel_tanks_small
+			fixed_auxiliary_weapon_slot_3 = rocket_rails
+			special_type_slot_4 = drop_tanks
+		}
+	}
+	create_equipment_variant = {
+		name = "先进海军轰炸机"
+		type = small_plane_naval_bomber_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			engine_type_slot = engine_4_1x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+			special_type_slot_4 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "先进中型自行火炮"
+		type = medium_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_howitzer
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "先进轻型坦克"
+		type = light_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_light_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 10
+		}
+	}
+}
+
+# v2.0b generic division templates. Country-specific division name groups are
+# intentionally omitted; initialization creates templates without changing units.
+PRC_OCS_create_generic_templates_effect = {
+	division_template = {
+		name = "集团军总部"
+		priority = 1
+		is_army_hq = yes
+		template_counter = 121
+		regiments = {
+			hq_paratrooper = { x = 0 y = 0 }
+			hq_paratrooper = { x = 0 y = 1 }
+			hq_paratrooper = { x = 0 y = 2 }
+			hq_paratrooper = { x = 0 y = 3 }
+		}
+		support = {
+			hq_support_company = { x = 0 y = 0 }
+			hq_naval_liaison = { x = 0 y = 1 }
+			hq_air_liaison = { x = 0 y = 2 }
+			hq_specops = { x = 0 y = 3 }
+		}
+	}
+	division_template = {
+		name = "主力伞兵师"
+		priority = 1
+		regiments = {
+			paratrooper = { x = 0 y = 0 }
+			paratrooper = { x = 0 y = 1 }
+			paratrooper = { x = 0 y = 2 }
+			paratrooper = { x = 1 y = 0 }
+			paratrooper = { x = 1 y = 1 }
+			paratrooper = { x = 1 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+		}
+		support = {
+			engineer = { x = 0 y = 0 }
+			recon = { x = 0 y = 1 }
+			field_hospital = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			military_police = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力纯步师"
+		priority = 2
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 0 y = 3 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 1 y = 3 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			infantry = { x = 2 y = 3 }
+			infantry = { x = 3 y = 0 }
+			infantry = { x = 3 y = 1 }
+			infantry = { x = 3 y = 2 }
+			infantry = { x = 4 y = 0 }
+			infantry = { x = 4 y = 1 }
+			infantry = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			field_guns = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "装甲师"
+		priority = 2
+		regiments = {
+			mechanized = { x = 0 y = 0 }
+			mechanized = { x = 0 y = 1 }
+			mechanized = { x = 0 y = 2 }
+			mechanized = { x = 0 y = 3 }
+			mechanized = { x = 1 y = 0 }
+			mechanized = { x = 1 y = 1 }
+			mechanized = { x = 1 y = 2 }
+			mechanized = { x = 1 y = 3 }
+			medium_sp_artillery_brigade = { x = 2 y = 0 }
+			medium_sp_artillery_brigade = { x = 2 y = 1 }
+			medium_sp_artillery_brigade = { x = 2 y = 2 }
+			medium_sp_artillery_brigade = { x = 2 y = 3 }
+			medium_sp_artillery_brigade = { x = 3 y = 0 }
+			medium_sp_artillery_brigade = { x = 3 y = 1 }
+			medium_sp_artillery_brigade = { x = 3 y = 2 }
+			medium_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			mot_fire_support = { x = 0 y = 0 }
+			mot_fire_support = { x = 1 y = 0 }
+			medium_tank_destroyer_support = { x = 2 y = 0 }
+			medium_tank_destroyer_support = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "轻型卫戍骑兵"
+		priority = 0
+		regiments = {
+			cavalry = { x = 0 y = 0 }
+		}
+		support = {
+			military_police = { x = 0 y = 0 }
+		}
+	}
+	division_template = {
+		name = "海军陆战队装甲师"
+		priority = 2
+		regiments = {
+			amphibious_medium_armor = { x = 0 y = 0 }
+			amphibious_medium_armor = { x = 0 y = 1 }
+			amphibious_medium_armor = { x = 0 y = 2 }
+			amphibious_medium_armor = { x = 0 y = 3 }
+			amphibious_medium_armor = { x = 1 y = 0 }
+			amphibious_medium_armor = { x = 1 y = 1 }
+			amphibious_medium_armor = { x = 1 y = 2 }
+			amphibious_medium_armor = { x = 1 y = 3 }
+			amphibious_mechanized = { x = 2 y = 0 }
+			amphibious_mechanized = { x = 2 y = 1 }
+			amphibious_mechanized = { x = 2 y = 2 }
+			amphibious_mechanized = { x = 2 y = 3 }
+			amphibious_mechanized = { x = 3 y = 0 }
+			amphibious_mechanized = { x = 3 y = 1 }
+			amphibious_mechanized = { x = 3 y = 2 }
+			amphibious_mechanized = { x = 4 y = 0 }
+			amphibious_mechanized = { x = 4 y = 1 }
+			amphibious_mechanized = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			medium_tank_destroyer_support = { x = 0 y = 0 }
+			medium_tank_destroyer_support = { x = 1 y = 0 }
+			mot_fire_support = { x = 2 y = 0 }
+			mot_fire_support = { x = 3 y = 0 }
+			mot_fire_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			pioneer_support = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			signal_company = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "卫戍部队"
+		priority = 1
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			field_hospital = { x = 0 y = 3 }
+			logistics_company = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力步坦师"
+		priority = 2
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 0 y = 3 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 1 y = 3 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			infantry = { x = 2 y = 3 }
+			infantry = { x = 3 y = 0 }
+			infantry = { x = 3 y = 1 }
+			infantry = { x = 3 y = 2 }
+			light_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+}
+
+PRC_OCS_add_generic_stockpile_effect = {
+	add_equipment_to_stockpile = {
+		type = explosive_ammo_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = rocket_artillery_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = anti_air_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = anti_tank_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = transport_plane_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_rocket_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_car_at_equipment
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = amphibious_mechanized_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = mechanized_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = support_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_car_at_equipment
+		amount = 1000000
+		variant_name = "通用反坦克装甲车"
+	}
+	add_equipment_to_stockpile = {
+		type = mechanized_equipment_3
+		amount = 1000000
+		variant_name = "通用机械化装备 III型"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_chassis_3
+		amount = 1000000
+		variant_name = "先进重型坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_destroyer_chassis_3
+		amount = 1000000
+		variant_name = "先进重型自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "先进重型自行火炮"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_amphibious_chassis_3
+		amount = 1000000
+		variant_name = "先进中型两栖坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_chassis_3
+		amount = 1000000
+		variant_name = "先进中型坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_destroyer_chassis_3
+		amount = 1000000
+		variant_name = "先进中型自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "先进轻型自行火炮"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_chassis_1
+		amount = 1000000
+		variant_name = "现代主战坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_destroyer_chassis_1
+		amount = 1000000
+		variant_name = "现代自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_artillery_chassis_1
+		amount = 1000000
+		variant_name = "现代自行火炮"
+	}
+	add_equipment_to_stockpile = {
+		type = amphibious_tank_chassis_1
+		amount = 1000000
+		variant_name = "现代两栖坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = large_plane_maritime_patrol_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进海上巡逻机"
+	}
+	add_equipment_to_stockpile = {
+		type = large_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进战略轰炸机"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_plane_scout_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进侦察机"
+	}
+	add_equipment_to_stockpile = {
+		type = cv_small_plane_naval_bomber_airframe_3
+		amount = 1000000
+		variant_name = "先进舰载海军轰炸机"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进战斗机"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_cas_airframe_3
+		amount = 1000000
+		variant_name = "先进近距支援机"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_naval_bomber_airframe_3
+		amount = 1000000
+		variant_name = "先进海军轰炸机"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "先进中型自行火炮"
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_chassis_3
+		amount = 1000000
+		variant_name = "先进轻型坦克"
+	}
+}
+
+PRC_OCS_add_stockpile_effect = {
+	add_equipment_to_stockpile = {
+		type = explosive_ammo_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = rocket_artillery_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = anti_air_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = anti_tank_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = transport_plane_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_rocket_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_car_at_equipment
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = amphibious_mechanized_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = mechanized_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = support_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_car_at_equipment
+		amount = 1000000
+		variant_name = "反坦克装甲车"
+	}
+	add_equipment_to_stockpile = {
+		type = mechanized_equipment_3
+		amount = 1000000
+		variant_name = "机械化装备 III型"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_chassis_3
+		amount = 1000000
+		variant_name = "43式重型坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_destroyer_chassis_3
+		amount = 1000000
+		variant_name = "43式重型自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "43式重型自行加榴炮"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_amphibious_chassis_3
+		amount = 1000000
+		variant_name = "中型两栖坦克 III型"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_chassis_3
+		amount = 1000000
+		variant_name = "43式喷火预备"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_destroyer_chassis_3
+		amount = 1000000
+		variant_name = "43式自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "41式自行加榴炮"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_chassis_1
+		amount = 1000000
+		variant_name = "59式"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_destroyer_chassis_1
+		amount = 1000000
+		variant_name = "现代自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_artillery_chassis_1
+		amount = 1000000
+		variant_name = "PLZ 59"
+	}
+	add_equipment_to_stockpile = {
+		type = amphibious_tank_chassis_1
+		amount = 1000000
+		variant_name = "基础型两栖坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = large_plane_maritime_patrol_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进型海上巡逻机"
+	}
+	add_equipment_to_stockpile = {
+		type = large_plane_airframe_3
+		amount = 1000000
+		variant_name = "H-7"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_plane_scout_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进型侦察机"
+	}
+	add_equipment_to_stockpile = {
+		type = cv_small_plane_naval_bomber_airframe_3
+		amount = 1000000
+		variant_name = "舰载海军轰炸机 III型"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_airframe_3
+		amount = 1000000
+		variant_name = "P12"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_cas_airframe_3
+		amount = 1000000
+		variant_name = "24型"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_naval_bomber_airframe_3
+		amount = 1000000
+		variant_name = "Y-3"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "43式自行加榴炮"
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_chassis_3
+		amount = 1000000
+		variant_name = "41式"
+	}
+}
+
+PRC_OCS_resupply_effect = {
+	if = {
+		limit = {
+			OR = {
+				tag = PRC
+				original_tag = PRC
+			}
+		}
+		PRC_OCS_add_stockpile_effect = yes
+	}
+	else = {
+		PRC_OCS_add_generic_stockpile_effect = yes
+	}
+	PRC_OCS_add_points_effect = yes
+}
+
+# v2.0 universal one-time force-raising decision. The template name resolves
+# to the PRC militia-based version for PRC/original-PRC countries and to the
+# generic infantry-based version for every other country.
+PRC_OCS_raise_24_infantry_divisions_effect = {
+	random_owned_controlled_state = {
+		create_unit = {
+			division = "division_template = \"主力纯步师\" start_experience_factor = 1.0 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
+			owner = ROOT
+			allow_spawning_on_enemy_provs = no
+			count = 24
+		}
+	}
+	set_country_flag = PRC_OCS_24_infantry_divisions_raised
+	country_event = { id = PRC_OCS.11 hours = 6 }
+}
+
+PRC_OCS_reorganize_all_divisions_effect = {
+	every_country_division = {
+		change_division_template = {
+			division_template = "卫戍部队"
+		}
+	}
+	set_country_flag = PRC_OCS_army_reorganized
+	country_event = { id = PRC_OCS.8 }
+}
+
+PRC_OCS_add_points_effect = {
+	add_political_power = 99999
+	add_command_power = 100
+	army_experience = 999
+	navy_experience = 999
+	air_experience = 999
+}
+
+# v2.0b: generic countries now receive neutral equipment designs, eight division
+# templates and the full supported stockpile. PRC retains its Chinese design names,
+# advisers and configured MIO traits. Existing divisions are never changed here.
+PRC_OCS_initialize_effect = {
+	PRC_OCS_research_all_effect = yes
+	PRC_OCS_configure_doctrines_effect = yes
+	PRC_OCS_configure_spirits_effect = yes
+	PRC_OCS_boost_all_mios_effect = yes
+	PRC_OCS_add_points_effect = yes
+
+	if = {
+		limit = {
+			OR = {
+				tag = PRC
+				original_tag = PRC
+			}
+		}
+		PRC_OCS_appoint_advisors_effect = yes
+		PRC_OCS_configure_mios_effect = yes
+		PRC_OCS_create_variants_effect = yes
+		PRC_OCS_create_templates_effect = yes
+		PRC_OCS_add_stockpile_effect = yes
+		set_country_flag = PRC_OCS_initialized
+		country_event = { id = PRC_OCS.1 }
+	}
+	else = {
+		PRC_OCS_create_generic_variants_effect = yes
+		PRC_OCS_create_generic_templates_effect = yes
+		PRC_OCS_add_generic_stockpile_effect = yes
+		set_country_flag = PRC_OCS_initialized
+		country_event = { id = PRC_OCS.7 }
+	}
+}
+
+# v1.2b: Fully unlock each controlled state's shared industrial slots.
+# Adding 25 once is clipped by the engine hard cap of 25, so states with
+# different initial unlock progress all finish at the same maximum.
+# v1.2c: Every construction decision can independently unlock the current
+# controlled state's shared slots to the engine hard cap. This removes the
+# hidden requirement to click the dedicated slot decision first.
+PRC_OCS_unlock_current_state_shared_slots_effect = {
+	if = {
+		limit = {
+			NOT = { has_state_flag = PRC_OCS_all_shared_slots_unlocked }
+		}
+		add_extra_state_shared_building_slots = 25
+		set_state_flag = PRC_OCS_all_shared_slots_unlocked
+	}
+}
+
+# v1.2c: Refresh completion flags that can be inferred directly from the
+# engine's building caps. Fuel silos and synthetic refineries are capped at
+# three by their enabling technologies; dockyards and civilian factories are
+# treated as complete when the state has reached their individual level cap.
+PRC_OCS_refresh_industrial_priority_flags_effect = {
+	if = {
+		limit = { synthetic_refinery > 2 }
+		set_state_flag = PRC_OCS_refinery_target_complete
+	}
+	if = {
+		limit = { fuel_silo > 2 }
+		set_state_flag = PRC_OCS_fuel_silo_target_complete
+	}
+	if = {
+		limit = { dockyard > 19 }
+		set_state_flag = PRC_OCS_coastal_dockyards_queued
+	}
+	if = {
+		limit = { industrial_complex > 19 }
+		set_state_flag = PRC_OCS_civilian_industry_queued
+	}
+}
+
+PRC_OCS_unlock_all_shared_slots_effect = {
+	clr_country_flag = PRC_OCS_shared_slots_changed
+
+	every_owned_state = {
+		limit = { is_controlled_by = ROOT }
+		if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_all_shared_slots_unlocked }
+			}
+			add_extra_state_shared_building_slots = 25
+			set_state_flag = PRC_OCS_all_shared_slots_unlocked
+			ROOT = { set_country_flag = PRC_OCS_shared_slots_changed }
+		}
+	}
+
+	if = {
+		limit = { has_country_flag = PRC_OCS_shared_slots_changed }
+		country_event = { id = PRC_OCS.2 }
+		clr_country_flag = PRC_OCS_shared_slots_changed
+	}
+}
+
+PRC_OCS_queue_transport_and_bases_effect = {
+	clr_country_flag = PRC_OCS_transport_bases_changed
+
+	# Universal core: only states both owned and controlled by the current
+	# country are eligible. Occupied enemy territory is intentionally excluded.
+	every_owned_state = {
+		limit = { is_controlled_by = ROOT }
+		PRC_OCS_unlock_current_state_shared_slots_effect = yes
+		PRC_OCS_refresh_industrial_priority_flags_effect = yes
+
+		if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_transport_bases_queued }
+			}
+
+			if = {
+				limit = { infrastructure < 5 }
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+				}
+				ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
+			}
+			if = {
+				limit = { air_base < 10 }
+				add_building_construction = {
+					type = air_base
+					level = 10
+				}
+				ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
+			}
+			if = {
+				limit = {
+					naval_base > 0
+					naval_base < 10
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 10
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+				}
+				ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
+			}
+
+			set_state_flag = PRC_OCS_transport_bases_queued
+		}
+	}
+
+	# PRC enhancement layer only: preserve the verified dual-grid logic and the
+	# 23 fixed Chinese supply hubs. Other countries never receive either effect.
+	if = {
+		limit = {
+			OR = {
+				tag = PRC
+				original_tag = PRC
+			}
+		}
+
+		every_owned_state = {
+			limit = { is_controlled_by = ROOT }
+			PRC_OCS_refresh_industrial_priority_flags_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_power_grid_queued }
+				}
+				if = {
+					limit = {
+						OR = {
+							energy_infrastructure > 0
+							industrial_infrastructure > 0
+						}
+					}
+					set_state_flag = PRC_OCS_power_grid_queued
+				}
+				else_if = {
+					limit = {
+						has_state_flag = PRC_OCS_refinery_target_complete
+						has_state_flag = PRC_OCS_fuel_silo_target_complete
+						OR = {
+							NOT = { is_coastal = yes }
+							has_state_flag = PRC_OCS_coastal_dockyards_queued
+						}
+						has_state_flag = PRC_OCS_civilian_industry_queued
+						has_resources_amount = {
+							resource = oil
+							amount > 0
+						}
+						free_building_slots = {
+							building = industrial_infrastructure
+							size > 0
+							include_locked = no
+						}
+					}
+					add_building_construction = {
+						type = industrial_infrastructure
+						level = 1
+					}
+					set_state_flag = PRC_OCS_power_grid_queued
+					ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
+				}
+				else_if = {
+					limit = {
+						has_state_flag = PRC_OCS_refinery_target_complete
+						has_state_flag = PRC_OCS_fuel_silo_target_complete
+						OR = {
+							NOT = { is_coastal = yes }
+							has_state_flag = PRC_OCS_coastal_dockyards_queued
+						}
+						has_state_flag = PRC_OCS_civilian_industry_queued
+						NOT = {
+							has_resources_amount = {
+								resource = oil
+								amount > 0
+							}
+						}
+						free_building_slots = {
+							building = energy_infrastructure
+							size > 0
+							include_locked = no
+						}
+					}
+					add_building_construction = {
+						type = energy_infrastructure
+						level = 1
+					}
+					set_state_flag = PRC_OCS_power_grid_queued
+					ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
+				}
+			}
+		}
+
+		PRC_OCS_build_target_supply_nodes_effect = yes
+	}
+
+	if = {
+		limit = { has_country_flag = PRC_OCS_transport_bases_changed }
+		if = {
+			limit = {
+				OR = {
+					tag = PRC
+					original_tag = PRC
+				}
+			}
+			country_event = { id = PRC_OCS.3 }
+		}
+		else = {
+			country_event = { id = PRC_OCS.10 }
+		}
+		clr_country_flag = PRC_OCS_transport_bases_changed
+	}
+}
+
+PRC_OCS_queue_national_defenses_effect = {
+	# State anti-air is technology-gated in vanilla. Grant only its enabling
+	# technology so this decision can be used without initialization.
+	set_technology = {
+		interwar_antiair = 1
+	}
+
+	clr_country_flag = PRC_OCS_national_defenses_changed
+
+	every_owned_state = {
+		limit = { is_controlled_by = ROOT }
+		if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_national_defenses_queued }
+			}
+
+			if = {
+				limit = { anti_air_building < 5 }
+				add_building_construction = {
+					type = anti_air_building
+					level = 5
+				}
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 10
+				province = {
+					all_provinces = yes
+				}
+			}
+
+			if = {
+				limit = { is_coastal = yes }
+				add_building_construction = {
+					type = coastal_bunker
+					level = 10
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+			}
+
+			set_state_flag = PRC_OCS_national_defenses_queued
+			ROOT = { set_country_flag = PRC_OCS_national_defenses_changed }
+		}
+	}
+
+	if = {
+		limit = { has_country_flag = PRC_OCS_national_defenses_changed }
+		country_event = { id = PRC_OCS.9 }
+		clr_country_flag = PRC_OCS_national_defenses_changed
+	}
+}
+
+PRC_OCS_build_target_supply_nodes_effect = {
+	325 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 4501
+			}
+		}
+	}
+	594 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 4121
+			}
+		}
+	}
+	601 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 8041
+			}
+		}
+	}
+	612 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 4555
+			}
+		}
+	}
+	617 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 1703
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 12601
+			}
+		}
+	}
+	618 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 1708
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 4849
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 7693
+			}
+		}
+	}
+	714 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 7832
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 7848
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 10698
+			}
+		}
+	}
+	717 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 4551
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 9798
+			}
+		}
+	}
+	747 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 10413
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 10863
+			}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 12789
+			}
+		}
+	}
+	756 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 1778
+			}
+		}
+	}
+	757 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 1991
+			}
+		}
+	}
+	758 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 1961
+			}
+		}
+	}
+	760 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 10839
+			}
+		}
+	}
+	1033 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 10105
+			}
+		}
+	}
+	1040 = {
+		if = {
+			limit = {
+			is_owned_by = ROOT
+			is_controlled_by = ROOT
+		}
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 7803
+			}
+		}
+	}
+}
+
+# v2.0c: Universal petrochemical program; owned and controlled states only.
+PRC_OCS_queue_petrochemical_program_effect = {
+	# Both buildings are technology-gated in vanilla. Grant only their minimum
+	# enabling technologies so this decision works without the full-tech setup.
+	set_technology = {
+		synth_oil_experiments = 1
+		fuel_silos = 1
+	}
+
+	clr_country_flag = PRC_OCS_petrochemical_changed
+
+	every_owned_state = {
+		limit = { is_controlled_by = ROOT }
+		PRC_OCS_unlock_current_state_shared_slots_effect = yes
+		PRC_OCS_refresh_industrial_priority_flags_effect = yes
+
+		# Priority 1: immediately fill synthetic refineries to the vanilla cap 3.
+		if = {
+			limit = {
+				synthetic_refinery < 3
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+					include_locked = no
+				}
+			}
+			add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes }
+			ROOT = { set_country_flag = PRC_OCS_petrochemical_changed }
+		}
+		if = {
+			limit = {
+				synthetic_refinery < 3
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+					include_locked = no
+				}
+			}
+			add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes }
+			ROOT = { set_country_flag = PRC_OCS_petrochemical_changed }
+		}
+		if = {
+			limit = {
+				synthetic_refinery < 3
+				free_building_slots = {
+					building = synthetic_refinery
+					size > 0
+					include_locked = no
+				}
+			}
+			add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes }
+			ROOT = { set_country_flag = PRC_OCS_petrochemical_changed }
+		}
+		if = {
+			limit = { synthetic_refinery > 2 }
+			set_state_flag = PRC_OCS_refinery_target_complete
+		}
+
+		# Priority 2: immediately fill fuel silos to the vanilla technology cap 3.
+		if = {
+			limit = {
+				fuel_silo < 3
+				free_building_slots = {
+					building = fuel_silo
+					size > 0
+					include_locked = no
+				}
+			}
+			add_building_construction = { type = fuel_silo level = 1 instant_build = yes }
+			ROOT = { set_country_flag = PRC_OCS_petrochemical_changed }
+		}
+		if = {
+			limit = {
+				fuel_silo < 3
+				free_building_slots = {
+					building = fuel_silo
+					size > 0
+					include_locked = no
+				}
+			}
+			add_building_construction = { type = fuel_silo level = 1 instant_build = yes }
+			ROOT = { set_country_flag = PRC_OCS_petrochemical_changed }
+		}
+		if = {
+			limit = {
+				fuel_silo < 3
+				free_building_slots = {
+					building = fuel_silo
+					size > 0
+					include_locked = no
+				}
+			}
+			add_building_construction = { type = fuel_silo level = 1 instant_build = yes }
+			ROOT = { set_country_flag = PRC_OCS_petrochemical_changed }
+		}
+		if = {
+			limit = { fuel_silo > 2 }
+			set_state_flag = PRC_OCS_fuel_silo_target_complete
+		}
+	}
+
+	# Do not report a successful national construction program when every state
+	# was skipped because no valid shared slot was available.
+	if = {
+		limit = { has_country_flag = PRC_OCS_petrochemical_changed }
+		country_event = { id = PRC_OCS.4 }
+		clr_country_flag = PRC_OCS_petrochemical_changed
+	}
+}
+
+# v2.0c: Universal coastal dockyard program; owned and controlled states only.
+PRC_OCS_queue_coastal_dockyards_effect = {
+	clr_country_flag = PRC_OCS_dockyards_changed
+
+	every_owned_state = {
+		limit = {
+			is_controlled_by = ROOT
+			is_coastal = yes
+		}
+
+		PRC_OCS_unlock_current_state_shared_slots_effect = yes
+		PRC_OCS_refresh_industrial_priority_flags_effect = yes
+
+		# Priority 3: dockyards may only consume slots after both petrochemical
+		# targets are complete. Add them one at a time so partial progress remains
+		# valid when fewer than five slots are available.
+		if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_coastal_dockyards_queued }
+				has_state_flag = PRC_OCS_refinery_target_complete
+				has_state_flag = PRC_OCS_fuel_silo_target_complete
+			}
+
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_dockyard_1_added }
+					dockyard < 20
+					free_building_slots = { building = dockyard size > 0 include_locked = no }
+				}
+				add_building_construction = { type = dockyard level = 1 }
+				set_state_flag = PRC_OCS_dockyard_1_added
+				ROOT = { set_country_flag = PRC_OCS_dockyards_changed }
+			}
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_dockyard_2_added }
+					dockyard < 20
+					free_building_slots = { building = dockyard size > 0 include_locked = no }
+				}
+				add_building_construction = { type = dockyard level = 1 }
+				set_state_flag = PRC_OCS_dockyard_2_added
+				ROOT = { set_country_flag = PRC_OCS_dockyards_changed }
+			}
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_dockyard_3_added }
+					dockyard < 20
+					free_building_slots = { building = dockyard size > 0 include_locked = no }
+				}
+				add_building_construction = { type = dockyard level = 1 }
+				set_state_flag = PRC_OCS_dockyard_3_added
+				ROOT = { set_country_flag = PRC_OCS_dockyards_changed }
+			}
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_dockyard_4_added }
+					dockyard < 20
+					free_building_slots = { building = dockyard size > 0 include_locked = no }
+				}
+				add_building_construction = { type = dockyard level = 1 }
+				set_state_flag = PRC_OCS_dockyard_4_added
+				ROOT = { set_country_flag = PRC_OCS_dockyards_changed }
+			}
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_dockyard_5_added }
+					dockyard < 20
+					free_building_slots = { building = dockyard size > 0 include_locked = no }
+				}
+				add_building_construction = { type = dockyard level = 1 }
+				set_state_flag = PRC_OCS_dockyard_5_added
+				ROOT = { set_country_flag = PRC_OCS_dockyards_changed }
+			}
+
+			if = {
+				limit = {
+					OR = {
+						dockyard > 19
+						AND = {
+							has_state_flag = PRC_OCS_dockyard_1_added
+							has_state_flag = PRC_OCS_dockyard_2_added
+							has_state_flag = PRC_OCS_dockyard_3_added
+							has_state_flag = PRC_OCS_dockyard_4_added
+							has_state_flag = PRC_OCS_dockyard_5_added
+						}
+					}
+				}
+				set_state_flag = PRC_OCS_coastal_dockyards_queued
+			}
+		}
+	}
+
+	if = {
+		limit = { has_country_flag = PRC_OCS_dockyards_changed }
+		country_event = { id = PRC_OCS.5 }
+		clr_country_flag = PRC_OCS_dockyards_changed
+	}
+}
+
+# v2.0c: Universal civilian-industry program; owned and controlled states only.
+PRC_OCS_queue_civilian_industry_effect = {
+	clr_country_flag = PRC_OCS_civilian_industry_changed
+
+	every_owned_state = {
+		limit = { is_controlled_by = ROOT }
+		PRC_OCS_unlock_current_state_shared_slots_effect = yes
+		PRC_OCS_refresh_industrial_priority_flags_effect = yes
+
+		# Priority 4: civilian factories may only consume slots after the two
+		# petrochemical targets and, in coastal states, the dockyard target.
+		if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_civilian_industry_queued }
+				has_state_flag = PRC_OCS_refinery_target_complete
+				has_state_flag = PRC_OCS_fuel_silo_target_complete
+				OR = {
+					NOT = { is_coastal = yes }
+					has_state_flag = PRC_OCS_coastal_dockyards_queued
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_civilian_factory_1_added }
+					industrial_complex < 20
+					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+				}
+				add_building_construction = { type = industrial_complex level = 1 }
+				set_state_flag = PRC_OCS_civilian_factory_1_added
+				ROOT = { set_country_flag = PRC_OCS_civilian_industry_changed }
+			}
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_civilian_factory_2_added }
+					industrial_complex < 20
+					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+				}
+				add_building_construction = { type = industrial_complex level = 1 }
+				set_state_flag = PRC_OCS_civilian_factory_2_added
+				ROOT = { set_country_flag = PRC_OCS_civilian_industry_changed }
+			}
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_civilian_factory_3_added }
+					industrial_complex < 20
+					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+				}
+				add_building_construction = { type = industrial_complex level = 1 }
+				set_state_flag = PRC_OCS_civilian_factory_3_added
+				ROOT = { set_country_flag = PRC_OCS_civilian_industry_changed }
+			}
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_civilian_factory_4_added }
+					industrial_complex < 20
+					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+				}
+				add_building_construction = { type = industrial_complex level = 1 }
+				set_state_flag = PRC_OCS_civilian_factory_4_added
+				ROOT = { set_country_flag = PRC_OCS_civilian_industry_changed }
+			}
+			if = {
+				limit = {
+					NOT = { has_state_flag = PRC_OCS_civilian_factory_5_added }
+					industrial_complex < 20
+					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+				}
+				add_building_construction = { type = industrial_complex level = 1 }
+				set_state_flag = PRC_OCS_civilian_factory_5_added
+				ROOT = { set_country_flag = PRC_OCS_civilian_industry_changed }
+			}
+
+			if = {
+				limit = {
+					OR = {
+						industrial_complex > 19
+						AND = {
+							has_state_flag = PRC_OCS_civilian_factory_1_added
+							has_state_flag = PRC_OCS_civilian_factory_2_added
+							has_state_flag = PRC_OCS_civilian_factory_3_added
+							has_state_flag = PRC_OCS_civilian_factory_4_added
+							has_state_flag = PRC_OCS_civilian_factory_5_added
+						}
+					}
+				}
+				set_state_flag = PRC_OCS_civilian_industry_queued
+			}
+		}
+	}
+
+	if = {
+		limit = { has_country_flag = PRC_OCS_civilian_industry_changed }
+		country_event = { id = PRC_OCS.6 }
+		clr_country_flag = PRC_OCS_civilian_industry_changed
+	}
+}

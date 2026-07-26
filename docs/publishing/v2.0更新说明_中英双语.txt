@@ -1,0 +1,39 @@
+【v2.0 通用版更新】
+
+本次更新将《开局一键爽玩》从PRC专用MOD升级为全国家通用版。
+
+主要更新：
+- 所有非AI玩家国家均可使用全部通用决议；
+- 通用化全部科技、学说、军种精神、装备设计、装备库存和8个师级编制；
+- PRC保留原有顾问、军事高层、军工机构特质、中国型号和民兵编制；
+- 初始化不再自动改动现有部队；新增独立的全军卫戍化决议；
+- 新增一次性组建24个满编主力纯步师的决议；
+- 全国建设改为只处理本国拥有且控制的州，不再建设临时占领区；
+- 将交通与基地、防御工事拆分为独立决议；
+- 炼油厂、储油罐、沿海船坞和民用工业现已全国家通用；
+- PRC继续保留23座固定补给站和双电网，其他国家不建设电网；
+- 修复沿海船坞效果的重复limit脚本错误；
+- 非PRC国家的通用编制改用普通步兵，不再使用民兵。
+
+当前稳定版本：v2.0
+
+--------------------
+
+[v2.0 Universal Update]
+
+One-Click Sandbox Start has been upgraded from a PRC-only mod to a universal mod for all player-controlled countries.
+
+Major changes:
+- All non-AI player countries can use the universal decisions;
+- Technologies, doctrines, officer corps spirits, equipment designs, stockpiles and 8 division templates are now universal;
+- The PRC retains its advisers, military leadership, preset MIO traits, Chinese equipment names and militia templates;
+- Initialization no longer changes existing divisions automatically; army-wide conversion to the Garrison template is now optional;
+- Added a one-time decision to raise 24 fully manned, equipped and trained Main Infantry Divisions;
+- Nationwide construction now affects only states owned and controlled by the current country, excluding temporary occupations;
+- Transport and bases are separated from national fortification construction;
+- Refineries, fuel silos, coastal dockyards and civilian industry are now universal;
+- The PRC retains 23 preset supply hubs and its dual power-grid system; other countries receive no power grids;
+- Fixed the duplicate-limit scripting error in the coastal dockyard effect;
+- Non-PRC universal templates now use regular infantry instead of militia.
+
+Current stable version: v2.0

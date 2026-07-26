@@ -1,0 +1,88 @@
+﻿[h1]开局一键爽玩 | One-Click Sandbox Start[/h1]
+
+不想每次开局都重复输入控制台、研究科技学说、重建设计编制，再逐州安排工业建设？
+
+本MOD现已升级为[b]全国家通用版[/b]。所有非AI玩家国家均可使用10项零成本决议快速完成沙盒开局；PRC继续保留顾问、军工机构、中国型号、固定补给站和双电网等专属内容。
+
+[h2]一键开局[/h2]
+[list]
+[*]完成全部科技、预设陆海空及特种部队学说，并配置8项军种精神
+[*]强化本国现有军工机构，创建22个装备设计和8个师级编制
+[*]补充政治点、指挥点、三军经验，以及37类陆空装备和预设变体各100万件
+[*]初始化不会修改现有部队；可另行将全军改编为“卫戍部队”
+[*]可一次性组建24个满人力、满装备、满训练度的“主力纯步师”
+[*]可重复补充战略装备库存
+[/list]
+
+PRC使用中国型号和民兵编制，并保留顾问、军事高层及4家军工机构预设特质；其他国家使用中性型号和普通步兵编制。
+
+[h2]全国建设[/h2]
+
+建设仅作用于[b]本国拥有且控制的州[/b]，不会处理临时占领区。
+
+[list]
+[*]共享建设槽解锁至原版上限25
+[*]基础设施5级、机场10级、已有港口10级
+[*]州防空5级，各省陆地与海岸要塞10级
+[*]各州炼油厂和储油罐分别补足至3座
+[*]沿海州最多5座船坞，各州最多5座民用工厂
+[*]PRC额外保留23座补给站和双电网；其他国家不建设电网
+[/list]
+
+工业优先级：
+[b]炼油厂 → 储油罐 → 船坞 → 民工 → PRC电网[/b]
+
+未完成项目会保留进度，可在取得新领土或释放槽位后再次执行。
+
+[h2]兼容性[/h2]
+[list]
+[*]适配 Hearts of Iron IV 1.19.2 / 1.19.*，按全DLC环境制作
+[*]支持傀儡国、内战国家和动态国家
+[*]全部决议0政治点，AI不会执行
+[*]不覆盖原版国策、国家历史文件或事件链
+[*]不自动建设铁路，不创建舰船设计或舰队
+[/list]
+
+[b]当前稳定版本：v2.0[/b]
+
+[h1]English Description[/h1]
+
+This mod is now [b]universal for all non-AI player countries[/b]. Ten zero-cost decisions provide a complete sandbox setup, while the PRC retains additional advisers, MIO paths, Chinese designs, preset supply hubs and its dual power-grid system.
+
+[h2]One-Click Setup[/h2]
+[list]
+[*]Completes all technologies, preset Army, Navy, Air and Special Forces doctrines, plus 8 officer corps spirits
+[*]Strengthens existing national MIOs and creates 22 equipment designs and 8 division templates
+[*]Adds political power, command power, military experience, and one million units of 37 supported land and air equipment entries
+[*]Does not alter existing divisions; army-wide conversion to the Garrison template is optional
+[*]Can raise 24 fully manned, equipped and trained Main Infantry Divisions
+[*]Provides repeatable strategic stockpile resupply
+[/list]
+
+The PRC keeps Chinese designs, militia templates, advisers, military leadership and four preset MIO paths. Other countries receive neutral designs and regular-infantry templates.
+
+[h2]Nationwide Construction[/h2]
+
+Construction affects only states [b]owned and controlled by the current country[/b], excluding temporary occupations.
+
+[list]
+[*]Shared building slots unlocked to the vanilla cap of 25
+[*]Infrastructure 5, air bases 10 and existing naval bases 10
+[*]State AA 5 and land/coastal forts 10
+[*]Synthetic refineries and fuel silos raised to 3 per state
+[*]Up to 5 dockyards per coastal state and 5 civilian factories per state
+[*]The PRC retains 23 preset supply hubs and its dual grid; other countries receive no power grids
+[/list]
+
+Priority: [b]Refineries → Fuel Silos → Dockyards → Civilian Factories → PRC Power Grid[/b]
+
+[h2]Compatibility[/h2]
+[list]
+[*]Built for Hearts of Iron IV 1.19.2 / 1.19.* with all DLC
+[*]Supports puppets, civil-war tags and dynamic countries
+[*]All decisions cost 0 political power and are never used by the AI
+[*]Does not replace vanilla focus trees, country history files or event chains
+[*]Does not automatically build railways or create ship designs and fleets
+[/list]
+
+[b]Current stable version: v2.0[/b]

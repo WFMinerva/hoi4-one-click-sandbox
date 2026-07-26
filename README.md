@@ -1,4 +1,48 @@
-# One-Click Sandbox Start
+# 开局一键爽玩 / One-Click Sandbox Start
+
+[中文](#中文说明) · [English](#english)
+
+## 中文说明
+
+这是一个面向《钢铁雄心 IV》单人沙盒玩法的开局准备框架。它把大量重复的开局操作整合成仅限玩家使用的决议，方便快速配置科技、学说、装备、编制、库存和建设。
+
+- 当前稳定基准：v2.0
+- 支持游戏版本：Hearts of Iron IV 1.19.*
+- 推荐环境：全 DLC、单人游戏
+- AI：不能执行本 MOD 的决议
+- Steam 工坊：[3767025052](https://steamcommunity.com/sharedfiles/filedetails/?id=3767025052)
+
+### 安装
+
+1. 运行 `python tools/build_release.py` 生成发布 ZIP。
+2. 解压后，将 `OCS_one_click_sandbox_start_v2_0` 文件夹和同名 `.mod` 文件放入 Hearts of Iron IV 的 `mod` 目录。
+3. 在 Paradox Launcher 中启用本 MOD。
+
+### 开发与验证
+
+```powershell
+python tools/validate_mod.py
+python tools/build_release.py
+```
+
+MOD 源码位于仓库根目录；启动器描述文件模板位于 `packaging/`；维护、基准和发布文档位于 `docs/`。修改前请先阅读：
+
+- `docs/maintenance/README_FIRST.md`
+- `docs/maintenance/功能与版本交接单.md`
+- `docs/maintenance/技术实现与通用化边界.md`
+- `docs/maintenance/测试状态与回归清单.md`
+
+v2.0 是当前唯一稳定基准。`PRC_OCS_` 前缀属于稳定键名，不应仅为重命名而修改。
+
+### 许可证
+
+除 `thumbnail.png` 外，源码、脚本、本地化文本和文档采用 [GNU GPL v3.0 only](LICENSE)。版权人为 HAPPYADONG。
+
+`thumbnail.png` 不适用 GPL，版权归 HAPPYADONG 所有并保留全部权利。发布衍生版本前必须删除或替换该图片。完整范围见 [NOTICE.md](NOTICE.md)。
+
+---
+
+## English
 
 [![Steam Workshop](https://img.shields.io/badge/Steam-Workshop-1b2838?logo=steam&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=3767025052)
 
@@ -114,3 +158,11 @@ Other Hearts of Iron IV projects:
 This project started as a personal quality-of-life tool to reduce repetitive setup work during testing and sandbox campaigns.
 
 It has gradually evolved into a more comprehensive framework for creating customized Hearts of Iron IV starting experiences.
+
+---
+
+## License
+
+Except for `thumbnail.png`, the source code, scripts, localisation, and documentation are licensed under [GNU GPL v3.0 only](LICENSE), Copyright (C) 2026 HAPPYADONG.
+
+`thumbnail.png` is excluded from the GPL license. Copyright (C) 2026 HAPPYADONG. All rights reserved. It must be removed or replaced before distributing a derivative release. See [NOTICE.md](NOTICE.md).
