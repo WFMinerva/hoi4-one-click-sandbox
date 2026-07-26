@@ -1,0 +1,6 @@
+PRC_OCS_category = {
+	icon = GFX_decision_category_generic_economy
+	allowed = { is_ai = no }
+	visible = { is_ai = no }
+	priority = 1000
+}

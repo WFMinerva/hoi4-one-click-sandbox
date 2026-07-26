@@ -1,0 +1,33 @@
+# Generated release artifacts
+/dist/
+/*.zip
+/*.7z
+/*.rar
+/*_SHA256.txt
+
+# Hearts of Iron IV runtime files
+*.log
+*.sav
+*.hoi4
+/logs/
+/crashes/
+/dumps/
+
+# Local development and editor files
+.idea/
+.vscode/
+*.code-workspace
+*.tmp
+*.bak
+*.swp
+Thumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS
+.DS_Store

@@ -1,0 +1,196 @@
+PRC_OCS_category = {
+	# v2.0c construction-system test: every decision is available to human
+	# countries. Construction operates only in states both owned and controlled
+	# by the current country. PRC-only power grids and fixed supply hubs remain
+	# isolated behind the PRC/original-PRC branch.
+	PRC_OCS_initialize = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_initialized }
+		}
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_initialize_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_resupply = {
+		icon = generic_industry
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = PRC_OCS_initialized
+		}
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_resupply_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_reorganize_army = {
+		icon = generic_army_support
+		cost = 0
+		days_remove = 1
+		visible = {
+			is_ai = no
+			has_country_flag = PRC_OCS_initialized
+			NOT = { has_country_flag = PRC_OCS_army_reorganized }
+		}
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_reorganize_all_divisions_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_unlock_all_shared_slots = {
+		icon = generic_construction
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_owned_state = {
+				is_controlled_by = ROOT
+				NOT = { has_state_flag = PRC_OCS_all_shared_slots_unlocked }
+			}
+		}
+		complete_effect = { PRC_OCS_unlock_all_shared_slots_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_queue_transport_and_bases = {
+		icon = generic_construction
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			OR = {
+				any_owned_state = {
+					is_controlled_by = ROOT
+					NOT = { has_state_flag = PRC_OCS_transport_bases_queued }
+				}
+				AND = {
+					OR = {
+						tag = PRC
+						original_tag = PRC
+					}
+					any_owned_state = {
+						is_controlled_by = ROOT
+						NOT = { has_state_flag = PRC_OCS_power_grid_queued }
+					}
+				}
+			}
+		}
+		complete_effect = { PRC_OCS_queue_transport_and_bases_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_queue_national_defenses = {
+		icon = generic_fortification
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_owned_state = {
+				is_controlled_by = ROOT
+				NOT = { has_state_flag = PRC_OCS_national_defenses_queued }
+			}
+		}
+		complete_effect = { PRC_OCS_queue_national_defenses_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_queue_petrochemical_program = {
+		icon = generic_industry
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_owned_state = {
+				is_controlled_by = ROOT
+				OR = {
+					NOT = { has_state_flag = PRC_OCS_refinery_target_complete }
+					NOT = { has_state_flag = PRC_OCS_fuel_silo_target_complete }
+				}
+			}
+		}
+		complete_effect = { PRC_OCS_queue_petrochemical_program_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_queue_coastal_dockyards = {
+		icon = generic_naval
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_owned_state = {
+				is_controlled_by = ROOT
+				is_coastal = yes
+				NOT = { has_state_flag = PRC_OCS_coastal_dockyards_queued }
+				has_state_flag = PRC_OCS_refinery_target_complete
+				has_state_flag = PRC_OCS_fuel_silo_target_complete
+			}
+		}
+		complete_effect = { PRC_OCS_queue_coastal_dockyards_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_queue_civilian_industry = {
+		icon = generic_industry
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_owned_state = {
+				is_controlled_by = ROOT
+				NOT = { has_state_flag = PRC_OCS_civilian_industry_queued }
+				has_state_flag = PRC_OCS_refinery_target_complete
+				has_state_flag = PRC_OCS_fuel_silo_target_complete
+				OR = {
+					NOT = { is_coastal = yes }
+					has_state_flag = PRC_OCS_coastal_dockyards_queued
+				}
+			}
+		}
+		complete_effect = { PRC_OCS_queue_civilian_industry_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+	PRC_OCS_raise_24_infantry_divisions = {
+		icon = generic_army_support
+		cost = 0
+		days_remove = 1
+		visible = {
+			is_ai = no
+			has_country_flag = PRC_OCS_initialized
+			NOT = { has_country_flag = PRC_OCS_24_infantry_divisions_raised }
+		}
+		available = {
+			is_ai = no
+			any_owned_state = { is_controlled_by = ROOT }
+		}
+		complete_effect = { PRC_OCS_raise_24_infantry_divisions_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+}

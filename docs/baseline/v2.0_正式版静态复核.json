@@ -1,0 +1,66 @@
+{
+  "passed": 12,
+  "total": 12,
+  "checks": [
+    {
+      "name": "common/decisions/PRC_OCS_decisions.txt braces balanced",
+      "passed": true,
+      "detail": "0"
+    },
+    {
+      "name": "common/scripted_effects/PRC_OCS_effects.txt braces balanced",
+      "passed": true,
+      "detail": "0"
+    },
+    {
+      "name": "events/PRC_OCS_events.txt braces balanced",
+      "passed": true,
+      "detail": "0"
+    },
+    {
+      "name": "descriptor version 2.0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "outer path updated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Chinese category test wording removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "English category test wording removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "24 division decision retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "24 spawns retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "duplicate limit error pattern absent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "thumbnail retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no v2.0c2 user-facing strings in mod",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

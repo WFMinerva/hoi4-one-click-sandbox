@@ -1,0 +1,26 @@
+{
+  "version": "2.0 stable",
+  "base": "v2.0c2 user-verified stable candidate",
+  "status": "user explicitly confirmed stable",
+  "release_cleanup_only": true,
+  "gameplay_changes_from_v2.0c2": [],
+  "release_changes": [
+    "Changed descriptor version and display name from v2.0c2 test to v2.0 stable.",
+    "Renamed install folder and outer .mod file to v2.0 release names.",
+    "Removed test wording from Chinese and English decision-category localisation.",
+    "Updated one source comment from v2.0c2 to v2.0.",
+    "No gameplay effects, decisions, templates, variants, events or building logic changed."
+  ],
+  "stable_features": [
+    "Universal human-player initialization: all technologies, preset doctrines and service spirits.",
+    "22 equipment designs, 8 division templates and massive stockpiles for all human countries.",
+    "Generic templates use infantry; PRC templates retain militia where designed.",
+    "Optional full-army conversion to Garrison Force.",
+    "One-time decision raising 24 full-strength Main Infantry Divisions.",
+    "Universal building slots, petrochemical, dockyard, civilian industry, transport/base and defense decisions.",
+    "Construction limited to states both owned and controlled by the current country.",
+    "PRC-only advisers, configured MIO traits, Chinese model names, 23 supply hubs and dual grids.",
+    "No grids or Chinese supply hubs for other countries.",
+    "AI weight zero and zero political-power decision costs."
+  ]
+}
