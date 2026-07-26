@@ -1,0 +1,473 @@
+PRC_OCS_create_templates_effect = {
+	division_template = {
+		name = "集团军总部"
+		priority = 1
+		is_army_hq = yes
+		template_counter = 121
+		regiments = {
+			hq_paratrooper = { x = 0 y = 0 }
+			hq_paratrooper = { x = 0 y = 1 }
+			hq_paratrooper = { x = 0 y = 2 }
+			hq_paratrooper = { x = 0 y = 3 }
+		}
+		support = {
+			hq_support_company = { x = 0 y = 0 }
+			hq_naval_liaison = { x = 0 y = 1 }
+			hq_air_liaison = { x = 0 y = 2 }
+			hq_specops = { x = 0 y = 3 }
+		}
+	}
+	division_template = {
+		name = "主力伞兵师"
+		division_names_group = CHI_PAR_01
+		priority = 1
+		regiments = {
+			paratrooper = { x = 0 y = 0 }
+			paratrooper = { x = 0 y = 1 }
+			paratrooper = { x = 0 y = 2 }
+			paratrooper = { x = 1 y = 0 }
+			paratrooper = { x = 1 y = 1 }
+			paratrooper = { x = 1 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+		}
+		support = {
+			engineer = { x = 0 y = 0 }
+			recon = { x = 0 y = 1 }
+			field_hospital = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			military_police = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力纯步师"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 0 y = 3 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			militia = { x = 1 y = 3 }
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+			militia = { x = 2 y = 2 }
+			militia = { x = 2 y = 3 }
+			militia = { x = 3 y = 0 }
+			militia = { x = 3 y = 1 }
+			militia = { x = 3 y = 2 }
+			militia = { x = 4 y = 0 }
+			militia = { x = 4 y = 1 }
+			militia = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			field_guns = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "装甲师"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			mechanized = { x = 0 y = 0 }
+			mechanized = { x = 0 y = 1 }
+			mechanized = { x = 0 y = 2 }
+			mechanized = { x = 0 y = 3 }
+			mechanized = { x = 1 y = 0 }
+			mechanized = { x = 1 y = 1 }
+			mechanized = { x = 1 y = 2 }
+			mechanized = { x = 1 y = 3 }
+			medium_sp_artillery_brigade = { x = 2 y = 0 }
+			medium_sp_artillery_brigade = { x = 2 y = 1 }
+			medium_sp_artillery_brigade = { x = 2 y = 2 }
+			medium_sp_artillery_brigade = { x = 2 y = 3 }
+			medium_sp_artillery_brigade = { x = 3 y = 0 }
+			medium_sp_artillery_brigade = { x = 3 y = 1 }
+			medium_sp_artillery_brigade = { x = 3 y = 2 }
+			medium_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			mot_fire_support = { x = 0 y = 0 }
+			mot_fire_support = { x = 1 y = 0 }
+			medium_tank_destroyer_support = { x = 2 y = 0 }
+			medium_tank_destroyer_support = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "守家小马"
+		priority = 0
+		regiments = {
+			cavalry = { x = 0 y = 0 }
+		}
+		support = {
+			military_police = { x = 0 y = 0 }
+		}
+	}
+	division_template = {
+		name = "海军陆战队装甲师"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			amphibious_medium_armor = { x = 0 y = 0 }
+			amphibious_medium_armor = { x = 0 y = 1 }
+			amphibious_medium_armor = { x = 0 y = 2 }
+			amphibious_medium_armor = { x = 0 y = 3 }
+			amphibious_medium_armor = { x = 1 y = 0 }
+			amphibious_medium_armor = { x = 1 y = 1 }
+			amphibious_medium_armor = { x = 1 y = 2 }
+			amphibious_medium_armor = { x = 1 y = 3 }
+			amphibious_mechanized = { x = 2 y = 0 }
+			amphibious_mechanized = { x = 2 y = 1 }
+			amphibious_mechanized = { x = 2 y = 2 }
+			amphibious_mechanized = { x = 2 y = 3 }
+			amphibious_mechanized = { x = 3 y = 0 }
+			amphibious_mechanized = { x = 3 y = 1 }
+			amphibious_mechanized = { x = 3 y = 2 }
+			amphibious_mechanized = { x = 4 y = 0 }
+			amphibious_mechanized = { x = 4 y = 1 }
+			amphibious_mechanized = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			medium_tank_destroyer_support = { x = 0 y = 0 }
+			medium_tank_destroyer_support = { x = 1 y = 0 }
+			mot_fire_support = { x = 2 y = 0 }
+			mot_fire_support = { x = 3 y = 0 }
+			mot_fire_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			pioneer_support = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			signal_company = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "卫戍部队"
+		division_names_group = PRC_MEC_01
+		priority = 1
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+			militia = { x = 2 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			field_hospital = { x = 0 y = 3 }
+			logistics_company = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力步坦师"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 0 y = 3 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			militia = { x = 1 y = 3 }
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+			militia = { x = 2 y = 2 }
+			militia = { x = 2 y = 3 }
+			militia = { x = 3 y = 0 }
+			militia = { x = 3 y = 1 }
+			militia = { x = 3 y = 2 }
+			light_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+}
+
+# v2.0b generic division templates. Country-specific division name groups are
+# intentionally omitted; initialization creates templates without changing units.
+PRC_OCS_create_generic_templates_effect = {
+	division_template = {
+		name = "集团军总部"
+		priority = 1
+		is_army_hq = yes
+		template_counter = 121
+		regiments = {
+			hq_paratrooper = { x = 0 y = 0 }
+			hq_paratrooper = { x = 0 y = 1 }
+			hq_paratrooper = { x = 0 y = 2 }
+			hq_paratrooper = { x = 0 y = 3 }
+		}
+		support = {
+			hq_support_company = { x = 0 y = 0 }
+			hq_naval_liaison = { x = 0 y = 1 }
+			hq_air_liaison = { x = 0 y = 2 }
+			hq_specops = { x = 0 y = 3 }
+		}
+	}
+	division_template = {
+		name = "主力伞兵师"
+		priority = 1
+		regiments = {
+			paratrooper = { x = 0 y = 0 }
+			paratrooper = { x = 0 y = 1 }
+			paratrooper = { x = 0 y = 2 }
+			paratrooper = { x = 1 y = 0 }
+			paratrooper = { x = 1 y = 1 }
+			paratrooper = { x = 1 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+		}
+		support = {
+			engineer = { x = 0 y = 0 }
+			recon = { x = 0 y = 1 }
+			field_hospital = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			military_police = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力纯步师"
+		priority = 2
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 0 y = 3 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 1 y = 3 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			infantry = { x = 2 y = 3 }
+			infantry = { x = 3 y = 0 }
+			infantry = { x = 3 y = 1 }
+			infantry = { x = 3 y = 2 }
+			infantry = { x = 4 y = 0 }
+			infantry = { x = 4 y = 1 }
+			infantry = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			field_guns = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "装甲师"
+		priority = 2
+		regiments = {
+			mechanized = { x = 0 y = 0 }
+			mechanized = { x = 0 y = 1 }
+			mechanized = { x = 0 y = 2 }
+			mechanized = { x = 0 y = 3 }
+			mechanized = { x = 1 y = 0 }
+			mechanized = { x = 1 y = 1 }
+			mechanized = { x = 1 y = 2 }
+			mechanized = { x = 1 y = 3 }
+			medium_sp_artillery_brigade = { x = 2 y = 0 }
+			medium_sp_artillery_brigade = { x = 2 y = 1 }
+			medium_sp_artillery_brigade = { x = 2 y = 2 }
+			medium_sp_artillery_brigade = { x = 2 y = 3 }
+			medium_sp_artillery_brigade = { x = 3 y = 0 }
+			medium_sp_artillery_brigade = { x = 3 y = 1 }
+			medium_sp_artillery_brigade = { x = 3 y = 2 }
+			medium_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			mot_fire_support = { x = 0 y = 0 }
+			mot_fire_support = { x = 1 y = 0 }
+			medium_tank_destroyer_support = { x = 2 y = 0 }
+			medium_tank_destroyer_support = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "轻型卫戍骑兵"
+		priority = 0
+		regiments = {
+			cavalry = { x = 0 y = 0 }
+		}
+		support = {
+			military_police = { x = 0 y = 0 }
+		}
+	}
+	division_template = {
+		name = "海军陆战队装甲师"
+		priority = 2
+		regiments = {
+			amphibious_medium_armor = { x = 0 y = 0 }
+			amphibious_medium_armor = { x = 0 y = 1 }
+			amphibious_medium_armor = { x = 0 y = 2 }
+			amphibious_medium_armor = { x = 0 y = 3 }
+			amphibious_medium_armor = { x = 1 y = 0 }
+			amphibious_medium_armor = { x = 1 y = 1 }
+			amphibious_medium_armor = { x = 1 y = 2 }
+			amphibious_medium_armor = { x = 1 y = 3 }
+			amphibious_mechanized = { x = 2 y = 0 }
+			amphibious_mechanized = { x = 2 y = 1 }
+			amphibious_mechanized = { x = 2 y = 2 }
+			amphibious_mechanized = { x = 2 y = 3 }
+			amphibious_mechanized = { x = 3 y = 0 }
+			amphibious_mechanized = { x = 3 y = 1 }
+			amphibious_mechanized = { x = 3 y = 2 }
+			amphibious_mechanized = { x = 4 y = 0 }
+			amphibious_mechanized = { x = 4 y = 1 }
+			amphibious_mechanized = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			medium_tank_destroyer_support = { x = 0 y = 0 }
+			medium_tank_destroyer_support = { x = 1 y = 0 }
+			mot_fire_support = { x = 2 y = 0 }
+			mot_fire_support = { x = 3 y = 0 }
+			mot_fire_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			pioneer_support = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			signal_company = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "卫戍部队"
+		priority = 1
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			field_hospital = { x = 0 y = 3 }
+			logistics_company = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力步坦师"
+		priority = 2
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 0 y = 3 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 1 y = 3 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			infantry = { x = 2 y = 3 }
+			infantry = { x = 3 y = 0 }
+			infantry = { x = 3 y = 1 }
+			infantry = { x = 3 y = 2 }
+			light_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+}

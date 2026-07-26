@@ -1,0 +1,827 @@
+PRC_OCS_create_variants_effect = {
+	create_equipment_variant = {
+		name = "反坦克装甲车"
+		type = armored_car_at_equipment
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_first_automative_works_organization
+		upgrades = {
+			tank_gun_upgrade = 5
+			tank_armor_upgrade = 5
+			ac_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "机械化装备 III型"
+		type = mechanized_equipment_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_first_automative_works_organization
+		upgrades = {
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+			mech_cost_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "43式重型坦克"
+		type = heavy_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = sloped_armor
+			special_type_slot_3 = smoke_launchers
+			special_type_slot_4 = easy_maintenance
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 12
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "43式重型自行反坦克炮"
+		type = heavy_tank_destroyer_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_super_heavy_cannon
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = sloped_armor
+			special_type_slot_3 = smoke_launchers
+			special_type_slot_4 = extra_ammo_storage
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 8
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "43式重型自行加榴炮"
+		type = heavy_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_howitzer
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = secondary_turret_hmg
+			special_type_slot_4 = secondary_turret_hmg
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "中型两栖坦克 III型"
+		type = medium_tank_amphibious_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = easy_maintenance
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = amphibious_drive
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 7
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+	create_equipment_variant = {
+		name = "43式喷火预备"
+		type = medium_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_high_velocity_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = stabilizer
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 5
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "43式自行反坦克炮"
+		type = medium_tank_destroyer_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = wet_ammo_storage
+			special_type_slot_2 = armor_skirts
+			special_type_slot_3 = sloped_armor
+			special_type_slot_4 = easy_maintenance
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 13
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "41式自行加榴炮"
+		type = light_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = additional_machine_guns
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_light_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "59式"
+		type = modern_tank_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = wet_ammo_storage
+			special_type_slot_3 = easy_maintenance
+			special_type_slot_4 = sloped_armor
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_cast_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 15
+			tank_nsb_armor_upgrade = 13
+		}
+	}
+	create_equipment_variant = {
+		name = "现代自行反坦克炮"
+		type = modern_tank_destroyer_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = easy_maintenance
+			special_type_slot_3 = auto_loader
+			special_type_slot_4 = wet_ammo_storage
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 10
+		}
+	}
+	create_equipment_variant = {
+		name = "PLZ 59"
+		type = modern_tank_artillery_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = additional_machine_guns
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "基础型两栖坦克"
+		type = amphibious_tank_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = armor_skirts
+			special_type_slot_3 = wet_ammo_storage
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 6
+		}
+	}
+	create_equipment_variant = {
+		name = "先进型海上巡逻机"
+		type = large_plane_maritime_patrol_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			fixed_auxiliary_weapon_slot_1 = torpedo_mounting_3
+			engine_type_slot = engine_4_6x
+			special_type_slot_1 = cannon_defense_turret_2x
+			special_type_slot_2 = hmg_defense_turret_2x
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting_3
+			special_type_slot_3 = fuel_tanks_large
+			special_type_slot_4 = flying_boat_large
+		}
+	}
+	create_equipment_variant = {
+		name = "H-7"
+		type = large_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = large_bomb_bay
+			fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+			engine_type_slot = engine_4_6x
+			special_type_slot_1 = fuel_tanks_large
+			special_type_slot_2 = fuel_tanks_large
+			fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+			special_type_slot_3 = bomb_sights_2
+			fixed_auxiliary_weapon_slot_3 = large_bomb_bay
+			special_type_slot_4 = radio_navigation_2
+			fixed_auxiliary_weapon_slot_4 = large_bomb_bay
+			special_type_slot_5 = fuel_tanks_large
+		}
+	}
+	create_equipment_variant = {
+		name = "先进型侦察机"
+		type = medium_plane_scout_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = recon_camera
+			engine_type_slot = engine_4_4x
+			special_type_slot_1 = fuel_tanks_medium
+			special_type_slot_2 = fuel_tanks_medium
+			special_type_slot_3 = demining_coil
+			special_type_slot_4 = flying_boat_medium
+			special_type_slot_5 = fuel_tanks_medium
+		}
+	}
+	create_equipment_variant = {
+		name = "舰载海军轰炸机 III型"
+		type = cv_small_plane_naval_bomber_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "P12"
+		type = small_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = aircraft_cannon_2_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_1x
+			special_type_slot_1 = armor_plate_small
+			special_type_slot_2 = cannon_defense_turret
+			special_type_slot_3 = armor_plate_small
+			special_type_slot_4 = self_sealing_fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "24型"
+		type = small_plane_cas_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = tank_buster_2
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = dive_brakes_small
+			special_type_slot_2 = armor_plate_small
+			fixed_auxiliary_weapon_slot_2 = rocket_rails
+			special_type_slot_3 = self_sealing_fuel_tanks_small
+			fixed_auxiliary_weapon_slot_3 = rocket_rails
+			special_type_slot_4 = drop_tanks
+		}
+	}
+	create_equipment_variant = {
+		name = "Y-3"
+		type = small_plane_naval_bomber_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			engine_type_slot = engine_4_1x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+			special_type_slot_4 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "43式自行加榴炮"
+		type = medium_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_howitzer
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "41式"
+		type = light_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_light_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 10
+		}
+	}
+}
+
+# v2.0b generic equipment designs. These preserve the verified v1.2c modules
+# and upgrades but remove PRC-specific design teams and use neutral names.
+PRC_OCS_create_generic_variants_effect = {
+	create_equipment_variant = {
+		name = "通用反坦克装甲车"
+		type = armored_car_at_equipment
+		parent_version = 0
+		allow_without_tech = yes
+		upgrades = {
+			tank_gun_upgrade = 5
+			tank_armor_upgrade = 5
+			ac_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "通用机械化装备 III型"
+		type = mechanized_equipment_3
+		parent_version = 0
+		allow_without_tech = yes
+		upgrades = {
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+			mech_cost_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "先进重型坦克"
+		type = heavy_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = sloped_armor
+			special_type_slot_3 = smoke_launchers
+			special_type_slot_4 = easy_maintenance
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 12
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "先进重型自行反坦克炮"
+		type = heavy_tank_destroyer_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_super_heavy_cannon
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = sloped_armor
+			special_type_slot_3 = smoke_launchers
+			special_type_slot_4 = extra_ammo_storage
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 8
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "先进重型自行火炮"
+		type = heavy_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_howitzer
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = secondary_turret_hmg
+			special_type_slot_4 = secondary_turret_hmg
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "先进中型两栖坦克"
+		type = medium_tank_amphibious_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = easy_maintenance
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = amphibious_drive
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 7
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+	create_equipment_variant = {
+		name = "先进中型坦克"
+		type = medium_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_high_velocity_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = stabilizer
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 5
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "先进中型自行反坦克炮"
+		type = medium_tank_destroyer_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = wet_ammo_storage
+			special_type_slot_2 = armor_skirts
+			special_type_slot_3 = sloped_armor
+			special_type_slot_4 = easy_maintenance
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 13
+			tank_nsb_armor_upgrade = 12
+		}
+	}
+	create_equipment_variant = {
+		name = "先进轻型自行火炮"
+		type = light_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = additional_machine_guns
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_light_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "现代主战坦克"
+		type = modern_tank_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = wet_ammo_storage
+			special_type_slot_3 = easy_maintenance
+			special_type_slot_4 = sloped_armor
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_cast_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 15
+			tank_nsb_armor_upgrade = 13
+		}
+	}
+	create_equipment_variant = {
+		name = "现代自行反坦克炮"
+		type = modern_tank_destroyer_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_cannon_3
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = easy_maintenance
+			special_type_slot_3 = auto_loader
+			special_type_slot_4 = wet_ammo_storage
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 10
+		}
+	}
+	create_equipment_variant = {
+		name = "现代自行火炮"
+		type = modern_tank_artillery_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = additional_machine_guns
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_modern_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "现代两栖坦克"
+		type = amphibious_tank_chassis_1
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = armor_skirts
+			special_type_slot_3 = wet_ammo_storage
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 6
+		}
+	}
+	create_equipment_variant = {
+		name = "先进海上巡逻机"
+		type = large_plane_maritime_patrol_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			fixed_auxiliary_weapon_slot_1 = torpedo_mounting_3
+			engine_type_slot = engine_4_6x
+			special_type_slot_1 = cannon_defense_turret_2x
+			special_type_slot_2 = hmg_defense_turret_2x
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting_3
+			special_type_slot_3 = fuel_tanks_large
+			special_type_slot_4 = flying_boat_large
+		}
+	}
+	create_equipment_variant = {
+		name = "先进战略轰炸机"
+		type = large_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = large_bomb_bay
+			fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+			engine_type_slot = engine_4_6x
+			special_type_slot_1 = fuel_tanks_large
+			special_type_slot_2 = fuel_tanks_large
+			fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+			special_type_slot_3 = bomb_sights_2
+			fixed_auxiliary_weapon_slot_3 = large_bomb_bay
+			special_type_slot_4 = radio_navigation_2
+			fixed_auxiliary_weapon_slot_4 = large_bomb_bay
+			special_type_slot_5 = fuel_tanks_large
+		}
+	}
+	create_equipment_variant = {
+		name = "先进侦察机"
+		type = medium_plane_scout_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = recon_camera
+			engine_type_slot = engine_4_4x
+			special_type_slot_1 = fuel_tanks_medium
+			special_type_slot_2 = fuel_tanks_medium
+			special_type_slot_3 = demining_coil
+			special_type_slot_4 = flying_boat_medium
+			special_type_slot_5 = fuel_tanks_medium
+		}
+	}
+	create_equipment_variant = {
+		name = "先进舰载海军轰炸机"
+		type = cv_small_plane_naval_bomber_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "先进战斗机"
+		type = small_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = aircraft_cannon_2_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_1x
+			special_type_slot_1 = armor_plate_small
+			special_type_slot_2 = cannon_defense_turret
+			special_type_slot_3 = armor_plate_small
+			special_type_slot_4 = self_sealing_fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "先进近距支援机"
+		type = small_plane_cas_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = tank_buster_2
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = dive_brakes_small
+			special_type_slot_2 = armor_plate_small
+			fixed_auxiliary_weapon_slot_2 = rocket_rails
+			special_type_slot_3 = self_sealing_fuel_tanks_small
+			fixed_auxiliary_weapon_slot_3 = rocket_rails
+			special_type_slot_4 = drop_tanks
+		}
+	}
+	create_equipment_variant = {
+		name = "先进海军轰炸机"
+		type = small_plane_naval_bomber_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = torpedo_mounting_3
+			engine_type_slot = engine_4_1x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = fuel_tanks_small
+			special_type_slot_4 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "先进中型自行火炮"
+		type = medium_tank_artillery_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_heavy_howitzer
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+	create_equipment_variant = {
+		name = "先进轻型坦克"
+		type = light_tank_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = additional_machine_guns
+			turret_type_slot = tank_light_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 10
+		}
+	}
+}

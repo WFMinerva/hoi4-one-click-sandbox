@@ -1,0 +1,345 @@
+PRC_OCS_add_generic_stockpile_effect = {
+	add_equipment_to_stockpile = {
+		type = explosive_ammo_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = rocket_artillery_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = anti_air_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = anti_tank_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = transport_plane_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_rocket_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_car_at_equipment
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = amphibious_mechanized_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = mechanized_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = support_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_car_at_equipment
+		amount = 1000000
+		variant_name = "通用反坦克装甲车"
+	}
+	add_equipment_to_stockpile = {
+		type = mechanized_equipment_3
+		amount = 1000000
+		variant_name = "通用机械化装备 III型"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_chassis_3
+		amount = 1000000
+		variant_name = "先进重型坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_destroyer_chassis_3
+		amount = 1000000
+		variant_name = "先进重型自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "先进重型自行火炮"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_amphibious_chassis_3
+		amount = 1000000
+		variant_name = "先进中型两栖坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_chassis_3
+		amount = 1000000
+		variant_name = "先进中型坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_destroyer_chassis_3
+		amount = 1000000
+		variant_name = "先进中型自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "先进轻型自行火炮"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_chassis_1
+		amount = 1000000
+		variant_name = "现代主战坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_destroyer_chassis_1
+		amount = 1000000
+		variant_name = "现代自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_artillery_chassis_1
+		amount = 1000000
+		variant_name = "现代自行火炮"
+	}
+	add_equipment_to_stockpile = {
+		type = amphibious_tank_chassis_1
+		amount = 1000000
+		variant_name = "现代两栖坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = large_plane_maritime_patrol_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进海上巡逻机"
+	}
+	add_equipment_to_stockpile = {
+		type = large_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进战略轰炸机"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_plane_scout_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进侦察机"
+	}
+	add_equipment_to_stockpile = {
+		type = cv_small_plane_naval_bomber_airframe_3
+		amount = 1000000
+		variant_name = "先进舰载海军轰炸机"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进战斗机"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_cas_airframe_3
+		amount = 1000000
+		variant_name = "先进近距支援机"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_naval_bomber_airframe_3
+		amount = 1000000
+		variant_name = "先进海军轰炸机"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "先进中型自行火炮"
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_chassis_3
+		amount = 1000000
+		variant_name = "先进轻型坦克"
+	}
+}
+
+PRC_OCS_add_stockpile_effect = {
+	add_equipment_to_stockpile = {
+		type = explosive_ammo_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = rocket_artillery_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = anti_air_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = anti_tank_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = transport_plane_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = motorized_rocket_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_car_at_equipment
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = amphibious_mechanized_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = mechanized_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = support_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_2
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = train_equipment_3
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_car_at_equipment
+		amount = 1000000
+		variant_name = "反坦克装甲车"
+	}
+	add_equipment_to_stockpile = {
+		type = mechanized_equipment_3
+		amount = 1000000
+		variant_name = "机械化装备 III型"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_chassis_3
+		amount = 1000000
+		variant_name = "43式重型坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_destroyer_chassis_3
+		amount = 1000000
+		variant_name = "43式重型自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "43式重型自行加榴炮"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_amphibious_chassis_3
+		amount = 1000000
+		variant_name = "中型两栖坦克 III型"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_chassis_3
+		amount = 1000000
+		variant_name = "43式喷火预备"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_destroyer_chassis_3
+		amount = 1000000
+		variant_name = "43式自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "41式自行加榴炮"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_chassis_1
+		amount = 1000000
+		variant_name = "59式"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_destroyer_chassis_1
+		amount = 1000000
+		variant_name = "现代自行反坦克炮"
+	}
+	add_equipment_to_stockpile = {
+		type = modern_tank_artillery_chassis_1
+		amount = 1000000
+		variant_name = "PLZ 59"
+	}
+	add_equipment_to_stockpile = {
+		type = amphibious_tank_chassis_1
+		amount = 1000000
+		variant_name = "基础型两栖坦克"
+	}
+	add_equipment_to_stockpile = {
+		type = large_plane_maritime_patrol_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进型海上巡逻机"
+	}
+	add_equipment_to_stockpile = {
+		type = large_plane_airframe_3
+		amount = 1000000
+		variant_name = "H-7"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_plane_scout_plane_airframe_3
+		amount = 1000000
+		variant_name = "先进型侦察机"
+	}
+	add_equipment_to_stockpile = {
+		type = cv_small_plane_naval_bomber_airframe_3
+		amount = 1000000
+		variant_name = "舰载海军轰炸机 III型"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_airframe_3
+		amount = 1000000
+		variant_name = "P12"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_cas_airframe_3
+		amount = 1000000
+		variant_name = "24型"
+	}
+	add_equipment_to_stockpile = {
+		type = small_plane_naval_bomber_airframe_3
+		amount = 1000000
+		variant_name = "Y-3"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_artillery_chassis_3
+		amount = 1000000
+		variant_name = "43式自行加榴炮"
+	}
+	add_equipment_to_stockpile = {
+		type = light_tank_chassis_3
+		amount = 1000000
+		variant_name = "41式"
+	}
+}

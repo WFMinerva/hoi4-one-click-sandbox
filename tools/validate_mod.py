@@ -26,17 +26,26 @@ REQUIRED_FILES = (
     OUTER_MOD,
 )
 
-SCRIPT_FILES = (
-    ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt",
-    ROOT / "common" / "decisions" / "categories" / "PRC_OCS_categories.txt",
-    ROOT / "common" / "scripted_effects" / "PRC_OCS_effects.txt",
-    ROOT / "events" / "PRC_OCS_events.txt",
+# v2.0 — Script files are discovered automatically so split effect files
+# are always included. Core script directories plus events/ are scanned.
+SCRIPT_DIRS = (
+    ROOT / "common",
+    ROOT / "events",
 )
 
 LOCALISATION_FILES = (
     ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml",
     ROOT / "localisation" / "simp_chinese" / "PRC_OCS_l_simp_chinese.yml",
 )
+
+
+def collect_script_files() -> list[Path]:
+    """Gather every .txt file under SCRIPT_DIRS."""
+    files: list[Path] = []
+    for directory in SCRIPT_DIRS:
+        if directory.is_dir():
+            files.extend(sorted(directory.rglob("*.txt")))
+    return files
 
 
 def read_utf8(path: Path) -> str:
@@ -115,7 +124,14 @@ def main() -> int:
         if marker not in notice:
             errors.append(f"NOTICE.md 缺少许可证范围标记：{marker}")
 
-    for path in SCRIPT_FILES:
+    script_files = collect_script_files()
+
+    for path in script_files:
+        raw = path.read_bytes()
+        if raw.startswith(b"\xef\xbb\xbf"):
+            errors.append(
+                f"{path.relative_to(ROOT)} 包含 UTF-8 BOM — 运行 python tools/fix_bom.py 修复"
+            )
         try:
             text = read_utf8(path)
         except UnicodeDecodeError as exc:
@@ -142,7 +158,7 @@ def main() -> int:
         except UnicodeDecodeError as exc:
             errors.append(f"{path.relative_to(ROOT)} 不是有效 UTF-8：{exc}")
 
-    combined_scripts = "\n".join(read_utf8(path) for path in SCRIPT_FILES)
+    combined_scripts = "\n".join(read_utf8(path) for path in script_files)
     required_markers = {
         "玩家限制 is_ai = no": "is_ai = no",
         "PRC 原始国家识别": "original_tag = PRC",
@@ -163,7 +179,7 @@ def main() -> int:
         print(f"\n静态检查失败：{len(errors)} 个错误，{len(warnings)} 个警告。")
         return 1
 
-    print(f"静态检查通过：{len(REQUIRED_FILES)} 个必需文件，{len(warnings)} 个警告。")
+    print(f"静态检查通过：{len(REQUIRED_FILES)} 个必需文件，{len(script_files)} 个脚本文件，{len(warnings)} 个警告。")
     return 0
 
 
