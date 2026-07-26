@@ -193,4 +193,157 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	# v2.1 special research projects (Gotterdammerung). Re-runnable: each
+	# decision stays available while any project of its specialization tree
+	# is incomplete, so cross-tree parents finished by other decisions can
+	# be picked up by clicking again.
+	PRC_OCS_complete_air_special_projects = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+		}
+		available = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+			OR = {
+				NOT = { is_special_project_completed = sp:sp_air_bouncing_bomb }
+				NOT = { is_special_project_completed = sp:sp_air_earthshaker_bomb }
+				NOT = { is_special_project_completed = sp:sp_air_intercontinental_bomber }
+				NOT = { is_special_project_completed = sp:sp_air_mothership_aircraft }
+				NOT = { is_special_project_completed = sp:sp_air_jet_engine }
+				NOT = { is_special_project_completed = sp:sp_air_axial_jet_engine }
+				NOT = { is_special_project_completed = sp:sp_air_supersonic_jet }
+				NOT = { is_special_project_completed = sp:sp_air_helicopter }
+				NOT = { is_special_project_completed = sp:sp_air_radar }
+			}
+		}
+		complete_effect = { PRC_OCS_complete_air_special_projects_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_complete_land_special_projects = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+		}
+		available = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+			OR = {
+				NOT = { is_special_project_completed = sp:sp_land_flamethrower_tank }
+				NOT = { is_special_project_completed = sp:sp_land_military_engineering_vehicles }
+				NOT = { is_special_project_completed = sp:sp_land_land_cruiser }
+				NOT = { is_special_project_completed = sp:sp_land_super_heavy_howitzer }
+				NOT = { is_special_project_completed = sp:sp_land_self_propelled_super_heavy_howitzer }
+				NOT = { is_special_project_completed = sp:sp_land_super_heavy_railway_gun }
+				NOT = { is_special_project_completed = sp:sp_land_multi_charge_large_caliber_gun }
+				NOT = { is_special_project_completed = sp:sp_land_stronghold_network }
+				NOT = { is_special_project_completed = sp:sp_land_large_caliber_kinetic_energy_sabot }
+			}
+		}
+		complete_effect = { PRC_OCS_complete_land_special_projects_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_complete_naval_special_projects = {
+		icon = generic_naval
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+		}
+		available = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+			OR = {
+				NOT = { is_special_project_completed = sp:sp_naval_cruiser_submarine }
+				NOT = { is_special_project_completed = sp:sp_naval_fleet_submarine }
+				NOT = { is_special_project_completed = sp:sp_naval_nuclear_submarine }
+				NOT = { is_special_project_completed = sp:sp_naval_rocket_launching_submarine }
+				NOT = { is_special_project_completed = sp:sp_naval_nuclear_missile_submarine }
+				NOT = { is_special_project_completed = sp:sp_naval_nuclear_torpedo }
+				NOT = { is_special_project_completed = sp:sp_naval_midget_submarine }
+				NOT = { is_special_project_completed = sp:sp_naval_aip_engine }
+				NOT = { is_special_project_completed = sp:sp_naval_anechoic_tiles }
+				NOT = { is_special_project_completed = sp:sp_naval_submarine_carrier }
+				NOT = { is_special_project_completed = sp:sp_naval_torpedo_cruiser }
+				NOT = { is_special_project_completed = sp:sp_naval_super_heavy_battleship }
+				NOT = { is_special_project_completed = sp:sp_naval_modern_battleship }
+				NOT = { is_special_project_completed = sp:sp_naval_modern_carrier }
+				NOT = { is_special_project_completed = sp:sp_naval_ice_carrier }
+				NOT = { is_special_project_completed = sp:sp_naval_underway_replenishment }
+				NOT = { is_special_project_completed = sp:sp_naval_proximity_fuze }
+				NOT = { is_special_project_completed = sp:sp_naval_support_ships }
+				NOT = { is_special_project_completed = sp:sp_naval_escort_carrier }
+			}
+		}
+		complete_effect = { PRC_OCS_complete_naval_special_projects_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_complete_nuclear_special_projects = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+		}
+		available = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+			OR = {
+				NOT = { is_special_project_completed = sp:sp_nuclear_reactor }
+				NOT = { is_special_project_completed = sp:sp_commercial_nuclear_reactor }
+				NOT = { is_special_project_completed = sp:sp_nuclear_engines }
+				NOT = { is_special_project_completed = sp:sp_nuclear_bomb }
+				NOT = { is_special_project_completed = sp:sp_thermo_nuclear_bomb }
+				NOT = { is_special_project_completed = sp:sp_nuclear_warheads }
+			}
+		}
+		complete_effect = { PRC_OCS_complete_nuclear_special_projects_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_complete_rocket_special_projects = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+		}
+		available = {
+			is_ai = no
+			has_dlc = "Gotterdammerung"
+			OR = {
+				NOT = { is_special_project_completed = sp:sp_rockets_flying_bomb }
+				NOT = { is_special_project_completed = sp:sp_rockets_ballistic_missile }
+				NOT = { is_special_project_completed = sp:sp_rockets_medium_range_ballistic_missile }
+				NOT = { is_special_project_completed = sp:sp_rockets_long_range_ballistic_missile }
+				NOT = { is_special_project_completed = sp:sp_rockets_ground_to_air_missile }
+				NOT = { is_special_project_completed = sp:sp_rocket_interceptor }
+			}
+		}
+		complete_effect = { PRC_OCS_complete_rocket_special_projects_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
 }

@@ -16,6 +16,8 @@
 #                                        refresh_industrial_priority_flags,
 #                                        build_target_supply_nodes
 #   PRC_OCS_military_effects.txt      — raise_24_infantry_divisions, reorganize_all_divisions
+#   PRC_OCS_special_project_effects.txt — complete air/land/naval/nuclear/rocket
+#                                        special project trees (Gotterdammerung)
 #
 # The engine loads every .txt file under common/scripted_effects/ automatically,
 # so resolution of effect names across files works without any extra wiring.

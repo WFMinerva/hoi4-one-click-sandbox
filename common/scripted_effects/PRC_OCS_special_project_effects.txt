@@ -1,0 +1,366 @@
+# v2.1 — Special research project decisions (requires Gotterdammerung).
+# Each effect instantly completes one specialization tree via the vanilla
+# complete_special_project effect, so every project's own project_output
+# (technologies, equipment unlocks, module unlocks, free nuclear bombs)
+# fires exactly as if the project had been researched normally.
+#
+# Projects are listed parent-first because special_project_parent chains
+# span the tree. Cross-tree parents exist (naval needs sp_nuclear_engines
+# and sp_rockets_ballistic_missile; nuclear warheads need the MRBMs; the
+# LRBM needs nuclear warheads), so the decisions are re-runnable: if a
+# project is skipped because a cross-tree parent is not completed yet,
+# running the other groups and clicking again finishes the rest.
+#
+# Each effect also grants that tree's derived technologies — vanilla techs
+# flagged is_special_project_tech = yes whose allow block requires the
+# completed project — plus the hidden "pick" techs normally granted by
+# mutually exclusive prototype-reward choices (naval support/repair/
+# replenishment variants, centrifugal isotope separation). Instant
+# completion never fires iteration rewards, so all choices are granted.
+#
+# Script completion has no facility state, so facility_state_effects are
+# skipped by the engine. The only loss worth compensating is the free
+# level-1 nuclear reactor from sp_nuclear_reactor, granted in the capital.
+# Prototype iteration rewards (scientist XP, progress boosts, setback
+# events) are tied to running real iterations and never fire here.
+
+PRC_OCS_complete_air_special_projects_effect = {
+	if = {
+		limit = { has_dlc = "Gotterdammerung" }
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_bouncing_bomb } }
+			complete_special_project = sp:sp_air_bouncing_bomb
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_earthshaker_bomb } }
+			complete_special_project = sp:sp_air_earthshaker_bomb
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_intercontinental_bomber } }
+			complete_special_project = sp:sp_air_intercontinental_bomber
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_mothership_aircraft } }
+			complete_special_project = sp:sp_air_mothership_aircraft
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_jet_engine } }
+			complete_special_project = sp:sp_air_jet_engine
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_axial_jet_engine } }
+			complete_special_project = sp:sp_air_axial_jet_engine
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_supersonic_jet } }
+			complete_special_project = sp:sp_air_supersonic_jet
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_helicopter } }
+			complete_special_project = sp:sp_air_helicopter
+		}
+		# The radar project belongs to the air specialization.
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_air_radar } }
+			complete_special_project = sp:sp_air_radar
+		}
+		# Derived technologies unlocked by these projects (vanilla
+		# is_special_project_tech = yes entries gated on them).
+		set_technology = {
+			# sp_air_mothership_aircraft
+			aerial_hangars = 1
+			miniature_fighters = 1
+			reinforced_wings_mothership = 1
+			# sp_air_radar
+			centimetric_radar = 1
+			phased_array = 1
+			monopulse_radar = 1
+			# sp_air_jet_engine
+			jet_fighter1 = 1
+			jet_tactical_bomber1 = 1
+			sp_centrifugal_jet_tech = 1
+			# sp_air_axial_jet_engine
+			jet_fighter2 = 1
+			jet_strategic_bomber1 = 1
+			jet_tactical_bomber2 = 1
+			modern_small_airframe = 1
+			modern_medium_airframe = 1
+			modern_large_airframe = 1
+			# sp_air_helicopter
+			sp_helicopter_artillery_observers_tech = 1
+			sp_helicopter_med_evac_tech = 1
+			sp_helicopter_transport_pods_tech = 1
+			# sp_air_supersonic_jet
+			supersonic_fighter1 = 1
+		}
+		country_event = { id = PRC_OCS.12 }
+	}
+}
+
+PRC_OCS_complete_land_special_projects_effect = {
+	if = {
+		limit = { has_dlc = "Gotterdammerung" }
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_flamethrower_tank } }
+			complete_special_project = sp:sp_land_flamethrower_tank
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_military_engineering_vehicles } }
+			complete_special_project = sp:sp_land_military_engineering_vehicles
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_land_cruiser } }
+			complete_special_project = sp:sp_land_land_cruiser
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_super_heavy_howitzer } }
+			complete_special_project = sp:sp_land_super_heavy_howitzer
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_self_propelled_super_heavy_howitzer } }
+			complete_special_project = sp:sp_land_self_propelled_super_heavy_howitzer
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_super_heavy_railway_gun } }
+			complete_special_project = sp:sp_land_super_heavy_railway_gun
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_multi_charge_large_caliber_gun } }
+			complete_special_project = sp:sp_land_multi_charge_large_caliber_gun
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_stronghold_network } }
+			complete_special_project = sp:sp_land_stronghold_network
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_land_large_caliber_kinetic_energy_sabot } }
+			complete_special_project = sp:sp_land_large_caliber_kinetic_energy_sabot
+		}
+		# Derived technologies unlocked by these projects.
+		set_technology = {
+			# sp_land_flamethrower_tank
+			sp_armored_advanced_flamethrower_tech = 1
+			# sp_land_military_engineering_vehicles
+			sp_armored_engineer_tech = 1
+			sp_armored_maintenance_tech = 1
+			sp_armored_motorized_military_police_tech = 1
+			sp_armored_signal_tech = 1
+			# sp_land_land_cruiser
+			sp_armored_lc_high_impact_obliterator_cannon_tech = 1
+			sp_armored_lc_naval_engine_conversion_tech = 1
+			sp_armored_lc_specialized_field_manuals_tech = 1
+			sp_armored_lc_transmission_improvements_tech = 1
+			sp_armored_lc_weapon_fire_control_tech = 1
+			# sp_land_self_propelled_super_heavy_howitzer
+			sp_artillery_purpose_built_gun_motor_carriages_tech = 1
+			# sp_land_super_heavy_howitzer
+			sp_artillery_rocket_assisted_projectiles_tech = 1
+			# sp_land_large_caliber_kinetic_energy_sabot
+			sp_advance_sabot_shells = 1
+		}
+		country_event = { id = PRC_OCS.12 }
+	}
+}
+
+PRC_OCS_complete_naval_special_projects_effect = {
+	if = {
+		limit = { has_dlc = "Gotterdammerung" }
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_cruiser_submarine } }
+			complete_special_project = sp:sp_naval_cruiser_submarine
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_fleet_submarine } }
+			complete_special_project = sp:sp_naval_fleet_submarine
+		}
+		# Parents: fleet submarine + sp_nuclear_engines (nuclear tree).
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_nuclear_submarine } }
+			complete_special_project = sp:sp_naval_nuclear_submarine
+		}
+		# Parents: fleet submarine + sp_rockets_ballistic_missile (rocket tree).
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_rocket_launching_submarine } }
+			complete_special_project = sp:sp_naval_rocket_launching_submarine
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_nuclear_missile_submarine } }
+			complete_special_project = sp:sp_naval_nuclear_missile_submarine
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_nuclear_torpedo } }
+			complete_special_project = sp:sp_naval_nuclear_torpedo
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_midget_submarine } }
+			complete_special_project = sp:sp_naval_midget_submarine
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_aip_engine } }
+			complete_special_project = sp:sp_naval_aip_engine
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_anechoic_tiles } }
+			complete_special_project = sp:sp_naval_anechoic_tiles
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_submarine_carrier } }
+			complete_special_project = sp:sp_naval_submarine_carrier
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_torpedo_cruiser } }
+			complete_special_project = sp:sp_naval_torpedo_cruiser
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_super_heavy_battleship } }
+			complete_special_project = sp:sp_naval_super_heavy_battleship
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_modern_battleship } }
+			complete_special_project = sp:sp_naval_modern_battleship
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_modern_carrier } }
+			complete_special_project = sp:sp_naval_modern_carrier
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_ice_carrier } }
+			complete_special_project = sp:sp_naval_ice_carrier
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_underway_replenishment } }
+			complete_special_project = sp:sp_naval_underway_replenishment
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_proximity_fuze } }
+			complete_special_project = sp:sp_naval_proximity_fuze
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_support_ships } }
+			complete_special_project = sp:sp_naval_support_ships
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_naval_escort_carrier } }
+			complete_special_project = sp:sp_naval_escort_carrier
+		}
+		# Derived technologies unlocked by these projects.
+		set_technology = {
+			# sp_naval_super_heavy_battleship
+			heavy_battleship2 = 1
+			# sp_naval_aip_engine
+			sp_aip_engine_improved_tech = 1
+			sp_aip_engine_advanced_tech = 1
+			# sp_naval_ice_carrier
+			sp_ice_composite_runawayas = 1
+			sp_refined_pykrete = 1
+			# sp_naval_support_ships
+			sp_improved_repair_ship = 1
+			sp_improved_support_ship = 1
+			# sp_naval_underway_replenishment
+			sp_multi_product_supply_ships = 1
+			sp_standard_tenshioned_replenishment_alongside_method = 1
+			# sp_naval_proximity_fuze
+			sp_shock_hardening_techniques = 1
+			sp_variable_time_fuze_shells = 1
+			# Prototype-reward choice techs (mutually exclusive in vanilla;
+			# all are granted here because iterations never run).
+			sp_naval_underway_replenishment_pick_a = 1
+			sp_naval_underway_replenishment_pick_b = 1
+			sp_naval_support_ships_pick_a = 1
+			sp_naval_support_ships_pick_b = 1
+			sp_naval_support_ships_pick_c = 1
+			sp_naval_repair_ships_pick_a = 1
+			sp_naval_repair_ships_pick_b = 1
+			sp_naval_repair_ships_pick_c = 1
+		}
+		country_event = { id = PRC_OCS.12 }
+	}
+}
+
+PRC_OCS_complete_nuclear_special_projects_effect = {
+	if = {
+		limit = { has_dlc = "Gotterdammerung" }
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_nuclear_reactor } }
+			complete_special_project = sp:sp_nuclear_reactor
+			# Script completion skips the free level-1 reactor normally built
+			# in the facility state; grant it in the capital instead.
+			capital_scope = {
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_commercial_nuclear_reactor } }
+			complete_special_project = sp:sp_commercial_nuclear_reactor
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_nuclear_engines } }
+			complete_special_project = sp:sp_nuclear_engines
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_nuclear_bomb } }
+			complete_special_project = sp:sp_nuclear_bomb
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_thermo_nuclear_bomb } }
+			complete_special_project = sp:sp_thermo_nuclear_bomb
+		}
+		# Parents: nuclear bomb + sp_rockets_medium_range_ballistic_missile.
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_nuclear_warheads } }
+			complete_special_project = sp:sp_nuclear_warheads
+		}
+		# Prototype-reward choice tech: the centrifugal option of the isotope
+		# separation reward (+50% nuclear production). Never fires here.
+		set_technology = {
+			isotope_separation_centrifugal = 1
+		}
+		country_event = { id = PRC_OCS.12 }
+	}
+}
+
+PRC_OCS_complete_rocket_special_projects_effect = {
+	if = {
+		limit = { has_dlc = "Gotterdammerung" }
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_rockets_flying_bomb } }
+			complete_special_project = sp:sp_rockets_flying_bomb
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_rockets_ballistic_missile } }
+			complete_special_project = sp:sp_rockets_ballistic_missile
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_rockets_medium_range_ballistic_missile } }
+			complete_special_project = sp:sp_rockets_medium_range_ballistic_missile
+		}
+		# Parents: MRBM + sp_nuclear_warheads (nuclear tree).
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_rockets_long_range_ballistic_missile } }
+			complete_special_project = sp:sp_rockets_long_range_ballistic_missile
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_rockets_ground_to_air_missile } }
+			complete_special_project = sp:sp_rockets_ground_to_air_missile
+		}
+		if = {
+			limit = { NOT = { is_special_project_completed = sp:sp_rocket_interceptor } }
+			complete_special_project = sp:sp_rocket_interceptor
+		}
+		# Derived technologies unlocked by these projects.
+		set_technology = {
+			# sp_rockets_flying_bomb
+			sp_rockets_improved_guidance = 1
+			sp_rockets_rocket_bomber = 1
+			sp_rockets_improved_rocket_bomber = 1
+			# sp_rocket_interceptor
+			sp_rockets_dual_chamber_rocket_engine_1 = 1
+			sp_rockets_dual_chamber_rocket_engine_2 = 1
+		}
+		country_event = { id = PRC_OCS.12 }
+	}
+}
