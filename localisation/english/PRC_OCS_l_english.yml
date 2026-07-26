@@ -1,6 +1,6 @@
 ﻿l_english:
  PRC_OCS_category:0 "One-Click Sandbox Start"
- PRC_OCS_category_desc:0 "v2.0 universal stable release. Every human-controlled country can use the technology, equipment, template, stockpile, force-raising and nationwide construction systems. Construction is restricted to states both owned and controlled by the current country. The PRC additionally retains its advisers, configured MIOs, Chinese model names, 23 fixed supply hubs and dual power grids."
+ PRC_OCS_category_desc:0 "v2.1 universal stable release. Every human-controlled country can use the technology, equipment, template, stockpile, force-raising and nationwide construction systems. Construction is restricted to states both owned and controlled by the current country. The PRC additionally retains its advisers, configured MIOs, Chinese model names, 23 fixed supply hubs and dual power grids."
  PRC_OCS_initialize:0 "Launch One-Click Sandbox Start"
  PRC_OCS_initialize_desc:0 "For every human-controlled country: completes all technologies and preset doctrines, applies the preset service spirits, boosts existing MIOs, and creates 22 equipment designs, eight division templates and a massive stockpile.\n\n§YInitialization does not alter existing divisions. Use the separate Reorganize Existing Army decision only when you deliberately want to convert the entire army. The PRC additionally retains its advisers, military leadership, four configured MIOs and Chinese model names.§!"
  PRC_OCS_resupply:0 "Replenish Strategic Equipment Stockpile"

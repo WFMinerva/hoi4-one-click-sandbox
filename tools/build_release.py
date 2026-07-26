@@ -61,8 +61,8 @@ def main() -> int:
         return validation.returncode
 
     DIST.mkdir(exist_ok=True)
-    zip_path = DIST / "开局一键爽玩_v2.0_正式版.zip"
-    hash_path = DIST / "开局一键爽玩_v2.0_正式版_SHA256.txt"
+    zip_path = DIST / "开局一键爽玩_v2.1_正式版.zip"
+    hash_path = DIST / "开局一键爽玩_v2.1_正式版_SHA256.txt"
 
     with tempfile.TemporaryDirectory(prefix="ocs_release_") as temp_name:
         staging = Path(temp_name)
