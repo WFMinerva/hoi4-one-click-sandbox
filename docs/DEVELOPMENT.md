@@ -23,7 +23,7 @@ v2.1 是当前唯一稳定基准，在 v2.0（用户实机验证通过的 v2.0c2
 python tools/validate_mod.py
 ```
 
-静态检查只能发现文件缺失、编码、描述文件、括号和部分关键约束问题，不能替代实机测试。
+静态检查只能发现文件缺失、编码、描述文件、括号和部分关键约束问题，不能替代实机测试。推送到 GitHub 后会由 CI（`.github/workflows/validate.yml`）自动再跑一遍同一检查。
 
 ## 实机回归
 
@@ -49,7 +49,7 @@ python tools/validate_mod.py
 python tools/build_release.py
 ```
 
-脚本先执行静态检查，再将源码、启动器 `.mod` 文件和 v2.0 基准文档写入 `dist/` 下的 ZIP，同时生成 SHA-256 文件。`dist/` 是生成目录，不进入 Git。
+脚本先执行静态检查，从 `descriptor.mod` 读取版本号生成发布包文件名，再将源码、启动器 `.mod` 文件和 `docs/baseline/` 下当期版本的基准文档写入 `dist/` 下的 ZIP，同时生成 SHA-256 文件。`dist/` 是生成目录，不进入 Git。发新正式版前记得在 `docs/baseline/` 补上当期版本的基准文档，否则发布包会缺少基准文档（脚本只警告不拦截）。
 
 新版本应同步更新：
 

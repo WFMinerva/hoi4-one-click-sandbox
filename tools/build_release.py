@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import re
 import shutil
 import subprocess
 import sys
@@ -27,12 +28,30 @@ MOD_ITEMS = (
     "NOTICE.md",
 )
 
-BASELINE_DOCS = (
-    "README_v2.0_正式版.md",
-    "v2.0_正式版实施清单.json",
-    "v2.0_正式版静态复核.json",
-    "v2.0_正式版静态复核.md",
-)
+
+def mod_version() -> str:
+    """Read the mod version from descriptor.mod (single source of truth)."""
+    text = (ROOT / "descriptor.mod").read_text(encoding="utf-8-sig")
+    match = re.search(r'(?m)^\s*version\s*=\s*"([^"]+)"', text)
+    if not match:
+        raise SystemExit("无法从 descriptor.mod 读取 version 字段")
+    return match.group(1)
+
+
+def baseline_docs(version: str) -> list[Path]:
+    """Baseline documents for the current version, selected by filename.
+
+    Files under docs/baseline are named with their version (e.g.
+    README_v2.1_正式版.md), so only the current version's documents are
+    bundled into the release ZIP. Missing documents are a warning, not an
+    error — but a release should normally add them first.
+    """
+    directory = ROOT / "docs" / "baseline"
+    if not directory.is_dir():
+        return []
+    return sorted(
+        path for path in directory.glob(f"*v{version}_*") if path.is_file()
+    )
 
 
 def sha256(path: Path) -> str:
@@ -61,8 +80,13 @@ def main() -> int:
         return validation.returncode
 
     DIST.mkdir(exist_ok=True)
-    zip_path = DIST / "开局一键爽玩_v2.1_正式版.zip"
-    hash_path = DIST / "开局一键爽玩_v2.1_正式版_SHA256.txt"
+    version = mod_version()
+    zip_path = DIST / f"开局一键爽玩_v{version}_正式版.zip"
+    hash_path = DIST / f"开局一键爽玩_v{version}_正式版_SHA256.txt"
+
+    docs = baseline_docs(version)
+    if not docs:
+        print(f"WARNING: docs/baseline 中没有 v{version} 基准文档，发布包将不含基准文档。")
 
     with tempfile.TemporaryDirectory(prefix="ocs_release_") as temp_name:
         staging = Path(temp_name)
@@ -78,9 +102,8 @@ def main() -> int:
         copy_item(ROOT / "LICENSE", staging / "LICENSE")
         copy_item(ROOT / "NOTICE.md", staging / "NOTICE.md")
 
-        baseline = ROOT / "docs" / "baseline"
-        for name in BASELINE_DOCS:
-            copy_item(baseline / name, staging / name)
+        for path in docs:
+            copy_item(path, staging / path.name)
 
         manifest_path = staging / "MANIFEST_SHA256.csv"
         files = sorted(

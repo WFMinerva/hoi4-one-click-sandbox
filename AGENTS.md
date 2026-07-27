@@ -15,7 +15,7 @@
 
 - 当前唯一稳定基准：**v2.1**（git 标签 `v2.1`），在 v2.0 通用版之上新增五类特殊科研项目一键完成决议（需《Gotterdammerung》DLC）。
 - v2.1 已由维护者**实机验证通过并上传 Steam 工坊**（2026-07，维护者口头确认）。
-- `dist/` 下 v2.0/v2.1 正式版 zip 及 v2.1 测试包的 SHA-256 均已验证通过。
+- `dist/` 下 v2.0/v2.1 正式版 zip 及 v2.1 测试包的 SHA-256 均已验证通过。（v2.1 发布包于 2026-07-27 重建过一次：包内基准文档由误装的 v2.0 文档修正为 v2.1 文档，SHA 已重新生成。）
 - 历史基准：v1.2c（PRC 专用）、v2.0（通用化，git 标签 `v2.0`）。v2.0c 因重复 `limit` 语法错误作废，禁止复用；不得退回 v2.0/v2.0c/v2.0b/v1.2c 覆盖正式线。
 
 ## 三、当前待办（按优先级）
@@ -26,8 +26,7 @@
    - 运行 `python tools/validate_mod.py` 静态检查通过；
    - 实机回归并保存 `error.log` / `game.log` / `setup.log` / 非空 `text.log` 及截图（覆盖面见 `docs/maintenance/测试状态与回归清单.md`）；
    - 重新运行 `python tools/build_release.py` 生成发布包，并用 `sha256sum -c` 核对 `dist/` 校验文件。
-2. **下次发版时**：修正 `tools/build_release.py` 的 `BASELINE_DOCS`——目前仍把 v2.0 基准文档打进发布 zip（v2.1 zip 即如此），应换成当期版本的基准文档。
-3. **可选**：补做多国扩大回归（PRC、英国、美国/苏联、无海岸小国、傀儡国），清单见 `docs/maintenance/测试状态与回归清单.md`。
+2. **可选**：补做多国扩大回归（PRC、英国、美国/苏联、无海岸小国、傀儡国），清单见 `docs/maintenance/测试状态与回归清单.md`。
 
 ## 四、目录地图
 
@@ -39,11 +38,13 @@
 | `descriptor.mod` | MOD 内描述文件（版本号等） | 发版时更新；必须与 `packaging/` 的 .mod 文件保持一致（静态检查强制） |
 | `packaging/OCS_one_click_sandbox_start_v2_0.mod` | 启动器外层 .mod 模板 | 发版时更新；文件名含 v2_0 是安装目录约定，**不要改文件名** |
 | `tools/validate_mod.py` | 静态检查（必需文件、编码、描述文件一致性、花括号、关键约束标记） | 可扩展检查项，勿放松现有检查 |
-| `tools/build_release.py` | 构建 `dist/` 发布 zip + SHA-256 + 内嵌 MANIFEST_SHA256.csv | 可改；注意 `BASELINE_DOCS` 已知滞留 v2.0 文档（见待办 2） |
+| `tools/build_release.py` | 构建 `dist/` 发布 zip + SHA-256 + 内嵌 MANIFEST_SHA256.csv；版本号从 `descriptor.mod` 读取，基准文档按版本号从 `docs/baseline/` 自动挑选 | 可改 |
 | `tools/fix_bom.py` | 去除脚本文件误加的 UTF-8 BOM | 按需运行 |
+| `.gitattributes` | 统一文本文件 LF 行尾、二进制不转换 | 勿删；新增文件类型时补充规则 |
+| `.github/workflows/validate.yml` | CI：push/PR 自动运行 `validate_mod.py` | 可随检查项演进 |
 | `docs/DEVELOPMENT.md` | 开发与发布流程（构建、回归、工坊上传、许可证边界） | 流程变化时更新 |
 | `docs/maintenance/` | 交接文档四份（入口、功能与版本、技术实现、测试状态） | 状态变化时必须同步更新 |
-| `docs/baseline/` | v2.0 正式版基准文档四件 | **勿动**：被 `build_release.py` 按文件名硬编码打进发布 zip |
+| `docs/baseline/` | 各正式版基准文档（文件名含版本号，如 `README_v2.1_正式版.md`）；构建发布包时按当前版本号自动挑选打进 zip | 可新增当期版本文档；勿重命名历史文件 |
 | `docs/publishing/` | 工坊/Paradox Mods 发布文案（v2.0 历史 + v2.1 当前） | 发版时新增当期版本文案，旧版标注历史保留 |
 | `dist/` | 构建产物（zip + SHA-256） | **生成目录，不进 Git**；只由 `build_release.py` 生成，不手工编辑 |
 | `CHANGELOG.md` | 正式版本玩家可见变化 | 每个正式版本追加 |
