@@ -77,7 +77,8 @@ F:\steamcmd\steamcmd.exe +login <Steam用户名> +workshop_build_item F:\steamcm
 steamcmd 注意事项：
 
 - 始终更新已有物品 `3767025052`，不要新建工坊条目，否则订阅数被分流。
-- steamcmd 只更新内容和 changenote，**不更新工坊页面的标题和简介**——简介需在工坊网页手动更新（文案在 `docs/publishing/`）。
+- steamcmd 更新内容、预览图和 changenote；在 VDF 中加入 `title`/`description` 字段可一并更新工坊标题和简介（不加则保持现状；标签仍需网页手动编辑）。简介文案在 `docs/publishing/`。
+- VDF 中的路径用正斜杠（`F:/steamcmd/...`）：反斜杠序列如 `\t` 会被 VDF 解析器转义成制表符，导致 `Failed to read preview file`。
 - 密码和 Steam Guard 验证码不要写进命令行，按提示交互输入；命令中的用户名直接写账号名本身（PowerShell 里 `<` `>` 是保留符号，带尖括号会报语法错误）。
 - 上传成功标志：输出 `Committing update...Success`，或 steamcmd 日志中 `Upload finished ... : OK`。
 - 与项目无关的通用流程指南在 `F:\steamcmd\STEAMCMD_工坊上传指南.md`（仓库外）。
