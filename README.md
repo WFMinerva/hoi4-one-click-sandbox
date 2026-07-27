@@ -27,6 +27,7 @@ python tools/build_release.py
 
 MOD 源码位于仓库根目录；启动器描述文件模板位于 `packaging/`；维护、基准和发布文档位于 `docs/`。修改前请先阅读：
 
+- `AGENTS.md`（总入口：状态快照、待办、目录地图与通用规则）
 - `docs/maintenance/README_FIRST.md`
 - `docs/maintenance/功能与版本交接单.md`
 - `docs/maintenance/技术实现与通用化边界.md`

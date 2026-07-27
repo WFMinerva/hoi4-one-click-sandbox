@@ -1,8 +1,6 @@
-【存档标注：本文件为 v2.0 历史文案（2026-07 前使用），当前版本文案见同目录 v2.1 文件；复制到 Paradox Mods 前请删除本行。】
-
 开局一键爽玩 | One-Click Sandbox Start
 
-本MOD现已升级为全国家通用版。所有非AI玩家国家均可通过10项零成本决议快速完成沙盒开局；PRC在通用功能之外，继续保留顾问、军工机构、中国型号、固定补给站和双电网等完整定制内容。
+本MOD为全国家通用版。所有非AI玩家国家均可通过零成本决议快速完成沙盒开局，并可一键完成五类特殊科研项目（需《Gotterdammerung》DLC）；PRC在通用功能之外，继续保留顾问、军工机构、中国型号、固定补给站和双电网等完整定制内容。
 
 【一键开局】
 完成全部科技、预设陆海空及特种部队学说和8项军种精神；强化本国现有军工机构；创建22个装备设计和8个师级编制；补充政治点、指挥点、三军经验，以及37类陆空装备和预设变体各100万件。
@@ -11,18 +9,21 @@
 
 PRC保留中国型号、民兵编制、顾问、军事高层及4家军工机构预设特质；其他国家使用中性型号和普通步兵编制。
 
+【特殊科研项目（需《Gotterdammerung》DLC）】
+按空军（含雷达）、陆军、海军、核能、火箭五类专精一键完成全部49个特殊科研项目，完成奖励（科技、装备与模块解锁、首枚免费核弹）与正常研究完全一致。直接授予57项衍生科技与原型迭代互斥选择科技（含离心法同位素分离、海军补给与维修方案）。核能决议在首都额外补建1座核反应堆。决议可重复执行：跨专精前置被跳过时，完成其他专精后再次点击即可补齐；全部完成后决议自动消失。
+
 【全国建设】
 所有建设仅作用于本国拥有且控制的州，不处理临时占领区。可将共享建设槽解锁至25；补足5级基础设施、10级机场、10级已有港口、5级防空、10级陆地与海岸要塞；各州炼油厂和储油罐分别补足至3座；沿海州最多建设5座船坞，各州最多建设5座民用工厂。
 
 PRC额外保留23座预设补给站和双电网；其他国家不建设电网。工业建设优先级为：炼油厂 → 储油罐 → 船坞 → 民用工厂 → PRC电网。未完成项目可在释放槽位后再次执行。
 
-适配 Hearts of Iron IV 1.19.2 / 1.19.*，按全DLC环境制作。全部决议0政治点，AI不会执行。支持傀儡国、内战国家和动态国家。不覆盖原版国策、国家历史文件或事件链；不自动建设铁路，不创建舰船设计或舰队。
+适配 Hearts of Iron IV 1.19.2 / 1.19.*，按全DLC环境制作（特殊科研决议需《Gotterdammerung》）。全部决议0政治点，AI不会执行。支持傀儡国、内战国家和动态国家。不覆盖原版国策、国家历史文件或事件链；不自动建设铁路，不创建舰船设计或舰队。
 
-当前稳定版本：v2.0
+当前稳定版本：v2.1
 
 --------------------
 
-One-Click Sandbox Start is now universal for all non-AI player-controlled countries. Ten zero-cost decisions provide a complete sandbox setup. The PRC keeps additional custom advisers, MIO paths, Chinese equipment names, preset supply hubs and its dual power-grid system.
+One-Click Sandbox Start is universal for all non-AI player-controlled countries. Zero-cost decisions provide a complete sandbox setup, including one-click completion of all five special research project trees (requires the Gotterdammerung DLC). The PRC keeps additional custom advisers, MIO paths, Chinese equipment names, preset supply hubs and its dual power-grid system.
 
 ONE-CLICK SETUP
 Completes all technologies, preset Army, Navy, Air and Special Forces doctrines, and 8 officer corps spirits; strengthens existing national MIOs; creates 22 equipment designs and 8 division templates; adds political power, command power, military experience, and one million units of 37 supported land and air equipment entries.
@@ -31,11 +32,14 @@ Initialization does not alter existing divisions. A separate decision can conver
 
 The PRC retains Chinese designs, militia templates, advisers, military leadership and preset traits for four MIOs. Other countries receive neutral equipment names and regular-infantry templates.
 
+SPECIAL RESEARCH PROJECTS (requires Gotterdammerung)
+Completes all 49 special research projects across five specializations — Air (including radar), Land, Naval, Nuclear and Rocket — with completion rewards (technologies, equipment and module unlocks, the first free nuclear bomb) identical to normal research. Directly grants 57 derived and prototype-choice technologies (including centrifugal isotope separation and the naval support/repair variants). The nuclear decision additionally builds one nuclear reactor in the capital. Decisions are re-runnable: projects skipped over missing cross-tree prerequisites can be picked up by clicking again, and each decision disappears once its tree is complete.
+
 NATIONWIDE CONSTRUCTION
 Construction affects only states owned and controlled by the current country, excluding temporarily occupied enemy territory. It can unlock shared building slots to 25; raise infrastructure to 5, air bases and existing naval bases to 10, state AA to 5, and land/coastal forts to 10; raise synthetic refineries and fuel silos to 3 per state; and build up to 5 dockyards in each coastal state and 5 civilian factories in each state.
 
 The PRC additionally retains 23 preset supply hubs and its dual power-grid system. Other countries receive no power grids. Priority is: Refineries → Fuel Silos → Dockyards → Civilian Factories → PRC Power Grid. Unfinished projects can be retried after freeing building slots.
 
-Built for Hearts of Iron IV 1.19.2 / 1.19.* with all DLC. All decisions cost 0 political power and are never used by the AI. Puppets, civil-war tags and dynamic countries are supported. The mod does not replace vanilla focus trees, country history files or event chains, and does not automatically build railways or create ship designs and fleets.
+Built for Hearts of Iron IV 1.19.2 / 1.19.* with all DLC (special project decisions require Gotterdammerung). All decisions cost 0 political power and are never used by the AI. Puppets, civil-war tags and dynamic countries are supported. The mod does not replace vanilla focus trees, country history files or event chains, and does not automatically build railways or create ship designs and fleets.
 
-Current stable version: v2.0
+Current stable version: v2.1

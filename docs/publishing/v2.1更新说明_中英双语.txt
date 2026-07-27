@@ -1,0 +1,27 @@
+【v2.1 特殊科研更新】
+
+本次更新新增特殊科研项目一键完成功能（需《Gotterdammerung》DLC）。
+
+主要更新：
+- 新增五类特殊科研项目决议：空军（含雷达）、陆军、海军、核能、火箭，一键完成全部 49 个特殊科研项目；
+- 各项目完成奖励（科技、装备与模块解锁、首枚免费核弹）与正常研究完全一致；
+- 直接授予 57 项衍生科技与选择科技：原版需项目完成后另行研究的衍生科技，以及原型迭代随机二选一/三选一的隐藏科技（含离心法同位素分离、海军补给与维修方案），全部直接获得；
+- 核能决议在首都额外补建 1 座核反应堆，替代正常研究时设施州自动获得的反应堆；
+- 决议可重复执行：跨专精前置项目被跳过时，完成其他专精后再次点击即可补齐；全部完成后决议自动消失。
+
+当前稳定版本：v2.1
+
+--------------------
+
+[v2.1 Special Projects Update]
+
+This update adds one-click completion of special research projects (requires the Gotterdammerung DLC).
+
+Major changes:
+- Added five special project decisions — Air (including radar), Land, Naval, Nuclear and Rocket — completing all 49 special research projects in one click;
+- Every project's completion rewards (technologies, equipment and module unlocks, the first free nuclear bomb) are exactly the same as normal research;
+- 57 derived and choice technologies are granted directly: vanilla derived technologies that normally require separate research after project completion, plus the hidden technologies normally chosen at random from mutually exclusive prototype-iteration rewards (including centrifugal isotope separation and the naval support/repair variants);
+- The nuclear decision additionally builds one nuclear reactor in the capital, replacing the reactor normally granted automatically in the facility state;
+- Decisions are re-runnable: if a project is skipped because a cross-specialization prerequisite is not yet completed, clicking again after finishing the other specializations completes the rest; each decision disappears automatically once its tree is fully completed.
+
+Current stable version: v2.1

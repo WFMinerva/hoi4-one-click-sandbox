@@ -1,10 +1,8 @@
-﻿【存档标注：本文件为 v2.0 历史文案（2026-07 前使用），当前版本文案见同目录 v2.1 文件；复制到工坊前请删除本行。】
-
 [h1]开局一键爽玩 | One-Click Sandbox Start[/h1]
 
 不想每次开局都重复输入控制台、研究科技学说、重建设计编制，再逐州安排工业建设？
 
-本MOD现已升级为[b]全国家通用版[/b]。所有非AI玩家国家均可使用10项零成本决议快速完成沙盒开局；PRC继续保留顾问、军工机构、中国型号、固定补给站和双电网等专属内容。
+本MOD为[b]全国家通用版[/b]。所有非AI玩家国家均可使用零成本决议快速完成沙盒开局，并可一键完成五类特殊科研项目（需《Gotterdammerung》DLC）；PRC继续保留顾问、军工机构、中国型号、固定补给站和双电网等专属内容。
 
 [h2]一键开局[/h2]
 [list]
@@ -17,6 +15,15 @@
 [/list]
 
 PRC使用中国型号和民兵编制，并保留顾问、军事高层及4家军工机构预设特质；其他国家使用中性型号和普通步兵编制。
+
+[h2]特殊科研项目（需《Gotterdammerung》DLC）[/h2]
+[list]
+[*]按空军（含雷达）、陆军、海军、核能、火箭五类专精，一键完成全部49个特殊科研项目
+[*]完成奖励（科技、装备与模块解锁、首枚免费核弹）与正常研究完全一致
+[*]直接授予57项衍生科技与原型迭代互斥选择科技（含离心法同位素分离、海军补给与维修方案）
+[*]核能决议在首都额外补建1座核反应堆
+[*]决议可重复执行：跨专精前置被跳过时，完成其他专精后再次点击即可补齐；全部完成后决议自动消失
+[/list]
 
 [h2]全国建设[/h2]
 
@@ -38,18 +45,18 @@ PRC使用中国型号和民兵编制，并保留顾问、军事高层及4家军�
 
 [h2]兼容性[/h2]
 [list]
-[*]适配 Hearts of Iron IV 1.19.2 / 1.19.*，按全DLC环境制作
+[*]适配 Hearts of Iron IV 1.19.2 / 1.19.*，按全DLC环境制作（特殊科研决议需《Gotterdammerung》）
 [*]支持傀儡国、内战国家和动态国家
 [*]全部决议0政治点，AI不会执行
 [*]不覆盖原版国策、国家历史文件或事件链
 [*]不自动建设铁路，不创建舰船设计或舰队
 [/list]
 
-[b]当前稳定版本：v2.0[/b]
+[b]当前稳定版本：v2.1[/b]
 
 [h1]English Description[/h1]
 
-This mod is now [b]universal for all non-AI player countries[/b]. Ten zero-cost decisions provide a complete sandbox setup, while the PRC retains additional advisers, MIO paths, Chinese designs, preset supply hubs and its dual power-grid system.
+This mod is [b]universal for all non-AI player countries[/b]. Zero-cost decisions provide a complete sandbox setup, including one-click completion of all five special research project trees (requires the Gotterdammerung DLC). The PRC retains additional advisers, MIO paths, Chinese designs, preset supply hubs and its dual power-grid system.
 
 [h2]One-Click Setup[/h2]
 [list]
@@ -62,6 +69,15 @@ This mod is now [b]universal for all non-AI player countries[/b]. Ten zero-cost 
 [/list]
 
 The PRC keeps Chinese designs, militia templates, advisers, military leadership and four preset MIO paths. Other countries receive neutral designs and regular-infantry templates.
+
+[h2]Special Research Projects (requires Gotterdammerung)[/h2]
+[list]
+[*]Completes all 49 special research projects across five specializations: Air (including radar), Land, Naval, Nuclear and Rocket
+[*]Completion rewards (technologies, equipment and module unlocks, the first free nuclear bomb) match normal research exactly
+[*]Directly grants 57 derived and prototype-choice technologies (including centrifugal isotope separation and the naval support/repair variants)
+[*]The nuclear decision additionally builds one nuclear reactor in the capital
+[*]Re-runnable: projects skipped over missing cross-tree prerequisites can be picked up by clicking again; each decision disappears once its tree is complete
+[/list]
 
 [h2]Nationwide Construction[/h2]
 
@@ -80,11 +96,11 @@ Priority: [b]Refineries → Fuel Silos → Dockyards → Civilian Factories → 
 
 [h2]Compatibility[/h2]
 [list]
-[*]Built for Hearts of Iron IV 1.19.2 / 1.19.* with all DLC
+[*]Built for Hearts of Iron IV 1.19.2 / 1.19.* with all DLC (special project decisions require Gotterdammerung)
 [*]Supports puppets, civil-war tags and dynamic countries
 [*]All decisions cost 0 political power and are never used by the AI
 [*]Does not replace vanilla focus trees, country history files or event chains
 [*]Does not automatically build railways or create ship designs and fleets
 [/list]
 
-[b]Current stable version: v2.0[/b]
+[b]Current stable version: v2.1[/b]

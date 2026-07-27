@@ -1,5 +1,7 @@
 # 开发与发布流程
 
+> 总入口与状态快照见根目录 `AGENTS.md`；本文档是构建、验证、发布与工坊上传的权威流程。
+
 ## 稳定基准
 
 v2.1 是当前唯一稳定基准，在 v2.0（用户实机验证通过的 v2.0c2）之上新增特殊科研项目决议。后续修改必须基于当前仓库，不得退回 v2.0、v2.0c、v2.0b 或 v1.2c 覆盖正式线。
@@ -35,6 +37,12 @@ python tools/validate_mod.py
 
 建议覆盖 PRC、英国、美国或苏联、无海岸小国及傀儡国。详细项目见 `docs/maintenance/测试状态与回归清单.md`。
 
+## 实机测试协作（维护者已授权的分工）
+
+- 构建测试包后可直接覆盖安装到本机 MOD 目录（`文档\Paradox Interactive\Hearts of Iron IV\mod\`），安装前清理旧版本；安装文件夹名 `OCS_one_click_sandbox_start_v2_0` 永不更改。
+- 维护者进游戏点验后，由 AI 直接读取 `logs\` 下的日志确认结果，无需维护者手动收集。
+- 日志判读经验：`error.log` 为 0 字节即干净；`game.log` 中 "Conflict Risk" 相关输出是原版自身杂音（无 MOD 也会出现），与本 MOD 无关，不必处理。
+
 ## 构建发布包
 
 ```powershell
@@ -65,6 +73,21 @@ F:\steamcmd\steamcmd.exe +login <Steam用户名> +workshop_build_item F:\steamcm
 ```
 
 上传前确认暂存目录与仓库逐文件一致，并更新 VDF 里的 `changenote`。
+
+steamcmd 注意事项：
+
+- 始终更新已有物品 `3767025052`，不要新建工坊条目，否则订阅数被分流。
+- steamcmd 只更新内容和 changenote，**不更新工坊页面的标题和简介**——简介需在工坊网页手动更新（文案在 `docs/publishing/`）。
+- 密码和 Steam Guard 验证码不要写进命令行，按提示交互输入；命令中的用户名直接写账号名本身（PowerShell 里 `<` `>` 是保留符号，带尖括号会报语法错误）。
+- 上传成功标志：输出 `Committing update...Success`，或 steamcmd 日志中 `Upload finished ... : OK`。
+- 与项目无关的通用流程指南在 `F:\steamcmd\STEAMCMD_工坊上传指南.md`（仓库外）。
+
+## 故障排查经验
+
+- **git push 报 "Connection was reset"**（本机网络偶发）：改用 HTTP/1.1 重试即可——`git -c http.version=HTTP/1.1 push`。
+- **GitHub Release 附件中文文件名会被强制剥离**（变成 `_v2.1_.zip` 之类）：如确需挂附件，用 ASCII 文件名上传 + 中文显示名（label）。当前策略是不挂附件，此条仅作历史经验。
+- **Windows 控制台处理中文注意 GBK/UTF-8 编码**：`gh` 命令输出或写入中文出现乱码时，先切换终端到 UTF-8 再重试，并以 API 返回的实际存储值为准。
+- **本地化 yml 的 UTF-8 BOM 容易在编辑过程中丢失**：游戏缺 BOM 会读不出中文。每次改动 `localisation/` 后必须确认 BOM 仍在（`validate_mod.py` 会检查）。
 
 ## 许可证边界
 
