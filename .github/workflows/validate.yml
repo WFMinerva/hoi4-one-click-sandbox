@@ -15,3 +15,14 @@ jobs:
           python-version: "3.x"
       - name: 静态检查
         run: python tools/validate_mod.py
+      - name: 检查器回归测试
+        run: python -m unittest tools/test_validate_mod.py
+      - name: 构建发布包
+        run: python tools/build_release.py
+      - name: 验证重复构建结果一致
+        shell: bash
+        run: |
+          first_hash="$(sha256sum dist/*_正式版.zip | cut -d ' ' -f 1)"
+          python tools/build_release.py
+          second_hash="$(sha256sum dist/*_正式版.zip | cut -d ' ' -f 1)"
+          test "$first_hash" = "$second_hash"

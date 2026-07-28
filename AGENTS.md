@@ -9,14 +9,15 @@
 - 版权人：HAPPYADONG；除 `thumbnail.png` 外采用 `GPL-3.0-only`（见 `LICENSE`、`NOTICE.md`）
 - Steam 工坊物品 ID：`3767025052`（唯一对外下载入口）
 
-## 二、当前状态快照（2026-07-27）
+## 二、当前状态快照（2026-07-28）
 
 > **接手时先核实此快照是否过期**：对照 `git tag`、`git log`、`CHANGELOG.md` 和 `dist/` 内容确认最新版本与状态。
 
 - 当前唯一稳定基准：**v2.1**（git 标签 `v2.1`），在 v2.0 通用版之上新增五类特殊科研项目一键完成决议（需《Gotterdammerung》DLC）。
 - v2.1 已由维护者**实机验证通过并上传 Steam 工坊**（2026-07，维护者口头确认）。
-- `dist/` 下 v2.0/v2.1 正式版 zip 及 v2.1 测试包的 SHA-256 均已验证通过。（v2.1 发布包于 2026-07-27 重建过一次：包内基准文档由误装的 v2.0 文档修正为 v2.1 文档，SHA 已重新生成。）
-- 历史基准：v1.2c（PRC 专用）、v2.0（通用化，git 标签 `v2.0`）。v2.0c 因重复 `limit` 语法错误作废，禁止复用；不得退回 v2.0/v2.0c/v2.0b/v1.2c 覆盖正式线。
+- `dist/` 下 v2.0/v2.1 正式版 zip 及 v2.1 测试包的 SHA-256 均已验证通过。（v2.1 发布包于 2026-07-27 修正误装的 v2.0 基准文档；2026-07-28 又按确定性 ZIP 格式重建并生成新 SHA，MOD 游戏内容未改变。）
+- 2026-07-28 已将静态检查升级为脚本结构检查，CI 同时执行构建与重复构建一致性检查；发布 ZIP 固定元数据并自动核对内嵌清单。
+- 历史基准：v1.2c（PRC 专用）、v2.0（通用化）。旧 `v2.0` git 标签误落在源码导入前，只含 README；真正源码基准为提交 `9593154`，补充标签 `v2.0-source-baseline`。v2.0c 因重复 `limit` 语法错误作废，禁止复用；不得退回 v2.0/v2.0c/v2.0b/v1.2c 覆盖正式线。
 
 ## 三、当前待办（按优先级）
 
@@ -37,11 +38,12 @@
 | `localisation/english/`、`localisation/simp_chinese/` | 双语本地化（yml，**必须带 UTF-8 BOM**） | 可改；两个语言文件必须同步 |
 | `descriptor.mod` | MOD 内描述文件（版本号等） | 发版时更新；必须与 `packaging/` 的 .mod 文件保持一致（静态检查强制） |
 | `packaging/OCS_one_click_sandbox_start_v2_0.mod` | 启动器外层 .mod 模板 | 发版时更新；文件名含 v2_0 是安装目录约定，**不要改文件名** |
-| `tools/validate_mod.py` | 静态检查（必需文件、编码、描述文件一致性、花括号、关键约束标记） | 可扩展检查项，勿放松现有检查 |
-| `tools/build_release.py` | 构建 `dist/` 发布 zip + SHA-256 + 内嵌 MANIFEST_SHA256.csv；版本号从 `descriptor.mod` 读取，基准文档按版本号从 `docs/baseline/` 自动挑选 | 可改 |
+| `tools/validate_mod.py` | 结构化静态检查（必需文件、编码、描述文件、本地化对应、重复 effect/limit、AI/PRC/州作用域约束） | 可扩展检查项，勿放松现有检查 |
+| `tools/test_validate_mod.py` | 检查器回归测试，确认典型坏脚本会被拒绝 | 修改检查逻辑时同步更新 |
+| `tools/build_release.py` | 确定性构建 `dist/` 发布 zip + SHA-256 + 内嵌 MANIFEST_SHA256.csv 并逐文件复核；版本号从 `descriptor.mod` 读取，基准文档按版本号从 `docs/baseline/` 自动挑选 | 可改 |
 | `tools/fix_bom.py` | 去除脚本文件误加的 UTF-8 BOM | 按需运行 |
 | `.gitattributes` | 统一文本文件 LF 行尾、二进制不转换 | 勿删；新增文件类型时补充规则 |
-| `.github/workflows/validate.yml` | CI：push/PR 自动运行 `validate_mod.py` | 可随检查项演进 |
+| `.github/workflows/validate.yml` | CI：push/PR 自动运行静态检查、检查器回归测试、正式包构建和重复构建哈希一致性检查 | 可随检查项演进 |
 | `docs/DEVELOPMENT.md` | 开发与发布流程（构建、回归、工坊上传、许可证边界） | 流程变化时更新 |
 | `docs/maintenance/` | 交接文档四份（入口、功能与版本、技术实现、测试状态） | 状态变化时必须同步更新 |
 | `docs/baseline/` | 各正式版基准文档（文件名含版本号，如 `README_v2.1_正式版.md`）；构建发布包时按当前版本号自动挑选打进 zip | 可新增当期版本文档；勿重命名历史文件 |
@@ -85,6 +87,7 @@ python tools/build_release.py   # 先静态检查，再生成 dist/ 发布包 + 
 
 - 文档用中文；`README.md`、发布文案中英双语；本地化英/简中双文件同步。
 - 提交信息用中文摘要式短句（参照 `git log`，如"新增特殊科研项目决议：一键完成五类专精并授予全部衍生科技"）。
+- 正式顺序必须是“源码 → 静态检查 → 实机回归 → 文档 → 构建与 SHA → 维护者确认 → Git 标签/Release”；标签必须指向能直接重建正式包的最后一个提交。
 - 只有实机验证通过并经维护者确认后才打正式 Git 标签和 GitHub Release；Release 只放更新说明不挂附件，下载入口只有 Steam 工坊。
 - 工坊上传走 steamcmd（`F:\steamcmd`，配置 `F:\steamcmd\hoi4_ocs_workshop.vdf`），细节见 `docs/DEVELOPMENT.md`。
 

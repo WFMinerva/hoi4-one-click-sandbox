@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import re
 import sys
+from dataclasses import dataclass, field
 from pathlib import Path
 
 
@@ -47,6 +48,25 @@ LOCALISATION_FILES = (
 )
 
 
+@dataclass(frozen=True)
+class Token:
+    kind: str
+    value: str
+    line: int
+
+
+@dataclass
+class Block:
+    assignments: list[Assignment] = field(default_factory=list)
+
+
+@dataclass
+class Assignment:
+    key: str
+    value: str | Block
+    line: int
+
+
 def collect_script_files() -> list[Path]:
     """Gather every .txt file under SCRIPT_DIRS."""
     files: list[Path] = []
@@ -65,28 +85,282 @@ def descriptor_value(text: str, key: str) -> str | None:
     return match.group(1) if match else None
 
 
-def strip_comments_and_strings(text: str) -> str:
-    output: list[str] = []
-    in_string = False
-    escaped = False
-    for line in text.splitlines():
-        for char in line:
-            if in_string:
+def tokenize_script(text: str) -> tuple[list[Token], list[str]]:
+    """Tokenize the subset of Paradox script needed for structural checks."""
+    tokens: list[Token] = []
+    errors: list[str] = []
+    index = 0
+    line = 1
+    while index < len(text):
+        char = text[index]
+        if char == "\n":
+            line += 1
+            index += 1
+        elif char.isspace():
+            index += 1
+        elif char == "#":
+            while index < len(text) and text[index] != "\n":
+                index += 1
+        elif char in "{}=":
+            kind = {"{": "LBRACE", "}": "RBRACE", "=": "EQUALS"}[char]
+            tokens.append(Token(kind, char, line))
+            index += 1
+        elif char == '"':
+            start_line = line
+            index += 1
+            value: list[str] = []
+            escaped = False
+            closed = False
+            while index < len(text):
+                char = text[index]
+                if char == "\n":
+                    line += 1
                 if escaped:
+                    value.append(char)
                     escaped = False
                 elif char == "\\":
                     escaped = True
                 elif char == '"':
-                    in_string = False
-                continue
-            if char == '"':
-                in_string = True
-            elif char == "#":
-                break
+                    index += 1
+                    closed = True
+                    break
+                else:
+                    value.append(char)
+                index += 1
+            if not closed:
+                errors.append(f"第 {start_line} 行的字符串未闭合")
+            tokens.append(Token("VALUE", "".join(value), start_line))
+        else:
+            start = index
+            while (
+                index < len(text)
+                and not text[index].isspace()
+                and text[index] not in '#{}="'
+            ):
+                index += 1
+            tokens.append(Token("VALUE", text[start:index], line))
+    return tokens, errors
+
+
+def parse_script(text: str) -> tuple[Block, list[str]]:
+    """Parse assignments and nested blocks while preserving source lines."""
+    tokens, errors = tokenize_script(text)
+    root = Block()
+    stack = [root]
+    index = 0
+
+    while index < len(tokens):
+        token = tokens[index]
+        if token.kind == "RBRACE":
+            if len(stack) == 1:
+                errors.append(f"第 {token.line} 行存在多余的右花括号")
             else:
-                output.append(char)
-        output.append("\n")
-    return "".join(output)
+                stack.pop()
+            index += 1
+            continue
+
+        if token.kind == "LBRACE":
+            anonymous = Block()
+            stack[-1].assignments.append(
+                Assignment("<anonymous>", anonymous, token.line)
+            )
+            stack.append(anonymous)
+            index += 1
+            continue
+
+        if (
+            token.kind == "VALUE"
+            and index + 1 < len(tokens)
+            and tokens[index + 1].kind == "EQUALS"
+        ):
+            if index + 2 >= len(tokens):
+                errors.append(f"第 {token.line} 行的 {token.value} 缺少赋值")
+                break
+            value_token = tokens[index + 2]
+            if value_token.kind == "LBRACE":
+                child = Block()
+                stack[-1].assignments.append(
+                    Assignment(token.value, child, token.line)
+                )
+                stack.append(child)
+            elif value_token.kind == "VALUE":
+                stack[-1].assignments.append(
+                    Assignment(token.value, value_token.value, token.line)
+                )
+            else:
+                errors.append(f"第 {token.line} 行的 {token.value} 赋值无效")
+            index += 3
+            continue
+
+        index += 1
+
+    if len(stack) > 1:
+        errors.append(f"文件结束时仍有 {len(stack) - 1} 个块未闭合")
+    return root, errors
+
+
+def walk_blocks(block: Block, context: tuple[str, ...] = ()):
+    yield block, context
+    for assignment in block.assignments:
+        if isinstance(assignment.value, Block):
+            yield from walk_blocks(
+                assignment.value, (*context, f"{assignment.key}@{assignment.line}")
+            )
+
+
+def direct_scalars(block: Block, key: str) -> list[str]:
+    return [
+        assignment.value
+        for assignment in block.assignments
+        if assignment.key == key and isinstance(assignment.value, str)
+    ]
+
+
+def direct_blocks(block: Block, key: str) -> list[Block]:
+    return [
+        assignment.value
+        for assignment in block.assignments
+        if assignment.key == key and isinstance(assignment.value, Block)
+    ]
+
+
+def has_direct_scalar(block: Block, key: str, value: str) -> bool:
+    return value in direct_scalars(block, key)
+
+
+def localisation_keys(path: Path) -> tuple[set[str], list[str]]:
+    keys: set[str] = set()
+    duplicates: list[str] = []
+    pattern = re.compile(r"^\s*([^\s:#]+):\d*\s")
+    for line_number, line in enumerate(read_utf8(path).splitlines(), 1):
+        match = pattern.match(line)
+        if not match:
+            continue
+        key = match.group(1)
+        if key.startswith("l_"):
+            continue
+        if key in keys:
+            duplicates.append(f"{key}（第 {line_number} 行）")
+        keys.add(key)
+    return keys, duplicates
+
+
+def check_script_structure(
+    parsed_scripts: dict[Path, Block],
+    errors: list[str],
+) -> tuple[int, int]:
+    """Check project-specific invariants that marker searches cannot prove."""
+    effect_definitions: dict[str, tuple[Path, int]] = {}
+    effect_count = 0
+
+    for path, root in parsed_scripts.items():
+        relative = path.relative_to(ROOT)
+
+        if path.parent == ROOT / "common" / "scripted_effects":
+            for assignment in root.assignments:
+                if not isinstance(assignment.value, Block):
+                    continue
+                effect_count += 1
+                previous = effect_definitions.get(assignment.key)
+                if previous:
+                    errors.append(
+                        f"scripted effect 重名：{assignment.key} 同时定义于 "
+                        f"{previous[0].relative_to(ROOT)}:{previous[1]} 和 "
+                        f"{relative}:{assignment.line}"
+                    )
+                else:
+                    effect_definitions[assignment.key] = (path, assignment.line)
+
+        for block, context in walk_blocks(root):
+            limits = [
+                assignment
+                for assignment in block.assignments
+                if assignment.key == "limit"
+            ]
+            if len(limits) > 1:
+                location = " > ".join(context) or "<root>"
+                lines = ", ".join(str(item.line) for item in limits)
+                errors.append(
+                    f"{relative} 的同一作用域存在多个 limit：{location}（第 {lines} 行）"
+                )
+            for limit in limits:
+                if not isinstance(limit.value, Block):
+                    errors.append(
+                        f"{relative}:{limit.line} 的 limit 必须是花括号块"
+                    )
+
+            tag_prc = has_direct_scalar(block, "tag", "PRC")
+            original_prc = has_direct_scalar(block, "original_tag", "PRC")
+            if tag_prc != original_prc:
+                location = " > ".join(context) or "<root>"
+                errors.append(
+                    f"{relative} 的 PRC 判断未同时包含 tag = PRC 与 "
+                    f"original_tag = PRC：{location}"
+                )
+
+            for assignment in block.assignments:
+                if assignment.key not in ("any_owned_state", "every_owned_state"):
+                    continue
+                if not isinstance(assignment.value, Block):
+                    continue
+                state_block = assignment.value
+                controlled = has_direct_scalar(
+                    state_block, "is_controlled_by", "ROOT"
+                )
+                for limit_block in direct_blocks(state_block, "limit"):
+                    controlled = controlled or has_direct_scalar(
+                        limit_block, "is_controlled_by", "ROOT"
+                    )
+                if not controlled:
+                    errors.append(
+                        f"{relative}:{assignment.line} 的 {assignment.key} "
+                        "缺少 is_controlled_by = ROOT"
+                    )
+
+    decisions_path = ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+    decision_count = 0
+    decision_root = parsed_scripts[decisions_path]
+    for category in decision_root.assignments:
+        if not isinstance(category.value, Block):
+            continue
+        for decision in category.value.assignments:
+            if not isinstance(decision.value, Block):
+                continue
+            block = decision.value
+            if not direct_blocks(block, "complete_effect"):
+                continue
+            decision_count += 1
+            visible = direct_blocks(block, "visible")
+            available = direct_blocks(block, "available")
+            ai_will_do = direct_blocks(block, "ai_will_do")
+            if not visible or not has_direct_scalar(visible[0], "is_ai", "no"):
+                errors.append(
+                    f"{decisions_path.relative_to(ROOT)}:{decision.line} 的 "
+                    f"{decision.key} 缺少 visible 内的 is_ai = no"
+                )
+            if not available or not has_direct_scalar(available[0], "is_ai", "no"):
+                errors.append(
+                    f"{decisions_path.relative_to(ROOT)}:{decision.line} 的 "
+                    f"{decision.key} 缺少 available 内的 is_ai = no"
+                )
+            if not ai_will_do or not has_direct_scalar(
+                ai_will_do[0], "factor", "0"
+            ):
+                errors.append(
+                    f"{decisions_path.relative_to(ROOT)}:{decision.line} 的 "
+                    f"{decision.key} 缺少 ai_will_do = {{ factor = 0 }}"
+                )
+
+    combined_assignments = [
+        assignment.key
+        for root in parsed_scripts.values()
+        for block, _ in walk_blocks(root)
+        for assignment in block.assignments
+    ]
+    if "create_unit" not in combined_assignments:
+        errors.append("未找到 24 师创建所需的 create_unit 效果")
+
+    return effect_count, decision_count
 
 
 def main() -> int:
@@ -133,6 +407,7 @@ def main() -> int:
             errors.append(f"NOTICE.md 缺少许可证范围标记：{marker}")
 
     script_files = collect_script_files()
+    parsed_scripts: dict[Path, Block] = {}
 
     for path in script_files:
         raw = path.read_bytes()
@@ -145,18 +420,12 @@ def main() -> int:
         except UnicodeDecodeError as exc:
             errors.append(f"{path.relative_to(ROOT)} 不是有效 UTF-8：{exc}")
             continue
-        cleaned = strip_comments_and_strings(text)
-        balance = 0
-        for char in cleaned:
-            if char == "{":
-                balance += 1
-            elif char == "}":
-                balance -= 1
-                if balance < 0:
-                    break
-        if balance != 0:
-            errors.append(f"{path.relative_to(ROOT)} 的花括号不平衡（余额 {balance}）")
+        parsed, parse_errors = parse_script(text)
+        parsed_scripts[path] = parsed
+        for parse_error in parse_errors:
+            errors.append(f"{path.relative_to(ROOT)}：{parse_error}")
 
+    localisation_sets: dict[Path, set[str]] = {}
     for path in LOCALISATION_FILES:
         data = path.read_bytes()
         if not data.startswith(b"\xef\xbb\xbf"):
@@ -165,18 +434,29 @@ def main() -> int:
             data.decode("utf-8-sig")
         except UnicodeDecodeError as exc:
             errors.append(f"{path.relative_to(ROOT)} 不是有效 UTF-8：{exc}")
+            continue
+        keys, duplicates = localisation_keys(path)
+        localisation_sets[path] = keys
+        for duplicate in duplicates:
+            errors.append(f"{path.relative_to(ROOT)} 的本地化键重复：{duplicate}")
 
-    combined_scripts = "\n".join(read_utf8(path) for path in script_files)
-    required_markers = {
-        "玩家限制 is_ai = no": "is_ai = no",
-        "PRC 原始国家识别": "original_tag = PRC",
-        "24 师创建效果": "create_unit",
-        "拥有州作用域": "every_owned_state",
-        "控制州限制": "is_controlled_by = ROOT",
-    }
-    for label, marker in required_markers.items():
-        if marker not in combined_scripts:
-            errors.append(f"未找到关键约束：{label}（{marker}）")
+    if len(localisation_sets) == len(LOCALISATION_FILES):
+        english, chinese = LOCALISATION_FILES
+        only_english = sorted(localisation_sets[english] - localisation_sets[chinese])
+        only_chinese = sorted(localisation_sets[chinese] - localisation_sets[english])
+        if only_english:
+            errors.append(
+                f"英文存在但简中缺少的本地化键：{', '.join(only_english)}"
+            )
+        if only_chinese:
+            errors.append(
+                f"简中存在但英文缺少的本地化键：{', '.join(only_chinese)}"
+            )
+
+    effect_count = 0
+    decision_count = 0
+    if len(parsed_scripts) == len(script_files):
+        effect_count, decision_count = check_script_structure(parsed_scripts, errors)
 
     for warning in warnings:
         print(f"WARNING: {warning}")
@@ -187,7 +467,13 @@ def main() -> int:
         print(f"\n静态检查失败：{len(errors)} 个错误，{len(warnings)} 个警告。")
         return 1
 
-    print(f"静态检查通过：{len(REQUIRED_FILES)} 个必需文件，{len(script_files)} 个脚本文件，{len(warnings)} 个警告。")
+    localisation_count = len(next(iter(localisation_sets.values()), ()))
+    print(
+        f"静态检查通过：{len(REQUIRED_FILES)} 个必需文件，"
+        f"{len(script_files)} 个脚本文件，{effect_count} 个 scripted effects，"
+        f"{decision_count} 个玩家决议，{localisation_count} 对本地化键，"
+        f"{len(warnings)} 个警告。"
+    )
     return 0
 
 

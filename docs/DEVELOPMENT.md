@@ -6,6 +6,8 @@
 
 v2.1 是当前唯一稳定基准，在 v2.0（用户实机验证通过的 v2.0c2）之上新增特殊科研项目决议。后续修改必须基于当前仓库，不得退回 v2.0、v2.0c、v2.0b 或 v1.2c 覆盖正式线。
 
+历史标签说明：旧 `v2.0` 标签误落在源码导入之前，只含 `README.md`，不能用于恢复 MOD；真正的 v2.0 源码基准是提交 `9593154`，补充标签为 `v2.0-source-baseline`。已公开的错误标签不强制移动，避免破坏已有克隆中的引用。
+
 ## 修改规则
 
 1. 不批量重命名 `PRC_OCS_` 键名；这些名称可能被事件、本地化和存档标志引用。
@@ -21,9 +23,18 @@ v2.1 是当前唯一稳定基准，在 v2.0（用户实机验证通过的 v2.0c2
 
 ```powershell
 python tools/validate_mod.py
+python -m unittest tools/test_validate_mod.py
 ```
 
-静态检查只能发现文件缺失、编码、描述文件、括号和部分关键约束问题，不能替代实机测试。推送到 GitHub 后会由 CI（`.github/workflows/validate.yml`）自动再跑一遍同一检查。
+静态检查会验证文件、编码、描述文件、本地化键对应关系和脚本结构，并逐块检查以下项目红线：
+
+- 所有玩家决议的 `visible`、`available` 均含 `is_ai = no`，且 `ai_will_do = { factor = 0 }`；
+- 同一作用域不得出现多个 `limit`；
+- PRC 分支同时包含 `tag = PRC` 和 `original_tag = PRC`；
+- `any_owned_state` / `every_owned_state` 均限制为 `is_controlled_by = ROOT`；
+- scripted effect 不得重名。
+
+第二条命令是检查器自身的回归测试，确认重复 `limit`、缺失 AI 限制、PRC 判断缺半边和州控制条件缺失等坏样例确实会被拦截。静态检查不能替代实机测试。推送到 GitHub 后，CI（`.github/workflows/validate.yml`）会再次运行两项检查、实际生成发布包，并连续构建两次确认 ZIP 哈希一致。
 
 ## 实机回归
 
@@ -49,7 +60,9 @@ python tools/validate_mod.py
 python tools/build_release.py
 ```
 
-脚本先执行静态检查，从 `descriptor.mod` 读取版本号生成发布包文件名，再将源码、启动器 `.mod` 文件和 `docs/baseline/` 下当期版本的基准文档写入 `dist/` 下的 ZIP，同时生成 SHA-256 文件。`dist/` 是生成目录，不进入 Git。发新正式版前记得在 `docs/baseline/` 补上当期版本的基准文档，否则发布包会缺少基准文档（脚本只警告不拦截）。
+脚本先执行静态检查，从 `descriptor.mod` 读取版本号生成发布包文件名，再将源码、启动器 `.mod` 文件和 `docs/baseline/` 下当期版本的基准文档写入 `dist/` 下的 ZIP，同时生成 SHA-256 文件。ZIP 的文件顺序、时间戳、权限和存储方式固定，相同输入会生成相同字节；生成后脚本会按内嵌 `MANIFEST_SHA256.csv` 逐文件复核。`dist/` 是生成目录，不进入 Git。
+
+当期基准文档是正式构建的硬性条件：`docs/baseline/` 中找不到当前版本文档时，构建直接失败，不再只给警告。
 
 新版本应同步更新：
 
@@ -58,7 +71,11 @@ python tools/build_release.py
 - `CHANGELOG.md`
 - README 与发布文案中的版本信息
 
-实机验证通过并由维护者确认后，才能创建正式 Git 标签和 GitHub Release。GitHub Release 只放更新说明，不挂发布包附件；下载入口只有 Steam 创意工坊（物品 ID `3767025052`）。
+正式发版顺序固定为：
+
+`修改源码 → 静态检查 → 实机回归 → 更新文档与发布文案 → 构建 ZIP → 核对 SHA-256 → 维护者确认 → 创建 Git 标签与 GitHub Release`
+
+Git 标签必须指向能够直接重建该版本正式包的最后一个提交，禁止先打标签再补构建器或基准文档。只有实机验证通过并由维护者确认后，才能创建正式 Git 标签和 GitHub Release。GitHub Release 只放更新说明不挂附件；下载入口只有 Steam 创意工坊（物品 ID `3767025052`）。
 
 ## 工坊上传
 
