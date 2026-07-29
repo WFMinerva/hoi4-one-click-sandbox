@@ -40,15 +40,14 @@ def mod_version() -> str:
     return match.group(1)
 
 
-def baseline_docs(version: str) -> list[Path]:
-    """Baseline documents for the current version, selected by filename.
+def is_test_version(version: str) -> bool:
+    """Return whether a descriptor version identifies a test build."""
+    return "test" in version.casefold()
 
-    Files under docs/baseline are named with their version (e.g.
-    README_v2.1_正式版.md), so only the current version's documents are
-    bundled into the release ZIP. Missing documents are a warning, not an
-    error — but a release should normally add them first.
-    """
-    directory = ROOT / "docs" / "baseline"
+
+def package_docs(version: str) -> list[Path]:
+    """Select version-matched baseline or testing documents."""
+    directory = ROOT / "docs" / ("testing" if is_test_version(version) else "baseline")
     if not directory.is_dir():
         return []
     return sorted(
@@ -148,13 +147,15 @@ def main() -> int:
 
     DIST.mkdir(exist_ok=True)
     version = mod_version()
-    zip_path = DIST / f"开局一键爽玩_v{version}_正式版.zip"
-    hash_path = DIST / f"开局一键爽玩_v{version}_正式版_SHA256.txt"
+    package_label = "测试版" if is_test_version(version) else "正式版"
+    zip_path = DIST / f"开局一键爽玩_v{version}_{package_label}.zip"
+    hash_path = DIST / f"开局一键爽玩_v{version}_{package_label}_SHA256.txt"
 
-    docs = baseline_docs(version)
+    docs = package_docs(version)
     if not docs:
+        docs_directory = "docs/testing" if is_test_version(version) else "docs/baseline"
         raise SystemExit(
-            f"docs/baseline 中没有 v{version} 基准文档，拒绝生成正式发布包"
+            f"{docs_directory} 中没有 v{version} 配套文档，拒绝生成{package_label}"
         )
 
     with tempfile.TemporaryDirectory(prefix="ocs_release_") as temp_name:

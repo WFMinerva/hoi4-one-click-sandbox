@@ -4,7 +4,7 @@
 
 ## 稳定基准
 
-v2.1 是当前唯一稳定基准，在 v2.0（用户实机验证通过的 v2.0c2）之上新增特殊科研项目决议。后续修改必须基于当前仓库，不得退回 v2.0、v2.0c、v2.0b 或 v1.2c 覆盖正式线。
+v2.2 是当前唯一稳定基准，在 v2.1 特殊科研项目决议之上新增 PRC 二阶段编制与最终设计，并将一键24师改为可重复执行。后续修改必须基于当前仓库，不得退回 v2.1、v2.0、v2.0c、v2.0b 或 v1.2c 覆盖正式线。
 
 历史标签说明：旧 `v2.0` 标签误落在源码导入之前，只含 `README.md`，不能用于恢复 MOD；真正的 v2.0 源码基准是提交 `9593154`，补充标签为 `v2.0-source-baseline`。已公开的错误标签不强制移动，避免破坏已有克隆中的引用。
 
@@ -43,7 +43,7 @@ python -m unittest tools/test_validate_mod.py
 - `error.log`
 - `game.log`
 - `setup.log`
-- 非空的 `text.log`
+- `text.log`（必须检查并保存；0字节表示未记录文本/本地化错误，可判为干净）
 - 建设、模板、设计和新增部队截图
 
 建议覆盖 PRC、英国、美国或苏联、无海岸小国及傀儡国。详细项目见 `docs/maintenance/测试状态与回归清单.md`。
@@ -53,16 +53,17 @@ python -m unittest tools/test_validate_mod.py
 - 构建测试包后可直接覆盖安装到本机 MOD 目录（`文档\Paradox Interactive\Hearts of Iron IV\mod\`），安装前清理旧版本；安装文件夹名 `OCS_one_click_sandbox_start_v2_0` 永不更改。
 - 维护者进游戏点验后，由 AI 直接读取 `logs\` 下的日志确认结果，无需维护者手动收集。
 - 日志判读经验：`error.log` 为 0 字节即干净；`game.log` 中 "Conflict Risk" 相关输出是原版自身杂音（无 MOD 也会出现），与本 MOD 无关，不必处理。
+- `text.log` 用于文本/本地化问题记录；中文本地化已正确显示且文件为0字节时，应判为未发现文本错误，不得为了形式要求人为制造内容。
 
-## 构建发布包
+## 构建测试包或发布包
 
 ```powershell
 python tools/build_release.py
 ```
 
-脚本先执行静态检查，从 `descriptor.mod` 读取版本号生成发布包文件名，再将源码、启动器 `.mod` 文件和 `docs/baseline/` 下当期版本的基准文档写入 `dist/` 下的 ZIP，同时生成 SHA-256 文件。ZIP 的文件顺序、时间戳、权限和存储方式固定，相同输入会生成相同字节；生成后脚本会按内嵌 `MANIFEST_SHA256.csv` 逐文件复核。`dist/` 是生成目录，不进入 Git。
+脚本先执行静态检查，从 `descriptor.mod` 读取版本号生成包名。版本号含 `test` 时生成“测试版”包并选取 `docs/testing/` 的同版本文档；其他版本生成“正式版”包并选取 `docs/baseline/` 的同版本基准文档。随后将源码、启动器 `.mod` 文件和配套文档写入 `dist/` 下的 ZIP，同时生成 SHA-256 文件。ZIP 的文件顺序、时间戳、权限和存储方式固定，相同输入会生成相同字节；生成后脚本会按内嵌 `MANIFEST_SHA256.csv` 逐文件复核。`dist/` 是生成目录，不进入 Git。
 
-当期基准文档是正式构建的硬性条件：`docs/baseline/` 中找不到当前版本文档时，构建直接失败，不再只给警告。
+同版本配套文档是构建的硬性条件：测试版检查 `docs/testing/`，正式版检查 `docs/baseline/`；找不到时构建直接失败。
 
 新版本应同步更新：
 

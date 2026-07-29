@@ -180,16 +180,63 @@ PRC_OCS_category = {
 		icon = generic_army_support
 		cost = 0
 		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
 		visible = {
 			is_ai = no
 			has_country_flag = PRC_OCS_initialized
-			NOT = { has_country_flag = PRC_OCS_24_infantry_divisions_raised }
 		}
 		available = {
 			is_ai = no
 			any_owned_state = { is_controlled_by = ROOT }
 		}
 		complete_effect = { PRC_OCS_raise_24_infantry_divisions_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.2-test1 PRC-only second-stage evolution. The prerequisites cover only
+	# the projects and technologies used by the target templates and variants;
+	# unrelated special projects do not block the decision.
+	PRC_OCS_evolve_special_project_forces = {
+		icon = generic_army_support
+		cost = 0
+		days_remove = 1
+		visible = {
+			is_ai = no
+			has_country_flag = PRC_OCS_initialized
+			OR = {
+				tag = PRC
+				original_tag = PRC
+			}
+			NOT = { has_country_flag = PRC_OCS_special_project_forces_evolved }
+		}
+		available = {
+			is_ai = no
+			has_country_flag = PRC_OCS_initialized
+			has_dlc = "Gotterdammerung"
+			has_dlc = "No Step Back"
+			has_dlc = "Thunder at Our Gates"
+			OR = {
+				tag = PRC
+				original_tag = PRC
+			}
+			is_special_project_completed = sp:sp_land_flamethrower_tank
+			is_special_project_completed = sp:sp_land_military_engineering_vehicles
+			is_special_project_completed = sp:sp_air_helicopter
+			is_special_project_completed = sp:sp_air_intercontinental_bomber
+			is_special_project_completed = sp:sp_air_mothership_aircraft
+			is_special_project_completed = sp:sp_air_axial_jet_engine
+			has_tech = tech_trucks
+			has_tech = amphibious_mechanized_infantry_2
+			has_tech = sp_armored_advanced_flamethrower_tech
+			has_tech = sp_armored_engineer_tech
+			has_tech = sp_armored_maintenance_tech
+			has_tech = sp_armored_signal_tech
+			has_tech = sp_helicopter_transport_pods_tech
+			has_tech = jet_strategic_bomber1
+			has_tech = jet_tactical_bomber2
+		}
+		complete_effect = { PRC_OCS_evolve_special_project_forces_effect = yes }
 		ai_will_do = { factor = 0 }
 	}
 

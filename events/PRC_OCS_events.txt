@@ -143,3 +143,15 @@ country_event = {
 		name = PRC_OCS.12.a
 	}
 }
+
+country_event = {
+	id = PRC_OCS.13
+	title = PRC_OCS.13.t
+	desc = PRC_OCS.13.d
+	picture = GFX_report_event_generic_army
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.13.a
+	}
+}

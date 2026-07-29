@@ -263,11 +263,6 @@ PRC_OCS_add_stockpile_effect = {
 		variant_name = "中型两栖坦克 III型"
 	}
 	add_equipment_to_stockpile = {
-		type = medium_tank_chassis_3
-		amount = 1000000
-		variant_name = "43式喷火预备"
-	}
-	add_equipment_to_stockpile = {
 		type = medium_tank_destroyer_chassis_3
 		amount = 1000000
 		variant_name = "43式自行反坦克炮"
