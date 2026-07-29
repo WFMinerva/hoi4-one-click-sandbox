@@ -1,4 +1,4 @@
-# v2.0 universal one-time force-raising decision. The template name resolves
+# v2.2-test1 universal repeatable force-raising decision. The template name resolves
 # to the PRC militia-based version for PRC/original-PRC countries and to the
 # generic infantry-based version for every other country.
 PRC_OCS_raise_24_infantry_divisions_effect = {
@@ -10,8 +10,25 @@ PRC_OCS_raise_24_infantry_divisions_effect = {
 			count = 24
 		}
 	}
-	set_country_flag = PRC_OCS_24_infantry_divisions_raised
 	country_event = { id = PRC_OCS.11 hours = 6 }
+}
+
+# PRC-only, one-time and internally idempotent. New templates are deliberately
+# created under distinct names; no existing or active division is rewritten.
+PRC_OCS_evolve_special_project_forces_effect = {
+	if = {
+		limit = {
+			OR = {
+				tag = PRC
+				original_tag = PRC
+			}
+			NOT = { has_country_flag = PRC_OCS_special_project_forces_evolved }
+		}
+		PRC_OCS_create_evolved_variants_effect = yes
+		PRC_OCS_create_evolved_templates_effect = yes
+		set_country_flag = PRC_OCS_special_project_forces_evolved
+		country_event = { id = PRC_OCS.13 }
+	}
 }
 
 PRC_OCS_reorganize_all_divisions_effect = {

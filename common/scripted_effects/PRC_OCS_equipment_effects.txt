@@ -110,27 +110,6 @@ PRC_OCS_create_variants_effect = {
 		}
 	}
 	create_equipment_variant = {
-		name = "43式喷火预备"
-		type = medium_tank_chassis_3
-		parent_version = 0
-		allow_without_tech = yes
-		modules = {
-			main_armament_slot = tank_high_velocity_cannon_2
-			engine_type_slot = tank_gasoline_engine
-			special_type_slot_1 = tank_radio_3
-			special_type_slot_2 = stabilizer
-			special_type_slot_3 = armor_skirts
-			special_type_slot_4 = auto_loader
-			turret_type_slot = tank_medium_three_man_tank_turret
-			suspension_type_slot = tank_interleaved_suspension
-			armor_type_slot = tank_welded_armor
-		}
-		upgrades = {
-			tank_nsb_engine_upgrade = 5
-			tank_nsb_armor_upgrade = 0
-		}
-	}
-	create_equipment_variant = {
 		name = "43式自行反坦克炮"
 		type = medium_tank_destroyer_chassis_3
 		parent_version = 0
@@ -822,6 +801,220 @@ PRC_OCS_create_generic_variants_effect = {
 		upgrades = {
 			tank_nsb_engine_upgrade = 10
 			tank_nsb_armor_upgrade = 10
+		}
+	}
+}
+
+# v2.2-test1 PRC-only second-stage variants. Besides the final flame tank, the
+# save-derived target includes a fully upgraded amphibious tractor, four fully
+# upgraded support vehicles, and four fully upgraded special-project bombers.
+# The aircraft use the PRC aviation MIO when that organization exists; an
+# original-tag successor without the MIO still receives the same design.
+PRC_OCS_create_evolved_variants_effect = {
+	create_equipment_variant = {
+		name = "中型喷火坦克 III型"
+		type = medium_tank_flame_chassis_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			main_armament_slot = advanced_flamethrower
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_3
+			special_type_slot_2 = stabilizer
+			special_type_slot_3 = armor_skirts
+			special_type_slot_4 = auto_loader
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
+			armor_type_slot = tank_welded_armor
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 11
+			tank_nsb_armor_upgrade = 3
+		}
+	}
+	create_equipment_variant = {
+		name = "改进型履带登陆车"
+		type = amphibious_mechanized_equipment_2
+		parent_version = 0
+		allow_without_tech = yes
+		mark_older_equipment_obsolete = yes
+		upgrades = {
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+			mech_cost_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "装甲支援车"
+		type = armored_support_vehicle_1
+		parent_version = 4
+		allow_without_tech = yes
+		mark_older_equipment_obsolete = yes
+		model = armored_signal_entity
+		icon = "GFX_armored_support_vehicle_command_medium"
+		upgrades = {
+			tank_gun_upgrade = 5
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "装甲支援车"
+		type = armored_support_vehicle_1
+		parent_version = 1
+		allow_without_tech = yes
+		model = assault_engineer_entity
+		icon = "GFX_armored_support_vehicle_medium"
+		upgrades = {
+			tank_gun_upgrade = 5
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "装甲支援车"
+		type = armored_support_vehicle_1
+		parent_version = 2
+		allow_without_tech = yes
+		model = armored_engineer_entity
+		icon = "GFX_armored_support_vehicle_crossing_medium"
+		upgrades = {
+			tank_gun_upgrade = 5
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+		}
+	}
+	create_equipment_variant = {
+		name = "装甲支援车"
+		type = armored_support_vehicle_1
+		parent_version = 3
+		allow_without_tech = yes
+		model = armored_maintenance_entity
+		icon = "GFX_armored_support_vehicle_recovery_1_medium"
+		upgrades = {
+			tank_gun_upgrade = 5
+			tank_armor_upgrade = 5
+			tank_engine_upgrade = 5
+			tank_reliability_upgrade = 5
+		}
+	}
+	if = {
+		limit = {
+			has_military_industrial_organization = PRC_peoples_aviation_company_of_china_organization
+		}
+		create_equipment_variant = {
+			name = "喷气式战略轰炸机 I型"
+			type = jet_strat_bomber_equipment_1
+			parent_version = 0
+			allow_without_tech = yes
+			mark_older_equipment_obsolete = yes
+			design_team = mio:PRC_peoples_aviation_company_of_china_organization
+			upgrades = {
+				plane_range_upgrade = 5
+				plane_engine_upgrade = 5
+				plane_reliability_upgrade = 5
+				plane_bomb_upgrade = 5
+			}
+		}
+		create_equipment_variant = {
+			name = "喷气式战术轰炸机 II型"
+			type = jet_tac_bomber_equipment_2
+			parent_version = 0
+			allow_without_tech = yes
+			mark_older_equipment_obsolete = yes
+			design_team = mio:PRC_peoples_aviation_company_of_china_organization
+			upgrades = {
+				plane_range_upgrade = 5
+				plane_engine_upgrade = 5
+				plane_reliability_upgrade = 5
+				plane_tac_bomb_upgrade = 5
+			}
+		}
+		create_equipment_variant = {
+			name = "空天母舰"
+			type = mothership_equipment_0
+			parent_version = 0
+			allow_without_tech = yes
+			mark_older_equipment_obsolete = yes
+			design_team = mio:PRC_peoples_aviation_company_of_china_organization
+			upgrades = {
+				plane_gun_upgrade = 5
+				plane_range_upgrade = 5
+				plane_engine_upgrade = 5
+				plane_reliability_upgrade = 5
+			}
+		}
+		create_equipment_variant = {
+			name = "洲际轰炸机"
+			type = strat_bomber_intercontinental_equipment_1
+			parent_version = 0
+			allow_without_tech = yes
+			mark_older_equipment_obsolete = yes
+			design_team = mio:PRC_peoples_aviation_company_of_china_organization
+			upgrades = {
+				plane_range_upgrade = 5
+				plane_engine_upgrade = 5
+				plane_reliability_upgrade = 5
+				plane_bomb_upgrade = 5
+			}
+		}
+	}
+	else = {
+		create_equipment_variant = {
+			name = "喷气式战略轰炸机 I型"
+			type = jet_strat_bomber_equipment_1
+			parent_version = 0
+			allow_without_tech = yes
+			mark_older_equipment_obsolete = yes
+			upgrades = {
+				plane_range_upgrade = 5
+				plane_engine_upgrade = 5
+				plane_reliability_upgrade = 5
+				plane_bomb_upgrade = 5
+			}
+		}
+		create_equipment_variant = {
+			name = "喷气式战术轰炸机 II型"
+			type = jet_tac_bomber_equipment_2
+			parent_version = 0
+			allow_without_tech = yes
+			mark_older_equipment_obsolete = yes
+			upgrades = {
+				plane_range_upgrade = 5
+				plane_engine_upgrade = 5
+				plane_reliability_upgrade = 5
+				plane_tac_bomb_upgrade = 5
+			}
+		}
+		create_equipment_variant = {
+			name = "空天母舰"
+			type = mothership_equipment_0
+			parent_version = 0
+			allow_without_tech = yes
+			mark_older_equipment_obsolete = yes
+			upgrades = {
+				plane_gun_upgrade = 5
+				plane_range_upgrade = 5
+				plane_engine_upgrade = 5
+				plane_reliability_upgrade = 5
+			}
+		}
+		create_equipment_variant = {
+			name = "洲际轰炸机"
+			type = strat_bomber_intercontinental_equipment_1
+			parent_version = 0
+			allow_without_tech = yes
+			mark_older_equipment_obsolete = yes
+			upgrades = {
+				plane_range_upgrade = 5
+				plane_engine_upgrade = 5
+				plane_reliability_upgrade = 5
+				plane_bomb_upgrade = 5
+			}
 		}
 	}
 }

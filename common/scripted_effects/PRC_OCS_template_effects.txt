@@ -471,3 +471,149 @@ PRC_OCS_create_generic_templates_effect = {
 		}
 	}
 }
+
+# v2.2-test1 PRC-only second-stage templates. Distinct names are intentional.
+# The UI can decommission templates, but 1.19.2 documents no callable template-
+# decommission effect; delete_unit_template_and_units also deletes active units.
+# Only HQ and the main infantry-tank target had custom counters in the target save.
+PRC_OCS_create_evolved_templates_effect = {
+	division_template = {
+		name = "司令部"
+		localization_key = ARMY_HQ_TEMPLATE_NAME
+		priority = 1
+		is_army_hq = yes
+		template_counter = 0
+		ingame_set_template_counter = yes
+		regiments = {
+			hq_motorized = { x = 0 y = 0 }
+			hq_motorized = { x = 0 y = 1 }
+			hq_motorized = { x = 0 y = 2 }
+			hq_motorized = { x = 0 y = 3 }
+		}
+		support = {
+			hq_support_company = { x = 0 y = 0 }
+			hq_naval_liaison = { x = 0 y = 1 }
+			hq_air_liaison = { x = 0 y = 2 }
+			hq_specops = { x = 0 y = 3 }
+		}
+	}
+	division_template = {
+		name = "装甲师·进化型"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			mechanized = { x = 0 y = 0 }
+			mechanized = { x = 0 y = 1 }
+			mechanized = { x = 0 y = 2 }
+			mechanized = { x = 0 y = 3 }
+			mechanized = { x = 1 y = 0 }
+			mechanized = { x = 1 y = 1 }
+			mechanized = { x = 1 y = 2 }
+			mechanized = { x = 1 y = 3 }
+			mechanized = { x = 2 y = 0 }
+			mechanized = { x = 2 y = 1 }
+			mechanized = { x = 2 y = 2 }
+			mechanized = { x = 2 y = 3 }
+			medium_sp_artillery_brigade = { x = 3 y = 0 }
+			medium_sp_artillery_brigade = { x = 3 y = 1 }
+			medium_sp_artillery_brigade = { x = 3 y = 2 }
+			medium_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			mot_fire_support = { x = 0 y = 0 }
+			mot_fire_support = { x = 1 y = 0 }
+			mot_fire_support = { x = 2 y = 0 }
+			medium_tank_destroyer_support = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			medium_flame_tank = { x = 0 y = 0 }
+			assault_engineer = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			helicopter_transport = { x = 0 y = 3 }
+			armored_maintenance = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "海军陆战队装甲师·进化型"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		regiments = {
+			amphibious_medium_armor = { x = 0 y = 0 }
+			amphibious_medium_armor = { x = 0 y = 1 }
+			amphibious_medium_armor = { x = 0 y = 2 }
+			amphibious_medium_armor = { x = 0 y = 3 }
+			amphibious_medium_armor = { x = 1 y = 0 }
+			amphibious_medium_armor = { x = 1 y = 1 }
+			amphibious_medium_armor = { x = 1 y = 2 }
+			amphibious_medium_armor = { x = 1 y = 3 }
+			amphibious_mechanized = { x = 2 y = 0 }
+			amphibious_mechanized = { x = 2 y = 1 }
+			amphibious_mechanized = { x = 2 y = 2 }
+			amphibious_mechanized = { x = 2 y = 3 }
+			amphibious_mechanized = { x = 3 y = 0 }
+			amphibious_mechanized = { x = 3 y = 1 }
+			amphibious_mechanized = { x = 3 y = 2 }
+			amphibious_mechanized = { x = 4 y = 0 }
+			amphibious_mechanized = { x = 4 y = 1 }
+			amphibious_mechanized = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			medium_tank_destroyer_support = { x = 0 y = 0 }
+			medium_tank_destroyer_support = { x = 1 y = 0 }
+			mot_fire_support = { x = 2 y = 0 }
+			mot_fire_support = { x = 3 y = 0 }
+			mot_fire_support = { x = 4 y = 0 }
+		}
+		support = {
+			medium_flame_tank = { x = 0 y = 0 }
+			pioneer_support = { x = 0 y = 1 }
+			light_tank_recon = { x = 0 y = 2 }
+			helicopter_transport = { x = 0 y = 3 }
+			armored_signal = { x = 0 y = 4 }
+		}
+	}
+	division_template = {
+		name = "主力步坦师·进化型"
+		division_names_group = PRC_MEC_01
+		priority = 2
+		template_counter = 104
+		ingame_set_template_counter = yes
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+			militia = { x = 0 y = 3 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			militia = { x = 1 y = 3 }
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+			militia = { x = 2 y = 2 }
+			militia = { x = 2 y = 3 }
+			militia = { x = 3 y = 0 }
+			militia = { x = 3 y = 1 }
+			militia = { x = 3 y = 2 }
+			light_sp_artillery_brigade = { x = 4 y = 0 }
+			medium_sp_artillery_brigade = { x = 4 y = 1 }
+			medium_sp_artillery_brigade = { x = 4 y = 2 }
+		}
+		regimental_support = {
+			field_guns = { x = 0 y = 0 }
+			field_guns = { x = 1 y = 0 }
+			field_guns = { x = 2 y = 0 }
+			field_guns = { x = 3 y = 0 }
+			medium_tank_destroyer_support = { x = 4 y = 0 }
+		}
+		support = {
+			medium_flame_tank = { x = 0 y = 0 }
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 2 }
+			logistics_company = { x = 0 y = 3 }
+			field_hospital = { x = 0 y = 4 }
+		}
+	}
+}
