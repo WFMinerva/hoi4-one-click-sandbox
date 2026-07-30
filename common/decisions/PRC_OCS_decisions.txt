@@ -7,6 +7,7 @@ PRC_OCS_category = {
 		icon = generic_research
 		cost = 0
 		days_remove = 1
+		fire_only_once = no
 		visible = {
 			is_ai = no
 			NOT = { has_country_flag = PRC_OCS_initialized }
@@ -22,11 +23,11 @@ PRC_OCS_category = {
 		days_remove = 1
 		days_re_enable = 1
 		fire_only_once = no
-		visible = {
+		visible = { is_ai = no }
+		available = {
 			is_ai = no
 			has_country_flag = PRC_OCS_initialized
 		}
-		available = { is_ai = no }
 		complete_effect = { PRC_OCS_resupply_effect = yes }
 		ai_will_do = { factor = 0 }
 	}
@@ -35,12 +36,15 @@ PRC_OCS_category = {
 		icon = generic_army_support
 		cost = 0
 		days_remove = 1
+		fire_only_once = no
 		visible = {
 			is_ai = no
-			has_country_flag = PRC_OCS_initialized
 			NOT = { has_country_flag = PRC_OCS_army_reorganized }
 		}
-		available = { is_ai = no }
+		available = {
+			is_ai = no
+			has_country_flag = PRC_OCS_initialized
+		}
 		complete_effect = { PRC_OCS_reorganize_all_divisions_effect = yes }
 		ai_will_do = { factor = 0 }
 	}
@@ -141,12 +145,15 @@ PRC_OCS_category = {
 		visible = { is_ai = no }
 		available = {
 			is_ai = no
-			any_owned_state = {
-				is_controlled_by = ROOT
-				is_coastal = yes
-				NOT = { has_state_flag = PRC_OCS_coastal_dockyards_queued }
-				has_state_flag = PRC_OCS_refinery_target_complete
-				has_state_flag = PRC_OCS_fuel_silo_target_complete
+			custom_trigger_tooltip = {
+				tooltip = PRC_OCS_queue_coastal_dockyards_available_tt
+				any_owned_state = {
+					is_controlled_by = ROOT
+					is_coastal = yes
+					NOT = { has_state_flag = PRC_OCS_coastal_dockyards_queued }
+					has_state_flag = PRC_OCS_refinery_target_complete
+					has_state_flag = PRC_OCS_fuel_silo_target_complete
+				}
 			}
 		}
 		complete_effect = { PRC_OCS_queue_coastal_dockyards_effect = yes }
@@ -162,14 +169,17 @@ PRC_OCS_category = {
 		visible = { is_ai = no }
 		available = {
 			is_ai = no
-			any_owned_state = {
-				is_controlled_by = ROOT
-				NOT = { has_state_flag = PRC_OCS_civilian_industry_queued }
-				has_state_flag = PRC_OCS_refinery_target_complete
-				has_state_flag = PRC_OCS_fuel_silo_target_complete
-				OR = {
-					NOT = { is_coastal = yes }
-					has_state_flag = PRC_OCS_coastal_dockyards_queued
+			custom_trigger_tooltip = {
+				tooltip = PRC_OCS_queue_civilian_industry_available_tt
+				any_owned_state = {
+					is_controlled_by = ROOT
+					NOT = { has_state_flag = PRC_OCS_civilian_industry_queued }
+					has_state_flag = PRC_OCS_refinery_target_complete
+					has_state_flag = PRC_OCS_fuel_silo_target_complete
+					OR = {
+						NOT = { is_coastal = yes }
+						has_state_flag = PRC_OCS_coastal_dockyards_queued
+					}
 				}
 			}
 		}
@@ -182,32 +192,27 @@ PRC_OCS_category = {
 		days_remove = 1
 		days_re_enable = 1
 		fire_only_once = no
-		visible = {
-			is_ai = no
-			has_country_flag = PRC_OCS_initialized
-		}
+		visible = { is_ai = no }
 		available = {
 			is_ai = no
+			has_country_flag = PRC_OCS_initialized
 			any_owned_state = { is_controlled_by = ROOT }
 		}
 		complete_effect = { PRC_OCS_raise_24_infantry_divisions_effect = yes }
 		ai_will_do = { factor = 0 }
 	}
 
-	# v2.2-test1 PRC-only second-stage evolution. The prerequisites cover only
+	# Universal second-stage evolution. The prerequisites cover only
 	# the projects and technologies used by the target templates and variants;
-	# unrelated special projects do not block the decision.
+	# unrelated special projects do not block the decision. The scripted effect
+	# selects PRC militia/name-group templates or generic infantry templates.
 	PRC_OCS_evolve_special_project_forces = {
 		icon = generic_army_support
 		cost = 0
 		days_remove = 1
+		fire_only_once = no
 		visible = {
 			is_ai = no
-			has_country_flag = PRC_OCS_initialized
-			OR = {
-				tag = PRC
-				original_tag = PRC
-			}
 			NOT = { has_country_flag = PRC_OCS_special_project_forces_evolved }
 		}
 		available = {
@@ -216,10 +221,6 @@ PRC_OCS_category = {
 			has_dlc = "Gotterdammerung"
 			has_dlc = "No Step Back"
 			has_dlc = "Thunder at Our Gates"
-			OR = {
-				tag = PRC
-				original_tag = PRC
-			}
 			is_special_project_completed = sp:sp_land_flamethrower_tank
 			is_special_project_completed = sp:sp_land_military_engineering_vehicles
 			is_special_project_completed = sp:sp_air_helicopter
@@ -240,19 +241,17 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
-	# v2.1 special research projects (Gotterdammerung). Re-runnable: each
-	# decision stays available while any project of its specialization tree
-	# is incomplete, so cross-tree parents finished by other decisions can
-	# be picked up by clicking again.
+	# v2.1 special research projects (Gotterdammerung). Each specialization is
+	# a one-time player action: visible from game start, grey without the DLC,
+	# and permanently hidden after its effect finishes.
 	PRC_OCS_complete_air_special_projects = {
 		icon = generic_research
 		cost = 0
 		days_remove = 1
-		days_re_enable = 1
 		fire_only_once = no
 		visible = {
 			is_ai = no
-			has_dlc = "Gotterdammerung"
+			NOT = { has_country_flag = PRC_OCS_air_special_projects_completed }
 		}
 		available = {
 			is_ai = no
@@ -277,11 +276,10 @@ PRC_OCS_category = {
 		icon = generic_research
 		cost = 0
 		days_remove = 1
-		days_re_enable = 1
 		fire_only_once = no
 		visible = {
 			is_ai = no
-			has_dlc = "Gotterdammerung"
+			NOT = { has_country_flag = PRC_OCS_land_special_projects_completed }
 		}
 		available = {
 			is_ai = no
@@ -306,11 +304,10 @@ PRC_OCS_category = {
 		icon = generic_naval
 		cost = 0
 		days_remove = 1
-		days_re_enable = 1
 		fire_only_once = no
 		visible = {
 			is_ai = no
-			has_dlc = "Gotterdammerung"
+			NOT = { has_country_flag = PRC_OCS_naval_special_projects_completed }
 		}
 		available = {
 			is_ai = no
@@ -345,11 +342,10 @@ PRC_OCS_category = {
 		icon = generic_research
 		cost = 0
 		days_remove = 1
-		days_re_enable = 1
 		fire_only_once = no
 		visible = {
 			is_ai = no
-			has_dlc = "Gotterdammerung"
+			NOT = { has_country_flag = PRC_OCS_nuclear_special_projects_completed }
 		}
 		available = {
 			is_ai = no
@@ -371,11 +367,10 @@ PRC_OCS_category = {
 		icon = generic_research
 		cost = 0
 		days_remove = 1
-		days_re_enable = 1
 		fire_only_once = no
 		visible = {
 			is_ai = no
-			has_dlc = "Gotterdammerung"
+			NOT = { has_country_flag = PRC_OCS_rocket_special_projects_completed }
 		}
 		available = {
 			is_ai = no

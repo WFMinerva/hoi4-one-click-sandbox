@@ -228,6 +228,19 @@ def has_direct_scalar(block: Block, key: str, value: str) -> bool:
     return value in direct_scalars(block, key)
 
 
+def localisation_line_errors(text: str) -> list[str]:
+    errors: list[str] = []
+    header_pattern = re.compile(r"^l_[A-Za-z0-9_]+:\s*$")
+    entry_pattern = re.compile(r'^\s*[^\s:#]+:\d*\s+".*"\s*$')
+    for line_number, line in enumerate(text.splitlines(), 1):
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        if header_pattern.fullmatch(line) or entry_pattern.fullmatch(line):
+            continue
+        errors.append(f"第 {line_number} 行不是完整的单行本地化条目")
+    return errors
+
+
 def localisation_keys(path: Path) -> tuple[set[str], list[str]]:
     keys: set[str] = set()
     duplicates: list[str] = []
@@ -435,6 +448,9 @@ def main() -> int:
         except UnicodeDecodeError as exc:
             errors.append(f"{path.relative_to(ROOT)} 不是有效 UTF-8：{exc}")
             continue
+        decoded = data.decode("utf-8-sig")
+        for format_error in localisation_line_errors(decoded):
+            errors.append(f"{path.relative_to(ROOT)}：{format_error}")
         keys, duplicates = localisation_keys(path)
         localisation_sets[path] = keys
         for duplicate in duplicates:

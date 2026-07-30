@@ -1,16 +1,3 @@
-# v2.0a generic core: every existing MIO receives a large, trait-agnostic
-# boost. Specific trait paths remain country-specific; PRC retains its verified
-# four-organization setup below. The all-DLC project baseline includes AAT.
-PRC_OCS_boost_all_mios_effect = {
-	if = {
-		limit = { has_dlc = "Arms Against Tyranny" }
-		every_military_industrial_organization = {
-			add_mio_size = 10
-			add_mio_funds = 10000
-		}
-	}
-}
-
 PRC_OCS_appoint_advisors_effect = {
 	add_ideas = PRC_shao_shiping # political_advisor
 	add_ideas = PRC_zhou_enlai # political_advisor
