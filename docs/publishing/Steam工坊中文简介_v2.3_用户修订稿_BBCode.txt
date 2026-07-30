@@ -72,3 +72,53 @@
 [url=https://github.com/WFMinerva][b]GitHub：WFMinerva / HAPPYADONG[/b][/url]
 
 [url=https://steamcommunity.com/profiles/76561198024627348][b]Steam主页：HAPPYADONG[/b][/url]
+
+[h1]English Description[/h1]
+
+Tired of repeating console commands, research, MIO traits, equipment designs, division templates, and nationwide construction every campaign?
+
+This mod gives [b]every non-AI player country[/b] zero-cost decisions for a fast sandbox start, while staying within results obtainable through normal gameplay.
+
+[h2]One-Click Initialization[/h2]
+[list]
+[*]Completes all technologies and preset Army, Navy, Air, and Special Forces doctrines
+[*]Assigns 8 officer corps spirits
+[*]Completes sensible trait routes for MIOs actually owned by the current country; no extra MIO funds or levels are added, and policies remain player-selected
+[*]Creates 22 land/air equipment designs and 8 powerful 36-width division templates
+[*]Provides political power, command power, military experience, and large equipment stockpiles
+[/list]
+
+Initialization [b]does not automatically convert existing divisions[/b]. A separate decision can convert the current army to the Garrison template.
+
+[h2]Forces, Designs, and Projects[/h2]
+[list]
+[*]Repeatably deploys 24 fully manned, equipped, and trained Main Infantry Divisions
+[*]Repeatably replenishes strategic equipment stockpiles
+[*]After the required special projects, creates evolved HQ, Armored, Marine Armored, and Main Infantry-Tank templates
+[*]Also creates a final medium flame tank, fully upgraded improved amphibious mechanized vehicle, 4 armored support vehicles, and 4 special bomber designs
+[*]Completes all 49 special projects across Air/Radar, Land, Naval, Nuclear, and Rocket specializations, including their technologies, unlocks, and the first free nuclear bomb
+[/list]
+
+Special projects require the [i]Gotterdammerung[/i] DLC.
+
+[h2]Nationwide Construction[/h2]
+
+Construction affects only states [b]owned and controlled by the current country[/b], never temporarily occupied enemy states.
+
+[list]
+[*]Unlocks shared building slots to the vanilla cap of 25
+[*]Raises infrastructure to 5, air bases to 10, existing naval bases to 10, and state AA to 5
+[*]Builds level-10 land and coastal forts in provinces
+[*]Raises synthetic refineries and fuel silos to 3 per state
+[*]Builds up to 5 dockyards in coastal states and 5 civilian factories per state
+[/list]
+
+[h2]Compatibility[/h2]
+[list]
+[*]Hearts of Iron IV 1.19.*; designed with all DLC enabled
+[*]Supports puppets, civil-war countries, dynamic countries, and switching player countries within one campaign
+[*]All decisions cost 0 political power and cannot be used by AI
+[*]Does not overwrite vanilla focus trees, country history, or event chains
+[*]Does not create ship designs or fleets
+[*]Avoid combining it with other large mods that overhaul technology, equipment, templates, MIOs, or construction
+[/list]
