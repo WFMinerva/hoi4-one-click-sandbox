@@ -93,6 +93,7 @@ PRC_OCS_complete_air_special_projects_effect = {
 			# sp_air_supersonic_jet
 			supersonic_fighter1 = 1
 		}
+		set_country_flag = PRC_OCS_air_special_projects_completed
 		country_event = { id = PRC_OCS.12 }
 	}
 }
@@ -158,6 +159,7 @@ PRC_OCS_complete_land_special_projects_effect = {
 			# sp_land_large_caliber_kinetic_energy_sabot
 			sp_advance_sabot_shells = 1
 		}
+		set_country_flag = PRC_OCS_land_special_projects_completed
 		country_event = { id = PRC_OCS.12 }
 	}
 }
@@ -273,6 +275,7 @@ PRC_OCS_complete_naval_special_projects_effect = {
 			sp_naval_repair_ships_pick_b = 1
 			sp_naval_repair_ships_pick_c = 1
 		}
+		set_country_flag = PRC_OCS_naval_special_projects_completed
 		country_event = { id = PRC_OCS.12 }
 	}
 }
@@ -319,6 +322,7 @@ PRC_OCS_complete_nuclear_special_projects_effect = {
 		set_technology = {
 			isotope_separation_centrifugal = 1
 		}
+		set_country_flag = PRC_OCS_nuclear_special_projects_completed
 		country_event = { id = PRC_OCS.12 }
 	}
 }
@@ -361,6 +365,7 @@ PRC_OCS_complete_rocket_special_projects_effect = {
 			sp_rockets_dual_chamber_rocket_engine_1 = 1
 			sp_rockets_dual_chamber_rocket_engine_2 = 1
 		}
+		set_country_flag = PRC_OCS_rocket_special_projects_completed
 		country_event = { id = PRC_OCS.12 }
 	}
 }

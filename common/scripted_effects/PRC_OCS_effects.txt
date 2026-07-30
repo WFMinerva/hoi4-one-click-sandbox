@@ -53,7 +53,7 @@ PRC_OCS_initialize_effect = {
 	PRC_OCS_research_all_effect = yes
 	PRC_OCS_configure_doctrines_effect = yes
 	PRC_OCS_configure_spirits_effect = yes
-	PRC_OCS_boost_all_mios_effect = yes
+	PRC_OCS_configure_shared_mios_effect = yes
 	PRC_OCS_add_points_effect = yes
 
 	if = {

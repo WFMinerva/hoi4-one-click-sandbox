@@ -1,118 +1,57 @@
-# AGENTS.md — 项目总入口
+# AGENTS.md — 一键开局项目入口
 
-> 本文件是任何人/AI 接手本仓库的第一入口。读完本文件后按文末"推荐阅读顺序"继续。
+## 项目与当前基准
 
-## 一、项目定位
+《开局一键爽玩 / One-Click Sandbox Start》是《钢铁雄心 IV》单人沙盒开局 MOD。所有功能仅供玩家国家使用（`is_ai = no`，AI 不可执行），架构为“通用核心 + PRC 增强层”。
 
-《开局一键爽玩 / One-Click Sandbox Start》是《钢铁雄心 IV》（Hearts of Iron IV）的单人沙盒开局 MOD：把科技、学说、装备、编制、库存、全国建设、特殊科研项目等重复开局操作整合为**仅限玩家**（`is_ai = no`，AI 不可执行）的零成本决议。架构为"通用核心 + PRC 增强层"：所有玩家国家可用通用功能，PRC（含 `original_tag = PRC`）额外保留顾问、军工机构特质、中国型号、民兵编制、23 座固定补给站和双电网。
+- 当前稳定基准：**v2.3**。维护者于2026-07-31确认实机回归通过，已上传 Steam 工坊既有物品 `3767025052`（Manifest `7223939852636260892`）；配套Git标签为 `v2.3`，GitHub发布无附件Release。
+- v2.3 的共享 MIO 由生成器维护全国家通用公司表：444家公司、4945个目标特质均先确认当前国家实际拥有，再直接进入对应 `mio:` 作用域；不存在的公司跳过，不使用国家 tag 分支。德国沿用test7的319项，英国按test8补为177项，test9/test10的日苏澳捷意美实际已点路线共1190项；其余公司使用确定性的最大合法路线。PRC原有4家专属MIO继续独立维护。仍不增加资金或额外等级，MIO方针由玩家手动选择。
+- v2.3 同时完成通用进化编制、中自火纠正、每国一次性标志与跨国家切换修复。分类使用 `allowed = { always = yes }` 为所有国家实例化，仍由分类/决议的 `visible`、所有决议的 `available = { is_ai = no }` 与 `ai_will_do = 0` 阻止AI使用；维护者实机确认同局切换国家后分类正常出现。
+- 除完成上述测试线与可选多国扩大回归外，暂无新功能计划。
 
-- 版权人：HAPPYADONG；除 `thumbnail.png` 外采用 `GPL-3.0-only`（见 `LICENSE`、`NOTICE.md`）
-- Steam 工坊物品 ID：`3767025052`（唯一对外下载入口）
+状态冲突时，以本文件、Git HEAD/标签、`docs/baseline/`、实机证据和维护者确认依次核对；工程检查不能代替实机确认。版本史与详细证据见：
 
-## 二、当前状态快照（2026-07-30）
+- `docs/maintenance/README_FIRST.md`
+- `docs/maintenance/功能与版本交接单.md`
+- `docs/maintenance/技术实现与通用化边界.md`
+- `docs/maintenance/测试状态与回归清单.md`
 
-> **接手时先核实此快照是否过期**：对照 `git tag`、`git log`、`CHANGELOG.md` 和 `dist/` 内容确认最新版本与状态。
+## 修改红线
 
-- 当前唯一稳定基准：**v2.2**。在 v2.1 特殊科研功能之上新增 PRC 二阶段编制与最终设计，并将一键24师改为可重复执行；维护者已在中文环境完成实机回归并确认全部项目通过，2026-07-30 已上传既有 Steam 工坊物品 `3767025052`（Manifest `6814589756424432401`）。
-- 已接受限制：基础初始化“装甲师”当前为8机械化＋10中型自行火炮，后续版本改为10＋8；独立的“装甲师·进化型”维持12＋6。
-- v2.1 已由维护者**实机验证通过并上传 Steam 工坊**（2026-07，维护者口头确认）。
-- v2.2 正式包已通过静态检查、9项检查器回归、内嵌清单复核和重复构建一致性检查；正式 Git 标签与 GitHub Release 尚待本机 `gh auth login` 后完成。
-- `dist/` 下 v2.0/v2.1 正式版 zip 及 v2.1 测试包的 SHA-256 均已验证通过。（v2.1 发布包于 2026-07-27 修正误装的 v2.0 基准文档；2026-07-28 又按确定性 ZIP 格式重建并生成新 SHA，MOD 游戏内容未改变。）
-- 2026-07-28 已将静态检查升级为脚本结构检查，CI 同时执行构建与重复构建一致性检查；发布 ZIP 固定元数据并自动核对内嵌清单。
-- 历史基准：v1.2c（PRC 专用）、v2.0（通用化）。旧 `v2.0` git 标签误落在源码导入前，只含 README；真正源码基准为提交 `9593154`，补充标签 `v2.0-source-baseline`。v2.0c 因重复 `limit` 语法错误作废，禁止复用；不得退回 v2.0/v2.0c/v2.0b/v1.2c 覆盖正式线。
+1. 不批量重命名 `PRC_OCS_` 键名，避免破坏事件、本地化和存档引用。
+2. 通用决议必须同时保留 `is_ai = no` 与 `ai_will_do = { factor = 0 }`。
+3. PRC 增强层必须同时覆盖 `tag = PRC` 和 `original_tag = PRC`。
+4. 建设只能处理当前国家拥有且控制的州：`every_owned_state` + 单一 `limit` 中的 `is_controlled_by = ROOT`。
+5. 同一作用域只能有一个 `limit` 块；多条件合并其中。禁止复活 v2.0c 的 `Multiple limits in target effect` 错误。
+6. 不修改原版国策、国家历史和事件链。
+7. `common/`、`events/` 脚本必须是 UTF-8 无 BOM；`localisation/` yml 必须是 UTF-8 带 BOM，英/简中同步。
+8. 不手工编辑 `dist/`；只由 `tools/build_release.py` 生成。
+9. `packaging/OCS_one_click_sandbox_start_v2_0.mod` 的文件名和安装目录约定不得更改；其版本信息必须与 `descriptor.mod` 一致。
+10. `thumbnail.png` 版权保留、不适用 GPL；衍生发布必须删除或替换。`LICENSE`、`NOTICE.md` 不得随意修改。
 
-### 状态职责与证据等级
+## 验证与发布门禁
 
-- 本文件负责当前项目状态、待办和授权边界；`docs/baseline/` 负责各正式版本的产物事实；`CHANGELOG.md` 和 `docs/publishing/` 负责历史及对外文案，不得反向覆盖当前状态。
-- Git HEAD、CI 状态和重复构建结果是工程状态，不自动改变 `v2.2` 的稳定基准身份。出现冲突时先标为“待验证”，只有维护者实机确认后才能更新正式基准。
-- 结论必须区分：**文件确认**、**静态确认**、**日志确认**、**实机确认**、**维护者确认**、**稳定基准**、**已接受限制**、**未覆盖**和**待验证**。低等级证据不能替代高等级证据。
-- 启发式扫描只产生候选；编码、缺文件、重复结构等确定性错误可由检查器直接判定。候选未经人工复核不得写成确认 BUG。
-
-## 三、当前待办（按优先级）
-
-维护者已确认 v2.2 实机通过并已上传 Steam；除下列维护项外暂无其他新功能计划：
-
-1. **完成 v2.2 GitHub 正式化**：
-   - 本机执行 `gh auth login` 后，提交当前完整源码与文档，创建 `v2.2` 标签和仅含更新说明、不挂附件的 GitHub Release。
-2. **后续版本待办**：
-   - 将基础初始化生成的“装甲师”从8个机械化营＋10个中型自行火炮营调整为10个机械化营＋8个中型自行火炮营；不要误改当前12＋6的“装甲师·进化型”。
-3. **任何 MOD 内容修改后**（最高优先级纪律）：
-   - 运行 `python tools/validate_mod.py` 静态检查通过；
-   - 实机回归并保存、检查 `error.log` / `game.log` / `setup.log` / `text.log` 及截图（`text.log` 0字节可表示未发现文本/本地化错误；覆盖面见 `docs/maintenance/测试状态与回归清单.md`）；
-   - 重新运行 `python tools/build_release.py` 生成发布包，并用 `sha256sum -c` 核对 `dist/` 校验文件。
-4. **可选**：补做多国扩大回归（PRC、英国、美国/苏联、无海岸小国、傀儡国），清单见 `docs/maintenance/测试状态与回归清单.md`。
-
-## 四、目录地图
-
-| 条目 | 用途 | 能不能动 |
-| --- | --- | --- |
-| `common/decisions/`、`common/scripted_effects/` | MOD 核心脚本（决议与效果） | 可改，但遵守第五节修改规则；改后必须静态检查 + 实机回归 + 重打包 |
-| `events/PRC_OCS_events.txt` | 初始化与提示事件 | 同上 |
-| `localisation/english/`、`localisation/simp_chinese/` | 双语本地化（yml，**必须带 UTF-8 BOM**） | 可改；两个语言文件必须同步 |
-| `descriptor.mod` | MOD 内描述文件（版本号等） | 发版时更新；必须与 `packaging/` 的 .mod 文件保持一致（静态检查强制） |
-| `packaging/OCS_one_click_sandbox_start_v2_0.mod` | 启动器外层 .mod 模板 | 发版时更新；文件名含 v2_0 是安装目录约定，**不要改文件名** |
-| `tools/validate_mod.py` | 结构化静态检查（必需文件、编码、描述文件、本地化对应、重复 effect/limit、AI/PRC/州作用域约束） | 可扩展检查项，勿放松现有检查 |
-| `tools/test_validate_mod.py` | 检查器回归测试，确认典型坏脚本会被拒绝 | 修改检查逻辑时同步更新 |
-| `tools/build_release.py` | 确定性构建 `dist/` 发布 zip + SHA-256 + 内嵌 MANIFEST_SHA256.csv 并逐文件复核；版本号从 `descriptor.mod` 读取，基准文档按版本号从 `docs/baseline/` 自动挑选 | 可改 |
-| `tools/fix_bom.py` | 去除脚本文件误加的 UTF-8 BOM | 按需运行 |
-| `.gitattributes` | 统一文本文件 LF 行尾、二进制不转换 | 勿删；新增文件类型时补充规则 |
-| `.github/workflows/validate.yml` | CI：push/PR 自动运行静态检查、检查器回归测试、正式包构建和重复构建哈希一致性检查 | 可随检查项演进 |
-| `docs/DEVELOPMENT.md` | 开发与发布流程（构建、回归、工坊上传、许可证边界） | 流程变化时更新 |
-| `docs/maintenance/` | 交接文档四份（入口、功能与版本、技术实现、测试状态） | 状态变化时必须同步更新 |
-| `docs/baseline/` | 各正式版基准文档（文件名含版本号，如 `README_v2.1_正式版.md`）；构建发布包时按当前版本号自动挑选打进 zip | 可新增当期版本文档；勿重命名历史文件 |
-| `docs/testing/` | 测试版本 README 与实机回归清单；版本号含 `test` 时由构建器自动选入测试包 | 测试线变化时同步更新；不得冒充正式基准 |
-| `docs/publishing/` | 工坊/Paradox Mods 发布文案（v2.0 历史 + v2.1 当前） | 发版时新增当期版本文案，旧版标注历史保留 |
-| `dist/` | 构建产物（zip + SHA-256） | **生成目录，不进 Git**；只由 `build_release.py` 生成，不手工编辑 |
-| `CHANGELOG.md` | 正式版本玩家可见变化 | 每个正式版本追加 |
-| `README.md` | 中英双语项目说明 | 版本信息随发版更新 |
-| `LICENSE`、`NOTICE.md` | 许可证与版权边界 | 不改（静态检查校验其内容标记） |
-| `thumbnail.png` | 工坊封面图 | **版权保留，不适用 GPL**；衍生发布必须删除或替换；静态检查要求它存在 |
-
-## 五、通用规则
-
-### 构建与测试
+任何 MOD 内容修改后必须依次完成：
 
 ```powershell
-python tools/validate_mod.py    # 静态检查（修改后、提交前必跑）
-python tools/build_release.py   # 先静态检查，再生成 dist/ 发布包 + SHA-256
+python tools/validate_mod.py
+python -m unittest tools.test_validate_mod
+python tools/build_release.py
 ```
 
-静态检查不能替代实机测试。实机回归流程与日志要求见 `docs/DEVELOPMENT.md` 和 `docs/maintenance/测试状态与回归清单.md`。
+随后核对生成的 SHA-256，并由维护者实机回归；保存和检查 `error.log`、`game.log`、`setup.log`、`text.log` 及必要截图。`error.log` 0字节表示干净；`game.log` 的 `Conflict Risk` 是已知原版杂音；`text.log` 0字节可以表示未发现文本错误。具体覆盖范围见测试清单。
 
-### 修改规则（违反会破坏功能或存档兼容）
+正式顺序为“源码 → 静态检查 → 实机回归 → 文档 → 构建与 SHA → 维护者确认 → Git 标签/Release”。只有实机通过并经维护者确认后才能创建正式标签和 Release；标签必须指向可重建正式包的最后提交。Release 不挂附件，唯一下载入口是 Steam 工坊。
 
-1. 不批量重命名 `PRC_OCS_` 键名——可能被事件、本地化和存档标志引用。
-2. 通用功能只面向 `is_ai = no` 的玩家国家；`ai_will_do = { factor = 0 }` 不可少。
-3. PRC 增强层同时检查 `tag = PRC` 和 `original_tag = PRC`。
-4. 建设只处理当前国家**拥有且控制**的州（`every_owned_state` + `is_controlled_by = ROOT`）。
-5. 同一作用域只能保留一个 `limit` 块，多条件放进同一个块（v2.0c 在此翻车：`Multiple limits in target effect`）。
-6. 不修改原版国策、国家历史和事件链。
+测试包必须带版本号、README、SHA-256 和测试清单，不得冒充正式基准。正式版本变化同步更新 `README.md`、`CHANGELOG.md`、`docs/baseline/`、维护文档及当期发布文案。
 
-### 编码红线
+## 关键目录
 
-- `common/`、`events/` 脚本：**UTF-8 无 BOM**（有 BOM 跑 `python tools/fix_bom.py`）。
-- `localisation/` yml：**UTF-8 带 BOM**（HOI4 要求，缺 BOM 游戏读不出中文）。BOM 容易在编辑过程中丢失，每次改动 yml 后必须重新确认（`validate_mod.py` 会检查）。
+- MOD 源码：`common/decisions/`、`common/scripted_effects/`、`events/`
+- 双语本地化：`localisation/english/`、`localisation/simp_chinese/`
+- 验证与构建：`tools/validate_mod.py`、`tools/test_validate_mod.py`、`tools/build_release.py`
+- 正式/测试证据：`docs/baseline/`、`docs/testing/`
+- 流程与发布：`docs/DEVELOPMENT.md`、`docs/maintenance/`、`docs/publishing/`
+- 生成产物：`dist/`（不进 Git）
 
-### 实机测试分工（维护者已授权）
-
-构建测试包后可直接覆盖安装到本机 MOD 目录并清理旧版；维护者进游戏点验后，由 AI 直接读取游戏 `logs\` 目录确认结果。`error.log` 0 字节即干净；`game.log` 的 "Conflict Risk" 输出是原版杂音。环境路径与细节见 `docs/DEVELOPMENT.md` 和 `docs/maintenance/技术实现与通用化边界.md` 的"环境配置"。
-
-### 语言与提交规范
-
-- 文档用中文；`README.md`、发布文案中英双语；本地化英/简中双文件同步。
-- 提交信息用中文摘要式短句（参照 `git log`，如"新增特殊科研项目决议：一键完成五类专精并授予全部衍生科技"）。
-- 正式顺序必须是“源码 → 静态检查 → 实机回归 → 文档 → 构建与 SHA → 维护者确认 → Git 标签/Release”；标签必须指向能直接重建正式包的最后一个提交。
-- 只有实机验证通过并经维护者确认后才打正式 Git 标签和 GitHub Release；Release 只放更新说明不挂附件，下载入口只有 Steam 工坊。
-- 工坊上传走 steamcmd（`F:\steamcmd`，配置 `F:\steamcmd\hoi4_ocs_workshop.vdf`），细节见 `docs/DEVELOPMENT.md`。
-
-## 六、推荐阅读顺序
-
-1. `AGENTS.md`（本文件）：定位、状态、待办、规则。
-2. `README.md`：面向玩家的功能概览与安装。
-3. `docs/DEVELOPMENT.md`：开发/验证/发布/上传全流程。
-4. `docs/maintenance/功能与版本交接单.md`：版本演进史与功能边界。
-5. `docs/maintenance/技术实现与通用化边界.md`：架构与实现细节、踩坑记录。
-6. `docs/maintenance/测试状态与回归清单.md`：已验证内容与待补回归。
-7. `CHANGELOG.md`：各版本玩家可见变化。
-8. 改代码时：`common/` 与 `events/` 源码（脚本头部注释含设计说明）。
-9. 发版时：`docs/publishing/` 当期版本文案 + `docs/DEVELOPMENT.md` 的"工坊上传"节。
+改代码前按需阅读对应源码头部注释和技术实现文档；发版前阅读 `docs/DEVELOPMENT.md` 及当期发布文案。文档使用中文，README、发布文案和本地化保持中英双语；提交信息使用中文摘要式短句。

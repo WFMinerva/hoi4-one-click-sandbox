@@ -13,8 +13,9 @@ PRC_OCS_raise_24_infantry_divisions_effect = {
 	country_event = { id = PRC_OCS.11 hours = 6 }
 }
 
-# PRC-only, one-time and internally idempotent. New templates are deliberately
-# created under distinct names; no existing or active division is rewritten.
+# Universal, one-time and internally idempotent. PRC/original-PRC countries use
+# the militia/name-group templates; every other country uses the infantry-based
+# generic templates. No existing or active division is rewritten.
 PRC_OCS_evolve_special_project_forces_effect = {
 	if = {
 		limit = {
@@ -22,13 +23,16 @@ PRC_OCS_evolve_special_project_forces_effect = {
 				tag = PRC
 				original_tag = PRC
 			}
-			NOT = { has_country_flag = PRC_OCS_special_project_forces_evolved }
 		}
 		PRC_OCS_create_evolved_variants_effect = yes
 		PRC_OCS_create_evolved_templates_effect = yes
-		set_country_flag = PRC_OCS_special_project_forces_evolved
-		country_event = { id = PRC_OCS.13 }
 	}
+	else = {
+		PRC_OCS_create_evolved_variants_effect = yes
+		PRC_OCS_create_generic_evolved_templates_effect = yes
+	}
+	set_country_flag = PRC_OCS_special_project_forces_evolved
+	country_event = { id = PRC_OCS.13 }
 }
 
 PRC_OCS_reorganize_all_divisions_effect = {
