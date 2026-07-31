@@ -35,7 +35,6 @@ PRC_OCS_resupply_effect = {
 	else = {
 		PRC_OCS_add_generic_stockpile_effect = yes
 	}
-	PRC_OCS_add_points_effect = yes
 }
 
 PRC_OCS_add_points_effect = {
@@ -54,7 +53,6 @@ PRC_OCS_initialize_effect = {
 	PRC_OCS_configure_doctrines_effect = yes
 	PRC_OCS_configure_spirits_effect = yes
 	PRC_OCS_configure_shared_mios_effect = yes
-	PRC_OCS_add_points_effect = yes
 
 	if = {
 		limit = {

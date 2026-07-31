@@ -1017,4 +1017,21 @@ PRC_OCS_create_evolved_variants_effect = {
 			}
 		}
 	}
+	# v2.4: stockpile the newly unlocked evolution equipment here, once their
+	# designs exist. Initialization and resupply intentionally do not grant
+	# these types because they only exist after evolution.
+	add_equipment_to_stockpile = {
+		type = helicopter_equipment_1
+		amount = 1000000
+	}
+	add_equipment_to_stockpile = {
+		type = armored_support_vehicle_1
+		amount = 1000000
+		variant_name = "装甲支援车"
+	}
+	add_equipment_to_stockpile = {
+		type = medium_tank_flame_chassis_3
+		amount = 1000000
+		variant_name = "中型喷火坦克 III型"
+	}
 }

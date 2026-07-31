@@ -185,6 +185,8 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 		# Priority 3: dockyards may only consume slots after both petrochemical
 		# targets are complete. Add them one at a time so partial progress remains
 		# valid when fewer than five slots are available.
+		# v2.4: step flags are reset before each click so the decision is
+		# repeatable until the state reaches the level-20 target.
 		if = {
 			limit = {
 				NOT = { has_state_flag = PRC_OCS_coastal_dockyards_queued }
@@ -192,9 +194,14 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 				has_state_flag = PRC_OCS_fuel_silo_target_complete
 			}
 
+			clr_state_flag = PRC_OCS_dockyard_1_added
+			clr_state_flag = PRC_OCS_dockyard_2_added
+			clr_state_flag = PRC_OCS_dockyard_3_added
+			clr_state_flag = PRC_OCS_dockyard_4_added
+			clr_state_flag = PRC_OCS_dockyard_5_added
+
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_dockyard_1_added }
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -204,7 +211,6 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 			}
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_dockyard_2_added }
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -214,7 +220,6 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 			}
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_dockyard_3_added }
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -224,7 +229,6 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 			}
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_dockyard_4_added }
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -234,7 +238,6 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 			}
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_dockyard_5_added }
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -245,16 +248,7 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 
 			if = {
 				limit = {
-					OR = {
-						dockyard > 19
-						AND = {
-							has_state_flag = PRC_OCS_dockyard_1_added
-							has_state_flag = PRC_OCS_dockyard_2_added
-							has_state_flag = PRC_OCS_dockyard_3_added
-							has_state_flag = PRC_OCS_dockyard_4_added
-							has_state_flag = PRC_OCS_dockyard_5_added
-						}
-					}
+					dockyard > 19
 				}
 				set_state_flag = PRC_OCS_coastal_dockyards_queued
 			}
@@ -279,6 +273,8 @@ PRC_OCS_queue_civilian_industry_effect = {
 
 		# Priority 4: civilian factories may only consume slots after the two
 		# petrochemical targets and, in coastal states, the dockyard target.
+		# v2.4: step flags are reset before each click so the decision is
+		# repeatable until the state reaches the level-20 target.
 		if = {
 			limit = {
 				NOT = { has_state_flag = PRC_OCS_civilian_industry_queued }
@@ -290,9 +286,14 @@ PRC_OCS_queue_civilian_industry_effect = {
 				}
 			}
 
+			clr_state_flag = PRC_OCS_civilian_factory_1_added
+			clr_state_flag = PRC_OCS_civilian_factory_2_added
+			clr_state_flag = PRC_OCS_civilian_factory_3_added
+			clr_state_flag = PRC_OCS_civilian_factory_4_added
+			clr_state_flag = PRC_OCS_civilian_factory_5_added
+
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_civilian_factory_1_added }
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -302,7 +303,6 @@ PRC_OCS_queue_civilian_industry_effect = {
 			}
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_civilian_factory_2_added }
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -312,7 +312,6 @@ PRC_OCS_queue_civilian_industry_effect = {
 			}
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_civilian_factory_3_added }
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -322,7 +321,6 @@ PRC_OCS_queue_civilian_industry_effect = {
 			}
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_civilian_factory_4_added }
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -332,7 +330,6 @@ PRC_OCS_queue_civilian_industry_effect = {
 			}
 			if = {
 				limit = {
-					NOT = { has_state_flag = PRC_OCS_civilian_factory_5_added }
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -343,16 +340,7 @@ PRC_OCS_queue_civilian_industry_effect = {
 
 			if = {
 				limit = {
-					OR = {
-						industrial_complex > 19
-						AND = {
-							has_state_flag = PRC_OCS_civilian_factory_1_added
-							has_state_flag = PRC_OCS_civilian_factory_2_added
-							has_state_flag = PRC_OCS_civilian_factory_3_added
-							has_state_flag = PRC_OCS_civilian_factory_4_added
-							has_state_flag = PRC_OCS_civilian_factory_5_added
-						}
-					}
+					industrial_complex > 19
 				}
 				set_state_flag = PRC_OCS_civilian_industry_queued
 			}
@@ -543,14 +531,6 @@ PRC_OCS_queue_national_defenses_effect = {
 				add_building_construction = {
 					type = anti_air_building
 					level = 5
-				}
-			}
-
-			add_building_construction = {
-				type = bunker
-				level = 10
-				province = {
-					all_provinces = yes
 				}
 			}
 

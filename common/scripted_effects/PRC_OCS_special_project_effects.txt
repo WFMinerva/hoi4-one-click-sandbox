@@ -72,6 +72,8 @@ PRC_OCS_complete_air_special_projects_effect = {
 			miniature_fighters = 1
 			reinforced_wings_mothership = 1
 			# sp_air_radar
+			radio_detection = 1
+			cavity_magnatron = 1
 			centimetric_radar = 1
 			phased_array = 1
 			monopulse_radar = 1

@@ -74,3 +74,5 @@
  PRC_OCS.13.t:0 "Special-Project Army Evolution Complete"
  PRC_OCS.13.d:0 "The new headquarters, armored, amphibious armored and infantry-tank templates are now available. The final Medium Flame Tank III, Improved Amphibious Tractor, four specialized armored support vehicles and four special bombers have entered the production catalogue, while their older equipment designs have been retired.\n\nExisting division templates and active units remain unchanged; their conversion or replacement is left to the commander."
  PRC_OCS.13.a:0 "Put the new formations to the test!"
+ PRC_OCS_add_points:0 "Replenish Political Power, Command Power and Service Experience"
+ PRC_OCS_add_points_desc:0 "Grants §Y99,999§! political power, §Y100§! command power and §Y999§! in each service experience—the points that were previously bundled inside the One-Click Sandbox Start and Replenish Stockpile decisions. This decision can be used repeatedly whenever you need more."
