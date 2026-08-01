@@ -43,6 +43,8 @@ python tools/build_release.py
 
 随后核对生成的 SHA-256，并由维护者实机回归；保存和检查 `error.log`、`game.log`、`setup.log`、`text.log` 及必要截图。`error.log` 0字节表示干净；`game.log` 的 `Conflict Risk` 是已知原版杂音；`text.log` 0字节可以表示未发现文本错误。具体覆盖范围见测试清单。
 
+**发布/构建/上传纪律**：任何发布、构建、工坊上传、GitHub Release 类操作，动手前必须先 `list_files tools/` 并读 `docs/DEVELOPMENT.md` 对应章节，确认仓库是否已有现成脚本（如 `tools/publish_workshop.py`、`tools/build_release.py`）与已验证方法，再决定执行或新建；不得绕开现成工具自造轮子。发布类操作详见 `docs/DEVELOPMENT.md` 的「构建测试包或发布包」「工坊上传」以及本文件经验文档。
+
 正式顺序为“源码 → 静态检查 → 实机回归 → 文档 → 构建与 SHA → 维护者确认 → Git 标签/Release”。只有实机通过并经维护者确认后才能创建正式标签和 Release；标签必须指向可重建正式包的最后提交。自 v2.4 起 GitHub Release 挂正式包 ZIP 附件（ASCII 文件名 + 中文显示名）便于维护取用；唯一下载入口仍以 Steam 工坊为准。
 
 测试包必须带版本号、README、SHA-256 和测试清单，不得冒充正式基准。正式版本变化同步更新 `README.md`、`CHANGELOG.md`、`docs/baseline/`、维护文档及当期发布文案。
