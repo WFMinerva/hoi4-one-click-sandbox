@@ -79,3 +79,71 @@
 [url=https://github.com/WFMinerva][b]GitHub：WFMinerva / HAPPYADONG[/b][/url]
 
 [url=https://steamcommunity.com/profiles/76561198024627348][b]Steam主页：HAPPYADONG[/b][/url]
+
+[h1]English Description[/h1]
+
+Tired of repeating console commands, research, MIO traits, equipment designs, division templates, and nationwide construction every campaign?
+
+This mod gives [b]every non-AI player country[/b] zero-cost decisions for a fast sandbox start, while staying within results obtainable through normal gameplay.
+
+[h2]One-Click Initialization[/h2]
+[list]
+[*]Completes all technologies and preset Army, Navy, Air, and Special Forces doctrines
+[*]Assigns 8 officer corps spirits
+[*]Completes sensible trait routes for MIOs actually owned by the current country; no extra MIO funds or levels are added, and policies remain player-selected
+[*]Creates 22 land/air equipment designs and 8 division templates
+[*]Provides large equipment stockpiles and fully upgraded variants
+[/list]
+
+Initialization [b]does not automatically convert existing divisions[/b]. A separate decision can convert the current army to the Garrison template.
+
+[h2]Points and Experience[/h2]
+[list]
+[*]A separate repeatable decision replenishes political power, command power, and Army/Navy/Air experience at any time
+[*]Costs 0 political power and is not limited by initialization
+[/list]
+
+[h2]Forces, Designs, and Projects[/h2]
+[list]
+[*]Repeatably deploys 24 fully manned, equipped, and trained Main Infantry Divisions
+[*]Repeatably replenishes strategic equipment stockpiles
+[*]After the required special projects, creates evolved HQ, Armored, Marine Armored, and Main Infantry-Tank templates
+[*]Executing the "evolve special project land forces" decision unlocks designs and stockpiles together (final medium flame tank, fully upgraded amphibious vehicle, armored support vehicles, and helicopter)
+[*]Generic countries use neutral equipment names and ordinary infantry templates
+[/list]
+
+[h2]Special Projects[/h2]
+
+Requires the [i]Gotterdammerung[/i] DLC.
+
+[list]
+[*]Completes all 49 special projects across Air/Radar, Land, Naval, Nuclear, and Rocket specializations
+[*]Rewards include the corresponding technologies, equipment, module unlocks, and the first free nuclear bomb
+[*]Directly grants related derivative and prototype-choice technologies
+[*]Nuclear specialization adds an extra reactor in the capital
+[*]After completing the Air special projects, radar technologies 1–5 are all unlocked
+[/list]
+
+[h2]Nationwide Construction[/h2]
+
+Construction affects only states [b]owned and controlled by the current country[/b], never temporarily occupied enemy states.
+
+[list]
+[*]Unlocks shared building slots to the vanilla cap of 25
+[*]Raises infrastructure to 5, air bases to 10, and existing naval bases to 10
+[*]Raises state AA to 5 and builds level-10 coastal forts in coastal provinces
+[*]Raises synthetic refineries and fuel silos to 3 per state
+[*]Raises dockyards in coastal states and civilian factories per state to the cap via repeatable decisions
+[*]Keeps partial progress when slots are full; resumes once slots are freed
+[/list]
+
+[h2]Compatibility[/h2]
+[list]
+[*]Hearts of Iron IV 1.19.*; designed with all DLC enabled
+[*]Special projects require the [i]Gotterdammerung[/i] DLC
+[*]Supports puppets, civil-war countries, and dynamic countries
+[*]All decisions cost 0 political power and cannot be used by AI
+[*]Does not overwrite vanilla focus trees, country history, or event chains
+[*]Does not create ship designs or fleets
+[*]Avoid combining it with other large mods that overhaul technology, equipment, templates, MIOs, or construction
+[/list]
