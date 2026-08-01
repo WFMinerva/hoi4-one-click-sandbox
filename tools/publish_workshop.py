@@ -7,7 +7,7 @@
 
 脚本自动完成:
 1. 从仓库同步 MOD 内容到 steamcmd 暂存目录（先清空旧目录，避免残留文件）。
-2. 由 docs/publishing/Steam工坊中文简介_v2.4_BBCode.txt 生成 VDF（description + changenote，
+2. 由 docs/publishing/Steam工坊中文简介_v2.5_BBCode.txt 生成 VDF（description + changenote，
    publishedfileid 固定为既有物品 3767025052，不新建工坊条目）。
 3. 调用 steamcmd 执行 +workshop_build_item。
 
@@ -35,12 +35,11 @@ MOD_ITEMS = (
 WORKSHOP_ID = "3767025052"
 APPID = "394360"
 CONTENT_FOLDER_NAME = "OCS_one_click_sandbox_start_v2_0"
-DESCRIPTION_FILE = ROOT / "docs" / "publishing" / "Steam工坊中文简介_v2.4_BBCode.txt"
+DESCRIPTION_FILE = ROOT / "docs" / "publishing" / "Steam工坊中文简介_v2.5_BBCode.txt"
 CHANGENOTE = (
-    "v2.4 更新：雷达科技归位空军特殊科研（完成后1-5级全亮）；"
-    "直升机/装甲支援车/中型喷火坦克III型执行进化编制后设计与库存同现；"
-    "船坞/民用工厂可重复点至上限20；全地图移除陆地碉堡（防空/海岸要塞保留）；"
-    "政治点/指挥点/三军经验剥离为独立可重复决议；修复MOD本地部署加载结构。"
+    "v2.5 更新：新增间谍情报条线（需《La Resistance》DLC）——"
+    "一键组建间谍机构、一键升满情报/防御/行动/特工训练/密码破译五大部门升级；"
+    "0成本、无科技国策前置、无等待，AI不会执行，无DLC不显示。"
 )
 
 

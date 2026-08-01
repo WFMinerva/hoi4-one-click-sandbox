@@ -4,7 +4,7 @@
 
 ## 稳定基准
 
-v2.4 是当前稳定基准，在v2.3全国家通用MIO路线、通用进化编制、跨国家切换与每国一次性功能基础上完成一批玩家反馈修复（雷达科技归位空军特殊科研、进化装备设计与库存同步、船坞/民用工厂可重复点至上限、全地图碉堡收敛、点数/经验剥离为独立决议、本地部署加载结构修复）。后续修改必须基于当前仓库，不得退回旧版本覆盖正式线。
+v2.5 是当前稳定基准，在v2.4修复集正式化之上新增间谍情报条线（需《La Resistance》DLC）：一键创建间谍机构、一键点满情报/防御/行动/特工训练/密码破译五大部门升级，0成本、无科技国策前置、无等待，每国独立一次、无DLC不可见。后续修改必须基于当前仓库，不得退回旧版本覆盖正式线。
 
 历史标签说明：旧 `v2.0` 标签误落在源码导入之前，只含 `README.md`，不能用于恢复 MOD；真正的 v2.0 源码基准是提交 `9593154`，补充标签为 `v2.0-source-baseline`。已公开的错误标签不强制移动，避免破坏已有克隆中的引用。
 
@@ -80,17 +80,24 @@ Git 标签必须指向能够直接重建该版本正式包的最后一个提交�
 
 ## 工坊上传
 
-使用 steamcmd（装在 `F:\steamcmd`，配置 `F:\steamcmd\hoi4_ocs_workshop.vdf`）：
+推荐使用仓库自带脚本 `tools/publish_workshop.py`（自动同步暂存目录、按当期 `docs/publishing/Steam工坊中文简介_v2.x_BBCode.txt` 生成 VDF 的 description 与 changenote，再调用 steamcmd）：
 
 ```powershell
-# 暂存内容 = 仓库根目录的 MOD 内容（common、events、localisation、descriptor.mod、
-# thumbnail.png、LICENSE、NOTICE.md）原样复制到
-# F:\steamcmd\workshop_content\OCS_one_click_sandbox_start_v2_0\
-# 登录与 Steam Guard 由用户本人完成：
-F:\steamcmd\steamcmd.exe +login <Steam用户名> +workshop_build_item F:\steamcmd\hoi4_ocs_workshop.vdf +quit
+# 本机实际安装于 D:\steamcmd（旧文档记录的 F:\steamcmd 已过时，以实际盘符为准）
+python tools/publish_workshop.py --steamcmd D:\steamcmd\steamcmd.exe --username <Steam用户名>
 ```
 
-上传前确认暂存目录与仓库逐文件一致，并更新 VDF 里的 `changenote`。
+steamcmd 是交互式控制台程序，AI 执行环境的键盘输入无法实时转发（会读空密码导致 Invalid Password）。正确做法是**弹出独立窗口让维护者交互登录**：
+
+```powershell
+# 1. 先跑脚本生成 VDF 与暂存目录（无需登录也会完成；D:\steamcmd\hoi4_ocs_workshop.vdf 与
+#    D:\steamcmd\workshop_content\OCS_one_click_sandbox_start_v2_0\ 已就绪）
+python tools/publish_workshop.py --steamcmd D:\steamcmd\steamcmd.exe
+# 2. 弹出独立窗口（VDF 已生成，直接调用 steamcmd；密码由维护者在窗口输入，不回显属正常）
+cmd /c start "OCS Workshop Upload" cmd /K "D:\steamcmd\steamcmd.exe +login <账号> +workshop_build_item D:\steamcmd\hoi4_ocs_workshop.vdf +quit"
+```
+
+上传成功后从 `D:\steamcmd\logs\workshop_log.txt` 判读：应含 `Upload finished for workshop item 3767025052 : OK` 与 `Uploaded new content ( ManifestID xxx )`；把 Manifest 号同步到 `AGENTS.md`、`docs/maintenance/` 与 `docs/baseline/` 相关文档。
 
 steamcmd 注意事项：
 
@@ -99,7 +106,7 @@ steamcmd 注意事项：
 - VDF 中的路径用正斜杠（`F:/steamcmd/...`）：反斜杠序列如 `\t` 会被 VDF 解析器转义成制表符，导致 `Failed to read preview file`。
 - 密码和 Steam Guard 验证码不要写进命令行，按提示交互输入；命令中的用户名直接写账号名本身（PowerShell 里 `<` `>` 是保留符号，带尖括号会报语法错误）。
 - 上传成功标志：输出 `Committing update...Success`，或 steamcmd 日志中 `Upload finished ... : OK`。
-- 与项目无关的通用流程指南在 `F:\steamcmd\STEAMCMD_工坊上传指南.md`（仓库外）。
+- 与项目无关的通用流程指南在 `D:\steamcmd\STEAMCMD_工坊上传指南.md`（仓库外）。
 
 ## 故障排查经验
 
