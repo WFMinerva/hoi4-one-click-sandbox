@@ -696,7 +696,21 @@ class ValidatorRegressionTests(unittest.TestCase):
         evolved_equipment_text = equipment_text.split(
             "PRC_OCS_create_evolved_variants_effect = {", 1
         )[1]
-        self.assertEqual(evolved_equipment_text.count('name = "装甲支援车"'), 4)
+        evolved_effect = next(
+            assignment.value
+            for assignment in equipment_root.assignments
+            if assignment.key == "PRC_OCS_create_evolved_variants_effect"
+        )
+        self.assertEqual(
+            sum(
+                1
+                for variant in validator.direct_blocks(
+                    evolved_effect, "create_equipment_variant"
+                )
+                if validator.direct_scalars(variant, "name") == ["装甲支援车"]
+            ),
+            4,
+        )
         self.assertEqual(
             evolved_equipment_text.count('name = "改进型履带登陆车"'), 1
         )

@@ -1,8 +1,8 @@
-version="2.3"
+version="2.4"
 tags={
 	"Gameplay"
 	"Utilities"
 }
-name="开局一键爽玩 / One-Click Sandbox Start v2.3"
+name="开局一键爽玩 / One-Click Sandbox Start v2.4"
 supported_version="1.19.*"
 path="mod/OCS_one_click_sandbox_start_v2_0"
