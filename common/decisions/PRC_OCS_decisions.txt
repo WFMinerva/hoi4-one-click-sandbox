@@ -403,4 +403,90 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	PRC_OCS_create_intelligence_agency = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_intel_agency_created }
+		}
+		available = {
+			is_ai = no
+			has_dlc = "La Resistance"
+		}
+		complete_effect = {
+			custom_effect_tooltip = PRC_OCS_create_intelligence_agency_effect
+			hidden_effect = {
+				create_intelligence_agency = yes
+				set_country_flag = PRC_OCS_intel_agency_created
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_unlock_all_agency_upgrades = {
+		icon = generic_operation
+		cost = 0
+		days_remove = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_intel_upgrades_done }
+		}
+		available = {
+			is_ai = no
+			has_dlc = "La Resistance"
+			has_intelligence_agency = yes
+		}
+		modifier = {
+			hidden_modifier = {
+				agency_upgrade_time = -1.0
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = PRC_OCS_unlock_all_agency_upgrades_effect
+			hidden_effect = {
+				set_country_flag = PRC_OCS_intel_upgrades_done
+				# Intelligence Branch
+				upgrade_intelligence_agency = upgrade_economy_civilian
+				upgrade_intelligence_agency = upgrade_army_department
+				upgrade_intelligence_agency = upgrade_naval_department
+				upgrade_intelligence_agency = upgrade_airforce_department
+				# Defense Branch
+				upgrade_intelligence_agency = upgrade_passive_defense
+				upgrade_intelligence_agency = upgrade_passive_defense
+				upgrade_intelligence_agency = upgrade_passive_defense
+				upgrade_intelligence_agency = upgrade_passive_defense
+				upgrade_intelligence_agency = upgrade_anti_partisan
+				upgrade_intelligence_agency = upgrade_anti_partisan
+				# Operations Branch
+				upgrade_intelligence_agency = upgrade_blueprint_stealing
+				upgrade_intelligence_agency = upgrade_portable_radios
+				upgrade_intelligence_agency = upgrade_invisible_ink
+				upgrade_intelligence_agency = upgrade_plastic_explosives
+				upgrade_intelligence_agency = upgrade_suicide_pills
+				# Operative Training Branch
+				upgrade_intelligence_agency = upgrade_commando_training
+				upgrade_intelligence_agency = upgrade_interrogation_techniques
+				upgrade_intelligence_agency = upgrade_diplo_training
+				upgrade_intelligence_agency = upgrade_psycho_warfare
+				# Cryptology Department Branch
+				upgrade_intelligence_agency = upgrade_form_department
+				upgrade_intelligence_agency = upgrade_decryption_boost
+				upgrade_intelligence_agency = upgrade_decryption_boost
+				upgrade_intelligence_agency = upgrade_decryption_boost_2
+				upgrade_intelligence_agency = upgrade_decryption_boost_2
+				upgrade_intelligence_agency = upgrade_decryption_boost_2
+				upgrade_intelligence_agency = upgrade_crypto_strength
+				upgrade_intelligence_agency = upgrade_crypto_strength
+				upgrade_intelligence_agency = upgrade_crypto_strength_2
+				upgrade_intelligence_agency = upgrade_crypto_strength_2
+				upgrade_intelligence_agency = upgrade_crypto_strength_2
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
 }

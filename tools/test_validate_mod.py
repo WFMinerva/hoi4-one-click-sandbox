@@ -204,6 +204,10 @@ class ValidatorRegressionTests(unittest.TestCase):
                 "PRC_OCS_nuclear_special_projects_completed",
             "PRC_OCS_complete_rocket_special_projects":
                 "PRC_OCS_rocket_special_projects_completed",
+            "PRC_OCS_create_intelligence_agency":
+                "PRC_OCS_intel_agency_created",
+            "PRC_OCS_unlock_all_agency_upgrades":
+                "PRC_OCS_intel_upgrades_done",
         }
         special_project_decisions = {
             name: flag
