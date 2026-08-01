@@ -83,9 +83,12 @@ Git 标签必须指向能够直接重建该版本正式包的最后一个提交�
 推荐使用仓库自带脚本 `tools/publish_workshop.py`（自动同步暂存目录、按当期 `docs/publishing/Steam工坊中文简介_v2.x_BBCode.txt` 生成 VDF 的 description 与 changenote，再调用 steamcmd）：
 
 ```powershell
-# 本机实际安装于 D:\steamcmd（旧文档记录的 F:\steamcmd 已过时，以实际盘符为准）
+# 路径说明：单位机安装于 D:\steamcmd；F:\steamcmd 是家用机（Codex 维护环境）记录的路径，
+# 两者均为真实路径，按当前机器选用并传给 --steamcmd
 python tools/publish_workshop.py --steamcmd D:\steamcmd\steamcmd.exe --username <Steam用户名>
 ```
+>
+> 注释中的 D:\steamcmd 以单位机为准；家用机上把 `--steamcmd` 换成 `F:\steamcmd\steamcmd.exe` 即可（`publish_workshop.py` 的 `--steamcmd` 参数天然支持任意盘符）。
 
 steamcmd 是交互式控制台程序，AI 执行环境的键盘输入无法实时转发（会读空密码导致 Invalid Password）。正确做法是**弹出独立窗口让维护者交互登录**：
 
@@ -103,10 +106,10 @@ steamcmd 注意事项：
 
 - 始终更新已有物品 `3767025052`，不要新建工坊条目，否则订阅数被分流。
 - steamcmd 更新内容、预览图和 changenote；在 VDF 中加入 `title`/`description` 字段可一并更新工坊标题和简介（不加则保持现状；标签仍需网页手动编辑）。简介文案在 `docs/publishing/`。
-- VDF 中的路径用正斜杠（`F:/steamcmd/...`）：反斜杠序列如 `\t` 会被 VDF 解析器转义成制表符，导致 `Failed to read preview file`。
+- VDF 中的路径用正斜杠（单位机 `D:/steamcmd/...`，家用机 `F:/steamcmd/...`）：反斜杠序列如 `\t` 会被 VDF 解析器转义成制表符，导致 `Failed to read preview file`。
 - 密码和 Steam Guard 验证码不要写进命令行，按提示交互输入；命令中的用户名直接写账号名本身（PowerShell 里 `<` `>` 是保留符号，带尖括号会报语法错误）。
 - 上传成功标志：输出 `Committing update...Success`，或 steamcmd 日志中 `Upload finished ... : OK`。
-- 与项目无关的通用流程指南在 `D:\steamcmd\STEAMCMD_工坊上传指南.md`（仓库外）。
+- 与项目无关的通用流程指南在 `D:\steamcmd\STEAMCMD_工坊上传指南.md`（家用机在 `F:\steamcmd\STEAMCMD_工坊上传指南.md`，仓库外）。
 
 ## 故障排查经验
 
