@@ -18,7 +18,7 @@ jobs:
       - name: 检查器回归测试
         run: python -m unittest tools/test_validate_mod.py
       - name: MIO 生成器一致性
-        run: python tools/generate_universal_mio_effect.py --check
+        run: python tools/generate_universal_mio_effect.py --check --no-vanilla
       - name: 构建发布包
         run: python tools/build_release.py
       - name: 验证重复构建结果一致

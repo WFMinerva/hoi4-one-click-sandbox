@@ -37,7 +37,7 @@ python tools/generate_universal_mio_effect.py --check
 - `any_owned_state` / `every_owned_state` 均限制为 `is_controlled_by = ROOT`；
 - scripted effect 不得重名。
 
-第二条命令是检查器自身的回归测试，第三条命令确认共享 MIO 生成器与已提交产物一致；两者分别拦截结构规则回归和生成产物漂移。静态检查不能替代实机测试。推送到 GitHub 后，CI（`.github/workflows/validate.yml`）会再次运行三项检查、实际生成发布包，并连续构建两次确认 ZIP 哈希一致。
+第二条命令是检查器自身的回归测试，第三条命令确认共享 MIO 生成器与已提交产物一致；两者分别拦截结构规则回归和生成产物漂移。静态检查不能替代实机测试。推送到 GitHub 后，CI（`.github/workflows/validate.yml`）会再次运行三项检查、实际生成发布包，并连续构建两次确认 ZIP 哈希一致。 CI 的 MIO 检查在 runner 无 HOI4 原版目录时使用 --check --no-vanilla 与提交清单。
 
 ## 实机回归
 
