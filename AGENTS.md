@@ -25,7 +25,7 @@
 1. 不批量重命名 `PRC_OCS_` 键名，避免破坏事件、本地化和存档引用。
 2. 通用决议必须同时保留 `is_ai = no` 与 `ai_will_do = { factor = 0 }`。
 3. PRC 增强层必须同时覆盖 `tag = PRC` 和 `original_tag = PRC`。
-4. 建设只能处理当前国家拥有且控制的州：`every_owned_state` + 单一 `limit` 中的 `is_controlled_by = ROOT`。
+4. 建设以当前国家**控制**的州为准：**工业类建设**（共享槽位、石化、船坞、民用工业）继续只处理**拥有且控制**的州（`every_owned_state` + 单一 `limit` 中的 `is_controlled_by = ROOT`，避免非核心州工厂产出惩罚）；**占领区基建**（基础设施、防空、机场/港口）在**控制但非拥有**的州上由独立决议 `PRC_OCS_develop_occupied_territory` 处理（`every_controlled_state` + `NOT = { is_owned_by = ROOT }`）；补给站加速为国家级 modifier。
 5. 同一作用域只能有一个 `limit` 块；多条件合并其中。禁止复活 v2.0c 的 `Multiple limits in target effect` 错误。
 6. 不修改原版国策、国家历史和事件链。
 7. `common/`、`events/` 脚本必须是 UTF-8 无 BOM；`localisation/` yml 必须是 UTF-8 带 BOM，英/简中同步。
