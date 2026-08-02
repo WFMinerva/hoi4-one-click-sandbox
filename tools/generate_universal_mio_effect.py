@@ -13,8 +13,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import analyze_mio_archetypes as ar  # noqa: E402
+import hoi4_paths  # noqa: E402
 
-VANILLA = Path(r"F:\SteamLibrary\steamapps\common\Hearts of Iron IV\common\military_industrial_organization\organizations")
 INVENTORY = ROOT / "docs" / "analysis" / "v2.3_MIO架构第一轮盘点.json"
 OUTPUT = ROOT / "common" / "scripted_effects" / "PRC_OCS_shared_mio_effects.txt"
 PRC_EFFECT = ROOT / "common" / "scripted_effects" / "PRC_OCS_mio_effects.txt"
@@ -155,8 +155,15 @@ def render_route(token: str, traits: list[str]) -> list[str]:
     return lines
 
 
-def build() -> tuple[str, dict]:
-    orgs, duplicates, repairs = ar.load_organizations(VANILLA)
+def build(vanilla_root: Path | None = None) -> tuple[str, dict]:
+    vanilla_root = hoi4_paths.resolve_vanilla_path(vanilla_root)
+    organizations_dir = (
+        vanilla_root
+        / "common"
+        / "military_industrial_organization"
+        / "organizations"
+    )
+    orgs, duplicates, repairs = ar.load_organizations(organizations_dir)
     if duplicates:
         raise ValueError(f"duplicate organizations: {duplicates}")
     inventory = json.loads(INVENTORY.read_text(encoding="utf-8"))
@@ -210,9 +217,14 @@ def build() -> tuple[str, dict]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--vanilla",
+        type=Path,
+        help="HOI4 原版根目录；省略时读取 HOI4_VANILLA_PATH 或探测已知盘符",
+    )
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    content, stats = build()
+    content, stats = build(args.vanilla)
     if args.check:
         if OUTPUT.read_text(encoding="utf-8-sig") != content:
             print("Universal MIO effect is out of date.", file=sys.stderr)

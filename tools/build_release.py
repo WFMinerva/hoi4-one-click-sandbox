@@ -29,6 +29,7 @@ MOD_ITEMS = (
     "LICENSE",
     "NOTICE.md",
 )
+BINARY_SUFFIXES = {".png"}
 
 
 def mod_version() -> str:
@@ -55,6 +56,58 @@ def package_docs(version: str) -> list[Path]:
     )
 
 
+def release_payload_paths(version: str) -> list[Path]:
+    """Return repository inputs whose bytes define a release archive."""
+    paths = [ROOT / item for item in MOD_ITEMS]
+    paths.append(ROOT / "packaging" / f"{MOD_DIR_NAME}.mod")
+    paths.extend(package_docs(version))
+    return paths
+
+
+def verify_tagged_release_payload(version: str) -> None:
+    """Refuse package drift once a stable version tag exists locally."""
+    if is_test_version(version):
+        return
+    tag = f"v{version}"
+    tagged = subprocess.run(
+        ["git", "rev-parse", "--verify", "--quiet", f"refs/tags/{tag}"],
+        cwd=ROOT,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if tagged.returncode:
+        return
+
+    relative_paths = [
+        str(path.relative_to(ROOT)) for path in release_payload_paths(version)
+    ]
+    untracked = subprocess.check_output(
+        ["git", "ls-files", "--others", "--exclude-standard", "--", *relative_paths],
+        cwd=ROOT,
+        text=True,
+    ).strip()
+    if untracked:
+        raise SystemExit(f"v{version} 正式包输入含未跟踪文件，拒绝构建：\n{untracked}")
+
+    comparison = subprocess.run(
+        ["git", "diff", "--quiet", tag, "--", *relative_paths],
+        cwd=ROOT,
+        check=False,
+    )
+    if comparison.returncode == 1:
+        changed = subprocess.check_output(
+            ["git", "diff", "--name-only", tag, "--", *relative_paths],
+            cwd=ROOT,
+            text=True,
+        ).strip()
+        raise SystemExit(
+            f"v{version} 已存在正式标签，包输入不得在标签后漂移：\n{changed}"
+        )
+    if comparison.returncode != 0:
+        raise SystemExit(f"无法核对 v{version} 正式标签的包输入")
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -73,6 +126,25 @@ def copy_item(source: Path, destination: Path) -> None:
     else:
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
+
+
+def normalize_release_text(path: Path) -> None:
+    """Normalize staged text bytes without changing BOM or source files."""
+    if path.suffix.casefold() in BINARY_SUFFIXES:
+        return
+    data = path.read_bytes()
+    normalized = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    if normalized != data:
+        path.write_bytes(normalized)
+
+
+def normalize_release_tree(root: Path) -> None:
+    """Make release and Workshop staging independent of checkout line endings."""
+    for path in sorted(
+        (candidate for candidate in root.rglob("*") if candidate.is_file()),
+        key=lambda candidate: candidate.relative_to(root).as_posix(),
+    ):
+        normalize_release_text(path)
 
 
 def write_deterministic_zip(zip_path: Path, staging: Path) -> None:
@@ -158,6 +230,7 @@ def main() -> int:
             f"{docs_directory} 中没有 v{version} 配套文档，拒绝生成{package_label}"
         )
 
+    verify_tagged_release_payload(version)
     with tempfile.TemporaryDirectory(prefix="ocs_release_") as temp_name:
         staging = Path(temp_name)
         staged_mod = staging / MOD_DIR_NAME
@@ -174,6 +247,8 @@ def main() -> int:
 
         for path in docs:
             copy_item(path, staging / path.name)
+
+        normalize_release_tree(staging)
 
         manifest_path = staging / "MANIFEST_SHA256.csv"
         files = sorted(

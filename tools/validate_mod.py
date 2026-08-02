@@ -85,6 +85,55 @@ def descriptor_value(text: str, key: str) -> str | None:
     return match.group(1) if match else None
 
 
+def check_version_metadata(version: str, errors: list[str]) -> None:
+    """Keep stable-release entrypoints aligned with descriptor.mod."""
+    if "test" in version.casefold():
+        return
+
+    requirements = (
+        (
+            ROOT / "README.md",
+            (f"- 当前稳定基准：v{version}", f"v{version} 是当前稳定基准。"),
+        ),
+        (ROOT / "AGENTS.md", (f"当前稳定基准：**v{version}**",)),
+        (ROOT / "docs" / "DEVELOPMENT.md", (f"v{version} 是当前稳定基准",)),
+        (
+            ROOT / "docs" / "maintenance" / "README_FIRST.md",
+            (
+                f"正式版本：**v{version}**",
+                f"v{version}为当前稳定基准",
+                f"开局一键爽玩_v{version}_正式版.zip",
+            ),
+        ),
+        (
+            ROOT / "docs" / "maintenance" / "测试状态与回归清单.md",
+            (f"## 当前稳定线：v{version}",),
+        ),
+        (ROOT / "CHANGELOG.md", (f"## v{version}",)),
+    )
+    required_paths = (
+        ROOT / "docs" / "baseline" / f"README_v{version}_正式版.md",
+        ROOT / "docs" / "baseline" / f"v{version}_正式版静态复核.md",
+        ROOT / "docs" / "publishing" / f"v{version}更新说明.md",
+        ROOT / "docs" / "publishing" / f"Steam工坊中文简介_v{version}_BBCode.txt",
+        ROOT / "docs" / "publishing" / f"v{version}工坊更新摘要.txt",
+    )
+
+    for path, markers in requirements:
+        if not path.is_file():
+            errors.append(f"稳定版入口缺失：{path.relative_to(ROOT)}")
+            continue
+        text = read_utf8(path)
+        for marker in markers:
+            if marker not in text:
+                errors.append(
+                    f"{path.relative_to(ROOT)} 未同步 v{version} 标记：{marker}"
+                )
+    for path in required_paths:
+        if not path.is_file():
+            errors.append(f"缺少 v{version} 配套文件：{path.relative_to(ROOT)}")
+
+
 def tokenize_script(text: str) -> tuple[list[Token], list[str]]:
     """Tokenize the subset of Paradox script needed for structural checks."""
     tokens: list[Token] = []
@@ -391,6 +440,15 @@ def main() -> int:
 
     descriptor = read_utf8(ROOT / "descriptor.mod")
     outer = read_utf8(OUTER_MOD)
+    version = descriptor_value(descriptor, "version")
+    if version is None:
+        errors.append("descriptor.mod 缺少 version 字段")
+    else:
+        name = descriptor_value(descriptor, "name") or ""
+        if f"v{version}" not in name:
+            errors.append(f"descriptor.mod 的 name 未包含版本 v{version}")
+        check_version_metadata(version, errors)
+
 
     for key in ("version", "name", "supported_version"):
         inside_value = descriptor_value(descriptor, key)

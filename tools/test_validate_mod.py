@@ -4,9 +4,14 @@
 from __future__ import annotations
 
 import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from tools import build_release
+from tools import hoi4_paths
+from tools import publish_github_release
+from tools import publish_workshop
 from tools import validate_mod as validator
 
 
@@ -1037,12 +1042,69 @@ class ValidatorRegressionTests(unittest.TestCase):
                 f"set_country_flag = {menu_done_flags[menu_id]}", z_effect
             )
 
+    def test_stable_version_metadata_contract(self) -> None:
+        descriptor = validator.read_utf8(validator.ROOT / "descriptor.mod")
+        version = validator.descriptor_value(descriptor, "version")
+        self.assertIsNotNone(version)
+        errors: list[str] = []
+        validator.check_version_metadata(version, errors)
+        self.assertEqual(errors, [])
+
+        stale_errors: list[str] = []
+        validator.check_version_metadata("9.9", stale_errors)
+        self.assertTrue(any("v9.9" in error for error in stale_errors))
+
+    def test_explicit_vanilla_path_is_machine_independent(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_name:
+            root = Path(temp_name)
+            (root / "common").mkdir()
+            self.assertEqual(hoi4_paths.resolve_vanilla_path(root), root)
+
+    def test_tagged_release_payload_is_frozen(self) -> None:
+        paths = build_release.release_payload_paths("2.6")
+        self.assertIn(build_release.ROOT / "descriptor.mod", paths)
+        self.assertIn(
+            build_release.ROOT / "docs" / "baseline" / "README_v2.6_正式版.md",
+            paths,
+        )
+        build_release.verify_tagged_release_payload("2.6")
+
+    def test_release_staging_normalizes_line_endings(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_name:
+            root = Path(temp_name)
+            text_path = root / "localisation.yml"
+            image_path = root / "thumbnail.png"
+            text_path.write_bytes(b"\xef\xbb\xbfline1\r\nline2\rline3\n")
+            image_bytes = b"\x89PNG\r\n\x1a\n\r\n"
+            image_path.write_bytes(image_bytes)
+
+            build_release.normalize_release_tree(root)
+
+            self.assertEqual(
+                text_path.read_bytes(), b"\xef\xbb\xbfline1\nline2\nline3\n"
+            )
+            self.assertEqual(image_path.read_bytes(), image_bytes)
+
     def test_test_build_package_routing(self) -> None:
         self.assertTrue(build_release.is_test_version("2.2-test1"))
         self.assertFalse(build_release.is_test_version("2.2"))
         docs = build_release.package_docs("2.2-test1")
         self.assertEqual(len(docs), 2)
         self.assertTrue(all(path.parent.name == "testing" for path in docs))
+
+    def test_versioned_release_helpers(self) -> None:
+        self.assertEqual(
+            publish_github_release.ascii_asset_name("2.6"),
+            "OCS_one_click_sandbox_start_v2.6.zip",
+        )
+        self.assertEqual(
+            publish_workshop.changenote_file("2.6").name,
+            "v2.6工坊更新摘要.txt",
+        )
+        self.assertEqual(
+            publish_workshop.vdf_escape('a\\b"c\r\nd'),
+            'a\\\\b\\"c\nd',
+        )
 
 
 if __name__ == "__main__":
