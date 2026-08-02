@@ -1,0 +1,164 @@
+add_namespace = PRC_OCS
+
+# v2.6 choose-your-bonus event chain (air special projects).
+# The one-click completion instantly completes special projects, so the engine
+# never fires prototype iteration rewards. These events let the player pick
+# each mutually exclusive reward buff one by one. Each buff group is tracked
+# by its own country flag; the dispatch event walks the unpicked groups in
+# order and marks the chain done when all are picked.
+
+country_event = {
+	id = PRC_OCS.14
+	title = PRC_OCS.14.t
+	desc = PRC_OCS.14.d
+	picture = GFX_report_event_generic_research
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.14.a
+		trigger = { NOT = { has_country_flag = PRC_OCS_air_jet_choice_done } }
+		country_event = { id = PRC_OCS.15 }
+	}
+	option = {
+		name = PRC_OCS.14.b
+		trigger = {
+			has_country_flag = PRC_OCS_air_jet_choice_done
+			NOT = { has_country_flag = PRC_OCS_air_axial_choice_done }
+		}
+		country_event = { id = PRC_OCS.16 }
+	}
+	option = {
+		name = PRC_OCS.14.c
+		trigger = {
+			has_country_flag = PRC_OCS_air_axial_choice_done
+			NOT = { has_country_flag = PRC_OCS_air_supersonic_choice_done }
+		}
+		country_event = { id = PRC_OCS.17 }
+	}
+	option = {
+		name = PRC_OCS.14.e
+		trigger = {
+			has_country_flag = PRC_OCS_air_supersonic_choice_done
+		}
+		country_event = { id = PRC_OCS.50 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.15
+	title = PRC_OCS.15.t
+	desc = PRC_OCS.15.d
+	picture = GFX_report_event_generic_research
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.15.a
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_jet_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = sp_air_light_air_tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = light_air
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_fighter
+					bonus = {
+						jet_tac_bomber_equipment = {
+							air_ground_attack = -0.05
+							air_range = -0.05
+							build_cost_ic = 0.05
+						}
+					}
+				}
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_fighter
+					bonus = {
+						jet_fighter_equipment = {
+							maximum_speed = 0.05
+							air_agility = 0.05
+							build_cost_ic = -0.05
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+	option = {
+		name = PRC_OCS.15.b
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_jet_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = sp_air_air_equipment_tech_bonus
+					bonus = 0.25
+					uses = 2
+					category = air_equipment
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_compromise
+					bonus = {
+						jet_tac_bomber_equipment = {
+							reliability = 0.03
+						}
+					}
+				}
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_compromise
+					bonus = {
+						jet_fighter_equipment = {
+							reliability = 0.03
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+	option = {
+		name = PRC_OCS.15.c
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_jet_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = sp_air_medium_air_tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = medium_air
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_bomber
+					bonus = {
+						jet_tac_bomber_equipment = {
+							air_ground_attack = 0.05
+							air_range = 0.05
+							build_cost_ic = -0.05
+						}
+					}
+				}
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_bomber
+					bonus = {
+						jet_fighter_equipment = {
+							maximum_speed = -0.05
+							air_agility = -0.05
+							build_cost_ic = 0.05
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+}

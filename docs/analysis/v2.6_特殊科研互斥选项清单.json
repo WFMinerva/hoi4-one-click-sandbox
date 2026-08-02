@@ -1,0 +1,1033 @@
+[
+  {
+    "project": "sp_air_earthshaker_bomb",
+    "specialization": "air",
+    "reward": "sp_air_earthshaker_bomb_unique_reward",
+    "default": "sp_air_earthshaker_bomb_preference_raw_power",
+    "options": [
+      {
+        "token": "sp_air_earthshaker_bomb_preference_naval_targetting",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_earthshaker_bomb_naval_targetting\n\t\t\tbonus = {\n\t\t\t\tlarge_plane_airframe = {\n\t\t\t\t\tnaval_strike_targetting = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_earthshaker_bomb_naval_targetting\n\t\t\tbonus = {\n\t\t\t\tlarge_plane_airframe = {\n\t\t\t\t\tnaval_strike_targetting = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_earthshaker_bomb_preference_raw_power",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_earthshaker_bomb_power\n\t\t\tbonus = {\n\t\t\t\tlarge_plane_airframe = {\n\t\t\t\t\tnaval_strike_attack = 0.05\n\t\t\t\t\tair_bombing = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_earthshaker_bomb_power\n\t\t\tbonus = {\n\t\t\t\tlarge_plane_airframe = {\n\t\t\t\t\tnaval_strike_attack = 0.05\n\t\t\t\t\tair_bombing = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_earthshaker_bomb_preference_both",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_earthshaker_bomb_both\n\t\t\tbonus = {\n\t\t\t\tlarge_plane_airframe = {\n\t\t\t\t\tnaval_strike_targetting = 0.1\n\t\t\t\t\tnaval_strike_attack = 0.05\n\t\t\t\t\tair_bombing = 0.05\n\t\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_earthshaker_bomb_both\n\t\t\tbonus = {\n\t\t\t\tlarge_plane_airframe = {\n\t\t\t\t\tnaval_strike_targetting = 0.1\n\t\t\t\t\tnaval_strike_attack = 0.05\n\t\t\t\t\tair_bombing = 0.05\n\t\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_air_intercontinental_bomber",
+    "specialization": "air",
+    "reward": "sp_air_intercontinental_bomber_unique_reward",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_air_intercontinental_bomber_preference_balanced",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_intercontinental_bomber_balanced\n\t\t\tbonus = {\n\t\t\t\tstrat_bomber_intercontinental_equipment = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_intercontinental_bomber_balanced\n\t\t\tbonus = {\n\t\t\t\tstrat_bomber_intercontinental_equipment = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_intercontinental_bomber_preference_bombing_payload",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_intercontinental_bomber_bombing_payload\n\t\t\tbonus = {\n\t\t\t\tstrat_bomber_intercontinental_equipment = {\n\t\t\t\t\tair_bombing = 0.15\n\t\t\t\t\tair_defence = -0.05\n\t\t\t\t\tair_attack = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_intercontinental_bomber_bombing_payload\n\t\t\tbonus = {\n\t\t\t\tstrat_bomber_intercontinental_equipment = {\n\t\t\t\t\tair_bombing = 0.15\n\t\t\t\t\tair_defence = -0.05\n\t\t\t\t\tair_attack = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_intercontinental_bomber_preference_protection",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_intercontinental_bomber_protection\n\t\t\tbonus = {\n\t\t\t\tstrat_bomber_intercontinental_equipment = {\n\t\t\t\t\tair_defence = 0.15\n\t\t\t\t\tair_attack = -0.1\n\t\t\t\t\tair_bombing = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_intercontinental_bomber_protection\n\t\t\tbonus = {\n\t\t\t\tstrat_bomber_intercontinental_equipment = {\n\t\t\t\t\tair_defence = 0.15\n\t\t\t\t\tair_attack = -0.1\n\t\t\t\t\tair_bombing = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_air_mothership_aircraft",
+    "specialization": "air",
+    "reward": "sp_air_mothership_unique_reward",
+    "default": "sp_air_mothership_preference_reliability",
+    "options": [
+      {
+        "token": "sp_air_mothership_preference_speed_agility",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_mothership_speed_agility\n\t\t\tbonus = {\n\t\t\t\tmothership_equipment = {\n\t\t\t\t\tair_agility = 0.1\n\t\t\t\t\tmaximum_speed = 0.1\n\t\t\t\t\tfuel_consumption = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_mothership_speed_agility\n\t\t\tbonus = {\n\t\t\t\tmothership_equipment = {\n\t\t\t\t\tair_agility = 0.1\n\t\t\t\t\tmaximum_speed = 0.1\n\t\t\t\t\tfuel_consumption = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_mothership_preference_reliability",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_mothership_balanced\n\t\t\tbonus = {\n\t\t\t\tmothership_equipment = {\n\t\t\t\t\treliability = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_mothership_balanced\n\t\t\tbonus = {\n\t\t\t\tmothership_equipment = {\n\t\t\t\t\treliability = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_mothership_preference_strength",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_mothership_strength\n\t\t\tbonus = {\n\t\t\t\tmothership_equipment = {\n\t\t\t\t\tair_defence = 0.1\n\t\t\t\t\tair_attack = 0.1\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_mothership_strength\n\t\t\tbonus = {\n\t\t\t\tmothership_equipment = {\n\t\t\t\t\tair_defence = 0.1\n\t\t\t\t\tair_attack = 0.1\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_air_jet_engine",
+    "specialization": "air",
+    "reward": "sp_air_jet_engine_unique_reward",
+    "default": "sp_air_jet_engine_preference_compromise",
+    "options": [
+      {
+        "token": "sp_air_jet_engine_preference_fighter",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus",
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_tech_bonus = {\n\t\t\tname = sp_air_light_air_tech_bonus\n\t\t\tbonus = 0.5\n\t\t\tuses = 1\n\t\t\tcategory = light_air\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_fighter\n\t\t\tbonus = {\n\t\t\t\tjet_tac_bomber_equipment = {\n\t\t\t\t\tair_ground_attack = -0.05\n\t\t\t\t\tair_range = -0.05\n\t\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_fighter\n\t\t\tbonus = {\n\t\t\t\tjet_fighter_equipment = {\n\t\t\t\t\tmaximum_speed = 0.05\n\t\t\t\t\tair_agility = 0.05\n\t\t\t\t\tbuild_cost_ic = -0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_jet_engine_preference_compromise",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus",
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_tech_bonus = {\n\t\t\tname = sp_air_air_equipment_tech_bonus\n\t\t\tbonus = 0.25\n\t\t\tuses = 2\n\t\t\tcategory = air_equipment\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_compromise\n\t\t\tbonus = {\n\t\t\t\tjet_tac_bomber_equipment = {\n\t\t\t\t\treliability = 0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_compromise\n\t\t\tbonus = {\n\t\t\t\tjet_fighter_equipment = {\n\t\t\t\t\treliability = 0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_jet_engine_preference_bomber",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus",
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_tech_bonus = {\n\t\t\tname = sp_air_medium_air_tech_bonus\n\t\t\tbonus = 0.5\n\t\t\tuses = 1\n\t\t\tcategory = medium_air\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_bomber\n\t\t\tbonus = {\n\t\t\t\tjet_tac_bomber_equipment = {\n\t\t\t\t\tair_ground_attack = 0.05\n\t\t\t\t\tair_range = 0.05\n\t\t\t\t\tbuild_cost_ic = -0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_bomber\n\t\t\tbonus = {\n\t\t\t\tjet_fighter_equipment = {\n\t\t\t\t\tmaximum_speed = -0.05\n\t\t\t\t\tair_agility = -0.05\n\t\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_air_axial_jet_engine",
+    "specialization": "air",
+    "reward": "sp_air_axial_jet_engine_unique_reward",
+    "default": "sp_air_axial_jet_engine_preference_compromise",
+    "options": [
+      {
+        "token": "sp_air_axial_jet_engine_preference_fighter",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus",
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_tech_bonus = {\n\t\t\tname = sp_air_light_air_tech_bonus\n\t\t\tbonus = 0.5\n\t\t\tuses = 1\n\t\t\tcategory = light_air\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_fighter_2\n\t\t\tbonus = {\n\t\t\t\tjet_tac_bomber_equipment = {\n\t\t\t\t\tair_ground_attack = -0.03\n\t\t\t\t\tair_range = -0.03\n\t\t\t\t\tbuild_cost_ic = 0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_fighter_2\n\t\t\tbonus = {\n\t\t\t\tjet_fighter_equipment = {\n\t\t\t\t\tmaximum_speed = 0.03\n\t\t\t\t\tair_agility = 0.03\n\t\t\t\t\tbuild_cost_ic = -0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_axial_jet_engine_preference_compromise",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus",
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_tech_bonus = {\n\t\t\tname = sp_air_air_equipment_tech_bonus\n\t\t\tbonus = 0.33\n\t\t\tuses = 2\n\t\t\tcategory = air_equipment\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_compromise_2\n\t\t\tbonus = {\n\t\t\t\tjet_tac_bomber_equipment = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_compromise_2\n\t\t\tbonus = {\n\t\t\t\tjet_fighter_equipment = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_axial_jet_engine_preference_bomber",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus",
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_tech_bonus = {\n\t\t\tname = sp_air_medium_air_tech_bonus\n\t\t\tbonus = 0.5\n\t\t\tuses = 1\n\t\t\tcategory = medium_air\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_bomber_2\n\t\t\tbonus = {\n\t\t\t\tjet_tac_bomber_equipment = {\n\t\t\t\t\tair_ground_attack = 0.03\n\t\t\t\t\tair_range = 0.03\n\t\t\t\t\tbuild_cost_ic = -0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_jet_engine_bomber_2\n\t\t\tbonus = {\n\t\t\t\tjet_fighter_equipment = {\n\t\t\t\t\tmaximum_speed = -0.03\n\t\t\t\t\tair_agility = -0.03\n\t\t\t\t\tbuild_cost_ic = 0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_air_supersonic_jet",
+    "specialization": "air",
+    "reward": "sp_air_supersonic_jet_unique_reward",
+    "default": "sp_air_supersonic_jet_preference_compromise",
+    "options": [
+      {
+        "token": "sp_air_supersonic_jet_preference_cost_reduction",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_supersonic_jet_cost_reduction\n\t\t\tbonus = {\n\t\t\t\tsmall_plane_airframe_5 = {\n\t\t\t\t\tair_range = -0.05\n\t\t\t\t\tmaximum_speed = -0.05\n\t\t\t\t\treliability = -0.1\n\t\t\t\t\tbuild_cost_ic = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_supersonic_jet_cost_reduction\n\t\t\tbonus = {\n\t\t\t\tsupersonic_fighter_equipment_1 = {\n\t\t\t\t\tair_range = -0.05\n\t\t\t\t\tmaximum_speed = -0.05\n\t\t\t\t\treliability = -0.1\n\t\t\t\t\tbuild_cost_ic = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_supersonic_jet_preference_compromise",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_supersonic_jet_compromise\n\t\t\tbonus = {\n\t\t\t\tsmall_plane_airframe_5 = {\n\t\t\t\t\treliability = 0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_supersonic_jet_compromise\n\t\t\tbonus = {\n\t\t\t\tsupersonic_fighter_equipment_1 = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_supersonic_jet_preference_cost_increase",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"By Blood Alone\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_supersonic_jet_cost_increase\n\t\t\tbonus = {\n\t\t\t\tsmall_plane_airframe_5 = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t\tair_agility = 0.05\n\t\t\t\t\tair_defence = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_air_supersonic_jet_cost_increase\n\t\t\tbonus = {\n\t\t\t\tsupersonic_fighter_equipment_1 = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t\tair_agility = 0.05\n\t\t\t\t\tair_defence = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_air_helicopter",
+    "specialization": "air",
+    "reward": "sp_air_helicopter_unique_reward",
+    "default": "sp_air_helicopter_preference_compromise",
+    "options": [
+      {
+        "token": "sp_air_helicopter_preference_speed",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_air_helicopter_speed\n\t\tbonus = {\n\t\t\thelicopter_equipment = {\n\t\t\t\tmaximum_speed = 0.1\n\t\t\t\tfuel_consumption = 0.05\n\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_helicopter_preference_compromise",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_air_helicopter_compromise\n\t\tbonus = {\n\t\t\thelicopter_equipment = {\n\t\t\t\treliability = 0.05\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_air_helicopter_preference_protection",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_air_helicopter_protection\n\t\tbonus = {\n\t\t\thelicopter_equipment = {\n\t\t\t\tarmor_value = 0.1\n\t\t\t\tdefense = 0.1\n\t\t\t\tbreakthrough = 0.1\n\t\t\t\tfuel_consumption = 0.15\n\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_stronghold_network",
+    "specialization": "land",
+    "reward": "sp_land_reward_stronghold_network_communication_system_overhaul",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_stronghold_network_communication_system_overhaul_standardize",
+        "default": false,
+        "buff_kinds": [
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_tech_bonus = {\n\t\tname = sp_land_reward_stronghold_network_communication_system_overhaul\n\t\tbonus = 0.25\n\t\tuses = 1\n\t\tcategory = cat_fortification\n\t\tcategory = construction_tech\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_stronghold_network_communication_system_overhaul_further_study",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "effect": ""
+      }
+    ]
+  },
+  {
+    "project": "sp_land_stronghold_network",
+    "specialization": "land",
+    "reward": "sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_stronghold_network_breakthrough_in_concrete_reinforcement_01_apply_and_document_discovery",
+        "default": false,
+        "buff_kinds": [
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_tech_bonus = {\n\t\tname = sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01\n\t\tbonus = 0.5\n\t\tuses = 1\n\t\tcategory = cat_fortification\n\t\tcategory = construction_tech\n\t}\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.gain.low\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_stronghold_network_breakthrough_in_concrete_reinforcement_01_use_in_current_project",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "effect": ""
+      }
+    ]
+  },
+  {
+    "project": "sp_land_stronghold_network",
+    "specialization": "land",
+    "reward": "sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_stronghold_network_breakthrough_in_concrete_reinforcement_01_apply_and_document_discovery",
+        "default": false,
+        "buff_kinds": [
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_tech_bonus = {\n\t\tname = sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01\n\t\tbonus = 0.75\n\t\tuses = 1\n\t\tcategory = cat_fortification\n\t\tcategory = construction_tech\n\t}\n\tif = {\n\t\tlimit = {\n\t\t\tany_scientist = {\n\t\t\t\thas_scientist_level = {\n\t\t\t\t\tlevel\n\t\t\t\t\t>\n\t\t\t\t\t0\n\t\t\t\t\tspecialization = specialization_land\n\t\t\t\t}\n\t\t\t\tis_active_scientist = no\n\t\t\t}\n\t\t}\n\t\trandom_scientist = {\n\t\t\tlimit = {\n\t\t\t\thas_scientist_level = {\n\t\t\t\t\tlevel\n\t\t\t\t\t>\n\t\t\t\t\t0\n\t\t\t\t\tspecialization = specialization_land\n\t\t\t\t}\n\t\t\t\tis_active_scientist = no\n\t\t\t}\n\t\t\tadd_scientist_xp = {\n\t\t\t\texperience = constant:sp_scientist_xp_gain.high\n\t\t\t\tspecialization = specialization_land\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_stronghold_network_breakthrough_in_concrete_reinforcement_01_use_in_current_project",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "effect": ""
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_cruiser_submarine",
+    "specialization": "naval",
+    "reward": "sp_naval_cruiser_submarine_unique_reward_a",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_cruiser_submarine_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus",
+          "enable_equipment_modules"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\tNOT = {\n\t\t\t\thas_dlc = \"Man the Guns\"\n\t\t\t}\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_cruiser_submarine_eq_bonus_range\n\t\t\tbonus = {\n\t\t\t\tcruiser_submarine = {\n\t\t\t\t\tnaval_range = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\nenable_equipment_modules = {\n\tlimit = {\n\t\thas_dlc = \"Man the Guns\"\n\t}\n\tship_extra_fuel_tank\n}"
+      },
+      {
+        "token": "sp_naval_cruiser_submarine_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus",
+          "enable_equipment_modules"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\tNOT = {\n\t\t\t\thas_dlc = \"Man the Guns\"\n\t\t\t}\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_cruiser_submarine_eq_bonus_raiding\n\t\t\tbonus = {\n\t\t\t\tcruiser_submarine = {\n\t\t\t\t\ttorpedo_attack = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\nenable_equipment_modules = {\n\tlimit = {\n\t\thas_dlc = \"Man the Guns\"\n\t}\n\tship_light_battery_sub\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_fleet_submarine",
+    "specialization": "naval",
+    "reward": "sp_naval_fleet_submarine_unique_reward_a",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_fleet_submarine_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_fleet_submarine_eq_bonus_attack\n\t\t\tbonus = {\n\t\t\t\tship_hull_fleet_submarine = {\n\t\t\t\t\tnaval_speed = 0.05\n\t\t\t\t\ttorpedo_attack = 0.05\n\t\t\t\t\tsub_visibility = -0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_fleet_submarine_eq_bonus_attack\n\t\t\tbonus = {\n\t\t\t\tfleet_submarine = {\n\t\t\t\t\tnaval_speed = 0.05\n\t\t\t\t\ttorpedo_attack = 0.05\n\t\t\t\t\tsub_visibility = -0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_fleet_submarine_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_fleet_submarine_eq_bonus_reliability\n\t\t\tbonus = {\n\t\t\t\tship_hull_fleet_submarine = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t\tmax_strength = 0.05\n\t\t\t\t\tnaval_weather_penalty_factor = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_fleet_submarine_eq_bonus_reliability\n\t\t\tbonus = {\n\t\t\t\tfleet_submarine = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t\tmax_strength = 0.05\n\t\t\t\t\tnaval_weather_penalty_factor = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_nuclear_submarine",
+    "specialization": "naval",
+    "reward": "sp_naval_nuclear_submarine_unique_reward_a",
+    "default": "sp_naval_nuclear_submarine_preference_b",
+    "options": [
+      {
+        "token": "sp_naval_nuclear_submarine_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_nuclear_submarine_eq_bonus_ic_reduction\n\t\t\tbonus = {\n\t\t\t\tship_hull_nuclear_submarine = {\n\t\t\t\t\tbuild_cost_ic = -0.1\n\t\t\t\t\treliability = -0.05\n\t\t\t\t\tsub_visibility = 0.1\n\t\t\t\t\tnaval_range = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_nuclear_submarine_eq_bonus_ic_reduction\n\t\t\tbonus = {\n\t\t\t\tnuclear_submarine = {\n\t\t\t\t\tbuild_cost_ic = -0.1\n\t\t\t\t\treliability = -0.05\n\t\t\t\t\tsub_visibility = 0.1\n\t\t\t\t\tnaval_range = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_nuclear_submarine_preference_b",
+        "default": true,
+        "buff_kinds": [],
+        "portable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_naval_nuclear_submarine_preference_c",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_nuclear_submarine_eq_bonus_quality\n\t\t\tbonus = {\n\t\t\t\tship_hull_nuclear_submarine = {\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t\treliability = 0.05\n\t\t\t\t\tsub_visibility = -0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_nuclear_submarine_eq_bonus_quality\n\t\t\tbonus = {\n\t\t\t\tnuclear_submarine = {\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t\treliability = 0.05\n\t\t\t\t\tsub_visibility = -0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_rocket_launching_submarine",
+    "specialization": "naval",
+    "reward": "sp_naval_rocket_launching_submarine_unique_reward_a",
+    "default": "sp_naval_rocket_launching_submarine_preference_b",
+    "options": [
+      {
+        "token": "sp_naval_rocket_launching_submarine_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_rocket_submarine_eq_bonus_range_increase\n\t\t\tbonus = {\n\t\t\t\tship_hull_fleet_submarine = {\n\t\t\t\t\tnaval_range = 0.1\n\t\t\t\t\tsub_visibility = 0.05\n\t\t\t\t\tbuild_cost_ic = 0.07\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_rocket_submarine_eq_bonus_range_increase\n\t\t\tbonus = {\n\t\t\t\trocket_submarine = {\n\t\t\t\t\tnaval_range = 0.15\n\t\t\t\t\tsub_visibility = 0.05\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_rocket_launching_submarine_preference_b",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_rocket_submarine_eq_bonus_reliability\n\t\t\tbonus = {\n\t\t\t\tship_hull_fleet_submarine = {\n\t\t\t\t\treliability = 0.03\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_rocket_submarine_eq_bonus_reliability\n\t\t\tbonus = {\n\t\t\t\trocket_submarine = {\n\t\t\t\t\treliability = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_rocket_launching_submarine_preference_c",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_rocket_submarine_eq_bonus_stealth\n\t\t\tbonus = {\n\t\t\t\tship_hull_fleet_submarine = {\n\t\t\t\t\tsub_visibility = -0.05\n\t\t\t\t\tnaval_range = -0.05\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_rocket_submarine_eq_bonus_stealth\n\t\t\tbonus = {\n\t\t\t\trocket_submarine = {\n\t\t\t\t\tsub_visibility = -0.15\n\t\t\t\t\tnaval_range = -0.05\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_nuclear_missile_submarine",
+    "specialization": "naval",
+    "reward": "sp_naval_nuclear_missile_submarine_unique_reward_a",
+    "default": "sp_naval_nuclear_missile_submarine_preference_b",
+    "options": [
+      {
+        "token": "sp_naval_nuclear_missile_submarine_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_nuclear_missile_submarine_eq_bonus_stealth\n\t\t\tbonus = {\n\t\t\t\tship_hull_nuclear_submarine = {\n\t\t\t\t\tsub_visibility = -0.05\n\t\t\t\t\tsurface_detection = 0.02\n\t\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_nuclear_missile_submarine_eq_bonus_stealth\n\t\t\tbonus = {\n\t\t\t\tnuclear_missile_submarine = {\n\t\t\t\t\tsub_visibility = -0.1\n\t\t\t\t\tsurface_detection = 0.05\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_nuclear_missile_submarine_preference_b",
+        "default": true,
+        "buff_kinds": [],
+        "portable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_naval_nuclear_missile_submarine_preference_c",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_nuclear_missile_submarine_eq_bonus_strength\n\t\t\tbonus = {\n\t\t\t\tship_hull_nuclear_submarine = {\n\t\t\t\t\tmax_strength = 0.02\n\t\t\t\t\tnaval_weather_penalty_factor = -0.2\n\t\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_nuclear_missile_submarine_eq_bonus_strength\n\t\t\tbonus = {\n\t\t\t\tnuclear_missile_submarine = {\n\t\t\t\t\tmax_strength = 0.05\n\t\t\t\t\tnaval_weather_penalty_factor = -0.2\n\t\t\t\t\tbuild_cost_ic = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_midget_submarine",
+    "specialization": "naval",
+    "reward": "sp_naval_midget_submarine_unique_reward_a",
+    "default": "sp_naval_midget_submarine_preference_b",
+    "options": [
+      {
+        "token": "sp_naval_midget_submarine_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_midget_submarine_eq_bonus_stealth\n\t\t\tbonus = {\n\t\t\t\tship_hull_midget_submarine = {\n\t\t\t\t\tnaval_range = -0.2\n\t\t\t\t\tsub_visibility = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_midget_submarine_eq_bonus_stealth\n\t\t\tbonus = {\n\t\t\t\tmidget_submarine = {\n\t\t\t\t\tnaval_range = -0.2\n\t\t\t\t\tsub_visibility = -0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_midget_submarine_preference_b",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_midget_submarine_eq_bonus_reliability\n\t\t\tbonus = {\n\t\t\t\tship_hull_midget_submarine = {\n\t\t\t\t\treliability = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_midget_submarine_eq_bonus_reliability\n\t\t\tbonus = {\n\t\t\t\tmidget_submarine = {\n\t\t\t\t\treliability = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_midget_submarine_preference_c",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_midget_submarine_eq_bonus_range\n\t\t\tbonus = {\n\t\t\t\tship_hull_midget_submarine = {\n\t\t\t\t\tnaval_range = 0.2\n\t\t\t\t\tsub_visibility = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_midget_submarine_eq_bonus_range\n\t\t\tbonus = {\n\t\t\t\tmidget_submarine = {\n\t\t\t\t\tnaval_range = 0.2\n\t\t\t\t\tsub_visibility = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_submarine_carrier",
+    "specialization": "naval",
+    "reward": "sp_naval_submarine_carrier_unique_reward_a",
+    "default": "sp_naval_submarine_carrier_preference_b",
+    "options": [
+      {
+        "token": "sp_naval_submarine_carrier_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_submarine_carrier_eq_bonus_range\n\t\tbonus = {\n\t\t\tship_hull_carrier_submarine = {\n\t\t\t\tnaval_range = 0.1\n\t\t\t\tsub_visibility = 0.05\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_submarine_carrier_preference_b",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_submarine_carrier_eq_bonus_strength\n\t\tbonus = {\n\t\t\tship_hull_carrier_submarine = {\n\t\t\t\tmax_strength = 0.05\n\t\t\t\tnaval_weather_penalty_factor = -0.1\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_submarine_carrier_preference_c",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_submarine_carrier_eq_bonus_stealth\n\t\tbonus = {\n\t\t\tship_hull_carrier_submarine = {\n\t\t\t\tsub_visibility = -0.1\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_torpedo_cruiser",
+    "specialization": "naval",
+    "reward": "sp_naval_torpedo_cruiser_unique_reward_a",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_torpedo_cruiser_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_torpedo_cruiser_eq_bonus_torpedo\n\t\t\tbonus = {\n\t\t\t\tship_hull_torpedo_cruiser = {\n\t\t\t\t\tnaval_torpedo_hit_chance_factor = 0.1\n\t\t\t\t\ttorpedo_attack = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_torpedo_cruiser_eq_bonus_torpedo\n\t\t\tbonus = {\n\t\t\t\ttorpedo_cruiser = {\n\t\t\t\t\tnaval_torpedo_hit_chance_factor = 0.1\n\t\t\t\t\ttorpedo_attack = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_torpedo_cruiser_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_torpedo_cruiser_eq_bonus_light_attack\n\t\t\tbonus = {\n\t\t\t\tship_hull_torpedo_cruiser = {\n\t\t\t\t\tnaval_light_gun_hit_chance_factor = 0.15\n\t\t\t\t\tlg_attack = 0.1\n\t\t\t\t\tlg_armor_piercing = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_torpedo_cruiser_eq_bonus_light_attack\n\t\t\tbonus = {\n\t\t\t\ttorpedo_cruiser = {\n\t\t\t\t\tnaval_light_gun_hit_chance_factor = 0.15\n\t\t\t\t\tlg_attack = 0.1\n\t\t\t\t\tlg_armor_piercing = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_super_heavy_battleship",
+    "specialization": "naval",
+    "reward": "sp_naval_super_heavy_battleship_unique_reward_a",
+    "default": "sp_naval_super_heavy_battleship_preference_b_a",
+    "options": [
+      {
+        "token": "sp_naval_super_heavy_battleship_preference_a_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_heavy_attack\n\t\t\tbonus = {\n\t\t\t\tship_hull_super_heavy_1 = {\n\t\t\t\t\tnaval_heavy_gun_hit_chance_factor = 0.15\n\t\t\t\t\thg_attack = 0.15\n\t\t\t\t\thg_armor_piercing = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_heavy_attack\n\t\t\tbonus = {\n\t\t\t\tSH_battleship_1 = {\n\t\t\t\t\tnaval_heavy_gun_hit_chance_factor = 0.15\n\t\t\t\t\thg_attack = 0.15\n\t\t\t\t\thg_armor_piercing = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_super_heavy_battleship_preference_b_a",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_speed\n\t\t\tbonus = {\n\t\t\t\tship_hull_super_heavy_1 = {\n\t\t\t\t\tnaval_speed = 0.1\n\t\t\t\t\tsurface_detection = 0.15\n\t\t\t\t\tsurface_visibility = -0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_speed\n\t\t\tbonus = {\n\t\t\t\tSH_battleship_1 = {\n\t\t\t\t\tnaval_speed = 0.1\n\t\t\t\t\tsurface_detection = 0.15\n\t\t\t\t\tsurface_visibility = -0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_super_heavy_battleship_preference_c_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_light_attack\n\t\t\tbonus = {\n\t\t\t\tship_hull_super_heavy_1 = {\n\t\t\t\t\tnaval_light_gun_hit_chance_factor = 0.1\n\t\t\t\t\tlg_attack = 0.1\n\t\t\t\t\tlg_armor_piercing = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_light_attack\n\t\t\tbonus = {\n\t\t\t\tSH_battleship_1 = {\n\t\t\t\t\tnaval_light_gun_hit_chance_factor = 0.1\n\t\t\t\t\tlg_attack = 0.1\n\t\t\t\t\tlg_armor_piercing = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_super_heavy_battleship",
+    "specialization": "naval",
+    "reward": "sp_naval_super_heavy_battleship_unique_reward_b",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_super_heavy_battleship_preference_a_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_armor\n\t\t\tbonus = {\n\t\t\t\tship_hull_super_heavy_1 = {\n\t\t\t\t\tarmor_value = 0.1\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_armor\n\t\t\tbonus = {\n\t\t\t\tSH_battleship_1 = {\n\t\t\t\t\tarmor_value = 0.1\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_super_heavy_battleship_preference_b_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_anti_air\n\t\t\tbonus = {\n\t\t\t\tship_hull_super_heavy_1 = {\n\t\t\t\t\tanti_air_attack = 0.25\n\t\t\t\t\treliability = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_anti_air\n\t\t\tbonus = {\n\t\t\t\tSH_battleship_1 = {\n\t\t\t\t\tanti_air_attack = 0.25\n\t\t\t\t\treliability = 0.05\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_super_heavy_battleship_preference_c_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_anti_torpedo\n\t\t\tbonus = {\n\t\t\t\tship_hull_super_heavy_1 = {\n\t\t\t\t\tnaval_torpedo_enemy_critical_chance_factor = 0.15\n\t\t\t\t\tnaval_torpedo_damage_reduction_factor = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_super_heavy_battleship_eq_bonus_anti_torpedo\n\t\t\tbonus = {\n\t\t\t\tSH_battleship_1 = {\n\t\t\t\t\tnaval_torpedo_enemy_critical_chance_factor = 0.15\n\t\t\t\t\tnaval_torpedo_damage_reduction_factor = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_modern_battleship",
+    "specialization": "naval",
+    "reward": "sp_naval_modern_battleship_unique_reward_a",
+    "default": "sp_naval_modern_battleship_preference_b_a",
+    "options": [
+      {
+        "token": "sp_naval_modern_battleship_preference_a_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_heavy_attack\n\t\t\tbonus = {\n\t\t\t\tship_hull_heavy_modern = {\n\t\t\t\t\tnaval_heavy_gun_hit_chance_factor = 0.2\n\t\t\t\t\thg_attack = 0.15\n\t\t\t\t\thg_armor_piercing = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_heavy_attack\n\t\t\tbonus = {\n\t\t\t\tmodern_battleship = {\n\t\t\t\t\tnaval_heavy_gun_hit_chance_factor = 0.2\n\t\t\t\t\thg_attack = 0.15\n\t\t\t\t\thg_armor_piercing = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_modern_battleship_preference_b_a",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_speed\n\t\t\tbonus = {\n\t\t\t\tship_hull_heavy_modern = {\n\t\t\t\t\tnaval_speed = 0.1\n\t\t\t\t\tsurface_detection = 0.15\n\t\t\t\t\tsurface_visibility = -0.07\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_speed\n\t\t\tbonus = {\n\t\t\t\tmodern_battleship = {\n\t\t\t\t\tnaval_speed = 0.1\n\t\t\t\t\tsurface_detection = 0.15\n\t\t\t\t\tsurface_visibility = -0.07\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_modern_battleship_preference_c_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_light_attack\n\t\t\tbonus = {\n\t\t\t\tship_hull_heavy_modern = {\n\t\t\t\t\tnaval_light_gun_hit_chance_factor = 0.1\n\t\t\t\t\tlg_attack = 0.1\n\t\t\t\t\tlg_armor_piercing = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_light_attack\n\t\t\tbonus = {\n\t\t\t\tmodern_battleship = {\n\t\t\t\t\tnaval_light_gun_hit_chance_factor = 0.1\n\t\t\t\t\tlg_attack = 0.1\n\t\t\t\t\tlg_armor_piercing = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_modern_battleship",
+    "specialization": "naval",
+    "reward": "sp_naval_modern_battleship_unique_reward_b",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_modern_battleship_preference_a_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_armor\n\t\t\tbonus = {\n\t\t\t\tship_hull_heavy_modern = {\n\t\t\t\t\tarmor_value = 0.15\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_armor\n\t\t\tbonus = {\n\t\t\t\tmodern_battleship = {\n\t\t\t\t\tarmor_value = 0.15\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_modern_battleship_preference_b_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_anti_air\n\t\t\tbonus = {\n\t\t\t\tship_hull_heavy_modern = {\n\t\t\t\t\tanti_air_attack = 0.25\n\t\t\t\t\treliability = 0.07\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_anti_air\n\t\t\tbonus = {\n\t\t\t\tmodern_battleship = {\n\t\t\t\t\tanti_air_attack = 0.25\n\t\t\t\t\treliability = 0.07\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_modern_battleship_preference_c_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_anti_torpedo\n\t\t\tbonus = {\n\t\t\t\tship_hull_heavy_modern = {\n\t\t\t\t\tnaval_torpedo_enemy_critical_chance_factor = 0.15\n\t\t\t\t\tnaval_torpedo_damage_reduction_factor = 0.2\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_battleship_eq_bonus_anti_torpedo\n\t\t\tbonus = {\n\t\t\t\tmodern_battleship = {\n\t\t\t\t\tnaval_torpedo_enemy_critical_chance_factor = 0.15\n\t\t\t\t\tnaval_torpedo_damage_reduction_factor = 0.2\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_modern_carrier",
+    "specialization": "naval",
+    "reward": "sp_naval_modern_carrier_unique_reward_a",
+    "default": "sp_naval_modern_carrier_preference_b_a",
+    "options": [
+      {
+        "token": "sp_naval_modern_carrier_preference_a_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_detection\n\t\t\tbonus = {\n\t\t\t\tship_hull_carrier_modern = {\n\t\t\t\t\tsurface_detection = 0.2\n\t\t\t\t\tsub_detection = 0.2\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_detection\n\t\t\tbonus = {\n\t\t\t\tmodern_carrier = {\n\t\t\t\t\tsurface_detection = 0.2\n\t\t\t\t\tsub_detection = 0.2\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_modern_carrier_preference_b_a",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_speed\n\t\t\tbonus = {\n\t\t\t\tship_hull_carrier_modern = {\n\t\t\t\t\tnaval_speed = 0.1\n\t\t\t\t\tnaval_weather_penalty_factor = -0.25\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_speed\n\t\t\tbonus = {\n\t\t\t\tmodern_carrier = {\n\t\t\t\t\tnaval_speed = 0.1\n\t\t\t\t\tnaval_weather_penalty_factor = -0.25\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_modern_carrier_preference_c_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_light_attack\n\t\t\tbonus = {\n\t\t\t\tship_hull_carrier_modern = {\n\t\t\t\t\tnaval_light_gun_hit_chance_factor = 0.1\n\t\t\t\t\tlg_attack = 0.15\n\t\t\t\t\tlg_armor_piercing = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_light_attack\n\t\t\tbonus = {\n\t\t\t\tmodern_carrier = {\n\t\t\t\t\tnaval_light_gun_hit_chance_factor = 0.1\n\t\t\t\t\tlg_attack = 0.15\n\t\t\t\t\tlg_armor_piercing = 0.15\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_modern_carrier",
+    "specialization": "naval",
+    "reward": "sp_naval_modern_carrier_unique_reward_b",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_modern_carrier_preference_a_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_armor\n\t\t\tbonus = {\n\t\t\t\tship_hull_carrier_modern = {\n\t\t\t\t\tarmor_value = 0.15\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_armor\n\t\t\tbonus = {\n\t\t\t\tmodern_carrier = {\n\t\t\t\t\tarmor_value = 0.15\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_modern_carrier_preference_b_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_anti_air\n\t\t\tbonus = {\n\t\t\t\tship_hull_carrier_modern = {\n\t\t\t\t\tanti_air_attack = 0.25\n\t\t\t\t\treliability = 0.07\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_anti_air\n\t\t\tbonus = {\n\t\t\t\tmodern_carrier = {\n\t\t\t\t\tanti_air_attack = 0.25\n\t\t\t\t\treliability = 0.07\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_modern_carrier_preference_c_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_anti_torpedo\n\t\t\tbonus = {\n\t\t\t\tship_hull_carrier_modern = {\n\t\t\t\t\tnaval_torpedo_enemy_critical_chance_factor = 0.15\n\t\t\t\t\tnaval_torpedo_damage_reduction_factor = 0.2\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_modern_carrier_eq_bonus_anti_torpedo\n\t\t\tbonus = {\n\t\t\t\tmodern_carrier = {\n\t\t\t\t\tnaval_torpedo_enemy_critical_chance_factor = 0.15\n\t\t\t\t\tnaval_torpedo_damage_reduction_factor = 0.2\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_ice_carrier",
+    "specialization": "naval",
+    "reward": "sp_naval_ice_carrier_unique_reward_a",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_ice_carrier_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_mega_carrier_eq_bonus_weather\n\t\t\tbonus = {\n\t\t\t\tship_hull_mega_carrier = {\n\t\t\t\t\tnaval_weather_penalty_factor = -0.15\n\t\t\t\t\tinstant = yes\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_mega_carrier_eq_bonus_weather\n\t\t\tbonus = {\n\t\t\t\tmega_carrier = {\n\t\t\t\t\tnaval_weather_penalty_factor = -0.2\n\t\t\t\t\tinstant = yes\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_ice_carrier_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tif = {\n\t\tlimit = {\n\t\t\thas_dlc = \"Man the Guns\"\n\t\t}\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_mega_carrier_eq_bonus_strength\n\t\t\tbonus = {\n\t\t\t\tship_hull_mega_carrier = {\n\t\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t\tinstant = yes\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\telse = {\n\t\tadd_equipment_bonus = {\n\t\t\tname = sp_mega_carrier_eq_bonus_strength\n\t\t\tbonus = {\n\t\t\t\tmega_carrier = {\n\t\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t\t\tmax_strength = 0.1\n\t\t\t\t\tinstant = yes\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_underway_replenishment",
+    "specialization": "naval",
+    "reward": "sp_naval_underway_replenishment_unique_reward_a",
+    "default": "sp_naval_underway_replenishment_preference_c",
+    "options": [
+      {
+        "token": "sp_naval_underway_replenishment_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tcustom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_a\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tsp_naval_underway_replenishment_pick_a = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_underway_replenishment_preference_c",
+        "default": true,
+        "buff_kinds": [],
+        "portable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_naval_underway_replenishment_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tcustom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_b\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tsp_naval_underway_replenishment_pick_b = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_support_ships",
+    "specialization": "naval",
+    "reward": "sp_naval_support_ships_unique_reward_a",
+    "default": "sp_naval_support_ships_preference_b_a",
+    "options": [
+      {
+        "token": "sp_naval_support_ships_preference_a_a",
+        "default": false,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tcustom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_a\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tsp_naval_support_ships_pick_a = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_support_ships_preference_b_a",
+        "default": true,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tcustom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_b\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tsp_naval_support_ships_pick_b = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_support_ships_preference_c_a",
+        "default": false,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tcustom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_c\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tsp_naval_support_ships_pick_c = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_support_ships",
+    "specialization": "naval",
+    "reward": "sp_naval_support_ships_unique_reward_b",
+    "default": "sp_naval_support_ships_preference_b_b",
+    "options": [
+      {
+        "token": "sp_naval_support_ships_preference_a_b",
+        "default": false,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tcustom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_a\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tsp_naval_repair_ships_pick_a = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_support_ships_preference_b_b",
+        "default": true,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tcustom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_b\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tsp_naval_repair_ships_pick_b = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_support_ships_preference_c_b",
+        "default": false,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tcustom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_c\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tsp_naval_repair_ships_pick_c = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_escort_carrier",
+    "specialization": "naval",
+    "reward": "sp_naval_escort_carrier_unique_reward_a",
+    "default": "sp_naval_escort_carrier_preference_b_a",
+    "options": [
+      {
+        "token": "sp_naval_escort_carrier_preference_a_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_escort_carrier_eq_bonus_range\n\t\tbonus = {\n\t\t\tship_hull_escort_carrier = {\n\t\t\t\tnaval_range = 0.15\n\t\t\t\tbuild_cost_ic = 0.05\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_escort_carrier_preference_b_a",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_escort_carrier_eq_bonus_strength\n\t\tbonus = {\n\t\t\tship_hull_escort_carrier = {\n\t\t\t\tmax_strength = 0.05\n\t\t\t\treliability = 0.1\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_escort_carrier_preference_c_a",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_escort_carrier_eq_bonus_speed\n\t\tbonus = {\n\t\t\tship_hull_escort_carrier = {\n\t\t\t\tnaval_speed = 0.15\n\t\t\t\tbuild_cost_ic = 0.025\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_escort_carrier",
+    "specialization": "naval",
+    "reward": "sp_naval_escort_carrier_unique_reward_b",
+    "default": "sp_naval_escort_carrier_preference_b_b",
+    "options": [
+      {
+        "token": "sp_naval_escort_carrier_preference_a_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_escort_carrier_eq_bonus_sub_detection\n\t\tbonus = {\n\t\t\tship_hull_escort_carrier = {\n\t\t\t\tsub_detection = 0.125\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_escort_carrier_preference_b_b",
+        "default": true,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_escort_carrier_eq_bonus_compromise\n\t\tbonus = {\n\t\t\tship_hull_escort_carrier = {\n\t\t\t\tsub_detection = 0.05\n\t\t\t\tsurface_detection = 0.05\n\t\t\t}\n\t\t}\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_escort_carrier_preference_c_b",
+        "default": false,
+        "buff_kinds": [
+          "add_equipment_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tadd_equipment_bonus = {\n\t\tname = sp_naval_escort_carrier_eq_bonus_surface_detection\n\t\tbonus = {\n\t\t\tship_hull_escort_carrier = {\n\t\t\t\tsurface_detection = 0.125\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_nuclear_reactor",
+    "specialization": "nuclear",
+    "reward": "sp_nuclear_isotope_separation_choice_reward",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_nuclear_isotope_separation_choice_reward_gaseous",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_nuclear_isotope_separation_choice_reward_centrifugal",
+        "default": false,
+        "buff_kinds": [
+          "set_technology"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\thidden_effect = {\n\t\tset_technology = {\n\t\t\tisotope_separation_centrifugal = 1\n\t\t\tpopup = no\n\t\t}\n\t}\n\tadd_timed_idea = {\n\t\tidea = special_project_consumer_costs_high\n\t\tdays = 365\n\t}\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.gain.high\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_nuclear_reactor",
+    "specialization": "nuclear",
+    "reward": "sp_nuclear_reactor_tested_reward",
+    "default": null,
+    "options": [
+      {
+        "token": "nuclear_reactor_tested_reward_classify",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_nuclear_reactor_tested_reward_public",
+        "default": false,
+        "buff_kinds": [
+          "add_tech_bonus"
+        ],
+        "portable": true,
+        "effect": "country_effects = {\n\tset_global_flag = nuclear_reactor_tested_flag\n\tset_country_flag = nuclear_reactor_public_flag\n\tadd_popularity = {\n\t\tideology = ROOT\n\t\tpopularity = 0.1\n\t}\n\tadd_political_power = 100\n\tevery_other_country = {\n\t\tcustom_effect_tooltip = sp_nuclear_reactor_tested_reward_public_tt\n\t\thidden_effect = {\n\t\t\tIF = {\n\t\t\t\tlimit = {\n\t\t\t\t\thas_tech = atomic_research\n\t\t\t\t\tNOT = {\n\t\t\t\t\t\tis_special_project_completed = sp:sp_nuclear_reactor\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tsp:sp_nuclear_reactor = {\n\t\t\t\t\tadd_project_progress_ratio = 0.1\n\t\t\t\t}\n\t\t\t}\n\t\t\tELSE_IF = {\n\t\t\t\tlimit = {\n\t\t\t\t\tNOT = {\n\t\t\t\t\t\thas_tech = atomic_research\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tadd_tech_bonus = {\n\t\t\t\t\tname = sp_nuclear_reactor_tested_tech_bonus\n\t\t\t\t\tbonus = 0.25\n\t\t\t\t\tuses = 1\n\t\t\t\t\ttechnology = atomic_research\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+      }
+    ]
+  }
+]

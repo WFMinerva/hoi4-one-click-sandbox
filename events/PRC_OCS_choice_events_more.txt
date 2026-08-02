@@ -1,0 +1,2277 @@
+# v2.6-test2 extended choose-your-bonus events (generated).
+country_event = {
+ id = PRC_OCS.22
+ title = PRC_OCS.22.t
+ desc = PRC_OCS.22.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.22.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_earthshaker_bomb_naval_targetting
+   		bonus = {
+   			large_plane_airframe = {
+   				naval_strike_targetting = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_earthshaker_bomb_naval_targetting
+   		bonus = {
+   			large_plane_airframe = {
+   				naval_strike_targetting = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+ option = {
+  name = PRC_OCS.22.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_earthshaker_bomb_power
+   		bonus = {
+   			large_plane_airframe = {
+   				naval_strike_attack = 0.05
+   				air_bombing = 0.05
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_earthshaker_bomb_power
+   		bonus = {
+   			large_plane_airframe = {
+   				naval_strike_attack = 0.05
+   				air_bombing = 0.05
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+ option = {
+  name = PRC_OCS.22.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_earthshaker_bomb_both
+   		bonus = {
+   			large_plane_airframe = {
+   				naval_strike_targetting = 0.1
+   				naval_strike_attack = 0.05
+   				air_bombing = 0.05
+   				build_cost_ic = 0.05
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_earthshaker_bomb_both
+   		bonus = {
+   			large_plane_airframe = {
+   				naval_strike_targetting = 0.1
+   				naval_strike_attack = 0.05
+   				air_bombing = 0.05
+   				build_cost_ic = 0.05
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.23
+ title = PRC_OCS.23.t
+ desc = PRC_OCS.23.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.23.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done
+   add_equipment_bonus = {
+   	name = sp_air_helicopter_speed
+   	bonus = {
+   		helicopter_equipment = {
+   			maximum_speed = 0.1
+   			fuel_consumption = 0.05
+   			build_cost_ic = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+ option = {
+  name = PRC_OCS.23.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done
+   add_equipment_bonus = {
+   	name = sp_air_helicopter_compromise
+   	bonus = {
+   		helicopter_equipment = {
+   			reliability = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+ option = {
+  name = PRC_OCS.23.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done
+   add_equipment_bonus = {
+   	name = sp_air_helicopter_protection
+   	bonus = {
+   		helicopter_equipment = {
+   			armor_value = 0.1
+   			defense = 0.1
+   			breakthrough = 0.1
+   			fuel_consumption = 0.15
+   			build_cost_ic = 0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.24
+ title = PRC_OCS.24.t
+ desc = PRC_OCS.24.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.24.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_air_intercontinental_bomber_balanced
+   		bonus = {
+   			strat_bomber_intercontinental_equipment = {
+   				reliability = 0.05
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_air_intercontinental_bomber_balanced
+   		bonus = {
+   			strat_bomber_intercontinental_equipment = {
+   				reliability = 0.05
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+ option = {
+  name = PRC_OCS.24.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_air_intercontinental_bomber_bombing_payload
+   		bonus = {
+   			strat_bomber_intercontinental_equipment = {
+   				air_bombing = 0.15
+   				air_defence = -0.05
+   				air_attack = -0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_air_intercontinental_bomber_bombing_payload
+   		bonus = {
+   			strat_bomber_intercontinental_equipment = {
+   				air_bombing = 0.15
+   				air_defence = -0.05
+   				air_attack = -0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+ option = {
+  name = PRC_OCS.24.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_air_intercontinental_bomber_protection
+   		bonus = {
+   			strat_bomber_intercontinental_equipment = {
+   				air_defence = 0.15
+   				air_attack = -0.1
+   				air_bombing = -0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_air_intercontinental_bomber_protection
+   		bonus = {
+   			strat_bomber_intercontinental_equipment = {
+   				air_defence = 0.15
+   				air_attack = -0.1
+   				air_bombing = -0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.25
+ title = PRC_OCS.25.t
+ desc = PRC_OCS.25.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.25.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_air_mothership_speed_agility
+   		bonus = {
+   			mothership_equipment = {
+   				air_agility = 0.1
+   				maximum_speed = 0.1
+   				fuel_consumption = 0.15
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_air_mothership_speed_agility
+   		bonus = {
+   			mothership_equipment = {
+   				air_agility = 0.1
+   				maximum_speed = 0.1
+   				fuel_consumption = 0.15
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+ option = {
+  name = PRC_OCS.25.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_air_mothership_balanced
+   		bonus = {
+   			mothership_equipment = {
+   				reliability = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_air_mothership_balanced
+   		bonus = {
+   			mothership_equipment = {
+   				reliability = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+ option = {
+  name = PRC_OCS.25.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "By Blood Alone"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_air_mothership_strength
+   		bonus = {
+   			mothership_equipment = {
+   				air_defence = 0.1
+   				air_attack = 0.1
+   				build_cost_ic = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_air_mothership_strength
+   		bonus = {
+   			mothership_equipment = {
+   				air_defence = 0.1
+   				air_attack = 0.1
+   				build_cost_ic = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.50 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.26
+ title = PRC_OCS.26.t
+ desc = PRC_OCS.26.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.26.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done
+   add_tech_bonus = {
+   	name = sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01
+   	bonus = 0.5
+   	uses = 1
+   	category = cat_fortification
+   	category = construction_tech
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.26.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.27
+ title = PRC_OCS.27.t
+ desc = PRC_OCS.27.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.27.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done
+   add_tech_bonus = {
+   	name = sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01
+   	bonus = 0.75
+   	uses = 1
+   	category = cat_fortification
+   	category = construction_tech
+   }
+   if = {
+   	limit = {
+   		any_scientist = {
+   			has_scientist_level = {
+   				specialization = specialization_land
+   			}
+   			is_active_scientist = no
+   		}
+   	}
+   	random_scientist = {
+   		limit = {
+   			has_scientist_level = {
+   				specialization = specialization_land
+   			}
+   			is_active_scientist = no
+   		}
+   		add_scientist_xp = {
+   			experience = constant:sp_scientist_xp_gain.high
+   			specialization = specialization_land
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.27.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.28
+ title = PRC_OCS.28.t
+ desc = PRC_OCS.28.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.28.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done
+   add_tech_bonus = {
+   	name = sp_land_reward_stronghold_network_communication_system_overhaul
+   	bonus = 0.25
+   	uses = 1
+   	category = cat_fortification
+   	category = construction_tech
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.28.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.29
+ title = PRC_OCS.29.t
+ desc = PRC_OCS.29.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.29.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_escort_carrier_eq_bonus_range
+   	bonus = {
+   		ship_hull_escort_carrier = {
+   			naval_range = 0.15
+   			build_cost_ic = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.29.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_escort_carrier_eq_bonus_strength
+   	bonus = {
+   		ship_hull_escort_carrier = {
+   			max_strength = 0.05
+   			reliability = 0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.29.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_escort_carrier_eq_bonus_speed
+   	bonus = {
+   		ship_hull_escort_carrier = {
+   			naval_speed = 0.15
+   			build_cost_ic = 0.025
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.30
+ title = PRC_OCS.30.t
+ desc = PRC_OCS.30.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.30.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_escort_carrier_eq_bonus_sub_detection
+   	bonus = {
+   		ship_hull_escort_carrier = {
+   			sub_detection = 0.125
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.30.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_escort_carrier_eq_bonus_compromise
+   	bonus = {
+   		ship_hull_escort_carrier = {
+   			sub_detection = 0.05
+   			surface_detection = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.30.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_escort_carrier_eq_bonus_surface_detection
+   	bonus = {
+   		ship_hull_escort_carrier = {
+   			surface_detection = 0.125
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.31
+ title = PRC_OCS.31.t
+ desc = PRC_OCS.31.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.31.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_mega_carrier_eq_bonus_weather
+   		bonus = {
+   			ship_hull_mega_carrier = {
+   				naval_weather_penalty_factor = -0.15
+   				instant = yes
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_mega_carrier_eq_bonus_weather
+   		bonus = {
+   			mega_carrier = {
+   				naval_weather_penalty_factor = -0.2
+   				instant = yes
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.31.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_mega_carrier_eq_bonus_strength
+   		bonus = {
+   			ship_hull_mega_carrier = {
+   				build_cost_ic = 0.05
+   				max_strength = 0.1
+   				instant = yes
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_mega_carrier_eq_bonus_strength
+   		bonus = {
+   			mega_carrier = {
+   				build_cost_ic = 0.05
+   				max_strength = 0.1
+   				instant = yes
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.32
+ title = PRC_OCS.32.t
+ desc = PRC_OCS.32.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.32.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_midget_submarine_eq_bonus_stealth
+   		bonus = {
+   			ship_hull_midget_submarine = {
+   				naval_range = -0.2
+   				sub_visibility = -0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_midget_submarine_eq_bonus_stealth
+   		bonus = {
+   			midget_submarine = {
+   				naval_range = -0.2
+   				sub_visibility = -0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.32.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_midget_submarine_eq_bonus_reliability
+   		bonus = {
+   			ship_hull_midget_submarine = {
+   				reliability = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_midget_submarine_eq_bonus_reliability
+   		bonus = {
+   			midget_submarine = {
+   				reliability = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.32.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_midget_submarine_eq_bonus_range
+   		bonus = {
+   			ship_hull_midget_submarine = {
+   				naval_range = 0.2
+   				sub_visibility = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_midget_submarine_eq_bonus_range
+   		bonus = {
+   			midget_submarine = {
+   				naval_range = 0.2
+   				sub_visibility = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.33
+ title = PRC_OCS.33.t
+ desc = PRC_OCS.33.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.33.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_heavy_attack
+   		bonus = {
+   			ship_hull_heavy_modern = {
+   				naval_heavy_gun_hit_chance_factor = 0.2
+   				hg_attack = 0.15
+   				hg_armor_piercing = 0.15
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_heavy_attack
+   		bonus = {
+   			modern_battleship = {
+   				naval_heavy_gun_hit_chance_factor = 0.2
+   				hg_attack = 0.15
+   				hg_armor_piercing = 0.15
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.33.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_speed
+   		bonus = {
+   			ship_hull_heavy_modern = {
+   				naval_speed = 0.1
+   				surface_detection = 0.15
+   				surface_visibility = -0.07
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_speed
+   		bonus = {
+   			modern_battleship = {
+   				naval_speed = 0.1
+   				surface_detection = 0.15
+   				surface_visibility = -0.07
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.33.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_light_attack
+   		bonus = {
+   			ship_hull_heavy_modern = {
+   				naval_light_gun_hit_chance_factor = 0.1
+   				lg_attack = 0.1
+   				lg_armor_piercing = 0.15
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_light_attack
+   		bonus = {
+   			modern_battleship = {
+   				naval_light_gun_hit_chance_factor = 0.1
+   				lg_attack = 0.1
+   				lg_armor_piercing = 0.15
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.34
+ title = PRC_OCS.34.t
+ desc = PRC_OCS.34.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.34.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_armor
+   		bonus = {
+   			ship_hull_heavy_modern = {
+   				armor_value = 0.15
+   				max_strength = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_armor
+   		bonus = {
+   			modern_battleship = {
+   				armor_value = 0.15
+   				max_strength = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.34.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_anti_air
+   		bonus = {
+   			ship_hull_heavy_modern = {
+   				anti_air_attack = 0.25
+   				reliability = 0.07
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_anti_air
+   		bonus = {
+   			modern_battleship = {
+   				anti_air_attack = 0.25
+   				reliability = 0.07
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.34.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_anti_torpedo
+   		bonus = {
+   			ship_hull_heavy_modern = {
+   				naval_torpedo_enemy_critical_chance_factor = 0.15
+   				naval_torpedo_damage_reduction_factor = 0.2
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_battleship_eq_bonus_anti_torpedo
+   		bonus = {
+   			modern_battleship = {
+   				naval_torpedo_enemy_critical_chance_factor = 0.15
+   				naval_torpedo_damage_reduction_factor = 0.2
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.35
+ title = PRC_OCS.35.t
+ desc = PRC_OCS.35.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.35.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_detection
+   		bonus = {
+   			ship_hull_carrier_modern = {
+   				surface_detection = 0.2
+   				sub_detection = 0.2
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_detection
+   		bonus = {
+   			modern_carrier = {
+   				surface_detection = 0.2
+   				sub_detection = 0.2
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.35.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_speed
+   		bonus = {
+   			ship_hull_carrier_modern = {
+   				naval_speed = 0.1
+   				naval_weather_penalty_factor = -0.25
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_speed
+   		bonus = {
+   			modern_carrier = {
+   				naval_speed = 0.1
+   				naval_weather_penalty_factor = -0.25
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.35.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_light_attack
+   		bonus = {
+   			ship_hull_carrier_modern = {
+   				naval_light_gun_hit_chance_factor = 0.1
+   				lg_attack = 0.15
+   				lg_armor_piercing = 0.15
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_light_attack
+   		bonus = {
+   			modern_carrier = {
+   				naval_light_gun_hit_chance_factor = 0.1
+   				lg_attack = 0.15
+   				lg_armor_piercing = 0.15
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.36
+ title = PRC_OCS.36.t
+ desc = PRC_OCS.36.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.36.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_armor
+   		bonus = {
+   			ship_hull_carrier_modern = {
+   				armor_value = 0.15
+   				max_strength = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_armor
+   		bonus = {
+   			modern_carrier = {
+   				armor_value = 0.15
+   				max_strength = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.36.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_anti_air
+   		bonus = {
+   			ship_hull_carrier_modern = {
+   				anti_air_attack = 0.25
+   				reliability = 0.07
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_anti_air
+   		bonus = {
+   			modern_carrier = {
+   				anti_air_attack = 0.25
+   				reliability = 0.07
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.36.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_anti_torpedo
+   		bonus = {
+   			ship_hull_carrier_modern = {
+   				naval_torpedo_enemy_critical_chance_factor = 0.15
+   				naval_torpedo_damage_reduction_factor = 0.2
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_modern_carrier_eq_bonus_anti_torpedo
+   		bonus = {
+   			modern_carrier = {
+   				naval_torpedo_enemy_critical_chance_factor = 0.15
+   				naval_torpedo_damage_reduction_factor = 0.2
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.37
+ title = PRC_OCS.37.t
+ desc = PRC_OCS.37.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.37.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_nuclear_missile_submarine_eq_bonus_stealth
+   		bonus = {
+   			ship_hull_nuclear_submarine = {
+   				sub_visibility = -0.05
+   				surface_detection = 0.02
+   				build_cost_ic = 0.05
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_nuclear_missile_submarine_eq_bonus_stealth
+   		bonus = {
+   			nuclear_missile_submarine = {
+   				sub_visibility = -0.1
+   				surface_detection = 0.05
+   				build_cost_ic = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.37.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.37.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_nuclear_missile_submarine_eq_bonus_strength
+   		bonus = {
+   			ship_hull_nuclear_submarine = {
+   				max_strength = 0.02
+   				naval_weather_penalty_factor = -0.2
+   				build_cost_ic = 0.05
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_nuclear_missile_submarine_eq_bonus_strength
+   		bonus = {
+   			nuclear_missile_submarine = {
+   				max_strength = 0.05
+   				naval_weather_penalty_factor = -0.2
+   				build_cost_ic = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.38
+ title = PRC_OCS.38.t
+ desc = PRC_OCS.38.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.38.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_nuclear_submarine_eq_bonus_ic_reduction
+   		bonus = {
+   			ship_hull_nuclear_submarine = {
+   				build_cost_ic = -0.1
+   				reliability = -0.05
+   				sub_visibility = 0.1
+   				naval_range = -0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_nuclear_submarine_eq_bonus_ic_reduction
+   		bonus = {
+   			nuclear_submarine = {
+   				build_cost_ic = -0.1
+   				reliability = -0.05
+   				sub_visibility = 0.1
+   				naval_range = -0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.38.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.38.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_nuclear_submarine_eq_bonus_quality
+   		bonus = {
+   			ship_hull_nuclear_submarine = {
+   				build_cost_ic = 0.1
+   				max_strength = 0.1
+   				reliability = 0.05
+   				sub_visibility = -0.05
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_nuclear_submarine_eq_bonus_quality
+   		bonus = {
+   			nuclear_submarine = {
+   				build_cost_ic = 0.1
+   				max_strength = 0.1
+   				reliability = 0.05
+   				sub_visibility = -0.05
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.39
+ title = PRC_OCS.39.t
+ desc = PRC_OCS.39.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.39.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_rocket_submarine_eq_bonus_range_increase
+   		bonus = {
+   			ship_hull_fleet_submarine = {
+   				naval_range = 0.1
+   				sub_visibility = 0.05
+   				build_cost_ic = 0.07
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_rocket_submarine_eq_bonus_range_increase
+   		bonus = {
+   			rocket_submarine = {
+   				naval_range = 0.15
+   				sub_visibility = 0.05
+   				build_cost_ic = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.39.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_rocket_submarine_eq_bonus_reliability
+   		bonus = {
+   			ship_hull_fleet_submarine = {
+   				reliability = 0.03
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_rocket_submarine_eq_bonus_reliability
+   		bonus = {
+   			rocket_submarine = {
+   				reliability = 0.05
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.39.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_rocket_submarine_eq_bonus_stealth
+   		bonus = {
+   			ship_hull_fleet_submarine = {
+   				sub_visibility = -0.05
+   				naval_range = -0.05
+   				build_cost_ic = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_rocket_submarine_eq_bonus_stealth
+   		bonus = {
+   			rocket_submarine = {
+   				sub_visibility = -0.15
+   				naval_range = -0.05
+   				build_cost_ic = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.40
+ title = PRC_OCS.40.t
+ desc = PRC_OCS.40.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.40.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_submarine_carrier_eq_bonus_range
+   	bonus = {
+   		ship_hull_carrier_submarine = {
+   			naval_range = 0.1
+   			sub_visibility = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.40.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_submarine_carrier_eq_bonus_strength
+   	bonus = {
+   		ship_hull_carrier_submarine = {
+   			max_strength = 0.05
+   			naval_weather_penalty_factor = -0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.40.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = sp_naval_submarine_carrier_eq_bonus_stealth
+   	bonus = {
+   		ship_hull_carrier_submarine = {
+   			sub_visibility = -0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.41
+ title = PRC_OCS.41.t
+ desc = PRC_OCS.41.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.41.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_heavy_attack
+   		bonus = {
+   			ship_hull_super_heavy_1 = {
+   				naval_heavy_gun_hit_chance_factor = 0.15
+   				hg_attack = 0.15
+   				hg_armor_piercing = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_heavy_attack
+   		bonus = {
+   			SH_battleship_1 = {
+   				naval_heavy_gun_hit_chance_factor = 0.15
+   				hg_attack = 0.15
+   				hg_armor_piercing = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.41.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_speed
+   		bonus = {
+   			ship_hull_super_heavy_1 = {
+   				naval_speed = 0.1
+   				surface_detection = 0.15
+   				surface_visibility = -0.05
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_speed
+   		bonus = {
+   			SH_battleship_1 = {
+   				naval_speed = 0.1
+   				surface_detection = 0.15
+   				surface_visibility = -0.05
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.41.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_light_attack
+   		bonus = {
+   			ship_hull_super_heavy_1 = {
+   				naval_light_gun_hit_chance_factor = 0.1
+   				lg_attack = 0.1
+   				lg_armor_piercing = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_light_attack
+   		bonus = {
+   			SH_battleship_1 = {
+   				naval_light_gun_hit_chance_factor = 0.1
+   				lg_attack = 0.1
+   				lg_armor_piercing = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.42
+ title = PRC_OCS.42.t
+ desc = PRC_OCS.42.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.42.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_armor
+   		bonus = {
+   			ship_hull_super_heavy_1 = {
+   				armor_value = 0.1
+   				max_strength = 0.1
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_armor
+   		bonus = {
+   			SH_battleship_1 = {
+   				armor_value = 0.1
+   				max_strength = 0.1
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.42.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_anti_air
+   		bonus = {
+   			ship_hull_super_heavy_1 = {
+   				anti_air_attack = 0.25
+   				reliability = 0.05
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_anti_air
+   		bonus = {
+   			SH_battleship_1 = {
+   				anti_air_attack = 0.25
+   				reliability = 0.05
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.42.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done
+   if = {
+   	limit = {
+   		has_dlc = "Man the Guns"
+   	}
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_anti_torpedo
+   		bonus = {
+   			ship_hull_super_heavy_1 = {
+   				naval_torpedo_enemy_critical_chance_factor = 0.15
+   				naval_torpedo_damage_reduction_factor = 0.15
+   			}
+   		}
+   	}
+   }
+   else = {
+   	add_equipment_bonus = {
+   		name = sp_super_heavy_battleship_eq_bonus_anti_torpedo
+   		bonus = {
+   			SH_battleship_1 = {
+   				naval_torpedo_enemy_critical_chance_factor = 0.15
+   				naval_torpedo_damage_reduction_factor = 0.15
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.43
+ title = PRC_OCS.43.t
+ desc = PRC_OCS.43.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.43.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_a
+   hidden_effect = {
+   	set_technology = {
+   		sp_naval_support_ships_pick_a = 1
+   		popup = no
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.43.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_b
+   hidden_effect = {
+   	set_technology = {
+   		sp_naval_support_ships_pick_b = 1
+   		popup = no
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.43.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_c
+   hidden_effect = {
+   	set_technology = {
+   		sp_naval_support_ships_pick_c = 1
+   		popup = no
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.44
+ title = PRC_OCS.44.t
+ desc = PRC_OCS.44.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.44.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_a
+   hidden_effect = {
+   	set_technology = {
+   		sp_naval_repair_ships_pick_a = 1
+   		popup = no
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.44.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_b
+   hidden_effect = {
+   	set_technology = {
+   		sp_naval_repair_ships_pick_b = 1
+   		popup = no
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.44.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_c
+   hidden_effect = {
+   	set_technology = {
+   		sp_naval_repair_ships_pick_c = 1
+   		popup = no
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.45
+ title = PRC_OCS.45.t
+ desc = PRC_OCS.45.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.45.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_a
+   hidden_effect = {
+   	set_technology = {
+   		sp_naval_underway_replenishment_pick_a = 1
+   		popup = no
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.45.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.45.c
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_b
+   hidden_effect = {
+   	set_technology = {
+   		sp_naval_underway_replenishment_pick_b = 1
+   		popup = no
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.46
+ title = PRC_OCS.46.t
+ desc = PRC_OCS.46.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.46.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done
+  }
+  country_event = { id = PRC_OCS.49 }
+ }
+ option = {
+  name = PRC_OCS.46.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done
+   hidden_effect = {
+   	set_technology = {
+   		isotope_separation_centrifugal = 1
+   		popup = no
+   	}
+   }
+   add_timed_idea = {
+   	idea = special_project_consumer_costs_high
+   	days = 365
+   }
+  }
+  country_event = { id = PRC_OCS.49 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.47
+ title = PRC_OCS.47.t
+ desc = PRC_OCS.47.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.47.a
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done
+  }
+  country_event = { id = PRC_OCS.49 }
+ }
+ option = {
+  name = PRC_OCS.47.b
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done
+   set_global_flag = nuclear_reactor_tested_flag
+   set_country_flag = nuclear_reactor_public_flag
+   add_popularity = {
+   	ideology = ROOT
+   	popularity = 0.1
+   }
+   add_political_power = 100
+   every_other_country = {
+   	custom_effect_tooltip = sp_nuclear_reactor_tested_reward_public_tt
+   	hidden_effect = {
+   		IF = {
+   			limit = {
+   				has_tech = atomic_research
+   				NOT = {
+   					is_special_project_completed = sp:sp_nuclear_reactor
+   				}
+   			}
+   			sp:sp_nuclear_reactor = {
+   				add_project_progress_ratio = 0.1
+   			}
+   		}
+   		ELSE_IF = {
+   			limit = {
+   				NOT = {
+   					has_tech = atomic_research
+   				}
+   			}
+   			add_tech_bonus = {
+   				name = sp_nuclear_reactor_tested_tech_bonus
+   				bonus = 0.25
+   				uses = 1
+   				technology = atomic_research
+   			}
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.49 }
+ }
+}
+# === v2.6 dispatch menus (48-51) appended by finish_choice_events.py ===
+
+country_event = {
+ id = PRC_OCS.48
+ title = PRC_OCS.48.t
+ desc = PRC_OCS.48.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.48.a
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done }
+  }
+  country_event = { id = PRC_OCS.26 }
+ }
+ option = {
+  name = PRC_OCS.48.b
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done }
+  }
+  country_event = { id = PRC_OCS.27 }
+ }
+ option = {
+  name = PRC_OCS.48.c
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done }
+  }
+  country_event = { id = PRC_OCS.28 }
+ }
+ option = {
+  name = PRC_OCS.48.z
+  trigger = {
+   has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done
+  }
+  hidden_effect = {
+   set_country_flag = PRC_OCS_land_special_project_choices_done
+  }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.49
+ title = PRC_OCS.49.t
+ desc = PRC_OCS.49.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.49.a
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.46 }
+ }
+ option = {
+  name = PRC_OCS.49.b
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.47 }
+ }
+ option = {
+  name = PRC_OCS.49.z
+  trigger = {
+   has_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done
+   has_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done
+  }
+  hidden_effect = {
+   set_country_flag = PRC_OCS_nuclear_special_project_choices_done
+  }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.50
+ title = PRC_OCS.50.t
+ desc = PRC_OCS.50.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.50.a
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.22 }
+ }
+ option = {
+  name = PRC_OCS.50.b
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.23 }
+ }
+ option = {
+  name = PRC_OCS.50.c
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.24 }
+ }
+ option = {
+  name = PRC_OCS.50.e
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.25 }
+ }
+ option = {
+  name = PRC_OCS.50.z
+  trigger = {
+   has_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done
+   has_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done
+   has_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done
+   has_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done
+  }
+  hidden_effect = {
+   set_country_flag = PRC_OCS_air_special_project_choices_done
+  }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.51
+ title = PRC_OCS.51.t
+ desc = PRC_OCS.51.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.51.a
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.29 }
+ }
+ option = {
+  name = PRC_OCS.51.b
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done }
+  }
+  country_event = { id = PRC_OCS.30 }
+ }
+ option = {
+  name = PRC_OCS.51.c
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.31 }
+ }
+ option = {
+  name = PRC_OCS.51.e
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.32 }
+ }
+ option = {
+  name = PRC_OCS.51.f
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.33 }
+ }
+ option = {
+  name = PRC_OCS.51.g
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done }
+  }
+  country_event = { id = PRC_OCS.34 }
+ }
+ option = {
+  name = PRC_OCS.51.h
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.35 }
+ }
+ option = {
+  name = PRC_OCS.51.i
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done }
+  }
+  country_event = { id = PRC_OCS.36 }
+ }
+ option = {
+  name = PRC_OCS.51.j
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.37 }
+ }
+ option = {
+  name = PRC_OCS.51.k
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.38 }
+ }
+ option = {
+  name = PRC_OCS.51.l
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.39 }
+ }
+ option = {
+  name = PRC_OCS.51.m
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.40 }
+ }
+ option = {
+  name = PRC_OCS.51.n
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.41 }
+ }
+ option = {
+  name = PRC_OCS.51.o
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done }
+  }
+  country_event = { id = PRC_OCS.42 }
+ }
+ option = {
+  name = PRC_OCS.51.p
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.43 }
+ }
+ option = {
+  name = PRC_OCS.51.q
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done }
+  }
+  country_event = { id = PRC_OCS.44 }
+ }
+ option = {
+  name = PRC_OCS.51.r
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.45 }
+ }
+ option = {
+  name = PRC_OCS.51.z
+  trigger = {
+   has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done
+   has_country_flag = PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done
+   has_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done
+   has_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done
+   has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
+   has_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
+  }
+  hidden_effect = {
+   set_country_flag = PRC_OCS_naval_special_project_choices_done
+  }
+ }
+}

@@ -272,6 +272,34 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	# v2.6 choose-your-bonus (air): after the one-click air completion, the
+	# player picks the mutually exclusive prototype-reward buffs one by one.
+	PRC_OCS_choose_air_special_project_bonuses = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_air_special_project_choices_done }
+		}
+		available = {
+			is_ai = no
+			has_country_flag = PRC_OCS_air_special_projects_completed
+			OR = {
+				NOT = { has_country_flag = PRC_OCS_air_jet_choice_done }
+				NOT = { has_country_flag = PRC_OCS_air_axial_choice_done }
+				NOT = { has_country_flag = PRC_OCS_air_supersonic_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done }
+			}
+		}
+		complete_effect = { country_event = { id = PRC_OCS.14 } }
+		ai_will_do = { factor = 0 }
+	}
+
 	PRC_OCS_complete_land_special_projects = {
 		icon = generic_research
 		cost = 0
@@ -338,6 +366,71 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	# v2.6 choose-your-bonus (naval): after the one-click naval completion, the
+	# player picks the mutually exclusive prototype-reward buffs one by one.
+	PRC_OCS_choose_naval_special_project_bonuses = {
+		icon = generic_naval
+		cost = 0
+		days_remove = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_naval_special_project_choices_done }
+		}
+		available = {
+			is_ai = no
+			has_country_flag = PRC_OCS_naval_special_projects_completed
+			OR = {
+				NOT = { has_country_flag = PRC_OCS_naval_cruiser_sub_choice_done }
+				NOT = { has_country_flag = PRC_OCS_naval_fleet_sub_choice_done }
+				NOT = { has_country_flag = PRC_OCS_naval_torpedo_cruiser_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done }
+			}
+		}
+		complete_effect = { country_event = { id = PRC_OCS.18 } }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.6 choose-your-bonus (land): after the one-click land completion, the
+	# player picks the remaining stronghold-network prototype rewards.
+	PRC_OCS_choose_land_special_project_bonuses = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_land_special_project_choices_done }
+		}
+		available = {
+			is_ai = no
+			has_country_flag = PRC_OCS_land_special_projects_completed
+			OR = {
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done }
+			}
+		}
+		complete_effect = { country_event = { id = PRC_OCS.48 } }
+		ai_will_do = { factor = 0 }
+	}
+
 	PRC_OCS_complete_nuclear_special_projects = {
 		icon = generic_research
 		cost = 0
@@ -360,6 +453,29 @@ PRC_OCS_category = {
 			}
 		}
 		complete_effect = { PRC_OCS_complete_nuclear_special_projects_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.6 choose-your-bonus (nuclear): after the one-click nuclear completion,
+	# the player picks the isotope-separation and reactor-tested rewards.
+	PRC_OCS_choose_nuclear_special_project_bonuses = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_nuclear_special_project_choices_done }
+		}
+		available = {
+			is_ai = no
+			has_country_flag = PRC_OCS_nuclear_special_projects_completed
+			OR = {
+				NOT = { has_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done }
+			}
+		}
+		complete_effect = { country_event = { id = PRC_OCS.49 } }
 		ai_will_do = { factor = 0 }
 	}
 

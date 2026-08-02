@@ -1,0 +1,225 @@
+add_namespace = PRC_OCS
+
+country_event = {
+	id = PRC_OCS.16
+	title = PRC_OCS.16.t
+	desc = PRC_OCS.16.d
+	picture = GFX_report_event_generic_research
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.16.a
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_axial_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = sp_air_light_air_tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = light_air
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_fighter_2
+					bonus = {
+						jet_tac_bomber_equipment = {
+							air_ground_attack = -0.03
+							air_range = -0.03
+							build_cost_ic = 0.03
+						}
+					}
+				}
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_fighter_2
+					bonus = {
+						jet_fighter_equipment = {
+							maximum_speed = 0.03
+							air_agility = 0.03
+							build_cost_ic = -0.03
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+	option = {
+		name = PRC_OCS.16.b
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_axial_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = sp_air_air_equipment_tech_bonus
+					bonus = 0.33
+					uses = 2
+					category = air_equipment
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_compromise_2
+					bonus = {
+						jet_tac_bomber_equipment = {
+							reliability = 0.05
+						}
+					}
+				}
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_compromise_2
+					bonus = {
+						jet_fighter_equipment = {
+							reliability = 0.05
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+	option = {
+		name = PRC_OCS.16.c
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_axial_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_tech_bonus = {
+					name = sp_air_medium_air_tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = medium_air
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_bomber_2
+					bonus = {
+						jet_tac_bomber_equipment = {
+							air_ground_attack = 0.03
+							air_range = 0.03
+							build_cost_ic = -0.03
+						}
+					}
+				}
+				add_equipment_bonus = {
+					name = sp_air_jet_engine_bomber_2
+					bonus = {
+						jet_fighter_equipment = {
+							maximum_speed = -0.03
+							air_agility = -0.03
+							build_cost_ic = 0.03
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.17
+	title = PRC_OCS.17.t
+	desc = PRC_OCS.17.d
+	picture = GFX_report_event_generic_research
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.17.a
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_supersonic_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_equipment_bonus = {
+					name = sp_air_supersonic_jet_cost_reduction
+					bonus = {
+						small_plane_airframe_5 = {
+							air_range = -0.05
+							maximum_speed = -0.05
+							reliability = -0.1
+							build_cost_ic = -0.1
+						}
+					}
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_supersonic_jet_cost_reduction
+					bonus = {
+						supersonic_fighter_equipment_1 = {
+							air_range = -0.05
+							maximum_speed = -0.05
+							reliability = -0.1
+							build_cost_ic = -0.1
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+	option = {
+		name = PRC_OCS.17.b
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_supersonic_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_equipment_bonus = {
+					name = sp_air_supersonic_jet_compromise
+					bonus = {
+						small_plane_airframe_5 = {
+							reliability = 0.03
+						}
+					}
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_supersonic_jet_compromise
+					bonus = {
+						supersonic_fighter_equipment_1 = {
+							reliability = 0.05
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+	option = {
+		name = PRC_OCS.17.c
+		hidden_effect = {
+			set_country_flag = PRC_OCS_air_supersonic_choice_done
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				add_equipment_bonus = {
+					name = sp_air_supersonic_jet_cost_increase
+					bonus = {
+						small_plane_airframe_5 = {
+							reliability = 0.05
+							build_cost_ic = 0.1
+							air_agility = 0.05
+							air_defence = 0.05
+						}
+					}
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_air_supersonic_jet_cost_increase
+					bonus = {
+						supersonic_fighter_equipment_1 = {
+							reliability = 0.05
+							build_cost_ic = 0.1
+							air_agility = 0.05
+							air_defence = 0.05
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.14 }
+	}
+}

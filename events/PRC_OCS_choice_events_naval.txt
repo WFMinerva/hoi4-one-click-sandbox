@@ -1,0 +1,221 @@
+add_namespace = PRC_OCS
+
+# v2.6 choose-your-bonus event chain (naval special projects).
+
+country_event = {
+	id = PRC_OCS.18
+	title = PRC_OCS.18.t
+	desc = PRC_OCS.18.d
+	picture = GFX_report_event_generic_naval_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.18.a
+		trigger = { NOT = { has_country_flag = PRC_OCS_naval_cruiser_sub_choice_done } }
+		country_event = { id = PRC_OCS.19 }
+	}
+	option = {
+		name = PRC_OCS.18.b
+		trigger = {
+			has_country_flag = PRC_OCS_naval_cruiser_sub_choice_done
+			NOT = { has_country_flag = PRC_OCS_naval_fleet_sub_choice_done }
+		}
+		country_event = { id = PRC_OCS.20 }
+	}
+	option = {
+		name = PRC_OCS.18.c
+		trigger = {
+			has_country_flag = PRC_OCS_naval_fleet_sub_choice_done
+			NOT = { has_country_flag = PRC_OCS_naval_torpedo_cruiser_choice_done }
+		}
+		country_event = { id = PRC_OCS.21 }
+	}
+	option = {
+		name = PRC_OCS.18.e
+		trigger = { has_country_flag = PRC_OCS_naval_torpedo_cruiser_choice_done }
+		country_event = { id = PRC_OCS.51 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.19
+	title = PRC_OCS.19.t
+	desc = PRC_OCS.19.d
+	picture = GFX_report_event_generic_naval_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.19.a
+		hidden_effect = {
+			set_country_flag = PRC_OCS_naval_cruiser_sub_choice_done
+			add_equipment_bonus = {
+				name = sp_cruiser_submarine_eq_bonus_range
+				bonus = {
+					cruiser_submarine = {
+						naval_range = 0.1
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.18 }
+	}
+	option = {
+		name = PRC_OCS.19.b
+		hidden_effect = {
+			set_country_flag = PRC_OCS_naval_cruiser_sub_choice_done
+			add_equipment_bonus = {
+				name = sp_cruiser_submarine_eq_bonus_raiding
+				bonus = {
+					cruiser_submarine = {
+						torpedo_attack = 0.1
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.18 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.20
+	title = PRC_OCS.20.t
+	desc = PRC_OCS.20.d
+	picture = GFX_report_event_generic_naval_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.20.a
+		hidden_effect = {
+			set_country_flag = PRC_OCS_naval_fleet_sub_choice_done
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				add_equipment_bonus = {
+					name = sp_fleet_submarine_eq_bonus_attack
+					bonus = {
+						ship_hull_fleet_submarine = {
+							naval_speed = 0.05
+							torpedo_attack = 0.05
+							sub_visibility = -0.03
+						}
+					}
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_fleet_submarine_eq_bonus_attack
+					bonus = {
+						fleet_submarine = {
+							naval_speed = 0.05
+							torpedo_attack = 0.05
+							sub_visibility = -0.03
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.18 }
+	}
+	option = {
+		name = PRC_OCS.20.b
+		hidden_effect = {
+			set_country_flag = PRC_OCS_naval_fleet_sub_choice_done
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				add_equipment_bonus = {
+					name = sp_fleet_submarine_eq_bonus_reliability
+					bonus = {
+						ship_hull_fleet_submarine = {
+							reliability = 0.05
+							max_strength = 0.05
+							naval_weather_penalty_factor = -0.1
+						}
+					}
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_fleet_submarine_eq_bonus_reliability
+					bonus = {
+						fleet_submarine = {
+							reliability = 0.05
+							max_strength = 0.05
+							naval_weather_penalty_factor = -0.1
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.18 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.21
+	title = PRC_OCS.21.t
+	desc = PRC_OCS.21.d
+	picture = GFX_report_event_generic_naval_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.21.a
+		hidden_effect = {
+			set_country_flag = PRC_OCS_naval_torpedo_cruiser_choice_done
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				add_equipment_bonus = {
+					name = sp_torpedo_cruiser_eq_bonus_torpedo
+					bonus = {
+						ship_hull_torpedo_cruiser = {
+							naval_torpedo_hit_chance_factor = 0.1
+							torpedo_attack = 0.15
+						}
+					}
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_torpedo_cruiser_eq_bonus_torpedo
+					bonus = {
+						torpedo_cruiser = {
+							naval_torpedo_hit_chance_factor = 0.1
+							torpedo_attack = 0.15
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.18 }
+	}
+	option = {
+		name = PRC_OCS.21.b
+		hidden_effect = {
+			set_country_flag = PRC_OCS_naval_torpedo_cruiser_choice_done
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				add_equipment_bonus = {
+					name = sp_torpedo_cruiser_eq_bonus_light_attack
+					bonus = {
+						ship_hull_torpedo_cruiser = {
+							naval_light_gun_hit_chance_factor = 0.15
+							lg_attack = 0.1
+							lg_armor_piercing = 0.1
+						}
+					}
+				}
+			}
+			else = {
+				add_equipment_bonus = {
+					name = sp_torpedo_cruiser_eq_bonus_light_attack
+					bonus = {
+						torpedo_cruiser = {
+							naval_light_gun_hit_chance_factor = 0.15
+							lg_attack = 0.1
+							lg_armor_piercing = 0.1
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = PRC_OCS.18 }
+	}
+}

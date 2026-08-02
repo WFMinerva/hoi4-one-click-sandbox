@@ -1,0 +1,210 @@
+[
+  {
+    "eid": 22,
+    "specialization": "air",
+    "project": "sp_air_earthshaker_bomb",
+    "reward": "sp_air_earthshaker_bomb_unique_reward",
+    "flag": "PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done",
+    "menu": 50
+  },
+  {
+    "eid": 23,
+    "specialization": "air",
+    "project": "sp_air_helicopter",
+    "reward": "sp_air_helicopter_unique_reward",
+    "flag": "PRC_OCS_sp_air_helicopter_unique_reward_choice_done",
+    "menu": 50
+  },
+  {
+    "eid": 24,
+    "specialization": "air",
+    "project": "sp_air_intercontinental_bomber",
+    "reward": "sp_air_intercontinental_bomber_unique_reward",
+    "flag": "PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done",
+    "menu": 50
+  },
+  {
+    "eid": 25,
+    "specialization": "air",
+    "project": "sp_air_mothership_aircraft",
+    "reward": "sp_air_mothership_unique_reward",
+    "flag": "PRC_OCS_sp_air_mothership_unique_reward_choice_done",
+    "menu": 50
+  },
+  {
+    "eid": 26,
+    "specialization": "land",
+    "project": "sp_land_stronghold_network",
+    "reward": "sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01",
+    "flag": "PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 27,
+    "specialization": "land",
+    "project": "sp_land_stronghold_network",
+    "reward": "sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02",
+    "flag": "PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 28,
+    "specialization": "land",
+    "project": "sp_land_stronghold_network",
+    "reward": "sp_land_reward_stronghold_network_communication_system_overhaul",
+    "flag": "PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 29,
+    "specialization": "naval",
+    "project": "sp_naval_escort_carrier",
+    "reward": "sp_naval_escort_carrier_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 30,
+    "specialization": "naval",
+    "project": "sp_naval_escort_carrier",
+    "reward": "sp_naval_escort_carrier_unique_reward_b",
+    "flag": "PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 31,
+    "specialization": "naval",
+    "project": "sp_naval_ice_carrier",
+    "reward": "sp_naval_ice_carrier_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 32,
+    "specialization": "naval",
+    "project": "sp_naval_midget_submarine",
+    "reward": "sp_naval_midget_submarine_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 33,
+    "specialization": "naval",
+    "project": "sp_naval_modern_battleship",
+    "reward": "sp_naval_modern_battleship_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 34,
+    "specialization": "naval",
+    "project": "sp_naval_modern_battleship",
+    "reward": "sp_naval_modern_battleship_unique_reward_b",
+    "flag": "PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 35,
+    "specialization": "naval",
+    "project": "sp_naval_modern_carrier",
+    "reward": "sp_naval_modern_carrier_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 36,
+    "specialization": "naval",
+    "project": "sp_naval_modern_carrier",
+    "reward": "sp_naval_modern_carrier_unique_reward_b",
+    "flag": "PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 37,
+    "specialization": "naval",
+    "project": "sp_naval_nuclear_missile_submarine",
+    "reward": "sp_naval_nuclear_missile_submarine_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 38,
+    "specialization": "naval",
+    "project": "sp_naval_nuclear_submarine",
+    "reward": "sp_naval_nuclear_submarine_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 39,
+    "specialization": "naval",
+    "project": "sp_naval_rocket_launching_submarine",
+    "reward": "sp_naval_rocket_launching_submarine_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 40,
+    "specialization": "naval",
+    "project": "sp_naval_submarine_carrier",
+    "reward": "sp_naval_submarine_carrier_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 41,
+    "specialization": "naval",
+    "project": "sp_naval_super_heavy_battleship",
+    "reward": "sp_naval_super_heavy_battleship_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 42,
+    "specialization": "naval",
+    "project": "sp_naval_super_heavy_battleship",
+    "reward": "sp_naval_super_heavy_battleship_unique_reward_b",
+    "flag": "PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 43,
+    "specialization": "naval",
+    "project": "sp_naval_support_ships",
+    "reward": "sp_naval_support_ships_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 44,
+    "specialization": "naval",
+    "project": "sp_naval_support_ships",
+    "reward": "sp_naval_support_ships_unique_reward_b",
+    "flag": "PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 45,
+    "specialization": "naval",
+    "project": "sp_naval_underway_replenishment",
+    "reward": "sp_naval_underway_replenishment_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 46,
+    "specialization": "nuclear",
+    "project": "sp_nuclear_reactor",
+    "reward": "sp_nuclear_isotope_separation_choice_reward",
+    "flag": "PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done",
+    "menu": 49
+  },
+  {
+    "eid": 47,
+    "specialization": "nuclear",
+    "project": "sp_nuclear_reactor",
+    "reward": "sp_nuclear_reactor_tested_reward",
+    "flag": "PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done",
+    "menu": 49
+  }
+]

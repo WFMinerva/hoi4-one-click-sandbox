@@ -1,0 +1,189 @@
+[h1]开局一键爽玩 | One-Click Sandbox Start[/h1]
+
+不想每次开局都重复输入控制台、研究科技学说、配置军工机构、重建设计编制，再逐地块安排工厂、机场、基建、炼油厂、船坞建设？
+
+本MOD通过零政治点决议快速完成沙盒开局——但绝不会超过正常游戏过程中能达到的程度，拒绝魔改！
+
+[h2]一键开局初始化[/h2]
+[list]
+[*]完成全部科技以及预设的陆军、海军、空军和特种部队学说
+[*]合理配置8项军种精神
+[*]为当前国家实际拥有的军工机构合理配置MIO特质路线——不然每次开局那十来个MIO都要挨个点一遍！
+[*]创建22个陆空装备设计和8个师级编制
+[*]给予巨量陆空装备和满级变体
+[*]特殊科研项目奖励可以逐项选择
+[/list]
+
+初始化[b]不会自动改编现有部队[/b]。需要时可另行执行决议，将当前国家全部现役陆军统一改编为“卫戍部队”。
+
+[h2]点数与经验[/h2]
+[list]
+[*]独立的可重复决议，随时补充政治点、指挥点、陆军/海军/空军经验
+[*]0政治点成本，不受初始化次数限制
+[/list]
+
+[h2]编制、部队与库存[/h2]
+[list]
+[*]可重复组建24个满人力、满装备、满初始训练度的“主力纯步师”
+[*]可重复补充战略装备库存
+[*]完成相关特殊科研后，可创建“司令部”“装甲师·进化型”“海军陆战队装甲师·进化型”和“主力步坦师·进化型”
+[*]执行“进化特殊科研陆军编制”后，同时解锁设计（喷火坦克等）与库存
+[*]通用国家使用中性装备名称和普通步兵编制
+[/list]
+
+[h2]特殊科研项目[/h2]
+
+需要《Gotterdammerung》DLC。
+
+[list]
+[*]按空军（含雷达）、陆军、海军、核能和火箭五类专精，一键完成全部49个特殊科研项目
+[*]完成奖励包括对应科技、装备、模块解锁和首枚免费核弹
+[*]直接授予相关衍生科技与原型选择科技
+[*]核能项目在首都额外补建1座核反应堆
+[*]完成空军特殊科研后，雷达科技1–5级全部点亮
+[/list]
+
+[h2]特殊科研原型奖励·逐项选择版（v2.6）[/h2]
+
+“一键完成特殊科研”会跳过正常研究中的互斥原型奖励选择。现在你可以在各专精的“选择原型奖励”事件中，像正常研究那样[b]逐项选定[/b]每一条互斥奖励：
+
+[list]
+[*]同一项目的多组奖励互不干扰，可全部逐项选完；每组每国只可选定一次，全部选定后对应决议自动隐藏
+[*]效果数值完全取自原版，未发明新数值；无需额外DLC，随《Gotterdammerung》出现
+[/list]
+
+[h2]间谍情报条线（v2.5）[/h2]
+
+需要《La Resistance》DLC。
+
+[list]
+[*]“一键组建间谍机构”：0成本直接创建间谍机构，无需科技与国策前置
+[*]“一键升满机构部门”：0成本将情报、防御、行动、特工训练、密码破译五大部门全部拉满，无等待
+[/list]
+
+[h2]全国建设[/h2]
+
+建设仅处理[b]当前国家拥有且控制的州[/b]，不会改造临时占领的敌国州。
+
+[list]
+[*]将共享建设槽解锁至原版上限25
+[*]补足5级基础设施、10级空军基地和10级已有海军基地
+[*]补足5级州防空，并在沿海省份建设10级海岸要塞
+[*]各州合成炼油厂和储油罐分别补足至3座
+[*]沿海州海军船坞、各州民用工厂通过可重复决议补足至上限
+[*]槽位不足时保留部分进度，释放槽位后可再次执行
+[/list]
+
+部分国家拥有额外的专属建设分支；这些工程只会在适用国家执行。
+
+[h2]兼容性与使用说明[/h2]
+[list]
+[*]适配 Hearts of Iron IV 1.19.*
+[*]按全DLC环境制作；特殊科研功能需要《Gotterdammerung》，间谍情报功能需要《La Resistance》
+[*]支持傀儡国、内战国家和动态国家
+[*]全部决议为0政治点，AI不会执行
+[*]不覆盖原版国策、国家历史文件或事件链
+[*]不创建舰船设计或舰队
+[*]建议避免与其他大规模修改科技、装备、编制、MIO或建设系统的MOD同时使用
+[/list]
+
+[h2]我的其他MOD[/h2]
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3736859636][b]钢四人物小传 / Character Biographies[/b][/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765832437][b]一键建设海军 / One-Click Navy Builder[/b][/url]
+[/list]
+
+[h2]作者与源码[/h2]
+
+[url=https://github.com/WFMinerva][b]GitHub：WFMinerva / HAPPYADONG[/b][/url]
+
+[url=https://steamcommunity.com/profiles/76561198024627348][b]Steam主页：HAPPYADONG[/b][/url]
+
+[h1]English Description[/h1]
+
+Tired of repeating console commands, research, MIO traits, equipment designs, division templates, and nationwide construction every campaign?
+
+This mod gives you zero-cost decisions for a fast sandbox start, while staying within results obtainable through normal gameplay — no overpowered edits!
+
+[h2]One-Click Initialization[/h2]
+[list]
+[*]Completes all technologies and preset Army, Navy, Air, and Special Forces doctrines
+[*]Assigns 8 officer corps spirits
+[*]Completes sensible trait routes for the MIOs the current country actually owns — so you no longer have to click through a dozen MIOs one by one every game!
+[*]Creates 22 land/air equipment designs and 8 division templates
+[*]Provides large equipment stockpiles and fully upgraded variants
+[*]Special project prototype rewards can be picked individually
+[/list]
+
+Initialization [b]does not automatically convert existing divisions[/b]. A separate decision can convert the current army to the Garrison template.
+
+[h2]Points and Experience[/h2]
+[list]
+[*]A separate repeatable decision replenishes political power, command power, and Army/Navy/Air experience at any time
+[*]Costs 0 political power and is not limited by initialization
+[/list]
+
+[h2]Forces, Designs, and Projects[/h2]
+[list]
+[*]Repeatably deploys 24 fully manned, equipped, and trained Main Infantry Divisions
+[*]Repeatably replenishes strategic equipment stockpiles
+[*]After the required special projects, creates evolved HQ, Armored, Marine Armored, and Main Infantry-Tank templates
+[*]Executing the "evolve special project land forces" decision unlocks designs and stockpiles together (final medium flame tank, fully upgraded amphibious vehicle, armored support vehicles, etc.)
+[*]Generic countries use neutral equipment names and ordinary infantry templates
+[/list]
+
+[h2]Special Projects[/h2]
+
+Requires the [i]Gotterdammerung[/i] DLC.
+
+[list]
+[*]Completes all 49 special projects across Air/Radar, Land, Naval, Nuclear, and Rocket specializations
+[*]Rewards include the corresponding technologies, equipment, module unlocks, and the first free nuclear bomb
+[*]Directly grants related derivative and prototype-choice technologies
+[*]Nuclear specialization adds an extra reactor in the capital
+[*]After completing the Air special projects, radar technologies 1–5 are all unlocked
+[/list]
+
+[h2]Special Project Prototype Rewards — Pick Individually (v2.6)[/h2]
+
+One-click special project completion skips the mutually exclusive prototype reward choices of normal research. You can now pick every mutually exclusive reward one by one in each specialization's "Pick Prototype Bonus" event, just like normal research:
+
+[list]
+[*]Reward groups of the same project never interfere with each other — all of them can be picked through; each group can only be picked once per country, and the corresponding decision hides automatically once everything has been picked
+[*]All values are taken directly from vanilla — no invented values; no extra DLC required, it appears with [i]Gotterdammerung[/i]
+[/list]
+
+[h2]Intelligence Agency (v2.5)[/h2]
+
+Requires the [i]La Resistance[/i] DLC.
+
+[list]
+[*]"One-Click: Found Intelligence Agency": creates an intelligence agency for the current player country at 0 cost, with no technology or focus prerequisites
+[*]"One-Click: Max Out Agency Departments": maxes out all five departments — Intelligence, Defense, Operations, Agent Training, and Codebreaking — at 0 cost, with no waiting
+[/list]
+
+[h2]Nationwide Construction[/h2]
+
+Construction affects only states [b]owned and controlled by the current country[/b], never temporarily occupied enemy states.
+
+[list]
+[*]Unlocks shared building slots to the vanilla cap of 25
+[*]Raises infrastructure to 5, air bases to 10, and existing naval bases to 10
+[*]Raises state AA to 5 and builds level-10 coastal forts in coastal provinces
+[*]Raises synthetic refineries and fuel silos to 3 per state
+[*]Raises dockyards in coastal states and civilian factories per state to the cap via repeatable decisions
+[*]Keeps partial progress when slots are full; resumes once slots are freed
+[/list]
+
+Some countries have additional country-specific construction branches; these run only where applicable.
+
+[h2]Compatibility and Usage[/h2]
+[list]
+[*]Hearts of Iron IV 1.19.*; designed with all DLC enabled
+[*]Special projects require the [i]Gotterdammerung[/i] DLC; the intelligence features require the [i]La Resistance[/i] DLC
+[*]Supports puppets, civil-war countries, and dynamic countries
+[*]All decisions cost 0 political power and cannot be used by AI
+[*]Does not overwrite vanilla focus trees, country history, or event chains
+[*]Does not create ship designs or fleets
+[*]Avoid combining it with other large mods that overhaul technology, equipment, templates, MIOs, or construction
+[/list]

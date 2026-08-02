@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import unittest
 
 from tools import build_release
@@ -208,7 +209,15 @@ class ValidatorRegressionTests(unittest.TestCase):
                 "PRC_OCS_intel_agency_created",
             "PRC_OCS_unlock_all_agency_upgrades":
                 "PRC_OCS_intel_upgrades_done",
-        }
+             "PRC_OCS_choose_air_special_project_bonuses":
+                 "PRC_OCS_air_special_project_choices_done",
+             "PRC_OCS_choose_land_special_project_bonuses":
+                 "PRC_OCS_land_special_project_choices_done",
+             "PRC_OCS_choose_naval_special_project_bonuses":
+                 "PRC_OCS_naval_special_project_choices_done",
+             "PRC_OCS_choose_nuclear_special_project_bonuses":
+                 "PRC_OCS_nuclear_special_project_choices_done",
+         }
         special_project_decisions = {
             name: flag
             for name, flag in one_time_flags.items()
@@ -929,6 +938,104 @@ class ValidatorRegressionTests(unittest.TestCase):
             ),
             [],
         )
+
+    def test_v26_choice_group_map_contract(self) -> None:
+        """Every generated reward group maps to its own event, flag and menu."""
+        mapping_path = (
+            validator.ROOT
+            / "docs"
+            / "analysis"
+            / "v2.6_特殊科研组事件映射.json"
+        )
+        mapping = json.loads(mapping_path.read_text(encoding="utf-8"))
+        self.assertEqual(len(mapping), 26)
+        flags = [item["flag"] for item in mapping]
+        eids = [item["eid"] for item in mapping]
+        self.assertEqual(len(set(flags)), len(flags))
+        self.assertEqual(len(set(eids)), len(eids))
+        self.assertEqual(eids, sorted(eids))
+        for item in mapping:
+            self.assertIn(item["specialization"], {"air", "land", "naval", "nuclear"})
+        menuless = {
+            item["reward"]
+            for item in mapping
+            if item["menu"] not in {48, 49, 50, 51}
+        }
+        self.assertEqual(menuless, set())
+        shared_project = {}
+        for item in mapping:
+            shared_project.setdefault(item["project"], []).append(item["reward"])
+        multi = {
+            project: rewards
+            for project, rewards in shared_project.items()
+            if len(rewards) > 1
+        }
+        self.assertEqual(
+            set(multi),
+            {
+                "sp_land_stronghold_network",
+                "sp_naval_escort_carrier",
+                "sp_naval_modern_battleship",
+                "sp_naval_modern_carrier",
+                "sp_naval_super_heavy_battleship",
+                "sp_naval_support_ships",
+                "sp_nuclear_reactor",
+            },
+        )
+        flag_by_reward = {item["reward"]: item["flag"] for item in mapping}
+        self.assertEqual(
+            flag_by_reward["sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01"],
+            "PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done",
+        )
+        self.assertEqual(
+            flag_by_reward["sp_naval_escort_carrier_unique_reward_a"],
+            "PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done",
+        )
+        self.assertEqual(
+            flag_by_reward["sp_nuclear_isotope_separation_choice_reward"],
+            "PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done",
+        )
+
+    def test_v26_dispatch_menu_z_contract(self) -> None:
+        """Menu z triggers require every reward flag of the specialization."""
+        events_path = validator.ROOT / "events" / "PRC_OCS_choice_events_more.txt"
+        mapping = json.loads(
+            (
+                validator.ROOT
+                / "docs"
+                / "analysis"
+                / "v2.6_特殊科研组事件映射.json"
+            ).read_text(encoding="utf-8")
+        )
+        text = events_path.read_text(encoding="utf-8")
+        menu_done_flags = {
+            48: "PRC_OCS_land_special_project_choices_done",
+            49: "PRC_OCS_nuclear_special_project_choices_done",
+            50: "PRC_OCS_air_special_project_choices_done",
+            51: "PRC_OCS_naval_special_project_choices_done",
+        }
+        by_menu: dict[int, list[dict]] = {}
+        for item in mapping:
+            by_menu.setdefault(item["menu"], []).append(item)
+        for menu_id in (48, 49, 50, 51):
+            block_start = text.index(f"\n id = PRC_OCS.{menu_id}\n")
+            next_id = min(
+                (
+                    text.index(f"\n id = PRC_OCS.{candidate}\n")
+                    for candidate in range(menu_id + 1, 52)
+                    if f"\n id = PRC_OCS.{candidate}\n" in text
+                ),
+                default=len(text),
+            )
+            block = text[block_start:next_id]
+            z_option = block.split(" name = PRC_OCS.%d.z" % menu_id, 1)[1]
+            z_trigger = z_option.split("  hidden_effect = {", 1)[0]
+            for item in by_menu[menu_id]:
+                self.assertIn(f"has_country_flag = {item['flag']}", z_trigger)
+            z_effect = z_option.split("  hidden_effect = {", 1)[1]
+            self.assertIn(
+                f"set_country_flag = {menu_done_flags[menu_id]}", z_effect
+            )
 
     def test_test_build_package_routing(self) -> None:
         self.assertTrue(build_release.is_test_version("2.2-test1"))
