@@ -558,6 +558,64 @@ PRC_OCS_queue_national_defenses_effect = {
 	}
 }
 
+# v2.7: Occupied-territory construction. The vanilla construction decisions
+# operate only in states both owned and controlled by the current country; this
+# companion effect targets the controlled-but-not-owned states (occupied enemy
+# territory) and builds instantly so newly captured land can support the
+# advance immediately. Industrial facilities are deliberately excluded:
+# non-core production penalties make them uneconomical in occupied territory.
+PRC_OCS_develop_occupied_territory_effect = {
+	set_technology = {
+		interwar_antiair = 1
+	}
+
+	every_controlled_state = {
+		limit = {
+			NOT = { is_owned_by = ROOT }
+		}
+
+		if = {
+			limit = { infrastructure < 5 }
+			add_building_construction = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { anti_air_building < 5 }
+			add_building_construction = {
+				type = anti_air_building
+				level = 5
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { air_base < 10 }
+			add_building_construction = {
+				type = air_base
+				level = 10
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				naval_base > 0
+				naval_base < 10
+			}
+			add_building_construction = {
+				type = naval_base
+				level = 10
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_naval_base = yes
+				}
+			}
+		}
+	}
+}
+
 # PRC enhancement: 23 fixed Chinese supply hubs. Only takes effect for
 # PRC or original_tag = PRC countries that own and control the target provinces.
 PRC_OCS_build_target_supply_nodes_effect = {

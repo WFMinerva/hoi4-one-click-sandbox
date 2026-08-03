@@ -12,9 +12,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
+try:
+    from .hoi4_paths import resolve_vanilla_path
+except ImportError:  # Direct execution: python tools/analyze_mio_archetypes.py
+    from hoi4_paths import resolve_vanilla_path
+
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_VANILLA = Path(r"F:\SteamLibrary\steamapps\common\Hearts of Iron IV")
 DEFAULT_COVERAGE = (
     ROOT / "common" / "scripted_effects" / "PRC_OCS_shared_mio_effects.txt"
 )
@@ -817,7 +821,7 @@ def compact_list(values: list[str], limit: int = 8) -> str:
     return "、".join(values[:limit]) + f" 等 {len(values)} 项"
 
 
-def render_report(inventory: dict, vanilla_dir: Path, coverage_file: Path) -> str:
+def render_report(inventory: dict, _vanilla_dir: Path, coverage_file: Path) -> str:
     summary = inventory["summary"]
     shapes = inventory["shapes"]
     uncovered = [shape for shape in shapes if not shape["covered"]]
@@ -993,9 +997,9 @@ f"- 当前 PRC 独立路线与 GER/ENG 通用路线含 **{summary['covered_organ
             "",
             "## 数据来源",
             "",
-            f"- 原版 MIO：`{vanilla_dir}`",
-            f"- GER/ENG 通用覆盖脚本：`{coverage_file}`",
-            f"- PRC 独立覆盖脚本：`{DEFAULT_ADDITIONAL_COVERAGE}`",
+            "- 原版 MIO：由 `--vanilla` 或 `HOI4_VANILLA_PATH` 指定（报告不固化机器绝对路径）",
+            f"- GER/ENG 通用覆盖脚本：`common/scripted_effects/{coverage_file.name}`",
+            f"- PRC 独立覆盖脚本：`common/scripted_effects/{DEFAULT_ADDITIONAL_COVERAGE.name}`",
             "- 生成器：`tools/analyze_mio_archetypes.py`",
             "",
         ]
@@ -1005,7 +1009,11 @@ f"- 当前 PRC 独立路线与 GER/ENG 通用路线含 **{summary['covered_organ
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--vanilla", type=Path, default=DEFAULT_VANILLA)
+    parser.add_argument(
+        "--vanilla",
+        type=Path,
+        help="HOI4 原版根目录；省略时读取 HOI4_VANILLA_PATH 或探测已知盘符",
+    )
     parser.add_argument("--coverage-file", type=Path, default=DEFAULT_COVERAGE)
     parser.add_argument(
         "--additional-coverage-file",
@@ -1029,8 +1037,9 @@ def main() -> int:
     )
     args = parser.parse_args()
 
+    vanilla_root = resolve_vanilla_path(args.vanilla)
     organizations_dir = (
-        args.vanilla
+        vanilla_root
         / "common"
         / "military_industrial_organization"
         / "organizations"

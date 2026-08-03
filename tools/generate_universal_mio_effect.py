@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -13,11 +14,105 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import analyze_mio_archetypes as ar  # noqa: E402
+import hoi4_paths  # noqa: E402
 
-VANILLA = Path(r"F:\SteamLibrary\steamapps\common\Hearts of Iron IV\common\military_industrial_organization\organizations")
 INVENTORY = ROOT / "docs" / "analysis" / "v2.3_MIO架构第一轮盘点.json"
 OUTPUT = ROOT / "common" / "scripted_effects" / "PRC_OCS_shared_mio_effects.txt"
 PRC_EFFECT = ROOT / "common" / "scripted_effects" / "PRC_OCS_mio_effects.txt"
+MANIFEST = ROOT / "tools" / "mio_generator_manifest.json"
+
+
+def canonical_output_bytes(content: str) -> bytes:
+    """Return generator output bytes with platform line endings normalized."""
+    return content.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+
+
+def route_table_stats(content: str) -> dict[str, int]:
+    routes = re.findall(
+        r"(?m)^\s*mio:([A-Za-z0-9_-]+)\s*=\s*\{\s*$", content
+    )
+    return {
+        "organizations": len(routes),
+        "traits": len(
+            re.findall(
+                r"(?m)^\s*complete_mio_trait\s*=\s*[A-Za-z0-9_-]+\s*$", content
+            )
+        ),
+    }
+
+
+def manifest_payload(content: str, stats: dict) -> dict:
+    observed = route_table_stats(content)
+    expected = {
+        "organizations": stats["organizations"],
+        "traits": stats["traits"],
+    }
+    if observed != expected:
+        raise ValueError(
+            f"generated route statistics differ: expected {expected}, observed {observed}"
+        )
+    return {
+        "schema": 1,
+        "output": str(OUTPUT.relative_to(ROOT)).replace("\\", "/"),
+        "sha256_lf": hashlib.sha256(canonical_output_bytes(content)).hexdigest(),
+        **expected,
+    }
+
+
+def write_manifest(content: str, stats: dict, path: Path = MANIFEST) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        handle.write(
+            json.dumps(manifest_payload(content, stats), ensure_ascii=False, indent=2)
+            + "\n"
+        )
+
+
+def check_locked_output(path: Path = MANIFEST) -> int:
+    if not OUTPUT.is_file():
+        print(f"Generated MIO effect not found: {OUTPUT}", file=sys.stderr)
+        return 1
+    if not path.is_file():
+        print(f"MIO generator manifest not found: {path}", file=sys.stderr)
+        return 1
+    try:
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"Invalid MIO generator manifest: {exc}", file=sys.stderr)
+        return 1
+    content = OUTPUT.read_text(encoding="utf-8-sig")
+    observed = route_table_stats(content)
+    actual = {
+        "schema": manifest.get("schema"),
+        "output": manifest.get("output"),
+        "sha256_lf": hashlib.sha256(canonical_output_bytes(content)).hexdigest(),
+        **observed,
+    }
+    expected = {
+        "schema": 1,
+        "output": str(OUTPUT.relative_to(ROOT)).replace("\\", "/"),
+        "sha256_lf": manifest.get("sha256_lf"),
+        "organizations": manifest.get("organizations"),
+        "traits": manifest.get("traits"),
+    }
+    if actual != expected:
+        print(
+            json.dumps(
+                {"expected": expected, "observed": actual},
+                ensure_ascii=False,
+                indent=2,
+            ),
+            file=sys.stderr,
+        )
+        return 1
+    print(
+        json.dumps(
+            {"mode": "locked-output", **observed},
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
+    return 0
 
 
 def ordered_scripted_routes(path: Path) -> dict[str, list[str]]:
@@ -155,8 +250,15 @@ def render_route(token: str, traits: list[str]) -> list[str]:
     return lines
 
 
-def build() -> tuple[str, dict]:
-    orgs, duplicates, repairs = ar.load_organizations(VANILLA)
+def build(vanilla_root: Path | None = None) -> tuple[str, dict]:
+    vanilla_root = hoi4_paths.resolve_vanilla_path(vanilla_root)
+    organizations_dir = (
+        vanilla_root
+        / "common"
+        / "military_industrial_organization"
+        / "organizations"
+    )
+    orgs, duplicates, repairs = ar.load_organizations(organizations_dir)
     if duplicates:
         raise ValueError(f"duplicate organizations: {duplicates}")
     inventory = json.loads(INVENTORY.read_text(encoding="utf-8"))
@@ -210,15 +312,32 @@ def build() -> tuple[str, dict]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--vanilla",
+        type=Path,
+        help="HOI4 原版根目录；省略时读取 HOI4_VANILLA_PATH 或探测已知盘符",
+    )
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--no-vanilla",
+        action="store_true",
+        help="Check the committed output manifest without requiring HOI4 files (CI).",
+    )
+    parser.add_argument("--manifest", type=Path, default=MANIFEST)
     args = parser.parse_args()
-    content, stats = build()
+    if args.no_vanilla:
+        if not args.check:
+            parser.error("--no-vanilla requires --check")
+        return check_locked_output(args.manifest)
+    content, stats = build(args.vanilla)
     if args.check:
         if OUTPUT.read_text(encoding="utf-8-sig") != content:
             print("Universal MIO effect is out of date.", file=sys.stderr)
             return 1
     else:
-        OUTPUT.write_text(content, encoding="utf-8")
+        with OUTPUT.open("w", encoding="utf-8", newline="") as handle:
+            handle.write(content)
+        write_manifest(content, stats, args.manifest)
     print(json.dumps(stats, ensure_ascii=False, indent=2))
     return 0
 

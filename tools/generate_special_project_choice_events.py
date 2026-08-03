@@ -116,6 +116,7 @@ def main() -> int:
         for option in g["options"]:
             lines.append(" option = {")
             lines.append(f"  name = PRC_OCS.{eid}.{letter}")
+            lines.append(f"  custom_effect_tooltip = PRC_OCS.{eid}.{letter}_tt")
             lines.append("  hidden_effect = {")
             lines.append(f"   set_country_flag = {flag}")
             body = _body(option.get("effect") or "")

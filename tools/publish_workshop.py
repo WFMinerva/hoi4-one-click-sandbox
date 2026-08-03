@@ -1,26 +1,20 @@
 #!/usr/bin/env python3
-"""One-shot Steam Workshop upload helper for One-Click Sandbox Start.
-
-用法（在可正常连接 Steam 网络的机器上）:
-    python tools/publish_workshop.py --steamcmd D:\\steamcmd\\steamcmd.exe
-    python tools/publish_workshop.py --steamcmd F:\\steamcmd\\steamcmd.exe --username YourSteamName
-
-脚本自动完成:
-1. 从仓库同步 MOD 内容到 steamcmd 暂存目录（先清空旧目录，避免残留文件）。
-2. 由 docs/publishing/Steam工坊中文简介_v2.6_BBCode.txt 生成 VDF（description + changenote，
-   publishedfileid 固定为既有物品 3767025052，不新建工坊条目）。
-3. 调用 steamcmd 执行 +workshop_build_item。
-
-登录与 Steam Guard 验证码保持交互输入，不会写入命令行或本脚本。
-"""
+"""Validate and prepare or upload the current tagged Steam Workshop build."""
 
 from __future__ import annotations
 
 import argparse
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
+import tempfile
+
+try:
+    from .build_release import normalize_release_tree
+except ImportError:  # Direct execution: python tools/publish_workshop.py
+    from build_release import normalize_release_tree
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MOD_ITEMS = (
@@ -35,79 +29,199 @@ MOD_ITEMS = (
 WORKSHOP_ID = "3767025052"
 APPID = "394360"
 CONTENT_FOLDER_NAME = "OCS_one_click_sandbox_start_v2_0"
-DESCRIPTION_FILE = ROOT / "docs" / "publishing" / "Steam工坊中文简介_v2.6_BBCode.txt"
-CHANGENOTE = (
-    "v2.6 更新：特殊科研原型奖励·逐项选择版——在五类专精的“选择原型奖励”事件中，"
-    "像正常研究那样逐项选定全部互斥原型奖励（空军4、陆军3、海军17、核能2，共26组），"
-    "同项目多组互不干扰，每组每国一次、选定后决议隐藏，数值完全取自原版。"
-)
 
 
 def as_posix(path: pathlib.Path) -> str:
     return path.as_posix()
 
 
-def build_vdf(content_dir: pathlib.Path, steamcmd_dir: pathlib.Path,
-              description: str) -> pathlib.Path:
+def mod_version() -> str:
+    text = (ROOT / "descriptor.mod").read_text(encoding="utf-8-sig")
+    match = re.search(r'(?m)^\s*version\s*=\s*"([^"]+)"', text)
+    if not match:
+        raise SystemExit("descriptor.mod 缺少 version 字段")
+    return match.group(1)
+
+
+def description_file(version: str) -> pathlib.Path:
+    return (
+        ROOT
+        / "docs"
+        / "publishing"
+        / f"Steam工坊中文简介_v{version}_BBCode.txt"
+    )
+
+
+def changenote_file(version: str) -> pathlib.Path:
+    return ROOT / "docs" / "publishing" / f"v{version}工坊更新摘要.txt"
+
+
+def git_output(*args: str) -> str:
+    try:
+        return subprocess.check_output(
+            ["git", *args], cwd=ROOT, text=True, stderr=subprocess.STDOUT
+        ).strip()
+    except subprocess.CalledProcessError as exc:
+        raise SystemExit(f"git {' '.join(args)} 失败：{exc.output.strip()}") from exc
+
+
+def ensure_repository_preconditions(version: str) -> str:
+    if "test" in version.casefold():
+        raise SystemExit(f"测试版本 v{version} 禁止上传正式工坊物品")
+    dirty = git_output("status", "--porcelain")
+    if dirty:
+        raise SystemExit("工作区不干净，拒绝工坊上传：\n" + dirty)
+
+    tag = f"v{version}"
+    tag_commit = git_output("rev-list", "-n", "1", tag)
+    head = git_output("rev-parse", "HEAD")
+    if head != tag_commit:
+        raise SystemExit(
+            f"HEAD {head[:12]} 不等于正式标签 {tag} {tag_commit[:12]}，"
+            "拒绝工坊上传"
+        )
+    comparison = subprocess.run(
+        ["git", "diff", "--quiet", tag_commit, "--", *MOD_ITEMS],
+        cwd=ROOT,
+        check=False,
+    )
+    if comparison.returncode == 1:
+        raise SystemExit(f"当前 MOD 内容与正式标签 {tag} 不一致，拒绝上传")
+    if comparison.returncode != 0:
+        raise SystemExit("无法比较当前 MOD 内容与正式标签")
+    return tag
+
+
+def run_release_gate() -> None:
+    commands = (
+        [sys.executable, "tools/validate_mod.py"],
+        [sys.executable, "-m", "unittest", "tools.test_validate_mod"],
+        [sys.executable, "tools/build_release.py"],
+    )
+    for command in commands:
+        print("PRECHECK", " ".join(command))
+        subprocess.run(command, cwd=ROOT, check=True)
+
+
+def vdf_escape(value: str) -> str:
+    if "\x00" in value:
+        raise SystemExit("VDF 文本包含 NUL 字符")
+    return (
+        value.replace("\\", "\\\\")
+        .replace('"', '\\"')
+        .replace("\r\n", "\n")
+        .replace("\r", "\n")
+    )
+
+
+def build_vdf(
+    content_dir: pathlib.Path,
+    steamcmd_dir: pathlib.Path,
+    description: str,
+    changenote: str,
+) -> pathlib.Path:
     vdf = steamcmd_dir / "hoi4_ocs_workshop.vdf"
     preview = as_posix(content_dir / "thumbnail.png")
-    escaped = description.replace("\\", "\\\\").replace('"', '\\"')
     text = (
         '"workshopitem"\n'
-        '{\n'
+        "{\n"
         f'\t"appid"\t\t"{APPID}"\n'
         f'\t"publishedfileid"\t"{WORKSHOP_ID}"\n'
         f'\t"contentfolder"\t\t"{as_posix(content_dir)}"\n'
         f'\t"previewfile"\t\t"{preview}"\n'
-        f'\t"description"\t\t"{escaped}"\n'
-        f'\t"changenote"\t\t"{CHANGENOTE}"\n'
-        '}\n'
+        f'\t"description"\t\t"{vdf_escape(description)}"\n'
+        f'\t"changenote"\t\t"{vdf_escape(changenote)}"\n'
+        "}\n"
     )
     vdf.write_text(text, encoding="utf-8", newline="\n")
     return vdf
 
 
+def validate_sources(version: str) -> tuple[pathlib.Path, pathlib.Path]:
+    missing = [item for item in MOD_ITEMS if not (ROOT / item).exists()]
+    if missing:
+        raise SystemExit(f"MOD 源文件缺失：{', '.join(missing)}")
+    description = description_file(version)
+    changenote = changenote_file(version)
+    if not description.is_file():
+        raise SystemExit(f"缺少工坊简介：{description}")
+    if not changenote.is_file():
+        raise SystemExit(f"缺少工坊更新摘要：{changenote}")
+    return description, changenote
+
+
+def replace_staging_content(content_dir: pathlib.Path) -> None:
+    """Build a complete temporary stage before replacing the prior stage."""
+    parent = content_dir.parent
+    parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".ocs-stage-", dir=parent) as temp_name:
+        staged = pathlib.Path(temp_name) / CONTENT_FOLDER_NAME
+        staged.mkdir()
+        for item in MOD_ITEMS:
+            source = ROOT / item
+            destination = staged / item
+            if source.is_dir():
+                shutil.copytree(source, destination)
+            else:
+                shutil.copy2(source, destination)
+        normalize_release_tree(staged)
+        if content_dir.exists():
+            shutil.rmtree(content_dir)
+        shutil.move(str(staged), str(content_dir))
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Steam Workshop upload helper")
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--steamcmd",
         type=pathlib.Path,
         required=True,
-        help="steamcmd 可执行文件路径，例如 D:\\steamcmd\\steamcmd.exe",
+        help="当前机器的 steamcmd.exe 路径",
     )
-    parser.add_argument("--username", default=None, help="Steam 用户名（可选，交互输入）")
+    parser.add_argument("--username", help="Steam 用户名；正式上传时必填")
+    parser.add_argument(
+        "--prepare-only",
+        action="store_true",
+        help="只生成暂存目录和 VDF，不启动 steamcmd",
+    )
     args = parser.parse_args()
 
-    steamcmd_exe = args.steamcmd
+    if not args.prepare_only and not args.username:
+        raise SystemExit("正式上传必须传入 --username；仅准备文件请用 --prepare-only")
+    steamcmd_exe = args.steamcmd.resolve()
     if not steamcmd_exe.is_file():
         raise SystemExit(f"找不到 steamcmd：{steamcmd_exe}")
+
+    version = mod_version()
+    tag = ensure_repository_preconditions(version)
+    description_path, changenote_path = validate_sources(version)
+    run_release_gate()
+
     steamcmd_dir = steamcmd_exe.parent
-
     content_dir = steamcmd_dir / "workshop_content" / CONTENT_FOLDER_NAME
-    if content_dir.exists():
-        shutil.rmtree(content_dir)
-    content_dir.mkdir(parents=True)
-    for item in MOD_ITEMS:
-        src = ROOT / item
-        if src.is_dir():
-            shutil.copytree(src, content_dir / item)
-        else:
-            shutil.copy2(src, content_dir / item)
-    print(f"暂存目录已同步：{content_dir}")
+    replace_staging_content(content_dir)
+    print(f"暂存目录已同步：{content_dir}（内容与 {tag} 一致）")
 
-    if not DESCRIPTION_FILE.is_file():
-        raise SystemExit(f"缺少工坊简介文件：{DESCRIPTION_FILE}")
-    description = DESCRIPTION_FILE.read_text(encoding="utf-8")
-    vdf = build_vdf(content_dir, steamcmd_dir, description)
+    description = description_path.read_text(encoding="utf-8").strip()
+    changenote = changenote_path.read_text(encoding="utf-8-sig").strip()
+    if not description or not changenote:
+        raise SystemExit("工坊简介或更新摘要为空")
+    vdf = build_vdf(content_dir, steamcmd_dir, description, changenote)
     print(f"VDF 已生成：{vdf}")
 
-    command = [str(steamcmd_exe)]
-    if args.username:
-        command += ["+login", args.username]
-    else:
-        command.append("+login")
-    command += ["+workshop_build_item", as_posix(vdf), "+quit"]
-    print("运行 steamcmd（登录与 Steam Guard 请按提示交互输入）...")
+    if args.prepare_only:
+        print("PREPARED：未启动 steamcmd")
+        return 0
+
+    command = [
+        str(steamcmd_exe),
+        "+login",
+        args.username,
+        "+workshop_build_item",
+        as_posix(vdf),
+        "+quit",
+    ]
+    print("运行 steamcmd（密码与 Steam Guard 请按提示交互输入）...")
     return subprocess.call(command)
 
 

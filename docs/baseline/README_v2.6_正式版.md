@@ -1,6 +1,6 @@
 # 开局一键爽玩 / One-Click Sandbox Start v2.6
 
-状态：维护者已于2026-08-02完成实机回归（v2.6-test2 实机点验通过，四份日志干净，26 组逐项选择版在引擎层完整装载：`PRC_OCS_choice_events_more.txt` 加载 30 个事件＝26 组＋48–51 菜单 4 个）并认定为稳定版；正式包已构建（SHA-256 `484030065363ab1366604d17e2f92ee114208b2edb7ffe13b001a0172de48ff1`，两次构建一致），已推送 Git 标签 `v2.6`（指向 `1ff3aac`），并上传 Steam 工坊既有物品 `3767025052`（Manifest `3609146315690391433`）。
+状态：维护者已于2026-08-02完成实机回归（v2.6-test2 实机点验通过，四份日志干净，26 组逐项选择版在引擎层完整装载：`PRC_OCS_choice_events_more.txt` 加载 30 个事件＝26 组＋48–51 菜单 4 个）并认定为稳定版；已推送 Git 标签 `v2.6`，并上传 Steam 工坊既有物品 `3767025052`。
 
 适用环境：Hearts of Iron IV 1.19.*，全 DLC，单人游戏。AI 不会执行本 MOD 决议。特殊科研项目功能需《Gotterdammerung》DLC；间谍情报条线需《La Resistance》DLC。
 

@@ -8,6 +8,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.22.a
+  custom_effect_tooltip = PRC_OCS.22.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done
    if = {
@@ -38,6 +39,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.22.b
+  custom_effect_tooltip = PRC_OCS.22.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done
    if = {
@@ -70,6 +72,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.22.c
+  custom_effect_tooltip = PRC_OCS.22.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done
    if = {
@@ -115,6 +118,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.23.a
+  custom_effect_tooltip = PRC_OCS.23.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done
    add_equipment_bonus = {
@@ -132,6 +136,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.23.b
+  custom_effect_tooltip = PRC_OCS.23.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done
    add_equipment_bonus = {
@@ -147,6 +152,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.23.c
+  custom_effect_tooltip = PRC_OCS.23.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done
    add_equipment_bonus = {
@@ -175,6 +181,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.24.a
+  custom_effect_tooltip = PRC_OCS.24.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done
    if = {
@@ -205,6 +212,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.24.b
+  custom_effect_tooltip = PRC_OCS.24.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done
    if = {
@@ -239,6 +247,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.24.c
+  custom_effect_tooltip = PRC_OCS.24.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done
    if = {
@@ -282,6 +291,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.25.a
+  custom_effect_tooltip = PRC_OCS.25.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done
    if = {
@@ -316,6 +326,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.25.b
+  custom_effect_tooltip = PRC_OCS.25.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done
    if = {
@@ -346,6 +357,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.25.c
+  custom_effect_tooltip = PRC_OCS.25.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done
    if = {
@@ -389,6 +401,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.26.a
+  custom_effect_tooltip = PRC_OCS.26.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done
    add_tech_bonus = {
@@ -403,6 +416,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.26.b
+  custom_effect_tooltip = PRC_OCS.26.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done
   }
@@ -419,6 +433,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.27.a
+  custom_effect_tooltip = PRC_OCS.27.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done
    add_tech_bonus = {
@@ -455,6 +470,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.27.b
+  custom_effect_tooltip = PRC_OCS.27.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done
   }
@@ -471,6 +487,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.28.a
+  custom_effect_tooltip = PRC_OCS.28.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done
    add_tech_bonus = {
@@ -485,6 +502,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.28.b
+  custom_effect_tooltip = PRC_OCS.28.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done
   }
@@ -501,6 +519,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.29.a
+  custom_effect_tooltip = PRC_OCS.29.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done
    add_equipment_bonus = {
@@ -517,6 +536,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.29.b
+  custom_effect_tooltip = PRC_OCS.29.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done
    add_equipment_bonus = {
@@ -533,6 +553,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.29.c
+  custom_effect_tooltip = PRC_OCS.29.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done
    add_equipment_bonus = {
@@ -558,6 +579,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.30.a
+  custom_effect_tooltip = PRC_OCS.30.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done
    add_equipment_bonus = {
@@ -573,6 +595,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.30.b
+  custom_effect_tooltip = PRC_OCS.30.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done
    add_equipment_bonus = {
@@ -589,6 +612,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.30.c
+  custom_effect_tooltip = PRC_OCS.30.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done
    add_equipment_bonus = {
@@ -613,6 +637,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.31.a
+  custom_effect_tooltip = PRC_OCS.31.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done
    if = {
@@ -645,6 +670,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.31.b
+  custom_effect_tooltip = PRC_OCS.31.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done
    if = {
@@ -688,6 +714,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.32.a
+  custom_effect_tooltip = PRC_OCS.32.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done
    if = {
@@ -720,6 +747,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.32.b
+  custom_effect_tooltip = PRC_OCS.32.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done
    if = {
@@ -750,6 +778,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.32.c
+  custom_effect_tooltip = PRC_OCS.32.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done
    if = {
@@ -791,6 +820,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.33.a
+  custom_effect_tooltip = PRC_OCS.33.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done
    if = {
@@ -825,6 +855,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.33.b
+  custom_effect_tooltip = PRC_OCS.33.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done
    if = {
@@ -859,6 +890,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.33.c
+  custom_effect_tooltip = PRC_OCS.33.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done
    if = {
@@ -902,6 +934,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.34.a
+  custom_effect_tooltip = PRC_OCS.34.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done
    if = {
@@ -934,6 +967,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.34.b
+  custom_effect_tooltip = PRC_OCS.34.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done
    if = {
@@ -966,6 +1000,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.34.c
+  custom_effect_tooltip = PRC_OCS.34.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done
    if = {
@@ -1007,6 +1042,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.35.a
+  custom_effect_tooltip = PRC_OCS.35.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done
    if = {
@@ -1039,6 +1075,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.35.b
+  custom_effect_tooltip = PRC_OCS.35.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done
    if = {
@@ -1071,6 +1108,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.35.c
+  custom_effect_tooltip = PRC_OCS.35.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done
    if = {
@@ -1114,6 +1152,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.36.a
+  custom_effect_tooltip = PRC_OCS.36.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done
    if = {
@@ -1146,6 +1185,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.36.b
+  custom_effect_tooltip = PRC_OCS.36.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done
    if = {
@@ -1178,6 +1218,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.36.c
+  custom_effect_tooltip = PRC_OCS.36.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done
    if = {
@@ -1219,6 +1260,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.37.a
+  custom_effect_tooltip = PRC_OCS.37.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done
    if = {
@@ -1253,6 +1295,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.37.b
+  custom_effect_tooltip = PRC_OCS.37.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done
   }
@@ -1260,6 +1303,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.37.c
+  custom_effect_tooltip = PRC_OCS.37.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done
    if = {
@@ -1303,6 +1347,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.38.a
+  custom_effect_tooltip = PRC_OCS.38.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done
    if = {
@@ -1339,6 +1384,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.38.b
+  custom_effect_tooltip = PRC_OCS.38.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done
   }
@@ -1346,6 +1392,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.38.c
+  custom_effect_tooltip = PRC_OCS.38.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done
    if = {
@@ -1391,6 +1438,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.39.a
+  custom_effect_tooltip = PRC_OCS.39.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done
    if = {
@@ -1425,6 +1473,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.39.b
+  custom_effect_tooltip = PRC_OCS.39.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done
    if = {
@@ -1455,6 +1504,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.39.c
+  custom_effect_tooltip = PRC_OCS.39.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done
    if = {
@@ -1498,6 +1548,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.40.a
+  custom_effect_tooltip = PRC_OCS.40.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done
    add_equipment_bonus = {
@@ -1514,6 +1565,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.40.b
+  custom_effect_tooltip = PRC_OCS.40.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done
    add_equipment_bonus = {
@@ -1530,6 +1582,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.40.c
+  custom_effect_tooltip = PRC_OCS.40.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done
    add_equipment_bonus = {
@@ -1554,6 +1607,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.41.a
+  custom_effect_tooltip = PRC_OCS.41.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done
    if = {
@@ -1588,6 +1642,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.41.b
+  custom_effect_tooltip = PRC_OCS.41.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done
    if = {
@@ -1622,6 +1677,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.41.c
+  custom_effect_tooltip = PRC_OCS.41.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done
    if = {
@@ -1665,6 +1721,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.42.a
+  custom_effect_tooltip = PRC_OCS.42.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done
    if = {
@@ -1697,6 +1754,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.42.b
+  custom_effect_tooltip = PRC_OCS.42.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done
    if = {
@@ -1729,6 +1787,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.42.c
+  custom_effect_tooltip = PRC_OCS.42.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done
    if = {
@@ -1770,6 +1829,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.43.a
+  custom_effect_tooltip = PRC_OCS.43.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
    custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_a
@@ -1784,6 +1844,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.43.b
+  custom_effect_tooltip = PRC_OCS.43.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
    custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_b
@@ -1798,6 +1859,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.43.c
+  custom_effect_tooltip = PRC_OCS.43.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
    custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_c
@@ -1821,6 +1883,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.44.a
+  custom_effect_tooltip = PRC_OCS.44.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
    custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_a
@@ -1835,6 +1898,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.44.b
+  custom_effect_tooltip = PRC_OCS.44.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
    custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_b
@@ -1849,6 +1913,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.44.c
+  custom_effect_tooltip = PRC_OCS.44.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
    custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_c
@@ -1872,6 +1937,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.45.a
+  custom_effect_tooltip = PRC_OCS.45.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
    custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_a
@@ -1886,6 +1952,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.45.b
+  custom_effect_tooltip = PRC_OCS.45.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
   }
@@ -1893,6 +1960,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.45.c
+  custom_effect_tooltip = PRC_OCS.45.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
    custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_b
@@ -1916,6 +1984,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.46.a
+  custom_effect_tooltip = PRC_OCS.46.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done
   }
@@ -1923,6 +1992,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.46.b
+  custom_effect_tooltip = PRC_OCS.46.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done
    hidden_effect = {
@@ -1949,6 +2019,7 @@ country_event = {
 
  option = {
   name = PRC_OCS.47.a
+  custom_effect_tooltip = PRC_OCS.47.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done
   }
@@ -1956,6 +2027,7 @@ country_event = {
  }
  option = {
   name = PRC_OCS.47.b
+  custom_effect_tooltip = PRC_OCS.47.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done
    set_global_flag = nuclear_reactor_tested_flag

@@ -49,6 +49,27 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	PRC_OCS_skull_divisions = {
+		icon = generic_army_support
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = {
+			custom_effect_tooltip = PRC_OCS_skull_divisions_idea
+			hidden_effect = {
+				add_timed_idea = {
+					idea = PRC_OCS_skull_divisions
+					days = 7
+				}
+				country_event = { id = PRC_OCS.53 }
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
 	PRC_OCS_unlock_all_shared_slots = {
 		icon = generic_construction
 		cost = 0
@@ -491,6 +512,63 @@ PRC_OCS_category = {
 			has_country_flag = PRC_OCS_initialized
 		}
 		complete_effect = { PRC_OCS_add_points_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.7: Occupied-territory construction. Vanilla construction decisions
+	# intentionally operate only in states both owned and controlled by the
+	# current country; this companion decision targets the controlled-but-not-
+	# owned states (occupied enemy territory) and builds instantly so newly
+	# captured land can support the advance immediately. Industrial facilities
+	# are deliberately excluded: non-core production penalties make them
+	# uneconomical there.
+	PRC_OCS_develop_occupied_territory = {
+		icon = generic_construction
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_controlled_state = {
+				NOT = { is_owned_by = ROOT }
+				OR = {
+					infrastructure < 5
+					air_base < 10
+					anti_air_building < 5
+					AND = {
+						is_coastal = yes
+						naval_base > 0
+						naval_base < 10
+					}
+				}
+			}
+		}
+		complete_effect = { PRC_OCS_develop_occupied_territory_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.7: Supply-hub construction boost, modeled on the vanilla
+	# "Reorganize the Railway System" decision. The vanilla decision grants
+	# production_speed_supply_node_factor = 3 for 120 days with a three-hub
+	# cancel trigger; here the bonus is +1000% for 365 days and repeatable.
+	PRC_OCS_boost_supply_construction = {
+		icon = generic_construction
+		cost = 0
+		days_remove = 365
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		modifier = {
+			production_speed_supply_node_factor = 10
+		}
+		# Empty effect: the decision's entire effect is the decision-level
+		# modifier above (scoped via days_remove = 365), mirroring the vanilla
+		# restructure_supply_system. The empty block keeps validate_mod's
+		# player-decision accounting and ai_will_do guard checks applied.
+		complete_effect = { }
 		ai_will_do = { factor = 0 }
 	}
 

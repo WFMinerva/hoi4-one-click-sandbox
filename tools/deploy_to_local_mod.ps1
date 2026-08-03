@@ -1,11 +1,14 @@
 # Deploy the repository to the local HOI4 mod folder for in-game verification.
 # Usage:
 #   powershell -ExecutionPolicy Bypass -File tools/deploy_to_local_mod.ps1
+#   powershell -ExecutionPolicy Bypass -File tools/deploy_to_local_mod.ps1 `
+#     -ParadoxRoot 'D:\Users\Example\Documents\Paradox Interactive\Hearts of Iron IV'
+#
 #
 # Contract (see docs/DEVELOPMENT.md "实机测试协作" and
 # docs/maintenance/开发状态快照与交接.md §6):
-#   - Fixed install folder name, never renamed:
-#       C:\Users\Admin\Documents\Paradox Interactive\Hearts of Iron IV\mod\OCS_one_click_sandbox_start_v2_0
+#   - Fixed install folder name, never renamed; the user-specific Paradox root
+#     is discovered from Documents or supplied through -ParadoxRoot.
 #   - Copies common/, events/, localisation/, descriptor.mod, thumbnail.png,
 #     LICENSE, NOTICE.md over the existing install (deleting stale files).
 #   - Updates the registry .mod (same folder, extension file) version/name to
@@ -15,11 +18,18 @@
 #     mod root folder (they are not part of the zip install folder).
 #   - Ensures dlc_load.json enables the local registry .mod, not the workshop
 #     stub; backs up dlc_load.json to dlc_load.json.bak before any edit.
+param(
+    [Parameter(Mandatory = $false)]
+    [string]$ParadoxRoot = (Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'Paradox Interactive\Hearts of Iron IV')
+)
 
 $ErrorActionPreference = 'Stop'
 
 $repo = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$paradoxRoot = 'C:\Users\Admin\Documents\Paradox Interactive\Hearts of Iron IV'
+$paradoxRoot = [System.IO.Path]::GetFullPath($ParadoxRoot)
+if (-not (Test-Path -LiteralPath $paradoxRoot -PathType Container)) {
+    throw "Paradox user directory not found: $paradoxRoot (pass -ParadoxRoot explicitly on this machine)"
+}
 $modRoot = Join-Path $paradoxRoot 'mod'
 $install = Join-Path $modRoot 'OCS_one_click_sandbox_start_v2_0'
 $registry = Join-Path $modRoot 'OCS_one_click_sandbox_start_v2_0.mod'

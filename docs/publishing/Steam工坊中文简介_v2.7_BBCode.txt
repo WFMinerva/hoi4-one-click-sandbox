@@ -1,0 +1,98 @@
+[h1]开局一键爽玩 | One-Click Sandbox Start[/h1]
+
+不想每次开局都重复输入控制台、研究科技学说、配置军工机构、重建设计编制，再逐地块安排工厂、机场、基建、炼油厂、船坞建设？
+
+本MOD通过零政治点决议快速完成沙盒开局——但绝不会超过正常游戏过程中能达到的程度，拒绝魔改！
+
+[h2]一键开局初始化[/h2]
+[list]
+[*]完成全部科技以及预设的陆军、海军、空军和特种部队学说
+[*]合理配置8项军种精神
+[*]为当前国家实际拥有的军工机构合理配置MIO特质路线
+[*]创建22个陆空装备设计和8个师级编制
+[*]给予巨量陆空装备和满级变体
+[*]特殊科研项目奖励可以逐项选择
+[/list]
+
+初始化[b]不会自动改编现有部队[/b]。需要时可另行执行决议统一改编。
+
+[h2]点数与经验[/h2]
+[list]
+[*]独立的可重复决议，随时补充政治点、指挥点、陆/海/空军经验
+[*]0政治点成本
+[/list]
+
+[h2]一键骷髅师（v2.7 新增）[/h2]
+
+部队获得海量经验，[b]无需进入训练状态[/b]即可直冲满级；效果持续7天、可重复刷新。注意：[b]游戏暂停（时间冻结）时不生效[/b]，需保持时间流动推进几日。
+
+[h2]开发占领区（v2.7 新增）[/h2]
+
+控制但未拥有的敌国州：基础设施补至5级、州级防空5级、空军基地10级、已有海军基地10级；刻意不建设工业设施（非核心州产出惩罚不划算）。
+
+[h2]加速补给站建设（v2.7 新增）[/h2]
+
+补给站建设速度 +1000%、持续365天，可随时再次刷新。
+
+[h2]特殊科研原型奖励·逐项选择版（v2.6）[/h2]
+
+“一键完成特殊科研”会跳过正常研究中的互斥原型奖励选择。现在可在各专精的“选择原型奖励”事件中[b]逐项选定[/b]每一条互斥奖励；选项附带具体数值与取舍说明（v2.7优化）。
+[list]
+[*]同项目多组互不干扰，可全部选完；每组每国一次，全部选定后决议隐藏
+[*]效果数值完全取自原版，无需额外DLC
+[/list]
+
+[h2]间谍情报条线（v2.5）[/h2]
+需要《La Resistance》DLC。一键创建间谍机构、一键点满情报/防御/行动/特工训练/密码破译五大部门，0成本无前置。
+
+[h2]全国建设[/h2]
+建设只处理[b]当前国家拥有且控制的州[/b]，临时占领区不处理。
+[list]
+[*]共享建设槽解锁至上限25；基建5、机场10、已有港口10
+[*]州防空5、沿海省份海岸要塞10
+[*]炼油厂与储油罐补足至3；船坞与民用工厂可重复补足至上限
+[/list]
+
+[h2]兼容性与使用说明[/h2]
+[list]
+[*]适配 Hearts of Iron IV 1.19.*；特殊科研需《Gotterdammerung》、间谍情报需《La Resistance》
+[*]全部决议0政治点，AI不会执行
+[*]不覆盖原版国策、国家历史文件或事件链
+[*]建议避免与其他大规模修改MOD同时使用
+[/list]
+
+[h2]作者与源码[/h2]
+[list]
+[*][url=https://github.com/WFMinerva][b]GitHub：WFMinerva / HAPPYADONG[/b][/url]
+[*][url=https://steamcommunity.com/profiles/76561198024627348][b]Steam主页：HAPPYADONG[/b][/url]
+[/list]
+
+[h1]English Description[/h1]
+
+Zero-cost, player-only decisions for a fast single-player sandbox start — all within normal gameplay results, no overpowered edits.
+
+[h2]New in v2.7[/h2]
+[list]
+[*][b]One-Click Skull Divisions[/b]: every active and newly raised formation gains massive passive daily experience — no exercise required — reaching fully trained quality; lasts 7 days, repeatable, no one-click start needed. [b]Not applied while paused[/b]; keep time flowing for a few days.
+[*][b]Develop Occupied Territory[/b]: infra 5, state AA 5, air bases 10, existing naval bases 10 in controlled-but-not-owned states.
+[*][b]Boost Supply Hub Construction[/b]: +1000% supply-hub construction speed for 365 days.
+[*]Prototype-reward options now show concrete values and trade-offs (bilingual tooltips).
+[/list]
+
+[h2]One-Click Initialization[/h2]
+[list]
+[*]All technologies and preset doctrines; 8 service spirits; sensible MIO trait routes
+[*]22 land/air designs and 8 templates; large stockpiles
+[/list]
+
+[h2]Special Projects[/h2]
+Requires [i]Gotterdammerung[/i]. Completes all 49 projects; pick every mutually exclusive prototype reward one by one.
+
+[h2]Intelligence (v2.5)[/h2]
+Requires [i]La Resistance[/i]. Found an agency and max out all five departments — 0 cost, no prerequisites.
+
+[h2]Nationwide Construction[/h2]
+In owned-and-controlled states only: slots to 25, infra 5, air bases 10, naval bases 10, AA 5, coastal forts 10, refineries/fuel silos to 3, dockyards/civ-s to cap.
+
+[h2]Compatibility[/h2]
+Hearts of Iron IV 1.19.*; AI never uses the decisions; no overwrite of vanilla focus trees, history, or events; avoid pairing with large overhaul mods.

@@ -25,8 +25,12 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
+try:
+    from .hoi4_paths import resolve_vanilla_path
+except ImportError:  # Direct execution: python tools/analyze_special_project_choices.py
+    from hoi4_paths import resolve_vanilla_path
+
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_VANILLA = Path(r"D:\SteamLibrary\steamapps\common\Hearts of Iron IV")
 DEFAULT_REPORT = ROOT / "docs" / "analysis" / "v2.6_特殊科研互斥选项清单.md"
 DEFAULT_JSON = ROOT / "docs" / "analysis" / "v2.6_特殊科研互斥选项清单.json"
 
@@ -332,12 +336,17 @@ def is_selectable_buff(group: ChoiceGroup) -> bool:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--vanilla", type=Path, default=DEFAULT_VANILLA)
+    parser.add_argument(
+        "--vanilla",
+        type=Path,
+        help="HOI4 原版根目录；省略时读取 HOI4_VANILLA_PATH 或探测已知盘符",
+    )
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--json", type=Path, default=DEFAULT_JSON)
     args = parser.parse_args()
 
-    project_dir = args.vanilla / "common" / "special_projects" / "projects"
+    vanilla_root = resolve_vanilla_path(args.vanilla)
+    project_dir = vanilla_root / "common" / "special_projects" / "projects"
     all_groups: list[ChoiceGroup] = []
     for specialization, filenames in SPECIALIZATION_FILES.items():
         for filename in filenames:
