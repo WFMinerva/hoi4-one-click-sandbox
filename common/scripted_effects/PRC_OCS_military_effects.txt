@@ -44,3 +44,4 @@ PRC_OCS_reorganize_all_divisions_effect = {
 	set_country_flag = PRC_OCS_army_reorganized
 	country_event = { id = PRC_OCS.8 }
 }
+

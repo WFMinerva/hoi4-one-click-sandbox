@@ -231,7 +231,7 @@ def main() -> int:
         else:
             payload = {
                 "tag_name": tag,
-                "target_commitish": tag,
+                "target_commitish": local_tag_commit,
                 "name": tag,
                 "body": body_path.read_text(encoding="utf-8-sig").strip(),
                 "draft": True,

@@ -1042,6 +1042,155 @@ class ValidatorRegressionTests(unittest.TestCase):
                 f"set_country_flag = {menu_done_flags[menu_id]}", z_effect
             )
 
+    def test_v27_skull_divisions_contract(self) -> None:
+        """v2.7 one-click skull divisions: single player-only decision applying
+        the daliwan-proven passive-XP idea (7 days), with the obsolete drill
+        variant fully removed."""
+        scripts = parsed_repository()
+        decision_root = scripts[
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        ]
+        category = decision_root.assignments[0].value
+        self.assertIsInstance(category, validator.Block)
+        decisions = {
+            assignment.key: assignment.value
+            for assignment in category.assignments
+        }
+        self.assertNotIn("PRC_OCS_full_training", decisions)
+        self.assertIn("PRC_OCS_skull_divisions", decisions)
+        decision = decisions["PRC_OCS_skull_divisions"]
+        self.assertIsInstance(decision, validator.Block)
+        self.assertEqual(
+            validator.direct_scalars(decision, "days_re_enable"), ["1"]
+        )
+        self.assertEqual(
+            validator.direct_scalars(decision, "fire_only_once"), ["no"]
+        )
+        available = validator.direct_blocks(decision, "available")[0]
+        self.assertEqual(validator.direct_scalars(available, "is_ai"), ["no"])
+        self.assertEqual(
+            validator.direct_scalars(available, "has_country_flag"), []
+        )
+        effect_block = validator.direct_blocks(decision, "complete_effect")[0]
+        self.assertEqual(
+            validator.direct_scalars(effect_block, "custom_effect_tooltip"),
+            ["PRC_OCS_skull_divisions_idea"],
+        )
+        hidden = validator.direct_blocks(effect_block, "hidden_effect")[0]
+        timed = validator.direct_blocks(hidden, "add_timed_idea")
+        self.assertEqual(len(timed), 1)
+        self.assertEqual(
+            validator.direct_scalars(timed[0], "idea"),
+            ["PRC_OCS_skull_divisions"],
+        )
+        self.assertEqual(
+            validator.direct_scalars(timed[0], "days"), ["7"]
+        )
+        self.assertIn(
+            "country_event = { id = PRC_OCS.53 }",
+            validator.read_utf8(
+                validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+            ),
+        )
+        self.assertNotIn("set_training_level", validator.read_utf8(
+            validator.ROOT / "common" / "scripted_effects" / "PRC_OCS_military_effects.txt"
+        ))
+
+        # Single idea inside the vanilla ideas = { country = { ... } } container.
+        ideas_root = scripts[
+            validator.ROOT / "common" / "ideas" / "PRC_OCS_military_ideas.txt"
+        ]
+        ideas_block = next(
+            assignment.value
+            for assignment in ideas_root.assignments
+            if assignment.key == "ideas"
+        )
+        country = next(
+            assignment.value
+            for assignment in ideas_block.assignments
+            if assignment.key == "country"
+        )
+        ideas = {
+            assignment.key: assignment.value
+            for assignment in country.assignments
+        }
+        self.assertEqual(set(ideas), {"PRC_OCS_skull_divisions"})
+        idea = ideas["PRC_OCS_skull_divisions"]
+        self.assertIsInstance(idea, validator.Block)
+        available_idea = validator.direct_blocks(idea, "available")[0]
+        self.assertEqual(
+            validator.direct_scalars(available_idea, "is_ai"), ["no"]
+        )
+        modifier = validator.direct_blocks(idea, "modifier")[0]
+        scalar_map = {
+            assignment.key: assignment.value
+            for assignment in modifier.assignments
+        }
+        self.assertEqual(scalar_map["experience_gain_army_unit"], "80000")
+        self.assertEqual(scalar_map["experience_gain_navy_unit"], "80000")
+        self.assertEqual(scalar_map["experience_gain_army_unit_factor"], "80")
+        self.assertEqual(scalar_map["experience_gain_navy_unit_factor"], "50")
+
+        events_text = validator.read_utf8(
+            validator.ROOT / "events" / "PRC_OCS_events.txt"
+        )
+        self.assertIn("id = PRC_OCS.53", events_text)
+        self.assertNotIn("id = PRC_OCS.52", events_text)
+        localisation = (
+            validator.read_utf8(validator.ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml")
+            + "\n"
+            + validator.read_utf8(validator.ROOT / "localisation" / "simp_chinese" / "PRC_OCS_l_simp_chinese.yml")
+        )
+        for key in (
+            "PRC_OCS_skull_divisions",
+            "PRC_OCS_skull_divisions_idea",
+            "PRC_OCS.53.t",
+        ):
+            self.assertIn(key, localisation)
+        for stale in (
+            "PRC_OCS_full_training",
+            "PRC_OCS_drill_troops_idea",
+            "PRC_OCS.52.t",
+        ):
+            self.assertNotIn(stale, localisation)
+
+    def test_v27_choice_tooltips_contract(self) -> None:
+        """Every grouped option of the choose-your-bonus events carries a
+        concrete bilingual custom_effect_tooltip key (v2.7 description
+        optimisation)."""
+        events_path = validator.ROOT / "events" / "PRC_OCS_choice_events_more.txt"
+        events_text = events_path.read_text(encoding="utf-8")
+        en_text = validator.read_utf8(
+            validator.ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml"
+        )
+        zh_text = validator.read_utf8(
+            validator.ROOT
+            / "localisation"
+            / "simp_chinese"
+            / "PRC_OCS_l_simp_chinese.yml"
+        )
+        missing = []
+        # Group events 22-47 only; dispatch-menu options are navigation, not effects.
+        import re
+
+        for eid in range(22, 48):
+            block_start = events_text.index(f"\n id = PRC_OCS.{eid}\n")
+            next_id = events_text.index(f"\n id = PRC_OCS.{eid + 1}\n")
+            block = events_text[block_start:next_id]
+            # Option names are PRC_OCS.{eid}.{letter}; derive letters from each option block.
+            letters = re.findall(r"name = PRC_OCS\.%d\.([a-z])" % eid, block)
+            self.assertTrue(letters)
+            for letter in letters:
+                tt_key = f"PRC_OCS.{eid}.{letter}_tt"
+                if f"custom_effect_tooltip = {tt_key}" not in block:
+                    missing.append(f"{tt_key} (event injection)")
+                    continue
+                if f" {tt_key}:0 " not in en_text:
+                    missing.append(f"{tt_key} (en localisation)")
+                if f" {tt_key}:0 " not in zh_text:
+                    missing.append(f"{tt_key} (zh localisation)")
+        self.assertEqual(missing, [])
+
     def test_stable_version_metadata_contract(self) -> None:
         descriptor = validator.read_utf8(validator.ROOT / "descriptor.mod")
         version = validator.descriptor_value(descriptor, "version")
@@ -1061,13 +1210,24 @@ class ValidatorRegressionTests(unittest.TestCase):
             self.assertEqual(hoi4_paths.resolve_vanilla_path(root), root)
 
     def test_tagged_release_payload_is_frozen(self) -> None:
-        paths = build_release.release_payload_paths("2.6")
+        """The stable-version tag pins the release inputs of the current
+        descriptor version (so an already-released version cannot drift),
+        while development/test versions are exempt automatically."""
+        descriptor = validator.read_utf8(
+            build_release.ROOT / "descriptor.mod"
+        )
+        version = validator.descriptor_value(descriptor, "version")
+        self.assertIsNotNone(version)
+        paths = build_release.release_payload_paths(version)
         self.assertIn(build_release.ROOT / "descriptor.mod", paths)
         self.assertIn(
-            build_release.ROOT / "docs" / "baseline" / "README_v2.6_正式版.md",
+            build_release.ROOT
+            / "docs"
+            / "baseline"
+            / f"README_v{version}_正式版.md",
             paths,
         )
-        build_release.verify_tagged_release_payload("2.6")
+        build_release.verify_tagged_release_payload(version)
 
     def test_release_staging_normalizes_line_endings(self) -> None:
         with tempfile.TemporaryDirectory() as temp_name:

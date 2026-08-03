@@ -4,7 +4,7 @@
 
 《开局一键爽玩 / One-Click Sandbox Start》是《钢铁雄心 IV》单人沙盒开局 MOD。所有功能仅供玩家国家使用（`is_ai = no`，AI 不可执行），架构为“通用核心 + PRC 增强层”。
 
-- 当前稳定基准：**v2.6**。维护者于2026-08-02确认 v2.6-test2 实机回归通过（四份日志干净）；GitHub 正式附件 SHA-256 为 `484030065363ab1366604d17e2f92ee114208b2edb7ffe13b001a0172de48ff1`，已推送 Git 标签 `v2.6` 并上传 Steam 工坊物品 `3767025052`（Manifest `3609146315690391433`）。上一稳定基准 v2.5（Manifest `7423542268120748938`）已由 v2.6 覆盖。
+- 当前稳定基准：**v2.7**。维护者于2026-08-03确认 v2.7 测试包实机生效（一键骷髅师可直接拉满全军；四份日志洁净）；正式包由 `tools/build_release.py` 构建。上一稳定基准 v2.6（Manifest `3609146315690391433`）已由 v2.7 覆盖；v2.7 的 Git 标签 / GitHub Release / 工坊 Manifest 按发版门禁执行（维护者确认后，Manifest 上传后回填）。
 - 2026-08-02 跨机器字节审计确认：v2.6 官方附件由单位机混合 LF/CRLF 工作区构建，与标签源码的文本在统一换行后完全一致，但不能从干净标签检出字节级复现；这是历史发布溯源缺陷，不推翻实机功能结论。当前构建器会在暂存区统一文本为 LF、保留本地化 BOM；v2.6 标签的规范化审计重建 SHA-256 为 `9b4cc601ca9c82e59541665a076f16c972dab9c18d6871677f4887e2df1e7467`，后续版本必须以该门禁保证跨机器一致。
 - v2.6 在 v2.5 稳定基准之上，完成特殊科研原型奖励·逐项选择版 26 组扩展：`tools/generate_special_project_choice_events.py` 按 reward 生成唯一事件 id/flag（映射见 `docs/analysis/v2.6_特殊科研组事件映射.json`），同 project 多组互不遮蔽；`tools/finish_choice_events.py` 幂等生成四专精菜单（事件 48–51）与双语本地化；组事件选项末返回本专精菜单，新增陆/核"选择原型奖励"决议，空军/海军主菜单 `.e` 续入口，菜单 z 设专精完成 flag 隐藏决议。修复 `tools/publish_workshop.py`：英文简介 ASCII 引号改弯引号并压缩至 4832 字符后方可上传；本地部署回归脚本 `tools/deploy_to_local_mod.ps1`。
 - v2.5 在 v2.4 修复集正式化之上，新增间谍情报条线（需《La Resistance》DLC）：`PRC_OCS_create_intelligence_agency` 一键创建间谍机构、`PRC_OCS_unlock_all_agency_upgrades` 一键点满情报/防御/行动/特工训练/密码破译五大部门；0 成本、无科技国策前置、无等待，每国独立一次，无 DLC 不可见。

@@ -49,6 +49,27 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	PRC_OCS_skull_divisions = {
+		icon = generic_army_support
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = {
+			custom_effect_tooltip = PRC_OCS_skull_divisions_idea
+			hidden_effect = {
+				add_timed_idea = {
+					idea = PRC_OCS_skull_divisions
+					days = 7
+				}
+				country_event = { id = PRC_OCS.53 }
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
 	PRC_OCS_unlock_all_shared_slots = {
 		icon = generic_construction
 		cost = 0

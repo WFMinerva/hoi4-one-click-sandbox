@@ -1,0 +1,20 @@
+# v2.7 one-click skull divisions. Full-strength passive daily unit XP
+# (daliwan-proven values): every active and newly raised army/navy division
+# reaches fully trained instantly-wide under this 7-day national idea.
+#
+# The decision itself enforces is_ai = no; the idea adds a second guard.
+ideas = {
+	country = {
+		PRC_OCS_skull_divisions = {
+			picture = generic_victors_of_ww1
+			allowed = { always = yes }
+			available = { is_ai = no }
+			modifier = {
+				experience_gain_army_unit_factor = 80
+				experience_gain_navy_unit_factor = 50
+				experience_gain_army_unit = 80000
+				experience_gain_navy_unit = 80000
+			}
+		}
+	}
+}
