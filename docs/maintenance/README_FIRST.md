@@ -16,11 +16,12 @@ v2.7 在 v2.6 稳定基准之上，新增一键骷髅师决议（复用成熟被
 
 ## 建议阅读顺序
 
-1. 根目录 `AGENTS.md`：当前状态、修改红线与发布门禁。
-2. `docs/maintenance/功能与版本交接单.md`：功能边界与版本演进。
-3. `docs/maintenance/技术实现与通用化边界.md`：脚本架构、作用域与踩坑记录。
-4. `docs/maintenance/测试状态与回归清单.md`：实机结论与待扩展样本。
-5. `docs/DEVELOPMENT.md`：构建、验证、发布与工坊上传。
+1. `docs/maintenance/维护与重构标准流程.md`：动手前的强制流程（三级流程+三扇门+K3 复检）。
+2. 根目录 `AGENTS.md`：当前状态、修改红线与发布门禁。
+3. `docs/maintenance/功能与版本交接单.md`：功能边界与版本演进。
+4. `docs/maintenance/技术实现与通用化边界.md`：脚本架构、作用域与踩坑记录。
+5. `docs/maintenance/测试状态与回归清单.md`：实机结论与待扩展样本。
+6. `docs/DEVELOPMENT.md`：构建、验证、发布与工坊上传。
 
 ## 维护纪律
 
