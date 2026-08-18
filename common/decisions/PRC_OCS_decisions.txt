@@ -662,6 +662,7 @@ PRC_OCS_category = {
 				upgrade_intelligence_agency = upgrade_plastic_explosives
 				upgrade_intelligence_agency = upgrade_suicide_pills
 				# Operative Training Branch
+				upgrade_intelligence_agency = upgrade_training_centers
 				upgrade_intelligence_agency = upgrade_commando_training
 				upgrade_intelligence_agency = upgrade_interrogation_techniques
 				upgrade_intelligence_agency = upgrade_diplo_training

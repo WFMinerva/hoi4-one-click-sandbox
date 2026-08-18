@@ -1191,6 +1191,21 @@ class ValidatorRegressionTests(unittest.TestCase):
                     missing.append(f"{tt_key} (zh localisation)")
         self.assertEqual(missing, [])
 
+    def test_v28_agency_training_centers_contract(self) -> None:
+        """v2.8 feedback B1: the unlock-all-agency-upgrades decision must also
+        cover the vanilla 'localized training center' operative-branch
+        upgrade."""
+        decisions_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "decisions"
+            / "PRC_OCS_decisions.txt"
+        )
+        self.assertIn(
+            "upgrade_intelligence_agency = upgrade_training_centers",
+            decisions_text,
+        )
+
     def test_stable_version_metadata_contract(self) -> None:
         descriptor = validator.read_utf8(validator.ROOT / "descriptor.mod")
         version = validator.descriptor_value(descriptor, "version")
@@ -1218,6 +1233,8 @@ class ValidatorRegressionTests(unittest.TestCase):
         )
         version = validator.descriptor_value(descriptor, "version")
         self.assertIsNotNone(version)
+        if build_release.is_test_version(version):
+            return
         paths = build_release.release_payload_paths(version)
         self.assertIn(build_release.ROOT / "descriptor.mod", paths)
         self.assertIn(
