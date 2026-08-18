@@ -78,13 +78,8 @@ PRC_OCS_complete_air_special_projects_effect = {
 			phased_array = 1
 			monopulse_radar = 1
 			# sp_air_jet_engine
-			jet_fighter1 = 1
-			jet_tactical_bomber1 = 1
 			sp_centrifugal_jet_tech = 1
 			# sp_air_axial_jet_engine
-			jet_fighter2 = 1
-			jet_strategic_bomber1 = 1
-			jet_tactical_bomber2 = 1
 			modern_small_airframe = 1
 			modern_medium_airframe = 1
 			modern_large_airframe = 1
@@ -94,6 +89,20 @@ PRC_OCS_complete_air_special_projects_effect = {
 			sp_helicopter_transport_pods_tech = 1
 			# sp_air_supersonic_jet
 			supersonic_fighter1 = 1
+		}
+		# Legacy pre-BBA jet airframe techs are granted only without the plane
+		# designer DLC: owning it must not research the obsolete jet techs
+		# (v2.8 user feedback B3), and the evolved forces must not create their
+		# maxed variants either (see PRC_OCS_equipment_effects.txt).
+		if = {
+			limit = { NOT = { has_dlc = "By Blood Alone" } }
+			set_technology = {
+				jet_fighter1 = 1
+				jet_tactical_bomber1 = 1
+				jet_fighter2 = 1
+				jet_strategic_bomber1 = 1
+				jet_tactical_bomber2 = 1
+			}
 		}
 		set_country_flag = PRC_OCS_air_special_projects_completed
 		country_event = { id = PRC_OCS.12 }

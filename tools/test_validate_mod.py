@@ -1235,6 +1235,46 @@ class ValidatorRegressionTests(unittest.TestCase):
             decisions_text,
         )
 
+    def test_v28_legacy_jet_techs_gated_without_bba_contract(self) -> None:
+        """v2.8 feedback B3: legacy pre-BBA jet airframe techs and their
+        maxed equipment variants are granted only when By Blood Alone is
+        absent."""
+        special_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_special_project_effects.txt"
+        )
+        equipment_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_equipment_effects.txt"
+        )
+        guard = 'has_dlc = "By Blood Alone"'
+        self.assertIn(guard, special_text)
+        for key in (
+            "jet_fighter1 = 1",
+            "jet_fighter2 = 1",
+            "jet_tactical_bomber1 = 1",
+            "jet_tactical_bomber2 = 1",
+            "jet_strategic_bomber1 = 1",
+        ):
+            pos = special_text.index(key)
+            self.assertIn(guard, special_text[pos - 300:pos])
+        for key in (
+            "type = jet_strat_bomber_equipment_1",
+            "type = jet_tac_bomber_equipment_2",
+        ):
+            positions = [
+                pos
+                for pos in range(len(equipment_text))
+                if equipment_text.startswith(key, pos)
+            ]
+            self.assertEqual(len(positions), 2)
+            for pos in positions:
+                self.assertIn(guard, equipment_text[pos - 1200:pos])
+
     def test_stable_version_metadata_contract(self) -> None:
         descriptor = validator.read_utf8(validator.ROOT / "descriptor.mod")
         version = validator.descriptor_value(descriptor, "version")

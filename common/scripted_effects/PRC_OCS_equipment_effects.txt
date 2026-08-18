@@ -906,32 +906,35 @@ PRC_OCS_create_evolved_variants_effect = {
 		limit = {
 			has_military_industrial_organization = PRC_peoples_aviation_company_of_china_organization
 		}
-		create_equipment_variant = {
-			name = "喷气式战略轰炸机 I型"
-			type = jet_strat_bomber_equipment_1
-			parent_version = 0
-			allow_without_tech = yes
-			mark_older_equipment_obsolete = yes
-			design_team = mio:PRC_peoples_aviation_company_of_china_organization
-			upgrades = {
-				plane_range_upgrade = 5
-				plane_engine_upgrade = 5
-				plane_reliability_upgrade = 5
-				plane_bomb_upgrade = 5
+		if = {
+			limit = { NOT = { has_dlc = "By Blood Alone" } }
+			create_equipment_variant = {
+				name = "喷气式战略轰炸机 I型"
+				type = jet_strat_bomber_equipment_1
+				parent_version = 0
+				allow_without_tech = yes
+				mark_older_equipment_obsolete = yes
+				design_team = mio:PRC_peoples_aviation_company_of_china_organization
+				upgrades = {
+					plane_range_upgrade = 5
+					plane_engine_upgrade = 5
+					plane_reliability_upgrade = 5
+					plane_bomb_upgrade = 5
+				}
 			}
-		}
-		create_equipment_variant = {
-			name = "喷气式战术轰炸机 II型"
-			type = jet_tac_bomber_equipment_2
-			parent_version = 0
-			allow_without_tech = yes
-			mark_older_equipment_obsolete = yes
-			design_team = mio:PRC_peoples_aviation_company_of_china_organization
-			upgrades = {
-				plane_range_upgrade = 5
-				plane_engine_upgrade = 5
-				plane_reliability_upgrade = 5
-				plane_tac_bomb_upgrade = 5
+			create_equipment_variant = {
+				name = "喷气式战术轰炸机 II型"
+				type = jet_tac_bomber_equipment_2
+				parent_version = 0
+				allow_without_tech = yes
+				mark_older_equipment_obsolete = yes
+				design_team = mio:PRC_peoples_aviation_company_of_china_organization
+				upgrades = {
+					plane_range_upgrade = 5
+					plane_engine_upgrade = 5
+					plane_reliability_upgrade = 5
+					plane_tac_bomb_upgrade = 5
+				}
 			}
 		}
 		create_equipment_variant = {
@@ -964,30 +967,33 @@ PRC_OCS_create_evolved_variants_effect = {
 		}
 	}
 	else = {
-		create_equipment_variant = {
-			name = "喷气式战略轰炸机 I型"
-			type = jet_strat_bomber_equipment_1
-			parent_version = 0
-			allow_without_tech = yes
-			mark_older_equipment_obsolete = yes
-			upgrades = {
-				plane_range_upgrade = 5
-				plane_engine_upgrade = 5
-				plane_reliability_upgrade = 5
-				plane_bomb_upgrade = 5
+		if = {
+			limit = { NOT = { has_dlc = "By Blood Alone" } }
+			create_equipment_variant = {
+				name = "喷气式战略轰炸机 I型"
+				type = jet_strat_bomber_equipment_1
+				parent_version = 0
+				allow_without_tech = yes
+				mark_older_equipment_obsolete = yes
+				upgrades = {
+					plane_range_upgrade = 5
+					plane_engine_upgrade = 5
+					plane_reliability_upgrade = 5
+					plane_bomb_upgrade = 5
+				}
 			}
-		}
-		create_equipment_variant = {
-			name = "喷气式战术轰炸机 II型"
-			type = jet_tac_bomber_equipment_2
-			parent_version = 0
-			allow_without_tech = yes
-			mark_older_equipment_obsolete = yes
-			upgrades = {
-				plane_range_upgrade = 5
-				plane_engine_upgrade = 5
-				plane_reliability_upgrade = 5
-				plane_tac_bomb_upgrade = 5
+			create_equipment_variant = {
+				name = "喷气式战术轰炸机 II型"
+				type = jet_tac_bomber_equipment_2
+				parent_version = 0
+				allow_without_tech = yes
+				mark_older_equipment_obsolete = yes
+				upgrades = {
+					plane_range_upgrade = 5
+					plane_engine_upgrade = 5
+					plane_reliability_upgrade = 5
+					plane_tac_bomb_upgrade = 5
+				}
 			}
 		}
 		create_equipment_variant = {
