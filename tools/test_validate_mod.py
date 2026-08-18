@@ -647,9 +647,24 @@ class ValidatorRegressionTests(unittest.TestCase):
                 "sp_armored_maintenance_tech",
                 "sp_armored_signal_tech",
                 "sp_helicopter_transport_pods_tech",
-                "jet_strategic_bomber1",
-                "jet_tactical_bomber2",
             },
+        )
+        # v2.8 B3: the legacy jet techs stay required only without the plane
+        # designer DLC, so the evolved-forces decision is not permanently
+        # greyed out with By Blood Alone (v2.8 K3 round 1 finding).
+        or_blocks = validator.direct_blocks(available, "OR")
+        self.assertEqual(len(or_blocks), 1)
+        not_blocks = validator.direct_blocks(or_blocks[0], "NOT")
+        and_blocks = validator.direct_blocks(or_blocks[0], "AND")
+        self.assertEqual(len(not_blocks), 1)
+        self.assertEqual(len(and_blocks), 1)
+        self.assertEqual(
+            validator.direct_scalars(not_blocks[0], "has_dlc"),
+            ["By Blood Alone"],
+        )
+        self.assertEqual(
+            set(validator.direct_scalars(and_blocks[0], "has_tech")),
+            {"jet_strategic_bomber1", "jet_tactical_bomber2"},
         )
 
         military_root = scripts[
@@ -1274,6 +1289,21 @@ class ValidatorRegressionTests(unittest.TestCase):
             self.assertEqual(len(positions), 2)
             for pos in positions:
                 self.assertIn(guard, equipment_text[pos - 1200:pos])
+        # The evolved-forces decision must not unconditionally require the
+        # legacy jet techs either, or it would be permanently greyed out with
+        # By Blood Alone (v2.8 K3 round 1 finding).
+        decisions_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "decisions"
+            / "PRC_OCS_decisions.txt"
+        )
+        for key in (
+            "has_tech = jet_strategic_bomber1",
+            "has_tech = jet_tactical_bomber2",
+        ):
+            pos = decisions_text.index(key)
+            self.assertIn(guard, decisions_text[pos - 400:pos])
 
     def test_stable_version_metadata_contract(self) -> None:
         descriptor = validator.read_utf8(validator.ROOT / "descriptor.mod")

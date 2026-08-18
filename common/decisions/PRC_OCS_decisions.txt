@@ -255,8 +255,13 @@ PRC_OCS_category = {
 			has_tech = sp_armored_maintenance_tech
 			has_tech = sp_armored_signal_tech
 			has_tech = sp_helicopter_transport_pods_tech
-			has_tech = jet_strategic_bomber1
-			has_tech = jet_tactical_bomber2
+			OR = {
+				NOT = { has_dlc = "By Blood Alone" }
+				AND = {
+					has_tech = jet_strategic_bomber1
+					has_tech = jet_tactical_bomber2
+				}
+			}
 		}
 		complete_effect = { PRC_OCS_evolve_special_project_forces_effect = yes }
 		ai_will_do = { factor = 0 }
