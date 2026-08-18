@@ -1155,9 +1155,12 @@ class ValidatorRegressionTests(unittest.TestCase):
             self.assertNotIn(stale, localisation)
 
     def test_v27_choice_tooltips_contract(self) -> None:
-        """Every grouped option of the choose-your-bonus events carries a
-        concrete bilingual custom_effect_tooltip key (v2.7 description
-        optimisation)."""
+        """Every grouped option of the choose-your-bonus events carries an
+        effect tooltip: concrete bilingual custom_effect_tooltip keys for the
+        standard groups, and the vanilla tech_effect| rendering for the naval
+        support/repair/underway-replenishment picks (v2.8 feedback B2 replaced
+        the placeholder texts of events 43-45 with the vanilla tech-effect
+        form used by the vanilla reward options)."""
         events_path = validator.ROOT / "events" / "PRC_OCS_choice_events_more.txt"
         events_text = events_path.read_text(encoding="utf-8")
         en_text = validator.read_utf8(
@@ -1170,6 +1173,24 @@ class ValidatorRegressionTests(unittest.TestCase):
             / "PRC_OCS_l_simp_chinese.yml"
         )
         missing = []
+        # tech_effect| rendering for the naval reward picks (events 43-45);
+        # option 45.b has no technology and keeps its bilingual _tt key.
+        naval_picks = {
+            43: {
+                "a": "sp_naval_support_ships_pick_a",
+                "b": "sp_naval_support_ships_pick_b",
+                "c": "sp_naval_support_ships_pick_c",
+            },
+            44: {
+                "a": "sp_naval_repair_ships_pick_a",
+                "b": "sp_naval_repair_ships_pick_b",
+                "c": "sp_naval_repair_ships_pick_c",
+            },
+            45: {
+                "a": "sp_naval_underway_replenishment_pick_a",
+                "c": "sp_naval_underway_replenishment_pick_b",
+            },
+        }
         # Group events 22-47 only; dispatch-menu options are navigation, not effects.
         import re
 
@@ -1181,6 +1202,14 @@ class ValidatorRegressionTests(unittest.TestCase):
             letters = re.findall(r"name = PRC_OCS\.%d\.([a-z])" % eid, block)
             self.assertTrue(letters)
             for letter in letters:
+                if eid in naval_picks and letter in naval_picks[eid]:
+                    tech_ref = (
+                        "custom_effect_tooltip = tech_effect|"
+                        + naval_picks[eid][letter]
+                    )
+                    if tech_ref not in block:
+                        missing.append(f"PRC_OCS.{eid}.{letter} ({tech_ref})")
+                    continue
                 tt_key = f"PRC_OCS.{eid}.{letter}_tt"
                 if f"custom_effect_tooltip = {tt_key}" not in block:
                     missing.append(f"{tt_key} (event injection)")
