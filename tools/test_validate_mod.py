@@ -651,17 +651,21 @@ class ValidatorRegressionTests(unittest.TestCase):
         )
         # v2.8 B3: the legacy jet techs stay required only without the plane
         # designer DLC, so the evolved-forces decision is not permanently
-        # greyed out with By Blood Alone (v2.8 K3 round 1 finding).
+        # greyed out with By Blood Alone (v2.8 K3 rounds 1-2 findings:
+        # positive has_dlc branch releases BBA owners; the AND branch keeps
+        # the v2.7 tech requirements without BBA).
         or_blocks = validator.direct_blocks(available, "OR")
         self.assertEqual(len(or_blocks), 1)
-        not_blocks = validator.direct_blocks(or_blocks[0], "NOT")
-        and_blocks = validator.direct_blocks(or_blocks[0], "AND")
-        self.assertEqual(len(not_blocks), 1)
-        self.assertEqual(len(and_blocks), 1)
         self.assertEqual(
-            validator.direct_scalars(not_blocks[0], "has_dlc"),
+            validator.direct_scalars(or_blocks[0], "has_dlc"),
             ["By Blood Alone"],
         )
+        self.assertEqual(
+            validator.direct_blocks(or_blocks[0], "NOT"),
+            [],
+        )
+        and_blocks = validator.direct_blocks(or_blocks[0], "AND")
+        self.assertEqual(len(and_blocks), 1)
         self.assertEqual(
             set(validator.direct_scalars(and_blocks[0], "has_tech")),
             {"jet_strategic_bomber1", "jet_tactical_bomber2"},
@@ -1290,20 +1294,9 @@ class ValidatorRegressionTests(unittest.TestCase):
             for pos in positions:
                 self.assertIn(guard, equipment_text[pos - 1200:pos])
         # The evolved-forces decision must not unconditionally require the
-        # legacy jet techs either, or it would be permanently greyed out with
-        # By Blood Alone (v2.8 K3 round 1 finding).
-        decisions_text = validator.read_utf8(
-            validator.ROOT
-            / "common"
-            / "decisions"
-            / "PRC_OCS_decisions.txt"
-        )
-        for key in (
-            "has_tech = jet_strategic_bomber1",
-            "has_tech = jet_tactical_bomber2",
-        ):
-            pos = decisions_text.index(key)
-            self.assertIn(guard, decisions_text[pos - 400:pos])
+        # legacy jet techs either (v2.8 K3 rounds 1-2): its parsed polarity is
+        # asserted by test_evolution_dependency_and_variant_contract, which
+        # checks the positive has_dlc release branch and the AND tech branch.
 
     def test_stable_version_metadata_contract(self) -> None:
         descriptor = validator.read_utf8(validator.ROOT / "descriptor.mod")
