@@ -1161,7 +1161,9 @@ class ValidatorRegressionTests(unittest.TestCase):
 
     def test_v28_land_generic_bonuses_contract(self) -> None:
         """v2.8 #6: the land special-project completion grants the 9 positive
-        generic equipment bonuses (armor/engine/artillery)."""
+        generic equipment bonuses (armor/engine/artillery) with exact values."""
+        import re
+
         effects_text = validator.read_utf8(
             validator.ROOT
             / "common"
@@ -1169,21 +1171,44 @@ class ValidatorRegressionTests(unittest.TestCase):
             / "PRC_OCS_special_project_effects.txt"
         )
         self.assertIn("PRC_OCS_grant_land_generic_bonuses_effect = {", effects_text)
-        for name in (
-            "PRC_OCS_generic_armor_bonus_1",
-            "PRC_OCS_generic_armor_bonus_2",
-            "PRC_OCS_generic_armor_bonus_3",
-            "PRC_OCS_generic_engine_bonus_1",
-            "PRC_OCS_generic_engine_bonus_2",
-            "PRC_OCS_generic_engine_bonus_3",
-            "PRC_OCS_generic_artillery_bonus_1",
-            "PRC_OCS_generic_artillery_bonus_2",
-            "PRC_OCS_generic_artillery_bonus_3",
-        ):
-            self.assertIn(name, effects_text)
         self.assertIn(
             "PRC_OCS_grant_land_generic_bonuses_effect = yes", effects_text
         )
+        expected = {
+            "PRC_OCS_generic_armor_bonus_1": ["armor = {", "armor_value = 0.02"],
+            "PRC_OCS_generic_armor_bonus_2": ["armor = {", "hardness = 0.02"],
+            "PRC_OCS_generic_armor_bonus_3": [
+                "armor = {", "armor_value = 0.02", "hardness = 0.02",
+            ],
+            "PRC_OCS_generic_engine_bonus_1": ["armor = {", "maximum_speed = 0.03"],
+            "PRC_OCS_generic_engine_bonus_2": ["armor = {", "reliability = 0.03"],
+            "PRC_OCS_generic_engine_bonus_3": [
+                "armor = {", "maximum_speed = 0.03", "reliability = 0.03",
+            ],
+            "PRC_OCS_generic_artillery_bonus_1": ["artillery = {", "soft_attack = 0.02"],
+            "PRC_OCS_generic_artillery_bonus_2": [
+                "anti_tank = {", "hard_attack = 0.02",
+                "anti_air = {", "air_attack = 0.02",
+            ],
+            "PRC_OCS_generic_artillery_bonus_3": [
+                "artillery = {", "soft_attack = 0.02",
+                "anti_tank = {", "hard_attack = 0.02",
+                "anti_air = {", "air_attack = 0.02",
+            ],
+        }
+        # Isolate each named bonus block and assert its equipment/stat/value
+        # fragments, so a value or equipment-key typo fails the contract.
+        starts = [
+            m.start() for m in re.finditer(r"name = PRC_OCS_generic_", effects_text)
+        ]
+        starts.append(
+            effects_text.index("PRC_OCS_complete_naval_special_projects_effect")
+        )
+        self.assertEqual(len(starts), len(expected) + 1)
+        for index, (name, fragments) in enumerate(expected.items()):
+            block = effects_text[starts[index]:starts[index + 1]]
+            for frag in fragments:
+                self.assertIn(frag, block, f"{name} missing {frag}")
 
     def test_v28_choice_group_tooltips_contract(self) -> None:
         """Every v2.8 group option carries a bilingual custom_effect_tooltip and

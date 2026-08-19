@@ -19,10 +19,12 @@
 # completion never fires iteration rewards, so all choices are granted.
 #
 # Script completion has no facility state, so facility_state_effects are
-# skipped by the engine. The only loss worth compensating is the free
-# level-1 nuclear reactor from sp_nuclear_reactor, granted in the capital.
-# Prototype iteration rewards (scientist XP, progress boosts, setback
-# events) are tied to running real iterations and never fire here.
+# skipped by the engine. The free level-1 nuclear reactor from
+# sp_nuclear_reactor is granted in the capital instead. The land tree's
+# positive generic prototype-reward equipment bonuses (armor / engine /
+# artillery, nine named add_equipment_bonus) are granted once by
+# PRC_OCS_grant_land_generic_bonuses_effect. Other iteration rewards
+# (scientist XP, progress boosts, setback events) never fire here.
 
 PRC_OCS_complete_air_special_projects_effect = {
 	if = {
