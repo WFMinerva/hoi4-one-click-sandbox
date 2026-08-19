@@ -222,6 +222,8 @@ class ValidatorRegressionTests(unittest.TestCase):
                  "PRC_OCS_naval_special_project_choices_done",
              "PRC_OCS_choose_nuclear_special_project_bonuses":
                  "PRC_OCS_nuclear_special_project_choices_done",
+             "PRC_OCS_choose_rocket_special_project_bonuses":
+                 "PRC_OCS_rocket_special_project_choices_done",
          }
         special_project_decisions = {
             name: flag
@@ -1020,6 +1022,142 @@ class ValidatorRegressionTests(unittest.TestCase):
             "PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done",
         )
 
+    def test_v28_choice_group_map_contract(self) -> None:
+        """v2.8 replicable groups map to events 54-69 with menu 52 for rocket."""
+        mapping = json.loads(
+            (
+                validator.ROOT
+                / "docs"
+                / "analysis"
+                / "v2.8_特殊科研组事件映射.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(len(mapping), 16)
+        flags = [item["flag"] for item in mapping]
+        eids = [item["eid"] for item in mapping]
+        self.assertEqual(len(set(flags)), len(flags))
+        self.assertEqual(len(set(eids)), len(eids))
+        self.assertEqual(eids, list(range(54, 70)))
+        for item in mapping:
+            self.assertIn(item["specialization"], {"land", "naval", "rocket"})
+            self.assertIn(item["menu"], {48, 51, 52})
+        rocket_rewards = {
+            item["reward"]
+            for item in mapping
+            if item["specialization"] == "rocket"
+        }
+        self.assertEqual(
+            rocket_rewards,
+            {
+                "sp_rocket_design_choice_reward",
+                "sp_rocket_guidance_system_choice_reward",
+            },
+        )
+        # Every rocket group dispatches to the new menu 52.
+        for item in mapping:
+            if item["specialization"] == "rocket":
+                self.assertEqual(item["menu"], 52)
+
+    def test_v28_choice_group_tooltips_contract(self) -> None:
+        """Every v2.8 group option carries a bilingual custom_effect_tooltip and
+        each add_equipment_bonus name is unique."""
+        events_path = validator.ROOT / "events" / "PRC_OCS_choice_events_more.txt"
+        events_text = events_path.read_text(encoding="utf-8")
+        en_text = validator.read_utf8(
+            validator.ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml"
+        )
+        zh_text = validator.read_utf8(
+            validator.ROOT
+            / "localisation"
+            / "simp_chinese"
+            / "PRC_OCS_l_simp_chinese.yml"
+        )
+        import re
+
+        missing = []
+        for eid in range(54, 70):
+            block_start = events_text.index(f"\n id = PRC_OCS.{eid}\n")
+            next_id = min(
+                (
+                    events_text.index(f"\n id = PRC_OCS.{candidate}\n")
+                    for candidate in range(eid + 1, 70)
+                    if f"\n id = PRC_OCS.{candidate}\n" in events_text
+                ),
+                default=len(events_text),
+            )
+            block = events_text[block_start:next_id]
+            letters = re.findall(r"name = PRC_OCS\.%d\.([a-z])" % eid, block)
+            self.assertTrue(letters)
+            for letter in letters:
+                tt_key = f"PRC_OCS.{eid}.{letter}_tt"
+                if f"custom_effect_tooltip = {tt_key}" not in block:
+                    missing.append(f"{tt_key} (event injection)")
+                    continue
+                if f" {tt_key}:0 " not in en_text:
+                    missing.append(f"{tt_key} (en localisation)")
+                if f" {tt_key}:0 " not in zh_text:
+                    missing.append(f"{tt_key} (zh localisation)")
+        self.assertEqual(missing, [])
+
+        # Every reworked add_equipment_bonus name must be unique.
+        bonus_names = re.findall(r"name = (PRC_OCS_\w+_bonus)", events_text)
+        self.assertGreater(len(bonus_names), 0)
+        self.assertEqual(len(set(bonus_names)), len(bonus_names))
+
+    def test_v28_cruiser_submarine_mtg_contract(self) -> None:
+        """v2.8 N1: event 19 unlocks the MtG modules (extra fuel tank / light
+        battery) and keeps the legacy equipment bonus only without Man the
+        Guns."""
+        naval_text = validator.read_utf8(
+            validator.ROOT / "events" / "PRC_OCS_choice_events_naval.txt"
+        )
+        self.assertIn("enable_equipment_modules = {", naval_text)
+        self.assertIn("ship_extra_fuel_tank", naval_text)
+        self.assertIn("ship_light_battery_sub", naval_text)
+        self.assertIn('has_dlc = "Man the Guns"', naval_text)
+        self.assertIn("sp_cruiser_submarine_eq_bonus_range", naval_text)
+        self.assertIn("sp_cruiser_submarine_eq_bonus_raiding", naval_text)
+
+    def test_v28_rocket_decision_contract(self) -> None:
+        """v2.8 rocket choose-your-bonus decision: player-only, AI guard, gated
+        on rocket completion, fires menu 52."""
+        scripts = parsed_repository()
+        decision_root = scripts[
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        ]
+        category = decision_root.assignments[0].value
+        decisions = {
+            assignment.key: assignment.value
+            for assignment in category.assignments
+        }
+        decision = decisions["PRC_OCS_choose_rocket_special_project_bonuses"]
+        self.assertIsInstance(decision, validator.Block)
+        available = validator.direct_blocks(decision, "available")[0]
+        self.assertEqual(validator.direct_scalars(available, "is_ai"), ["no"])
+        self.assertEqual(
+            validator.direct_scalars(available, "has_country_flag"),
+            ["PRC_OCS_rocket_special_projects_completed"],
+        )
+        or_block = validator.direct_blocks(available, "OR")[0]
+        self.assertEqual(
+            set(
+                value
+                for nested in validator.direct_blocks(or_block, "NOT")
+                for value in validator.direct_scalars(nested, "has_country_flag")
+            ),
+            {
+                "PRC_OCS_sp_rocket_design_choice_reward_choice_done",
+                "PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done",
+            },
+        )
+        ai_will_do = validator.direct_blocks(decision, "ai_will_do")[0]
+        self.assertEqual(validator.direct_scalars(ai_will_do, "factor"), ["0"])
+        effect = validator.direct_blocks(decision, "complete_effect")[0]
+        event_block = validator.direct_blocks(effect, "country_event")[0]
+        self.assertEqual(
+            validator.direct_scalars(event_block, "id"), ["PRC_OCS.52"]
+        )
+
     def test_v26_dispatch_menu_z_contract(self) -> None:
         """Menu z triggers require every reward flag of the specialization."""
         events_path = validator.ROOT / "events" / "PRC_OCS_choice_events_more.txt"
@@ -1030,6 +1168,13 @@ class ValidatorRegressionTests(unittest.TestCase):
                 / "analysis"
                 / "v2.6_特殊科研组事件映射.json"
             ).read_text(encoding="utf-8")
+        ) + json.loads(
+            (
+                validator.ROOT
+                / "docs"
+                / "analysis"
+                / "v2.8_特殊科研组事件映射.json"
+            ).read_text(encoding="utf-8")
         )
         text = events_path.read_text(encoding="utf-8")
         menu_done_flags = {
@@ -1037,16 +1182,17 @@ class ValidatorRegressionTests(unittest.TestCase):
             49: "PRC_OCS_nuclear_special_project_choices_done",
             50: "PRC_OCS_air_special_project_choices_done",
             51: "PRC_OCS_naval_special_project_choices_done",
+            52: "PRC_OCS_rocket_special_project_choices_done",
         }
         by_menu: dict[int, list[dict]] = {}
         for item in mapping:
             by_menu.setdefault(item["menu"], []).append(item)
-        for menu_id in (48, 49, 50, 51):
+        for menu_id in (48, 49, 50, 51, 52):
             block_start = text.index(f"\n id = PRC_OCS.{menu_id}\n")
             next_id = min(
                 (
                     text.index(f"\n id = PRC_OCS.{candidate}\n")
-                    for candidate in range(menu_id + 1, 52)
+                    for candidate in range(menu_id + 1, 53)
                     if f"\n id = PRC_OCS.{candidate}\n" in text
                 ),
                 default=len(text),
@@ -1169,7 +1315,6 @@ class ValidatorRegressionTests(unittest.TestCase):
         for stale in (
             "PRC_OCS_full_training",
             "PRC_OCS_drill_troops_idea",
-            "PRC_OCS.52.t",
         ):
             self.assertNotIn(stale, localisation)
 

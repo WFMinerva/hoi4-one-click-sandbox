@@ -1,0 +1,544 @@
+[
+  {
+    "project": "sp_land_land_cruiser",
+    "specialization": "land",
+    "reward": "sp_land_reward_land_cruiser_chassis",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_land_cruiser_chassis_redesign",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\treliability = 0.05\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.medium\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_chassis_reinforce",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\treliability = -0.03\n\t\tarmor_value = 0.05\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.low\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_chassis_lighter_materials",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tarmor_value = -0.05\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_land_cruiser",
+    "specialization": "land",
+    "reward": "sp_land_reward_land_cruiser_engine",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_land_cruiser_engine_leave",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "replicable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_engine_modify",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tmaximum_speed = 0.05\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.medium\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_engine_new",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\treliability = 0.05\n\t\tmaximum_speed = 0.05\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.high\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_land_cruiser",
+    "specialization": "land",
+    "reward": "sp_land_reward_land_cruiser_turret",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_land_cruiser_turret_original",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "replicable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_turret_simplify",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tbreakthrough = -0.03\n\t\tbuild_cost_ic = -0.02\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.gain.low\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_turret_redesign",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tbreakthrough = 0.03\n\t\tmaximum_speed = 0.03\n\t\tbuild_cost_ic = 0.05\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.low\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_land_cruiser",
+    "specialization": "land",
+    "reward": "sp_land_reward_land_cruiser_track",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_land_cruiser_track_current",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "replicable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_track_reduce_armor",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tarmor_value = -0.03\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_track_reinforce_track",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\treliability = 0.05\n\t\tbuild_cost_ic = 0.03\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.medium\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_land_cruiser",
+    "specialization": "land",
+    "reward": "sp_land_reward_land_cruiser_communication",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_land_cruiser_communication_current",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "replicable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_communication_new",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tbreakthrough = 0.03\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.low\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_communication_redesign",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tbreakthrough = 0.03\n\t\tdefense = 0.03\n\t\tbuild_cost_ic = 0.02\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.medium\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_land_cruiser",
+    "specialization": "land",
+    "reward": "sp_land_reward_land_cruiser_assembly",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_land_cruiser_assembly_all",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\treliability = 0.07\n\t\tbuild_cost_ic = 0.05\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.low\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_assembly_key",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\treliability = 0.03\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_land_cruiser",
+    "specialization": "land",
+    "reward": "sp_land_reward_land_cruiser_suspension",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_land_cruiser_suspension_full",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tmaximum_speed = 0.03\n\t\treliability = 0.03\n\t\tbuild_cost_ic = 0.05\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.gain.low\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_suspension_rear",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\treliability = 0.03\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_land_cruiser",
+    "specialization": "land",
+    "reward": "sp_land_reward_land_cruiser_ammunition",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_land_cruiser_ammunition_current",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "replicable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_ammunition_simplified",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tbreakthrough = 0.03\n\t\tbuild_cost_ic = 0.02\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_land_cruiser_ammunition_new",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tland_cruiser_chassis_1 = {\n\t\tbreakthrough = 0.05\n\t\treliability = 0.03\n\t\tbuild_cost_ic = 0.05\n\t}\n}\ncountry_effects = {\n\tFROM = {\n\t\tadd_project_progress_ratio = constant:sp_progress.loss.low\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_super_heavy_howitzer",
+    "specialization": "land",
+    "reward": "sp_land_reward_super_heavy_howitzer_focus_preference",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_super_heavy_howitzer_focus_preference_balance",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "replicable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_land_reward_option_super_heavy_howitzer_focus_preference_firepower",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tsuper_heavy_artillery_equipment_1 = {\n\t\tbuild_cost_ic = 0.1\n\t\tsoft_attack = 0.05\n\t\tadditional_collateral_damage = 0.1\n\t}\n}\ncountry_effects = {\n\n}"
+      },
+      {
+        "token": "sp_land_reward_option_super_heavy_howitzer_focus_preference_production",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tsuper_heavy_artillery_equipment_1 = {\n\t\tbuild_cost_ic = -0.15\n\t\tsoft_attack = -0.05\n\t\tadditional_collateral_damage = -0.1\n\t}\n}\ncountry_effects = {\n\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_land_self_propelled_super_heavy_howitzer",
+    "specialization": "land",
+    "reward": "sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_land_reward_option_self_propelled_super_heavy_howitzer_focus_preference_balance",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "replicable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_land_reward_option_self_propelled_super_heavy_howitzer_focus_preference_firepower",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tself_propelled_super_heavy_artillery_equipment_1 = {\n\t\tbuild_cost_ic = 0.1\n\t\tsoft_attack = 0.05\n\t\tadditional_collateral_damage = 0.1\n\t}\n}"
+      },
+      {
+        "token": "sp_land_reward_option_self_propelled_super_heavy_howitzer_focus_preference_production",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tself_propelled_super_heavy_artillery_equipment_1 = {\n\t\tbuild_cost_ic = -0.15\n\t\tsoft_attack = -0.05\n\t\tadditional_collateral_damage = -0.1\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_nuclear_torpedo",
+    "specialization": "naval",
+    "reward": "sp_naval_nuclear_torpedo_unique_reward_a",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_nuclear_torpedo_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tship_hull_submarine = {\n\t\tnaval_torpedo_hit_chance_factor = 0.02\n\t\ttorpedo_attack = 0.1\n\t\treliability = -0.1\n\t\tinstant = yes\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_nuclear_torpedo_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tship_hull_submarine = {\n\t\treliability = 0.1\n\t\tbuild_cost_ic = 0.1\n\t\tinstant = yes\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_aip_engine",
+    "specialization": "naval",
+    "reward": "sp_naval_aip_engine_unique_reward_a",
+    "default": "sp_naval_aip_engine_preference_c",
+    "options": [
+      {
+        "token": "sp_naval_aip_engine_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tship_hull_submarine = {\n\t\tsub_visibility = -0.05\n\t\tfuel_consumption = 0.1\n\t\tinstant = yes\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_aip_engine_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tship_hull_submarine = {\n\t\tnaval_speed = 0.1\n\t\tfuel_consumption = 0.1\n\t\tinstant = yes\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_aip_engine_preference_c",
+        "default": true,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tship_hull_submarine = {\n\t\tfuel_consumption = -0.05\n\t\tinstant = yes\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_anechoic_tiles",
+    "specialization": "naval",
+    "reward": "sp_naval_anechoic_tiles_unique_reward_a",
+    "default": "sp_naval_anechoic_tiles_preference_c",
+    "options": [
+      {
+        "token": "sp_naval_anechoic_tiles_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tship_hull_submarine = {\n\t\tbuild_cost_ic = 0.05\n\t\tsurface_detection = 0.1\n\t\tinstant = yes\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_anechoic_tiles_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tship_hull_submarine = {\n\t\tbuild_cost_ic = 0.1\n\t\tsub_visibility = -0.05\n\t\tinstant = yes\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_anechoic_tiles_preference_c",
+        "default": true,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tship_hull_submarine = {\n\t\tbuild_cost_ic = -0.05\n\t\tinstant = yes\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_naval_proximity_fuze",
+    "specialization": "naval",
+    "reward": "sp_naval_proximity_fuzes_unique_reward_a",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_naval_proximity_fuzes_preference_a",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tanti_air_equipment = {\n\t\tbuild_cost_ic = -0.05\n\t\tinstant = yes\n\t}\n}"
+      },
+      {
+        "token": "sp_naval_proximity_fuzes_preference_b",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\n}\nequipment_bonus = {\n\tanti_air_equipment = {\n\t\tair_attack = 0.15\n\t\tbuild_cost_ic = 0.05\n\t\tinstant = yes\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_rockets_flying_bomb",
+    "specialization": "rocket",
+    "reward": "sp_rocket_design_choice_reward",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_rocket_design_choice_reward_balanced",
+        "default": false,
+        "buff_kinds": [],
+        "portable": false,
+        "replicable": false,
+        "effect": ""
+      },
+      {
+        "token": "sp_rocket_design_choice_reward_range",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tguided_missile_equipment = {\n\t\tmaximum_speed = 0.05\n\t\tair_range = 0.1\n\t\tair_bombing = -0.05\n\t}\n}"
+      },
+      {
+        "token": "sp_rocket_design_choice_reward_payload",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "equipment_bonus = {\n\tguided_missile_equipment = {\n\t\tair_bombing = 0.15\n\t\tair_range = -0.05\n\t}\n}"
+      }
+    ]
+  },
+  {
+    "project": "sp_rockets_ballistic_missile",
+    "specialization": "rocket",
+    "reward": "sp_rocket_guidance_system_choice_reward",
+    "default": null,
+    "options": [
+      {
+        "token": "sp_rocket_guidance_system_choice_reward_mechanical",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\tset_country_flag = rocket_guidance_system_picked\n}\nequipment_bonus = {\n\tballistic_missile_equipment = {\n\t\tbuild_cost_ic = -0.1\n\t}\n}"
+      },
+      {
+        "token": "sp_rocket_guidance_system_choice_reward_radio",
+        "default": false,
+        "buff_kinds": [
+          "equipment_bonus"
+        ],
+        "portable": false,
+        "replicable": true,
+        "effect": "country_effects = {\n\tset_country_flag = rocket_guidance_system_picked\n}\nequipment_bonus = {\n\tballistic_missile_equipment = {\n\t\tair_bombing = 0.05\n\t\tbuild_cost_ic = 0.1\n\t}\n}"
+      }
+    ]
+  }
+]

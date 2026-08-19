@@ -1,12 +1,13 @@
 """Post-process generated choose-your-bonus events (idempotent).
 
-Reads docs/analysis/v2.6_特殊科研组事件映射.json produced by
+Reads docs/analysis/v2.6_特殊科研组事件映射.json (groups 22-47) and
+docs/analysis/v2.8_特殊科研组事件映射.json (groups 54-69) produced by
 generate_special_project_choice_events.py, then:
 
-  1. Appends the four dispatch menus (48 land, 49 nuclear, 50 air, 51 naval)
-     to events/PRC_OCS_choice_events_more.txt.
+  1. Appends the five dispatch menus (48 land, 49 nuclear, 50 air, 51 naval,
+     52 rocket) to events/PRC_OCS_choice_events_more.txt.
   2. Rebuilds the generated bilingual localisation block (group events 22-47
-     and menus 48-51).
+     and 54-69, and menus 48-52).
 
 Each dispatch menu shows one option per unpicked reward group and returns to
 itself, so the player can pick groups in any order. The tail option (z) is
@@ -27,10 +28,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EVENTS = ROOT / "events" / "PRC_OCS_choice_events_more.txt"
 MAPPING = ROOT / "docs" / "analysis" / "v2.6_特殊科研组事件映射.json"
+MAPPING_V28 = ROOT / "docs" / "analysis" / "v2.8_特殊科研组事件映射.json"
 LOC_EN = ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml"
 LOC_ZH = ROOT / "localisation" / "simp_chinese" / "PRC_OCS_l_simp_chinese.yml"
 
-EVENTS_MARKER = "# === v2.6 dispatch menus (48-51) appended by finish_choice_events.py ==="
+EVENTS_MARKER = "# === v2.6/v2.8 dispatch menus (48-52) appended by finish_choice_events.py ==="
 
 # Per-group event data: eid -> (title_en, title_zh, menu_label_en, menu_label_zh,
 #                               [option labels en], [option labels zh])
@@ -128,6 +130,70 @@ GROUP_INFO = {
          "Reactor Tested Reward", "反应堆测试奖励",
          ["Classify the results", "Public reveal"],
          ["结果保密处理", "向公众公开"]),
+    54: ("Land Cruiser — Chassis Prototype Focus", "陆地巡洋舰·底盘原型方向",
+         "Land Cruiser — Chassis", "陆地巡洋舰·底盘",
+         ["Redesign the Chassis Entirely", "Reinforce the Chassis", "Use Lighter Materials"],
+         ["彻底重新设计底盘", "加固底盘", "使用更轻的材料"]),
+    55: ("Land Cruiser — Engine Prototype Focus", "陆地巡洋舰·发动机原型方向",
+         "Land Cruiser — Engine", "陆地巡洋舰·发动机",
+         ["Keep the Current Engine", "Modify the Engine", "Build a New Engine"],
+         ["保留现有发动机", "改进发动机", "研制全新发动机"]),
+    56: ("Land Cruiser — Turret Prototype Focus", "陆地巡洋舰·炮塔原型方向",
+         "Land Cruiser — Turret", "陆地巡洋舰·炮塔",
+         ["Keep the Original Turret", "Simplify the Turret", "Redesign the Turret"],
+         ["保留原炮塔", "简化炮塔", "重新设计炮塔"]),
+    57: ("Land Cruiser — Track Prototype Focus", "陆地巡洋舰·履带原型方向",
+         "Land Cruiser — Track", "陆地巡洋舰·履带",
+         ["Keep the Current Tracks", "Reduce Armor", "Reinforce the Tracks"],
+         ["保留现有履带", "削减装甲", "加固履带"]),
+    58: ("Land Cruiser — Communication Prototype Focus", "陆地巡洋舰·通信系统原型方向",
+         "Land Cruiser — Communication", "陆地巡洋舰·通信系统",
+         ["Keep Current Communications", "Install New Communications", "Redesign Communications"],
+         ["保留现有通信系统", "换装新通信系统", "重新设计通信系统"]),
+    59: ("Land Cruiser — Assembly Prototype Focus", "陆地巡洋舰·装配原型方向",
+         "Land Cruiser — Assembly", "陆地巡洋舰·装配",
+         ["Reassemble Everything", "Reassemble Key Components"],
+         ["全部重新装配", "仅重装关键部件"]),
+    60: ("Land Cruiser — Suspension Prototype Focus", "陆地巡洋舰·悬挂原型方向",
+         "Land Cruiser — Suspension", "陆地巡洋舰·悬挂",
+         ["Full Suspension Overhaul", "Rear Suspension Only"],
+         ["悬挂系统全面改造", "仅改造后悬挂"]),
+    61: ("Land Cruiser — Ammunition Prototype Focus", "陆地巡洋舰·弹药原型方向",
+         "Land Cruiser — Ammunition", "陆地巡洋舰·弹药",
+         ["Keep Current Ammunition", "Simplified Ammunition", "New Ammunition"],
+         ["保留现有弹药", "简化弹药", "新式弹药"]),
+    62: ("Super Heavy Howitzer — Prototype Focus", "超重型榴弹炮·原型侧重",
+         "Super Heavy Howitzer", "超重型榴弹炮",
+         ["Balanced", "Firepower Focus", "Production Focus"],
+         ["均衡", "火力优先", "生产优先"]),
+    63: ("Self-Propelled Super Heavy Howitzer — Prototype Focus", "自行超重型榴弹炮·原型侧重",
+         "Self-Propelled Super Heavy Howitzer", "自行超重型榴弹炮",
+         ["Balanced", "Firepower Focus", "Production Focus"],
+         ["均衡", "火力优先", "生产优先"]),
+    64: ("Nuclear Torpedo Prototype Focus", "核鱼雷原型方向",
+         "Nuclear Torpedo", "核鱼雷",
+         ["Torpedo Attack", "Reliability"],
+         ["鱼雷攻击", "可靠性"]),
+    65: ("AIP Engine Prototype Focus", "AIP 发动机原型方向",
+         "AIP Engine", "AIP 发动机",
+         ["Stealth", "Speed", "Fuel Efficiency"],
+         ["隐蔽", "速度", "燃油效率"]),
+    66: ("Anechoic Tiles Prototype Focus", "消声瓦原型方向",
+         "Anechoic Tiles", "消声瓦",
+         ["Surface Detection", "Stealth", "Cost Reduction"],
+         ["水面探测", "隐蔽", "降低成本"]),
+    67: ("Proximity Fuze Prototype Focus", "近炸引信原型方向",
+         "Proximity Fuze", "近炸引信",
+         ["Cost Reduction", "Air Attack"],
+         ["降低成本", "对空攻击"]),
+    68: ("Flying Bomb Design Choice", "飞行炸弹设计选择",
+         "Flying Bomb Design", "飞行炸弹设计",
+         ["Balanced", "Range", "Payload"],
+         ["均衡", "航程", "载荷"]),
+    69: ("Ballistic Missile Guidance System", "弹道导弹制导系统",
+         "Ballistic Missile Guidance", "弹道导弹制导",
+         ["Mechanical Guidance", "Radio Guidance"],
+         ["机械制导", "无线电制导"]),
 }
 
 # Menu display data: menu id -> (spec, title_en, title_zh, done_flag)
@@ -140,6 +206,8 @@ MENU_INFO = {
          "空军特殊科研·剩余原型奖励选择", "PRC_OCS_air_special_project_choices_done"),
     51: ("naval", "Naval Special Projects — Remaining Prototype Bonuses",
          "海军特殊科研·剩余原型奖励选择", "PRC_OCS_naval_special_project_choices_done"),
+    52: ("rocket", "Rocket Special Projects — Remaining Prototype Bonuses",
+         "火箭特殊科研·剩余原型奖励选择", "PRC_OCS_rocket_special_project_choices_done"),
 }
 
 # Per-group option tooltips for the effect-description optimisation (v2.7).
@@ -369,6 +437,140 @@ GROUP_TT = {
         "不获得奖励；反应堆测试结果保密处理。",
         "向公众公开：执政党支持率 +10%、政治点 +100、设置全球反应堆测试完成标志，并向其他获得原子能科技的国家提供核反应堆项目加成。",
     ]),
+    54: ([
+        "Land cruisers: +5% reliability.",
+        "Land cruisers: -3% reliability, +5% armor.",
+        "Land cruisers: -5% armor.",
+    ], [
+        "陆地巡洋舰：可靠性 +5%。",
+        "陆地巡洋舰：可靠性 -3%、装甲 +5%。",
+        "陆地巡洋舰：装甲 -5%。",
+    ]),
+    55: ([
+        "No effect — this option awards nothing.",
+        "Land cruisers: +5% max speed.",
+        "Land cruisers: +5% reliability, +5% max speed.",
+    ], [
+        "无实际效果——该选项不授予任何奖励。",
+        "陆地巡洋舰：最大速度 +5%。",
+        "陆地巡洋舰：可靠性 +5%、最大速度 +5%。",
+    ]),
+    56: ([
+        "No effect — this option awards nothing.",
+        "Land cruisers: -3% breakthrough, -2% cost.",
+        "Land cruisers: +3% breakthrough, +3% max speed, +5% cost.",
+    ], [
+        "无实际效果——该选项不授予任何奖励。",
+        "陆地巡洋舰：突破 -3%、造价 -2%。",
+        "陆地巡洋舰：突破 +3%、最大速度 +3%、造价 +5%。",
+    ]),
+    57: ([
+        "No effect — this option awards nothing.",
+        "Land cruisers: -3% armor.",
+        "Land cruisers: +5% reliability, +3% cost.",
+    ], [
+        "无实际效果——该选项不授予任何奖励。",
+        "陆地巡洋舰：装甲 -3%。",
+        "陆地巡洋舰：可靠性 +5%、造价 +3%。",
+    ]),
+    58: ([
+        "No effect — this option awards nothing.",
+        "Land cruisers: +3% breakthrough.",
+        "Land cruisers: +3% breakthrough, +3% defense, +2% cost.",
+    ], [
+        "无实际效果——该选项不授予任何奖励。",
+        "陆地巡洋舰：突破 +3%。",
+        "陆地巡洋舰：突破 +3%、防御 +3%、造价 +2%。",
+    ]),
+    59: ([
+        "Land cruisers: +7% reliability, +5% cost.",
+        "Land cruisers: +3% reliability.",
+    ], [
+        "陆地巡洋舰：可靠性 +7%、造价 +5%。",
+        "陆地巡洋舰：可靠性 +3%。",
+    ]),
+    60: ([
+        "Land cruisers: +3% max speed, +3% reliability, +5% cost.",
+        "Land cruisers: +3% reliability.",
+    ], [
+        "陆地巡洋舰：最大速度 +3%、可靠性 +3%、造价 +5%。",
+        "陆地巡洋舰：可靠性 +3%。",
+    ]),
+    61: ([
+        "No effect — this option awards nothing.",
+        "Land cruisers: +3% breakthrough, +2% cost.",
+        "Land cruisers: +5% breakthrough, +3% reliability, +5% cost.",
+    ], [
+        "无实际效果——该选项不授予任何奖励。",
+        "陆地巡洋舰：突破 +3%、造价 +2%。",
+        "陆地巡洋舰：突破 +5%、可靠性 +3%、造价 +5%。",
+    ]),
+    62: ([
+        "No effect — this option awards nothing.",
+        "Super-heavy howitzers: +10% cost, +5% soft attack, +10% collateral damage.",
+        "Super-heavy howitzers: -15% cost, -5% soft attack, -10% collateral damage.",
+    ], [
+        "无实际效果——该选项不授予任何奖励。",
+        "超重型榴弹炮：造价 +10%、软攻 +5%、附带损伤 +10%。",
+        "超重型榴弹炮：造价 -15%、软攻 -5%、附带损伤 -10%。",
+    ]),
+    63: ([
+        "No effect — this option awards nothing.",
+        "Self-propelled super-heavy howitzers: +10% cost, +5% soft attack, +10% collateral damage.",
+        "Self-propelled super-heavy howitzers: -15% cost, -5% soft attack, -10% collateral damage.",
+    ], [
+        "无实际效果——该选项不授予任何奖励。",
+        "自行超重型榴弹炮：造价 +10%、软攻 +5%、附带损伤 +10%。",
+        "自行超重型榴弹炮：造价 -15%、软攻 -5%、附带损伤 -10%。",
+    ]),
+    64: ([
+        "Submarines: +2% torpedo hit chance, +10% torpedo attack, -10% reliability.",
+        "Submarines: +10% reliability, +10% cost.",
+    ], [
+        "潜艇：鱼雷命中 +2%、鱼雷攻击 +10%、可靠性 -10%。",
+        "潜艇：可靠性 +10%、造价 +10%。",
+    ]),
+    65: ([
+        "Submarines: -5% sub visibility, +10% fuel consumption.",
+        "Submarines: +10% naval speed, +10% fuel consumption.",
+        "Submarines: -5% fuel consumption.",
+    ], [
+        "潜艇：潜艇可见度 -5%、油耗 +10%。",
+        "潜艇：航速 +10%、油耗 +10%。",
+        "潜艇：油耗 -5%。",
+    ]),
+    66: ([
+        "Submarines: +5% cost, +10% surface detection.",
+        "Submarines: +10% cost, -5% sub visibility.",
+        "Submarines: -5% cost.",
+    ], [
+        "潜艇：造价 +5%、水面探测 +10%。",
+        "潜艇：造价 +10%、潜艇可见度 -5%。",
+        "潜艇：造价 -5%。",
+    ]),
+    67: ([
+        "Anti-air equipment: -5% cost.",
+        "Anti-air equipment: +15% air attack, +5% cost.",
+    ], [
+        "防空装备：造价 -5%。",
+        "防空装备：对空攻击 +15%、造价 +5%。",
+    ]),
+    68: ([
+        "No effect — this option awards nothing.",
+        "Guided missiles: +5% max speed, +10% range, -5% bombing.",
+        "Guided missiles: +15% bombing, -5% range.",
+    ], [
+        "无实际效果——该选项不授予任何奖励。",
+        "制导导弹：最大速度 +5%、航程 +10%、轰炸 -5%。",
+        "制导导弹：轰炸 +15%、航程 -5%。",
+    ]),
+    69: ([
+        "Ballistic missiles: -10% cost.",
+        "Ballistic missiles: +5% bombing, +10% cost.",
+    ], [
+        "弹道导弹：造价 -10%。",
+        "弹道导弹：轰炸 +5%、造价 +10%。",
+    ]),
 }
 
 GROUP_DESC_EN = "Choose the mutually exclusive prototype-reward bonus."
@@ -382,15 +584,16 @@ Z_LABEL_ZH = "全部剩余原型奖励已选定"
 
 
 def _option_letter(index: int) -> str:
-    """Menu option letter. 'd' is reserved for the desc key, so skip it."""
-    letter = chr(ord("a") + index)
-    if letter >= "d":
-        letter = chr(ord(letter) + 1)
-    return letter
+    """Menu option letter. 'd' (desc), 't' (title) and 'z' (tail option) are
+    reserved keys, so they are skipped."""
+    letters = "abcefghijklmnopqrsuvwxy"  # a-z minus d, t, z
+    return letters[index]
 
 
 def _mapping() -> list[dict]:
-    return json.loads(MAPPING.read_text(encoding="utf-8"))
+    v26 = json.loads(MAPPING.read_text(encoding="utf-8"))
+    v28 = json.loads(MAPPING_V28.read_text(encoding="utf-8"))
+    return v26 + v28
 
 
 def _strip_generated_block(path: Path) -> str:
@@ -425,7 +628,7 @@ def main() -> None:
     # --- 1. Rebuild the events file: strip stale menus, re-append menus. ---
     ev = _strip_events_menu_block(EVENTS.read_text(encoding="utf-8"))
     menu_lines = [EVENTS_MARKER, ""]
-    for menu_id in (48, 49, 50, 51):
+    for menu_id in (48, 49, 50, 51, 52):
         spec, title_en, title_zh, done_flag = MENU_INFO[menu_id]
         entries = sorted(
             by_menu.get(menu_id, []), key=lambda item: item["eid"]
@@ -483,7 +686,7 @@ def main() -> None:
             en_rows.append(f" PRC_OCS.{eid}.{letter}_tt:0 \"{te}\"")
             zh_rows.append(f" PRC_OCS.{eid}.{letter}_tt:0 \"{tz}\"")
             letter = chr(ord(letter) + 1)
-    for menu_id in (48, 49, 50, 51):
+    for menu_id in (48, 49, 50, 51, 52):
         spec, title_en, title_zh, _done_flag = MENU_INFO[menu_id]
         entries = sorted(
             by_menu.get(menu_id, []), key=lambda item: item["eid"]
@@ -509,7 +712,7 @@ def main() -> None:
         text += "\n".join(rows) + "\n"
         path.write_text(text, encoding="utf-8-sig")
 
-    print("Done: menus 48-51 appended, localisation block 22-51 regenerated.")
+    print("Done: menus 48-52 appended, localisation block 22-47 + 54-69 regenerated.")
 
 
 if __name__ == "__main__":

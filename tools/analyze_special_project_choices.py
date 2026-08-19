@@ -33,6 +33,8 @@ except ImportError:  # Direct execution: python tools/analyze_special_project_ch
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORT = ROOT / "docs" / "analysis" / "v2.6_特殊科研互斥选项清单.md"
 DEFAULT_JSON = ROOT / "docs" / "analysis" / "v2.6_特殊科研互斥选项清单.json"
+DEFAULT_REPORT_V28 = ROOT / "docs" / "analysis" / "v2.8_特殊科研互斥选项清单.md"
+DEFAULT_JSON_V28 = ROOT / "docs" / "analysis" / "v2.8_特殊科研互斥选项清单.json"
 
 SPECIALIZATION_FILES = {
     "air": ("air_projects.txt", "radar_projects.txt"),
@@ -61,7 +63,9 @@ COUNTRY_BUFF_KEYS = {
     "set_technology",
     "add_equipment_production",
 }
-# Project/special-project-context effects: NOT portable to decision/event scope.
+# Project/special-project-context effects: NOT directly portable to
+# decision/event scope, but reworkable (equipment_bonus -> add_equipment_bonus
+# with a unique name; enable_equipment_modules works in country scope).
 PROJECT_BUFF_KEYS = {
     "equipment_bonus",
     "enable_equipment_modules",
@@ -226,6 +230,12 @@ class ChoiceOption:
         """Has at least one COUNTRY-scope buff (usable in event options)."""
         return bool(self.buff_kinds & COUNTRY_BUFF_KEYS)
 
+    @property
+    def replicable(self) -> bool:
+        """Has at least one project-context buff that can be reworked into a
+        country-scope event option (equipment_bonus/enable_equipment_modules)."""
+        return bool(self.buff_kinds & PROJECT_BUFF_KEYS)
+
 
 def has_block(block: Block, key: str) -> bool:
     return any(
@@ -334,49 +344,45 @@ def is_selectable_buff(group: ChoiceGroup) -> bool:
     return any(option.portable for option in group.options)
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--vanilla",
-        type=Path,
-        help="HOI4 原版根目录；省略时读取 HOI4_VANILLA_PATH 或探测已知盘符",
-    )
-    parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
-    parser.add_argument("--json", type=Path, default=DEFAULT_JSON)
-    args = parser.parse_args()
+def is_replicable_buff(group: ChoiceGroup) -> bool:
+    """A real player choice whose only buff kinds are project-context keys
+    (equipment_bonus / enable_equipment_modules) that can be reworked into
+    country-scope event options.
 
-    vanilla_root = resolve_vanilla_path(args.vanilla)
-    project_dir = vanilla_root / "common" / "special_projects" / "projects"
-    all_groups: list[ChoiceGroup] = []
-    for specialization, filenames in SPECIALIZATION_FILES.items():
-        for filename in filenames:
-            path = project_dir / filename
-            if not path.exists():
-                print(f"SKIP missing {path}")
-                continue
-            all_groups.extend(analyze_file(path, specialization))
+    The v2.6 pass excluded these groups because their effects live in the
+    project scope; v2.8 reworks equipment_bonus into add_equipment_bonus with
+    a unique name so the mutually exclusive choices are no longer silently
+    lost by complete_special_project.
+    """
+    if len(group.options) < 2:
+        return False
+    kinds: set[str] = set()
+    for option in group.options:
+        kinds |= option.buff_kinds
+    return bool(kinds) and kinds <= PROJECT_BUFF_KEYS
 
-    selectable = [group for group in all_groups if is_selectable_buff(group)]
 
+def _emit_inventory(
+    groups: list[ChoiceGroup],
+    report_path: Path,
+    json_path: Path,
+    title: str,
+    intro: list[str],
+) -> None:
     by_spec: dict[str, list[ChoiceGroup]] = defaultdict(list)
-    for group in selectable:
+    for group in groups:
         by_spec[group.specialization].append(group)
 
-    lines: list[str] = []
-    lines.append("# v2.6 特殊科研互斥选项清单（原版导出·可选 buff）")
-    lines.append("")
-    lines.append("> 本文件由 `tools/analyze_special_project_choices.py` 自动生成，")
-    lines.append("> 输入为本机原版 `common/special_projects/projects/*_projects.txt`。")
-    lines.append("> 仅统计 **可作为事件选项移植** 的互斥 buff 组：至少 2 个选项，")
-    lines.append("> 且至少 1 个选项含国家作用域 buff（装备加成/研究加成/直接研究/直接科技/免费装备）。")
+    lines: list[str] = [f"# {title}", ""]
+    lines.extend(intro)
     lines.append("")
     for specialization in ("air", "land", "naval", "nuclear", "rocket"):
-        groups = by_spec.get(specialization, [])
+        spec_groups = by_spec.get(specialization, [])
         lines.append(f"## {specialization.upper()}")
         lines.append("")
-        lines.append(f"共 {len(groups)} 个可选 buff 组。")
+        lines.append(f"共 {len(spec_groups)} 个可选 buff 组。")
         lines.append("")
-        for group in groups:
+        for group in spec_groups:
             lines.append(f"### {group.project} — {group.reward_token}")
             lines.append("")
             default_note = (
@@ -399,9 +405,9 @@ def main() -> int:
             lines.append("")
 
     report_text = "\n".join(lines) + "\n"
-    args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text(report_text, encoding="utf-8")
-    print(f"REPORT: {args.report}")
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(report_text, encoding="utf-8")
+    print(f"REPORT: {report_path}")
 
     payload = [
         {
@@ -415,19 +421,78 @@ def main() -> int:
                     "default": o.is_default,
                     "buff_kinds": sorted(o.buff_kinds),
                     "portable": o.portable,
+                    "replicable": o.replicable,
                     "effect": o.effect_text,
                 }
                 for o in g.options
             ],
         }
-        for g in selectable
+        for g in groups
     ]
-    args.json.write_text(
+    json_path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    print(f"JSON: {args.json}")
-    print(f"TOTAL rewards: {len(all_groups)}, selectable buff groups: {len(selectable)}")
+    print(f"JSON: {json_path}")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--vanilla",
+        type=Path,
+        help="HOI4 原版根目录；省略时读取 HOI4_VANILLA_PATH 或探测已知盘符",
+    )
+    parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--json", type=Path, default=DEFAULT_JSON)
+    parser.add_argument("--report-v28", type=Path, default=DEFAULT_REPORT_V28)
+    parser.add_argument("--json-v28", type=Path, default=DEFAULT_JSON_V28)
+    args = parser.parse_args()
+
+    vanilla_root = resolve_vanilla_path(args.vanilla)
+    project_dir = vanilla_root / "common" / "special_projects" / "projects"
+    all_groups: list[ChoiceGroup] = []
+    for specialization, filenames in SPECIALIZATION_FILES.items():
+        for filename in filenames:
+            path = project_dir / filename
+            if not path.exists():
+                print(f"SKIP missing {path}")
+                continue
+            all_groups.extend(analyze_file(path, specialization))
+
+    selectable = [group for group in all_groups if is_selectable_buff(group)]
+    replicable = [group for group in all_groups if is_replicable_buff(group)]
+
+    _emit_inventory(
+        selectable,
+        args.report,
+        args.json,
+        "v2.6 特殊科研互斥选项清单（原版导出·可选 buff）",
+        [
+            "> 本文件由 `tools/analyze_special_project_choices.py` 自动生成，",
+            "> 输入为本机原版 `common/special_projects/projects/*_projects.txt`。",
+            "> 仅统计 **可作为事件选项移植** 的互斥 buff 组：至少 2 个选项，",
+            "> 且至少 1 个选项含国家作用域 buff（装备加成/研究加成/直接研究/直接科技/免费装备）。",
+        ],
+    )
+    _emit_inventory(
+        replicable,
+        args.report_v28,
+        args.json_v28,
+        "v2.8 特殊科研互斥选项清单（原版导出·可复刻 buff）",
+        [
+            "> 本文件由 `tools/analyze_special_project_choices.py` 自动生成，",
+            "> 输入为本机原版 `common/special_projects/projects/*_projects.txt`。",
+            "> 仅统计 **可复刻为事件选项** 的互斥 buff 组：至少 2 个选项，",
+            "> 且所有 buff 均为项目作用域键（`equipment_bonus`/`enable_equipment_modules`），",
+            "> 由 `generate_special_project_choice_events.py` 具名移植为 `add_equipment_bonus`。",
+        ],
+    )
+    print(
+        f"TOTAL rewards: {len(all_groups)}, "
+        f"selectable buff groups: {len(selectable)}, "
+        f"replicable buff groups: {len(replicable)}"
+    )
     return 0
 
 

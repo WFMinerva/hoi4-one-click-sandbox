@@ -1,0 +1,130 @@
+[
+  {
+    "eid": 54,
+    "specialization": "land",
+    "project": "sp_land_land_cruiser",
+    "reward": "sp_land_reward_land_cruiser_chassis",
+    "flag": "PRC_OCS_sp_land_reward_land_cruiser_chassis_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 55,
+    "specialization": "land",
+    "project": "sp_land_land_cruiser",
+    "reward": "sp_land_reward_land_cruiser_engine",
+    "flag": "PRC_OCS_sp_land_reward_land_cruiser_engine_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 56,
+    "specialization": "land",
+    "project": "sp_land_land_cruiser",
+    "reward": "sp_land_reward_land_cruiser_turret",
+    "flag": "PRC_OCS_sp_land_reward_land_cruiser_turret_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 57,
+    "specialization": "land",
+    "project": "sp_land_land_cruiser",
+    "reward": "sp_land_reward_land_cruiser_track",
+    "flag": "PRC_OCS_sp_land_reward_land_cruiser_track_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 58,
+    "specialization": "land",
+    "project": "sp_land_land_cruiser",
+    "reward": "sp_land_reward_land_cruiser_communication",
+    "flag": "PRC_OCS_sp_land_reward_land_cruiser_communication_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 59,
+    "specialization": "land",
+    "project": "sp_land_land_cruiser",
+    "reward": "sp_land_reward_land_cruiser_assembly",
+    "flag": "PRC_OCS_sp_land_reward_land_cruiser_assembly_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 60,
+    "specialization": "land",
+    "project": "sp_land_land_cruiser",
+    "reward": "sp_land_reward_land_cruiser_suspension",
+    "flag": "PRC_OCS_sp_land_reward_land_cruiser_suspension_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 61,
+    "specialization": "land",
+    "project": "sp_land_land_cruiser",
+    "reward": "sp_land_reward_land_cruiser_ammunition",
+    "flag": "PRC_OCS_sp_land_reward_land_cruiser_ammunition_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 62,
+    "specialization": "land",
+    "project": "sp_land_super_heavy_howitzer",
+    "reward": "sp_land_reward_super_heavy_howitzer_focus_preference",
+    "flag": "PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 63,
+    "specialization": "land",
+    "project": "sp_land_self_propelled_super_heavy_howitzer",
+    "reward": "sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference",
+    "flag": "PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_choice_done",
+    "menu": 48
+  },
+  {
+    "eid": 64,
+    "specialization": "naval",
+    "project": "sp_naval_nuclear_torpedo",
+    "reward": "sp_naval_nuclear_torpedo_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 65,
+    "specialization": "naval",
+    "project": "sp_naval_aip_engine",
+    "reward": "sp_naval_aip_engine_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_aip_engine_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 66,
+    "specialization": "naval",
+    "project": "sp_naval_anechoic_tiles",
+    "reward": "sp_naval_anechoic_tiles_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 67,
+    "specialization": "naval",
+    "project": "sp_naval_proximity_fuze",
+    "reward": "sp_naval_proximity_fuzes_unique_reward_a",
+    "flag": "PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_choice_done",
+    "menu": 51
+  },
+  {
+    "eid": 68,
+    "specialization": "rocket",
+    "project": "sp_rockets_flying_bomb",
+    "reward": "sp_rocket_design_choice_reward",
+    "flag": "PRC_OCS_sp_rocket_design_choice_reward_choice_done",
+    "menu": 52
+  },
+  {
+    "eid": 69,
+    "specialization": "rocket",
+    "project": "sp_rockets_ballistic_missile",
+    "reward": "sp_rocket_guidance_system_choice_reward",
+    "flag": "PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done",
+    "menu": 52
+  }
+]

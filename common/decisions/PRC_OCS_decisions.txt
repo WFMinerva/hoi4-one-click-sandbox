@@ -427,6 +427,10 @@ PRC_OCS_category = {
 				NOT = { has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done }
 				NOT = { has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done }
 				NOT = { has_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_aip_engine_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_choice_done }
 			}
 		}
 		complete_effect = { country_event = { id = PRC_OCS.18 } }
@@ -451,6 +455,16 @@ PRC_OCS_category = {
 				NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done }
 				NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done }
 				NOT = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_chassis_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_engine_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_turret_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_track_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_communication_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_assembly_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_suspension_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_ammunition_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_choice_done }
 			}
 		}
 		complete_effect = { country_event = { id = PRC_OCS.48 } }
@@ -599,6 +613,30 @@ PRC_OCS_category = {
 			}
 		}
 		complete_effect = { PRC_OCS_complete_rocket_special_projects_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.8 choose-your-bonus (rocket): after the one-click rocket completion,
+	# the player picks the flying-bomb design and ballistic-missile guidance
+	# prototype rewards.
+	PRC_OCS_choose_rocket_special_project_bonuses = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_rocket_special_project_choices_done }
+		}
+		available = {
+			is_ai = no
+			has_country_flag = PRC_OCS_rocket_special_projects_completed
+			OR = {
+				NOT = { has_country_flag = PRC_OCS_sp_rocket_design_choice_reward_choice_done }
+				NOT = { has_country_flag = PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done }
+			}
+		}
+		complete_effect = { country_event = { id = PRC_OCS.52 } }
 		ai_will_do = { factor = 0 }
 	}
 

@@ -1,4 +1,4 @@
-# v2.6-test2 extended choose-your-bonus events (generated).
+# choose-your-bonus group events 22-47 (v2.6) + 54-69 (v2.8) — generated.
 country_event = {
  id = PRC_OCS.22
  title = PRC_OCS.22.t
@@ -1829,9 +1829,10 @@ country_event = {
 
  option = {
   name = PRC_OCS.43.a
-  custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_a
+  custom_effect_tooltip = PRC_OCS.43.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_a
    hidden_effect = {
    	set_technology = {
    		sp_naval_support_ships_pick_a = 1
@@ -1843,9 +1844,10 @@ country_event = {
  }
  option = {
   name = PRC_OCS.43.b
-  custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_b
+  custom_effect_tooltip = PRC_OCS.43.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_b
    hidden_effect = {
    	set_technology = {
    		sp_naval_support_ships_pick_b = 1
@@ -1857,9 +1859,10 @@ country_event = {
  }
  option = {
   name = PRC_OCS.43.c
-  custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_c
+  custom_effect_tooltip = PRC_OCS.43.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_c
    hidden_effect = {
    	set_technology = {
    		sp_naval_support_ships_pick_c = 1
@@ -1880,9 +1883,10 @@ country_event = {
 
  option = {
   name = PRC_OCS.44.a
-  custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_a
+  custom_effect_tooltip = PRC_OCS.44.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_a
    hidden_effect = {
    	set_technology = {
    		sp_naval_repair_ships_pick_a = 1
@@ -1894,9 +1898,10 @@ country_event = {
  }
  option = {
   name = PRC_OCS.44.b
-  custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_b
+  custom_effect_tooltip = PRC_OCS.44.b_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_b
    hidden_effect = {
    	set_technology = {
    		sp_naval_repair_ships_pick_b = 1
@@ -1908,9 +1913,10 @@ country_event = {
  }
  option = {
   name = PRC_OCS.44.c
-  custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_c
+  custom_effect_tooltip = PRC_OCS.44.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_c
    hidden_effect = {
    	set_technology = {
    		sp_naval_repair_ships_pick_c = 1
@@ -1931,9 +1937,10 @@ country_event = {
 
  option = {
   name = PRC_OCS.45.a
-  custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_a
+  custom_effect_tooltip = PRC_OCS.45.a_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_a
    hidden_effect = {
    	set_technology = {
    		sp_naval_underway_replenishment_pick_a = 1
@@ -1953,9 +1960,10 @@ country_event = {
  }
  option = {
   name = PRC_OCS.45.c
-  custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_b
+  custom_effect_tooltip = PRC_OCS.45.c_tt
   hidden_effect = {
    set_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
+   custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_b
    hidden_effect = {
    	set_technology = {
    		sp_naval_underway_replenishment_pick_b = 1
@@ -2062,7 +2070,819 @@ country_event = {
   country_event = { id = PRC_OCS.49 }
  }
 }
-# === v2.6 dispatch menus (48-51) appended by finish_choice_events.py ===
+
+country_event = {
+ id = PRC_OCS.54
+ title = PRC_OCS.54.t
+ desc = PRC_OCS.54.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.54.a
+  custom_effect_tooltip = PRC_OCS.54.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_chassis_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_chassis_sp_land_reward_option_land_cruiser_chassis_redesign_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			reliability = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.54.b
+  custom_effect_tooltip = PRC_OCS.54.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_chassis_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_chassis_sp_land_reward_option_land_cruiser_chassis_reinforce_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			reliability = -0.03
+   			armor_value = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.54.c
+  custom_effect_tooltip = PRC_OCS.54.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_chassis_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_chassis_sp_land_reward_option_land_cruiser_chassis_lighter_materials_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			armor_value = -0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.55
+ title = PRC_OCS.55.t
+ desc = PRC_OCS.55.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.55.a
+  custom_effect_tooltip = PRC_OCS.55.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_engine_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.55.b
+  custom_effect_tooltip = PRC_OCS.55.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_engine_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_engine_sp_land_reward_option_land_cruiser_engine_modify_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			maximum_speed = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.55.c
+  custom_effect_tooltip = PRC_OCS.55.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_engine_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_engine_sp_land_reward_option_land_cruiser_engine_new_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			reliability = 0.05
+   			maximum_speed = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.56
+ title = PRC_OCS.56.t
+ desc = PRC_OCS.56.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.56.a
+  custom_effect_tooltip = PRC_OCS.56.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_turret_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.56.b
+  custom_effect_tooltip = PRC_OCS.56.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_turret_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_turret_sp_land_reward_option_land_cruiser_turret_simplify_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			breakthrough = -0.03
+   			build_cost_ic = -0.02
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.56.c
+  custom_effect_tooltip = PRC_OCS.56.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_turret_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_turret_sp_land_reward_option_land_cruiser_turret_redesign_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			breakthrough = 0.03
+   			maximum_speed = 0.03
+   			build_cost_ic = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.57
+ title = PRC_OCS.57.t
+ desc = PRC_OCS.57.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.57.a
+  custom_effect_tooltip = PRC_OCS.57.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_track_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.57.b
+  custom_effect_tooltip = PRC_OCS.57.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_track_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_track_sp_land_reward_option_land_cruiser_track_reduce_armor_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			armor_value = -0.03
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.57.c
+  custom_effect_tooltip = PRC_OCS.57.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_track_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_track_sp_land_reward_option_land_cruiser_track_reinforce_track_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			reliability = 0.05
+   			build_cost_ic = 0.03
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.58
+ title = PRC_OCS.58.t
+ desc = PRC_OCS.58.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.58.a
+  custom_effect_tooltip = PRC_OCS.58.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_communication_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.58.b
+  custom_effect_tooltip = PRC_OCS.58.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_communication_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_communication_sp_land_reward_option_land_cruiser_communication_new_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			breakthrough = 0.03
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.58.c
+  custom_effect_tooltip = PRC_OCS.58.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_communication_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_communication_sp_land_reward_option_land_cruiser_communication_redesign_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			breakthrough = 0.03
+   			defense = 0.03
+   			build_cost_ic = 0.02
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.59
+ title = PRC_OCS.59.t
+ desc = PRC_OCS.59.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.59.a
+  custom_effect_tooltip = PRC_OCS.59.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_assembly_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_assembly_sp_land_reward_option_land_cruiser_assembly_all_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			reliability = 0.07
+   			build_cost_ic = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.59.b
+  custom_effect_tooltip = PRC_OCS.59.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_assembly_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_assembly_sp_land_reward_option_land_cruiser_assembly_key_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			reliability = 0.03
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.60
+ title = PRC_OCS.60.t
+ desc = PRC_OCS.60.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.60.a
+  custom_effect_tooltip = PRC_OCS.60.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_suspension_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_suspension_sp_land_reward_option_land_cruiser_suspension_full_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			maximum_speed = 0.03
+   			reliability = 0.03
+   			build_cost_ic = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.60.b
+  custom_effect_tooltip = PRC_OCS.60.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_suspension_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_suspension_sp_land_reward_option_land_cruiser_suspension_rear_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			reliability = 0.03
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.61
+ title = PRC_OCS.61.t
+ desc = PRC_OCS.61.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.61.a
+  custom_effect_tooltip = PRC_OCS.61.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_ammunition_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.61.b
+  custom_effect_tooltip = PRC_OCS.61.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_ammunition_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_ammunition_sp_land_reward_option_land_cruiser_ammunition_simplified_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			breakthrough = 0.03
+   			build_cost_ic = 0.02
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.61.c
+  custom_effect_tooltip = PRC_OCS.61.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_land_cruiser_ammunition_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_land_cruiser_ammunition_sp_land_reward_option_land_cruiser_ammunition_new_bonus
+   	bonus = {
+   		land_cruiser_chassis_1 = {
+   			breakthrough = 0.05
+   			reliability = 0.03
+   			build_cost_ic = 0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.62
+ title = PRC_OCS.62.t
+ desc = PRC_OCS.62.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.62.a
+  custom_effect_tooltip = PRC_OCS.62.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.62.b
+  custom_effect_tooltip = PRC_OCS.62.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_sp_land_reward_option_super_heavy_howitzer_focus_preference_firepower_bonus
+   	bonus = {
+   		super_heavy_artillery_equipment_1 = {
+   			build_cost_ic = 0.1
+   			soft_attack = 0.05
+   			additional_collateral_damage = 0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.62.c
+  custom_effect_tooltip = PRC_OCS.62.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_sp_land_reward_option_super_heavy_howitzer_focus_preference_production_bonus
+   	bonus = {
+   		super_heavy_artillery_equipment_1 = {
+   			build_cost_ic = -0.15
+   			soft_attack = -0.05
+   			additional_collateral_damage = -0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.63
+ title = PRC_OCS.63.t
+ desc = PRC_OCS.63.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.63.a
+  custom_effect_tooltip = PRC_OCS.63.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_choice_done
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.63.b
+  custom_effect_tooltip = PRC_OCS.63.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_sp_land_reward_option_self_propelled_super_heavy_howitzer_focus_preference_firepower_bonus
+   	bonus = {
+   		self_propelled_super_heavy_artillery_equipment_1 = {
+   			build_cost_ic = 0.1
+   			soft_attack = 0.05
+   			additional_collateral_damage = 0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+ option = {
+  name = PRC_OCS.63.c
+  custom_effect_tooltip = PRC_OCS.63.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_sp_land_reward_option_self_propelled_super_heavy_howitzer_focus_preference_production_bonus
+   	bonus = {
+   		self_propelled_super_heavy_artillery_equipment_1 = {
+   			build_cost_ic = -0.15
+   			soft_attack = -0.05
+   			additional_collateral_damage = -0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.48 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.64
+ title = PRC_OCS.64.t
+ desc = PRC_OCS.64.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.64.a
+  custom_effect_tooltip = PRC_OCS.64.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_sp_naval_nuclear_torpedo_preference_a_bonus
+   	bonus = {
+   		ship_hull_submarine = {
+   			naval_torpedo_hit_chance_factor = 0.02
+   			torpedo_attack = 0.1
+   			reliability = -0.1
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.64.b
+  custom_effect_tooltip = PRC_OCS.64.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_sp_naval_nuclear_torpedo_preference_b_bonus
+   	bonus = {
+   		ship_hull_submarine = {
+   			reliability = 0.1
+   			build_cost_ic = 0.1
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.65
+ title = PRC_OCS.65.t
+ desc = PRC_OCS.65.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.65.a
+  custom_effect_tooltip = PRC_OCS.65.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_aip_engine_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_aip_engine_unique_reward_a_sp_naval_aip_engine_preference_a_bonus
+   	bonus = {
+   		ship_hull_submarine = {
+   			sub_visibility = -0.05
+   			fuel_consumption = 0.1
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.65.b
+  custom_effect_tooltip = PRC_OCS.65.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_aip_engine_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_aip_engine_unique_reward_a_sp_naval_aip_engine_preference_b_bonus
+   	bonus = {
+   		ship_hull_submarine = {
+   			naval_speed = 0.1
+   			fuel_consumption = 0.1
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.65.c
+  custom_effect_tooltip = PRC_OCS.65.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_aip_engine_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_aip_engine_unique_reward_a_sp_naval_aip_engine_preference_c_bonus
+   	bonus = {
+   		ship_hull_submarine = {
+   			fuel_consumption = -0.05
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.66
+ title = PRC_OCS.66.t
+ desc = PRC_OCS.66.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.66.a
+  custom_effect_tooltip = PRC_OCS.66.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_sp_naval_anechoic_tiles_preference_a_bonus
+   	bonus = {
+   		ship_hull_submarine = {
+   			build_cost_ic = 0.05
+   			surface_detection = 0.1
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.66.b
+  custom_effect_tooltip = PRC_OCS.66.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_sp_naval_anechoic_tiles_preference_b_bonus
+   	bonus = {
+   		ship_hull_submarine = {
+   			build_cost_ic = 0.1
+   			sub_visibility = -0.05
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.66.c
+  custom_effect_tooltip = PRC_OCS.66.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_sp_naval_anechoic_tiles_preference_c_bonus
+   	bonus = {
+   		ship_hull_submarine = {
+   			build_cost_ic = -0.05
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.67
+ title = PRC_OCS.67.t
+ desc = PRC_OCS.67.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.67.a
+  custom_effect_tooltip = PRC_OCS.67.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_sp_naval_proximity_fuzes_preference_a_bonus
+   	bonus = {
+   		anti_air_equipment = {
+   			build_cost_ic = -0.05
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+ option = {
+  name = PRC_OCS.67.b
+  custom_effect_tooltip = PRC_OCS.67.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_sp_naval_proximity_fuzes_preference_b_bonus
+   	bonus = {
+   		anti_air_equipment = {
+   			air_attack = 0.15
+   			build_cost_ic = 0.05
+   			instant = yes
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.51 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.68
+ title = PRC_OCS.68.t
+ desc = PRC_OCS.68.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.68.a
+  custom_effect_tooltip = PRC_OCS.68.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_rocket_design_choice_reward_choice_done
+  }
+  country_event = { id = PRC_OCS.52 }
+ }
+ option = {
+  name = PRC_OCS.68.b
+  custom_effect_tooltip = PRC_OCS.68.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_rocket_design_choice_reward_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_rocket_design_choice_reward_sp_rocket_design_choice_reward_range_bonus
+   	bonus = {
+   		guided_missile_equipment = {
+   			maximum_speed = 0.05
+   			air_range = 0.1
+   			air_bombing = -0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.52 }
+ }
+ option = {
+  name = PRC_OCS.68.c
+  custom_effect_tooltip = PRC_OCS.68.c_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_rocket_design_choice_reward_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_rocket_design_choice_reward_sp_rocket_design_choice_reward_payload_bonus
+   	bonus = {
+   		guided_missile_equipment = {
+   			air_bombing = 0.15
+   			air_range = -0.05
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.52 }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.69
+ title = PRC_OCS.69.t
+ desc = PRC_OCS.69.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.69.a
+  custom_effect_tooltip = PRC_OCS.69.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_rocket_guidance_system_choice_reward_sp_rocket_guidance_system_choice_reward_mechanical_bonus
+   	bonus = {
+   		ballistic_missile_equipment = {
+   			build_cost_ic = -0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.52 }
+ }
+ option = {
+  name = PRC_OCS.69.b
+  custom_effect_tooltip = PRC_OCS.69.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done
+   add_equipment_bonus = {
+   	name = PRC_OCS_sp_rocket_guidance_system_choice_reward_sp_rocket_guidance_system_choice_reward_radio_bonus
+   	bonus = {
+   		ballistic_missile_equipment = {
+   			air_bombing = 0.05
+   			build_cost_ic = 0.1
+   		}
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.52 }
+ }
+}
+# === v2.6/v2.8 dispatch menus (48-52) appended by finish_choice_events.py ===
 
 country_event = {
  id = PRC_OCS.48
@@ -2093,11 +2913,91 @@ country_event = {
   country_event = { id = PRC_OCS.28 }
  }
  option = {
+  name = PRC_OCS.48.e
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_chassis_choice_done }
+  }
+  country_event = { id = PRC_OCS.54 }
+ }
+ option = {
+  name = PRC_OCS.48.f
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_engine_choice_done }
+  }
+  country_event = { id = PRC_OCS.55 }
+ }
+ option = {
+  name = PRC_OCS.48.g
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_turret_choice_done }
+  }
+  country_event = { id = PRC_OCS.56 }
+ }
+ option = {
+  name = PRC_OCS.48.h
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_track_choice_done }
+  }
+  country_event = { id = PRC_OCS.57 }
+ }
+ option = {
+  name = PRC_OCS.48.i
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_communication_choice_done }
+  }
+  country_event = { id = PRC_OCS.58 }
+ }
+ option = {
+  name = PRC_OCS.48.j
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_assembly_choice_done }
+  }
+  country_event = { id = PRC_OCS.59 }
+ }
+ option = {
+  name = PRC_OCS.48.k
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_suspension_choice_done }
+  }
+  country_event = { id = PRC_OCS.60 }
+ }
+ option = {
+  name = PRC_OCS.48.l
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_ammunition_choice_done }
+  }
+  country_event = { id = PRC_OCS.61 }
+ }
+ option = {
+  name = PRC_OCS.48.m
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_choice_done }
+  }
+  country_event = { id = PRC_OCS.62 }
+ }
+ option = {
+  name = PRC_OCS.48.n
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_choice_done }
+  }
+  country_event = { id = PRC_OCS.63 }
+ }
+ option = {
   name = PRC_OCS.48.z
   trigger = {
    has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done
    has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done
    has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_chassis_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_engine_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_turret_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_track_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_communication_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_assembly_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_suspension_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_ammunition_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_choice_done
+   has_country_flag = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_choice_done
   }
   hidden_effect = {
    set_country_flag = PRC_OCS_land_special_project_choices_done
@@ -2314,6 +3214,34 @@ country_event = {
   country_event = { id = PRC_OCS.45 }
  }
  option = {
+  name = PRC_OCS.51.s
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.64 }
+ }
+ option = {
+  name = PRC_OCS.51.u
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_aip_engine_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.65 }
+ }
+ option = {
+  name = PRC_OCS.51.v
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.66 }
+ }
+ option = {
+  name = PRC_OCS.51.w
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_choice_done }
+  }
+  country_event = { id = PRC_OCS.67 }
+ }
+ option = {
   name = PRC_OCS.51.z
   trigger = {
    has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done
@@ -2333,9 +3261,46 @@ country_event = {
    has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done
    has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done
    has_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_aip_engine_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_choice_done
+   has_country_flag = PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_choice_done
   }
   hidden_effect = {
    set_country_flag = PRC_OCS_naval_special_project_choices_done
+  }
+ }
+}
+
+country_event = {
+ id = PRC_OCS.52
+ title = PRC_OCS.52.t
+ desc = PRC_OCS.52.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.52.a
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_rocket_design_choice_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.68 }
+ }
+ option = {
+  name = PRC_OCS.52.b
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.69 }
+ }
+ option = {
+  name = PRC_OCS.52.z
+  trigger = {
+   has_country_flag = PRC_OCS_sp_rocket_design_choice_reward_choice_done
+   has_country_flag = PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done
+  }
+  hidden_effect = {
+   set_country_flag = PRC_OCS_rocket_special_project_choices_done
   }
  }
 }
