@@ -9,6 +9,7 @@ import unittest
 from pathlib import Path
 
 from tools import build_release
+from tools import generate_universal_mio_effect
 from tools import hoi4_paths
 from tools import publish_github_release
 from tools import publish_workshop
@@ -519,7 +520,7 @@ class ValidatorRegressionTests(unittest.TestCase):
                 [traits[-1]],
             )
         self.assertEqual(len(observed_companies), 444)
-        self.assertEqual(completed_trait_count, 4945)
+        self.assertEqual(completed_trait_count, 4944)
         for prefix, expected in expected_company_counts.items():
             self.assertEqual(company_counts_by_prefix.get(prefix), expected)
         for prefix, expected in expected_trait_counts.items():
@@ -644,6 +645,33 @@ class ValidatorRegressionTests(unittest.TestCase):
         self.assertEqual(
             validator.direct_scalars(effect, "PRC_OCS_maximize_mios_effect"),
             ["yes"],
+        )
+
+    def test_v28_mio_trait_strength_contract(self) -> None:
+        """v2.8 F7: trait_strength sums absolute equipment+production bonus
+        magnitude and ignores organization-internal modifiers and non-numerics."""
+        data = {
+            "equipment_bonus": [("soft_attack", "0.3"), ("reliability", "-0.2")],
+            "production_bonus": [("production_cost_factor", "-0.1")],
+            "organization_modifier": [
+                ("military_industrial_organization_funds_gain", "0.5")
+            ],
+            "all_parents": [("bare", "parent_a")],
+        }
+        self.assertAlmostEqual(
+            generate_universal_mio_effect.trait_strength(data), 0.6
+        )
+        self.assertEqual(
+            generate_universal_mio_effect.trait_strength(
+                {"organization_modifier": [("x", "1.0")]}
+            ),
+            0.0,
+        )
+        self.assertEqual(
+            generate_universal_mio_effect.trait_strength(
+                {"equipment_bonus": [("a", "var:y")]}
+            ),
+            0.0,
         )
 
     def test_evolution_dependency_and_variant_contract(self) -> None:

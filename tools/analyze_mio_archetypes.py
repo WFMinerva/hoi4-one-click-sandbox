@@ -210,9 +210,6 @@ def trait_from_block(block: Block, variables: dict[str, str]) -> tuple[str, dict
             "available",
             "on_complete",
             "ai_will_do",
-            "equipment_bonus",
-            "production_bonus",
-            "organization_modifier",
             "special_project_completion_bonus",
         }:
             continue

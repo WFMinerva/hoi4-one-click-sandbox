@@ -144,6 +144,32 @@ def prune(selected: set[str], traits: dict[str, dict]) -> set[str]:
     return selected
 
 
+def _numeric_strength(value: object) -> float:
+    if isinstance(value, (int, float)):
+        return abs(float(value))
+    if isinstance(value, str):
+        try:
+            return abs(float(value))
+        except ValueError:
+            return 0.0
+    return 0.0
+
+
+def trait_strength(data: dict) -> float:
+    """Sum the absolute numeric bonus magnitude of a trait's equipment and
+    production bonuses. Direction is ignored; organization-internal modifiers
+    and non-numeric entries are not counted."""
+    total = 0.0
+    for key in ("equipment_bonus", "production_bonus"):
+        entries = data.get(key)
+        if not isinstance(entries, list):
+            continue
+        for entry in entries:
+            if isinstance(entry, tuple) and len(entry) == 2 and entry[0] != "bare":
+                total += _numeric_strength(entry[1])
+    return total
+
+
 def maximum_legal_route(traits: dict[str, dict]) -> set[str]:
     candidates = set(traits)
     pairs = set()
@@ -154,15 +180,28 @@ def maximum_legal_route(traits: dict[str, dict]) -> set[str]:
     conflict_nodes = sorted({token for pair in pairs for token in pair})
     always = candidates - set(conflict_nodes)
     best = set()
+    best_score = None
     best_tie = None
     for mask in range(1 << len(conflict_nodes)):
         chosen = {token for index, token in enumerate(conflict_nodes) if mask & (1 << index)}
         if any(left in chosen and right in chosen for left, right in pairs):
             continue
         selected = prune(always | chosen, traits)
+        score = sum(trait_strength(traits[token]) for token in selected)
         tie = tuple(sorted(selected))
-        if len(selected) > len(best) or (len(selected) == len(best) and (best_tie is None or tie < best_tie)):
+        if (
+            best_score is None
+            or score > best_score
+            or (
+                score == best_score
+                and (
+                    len(selected) > len(best)
+                    or (len(selected) == len(best) and (best_tie is None or tie < best_tie))
+                )
+            )
+        ):
             best = selected
+            best_score = score
             best_tie = tie
     return best
 
