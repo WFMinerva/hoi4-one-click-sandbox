@@ -1186,15 +1186,15 @@ class ValidatorRegressionTests(unittest.TestCase):
         self.assertEqual(len(set(bonus_names)), len(bonus_names))
 
     def test_v28_cruiser_submarine_mtg_contract(self) -> None:
-        """v2.8 N1: event 19 unlocks the MtG modules (extra fuel tank / light
-        battery) and keeps the legacy equipment bonus only without Man the
-        Guns."""
+        """v2.8 N1: event 19 grants the cruiser-submarines technology to unlock
+        the extra fuel-tank module under Man the Guns, keeps the range bonus
+        without it, and grants the torpedo bonus unconditionally for option b
+        (the light-battery module has no grantable technology)."""
         naval_text = validator.read_utf8(
             validator.ROOT / "events" / "PRC_OCS_choice_events_naval.txt"
         )
-        self.assertIn("enable_equipment_modules = {", naval_text)
-        self.assertIn("ship_extra_fuel_tank", naval_text)
-        self.assertIn("ship_light_battery_sub", naval_text)
+        self.assertNotIn("enable_equipment_modules", naval_text)
+        self.assertIn("set_technology = { cruiser_submarines = 1 }", naval_text)
         self.assertIn('has_dlc = "Man the Guns"', naval_text)
         self.assertIn("sp_cruiser_submarine_eq_bonus_range", naval_text)
         self.assertIn("sp_cruiser_submarine_eq_bonus_raiding", naval_text)
