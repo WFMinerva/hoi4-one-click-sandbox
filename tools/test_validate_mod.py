@@ -1691,7 +1691,7 @@ class ValidatorRegressionTests(unittest.TestCase):
             .read_text(encoding="utf-8")
         self.assertIn("PRC_OCS_selftest_run_suite = {", text)
         # 7 固定用例 + 43 选择组用例（26＋17，由两份映射 JSON 派生，不写死）
-        cases = sorted(set(re.findall(r"\[OCS_TEST\]\s+(?:PASS|FAIL)\s+([A-Za-z0-9_.\-]+)", text)))
+        cases = sorted(set(re.findall(r"\bOCS_TEST\s+(?:PASS|FAIL)\s+([A-Za-z0-9_.\-]+)", text)))
         self.assertEqual(len(cases), 50)
         for name in ("init_flag", "skull_idea", "mio_exists", "mio_size_max",
                      "jet_polarity", "n1_cruiser_submarine", "b6_heavy_water"):

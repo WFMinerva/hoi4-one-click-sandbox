@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """生成游戏内自检套件 effects 文件（A 立项「实机监测机制」步骤3 交付）。
 
-用例清单唯一真源＝本文件生成产物中的 `[OCS_TEST] PASS/FAIL <case>` 字面量
+用例清单唯一真源＝本文件生成产物中的 `OCS_TEST PASS/FAIL <case>` 字面量
 （K3 第 2 轮附记）；特殊科研选择组用例由两份映射 JSON 派生，不写死数字。
 
 生成产物：common/scripted_effects/PRC_OCS_selftest_effects.txt（UTF-8 无 BOM，
@@ -34,40 +34,40 @@ FIXED_BLOCKS = """\
 PRC_OCS_selftest_init_flag = {
     if = {
         limit = { has_country_flag = PRC_OCS_initialized }
-        log = "[OCS_TEST] PASS init_flag"
+        log = "OCS_TEST PASS init_flag"
     }
     else = {
-        log = "[OCS_TEST] FAIL init_flag"
+        log = "OCS_TEST FAIL init_flag"
     }
 }
 
 PRC_OCS_selftest_skull_idea = {
     if = {
         limit = { has_idea = PRC_OCS_skull_divisions }
-        log = "[OCS_TEST] PASS skull_idea"
+        log = "OCS_TEST PASS skull_idea"
     }
     else = {
-        log = "[OCS_TEST] FAIL skull_idea"
+        log = "OCS_TEST FAIL skull_idea"
     }
 }
 
 PRC_OCS_selftest_mio_exists = {
     if = {
         limit = { any_military_industrial_organization = { has_mio_size > 0 } }
-        log = "[OCS_TEST] PASS mio_exists"
+        log = "OCS_TEST PASS mio_exists"
     }
     else = {
-        log = "[OCS_TEST] FAIL mio_exists"
+        log = "OCS_TEST FAIL mio_exists"
     }
 }
 
 PRC_OCS_selftest_mio_size_max = {
     if = {
         limit = { any_military_industrial_organization = { has_mio_size < 20 } }
-        log = "[OCS_TEST] FAIL mio_size_max"
+        log = "OCS_TEST FAIL mio_size_max"
     }
     else = {
-        log = "[OCS_TEST] PASS mio_size_max"
+        log = "OCS_TEST PASS mio_size_max"
     }
 }
 
@@ -76,19 +76,19 @@ PRC_OCS_selftest_jet_polarity = {
         limit = { has_dlc = "By Blood Alone" }
         if = {
             limit = { NOT = { has_tech = jet_fighter1 } }
-            log = "[OCS_TEST] PASS jet_polarity"
+            log = "OCS_TEST PASS jet_polarity"
         }
         else = {
-            log = "[OCS_TEST] FAIL jet_polarity"
+            log = "OCS_TEST FAIL jet_polarity"
         }
     }
     else = {
         if = {
             limit = { has_tech = jet_fighter1 }
-            log = "[OCS_TEST] PASS jet_polarity"
+            log = "OCS_TEST PASS jet_polarity"
         }
         else = {
-            log = "[OCS_TEST] FAIL jet_polarity"
+            log = "OCS_TEST FAIL jet_polarity"
         }
     }
 }
@@ -101,14 +101,14 @@ PRC_OCS_selftest_n1_cruiser_submarine = {
         limit = { has_dlc = "Man the Guns" }
         if = {
             limit = { has_tech = cruiser_submarines }
-            log = "[OCS_TEST] PASS n1_cruiser_submarine"
+            log = "OCS_TEST PASS n1_cruiser_submarine"
         }
         else = {
-            log = "[OCS_TEST] FAIL n1_cruiser_submarine"
+            log = "OCS_TEST FAIL n1_cruiser_submarine"
         }
     }
     else = {
-        log = "[OCS_TEST] PASS n1_cruiser_submarine"
+        log = "OCS_TEST PASS n1_cruiser_submarine"
     }
 }
 
@@ -120,10 +120,10 @@ PRC_OCS_selftest_b6_heavy_water = {
                 has_tech = nuclear_reactor_heavy_water
             }
         }
-        log = "[OCS_TEST] PASS b6_heavy_water"
+        log = "OCS_TEST PASS b6_heavy_water"
     }
     else = {
-        log = "[OCS_TEST] FAIL b6_heavy_water"
+        log = "OCS_TEST FAIL b6_heavy_water"
     }
 }
 """
@@ -132,27 +132,27 @@ HEADER = """# 实机监测机制·游戏内自检套件（生成产物，勿手�
 #
 # 用途：维护者按固定序列操作完毕后，控制台执行
 #   effect PRC PRC_OCS_selftest_run_suite
-# （或 event PRC_OCS_selftest.1 PRC）在 game.log 输出 [OCS_TEST] PASS/FAIL <case>。
+# （或 event PRC_OCS_selftest.1 PRC）在 game.log 输出 OCS_TEST PASS/FAIL <case>。
 # 判读：tools/check_logs.py --case-source 本文件（用例清单唯一真源）。
 # 固定序列见 tools/generate_selftest_effects.py 头注释与 docs/testing/实机回归归档制度.md。
 # 门控：无决议入口、无 on_action 触发，仅控制台可达；玩家不可见、AI 不可用（门一/门二结论）。
 # 红线：不重命名既有键；每个 if 单 limit；UTF-8 无 BOM。
 
 PRC_OCS_selftest_run_suite = {
-    log = "[OCS_TEST] BEGIN run_suite"
+    log = "OCS_TEST BEGIN run_suite"
 """
 
 CASE_CALL_TEMPLATE = "    PRC_OCS_selftest_{name} = yes\n"
-SUITE_TAIL = '    log = "[OCS_TEST] END run_suite"\n}\n'
+SUITE_TAIL = '    log = "OCS_TEST END run_suite"\n}\n'
 
 CHOICE_BLOCK_TEMPLATE = """\
 PRC_OCS_selftest_{name} = {{
     if = {{
         limit = {{ has_country_flag = {flag} }}
-        log = "[OCS_TEST] PASS {case}"
+        log = "OCS_TEST PASS {case}"
     }}
     else = {{
-        log = "[OCS_TEST] FAIL {case}"
+        log = "OCS_TEST FAIL {case}"
     }}
 }}
 """

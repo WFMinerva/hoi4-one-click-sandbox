@@ -1,0 +1,65 @@
+[01:24:30][no_game_date][defines.cpp:270]: 4469 defines loaded
+[01:25:09][no_game_date][gamestate.cpp:2841]: Loaded 13414 provinces.
+[01:25:14][no_game_date][gameapplication.cpp:2969]: Resetting game
+[01:25:16][1936.01.01.12][history.cpp:165]: Executing History from -1.1.1.1 to  2.1.1.1
+[01:25:17][1936.01.01.12][history.cpp:165]: Executing History from 2.1.1.1 to  1936.1.1.12
+[01:29:20][1936.01.01.12][frontend.cpp:682]: 
+
+		[[ Launching SINGLEPLAYER-game ]]
+	Start-date: 1936.1.1.12
+
+[01:29:22][1936.01.01.12][ingameidler.cpp:5175]: Start RestoreDeviceObjects
+[01:29:25][1936.01.01.12][ingameidler.cpp:5325]: End RestoreDeviceObjects
+[01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST BEGIN run_suite
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS init_flag
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS skull_idea
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS mio_exists
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS mio_size_max
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS jet_polarity
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS n1_cruiser_submarine
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS b6_heavy_water
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_22
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_23
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_24
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_25
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_26
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_27
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_28
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_29
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_30
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_31
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_32
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_33
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_34
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_35
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_36
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_37
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_38
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_39
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_40
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_41
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_42
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_43
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_44
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_45
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_46
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_47
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_54
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_55
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_56
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_57
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_58
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_59
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_60
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_61
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_62
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_63
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_64
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_65
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_66
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_67
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_68
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_69
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST PASS choice_group_70
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: [01:31:15][1936.01.01.12][effectbase.cpp:1783]: OCS_TEST END run_suite
+[01:31:15][1936.01.01.12][effectbase.cpp:1799]: 

@@ -82,8 +82,8 @@ Write-Host '  2. 载入黄金存档（docs/testing/黄金存档制度.md 登记�
 Write-Host '  3. 按固定序列操作（详见 docs/testing/实机回归归档制度.md）：'
 Write-Host '     一键开局 → 一键骷髅师（7 天窗口内完成后续步骤）→ 一键拉满 MIO 资金与规模 → 空军特殊科研 →'
 Write-Host '     海军特殊科研·巡洋潜艇取 MtG 分支 → 核能菜单「设计选择」取重水 → 全部 43 个选择组逐项点选。'
-Write-Host '  4. 控制台执行自检：effect PRC PRC_OCS_selftest_run_suite（或 event PRC_OCS_selftest.1 PRC）'
-Write-Host '  5. 保存判定档，退出游戏。'
+Write-Host '  4. 控制台执行自检：effect PRC PRC_OCS_selftest_run_suite（或 event PRC_OCS_selftest.1 PRC）；只执行一次（重复执行＝标记翻倍＝本轮无效）。'
+Write-Host '  5. 控制台保存判定档（文件名必须 ASCII，如 save v2.8test5verdict——中文名会保存失败）；退出游戏。'
 Write-Host '  6. 回到本窗口按回车。'
 Read-Host '（完成后按回车继续）' | Out-Null
 
@@ -159,7 +159,9 @@ foreach ($file in Get-ChildItem -LiteralPath $archiveDir -Recurse -File) {
     $hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $file.FullName).Hash.ToLower()
     $hashLines += "$hash  $rel"
 }
-[System.IO.File]::WriteAllLines((Join-Path $archiveDir 'SHA256SUMS.txt'), ($hashLines | Sort-Object))
+# 行尾统一 LF：跨机 `sha256sum -c` 可直接校验（WriteAllLines 在 Windows 会写 CRLF，改用显式 LF 拼接）
+[System.IO.File]::WriteAllText((Join-Path $archiveDir 'SHA256SUMS.txt'),
+    (($hashLines | Sort-Object) -join "`n") + "`n", (New-Object System.Text.UTF8Encoding($false)))
 
 Write-Host ''
 Write-Host '=== 归档完成 ==='

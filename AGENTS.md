@@ -50,7 +50,7 @@ python tools/build_release.py
 
 随后核对生成的 SHA-256，并由维护者实机回归；保存和检查 `error.log`、`game.log`、`setup.log`、`text.log` 及必要截图。`error.log` 0字节表示干净；`game.log` 的 `Conflict Risk` 是已知原版杂音；`text.log` 0字节可以表示未发现文本错误。具体覆盖范围见测试清单。
 
-**实机监测机制（2026-08-19 起）**：实机回归按 `docs/testing/实机回归归档制度.md` 归档（逐项必填、缺证据＝FAIL_NOT_EVIDENCED）；判读统一走 `tools/check_logs.py`（白名单＋`[OCS_TEST]` 标记＋版本绑定），全链路用 `tools/run_regression.ps1` 编排（部署→备份旧日志→提示维护者实机操作→回收→判读→归档）。上列工具存在才生效——若仓库尚无该工具（历史版本），按本节原口径执行即可。
+**实机监测机制（2026-08-19 起）**：实机回归按 `docs/testing/实机回归归档制度.md` 归档（逐项必填、缺证据＝FAIL_NOT_EVIDENCED）；判读统一走 `tools/check_logs.py`（白名单＋`OCS_TEST` 标记＋版本绑定），全链路用 `tools/run_regression.ps1` 编排（部署→备份旧日志→提示维护者实机操作→回收→判读→归档）。上列工具存在才生效——若仓库尚无该工具（历史版本），按本节原口径执行即可。
 
 **发布/构建/上传纪律**：任何发布、构建、工坊上传、GitHub Release 类操作，动手前必须先 `list_files tools/` 并读 `docs/DEVELOPMENT.md` 对应章节，确认仓库是否已有现成脚本（如 `tools/publish_workshop.py`、`tools/build_release.py`）与已验证方法，再决定执行或新建；不得绕开现成工具自造轮子。发布类操作详见 `docs/DEVELOPMENT.md` 的「构建测试包或发布包」「工坊上传」以及本文件经验文档。
 

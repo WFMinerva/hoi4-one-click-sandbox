@@ -44,7 +44,7 @@ python tools/generate_universal_mio_effect.py --check
 每轮实测按 `docs/testing/实机回归归档制度.md` 归档入库（强制可复核，2026-08-19 起）：
 
 - 每轮至少保存并检查：`error.log`、`game.log`、`setup.log`、`text.log`（必须检查并保存；0字节表示未记录文本/本地化错误，可判为干净）以及建设、模板、设计和新增部队截图。
-- 判读统一走 `python tools/check_logs.py --logs <日志目录> --round <版本-轮次>`：白名单过滤＋`[OCS_TEST]` 标记提取＋游戏版本绑定，产出 `result.json`；判定铁律（0 标记＝无效、标记数＝用例清单数且全 PASS）见工具头注释。
+- 判读统一走 `python tools/check_logs.py --logs <日志目录> --round <版本-轮次>`：白名单过滤＋`OCS_TEST` 标记提取＋游戏版本绑定，产出 `result.json`；判定铁律（0 标记＝无效、标记数＝用例清单数且全 PASS）见工具头注释。
 - 归档目录 `docs/testing/<版本-轮次>/`：README＋result.json＋逐项必填清单＋脱敏日志副本＋截图＋SHA256SUMS；逐项必填、缺证据＝`FAIL_NOT_EVIDENCED`，不得只记维护者结论。
 - 固定复现路径与黄金存档见 `docs/testing/黄金存档制度.md`（哈希入仓、二进制不入 git）。
 

@@ -524,5 +524,5 @@
  PRC_OCS.52.b:0 "弹道导弹制导"
  PRC_OCS.52.z:0 "全部剩余原型奖励已选定"
  PRC_OCS_selftest.1.t:0 "一键开局自检"
- PRC_OCS_selftest.1.d:0 "运行游戏内自检套件，结果以 [OCS_TEST] 标记写入 game.log。"
+ PRC_OCS_selftest.1.d:0 "运行游戏内自检套件，结果以 OCS_TEST 标记写入 game.log。"
  PRC_OCS_selftest.1.a:0 "运行自检套件"

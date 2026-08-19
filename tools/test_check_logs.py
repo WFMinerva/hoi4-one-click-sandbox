@@ -4,9 +4,11 @@
 from __future__ import annotations
 
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from tools import check_logs
 
@@ -72,10 +74,22 @@ class WhitelistFilterTest(unittest.TestCase):
 
 
 class MarkerTest(unittest.TestCase):
+    def test_redact_identity_masks_machine_paths(self) -> None:
+        """归档防泄漏：正反斜杠两种路径形态都要脱敏（2026-08-20 首轮归档实测补）。"""
+        env = {"USERNAME": "Tester", "USERPROFILE": r"C:\Users\Tester", "COMPUTERNAME": "TESTPC"}
+        with mock.patch.dict(os.environ, env, clear=False):
+            out = check_logs._redact_identity(
+                r"C:\Users\Tester\Documents\game.log C:/Users/Tester/Documents/e.log TESTPC \tester-pc")
+        self.assertNotIn("Tester", out)
+        self.assertNotIn("TESTPC", out)
+        self.assertIn("C:\\Users\\<REDACTED>", out)  # 身份被抹、路径骨架保留（与归档制度口径一致）
+        self.assertIn("C:/Users/<REDACTED>", out)   # 正斜杠变体同样脱敏
+        self.assertIn("<REDACTED>", out)
+
     def test_markers_extracted_across_logs(self) -> None:
         lines_by_log = {
-            "game.log": ["[10:00:00][game.cpp:1]: [OCS_TEST] PASS init_flag",
-                          "[10:00:00][game.cpp:1]: [OCS_TEST] FAIL mio_funds"],
+            "game.log": ["[10:00:00][game.cpp:1]: OCS_TEST PASS init_flag",
+                          "[10:00:00][game.cpp:1]: OCS_TEST FAIL mio_funds"],
             "error.log": [],
             "text.log": [],
             "setup.log": [],
@@ -130,9 +144,9 @@ class CaseFileTest(unittest.TestCase):
             path = Path(tmp) / "selftest.txt"
             path.write_text(
                 'if = { limit = { has_country_flag = x }\n'
-                '  log = "[OCS_TEST] PASS init_flag"\n'
-                'else = { log = "[OCS_TEST] FAIL init_flag" }\n'
-                'log = "[OCS_TEST] FAIL mio_size_max"\n',
+                '  log = "OCS_TEST PASS init_flag"\n'
+                'else = { log = "OCS_TEST FAIL init_flag" }\n'
+                'log = "OCS_TEST FAIL mio_size_max"\n',
                 encoding="utf-8")
             cases = check_logs.read_case_source(path)
         self.assertEqual(cases, ["init_flag", "mio_size_max"])
@@ -170,7 +184,7 @@ class EndToEndTest(unittest.TestCase):
             root = Path(tmp)
             logs = _write_logs(root, {
                 "error.log": "[13:58:17][1936.01.01.12][gamelobby.cpp:1779]: Exception in: remotefile.cpp Failed allocate data buffer.\n",
-                "game.log": "[10:00:00][game.cpp:1]: Conflict Risk\n[10:00:00][game.cpp:1]: [OCS_TEST] PASS init_flag\n",
+                "game.log": "[10:00:00][game.cpp:1]: Conflict Risk\n[10:00:00][game.cpp:1]: OCS_TEST PASS init_flag\n",
                 "text.log": "",
                 "setup.log": "loading PRC_OCS events 1\nloading PRC_OCS decisions 2\n",
                 "code_revisions.log": "game_hash_short: a729d47bd\n",
@@ -192,7 +206,7 @@ class EndToEndTest(unittest.TestCase):
             root = Path(tmp)
             logs = _write_logs(root, {
                 "error.log": "[13:57:56][no_game_date][effect.cpp:445]: Invalid effect 'enable_equipment_modules' in events/x.txt line : 54\n",
-                "game.log": "[10:00:00][game.cpp:1]: [OCS_TEST] PASS init_flag\n",
+                "game.log": "[10:00:00][game.cpp:1]: OCS_TEST PASS init_flag\n",
                 "text.log": "",
                 "setup.log": "loading PRC_OCS events 1\n",
             })

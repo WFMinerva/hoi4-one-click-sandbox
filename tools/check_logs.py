@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""实机日志判读工具：白名单过滤 + [OCS_TEST] 标记提取 + 版本绑定 + result.json。
+"""实机日志判读工具：白名单过滤 + OCS_TEST 标记提取 + 版本绑定 + result.json。
 
 用途（A 立项「实机监测机制」步骤1 交付）：把四份日志（error.log/game.log/
 text.log/setup.log）的「人脑判读经验」固化为机器可执行的白名单检查，并输出
@@ -10,7 +10,7 @@ text.log/setup.log）的「人脑判读经验」固化为机器可执行的白�
         [--case-file <用例清单文件>] [--exempt-markers] [--out <result.json>]
 
 判定铁律（K3 第 1/4 轮定案）：
-- `[OCS_TEST]` 标记数为 0 ＝ 本轮 FAIL/无效（防空真，防忘开 -debug_mode/未触发）；
+- `OCS_TEST` 标记数为 0 ＝ 本轮 FAIL/无效（防空真，防忘开 -debug_mode/未触发）；
 - 提供 --case-file 时，标记数须等于用例清单数且全部 PASS 才算 PASS；
 - 仅「标记判读豁免」（--exempt-markers）轮次例外，豁免事实写入 result.json 并
   在摘要高亮（供自检套件落地前的首轮归档使用，默认不豁免）。
@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from datetime import datetime, timezone
@@ -36,8 +37,8 @@ FILTERED_LOGS = ("error.log", "game.log", "text.log")
 SETUP_LOG = "setup.log"
 VERSION_LOG = "code_revisions.log"
 
-MARKER_RE = re.compile(r"\[OCS_TEST\]\s+(PASS|FAIL)\s+([A-Za-z0-9_.\-]+)")
-MARKER_CASE_RE = re.compile(r"\[OCS_TEST\]\s+(?:PASS|FAIL)\s+([A-Za-z0-9_.\-]+)")
+MARKER_RE = re.compile(r"\bOCS_TEST\s+(PASS|FAIL)\s+([A-Za-z0-9_.\-]+)")
+MARKER_CASE_RE = re.compile(r"\bOCS_TEST\s+(?:PASS|FAIL)\s+([A-Za-z0-9_.\-]+)")
 TIME_PREFIX_RE = re.compile(r"^\[[^\]]*\]\[[^\]]*\]\[[^\]]*\]:\s*")
 # game.log 是运行日志（大量正常行），只对「错误样」行告警；error.log/text.log 是
 # 错误通道，逐行全查。实现口径记录于立项文档 A⑥ 实施记录。
@@ -76,6 +77,20 @@ def _line_matches(entry: dict, line: str) -> bool:
     return pattern in line
 
 
+def _redact_identity(text: str) -> str:
+    """归档防泄漏：替换本机用户名/用户目录/机器名（含正斜杠路径变体）。
+
+    2026-08-20 首轮归档实测：error.log 出现 `C:/Users/...` 正斜杠形态，仅替换
+    USERPROFILE 反斜杠形态会漏脱，故两种分隔符都覆盖。
+    """
+    for raw in (os.environ.get("USERNAME"), os.environ.get("USERPROFILE"),
+                os.environ.get("COMPUTERNAME")):
+        if raw:
+            text = text.replace(raw, "<REDACTED>")
+            text = text.replace(raw.replace("\\", "/"), "<REDACTED>")
+    return text
+
+
 def _signature(line: str) -> str:
     """Normalize a log line to a stable signature for grouping.
 
@@ -90,7 +105,7 @@ def _signature(line: str) -> str:
 def filter_log(lines: list[str], entries: list[dict], mode: str = "all") -> dict:
     """Return whitelist-filtering result for one log.
 
-    `[OCS_TEST]` 标记行不在过滤范围（由 collect_markers 单独处理），直接跳过，
+    `OCS_TEST` 标记行不在过滤范围（由 collect_markers 单独处理），直接跳过，
     避免自检输出被误判为新错误签名。
     mode="all"：未命中白名单的行全部计为新签名（error.log/text.log 用）；
     mode="error_like"：仅「错误样」行计为新签名，正常运行行忽略（game.log 用）。
@@ -114,7 +129,7 @@ def filter_log(lines: list[str], entries: list[dict], mode: str = "all") -> dict
 
 
 def collect_markers(lines_by_log: dict[str, list[str]]) -> dict:
-    """Extract [OCS_TEST] PASS/FAIL markers from all four logs (game.log 为主)."""
+    """Extract OCS_TEST PASS/FAIL markers from all four logs (game.log 为主)."""
     cases: list[dict] = []
     for log_name, lines in lines_by_log.items():
         for line in lines:
@@ -155,7 +170,7 @@ def read_case_source(path: Path | None) -> list[str] | None:
         raise SystemExit(f"[FAIL] 用例源文件不可读：{path}（{exc}）") from exc
     cases = sorted(set(MARKER_CASE_RE.findall(text)))
     if not cases:
-        raise SystemExit(f"用例源文件未解析到任何 [OCS_TEST] 用例：{path}")
+        raise SystemExit(f"用例源文件未解析到任何 OCS_TEST 用例：{path}")
     return cases
 
 
@@ -226,7 +241,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--round", default="", help="轮次标识（如 v2.8-test5）")
     case_group = parser.add_mutually_exclusive_group()
     case_group.add_argument("--case-file", type=Path, default=None, help="自检用例清单文件（每行一个 case id，# 注释）")
-    case_group.add_argument("--case-source", type=Path, default=None, help="自检 effects 文件（解析其 [OCS_TEST] 字面量为用例清单，唯一真源）")
+    case_group.add_argument("--case-source", type=Path, default=None, help="自检 effects 文件（解析其 OCS_TEST 字面量为用例清单，唯一真源）")
     parser.add_argument("--exempt-markers", action="store_true", help="标记判读豁免（自检套件落地前的轮次专用；豁免事实入 result.json）")
     parser.add_argument("--out", type=Path, default=None, help="result.json 输出路径（默认 <logs 目录>/ocs_result.json）")
     args = parser.parse_args(argv)
@@ -269,7 +284,7 @@ def main(argv: list[str] | None = None) -> int:
         "schema_version": 1,
         "round": args.round,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "logs_dir": str(logs_dir),
+        "logs_dir": _redact_identity(str(logs_dir)),
         "game_version": version,
         "whitelist": {"clean": clean, "new_signatures": new_signatures},
         "markers": {
