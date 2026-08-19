@@ -1,0 +1,526 @@
+{
+ "22": {
+  "reward": "sp_air_earthshaker_bomb_unique_reward",
+  "zh": [
+   "精准是关键",
+   "破坏力",
+   "为何不全都要？"
+  ],
+  "en": [
+   "Precision is the Key",
+   "Destructive Power",
+   "Why Not Both?"
+  ]
+ },
+ "23": {
+  "reward": "sp_air_helicopter_unique_reward",
+  "zh": [
+   "速度与机动性",
+   "普遍安全措施",
+   "增强的装甲"
+  ],
+  "en": [
+   "Speed and Maneuverability",
+   "General Safety Precautions",
+   "Increased Armor"
+  ]
+ },
+ "24": {
+  "reward": "sp_air_intercontinental_bomber_unique_reward",
+  "zh": [
+   "小幅改进",
+   "更大载荷",
+   "更强防护"
+  ],
+  "en": [
+   "Small Improvements",
+   "Greater Payload",
+   "Greater Protection"
+  ]
+ },
+ "25": {
+  "reward": "sp_air_mothership_unique_reward",
+  "zh": [
+   "敏捷和速度",
+   "安全和可靠性",
+   "耐用性与更强火力"
+  ],
+  "en": [
+   "Agility and Speed",
+   "Safety and Reliability",
+   "Durability and Stronger Guns"
+  ]
+ },
+ "26": {
+  "reward": "sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01",
+  "zh": [
+   "应用并记录发现",
+   "在当前项目中使用"
+  ],
+  "en": [
+   "Apply and Document Discovery",
+   "Use in Current Project"
+  ]
+ },
+ "27": {
+  "reward": "sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02",
+  "zh": [
+   "应用并记录发现",
+   "在当前项目中使用"
+  ],
+  "en": [
+   "Apply and Document Discovery",
+   "Use in Current Project"
+  ]
+ },
+ "28": {
+  "reward": "sp_land_reward_stronghold_network_communication_system_overhaul",
+  "zh": [
+   "标准化",
+   "深入研究"
+  ],
+  "en": [
+   "Standardize",
+   "Further Study"
+  ]
+ },
+ "29": {
+  "reward": "sp_naval_escort_carrier_unique_reward_a",
+  "zh": [
+   "行动范围",
+   "加强船体",
+   "更高速度"
+  ],
+  "en": [
+   "Operational Range",
+   "Stronger Hull",
+   "Higher Speed"
+  ]
+ },
+ "30": {
+  "reward": "sp_naval_escort_carrier_unique_reward_b",
+  "zh": [
+   "潜艇",
+   "无偏好",
+   "水面舰艇"
+  ],
+  "en": [
+   "Submarines",
+   "No preferences",
+   "Surface Ships"
+  ]
+ },
+ "31": {
+  "reward": "sp_naval_ice_carrier_unique_reward_a",
+  "zh": [
+   "自然力量",
+   "敌方军队"
+  ],
+  "en": [
+   "Forces of Nature",
+   "Enemy Forces"
+  ]
+ },
+ "32": {
+  "reward": "sp_naval_midget_submarine_unique_reward_a",
+  "zh": [
+   "略微增加隐匿性",
+   "略微降低爆炸风险",
+   "略微增加航程"
+  ],
+  "en": [
+   "Bit Stealthier",
+   "Bit Less Prone to Explode",
+   "Bit Longer Range"
+  ]
+ },
+ "33": {
+  "reward": "sp_naval_modern_battleship_unique_reward_a",
+  "zh": [
+   "火力",
+   "机动",
+   "精准"
+  ],
+  "en": [
+   "Raw Firepower",
+   "Maneuverability",
+   "Precision"
+  ]
+ },
+ "34": {
+  "reward": "sp_naval_modern_battleship_unique_reward_b",
+  "zh": [
+   "结构",
+   "防空",
+   "鱼雷防护"
+  ],
+  "en": [
+   "Structure",
+   "Anti-Air",
+   "Torpedo Protection"
+  ]
+ },
+ "35": {
+  "reward": "sp_naval_modern_carrier_unique_reward_a",
+  "zh": [
+   "预警能力",
+   "速度与天气适应能力",
+   "轻型舰艇威慑力"
+  ],
+  "en": [
+   "Awareness",
+   "Speed and Weatherproof",
+   "Light Ship Deterrence"
+  ]
+ },
+ "36": {
+  "reward": "sp_naval_modern_carrier_unique_reward_b",
+  "zh": [
+   "敌方火炮",
+   "敌方飞行器",
+   "敌方鱼雷"
+  ],
+  "en": [
+   "Enemy Artillery",
+   "Enemy Aircraft",
+   "Enemy Torpedoes"
+  ]
+ },
+ "37": {
+  "reward": "sp_naval_nuclear_missile_submarine_unique_reward_a",
+  "zh": [
+   "保持低调",
+   "保持冷静",
+   "忍受风暴"
+  ],
+  "en": [
+   "Lay Low",
+   "Remain Calm",
+   "Endure Storm"
+  ]
+ },
+ "38": {
+  "reward": "sp_naval_nuclear_submarine_unique_reward_a",
+  "zh": [
+   "削减成本",
+   "保持现有设计",
+   "追求最高质量"
+  ],
+  "en": [
+   "Cut Corners",
+   "Current Plans",
+   "Highest Quality"
+  ]
+ },
+ "39": {
+  "reward": "sp_naval_rocket_launching_submarine_unique_reward_a",
+  "zh": [
+   "射程",
+   "可靠性",
+   "隐匿性"
+  ],
+  "en": [
+   "Range",
+   "Reliability",
+   "Stealth"
+  ]
+ },
+ "40": {
+  "reward": "sp_naval_submarine_carrier_unique_reward_a",
+  "zh": [
+   "延长航程",
+   "加固结构",
+   "低可见度"
+  ],
+  "en": [
+   "Extended Range",
+   "Reinforced Structure",
+   "Reduced Visibility"
+  ]
+ },
+ "41": {
+  "reward": "sp_naval_super_heavy_battleship_unique_reward_a",
+  "zh": [
+   "重炮",
+   "速度",
+   "轻炮"
+  ],
+  "en": [
+   "Heavy Guns",
+   "Speed",
+   "Light Guns"
+  ]
+ },
+ "42": {
+  "reward": "sp_naval_super_heavy_battleship_unique_reward_b",
+  "zh": [
+   "加强装甲和船体",
+   "防空火炮",
+   "反鱼雷措施"
+  ],
+  "en": [
+   "Reinforced Armor and Hull",
+   "Anti-Air Artillery",
+   "Anti-Torpedo Measures"
+  ]
+ },
+ "43": {
+  "reward": "sp_naval_support_ships_unique_reward_a",
+  "zh": [
+   "需求少量",
+   "寻找平衡",
+   "需求大量"
+  ],
+  "en": [
+   "Needs of the few",
+   "Find the balance",
+   "Needs of the many"
+  ]
+ },
+ "44": {
+  "reward": "sp_naval_support_ships_unique_reward_b",
+  "zh": [
+   "大范围覆盖",
+   "寻找平衡",
+   "集中使用"
+  ],
+  "en": [
+   "Wider Coverage",
+   "Find the balance",
+   "Concentrated Efforts"
+  ]
+ },
+ "45": {
+  "reward": "sp_naval_underway_replenishment_unique_reward_a",
+  "zh": [
+   "更长的航程",
+   "寻找平衡",
+   "减少运输船消耗"
+  ],
+  "en": [
+   "Longer Range",
+   "Find a Balance",
+   "Lower Convoy Usage"
+  ]
+ },
+ "46": {
+  "reward": "sp_nuclear_isotope_separation_choice_reward",
+  "zh": [
+   "气体扩散法是一种经过验证的技术。",
+   "离心分离法从长远来看效率更高。"
+  ],
+  "en": [
+   "Gaseous is a proven technique.",
+   "Centrifuges will be more efficient in the long-run."
+  ]
+ },
+ "47": {
+  "reward": "sp_nuclear_reactor_tested_reward",
+  "zh": [
+   "暂时保留这些信息加密",
+   "公开庆祝这一成就"
+  ],
+  "en": [
+   "Keep the information classified for now",
+   "Celebrate the achievement publicly"
+  ]
+ },
+ "54": {
+  "reward": "sp_land_reward_land_cruiser_chassis",
+  "zh": [
+   "完全重新设计底盘",
+   "加固底盘",
+   "使用轻量化材料"
+  ],
+  "en": [
+   "Redesign the Chassis Entirely",
+   "Reinforce the Chassis",
+   "Use Lighter Materials"
+  ]
+ },
+ "55": {
+  "reward": "sp_land_reward_land_cruiser_engine",
+  "zh": [
+   "保持现状",
+   "调整当前引擎",
+   "研发新引擎"
+  ],
+  "en": [
+   "Leave as Is",
+   "Modify Current Engine",
+   "Develop a New Engine"
+  ]
+ },
+ "56": {
+  "reward": "sp_land_reward_land_cruiser_turret",
+  "zh": [
+   "保留原始设计",
+   "简化炮塔设计",
+   "重新设计炮塔结构"
+  ],
+  "en": [
+   "Keep Original Design",
+   "Simplify Turret Design",
+   "Redesign Turret Mechanism"
+  ]
+ },
+ "57": {
+  "reward": "sp_land_reward_land_cruiser_track",
+  "zh": [
+   "继续使用当前履带系统",
+   "减少装甲覆层",
+   "加固履带系统"
+  ],
+  "en": [
+   "Proceed with Current Tracks",
+   "Reduce Armor Plating",
+   "Reinforce the Track System"
+  ]
+ },
+ "58": {
+  "reward": "sp_land_reward_land_cruiser_communication",
+  "zh": [
+   "保持当前系统",
+   "加装新的高级系统",
+   "重新设计的内部布局"
+  ],
+  "en": [
+   "Leave Current System",
+   "Install New Advanced System",
+   "Redesigned Internal Layout"
+  ]
+ },
+ "59": {
+  "reward": "sp_land_reward_land_cruiser_assembly",
+  "zh": [
+   "应用于所有组装阶段",
+   "仅应用于关键部件"
+  ],
+  "en": [
+   "Across All Assembly Stages",
+   "Only to Key Components"
+  ]
+ },
+ "60": {
+  "reward": "sp_land_reward_land_cruiser_suspension",
+  "zh": [
+   "全液气悬挂",
+   "仅限于后部部件"
+  ],
+  "en": [
+   "Full Hydropneumatic Suspension",
+   "Limit to Rear Units"
+  ]
+ },
+ "61": {
+  "reward": "sp_land_reward_land_cruiser_ammunition",
+  "zh": [
+   "保持现有系统",
+   "使用简化版本",
+   "采用新的弹药存储系统"
+  ],
+  "en": [
+   "Maintain Current System",
+   "Use a Simplified Version",
+   "Adopt the New Storage System"
+  ]
+ },
+ "62": {
+  "reward": "sp_land_reward_super_heavy_howitzer_focus_preference",
+  "zh": [
+   "保持平衡",
+   "专注火力",
+   "专注快速生产"
+  ],
+  "en": [
+   "Keep Balance",
+   "Focus on Firepower",
+   "Focus on Fast Production"
+  ]
+ },
+ "63": {
+  "reward": "sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference",
+  "zh": [
+   "保持平衡",
+   "专注火力",
+   "专注快速生产"
+  ],
+  "en": [
+   "Keep Balance",
+   "Focus on Firepower",
+   "Focus on Fast Production"
+  ]
+ },
+ "64": {
+  "reward": "sp_naval_nuclear_torpedo_unique_reward_a",
+  "zh": [
+   "强大的弹头",
+   "更安全的鱼雷储存"
+  ],
+  "en": [
+   "Powerful Warheads",
+   "Safer Storages"
+  ]
+ },
+ "65": {
+  "reward": "sp_naval_aip_engine_unique_reward_a",
+  "zh": [
+   "低噪音引擎",
+   "高速引擎",
+   "低油耗引擎"
+  ],
+  "en": [
+   "Quieter Engines",
+   "Faster Engines",
+   "Less Fuel-Consuming Engines"
+  ]
+ },
+ "66": {
+  "reward": "sp_naval_anechoic_tiles_unique_reward_a",
+  "zh": [
+   "攻击性巡逻模式",
+   "减少声学特征",
+   "降低船体成本"
+  ],
+  "en": [
+   "Aggressive Patrol Patterns",
+   "Reduced Acoustic Signature",
+   "Reduced Hull Costs"
+  ]
+ },
+ "67": {
+  "reward": "sp_naval_proximity_fuzes_unique_reward_a",
+  "zh": [
+   "调整弹药供应",
+   "保持当前弹药供应"
+  ],
+  "en": [
+   "Adjust Ammo Supplies",
+   "Retain Current Ammo Supply"
+  ]
+ },
+ "68": {
+  "reward": "sp_rocket_design_choice_reward",
+  "zh": [
+   "平衡",
+   "射程",
+   "载荷"
+  ],
+  "en": [
+   "Balanced",
+   "Range",
+   "Payload"
+  ]
+ },
+ "69": {
+  "reward": "sp_rocket_guidance_system_choice_reward",
+  "zh": [
+   "机械系统更可靠",
+   "无线电是未来！"
+  ],
+  "en": [
+   "Mechanical is reliable.",
+   "Radio is the future!"
+  ]
+ }
+}
