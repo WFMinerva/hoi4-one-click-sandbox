@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -1671,6 +1672,59 @@ class ValidatorRegressionTests(unittest.TestCase):
             publish_workshop.vdf_escape('a\\b"c\r\nd'),
             'a\\\\b\\"c\nd',
         )
+
+    # ---- 实机监测机制（A 立项）契约 ----
+
+    def test_selftest_effects_are_generated_and_consistent(self) -> None:
+        """自检套件生成产物与生成器一致（防漂移），且含固定用例与映射派生用例。"""
+        import os
+        import subprocess
+        import sys
+        env = dict(os.environ)
+        env["PYTHONIOENCODING"] = "utf-8"
+        result = subprocess.run(
+            [sys.executable, str(validator.ROOT / "tools" / "generate_selftest_effects.py"), "--check"],
+            cwd=validator.ROOT, capture_output=True, text=True, encoding="utf-8",
+            errors="replace", env=env)
+        self.assertEqual(result.returncode, 0, (result.stdout or "") + (result.stderr or ""))
+        text = (validator.ROOT / "common" / "scripted_effects" / "PRC_OCS_selftest_effects.txt") \
+            .read_text(encoding="utf-8")
+        self.assertIn("PRC_OCS_selftest_run_suite = {", text)
+        # 7 固定用例 + 43 选择组用例（26＋17，由两份映射 JSON 派生，不写死）
+        cases = sorted(set(re.findall(r"\[OCS_TEST\]\s+(?:PASS|FAIL)\s+([A-Za-z0-9_.\-]+)", text)))
+        self.assertEqual(len(cases), 50)
+        for name in ("init_flag", "skull_idea", "mio_exists", "mio_size_max",
+                     "jet_polarity", "n1_cruiser_submarine", "b6_heavy_water"):
+            self.assertIn(name, cases)
+        self.assertIn("choice_group_22", cases)
+        self.assertIn("choice_group_70", cases)
+
+    def test_selftest_event_is_triggered_only_with_loc_keys(self) -> None:
+        """自检入口事件 is_triggered_only、无决议入口；双语本地化键存在且对等。"""
+        event_text = (validator.ROOT / "events" / "PRC_OCS_selftest_events.txt") \
+            .read_text(encoding="utf-8")
+        self.assertIn("add_namespace = PRC_OCS_selftest", event_text)
+        self.assertIn("id = PRC_OCS_selftest.1", event_text)
+        self.assertIn("is_triggered_only = yes", event_text)
+        self.assertIn("PRC_OCS_selftest_run_suite = yes", event_text)
+        en = (validator.ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml") \
+            .read_text(encoding="utf-8-sig")
+        zh = (validator.ROOT / "localisation" / "simp_chinese" / "PRC_OCS_l_simp_chinese.yml") \
+            .read_text(encoding="utf-8-sig")
+        for key in ("PRC_OCS_selftest.1.t", "PRC_OCS_selftest.1.d", "PRC_OCS_selftest.1.a"):
+            self.assertIn(key + ":0", en, f"英文缺键 {key}")
+            self.assertIn(key + ":0", zh, f"中文缺键 {key}")
+
+    def test_selftest_effects_respect_red_lines(self) -> None:
+        """自检套件不触碰红线：无决议（AI 守卫不涉及）、每 if 单 limit、不重命名既有键。"""
+        text = (validator.ROOT / "common" / "scripted_effects" / "PRC_OCS_selftest_effects.txt") \
+            .read_text(encoding="utf-8")
+        for name in re.findall(r"^PRC_OCS_selftest_(\w+) = \{", text, re.MULTILINE):
+            self.assertTrue(name.startswith(("init", "skull", "mio", "jet", "n1", "b6", "choice", "run")),
+                            f"未登记的自检用例名：{name}")
+        # 每个 if 块内只有一个 limit（解析器结构检查已覆盖；此处抽查生成模板产物）
+        parsed, errors = validator.parse_script(text)
+        self.assertEqual(errors, [])
 
 
 if __name__ == "__main__":

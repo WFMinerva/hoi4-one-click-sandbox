@@ -1,0 +1,16 @@
+add_namespace = PRC_OCS_selftest
+# 实机监测机制·自检入口事件（A 立项「实机监测机制」步骤3 交付，2026-08-19）
+# 门控：is_triggered_only＝仅控制台 event 命令可达；无决议入口、无 on_action 触发，
+# 玩家不可见、AI 不可用（门一结论 2/门二结论 2）。选项运行自检套件并写 game.log。
+country_event = {
+ id = PRC_OCS_selftest.1
+ title = PRC_OCS_selftest.1.t
+ desc = PRC_OCS_selftest.1.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS_selftest.1.a
+  PRC_OCS_selftest_run_suite = yes
+ }
+}

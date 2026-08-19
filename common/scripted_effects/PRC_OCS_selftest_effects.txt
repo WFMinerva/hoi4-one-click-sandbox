@@ -1,0 +1,546 @@
+# 实机监测机制·游戏内自检套件（生成产物，勿手改——改动 tools/generate_selftest_effects.py）
+#
+# 用途：维护者按固定序列操作完毕后，控制台执行
+#   effect PRC PRC_OCS_selftest_run_suite
+# （或 event PRC_OCS_selftest.1 PRC）在 game.log 输出 [OCS_TEST] PASS/FAIL <case>。
+# 判读：tools/check_logs.py --case-source 本文件（用例清单唯一真源）。
+# 固定序列见 tools/generate_selftest_effects.py 头注释与 docs/testing/实机回归归档制度.md。
+# 门控：无决议入口、无 on_action 触发，仅控制台可达；玩家不可见、AI 不可用（门一/门二结论）。
+# 红线：不重命名既有键；每个 if 单 limit；UTF-8 无 BOM。
+
+PRC_OCS_selftest_run_suite = {
+    log = "[OCS_TEST] BEGIN run_suite"
+    PRC_OCS_selftest_init_flag = yes
+    PRC_OCS_selftest_skull_idea = yes
+    PRC_OCS_selftest_mio_exists = yes
+    PRC_OCS_selftest_mio_size_max = yes
+    PRC_OCS_selftest_jet_polarity = yes
+    PRC_OCS_selftest_n1_cruiser_submarine = yes
+    PRC_OCS_selftest_b6_heavy_water = yes
+    PRC_OCS_selftest_choice_22 = yes
+    PRC_OCS_selftest_choice_23 = yes
+    PRC_OCS_selftest_choice_24 = yes
+    PRC_OCS_selftest_choice_25 = yes
+    PRC_OCS_selftest_choice_26 = yes
+    PRC_OCS_selftest_choice_27 = yes
+    PRC_OCS_selftest_choice_28 = yes
+    PRC_OCS_selftest_choice_29 = yes
+    PRC_OCS_selftest_choice_30 = yes
+    PRC_OCS_selftest_choice_31 = yes
+    PRC_OCS_selftest_choice_32 = yes
+    PRC_OCS_selftest_choice_33 = yes
+    PRC_OCS_selftest_choice_34 = yes
+    PRC_OCS_selftest_choice_35 = yes
+    PRC_OCS_selftest_choice_36 = yes
+    PRC_OCS_selftest_choice_37 = yes
+    PRC_OCS_selftest_choice_38 = yes
+    PRC_OCS_selftest_choice_39 = yes
+    PRC_OCS_selftest_choice_40 = yes
+    PRC_OCS_selftest_choice_41 = yes
+    PRC_OCS_selftest_choice_42 = yes
+    PRC_OCS_selftest_choice_43 = yes
+    PRC_OCS_selftest_choice_44 = yes
+    PRC_OCS_selftest_choice_45 = yes
+    PRC_OCS_selftest_choice_46 = yes
+    PRC_OCS_selftest_choice_47 = yes
+    PRC_OCS_selftest_choice_54 = yes
+    PRC_OCS_selftest_choice_55 = yes
+    PRC_OCS_selftest_choice_56 = yes
+    PRC_OCS_selftest_choice_57 = yes
+    PRC_OCS_selftest_choice_58 = yes
+    PRC_OCS_selftest_choice_59 = yes
+    PRC_OCS_selftest_choice_60 = yes
+    PRC_OCS_selftest_choice_61 = yes
+    PRC_OCS_selftest_choice_62 = yes
+    PRC_OCS_selftest_choice_63 = yes
+    PRC_OCS_selftest_choice_64 = yes
+    PRC_OCS_selftest_choice_65 = yes
+    PRC_OCS_selftest_choice_66 = yes
+    PRC_OCS_selftest_choice_67 = yes
+    PRC_OCS_selftest_choice_68 = yes
+    PRC_OCS_selftest_choice_69 = yes
+    PRC_OCS_selftest_choice_70 = yes
+    log = "[OCS_TEST] END run_suite"
+}
+PRC_OCS_selftest_init_flag = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_initialized }
+        log = "[OCS_TEST] PASS init_flag"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL init_flag"
+    }
+}
+
+PRC_OCS_selftest_skull_idea = {
+    if = {
+        limit = { has_idea = PRC_OCS_skull_divisions }
+        log = "[OCS_TEST] PASS skull_idea"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL skull_idea"
+    }
+}
+
+PRC_OCS_selftest_mio_exists = {
+    if = {
+        limit = { any_military_industrial_organization = { has_mio_size > 0 } }
+        log = "[OCS_TEST] PASS mio_exists"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL mio_exists"
+    }
+}
+
+PRC_OCS_selftest_mio_size_max = {
+    if = {
+        limit = { any_military_industrial_organization = { has_mio_size < 20 } }
+        log = "[OCS_TEST] FAIL mio_size_max"
+    }
+    else = {
+        log = "[OCS_TEST] PASS mio_size_max"
+    }
+}
+
+PRC_OCS_selftest_jet_polarity = {
+    if = {
+        limit = { has_dlc = "By Blood Alone" }
+        if = {
+            limit = { NOT = { has_tech = jet_fighter1 } }
+            log = "[OCS_TEST] PASS jet_polarity"
+        }
+        else = {
+            log = "[OCS_TEST] FAIL jet_polarity"
+        }
+    }
+    else = {
+        if = {
+            limit = { has_tech = jet_fighter1 }
+            log = "[OCS_TEST] PASS jet_polarity"
+        }
+        else = {
+            log = "[OCS_TEST] FAIL jet_polarity"
+        }
+    }
+}
+
+# n1 用例：有 MtG 断言 cruiser_submarines 科技（N1 修复的授予路径）；
+# 无 MtG 分支恒 PASS＝「该断言不适用于本环境」语义（非空真 PASS——环境不适用即无此断言目标，
+# 与 jet_polarity 双分支均正向断言的口径一致；run_regression 归档轮次按全 DLC 环境执行）。
+PRC_OCS_selftest_n1_cruiser_submarine = {
+    if = {
+        limit = { has_dlc = "Man the Guns" }
+        if = {
+            limit = { has_tech = cruiser_submarines }
+            log = "[OCS_TEST] PASS n1_cruiser_submarine"
+        }
+        else = {
+            log = "[OCS_TEST] FAIL n1_cruiser_submarine"
+        }
+    }
+    else = {
+        log = "[OCS_TEST] PASS n1_cruiser_submarine"
+    }
+}
+
+PRC_OCS_selftest_b6_heavy_water = {
+    if = {
+        limit = {
+            AND = {
+                has_country_flag = nuclear_reactor_heavy_water_flag
+                has_tech = nuclear_reactor_heavy_water
+            }
+        }
+        log = "[OCS_TEST] PASS b6_heavy_water"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL b6_heavy_water"
+    }
+}
+PRC_OCS_selftest_choice_22 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_air_earthshaker_bomb_unique_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_22"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_22"
+    }
+}
+PRC_OCS_selftest_choice_23 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_air_helicopter_unique_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_23"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_23"
+    }
+}
+PRC_OCS_selftest_choice_24 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_air_intercontinental_bomber_unique_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_24"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_24"
+    }
+}
+PRC_OCS_selftest_choice_25 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_air_mothership_unique_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_25"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_25"
+    }
+}
+PRC_OCS_selftest_choice_26 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_01_choice_done }
+        log = "[OCS_TEST] PASS choice_group_26"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_26"
+    }
+}
+PRC_OCS_selftest_choice_27 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_breakthrough_in_concrete_reinforcement_02_choice_done }
+        log = "[OCS_TEST] PASS choice_group_27"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_27"
+    }
+}
+PRC_OCS_selftest_choice_28 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_stronghold_network_communication_system_overhaul_choice_done }
+        log = "[OCS_TEST] PASS choice_group_28"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_28"
+    }
+}
+PRC_OCS_selftest_choice_29 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_29"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_29"
+    }
+}
+PRC_OCS_selftest_choice_30 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_escort_carrier_unique_reward_b_choice_done }
+        log = "[OCS_TEST] PASS choice_group_30"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_30"
+    }
+}
+PRC_OCS_selftest_choice_31 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_ice_carrier_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_31"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_31"
+    }
+}
+PRC_OCS_selftest_choice_32 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_midget_submarine_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_32"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_32"
+    }
+}
+PRC_OCS_selftest_choice_33 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_33"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_33"
+    }
+}
+PRC_OCS_selftest_choice_34 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_modern_battleship_unique_reward_b_choice_done }
+        log = "[OCS_TEST] PASS choice_group_34"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_34"
+    }
+}
+PRC_OCS_selftest_choice_35 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_35"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_35"
+    }
+}
+PRC_OCS_selftest_choice_36 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_modern_carrier_unique_reward_b_choice_done }
+        log = "[OCS_TEST] PASS choice_group_36"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_36"
+    }
+}
+PRC_OCS_selftest_choice_37 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_nuclear_missile_submarine_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_37"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_37"
+    }
+}
+PRC_OCS_selftest_choice_38 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_nuclear_submarine_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_38"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_38"
+    }
+}
+PRC_OCS_selftest_choice_39 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_rocket_launching_submarine_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_39"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_39"
+    }
+}
+PRC_OCS_selftest_choice_40 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_submarine_carrier_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_40"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_40"
+    }
+}
+PRC_OCS_selftest_choice_41 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_41"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_41"
+    }
+}
+PRC_OCS_selftest_choice_42 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_super_heavy_battleship_unique_reward_b_choice_done }
+        log = "[OCS_TEST] PASS choice_group_42"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_42"
+    }
+}
+PRC_OCS_selftest_choice_43 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_43"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_43"
+    }
+}
+PRC_OCS_selftest_choice_44 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_support_ships_unique_reward_b_choice_done }
+        log = "[OCS_TEST] PASS choice_group_44"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_44"
+    }
+}
+PRC_OCS_selftest_choice_45 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_underway_replenishment_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_45"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_45"
+    }
+}
+PRC_OCS_selftest_choice_46 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_46"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_46"
+    }
+}
+PRC_OCS_selftest_choice_47 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_47"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_47"
+    }
+}
+PRC_OCS_selftest_choice_54 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_chassis_choice_done }
+        log = "[OCS_TEST] PASS choice_group_54"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_54"
+    }
+}
+PRC_OCS_selftest_choice_55 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_engine_choice_done }
+        log = "[OCS_TEST] PASS choice_group_55"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_55"
+    }
+}
+PRC_OCS_selftest_choice_56 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_turret_choice_done }
+        log = "[OCS_TEST] PASS choice_group_56"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_56"
+    }
+}
+PRC_OCS_selftest_choice_57 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_track_choice_done }
+        log = "[OCS_TEST] PASS choice_group_57"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_57"
+    }
+}
+PRC_OCS_selftest_choice_58 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_communication_choice_done }
+        log = "[OCS_TEST] PASS choice_group_58"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_58"
+    }
+}
+PRC_OCS_selftest_choice_59 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_assembly_choice_done }
+        log = "[OCS_TEST] PASS choice_group_59"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_59"
+    }
+}
+PRC_OCS_selftest_choice_60 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_suspension_choice_done }
+        log = "[OCS_TEST] PASS choice_group_60"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_60"
+    }
+}
+PRC_OCS_selftest_choice_61 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_land_cruiser_ammunition_choice_done }
+        log = "[OCS_TEST] PASS choice_group_61"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_61"
+    }
+}
+PRC_OCS_selftest_choice_62 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_super_heavy_howitzer_focus_preference_choice_done }
+        log = "[OCS_TEST] PASS choice_group_62"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_62"
+    }
+}
+PRC_OCS_selftest_choice_63 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_land_reward_self_propelled_super_heavy_howitzer_focus_preference_choice_done }
+        log = "[OCS_TEST] PASS choice_group_63"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_63"
+    }
+}
+PRC_OCS_selftest_choice_64 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_nuclear_torpedo_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_64"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_64"
+    }
+}
+PRC_OCS_selftest_choice_65 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_aip_engine_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_65"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_65"
+    }
+}
+PRC_OCS_selftest_choice_66 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_anechoic_tiles_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_66"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_66"
+    }
+}
+PRC_OCS_selftest_choice_67 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_naval_proximity_fuzes_unique_reward_a_choice_done }
+        log = "[OCS_TEST] PASS choice_group_67"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_67"
+    }
+}
+PRC_OCS_selftest_choice_68 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_rocket_design_choice_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_68"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_68"
+    }
+}
+PRC_OCS_selftest_choice_69 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_69"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_69"
+    }
+}
+PRC_OCS_selftest_choice_70 = {
+    if = {
+        limit = { has_country_flag = PRC_OCS_sp_nuclear_design_choice_reward_choice_done }
+        log = "[OCS_TEST] PASS choice_group_70"
+    }
+    else = {
+        log = "[OCS_TEST] FAIL choice_group_70"
+    }
+}

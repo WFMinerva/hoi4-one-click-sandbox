@@ -523,3 +523,6 @@
  PRC_OCS.52.a:0 "Flying Bomb Design"
  PRC_OCS.52.b:0 "Ballistic Missile Guidance"
  PRC_OCS.52.z:0 "All remaining bonuses picked"
+ PRC_OCS_selftest.1.t:0 "OCS In-Game Self-Test"
+ PRC_OCS_selftest.1.d:0 "Runs the in-game self-test suite and writes [OCS_TEST] results to game.log."
+ PRC_OCS_selftest.1.a:0 "Run self-test suite"

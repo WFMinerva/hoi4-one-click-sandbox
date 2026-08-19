@@ -13,6 +13,10 @@
 /crashes/
 /dumps/
 
+# 实机回归归档（docs/testing/实机回归归档制度.md）：脱敏日志副本必须入库
+!docs/testing/**/logs/
+!docs/testing/**/logs/*.log
+
 # Local development and editor files
 .idea/
 .vscode/

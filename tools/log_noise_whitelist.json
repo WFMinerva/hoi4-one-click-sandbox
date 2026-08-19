@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "comment": "实机日志噪音白名单（机器可读）。逐条来自人工判读经验的固化，出处见各 entry.source。新增条目必须附出处与理由；白名单只收『已知无害』噪音，不得用宽泛通配（防止把新错误一并吞掉）。",
+  "entries": [
+    {
+      "id": "vanilla-network-gamelobby",
+      "log": "error.log",
+      "pattern": "gamelobby.cpp",
+      "regex": false,
+      "reason": "原版网络模块噪音：Failed allocate data buffer，无 MOD 时也出现",
+      "source": "docs/maintenance/开发状态快照与交接.md §5.4（error.log 顶部 6 行 gamelobby.cpp/remotefile.cpp）"
+    },
+    {
+      "id": "vanilla-network-remotefile",
+      "log": "error.log",
+      "pattern": "remotefile.cpp",
+      "regex": false,
+      "reason": "原版网络模块噪音：Failed allocate data buffer，无 MOD 时也出现",
+      "source": "docs/maintenance/开发状态快照与交接.md §5.4"
+    },
+    {
+      "id": "vanilla-conflict-risk",
+      "log": "game.log",
+      "pattern": "Conflict Risk",
+      "regex": false,
+      "reason": "原版自身杂音，与本 MOD 无关，不必处理",
+      "source": "docs/DEVELOPMENT.md 实机回归节"
+    },
+    {
+      "id": "third-party-daliwan-version",
+      "log": "error.log",
+      "pattern": "ugc_1326075315",
+      "regex": false,
+      "reason": "第三方 MOD「大礼万 / daliwan」（ugc_1326075315）的 Invalid supported_version = \"1.*.*\" 杂音，与本 MOD 无关；按 ugc id 收窄，避免吞掉本 MOD 自身同类错误",
+      "source": "docs/maintenance/测试状态与回归清单.md v2.7 记录；docs/maintenance/开发状态快照与交接.md 其他已知事项"
+    }
+  ]
+}
