@@ -567,21 +567,24 @@ class ValidatorRegressionTests(unittest.TestCase):
             ),
             [],
         )
-        mio_text = "\n".join(
-            validator.read_utf8(path)
-            for path in (
-                validator.ROOT
-                / "common"
-                / "scripted_effects"
-                / "PRC_OCS_mio_effects.txt",
-                validator.ROOT
-                / "common"
-                / "scripted_effects"
-                / "PRC_OCS_shared_mio_effects.txt",
-            )
+        mio_effect_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_mio_effects.txt"
         )
-        self.assertNotIn("add_mio_size", mio_text)
-        self.assertNotIn("add_mio_funds", mio_text)
+        shared_mio_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_shared_mio_effects.txt"
+        )
+        # F7: the generated shared route table never touches funds or size.
+        self.assertNotIn("add_mio_size", shared_mio_text)
+        self.assertNotIn("add_mio_funds", shared_mio_text)
+        # F6: the generic funds+size maximizer lives in the PRC MIO effects file.
+        self.assertIn("add_mio_size", mio_effect_text)
+        self.assertIn("add_mio_funds", mio_effect_text)
 
         decision_root = scripts[
             validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
@@ -591,6 +594,56 @@ class ValidatorRegressionTests(unittest.TestCase):
         self.assertNotIn(
             "PRC_OCS_complete_shared_mio_traits",
             [assignment.key for assignment in category.assignments],
+        )
+
+    def test_v28_maximize_mios_contract(self) -> None:
+        """v2.8 F6: generic funds+size maximizer effect + player-only decision."""
+        scripts = parsed_repository()
+        mio_root = scripts[
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_mio_effects.txt"
+        ]
+        maximize = next(
+            assignment.value
+            for assignment in mio_root.assignments
+            if assignment.key == "PRC_OCS_maximize_mios_effect"
+        )
+        self.assertIsInstance(maximize, validator.Block)
+        every = validator.direct_blocks(
+            maximize, "every_military_industrial_organization"
+        )
+        self.assertEqual(len(every), 1)
+        self.assertEqual(
+            validator.direct_scalars(every[0], "add_mio_funds"), ["100000"]
+        )
+        self.assertEqual(
+            validator.direct_scalars(every[0], "add_mio_size"), ["20"]
+        )
+
+        decision_root = scripts[
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        ]
+        category = decision_root.assignments[0].value
+        decision = next(
+            assignment.value
+            for assignment in category.assignments
+            if assignment.key == "PRC_OCS_maximize_mios"
+        )
+        self.assertIsInstance(decision, validator.Block)
+        available = validator.direct_blocks(decision, "available")[0]
+        self.assertEqual(validator.direct_scalars(available, "is_ai"), ["no"])
+        self.assertEqual(
+            validator.direct_scalars(available, "has_country_flag"),
+            ["PRC_OCS_initialized"],
+        )
+        ai_will_do = validator.direct_blocks(decision, "ai_will_do")[0]
+        self.assertEqual(validator.direct_scalars(ai_will_do, "factor"), ["0"])
+        effect = validator.direct_blocks(decision, "complete_effect")[0]
+        self.assertEqual(
+            validator.direct_scalars(effect, "PRC_OCS_maximize_mios_effect"),
+            ["yes"],
         )
 
     def test_evolution_dependency_and_variant_contract(self) -> None:

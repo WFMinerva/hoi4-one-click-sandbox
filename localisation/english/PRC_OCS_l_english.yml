@@ -5,6 +5,8 @@
  PRC_OCS_initialize_desc:0 "For every human-controlled country: completes all technologies and preset doctrines, applies the preset service spirits, completes target MIO trait routes for registered shared companies, and creates preset equipment designs, eight division templates and a massive stockpile."
  PRC_OCS_resupply:0 "Replenish Strategic Equipment Stockpile"
  PRC_OCS_resupply_desc:0 "Adds another one million units of every supported land and air equipment type and the preset variants matching the current-country initialization branch, while replenishing political power, command power and service experience. Technologies, templates, advisers and designs are not recreated."
+ PRC_OCS_maximize_mios:0 "Max Out MIO Funds and Size"
+ PRC_OCS_maximize_mios_desc:0 "Immediately maxes out the funds and size of every military industrial organization currently owned by the current country (including organizations added by other mods), so you can spend funds to unlock every trait yourself. It does not auto-unlock traits and does not change any organization's trait route. §YCan be re-applied.§!"
  PRC_OCS_reorganize_army:0 "Reorganize Existing Army"
  PRC_OCS_reorganize_army_desc:0 "Converts every existing division of the current country to the preset Garrison Force template. This removes the distinctions of existing armored, mountain, cavalry, marine and other specialized formations and cannot be automatically reversed. §ROnly use it when you deliberately want a uniform army.§!"
  PRC_OCS_skull_divisions:0 "One-Click Skull Divisions"

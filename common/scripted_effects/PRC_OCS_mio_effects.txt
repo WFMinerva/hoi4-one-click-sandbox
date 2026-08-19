@@ -67,3 +67,10 @@ PRC_OCS_configure_mios_effect = {
 		complete_mio_trait = generic_mio_trait_land_mine_racks
 	}
 }
+
+PRC_OCS_maximize_mios_effect = {
+	every_military_industrial_organization = {
+		add_mio_funds = 100000
+		add_mio_size = 20
+	}
+}
