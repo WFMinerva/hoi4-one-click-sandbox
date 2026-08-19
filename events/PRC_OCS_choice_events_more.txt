@@ -2858,6 +2858,42 @@ country_event = {
   country_event = { id = PRC_OCS.52 }
  }
 }
+country_event = {
+ id = PRC_OCS.70
+ title = PRC_OCS.70.t
+ desc = PRC_OCS.70.d
+ picture = GFX_report_event_generic_research
+ is_triggered_only = yes
+
+ option = {
+  name = PRC_OCS.70.a
+  custom_effect_tooltip = PRC_OCS.70.a_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_nuclear_design_choice_reward_choice_done
+  }
+  country_event = { id = PRC_OCS.49 }
+ }
+ option = {
+  name = PRC_OCS.70.b
+  custom_effect_tooltip = PRC_OCS.70.b_tt
+  hidden_effect = {
+   set_country_flag = PRC_OCS_sp_nuclear_design_choice_reward_choice_done
+   set_country_flag = nuclear_reactor_heavy_water_flag
+   set_technology = {
+   	nuclear_reactor_heavy_water = 1
+   	popup = no
+   }
+   capital_scope = {
+   	add_building_construction = {
+   		type = nuclear_reactor_heavy_water
+   		level = 1
+   		instant_build = yes
+   	}
+   }
+  }
+  country_event = { id = PRC_OCS.49 }
+ }
+}
 # === v2.6/v2.8 dispatch menus (48-52) appended by finish_choice_events.py ===
 
 country_event = {
@@ -3003,10 +3039,18 @@ country_event = {
   country_event = { id = PRC_OCS.47 }
  }
  option = {
+  name = PRC_OCS.49.c
+  trigger = {
+   NOT = { has_country_flag = PRC_OCS_sp_nuclear_design_choice_reward_choice_done }
+  }
+  country_event = { id = PRC_OCS.70 }
+ }
+ option = {
   name = PRC_OCS.49.z
   trigger = {
    has_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done
    has_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done
+   has_country_flag = PRC_OCS_sp_nuclear_design_choice_reward_choice_done
   }
   hidden_effect = {
    set_country_flag = PRC_OCS_nuclear_special_project_choices_done

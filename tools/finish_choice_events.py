@@ -115,6 +115,9 @@ GROUP_INFO = {
     47: ('Nuclear Reactor Tested Reward', '核反应堆测试完成奖励', 'Reactor Tested Reward', '反应堆测试奖励',
          ['Keep the information classified for now', 'Celebrate the achievement publicly'],
          ['暂时保留这些信息加密', '公开庆祝这一成就']),
+    70: ('Nuclear Reactor Design Choice', '核反应堆设计选择', 'Reactor Design', '反应堆设计',
+         ['Purified graphite is the better moderator', 'Heavy water will be cheaper'],
+         ['纯化石墨是更好的反应堆慢化剂', '重水更便宜']),
     54: ('Land Cruiser — Chassis Prototype Focus', '陆地巡洋舰·底盘原型方向', 'Land Cruiser — Chassis', '陆地巡洋舰·底盘',
          ['Redesign the Chassis Entirely', 'Reinforce the Chassis', 'Use Lighter Materials'],
          ['完全重新设计底盘', '加固底盘', '使用轻量化材料']),
@@ -405,6 +408,13 @@ GROUP_TT = {
     ], [
         "不获得奖励；反应堆测试结果保密处理。",
         "向公众公开：执政党支持率 +10%、政治点 +100、设置全球反应堆测试完成标志，并向其他获得原子能科技的国家提供核反应堆项目加成。",
+    ]),
+    70: ([
+        "Standard nuclear reactor (already granted by project completion).",
+        "Unlocks the heavy-water reactor technology and builds one in the capital.",
+    ], [
+        "标准核反应堆（项目完成时已授予）。",
+        "解锁重水反应堆科技，并在首都补建一座。",
     ]),
     54: ([
         "Land cruisers: +5% reliability.",

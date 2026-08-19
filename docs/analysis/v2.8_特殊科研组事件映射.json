@@ -126,5 +126,13 @@
     "reward": "sp_rocket_guidance_system_choice_reward",
     "flag": "PRC_OCS_sp_rocket_guidance_system_choice_reward_choice_done",
     "menu": 52
+  },
+  {
+    "eid": 70,
+    "specialization": "nuclear",
+    "project": "sp_nuclear_reactor",
+    "reward": "sp_nuclear_design_choice_reward",
+    "flag": "PRC_OCS_sp_nuclear_design_choice_reward_choice_done",
+    "menu": 49
   }
 ]

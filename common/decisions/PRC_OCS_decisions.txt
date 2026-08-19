@@ -526,6 +526,7 @@ PRC_OCS_category = {
 			is_ai = no
 			has_country_flag = PRC_OCS_nuclear_special_projects_completed
 			OR = {
+				NOT = { has_country_flag = PRC_OCS_sp_nuclear_design_choice_reward_choice_done }
 				NOT = { has_country_flag = PRC_OCS_sp_nuclear_isotope_separation_choice_reward_choice_done }
 				NOT = { has_country_flag = PRC_OCS_sp_nuclear_reactor_tested_reward_choice_done }
 			}

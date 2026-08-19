@@ -1104,7 +1104,7 @@ class ValidatorRegressionTests(unittest.TestCase):
         )
 
     def test_v28_choice_group_map_contract(self) -> None:
-        """v2.8 replicable groups map to events 54-69 with menu 52 for rocket."""
+        """v2.8 groups map to events 54-70 (menus 48/49/51/52)."""
         mapping = json.loads(
             (
                 validator.ROOT
@@ -1113,15 +1113,15 @@ class ValidatorRegressionTests(unittest.TestCase):
                 / "v2.8_特殊科研组事件映射.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(len(mapping), 16)
+        self.assertEqual(len(mapping), 17)
         flags = [item["flag"] for item in mapping]
         eids = [item["eid"] for item in mapping]
         self.assertEqual(len(set(flags)), len(flags))
         self.assertEqual(len(set(eids)), len(eids))
-        self.assertEqual(eids, list(range(54, 70)))
+        self.assertEqual(eids, list(range(54, 71)))
         for item in mapping:
-            self.assertIn(item["specialization"], {"land", "naval", "rocket"})
-            self.assertIn(item["menu"], {48, 51, 52})
+            self.assertIn(item["specialization"], {"land", "naval", "rocket", "nuclear"})
+            self.assertIn(item["menu"], {48, 49, 51, 52})
         rocket_rewards = {
             item["reward"]
             for item in mapping
@@ -1138,6 +1138,26 @@ class ValidatorRegressionTests(unittest.TestCase):
         for item in mapping:
             if item["specialization"] == "rocket":
                 self.assertEqual(item["menu"], 52)
+
+    def test_v28_nuclear_design_choice_contract(self) -> None:
+        """v2.8 B6: nuclear menu gains the graphite/heavy-water design choice
+        (event 70); the heavy-water option flags + grants the heavy-water
+        reactor technology and builds one in the capital."""
+        events_text = validator.read_utf8(
+            validator.ROOT / "events" / "PRC_OCS_choice_events_more.txt"
+        )
+        self.assertIn("id = PRC_OCS.70", events_text)
+        self.assertIn("nuclear_reactor_heavy_water_flag", events_text)
+        self.assertIn("nuclear_reactor_heavy_water = 1", events_text)
+        self.assertIn("type = nuclear_reactor_heavy_water", events_text)
+        self.assertIn("country_event = { id = PRC_OCS.70 }", events_text)
+        decisions_text = validator.read_utf8(
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        )
+        self.assertIn(
+            "PRC_OCS_sp_nuclear_design_choice_reward_choice_done",
+            decisions_text,
+        )
 
     def test_v28_choice_group_tooltips_contract(self) -> None:
         """Every v2.8 group option carries a bilingual custom_effect_tooltip and
