@@ -1159,6 +1159,32 @@ class ValidatorRegressionTests(unittest.TestCase):
             decisions_text,
         )
 
+    def test_v28_land_generic_bonuses_contract(self) -> None:
+        """v2.8 #6: the land special-project completion grants the 9 positive
+        generic equipment bonuses (armor/engine/artillery)."""
+        effects_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_special_project_effects.txt"
+        )
+        self.assertIn("PRC_OCS_grant_land_generic_bonuses_effect = {", effects_text)
+        for name in (
+            "PRC_OCS_generic_armor_bonus_1",
+            "PRC_OCS_generic_armor_bonus_2",
+            "PRC_OCS_generic_armor_bonus_3",
+            "PRC_OCS_generic_engine_bonus_1",
+            "PRC_OCS_generic_engine_bonus_2",
+            "PRC_OCS_generic_engine_bonus_3",
+            "PRC_OCS_generic_artillery_bonus_1",
+            "PRC_OCS_generic_artillery_bonus_2",
+            "PRC_OCS_generic_artillery_bonus_3",
+        ):
+            self.assertIn(name, effects_text)
+        self.assertIn(
+            "PRC_OCS_grant_land_generic_bonuses_effect = yes", effects_text
+        )
+
     def test_v28_choice_group_tooltips_contract(self) -> None:
         """Every v2.8 group option carries a bilingual custom_effect_tooltip and
         each add_equipment_bonus name is unique."""

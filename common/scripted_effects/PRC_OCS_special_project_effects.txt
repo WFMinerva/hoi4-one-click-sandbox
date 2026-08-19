@@ -170,8 +170,95 @@ PRC_OCS_complete_land_special_projects_effect = {
 			# sp_land_large_caliber_kinetic_energy_sabot
 			sp_advance_sabot_shells = 1
 		}
+		PRC_OCS_grant_land_generic_bonuses_effect = yes
 		set_country_flag = PRC_OCS_land_special_projects_completed
 		country_event = { id = PRC_OCS.12 }
+	}
+}
+
+PRC_OCS_grant_land_generic_bonuses_effect = {
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_armor_bonus_1
+		bonus = {
+			armor = {
+				armor_value = 0.02
+			}
+		}
+	}
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_armor_bonus_2
+		bonus = {
+			armor = {
+				hardness = 0.02
+			}
+		}
+	}
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_armor_bonus_3
+		bonus = {
+			armor = {
+				armor_value = 0.02
+				hardness = 0.02
+			}
+		}
+	}
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_engine_bonus_1
+		bonus = {
+			armor = {
+				maximum_speed = 0.03
+			}
+		}
+	}
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_engine_bonus_2
+		bonus = {
+			armor = {
+				reliability = 0.03
+			}
+		}
+	}
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_engine_bonus_3
+		bonus = {
+			armor = {
+				maximum_speed = 0.03
+				reliability = 0.03
+			}
+		}
+	}
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_artillery_bonus_1
+		bonus = {
+			artillery = {
+				soft_attack = 0.02
+			}
+		}
+	}
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_artillery_bonus_2
+		bonus = {
+			anti_tank = {
+				hard_attack = 0.02
+			}
+			anti_air = {
+				air_attack = 0.02
+			}
+		}
+	}
+	add_equipment_bonus = {
+		name = PRC_OCS_generic_artillery_bonus_3
+		bonus = {
+			artillery = {
+				soft_attack = 0.02
+			}
+			anti_tank = {
+				hard_attack = 0.02
+			}
+			anti_air = {
+				air_attack = 0.02
+			}
+		}
 	}
 }
 
