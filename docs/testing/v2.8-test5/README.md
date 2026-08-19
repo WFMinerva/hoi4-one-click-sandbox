@@ -12,4 +12,4 @@
   2. **中文存档名保存失败**（首跑实测发现）：`save v2.8test5判定` 的 _temp→正式名 rename 报 errno 2，判定档滞留 `_temp` 名。修复：判定档改名 ASCII `v2.8test5verdict.hoi4`（内容完整），制度与编排提示改为「判定档文件名必须 ASCII」。
   3. **归档脱敏漏正斜杠路径**（首跑 error.log 为证）：`C:/Users/...` 形态未被反斜杠版 USERPROFILE 替换覆盖。修复：`check_logs._redact_identity` 双分隔符覆盖＋`result.json` 的 `logs_dir` 输出即脱敏＋增单测（现 19 项）。
 - **例外说明**：截图不适用（自动断言轮）；判定档 `v2.8test5verdict.hoi4` 留本机（二进制不入 git）；首跑日志副本见 `logs_首跑_旧标记格式/`。
-- **结论**：本轮 50 用例全 PASS、日志洁净、版本绑定成立——**通过**（待维护者签收）。
+- **结论**：本轮 50 用例全 PASS、日志洁净、版本绑定成立——**通过**，机主已签收（2026-08-20）；判定档 `v2.8test5verdict.hoi4` 经机主拍板登记为黄金存档（见 `docs/testing/黄金存档制度.md`）。
