@@ -1,0 +1,73 @@
+[h1]开局一键爽玩 | One-Click Sandbox Start[/h1]
+
+不想每次开局都重复输入控制台、研究科技学说、配置军工机构、重建设计编制，再逐地块安排工厂、机场、基建、炼油厂、船坞建设？
+
+本MOD通过零政治点决议快速完成沙盒开局——但绝不会超过正常游戏过程中能达到的程度，拒绝魔改！
+
+[h2]v2.8 更新要点[/h2]
+[list]
+[*]间谍机构升级补全「本地化训练中心」；支援/补给船选项悬浮显示官方科技效果
+[*]拥有喷气DLC时不再研发史前喷气科技与满改设计；巡洋潜艇正确解锁附加油箱模块
+[*]特殊科研42组选项全部官方中文文案；核能新增「石墨/重水」设计选择
+[*]补全陆地巡洋舰/超重型榴弹炮/海军/火箭互斥装备加成组，逐项可选
+[*]新决议「拉满军工机构资金与规模」；机构默认路线改「功能最强」方向
+[*]完成陆军特殊科研补授9项正面装备加成（装甲/硬度/速度/可靠性/火炮/反坦克/防空）
+[/list]
+
+[h2]一键开局初始化[/h2]
+[list]
+[*]全部科技与预设学说、8项军种精神、MIO特质路线、22个装备设计与8个编制、巨量库存
+[*]特殊科研项目奖励逐项选择，选项附具体数值
+[/list]
+
+[h2]其他决议[/h2]
+[list]
+[*]一键骷髅师（v2.7）：海量被动经验直冲满级，暂停时不生效
+[*]开发占领区、加速补给站（v2.7）；点数与经验随时补充
+[*]全国建设：共享槽25、基建5、机场10、港口10、防空5、海岸要塞10、炼油厂与储油罐至3、船坞/民用工厂至上限
+[*]间谍情报条线（v2.5，需《La Resistance》）
+[/list]
+
+[h2]兼容性与使用说明[/h2]
+[list]
+[*]适配 Hearts of Iron IV 1.19.*（建议保持最新热修）；特殊科研需《Gotterdammerung》
+[*]全部决议0政治点，AI不会执行；不覆盖原版国策、历史与事件链
+[*]建议避免与其他大规模修改MOD同时使用
+[/list]
+
+[h2]作者与源码[/h2]
+[list]
+[*][url=https://github.com/WFMinerva][b]GitHub：WFMinerva / HAPPYADONG[/b][/url]
+[*][url=https://steamcommunity.com/profiles/76561198024627348][b]Steam主页：HAPPYADONG[/b][/url]
+[/list]
+
+[h2]特别致谢[/h2]
+[list]
+[*]感谢一位匿名玩家在 v2.7–v2.8 测试期间的持续实机反馈：雷达与间谍机构补全、特殊科研逐项选择、支援/补给船提示、巡洋潜艇与陆地巡洋舰模块、MIO路线方向、42组官方文案统一等改进，均由其一一条条实测报出并推动落地。
+[/list]
+
+[h1]English Description[/h1]
+
+Zero-cost, player-only decisions for a fast single-player sandbox start — all within normal gameplay results.
+
+[h2]New in v2.8[/h2]
+[list]
+[*]Intelligence agency upgrade gap fixed; supply/repair ship options show official tech effects
+[*]No prehistoric jet techs/designs with the jet DLC; cruiser-submarine extra fuel tank unlocked
+[*]All 42 prototype-reward options use official localization; nuclear graphite/heavy-water choice added
+[*]Land-cruiser/super-heavy howitzer/naval/rocket equipment-bonus groups added, pickable one by one
+[*]New decision: max out MIO funds and size; default MIO routes now pick the strongest builds
+[*]9 positive generic land equipment bonuses granted with land special projects
+[/list]
+
+[h2]One-Click Initialization[/h2]
+All technologies and doctrines; 8 service spirits; MIO trait routes; 22 designs, 8 templates, big stockpiles; special-project rewards picked one by one with concrete values.
+
+[h2]Other Decisions[/h2]
+Skull divisions (v2.7); occupied-territory development and supply-hub boost (v2.7); points/XP top-ups; nationwide construction (slots 25, infra 5, air bases 10, ports 10, AA 5, coastal forts 10, refineries/fuel to 3, dockyards/civ-s to cap); intelligence line (v2.5, La Resistance).
+
+[h2]Compatibility[/h2]
+Hearts of Iron IV 1.19.* (keep the latest hotfix); special projects need Gotterdammerung; AI never uses the decisions; no vanilla focus/history/event overwrites; avoid pairing with large overhaul mods.
+
+[h2]Special Thanks[/h2]
+Sincere thanks to an anonymous player for extensive in-game testing and feedback across v2.7–v2.8 — radar/intelligence fixes, special-project choice rework, supply-ship tooltips, cruiser-submarine and land-cruiser modules, MIO route direction, and official-localization alignment.
