@@ -598,6 +598,76 @@ class ValidatorRegressionTests(unittest.TestCase):
             [assignment.key for assignment in category.assignments],
         )
 
+    def test_v28_shared_mio_dlc_guards_contract(self) -> None:
+        """v2.8 #7: 生成器按原版 allowed 生成机构守卫；PRC 引用双覆盖；FROM 豁免。"""
+        scripts = parsed_repository()
+        shared_root = scripts[
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_shared_mio_effects.txt"
+        ]
+        shared_effect = next(
+            assignment.value
+            for assignment in shared_root.assignments
+            if assignment.key == "PRC_OCS_configure_shared_mios_effect"
+        )
+        dlc_branch = validator.direct_blocks(shared_effect, "if")[0]
+
+        def scalars(block: validator.Block, key: str) -> list[str]:
+            found: list[str] = []
+            for assignment in block.assignments:
+                if assignment.key == key and isinstance(assignment.value, str):
+                    found.append(assignment.value)
+                elif isinstance(assignment.value, validator.Block):
+                    found.extend(scalars(assignment.value, key))
+            return found
+
+        limits: dict[str, validator.Block] = {}
+        guards: dict[str, list[str]] = {}
+        for branch in validator.direct_blocks(dlc_branch, "if"):
+            limit = validator.direct_blocks(branch, "limit")[0]
+            company = validator.direct_scalars(
+                limit, "has_military_industrial_organization"
+            )
+            self.assertEqual(len(company), 1)
+            limits[company[0]] = limit
+            guards[company[0]] = scalars(limit, "has_dlc")
+        self.assertEqual(len(limits), 444)
+        self.assertEqual(
+            sum(1 for dlcs in guards.values() if dlcs), 354
+        )
+        # 点验：TfV 门禁机构守卫保真
+        self.assertEqual(
+            guards["NZL_nz_railways_2_organization"], ["Together for Victory"]
+        )
+        # 点验：GER_man 的 OR 结构保真（GER 分支无 DLC 要求、GRE 分支需 BfB）
+        ger_man = limits["GER_man_organization"]
+        self.assertEqual(guards["GER_man_organization"], ["Battle for the Bosporus"])
+        self.assertEqual(
+            sorted(scalars(ger_man, "original_tag")), ["GER", "GRE"]
+        )
+        # 点验：无 DLC 门禁的机构守卫只含 tag（USA 军械署）
+        self.assertEqual(guards["USA_army_ordnance_department_organization"], [])
+        # 点验：FROM 豁免机构（SOV_okmo）维持裸守卫
+        sov_okmo = limits["SOV_okmo_organization"]
+        self.assertEqual(
+            [assignment.key for assignment in sov_okmo.assignments],
+            ["has_military_industrial_organization"],
+        )
+        # 点验：PRC 引用双覆盖（红线 3）——同一 OR 块内同时含两形式
+        for token in (
+            "PRC_dalian_shipbuilding_company_organization",
+            "CHI_camco_bomber_organization",
+        ):
+            dual = [
+                block
+                for block, _context in validator.walk_blocks(limits[token])
+                if "PRC" in validator.direct_scalars(block, "tag")
+                and "PRC" in validator.direct_scalars(block, "original_tag")
+            ]
+            self.assertGreaterEqual(len(dual), 1, f"{token} 缺 PRC 双覆盖守卫")
+
     def test_v28_maximize_mios_contract(self) -> None:
         """v2.8 F6: generic funds+size maximizer effect + player-only decision."""
         scripts = parsed_repository()
@@ -1690,11 +1760,12 @@ class ValidatorRegressionTests(unittest.TestCase):
         text = (validator.ROOT / "common" / "scripted_effects" / "PRC_OCS_selftest_effects.txt") \
             .read_text(encoding="utf-8")
         self.assertIn("PRC_OCS_selftest_run_suite = {", text)
-        # 7 固定用例 + 43 选择组用例（26＋17，由两份映射 JSON 派生，不写死）
+        # 8 固定用例 + 43 选择组用例（26＋17，由两份映射 JSON 派生，不写死）
         cases = sorted(set(re.findall(r"\bOCS_TEST\s+(?:PASS|FAIL)\s+([A-Za-z0-9_.\-]+)", text)))
-        self.assertEqual(len(cases), 50)
+        self.assertEqual(len(cases), 51)
         for name in ("init_flag", "skull_idea", "mio_exists", "mio_size_max",
-                     "jet_polarity", "n1_cruiser_submarine", "b6_heavy_water"):
+                     "mio_shared_chain", "jet_polarity", "n1_cruiser_submarine",
+                     "b6_heavy_water"):
             self.assertIn(name, cases)
         self.assertIn("choice_group_22", cases)
         self.assertIn("choice_group_70", cases)

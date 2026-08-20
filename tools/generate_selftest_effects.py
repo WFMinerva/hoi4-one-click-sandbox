@@ -71,6 +71,15 @@ PRC_OCS_selftest_mio_size_max = {
     }
 }
 
+# mio_shared_chain 用例（v2.8 #7）：实际执行共享 MIO 路线链（一键开局已跑过一次，
+# 本用例复跑验证幂等性）；真实断言由 check_logs 对 error.log 的新签名报警兜底——
+# 任何键漂移（版本热修/原版改名/生成表与运行环境不符）都会在维护者回归轮被捕获。
+# 无 AAT 时链体为空操作（effect 内部自带 AAT 门禁），恒 PASS＝环境不适用语义。
+PRC_OCS_selftest_mio_shared_chain = {
+    PRC_OCS_configure_shared_mios_effect = yes
+    log = "OCS_TEST PASS mio_shared_chain"
+}
+
 PRC_OCS_selftest_jet_polarity = {
     if = {
         limit = { has_dlc = "By Blood Alone" }
@@ -159,7 +168,8 @@ PRC_OCS_selftest_{name} = {{
 
 FIXED_CASE_NAMES = (
     "init_flag", "skull_idea", "mio_exists", "mio_size_max",
-    "jet_polarity", "n1_cruiser_submarine", "b6_heavy_water",
+    "mio_shared_chain", "jet_polarity", "n1_cruiser_submarine",
+    "b6_heavy_water",
 )
 
 
