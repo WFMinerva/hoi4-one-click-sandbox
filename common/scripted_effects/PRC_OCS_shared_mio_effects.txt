@@ -12,6 +12,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# AFG
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				tag = AFG
 				has_military_industrial_organization = AFG_aircraft_organization
 			}
 			mio:AFG_aircraft_organization = {
@@ -35,6 +37,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				tag = AFG
 				has_military_industrial_organization = AFG_artillery_organization
 			}
 			mio:AFG_artillery_organization = {
@@ -58,6 +62,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				tag = AFG
 				has_military_industrial_organization = AFG_infantry_organization
 			}
 			mio:AFG_infantry_organization = {
@@ -82,6 +88,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				tag = AFG
 				has_military_industrial_organization = AFG_naval_organization
 			}
 			mio:AFG_naval_organization = {
@@ -105,6 +113,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				tag = AFG
 				has_military_industrial_organization = AFG_tanks_organization
 			}
 			mio:AFG_tanks_organization = {
@@ -130,6 +140,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# ARG
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = ARG
 				has_military_industrial_organization = ARG_arsenales_de_marina_organization
 			}
 			mio:ARG_arsenales_de_marina_organization = {
@@ -153,6 +165,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = ARG
 				has_military_industrial_organization = ARG_astarsa_organization
 			}
 			mio:ARG_astarsa_organization = {
@@ -178,6 +192,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = ARG
 				has_military_industrial_organization = ARG_fabricaciones_militares_art_organization
 			}
 			mio:ARG_fabricaciones_militares_art_organization = {
@@ -201,6 +217,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = ARG
 				has_military_industrial_organization = ARG_fabricaciones_militares_epartamento_de_tanques_del_ejercito_organization
 			}
 			mio:ARG_fabricaciones_militares_epartamento_de_tanques_del_ejercito_organization = {
@@ -225,6 +243,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = ARG
 				has_military_industrial_organization = ARG_fabricaciones_militares_organization
 			}
 			mio:ARG_fabricaciones_militares_organization = {
@@ -249,6 +269,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = ARG
 				has_military_industrial_organization = ARG_fma_organization
 			}
 			mio:ARG_fma_organization = {
@@ -272,6 +294,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = ARG
 				has_military_industrial_organization = ARG_hispano_argentina_organization
 			}
 			mio:ARG_hispano_argentina_organization = {
@@ -297,6 +321,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# AST
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_cockatoo_docks_organization
 			}
 			mio:AST_cockatoo_docks_organization = {
@@ -325,6 +351,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_commonwealth_aircraft_corporation_organization
 			}
 			mio:AST_commonwealth_aircraft_corporation_organization = {
@@ -352,6 +380,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_de_havilland_australia_organization
 			}
 			mio:AST_de_havilland_australia_organization = {
@@ -379,6 +409,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_ford_australia_organization
 			}
 			mio:AST_ford_australia_organization = {
@@ -405,6 +437,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_government_aircraft_factories_organization
 			}
 			mio:AST_government_aircraft_factories_organization = {
@@ -431,6 +465,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_holden_organization
 			}
 			mio:AST_holden_organization = {
@@ -456,6 +492,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
 				has_military_industrial_organization = AST_lithgow_arms_organization
 			}
 			mio:AST_lithgow_arms_organization = {
@@ -480,6 +517,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_lysaght_organization
 			}
 			mio:AST_lysaght_organization = {
@@ -505,6 +544,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_morts_dock_organization
 			}
 			mio:AST_morts_dock_organization = {
@@ -531,6 +572,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_new_south_wales_government_railways_organization
 			}
 			mio:AST_new_south_wales_government_railways_organization = {
@@ -557,6 +600,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_nuffield_mechanizations_and_aero_organization
 			}
 			mio:AST_nuffield_mechanizations_and_aero_organization = {
@@ -583,6 +628,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_vickers-ruwolt_organization
 			}
 			mio:AST_vickers-ruwolt_organization = {
@@ -608,6 +655,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AST
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = AST_vulcan_foundry_organization
 			}
 			mio:AST_vulcan_foundry_organization = {
@@ -636,6 +685,17 @@ PRC_OCS_configure_shared_mios_effect = {
 		# AUS
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						original_TAG = AUS
+						has_dlc = "Arms Against Tyranny"
+						has_dlc = Gotterdammerung
+					}
+					AND = {
+						tag = HUN
+						has_dlc = Gotterdammerung
+					}
+				}
 				has_military_industrial_organization = AUS_ELIN_organization
 			}
 			mio:AUS_ELIN_organization = {
@@ -660,6 +720,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AUS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = AUS_ansaldo_organization
 			}
 			mio:AUS_ansaldo_organization = {
@@ -683,6 +746,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = AUS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = AUS_graf_and_stift_organization
 			}
 			mio:AUS_graf_and_stift_organization = {
@@ -706,6 +772,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AUS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = AUS_hirtenberger_organization
 			}
 			mio:AUS_hirtenberger_organization = {
@@ -730,6 +799,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						original_TAG = AUS
+						has_dlc = "Arms Against Tyranny"
+						has_dlc = Gotterdammerung
+					}
+					AND = {
+						tag = HUN
+						has_dlc = Gotterdammerung
+					}
+				}
 				has_military_industrial_organization = AUS_osterreichische_fleugzeugfabrik_organization
 			}
 			mio:AUS_osterreichische_fleugzeugfabrik_organization = {
@@ -756,6 +836,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = AUS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
+				has_dlc = "La Resistance"
 				has_military_industrial_organization = AUS_osterreichische_saurerwerke_organization
 			}
 			mio:AUS_osterreichische_saurerwerke_organization = {
@@ -781,6 +865,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AUS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = AUS_phonix_fleugzeugwerke_organization
 			}
 			mio:AUS_phonix_fleugzeugwerke_organization = {
@@ -804,6 +891,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						original_TAG = AUS
+						has_dlc = "Arms Against Tyranny"
+						has_dlc = Gotterdammerung
+					}
+					AND = {
+						tag = HUN
+						has_dlc = Gotterdammerung
+					}
+				}
 				has_military_industrial_organization = AUS_stabilimento_tecnico_triestino_organization
 			}
 			mio:AUS_stabilimento_tecnico_triestino_organization = {
@@ -828,6 +926,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = AUS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = AUS_steyr_organization
 			}
 			mio:AUS_steyr_organization = {
@@ -855,6 +956,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# BEL
 		if = {
 			limit = {
+				original_tag = BEL
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = BEL_ateliers_metallurgiques_tubize_organization
 			}
 			mio:BEL_ateliers_metallurgiques_tubize_organization = {
@@ -883,6 +986,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = BEL
+					original_tag = COG
+				}
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = BEL_cockerill_shipyards_organization
 			}
 			mio:BEL_cockerill_shipyards_organization = {
@@ -910,6 +1018,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = BEL
+				NOT = {
+					has_dlc = Gotterdammerung
+				}
 				has_military_industrial_organization = BEL_fabrique_nationale_organization
 			}
 			mio:BEL_fabrique_nationale_organization = {
@@ -934,6 +1046,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = BEL
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = BEL_fn_herstal_organization
 			}
 			mio:BEL_fn_herstal_organization = {
@@ -961,6 +1075,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = BEL
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = BEL_fonderie_royale_de_canons_liege_organization
 			}
 			mio:BEL_fonderie_royale_de_canons_liege_organization = {
@@ -986,6 +1102,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = BEL
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = BEL_laboratoire_aerotechnique_de_belgique_organization
 			}
 			mio:BEL_laboratoire_aerotechnique_de_belgique_organization = {
@@ -1004,6 +1122,12 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = BEL
+					original_tag = COG
+				}
+				has_dlc = Gotterdammerung
+				has_dlc = "La Resistance"
 				has_military_industrial_organization = BEL_minerva_imperia_armored_car_organization
 			}
 			mio:BEL_minerva_imperia_armored_car_organization = {
@@ -1030,6 +1154,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = BEL
+					original_tag = COG
+				}
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = BEL_minerva_imperia_motorized_organization
 			}
 			mio:BEL_minerva_imperia_motorized_organization = {
@@ -1056,6 +1185,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = BEL
+					original_tag = COG
+				}
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = BEL_renard_organization
 			}
 			mio:BEL_renard_organization = {
@@ -1083,6 +1217,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = BEL
 				has_military_industrial_organization = BEL_renault_organization
 			}
 			mio:BEL_renault_organization = {
@@ -1109,6 +1244,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = BEL
 				has_military_industrial_organization = BEL_vickers_armstrong_bel_organization
 			}
 			mio:BEL_vickers_armstrong_bel_organization = {
@@ -1137,6 +1273,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# BRA
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = BRA
 				has_military_industrial_organization = BRA_amrj_organization
 			}
 			mio:BRA_amrj_organization = {
@@ -1160,6 +1298,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = BRA
 				has_military_industrial_organization = BRA_bernadini_organization
 			}
 			mio:BRA_bernadini_organization = {
@@ -1183,6 +1323,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = BRA
 				has_military_industrial_organization = BRA_cbc_organization
 			}
 			mio:BRA_cbc_organization = {
@@ -1206,6 +1348,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = BRA
 				has_military_industrial_organization = BRA_ddam_organization
 			}
 			mio:BRA_ddam_organization = {
@@ -1229,6 +1373,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = BRA
 				has_military_industrial_organization = BRA_embraer_organization
 			}
 			mio:BRA_embraer_organization = {
@@ -1252,6 +1398,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = BRA
 				has_military_industrial_organization = BRA_fnm_organization
 			}
 			mio:BRA_fnm_organization = {
@@ -1275,6 +1423,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = BRA
 				has_military_industrial_organization = BRA_rossi_organization
 			}
 			mio:BRA_rossi_organization = {
@@ -1301,6 +1451,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# BUL
 		if = {
 			limit = {
+				tag = BUL
 				has_military_industrial_organization = BUL_dar_organization
 			}
 			mio:BUL_dar_organization = {
@@ -1326,6 +1477,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = BUL
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = BUL_dvf_organization
 			}
 			mio:BUL_dvf_organization = {
@@ -1351,6 +1504,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = BUL
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = BUL_dvf_sopot_organization
 			}
 			mio:BUL_dvf_sopot_organization = {
@@ -1375,6 +1530,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = BUL
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = BUL_kaproni_bulgarski_organization
 			}
 			mio:BUL_kaproni_bulgarski_organization = {
@@ -1400,6 +1557,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = BUL
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = BUL_varna_naval_dockyard_organization
 			}
 			mio:BUL_varna_naval_dockyard_organization = {
@@ -1426,6 +1585,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# CAN
 		if = {
 			limit = {
+				original_TAG = CAN
 				has_military_industrial_organization = CAN_canadian_car_foundry_organization
 			}
 			mio:CAN_canadian_car_foundry_organization = {
@@ -1450,6 +1610,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = CAN
 				has_military_industrial_organization = CAN_de_havilland_organization
 			}
 			mio:CAN_de_havilland_organization = {
@@ -1474,6 +1635,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = CAN
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = CAN_fairchild_aircraft_ltd_organization
 			}
 			mio:CAN_fairchild_aircraft_ltd_organization = {
@@ -1497,6 +1660,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = CAN
 				has_military_industrial_organization = CAN_halifax_shipyard_organization
 			}
 			mio:CAN_halifax_shipyard_organization = {
@@ -1520,6 +1684,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = CAN
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = CAN_handley_page_organization
 			}
 			mio:CAN_handley_page_organization = {
@@ -1544,6 +1710,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = CAN
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = CAN_inglis_company_organization
 			}
 			mio:CAN_inglis_company_organization = {
@@ -1567,6 +1735,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = CAN
 				has_military_industrial_organization = CAN_kingston_shipbuilding_organization
 			}
 			mio:CAN_kingston_shipbuilding_organization = {
@@ -1590,6 +1759,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = CAN
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = CAN_small_arms_limited_organization
 			}
 			mio:CAN_small_arms_limited_organization = {
@@ -1614,6 +1785,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = CAN
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = CAN_vickers_armstrong_can_organization
 			}
 			mio:CAN_vickers_armstrong_can_organization = {
@@ -1639,6 +1812,27 @@ PRC_OCS_configure_shared_mios_effect = {
 		# CHI
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+				}
+				OR = {
+					NOT = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					AND = {
+						has_dlc = "No Compromise, No Surrender"
+						NOT = {
+							OR = {
+								tag = CHI
+								OR = {
+									tag = PRC
+									original_tag = PRC
+								}
+							}
+						}
+					}
+				}
 				has_military_industrial_organization = CHI_camco_bomber_organization
 			}
 			mio:CHI_camco_bomber_organization = {
@@ -1663,6 +1857,27 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+				}
+				OR = {
+					NOT = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					AND = {
+						has_dlc = "No Compromise, No Surrender"
+						NOT = {
+							OR = {
+								tag = CHI
+								OR = {
+									tag = PRC
+									original_tag = PRC
+								}
+							}
+						}
+					}
+				}
 				has_military_industrial_organization = CHI_camco_fighter_organization
 			}
 			mio:CHI_camco_fighter_organization = {
@@ -1687,6 +1902,27 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+				}
+				OR = {
+					NOT = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					AND = {
+						has_dlc = "No Compromise, No Surrender"
+						NOT = {
+							OR = {
+								tag = CHI
+								OR = {
+									tag = PRC
+									original_tag = PRC
+								}
+							}
+						}
+					}
+				}
 				has_military_industrial_organization = CHI_camco_medium_organization
 			}
 			mio:CHI_camco_medium_organization = {
@@ -1711,6 +1947,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = CHI
+				NOT = {
+					has_dlc = "Waking the Tiger"
+				}
 				has_military_industrial_organization = CHI_camco_organization
 			}
 			mio:CHI_camco_organization = {
@@ -1735,6 +1975,12 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china_not_prc = yes
+					tag = MAN
+					tag = MEN
+				}
+				has_dlc = "No Compromise, No Surrender"
 				has_military_industrial_organization = CHI_china_automobile_corporation_organization
 			}
 			mio:CHI_china_automobile_corporation_organization = {
@@ -1758,6 +2004,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+					tag = MEN
+				}
+				NOT = {
+					has_dlc = "No Compromise, No Surrender"
+				}
 				has_military_industrial_organization = CHI_dagu_shipyard_organization
 			}
 			mio:CHI_dagu_shipyard_organization = {
@@ -1782,6 +2036,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+					tag = MEN
+				}
+				NOT = {
+					has_dlc = "No Compromise, No Surrender"
+				}
 				has_military_industrial_organization = CHI_hanyan_arsenal_organization
 			}
 			mio:CHI_hanyan_arsenal_organization = {
@@ -1806,6 +2068,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+					tag = MEN
+				}
+				NOT = {
+					has_dlc = "No Compromise, No Surrender"
+				}
 				has_military_industrial_organization = CHI_jiangnan_shipyard_group_organization
 			}
 			mio:CHI_jiangnan_shipyard_group_organization = {
@@ -1829,6 +2099,12 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china_not_prc = yes
+					tag = MAN
+					tag = MEN
+				}
+				has_dlc = "No Compromise, No Surrender"
 				has_military_industrial_organization = CHI_jinling_arsenal_organization
 			}
 			mio:CHI_jinling_arsenal_organization = {
@@ -1852,6 +2128,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+					tag = MEN
+				}
+				NOT = {
+					has_dlc = "No Compromise, No Surrender"
+				}
 				has_military_industrial_organization = CHI_liaoning_arsenal_organization
 			}
 			mio:CHI_liaoning_arsenal_organization = {
@@ -1875,6 +2159,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+					tag = MEN
+				}
 				has_military_industrial_organization = CHI_mukden_arsenal_organization
 			}
 			mio:CHI_mukden_arsenal_organization = {
@@ -1899,6 +2188,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "No Compromise, No Surrender"
+				original_tag = CHI
 				has_military_industrial_organization = CHI_ncns_sino_german_technical_mission_organization
 			}
 			mio:CHI_ncns_sino_german_technical_mission_organization = {
@@ -1922,6 +2213,27 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+				}
+				OR = {
+					NOT = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+					AND = {
+						has_dlc = "No Compromise, No Surrender"
+						NOT = {
+							OR = {
+								tag = CHI
+								OR = {
+									tag = PRC
+									original_tag = PRC
+								}
+							}
+						}
+					}
+				}
 				has_military_industrial_organization = CHI_sino_german_technical_mission_organization
 			}
 			mio:CHI_sino_german_technical_mission_organization = {
@@ -1945,6 +2257,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					is_literally_china = yes
+					tag = MAN
+					tag = MEN
+				}
+				NOT = {
+					has_dlc = "No Compromise, No Surrender"
+				}
 				has_military_industrial_organization = CHI_taiyuan_arsenal_organization
 			}
 			mio:CHI_taiyuan_arsenal_organization = {
@@ -1970,6 +2290,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# CHL
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = CHL
 				has_military_industrial_organization = CHL_arsenales_de_marina_organization
 			}
 			mio:CHL_arsenales_de_marina_organization = {
@@ -1993,6 +2315,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = CHL
 				has_military_industrial_organization = CHL_csav_organization
 			}
 			mio:CHL_csav_organization = {
@@ -2018,6 +2342,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = CHL
 				has_military_industrial_organization = CHL_enaer_organization
 			}
 			mio:CHL_enaer_organization = {
@@ -2041,6 +2367,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = CHL
 				has_military_industrial_organization = CHL_epartamento_de_tanques_del_ejercito_organization
 			}
 			mio:CHL_epartamento_de_tanques_del_ejercito_organization = {
@@ -2064,6 +2392,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = CHL
 				has_military_industrial_organization = CHL_famae_organization
 			}
 			mio:CHL_famae_organization = {
@@ -2088,6 +2418,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = CHL
 				has_military_industrial_organization = CHL_famae_rama_de_artilleria_organization
 			}
 			mio:CHL_famae_rama_de_artilleria_organization = {
@@ -2111,6 +2443,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = CHL
 				has_military_industrial_organization = CHL_fanaero_chile_organization
 			}
 			mio:CHL_fanaero_chile_organization = {
@@ -2139,6 +2473,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Trial of Allegiance"
+				tag = CHL
 				has_military_industrial_organization = CHL_willys_famae_corvo_organization
 			}
 			mio:CHL_willys_famae_corvo_organization = {
@@ -2164,6 +2500,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# COG
 		if = {
 			limit = {
+				tag = COG
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = COG_explosifs_congo_organization
 			}
 			mio:COG_explosifs_congo_organization = {
@@ -2187,6 +2525,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = COG
 				has_military_industrial_organization = COG_fn_hershal_organization
 			}
 			mio:COG_fn_hershal_organization = {
@@ -2214,6 +2553,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = COG
 				has_military_industrial_organization = COG_fonderie_royale_de_canons_leopoldville_organization
 			}
 			mio:COG_fonderie_royale_de_canons_leopoldville_organization = {
@@ -2238,6 +2578,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = COG
 				has_military_industrial_organization = COG_sabena_organization
 			}
 			mio:COG_sabena_organization = {
@@ -2268,6 +2609,11 @@ PRC_OCS_configure_shared_mios_effect = {
 		# CZE
 		if = {
 			limit = {
+				has_dlc = "Peace For Our Time"
+				OR = {
+					tag = CZE
+					tag = POL
+				}
 				has_military_industrial_organization = CZE_CKD_plzen_organization
 			}
 			mio:CZE_CKD_plzen_organization = {
@@ -2296,6 +2642,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = CZE
+					tag = RKH
+				}
 				has_military_industrial_organization = CZE_aero_organization
 			}
 			mio:CZE_aero_organization = {
@@ -2320,6 +2670,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = CZE_avia_organization
 			}
 			mio:CZE_avia_organization = {
@@ -2344,6 +2701,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Peace For Our Time"
+				OR = {
+					tag = CZE
+					tag = RKH
+				}
 				has_military_industrial_organization = CZE_benees_mraz_organization
 			}
 			mio:CZE_benees_mraz_organization = {
@@ -2370,6 +2732,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = RKH
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = CZE_ckd_organization
 			}
 			mio:CZE_ckd_organization = {
@@ -2393,6 +2763,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = HUN
+						has_dlc = Gotterdammerung
+					}
+				}
 				has_military_industrial_organization = CZE_ckd_praga_organization
 			}
 			mio:CZE_ckd_praga_organization = {
@@ -2417,6 +2798,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = SLO
+					tag = RKH
+				}
 				has_military_industrial_organization = CZE_letov_organization
 			}
 			mio:CZE_letov_organization = {
@@ -2441,6 +2827,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = CZE
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = CZE_praga_aviation_organization
 			}
 			mio:CZE_praga_aviation_organization = {
@@ -2459,6 +2847,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = RKH
+				}
 				has_military_industrial_organization = CZE_praga_organization
 			}
 			mio:CZE_praga_organization = {
@@ -2482,6 +2874,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = RKH
+				}
 				has_military_industrial_organization = CZE_ringhoffer_tatra_organization
 			}
 			mio:CZE_ringhoffer_tatra_organization = {
@@ -2505,6 +2901,23 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = SLO
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = HUN
+						has_dlc = Gotterdammerung
+					}
+					AND = {
+						tag = PER
+						has_dlc = "Graveyard of Empires"
+						has_dlc = "Arms Against Tyranny"
+					}
+				}
 				has_military_industrial_organization = CZE_skoda_armor_organization
 			}
 			mio:CZE_skoda_armor_organization = {
@@ -2528,6 +2941,15 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = SLO
+					tag = RKH
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = CZE_skoda_artillery_organization
 			}
 			mio:CZE_skoda_artillery_organization = {
@@ -2551,6 +2973,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = RKH
+				}
 				has_military_industrial_organization = CZE_skoda_shipyards_organization
 			}
 			mio:CZE_skoda_shipyards_organization = {
@@ -2574,6 +3000,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = RKH
+					tag = POL
+				}
 				has_military_industrial_organization = CZE_tatra_organization
 			}
 			mio:CZE_tatra_organization = {
@@ -2597,6 +3028,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = CZE
+					tag = RKH
+					AND = {
+						has_dlc = "Peace For Our Time"
+						tag = ETH
+					}
+				}
 				has_military_industrial_organization = CZE_zbrojovka_brno_organization
 			}
 			mio:CZE_zbrojovka_brno_organization = {
@@ -2621,6 +3060,12 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Peace For Our Time"
+				OR = {
+					tag = CZE
+					tag = POL
+					tag = RKH
+				}
 				has_military_industrial_organization = CZE_zbrojovka_vsetin_organization
 			}
 			mio:CZE_zbrojovka_vsetin_organization = {
@@ -2644,6 +3089,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Peace For Our Time"
+				tag = CZE
 				has_military_industrial_organization = CZE_zlin_aircraft_organization
 			}
 			mio:CZE_zlin_aircraft_organization = {
@@ -2669,6 +3116,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# DEN
 		if = {
 			limit = {
+				tag = DEN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = DEN_DISA_organization
 			}
 			mio:DEN_DISA_organization = {
@@ -2695,6 +3144,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = DEN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = DEN_burmeister_wain_organization
 			}
 			mio:DEN_burmeister_wain_organization = {
@@ -2722,6 +3173,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = DEN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = DEN_flyvemaskinevaerksted_organization
 			}
 			mio:DEN_flyvemaskinevaerksted_organization = {
@@ -2747,6 +3200,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = DEN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = DEN_flyvertroppernes_organization
 			}
 			mio:DEN_flyvertroppernes_organization = {
@@ -2774,6 +3229,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = DEN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = DEN_haerens_tekniske_korps_organization
 			}
 			mio:DEN_haerens_tekniske_korps_organization = {
@@ -2798,6 +3255,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = DEN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = DEN_orlogsvaerftet_organization
 			}
 			mio:DEN_orlogsvaerftet_organization = {
@@ -2825,6 +3284,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = DEN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = DEN_triangel_organization
 			}
 			mio:DEN_triangel_organization = {
@@ -2853,6 +3314,13 @@ PRC_OCS_configure_shared_mios_effect = {
 		# ENG
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = ENG_avro_organization
 			}
 			mio:ENG_avro_organization = {
@@ -2877,6 +3345,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Arms Against Tyranny"
+				OR = {
+					tag = ENG
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = ENG_cammell_laird_organization
 			}
 			mio:ENG_cammell_laird_organization = {
@@ -2902,6 +3378,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = ENG
 				has_military_industrial_organization = ENG_crewe_works_organization
 			}
 			mio:ENG_crewe_works_organization = {
@@ -2928,6 +3405,31 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				OR = {
+					tag = ENG
+					tag = SAF
+					AND = {
+						tag = HUN
+						has_dlc = Gotterdammerung
+					}
+					AND = {
+						tag = EST
+						has_dlc = "No Step Back"
+					}
+					AND = {
+						tag = LAT
+						has_dlc = "No Step Back"
+					}
+					AND = {
+						tag = LIT
+						has_dlc = "No Step Back"
+					}
+					AND = {
+						tag = IRQ
+						has_dlc = "Graveyard of Empires"
+					}
+				}
 				has_military_industrial_organization = ENG_crossley_motors_organization
 			}
 			mio:ENG_crossley_motors_organization = {
@@ -2951,6 +3453,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Arms Against Tyranny"
+				OR = {
+					tag = ENG
+					tag = NOR
+				}
 				has_military_industrial_organization = ENG_de_havilland_organization
 			}
 			mio:ENG_de_havilland_organization = {
@@ -2975,6 +3482,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ENG_fairey_aviation_organization
 			}
 			mio:ENG_fairey_aviation_organization = {
@@ -2998,6 +3516,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ENG
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = ENG_harland_wolff_organization
 			}
 			mio:ENG_harland_wolff_organization = {
@@ -3023,6 +3543,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					tag = SAF
+				}
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = ENG_hawker_organization
 			}
 			mio:ENG_hawker_organization = {
@@ -3047,6 +3572,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ENG_john_brown_organization
 			}
 			mio:ENG_john_brown_organization = {
@@ -3070,6 +3606,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					AND = {
+						OR = {
+							original_TAG = LAT
+							original_TAG = LIT
+							original_TAG = EST
+						}
+						has_dlc = "No Step Back"
+					}
+				}
 				has_military_industrial_organization = ENG_royal_arsenal_organization
 			}
 			mio:ENG_royal_arsenal_organization = {
@@ -3093,6 +3640,21 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					AND = {
+						tag = GRE
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						OR = {
+							original_TAG = LAT
+							original_TAG = LIT
+							original_TAG = EST
+						}
+						has_dlc = "No Step Back"
+					}
+				}
 				has_military_industrial_organization = ENG_rsaf_enfield_organization
 			}
 			mio:ENG_rsaf_enfield_organization = {
@@ -3118,6 +3680,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ENG
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = ENG_supermarine_organization
 			}
 			mio:ENG_supermarine_organization = {
@@ -3144,6 +3708,22 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					tag = POL
+					AND = {
+						tag = ROM
+						has_dlc = "Death or Dishonor"
+					}
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ENG_vauxhall_automotive_organization
 			}
 			mio:ENG_vauxhall_automotive_organization = {
@@ -3167,6 +3747,33 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					tag = SAF
+					AND = {
+						tag = POL
+						OR = {
+							has_dlc = "Poland: United and Ready"
+							has_dlc = "No Step Back"
+						}
+					}
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+					AND = {
+						tag = IRQ
+						has_dlc = "Graveyard of Empires"
+					}
+				}
 				has_military_industrial_organization = ENG_vauxhall_organization
 			}
 			mio:ENG_vauxhall_organization = {
@@ -3190,6 +3797,21 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					AND = {
+						tag = GRE
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ENG_vickers_armstrong_eng_organization
 			}
 			mio:ENG_vickers_armstrong_eng_organization = {
@@ -3215,6 +3837,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ENG
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+				}
 				has_military_industrial_organization = ENG_yarrow_shipbuilders_organization
 			}
 			mio:ENG_yarrow_shipbuilders_organization = {
@@ -3240,6 +3869,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# EST
 		if = {
 			limit = {
+				tag = EST
 				has_military_industrial_organization = EST_arsenal_organization
 			}
 			mio:EST_arsenal_organization = {
@@ -3264,6 +3894,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = EST
 				has_military_industrial_organization = EST_paldiski_port_organization
 			}
 			mio:EST_paldiski_port_organization = {
@@ -3289,6 +3920,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# ETH
 		if = {
 			limit = {
+				tag = ETH
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = ETH_hmmbi_organization
 			}
 			mio:ETH_hmmbi_organization = {
@@ -3313,6 +3946,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ETH
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = ETH_ncgf_organization
 			}
 			mio:ETH_ncgf_organization = {
@@ -3338,6 +3973,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# FIN
 		if = {
 			limit = {
+				original_tag = FIN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FIN_crichton_vulcan_organization
 			}
 			mio:FIN_crichton_vulcan_organization = {
@@ -3366,6 +4003,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = FIN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FIN_sisu_auto_organization
 			}
 			mio:FIN_sisu_auto_organization = {
@@ -3394,6 +4033,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = FIN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FIN_valtion_kivaaritehdas_organization
 			}
 			mio:FIN_valtion_kivaaritehdas_organization = {
@@ -3421,6 +4062,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = FIN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FIN_valtion_lentokonetehdas_organization
 			}
 			mio:FIN_valtion_lentokonetehdas_organization = {
@@ -3446,6 +4089,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = FIN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FIN_valtion_panssaritehdas_organization
 			}
 			mio:FIN_valtion_panssaritehdas_organization = {
@@ -3472,6 +4117,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = FIN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FIN_valtion_tykkitehdas_organization
 			}
 			mio:FIN_valtion_tykkitehdas_organization = {
@@ -3499,6 +4146,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# FRA
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_SNCAC_organization
 			}
 			mio:FRA_SNCAC_organization = {
@@ -3522,6 +4171,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Arms Against Tyranny"
+				OR = {
+					tag = FRA
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = FRA_acf_organization
 			}
 			mio:FRA_acf_organization = {
@@ -3546,6 +4203,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_acl_organization
 			}
 			mio:FRA_acl_organization = {
@@ -3569,6 +4228,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_aeb_organization
 			}
 			mio:FRA_aeb_organization = {
@@ -3592,6 +4253,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = FRA
 				has_military_industrial_organization = FRA_alsthom_organization
 			}
 			mio:FRA_alsthom_organization = {
@@ -3621,6 +4283,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_amiot_organization
 			}
 			mio:FRA_amiot_organization = {
@@ -3645,6 +4309,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
 				has_military_industrial_organization = FRA_amx_organization
 			}
 			mio:FRA_amx_organization = {
@@ -3668,6 +4333,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_apx_organization
 			}
 			mio:FRA_apx_organization = {
@@ -3691,6 +4358,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = FRA
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = FRA_bloch_organization
 			}
 			mio:FRA_bloch_organization = {
@@ -3715,6 +4393,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_fcm_organization
 			}
 			mio:FRA_fcm_organization = {
@@ -3738,6 +4418,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_hotchkiss_organization
 			}
 			mio:FRA_hotchkiss_organization = {
@@ -3762,6 +4444,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_levasseur_organization
 			}
 			mio:FRA_levasseur_organization = {
@@ -3785,6 +4469,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = FRA
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = FRA_mas_organization
 			}
 			mio:FRA_mas_organization = {
@@ -3809,6 +4500,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = FRA_morane_saulnier_organization
 			}
 			mio:FRA_morane_saulnier_organization = {
@@ -3833,6 +4526,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
+				has_dlc = "La Resistance"
 				has_military_industrial_organization = FRA_panhard_organization
 			}
 			mio:FRA_panhard_organization = {
@@ -3856,6 +4551,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = FRA
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = FRA_renault_organization
 			}
 			mio:FRA_renault_organization = {
@@ -3881,6 +4587,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = FRA
 				has_military_industrial_organization = FRA_schneider_organization
 			}
 			mio:FRA_schneider_organization = {
@@ -3904,6 +4611,16 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = FRA
+					AND = {
+						tag = POL
+						OR = {
+							has_dlc = "Poland: United and Ready"
+							has_dlc = "No Step Back"
+						}
+					}
+				}
 				has_military_industrial_organization = FRA_somua_organization
 			}
 			mio:FRA_somua_organization = {
@@ -3929,6 +4646,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# GER
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_alkett_organization
 			}
 			mio:GER_alkett_organization = {
@@ -3954,6 +4672,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_arado_flugzeugwerke_organization
 			}
 			mio:GER_arado_flugzeugwerke_organization = {
@@ -3978,6 +4697,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
+				has_dlc = "La Resistance"
 				has_military_industrial_organization = GER_auto_union_organization
 			}
 			mio:GER_auto_union_organization = {
@@ -4003,6 +4724,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_blohm_und_voss_organization
 			}
 			mio:GER_blohm_und_voss_organization = {
@@ -4026,6 +4748,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_carl_walther_organization
 			}
 			mio:GER_carl_walther_organization = {
@@ -4051,6 +4774,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+					AND = {
+						original_tag = BEL
+						has_dlc = Gotterdammerung
+					}
+				}
 				has_military_industrial_organization = GER_daimler_benz_organization
 			}
 			mio:GER_daimler_benz_organization = {
@@ -4078,6 +4812,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_deschimag_organization
 			}
 			mio:GER_deschimag_organization = {
@@ -4104,6 +4839,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_deutsche_werke_organization
 			}
 			mio:GER_deutsche_werke_organization = {
@@ -4131,6 +4867,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_dornier_organization
 			}
 			mio:GER_dornier_organization = {
@@ -4157,6 +4894,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_fieseler_organization
 			}
 			mio:GER_fieseler_organization = {
@@ -4181,6 +4919,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = GER_focke_achgelis_organization
 			}
 			mio:GER_focke_achgelis_organization = {
@@ -4199,6 +4939,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_focke_wulf_organization
 			}
 			mio:GER_focke_wulf_organization = {
@@ -4231,6 +4972,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_germaniawerft_organization
 			}
 			mio:GER_germaniawerft_organization = {
@@ -4254,6 +4996,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_hdw_organization
 			}
 			mio:GER_hdw_organization = {
@@ -4280,6 +5023,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					NOR_AAT = yes
+				}
 				has_military_industrial_organization = GER_heinkel_organization
 			}
 			mio:GER_heinkel_organization = {
@@ -4307,6 +5058,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_henschel_kassel_organization
 			}
 			mio:GER_henschel_kassel_organization = {
@@ -4335,6 +5087,22 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						original_tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = PER
+						has_dlc = "Graveyard of Empires"
+						has_dlc = "Arms Against Tyranny"
+					}
+				}
 				has_military_industrial_organization = GER_henschel_organization
 			}
 			mio:GER_henschel_organization = {
@@ -4362,6 +5130,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = GER_junkers_organization
 			}
 			mio:GER_junkers_organization = {
@@ -4388,6 +5163,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = GER
 				has_military_industrial_organization = GER_kriegsmarinewerft_wilhelmshaven_organization
 			}
 			mio:GER_kriegsmarinewerft_wilhelmshaven_organization = {
@@ -4415,6 +5191,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = GRE
+						has_dlc = "Battle for the Bosporus"
+					}
+				}
 				has_military_industrial_organization = GER_man_organization
 			}
 			mio:GER_man_organization = {
@@ -4441,6 +5224,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = GER_mauser_organization
 			}
 			mio:GER_mauser_organization = {
@@ -4469,6 +5259,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					NOR_AAT = yes
+				}
 				has_military_industrial_organization = GER_messerschmitt_organization
 			}
 			mio:GER_messerschmitt_organization = {
@@ -4495,6 +5289,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = ROM
+						has_dlc = "Death or Dishonor"
+					}
+					AND = {
+						original_tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+				}
 				has_military_industrial_organization = GER_opel_organization
 			}
 			mio:GER_opel_organization = {
@@ -4518,6 +5323,18 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = MEX
+						has_dlc = "Man the Guns"
+					}
+					AND = {
+						original_tag = IRQ
+						has_dlc = "Graveyard of Empires"
+					}
+					NOR_AAT = yes
+				}
 				has_military_industrial_organization = GER_porsche_organization
 			}
 			mio:GER_porsche_organization = {
@@ -4546,6 +5363,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = GER
+					AND = {
+						original_tag = GRE
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						original_tag = HUN
+						has_dlc = Gotterdammerung
+					}
+				}
 				has_military_industrial_organization = GER_rheinmetall_organization
 			}
 			mio:GER_rheinmetall_organization = {
@@ -4575,6 +5403,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# GRE
 		if = {
 			limit = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = GRE_aekkea_organization
 			}
 			mio:GRE_aekkea_organization = {
@@ -4599,6 +5429,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = GRE_astilleros_onassis_organization
 			}
 			mio:GRE_astilleros_onassis_organization = {
@@ -4622,6 +5454,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = GRE_basileiades_organization
 			}
 			mio:GRE_basileiades_organization = {
@@ -4646,6 +5480,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = GRE_biamax_organization
 			}
 			mio:GRE_biamax_organization = {
@@ -4669,6 +5505,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
 				has_military_industrial_organization = GRE_gnaf_organization
 			}
 			mio:GRE_gnaf_organization = {
@@ -4693,6 +5530,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = GRE_petropoulos_organization
 			}
 			mio:GRE_petropoulos_organization = {
@@ -4716,6 +5555,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = GRE_phaliron_aircraft_organization
 			}
 			mio:GRE_phaliron_aircraft_organization = {
@@ -4740,6 +5581,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = GRE_pyrkal_organization
 			}
 			mio:GRE_pyrkal_organization = {
@@ -4764,6 +5607,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = GRE_royal_hellenic_naval_shipyard_bftb_organization
 			}
 			mio:GRE_royal_hellenic_naval_shipyard_bftb_organization = {
@@ -4787,6 +5632,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = GRE
+				NOT = {
+					has_dlc = "Battle for the Bosporus"
+				}
 				has_military_industrial_organization = GRE_royal_hellenic_naval_shipyard_organization
 			}
 			mio:GRE_royal_hellenic_naval_shipyard_organization = {
@@ -4812,6 +5661,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# HOL
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = HOL
 				has_military_industrial_organization = HOL_artillerie_inrichtingen_organization
 			}
 			mio:HOL_artillerie_inrichtingen_organization = {
@@ -4836,6 +5687,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = HOL
 				has_military_industrial_organization = HOL_daf_organization
 			}
 			mio:HOL_daf_organization = {
@@ -4859,6 +5712,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = HOL
 				has_military_industrial_organization = HOL_fokker_organization
 			}
 			mio:HOL_fokker_organization = {
@@ -4882,6 +5737,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = HOL
 				has_military_industrial_organization = HOL_hih_siderius_organization
 			}
 			mio:HOL_hih_siderius_organization = {
@@ -4905,6 +5762,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = HOL
 				has_military_industrial_organization = HOL_koolhoven_organization
 			}
 			mio:HOL_koolhoven_organization = {
@@ -4929,6 +5787,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = HOL
 				has_military_industrial_organization = HOL_nsm_amsterdam_organization
 			}
 			mio:HOL_nsm_amsterdam_organization = {
@@ -4953,6 +5813,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = HOL
 				has_military_industrial_organization = HOL_wilton_fijenoord_organization
 			}
 			mio:HOL_wilton_fijenoord_organization = {
@@ -4978,6 +5840,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# HUN
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_danuvia_inf_organization
 			}
 			mio:HUN_danuvia_inf_organization = {
@@ -5005,6 +5869,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_femaru_fegyver_es_gepgyar_organization
 			}
 			mio:HUN_femaru_fegyver_es_gepgyar_organization = {
@@ -5029,6 +5895,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_fiat_tankettes_organization
 			}
 			mio:HUN_fiat_tankettes_organization = {
@@ -5052,6 +5920,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_ganz_danubius_organization
 			}
 			mio:HUN_ganz_danubius_organization = {
@@ -5075,6 +5945,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_henschel_organization
 			}
 			mio:HUN_henschel_organization = {
@@ -5098,6 +5970,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_hti_turan_organization
 			}
 			mio:HUN_hti_turan_organization = {
@@ -5121,6 +5995,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = HUN_mavag_aircraft_organization
 			}
 			mio:HUN_mavag_aircraft_organization = {
@@ -5149,6 +6026,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_mavag_assault_guns_organization
 			}
 			mio:HUN_mavag_assault_guns_organization = {
@@ -5173,6 +6052,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_mrt_aircraft_organization
 			}
 			mio:HUN_mrt_aircraft_organization = {
@@ -5198,6 +6079,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = HUN_mw_aircraft_organization
 			}
 			mio:HUN_mw_aircraft_organization = {
@@ -5222,6 +6105,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = HUN_mwg_raba_organization
 			}
 			mio:HUN_mwg_raba_organization = {
@@ -5245,6 +6131,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = HUN
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = HUN_obudai_hajogyar_organization
 			}
 			mio:HUN_obudai_hajogyar_organization = {
@@ -5272,6 +6161,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# INS
 		if = {
 			limit = {
+				original_tag = INS
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = INS_artillerie_inrichtingen_organization
 			}
 			mio:INS_artillerie_inrichtingen_organization = {
@@ -5295,6 +6186,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = INS
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = INS_artillerie_inrichtingen_pyrotechnische_organization
 			}
 			mio:INS_artillerie_inrichtingen_pyrotechnische_organization = {
@@ -5319,6 +6212,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = INS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = INS_bio_pharma_organization
 			}
 			mio:INS_bio_pharma_organization = {
@@ -5342,6 +6238,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = INS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = INS_fokker_organization
 			}
 			mio:INS_fokker_organization = {
@@ -5365,6 +6264,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = INS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = INS_knilm_organization
 			}
 			mio:INS_knilm_organization = {
@@ -5390,6 +6292,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = INS
+				has_dlc = "Arms Against Tyranny"
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = INS_machinefabriek_braat_organization
 			}
 			mio:INS_machinefabriek_braat_organization = {
@@ -5413,6 +6318,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = INS
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = INS_marine_establishment_organization
 			}
 			mio:INS_marine_establishment_organization = {
@@ -5436,6 +6343,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = INS
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = INS_nsm_amsterdam_organization
 			}
 			mio:INS_nsm_amsterdam_organization = {
@@ -5462,6 +6371,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# IRQ
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_aircraft_organization
 			}
 			mio:IRQ_aircraft_organization = {
@@ -5485,6 +6396,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_artillery_organization
 			}
 			mio:IRQ_artillery_organization = {
@@ -5508,6 +6421,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_close_air_support_aircraft_organization
 			}
 			mio:IRQ_close_air_support_aircraft_organization = {
@@ -5532,6 +6447,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_infantry_organization
 			}
 			mio:IRQ_infantry_organization = {
@@ -5556,6 +6473,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_kuwait_dockyards_organization
 			}
 			mio:IRQ_kuwait_dockyards_organization = {
@@ -5580,6 +6499,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_motor_organization
 			}
 			mio:IRQ_motor_organization = {
@@ -5603,6 +6524,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_multi_role_aircraft_organization
 			}
 			mio:IRQ_multi_role_aircraft_organization = {
@@ -5628,6 +6551,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_naval_organization
 			}
 			mio:IRQ_naval_organization = {
@@ -5651,6 +6576,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_submarine_organization
 			}
 			mio:IRQ_submarine_organization = {
@@ -5675,6 +6602,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_support_organization
 			}
 			mio:IRQ_support_organization = {
@@ -5698,6 +6627,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = IRQ
 				has_military_industrial_organization = IRQ_tanks_organization
 			}
 			mio:IRQ_tanks_organization = {
@@ -5723,6 +6654,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# ITA
 		if = {
 			limit = {
+				original_tag = ITA
 				has_military_industrial_organization = ITA_ansaldo_train_organization
 			}
 			mio:ITA_ansaldo_train_organization = {
@@ -5751,6 +6683,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ITA_beretta_organization
 			}
 			mio:ITA_beretta_organization = {
@@ -5775,6 +6714,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ITA_breda_organization
 			}
 			mio:ITA_breda_organization = {
@@ -5798,6 +6744,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ITA
 				has_military_industrial_organization = ITA_brescia_arsenal_organization
 			}
 			mio:ITA_brescia_arsenal_organization = {
@@ -5821,6 +6768,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ITA
 				has_military_industrial_organization = ITA_cantiere_navale_di_ancona_organization
 			}
 			mio:ITA_cantiere_navale_di_ancona_organization = {
@@ -5844,6 +6792,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ITA
 				has_military_industrial_organization = ITA_cantiere_oto_organization
 			}
 			mio:ITA_cantiere_oto_organization = {
@@ -5867,6 +6816,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ITA
 				has_military_industrial_organization = ITA_cantieri_navali_tosi_organization
 			}
 			mio:ITA_cantieri_navali_tosi_organization = {
@@ -5891,6 +6841,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ITA_caproni_organization
 			}
 			mio:ITA_caproni_organization = {
@@ -5915,6 +6872,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ITA
 				has_military_industrial_organization = ITA_crda_cant_organization
 			}
 			mio:ITA_crda_cant_organization = {
@@ -5938,6 +6896,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = HUN
+						has_dlc = Gotterdammerung
+					}
+				}
 				has_military_industrial_organization = ITA_crda_organization
 			}
 			mio:ITA_crda_organization = {
@@ -5961,6 +6930,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = ITA_fiat_aviazione_organization
 			}
 			mio:ITA_fiat_aviazione_organization = {
@@ -5988,6 +6964,25 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = GRE
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = ITA_fiat_organization
 			}
 			mio:ITA_fiat_organization = {
@@ -6011,6 +7006,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ITA_imam_organization
 			}
 			mio:ITA_imam_organization = {
@@ -6035,6 +7037,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+				}
 				has_military_industrial_organization = ITA_lancia_organization
 			}
 			mio:ITA_lancia_organization = {
@@ -6058,6 +7067,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = ITA
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = ITA_macchi_organization
 			}
 			mio:ITA_macchi_organization = {
@@ -6082,6 +7098,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ITA
 				has_military_industrial_organization = ITA_navalmeccanica_organization
 			}
 			mio:ITA_navalmeccanica_organization = {
@@ -6107,6 +7124,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ITA
 				has_military_industrial_organization = ITA_piaggio_organization
 			}
 			mio:ITA_piaggio_organization = {
@@ -6131,6 +7149,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ITA
 				has_military_industrial_organization = ITA_savoia_marchetti_organization
 			}
 			mio:ITA_savoia_marchetti_organization = {
@@ -6159,6 +7178,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# JAP
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_aichi_organization
 			}
 			mio:JAP_aichi_organization = {
@@ -6185,6 +7206,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_hitachi_arms_department_organization
 			}
 			mio:JAP_hitachi_arms_department_organization = {
@@ -6208,6 +7231,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_kawanishi_aircraft_company_organization
 			}
 			mio:JAP_kawanishi_aircraft_company_organization = {
@@ -6232,6 +7257,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_kawasaki_aircraft_industries_organization
 			}
 			mio:JAP_kawasaki_aircraft_industries_organization = {
@@ -6256,6 +7283,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_kawasaki_dockyards_organization
 			}
 			mio:JAP_kawasaki_dockyards_organization = {
@@ -6279,6 +7308,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = Gotterdammerung
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_kayaba_industry_organization
 			}
 			mio:JAP_kayaba_industry_organization = {
@@ -6297,6 +7329,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						original_tag = JAP
+						has_dlc = "Arms Against Tyranny"
+					}
+					PHI_SEA = yes
+				}
 				has_military_industrial_organization = JAP_kokura_arsenal_organization
 			}
 			mio:JAP_kokura_arsenal_organization = {
@@ -6322,6 +7361,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = JAP
+					AND = {
+						original_tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = JAP_maizuru_naval_arsenal_organization
 			}
 			mio:JAP_maizuru_naval_arsenal_organization = {
@@ -6349,6 +7395,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						original_tag = JAP
+						has_dlc = "Arms Against Tyranny"
+					}
+					PHI_SEA = yes
+				}
 				has_military_industrial_organization = JAP_mitsubishi_heavy_industries_organization
 			}
 			mio:JAP_mitsubishi_heavy_industries_organization = {
@@ -6373,6 +7426,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						original_tag = JAP
+						has_dlc = "Arms Against Tyranny"
+					}
+					PHI_SEA = yes
+				}
 				has_military_industrial_organization = JAP_mitsubishi_kobe_shipyard_organization
 			}
 			mio:JAP_mitsubishi_kobe_shipyard_organization = {
@@ -6397,6 +7457,15 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = JAP
+					AND = {
+						original_tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					PHI_SEA = yes
+				}
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_mitsubishi_organization
 			}
 			mio:JAP_mitsubishi_organization = {
@@ -6420,6 +7489,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = JAP
+					original_tag = MAN
+				}
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_nagoya_arsenal_organization
 			}
 			mio:JAP_nagoya_arsenal_organization = {
@@ -6444,6 +7518,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_nakajima_organization
 			}
 			mio:JAP_nakajima_organization = {
@@ -6469,6 +7545,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
 				has_military_industrial_organization = JAP_nippon_sharyo_organization
 			}
 			mio:JAP_nippon_sharyo_organization = {
@@ -6497,6 +7574,19 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = JAP
+					AND = {
+						original_tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						original_tag = MAN
+						has_dlc = "No Compromise, No Surrender"
+					}
+					PHI_SEA = yes
+				}
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_nissan_organization
 			}
 			mio:JAP_nissan_organization = {
@@ -6522,6 +7612,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_osaka_army_arsenal_artillery_organization
 			}
 			mio:JAP_osaka_army_arsenal_artillery_organization = {
@@ -6546,6 +7638,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_osaka_army_arsenal_organization
 			}
 			mio:JAP_osaka_army_arsenal_organization = {
@@ -6570,6 +7664,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_sagami_army_arsenal_organization
 			}
 			mio:JAP_sagami_army_arsenal_organization = {
@@ -6594,6 +7690,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_sasebo_naval_arsenal_organization
 			}
 			mio:JAP_sasebo_naval_arsenal_organization = {
@@ -6620,6 +7718,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_tachikawa_aircraft_company_organization
 			}
 			mio:JAP_tachikawa_aircraft_company_organization = {
@@ -6644,6 +7744,12 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = JAP
+					PHI_SEA = yes
+				}
+				has_dlc = "La Resistance"
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_tokyo_automobile_industries_organization
 			}
 			mio:JAP_tokyo_automobile_industries_organization = {
@@ -6667,6 +7773,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						original_tag = JAP
+						has_dlc = "Arms Against Tyranny"
+					}
+					PHI_SEA = yes
+				}
 				has_military_industrial_organization = JAP_yokosuka_naval_arsenal_organization
 			}
 			mio:JAP_yokosuka_naval_arsenal_organization = {
@@ -6695,6 +7808,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = JAP
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = JAP_yokosuka_organization
 			}
 			mio:JAP_yokosuka_organization = {
@@ -6721,6 +7836,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# LAT
 		if = {
 			limit = {
+				tag = LAT
 				has_military_industrial_organization = LAT_lkod_organization
 			}
 			mio:LAT_lkod_organization = {
@@ -6744,6 +7860,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = LAT
 				has_military_industrial_organization = LAT_vef_organization
 			}
 			mio:LAT_vef_organization = {
@@ -6770,6 +7887,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# LIT
 		if = {
 			limit = {
+				tag = LIT
 				has_military_industrial_organization = LIT_anbo_organization
 			}
 			mio:LIT_anbo_organization = {
@@ -6796,6 +7914,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# MAN
 		if = {
 			limit = {
+				original_tag = MAN
+				has_dlc = "Waking the Tiger"
 				has_military_industrial_organization = MAN_mamc_heavy_organization
 			}
 			mio:MAN_mamc_heavy_organization = {
@@ -6820,6 +7940,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = MAN
+				has_dlc = "Waking the Tiger"
 				has_military_industrial_organization = MAN_mamc_light_organization
 			}
 			mio:MAN_mamc_light_organization = {
@@ -6844,6 +7966,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = MAN
+				has_dlc = "Waking the Tiger"
 				has_military_industrial_organization = MAN_mamc_medium_organization
 			}
 			mio:MAN_mamc_medium_organization = {
@@ -6868,6 +7992,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = MAN
+				NOT = {
+					has_dlc = "Waking the Tiger"
+				}
 				has_military_industrial_organization = MAN_mamc_organization
 			}
 			mio:MAN_mamc_organization = {
@@ -6894,6 +8022,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# MEX
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = MEX
 				has_military_industrial_organization = MEX_astimar_gulf_organization
 			}
 			mio:MEX_astimar_gulf_organization = {
@@ -6917,6 +8047,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = MEX
 				has_military_industrial_organization = MEX_astimar_pacific_organization
 			}
 			mio:MEX_astimar_pacific_organization = {
@@ -6940,6 +8072,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = MEX
 				has_military_industrial_organization = MEX_fabrica_nacional_armas_organization
 			}
 			mio:MEX_fabrica_nacional_armas_organization = {
@@ -6964,6 +8097,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = MEX
 				has_military_industrial_organization = MEX_tga_organization
 			}
 			mio:MEX_tga_organization = {
@@ -6987,6 +8122,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Man the Guns"
+				tag = MEX
 				has_military_industrial_organization = MEX_tnca_organization
 			}
 			mio:MEX_tnca_organization = {
@@ -7010,6 +8147,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = MEX
 				has_military_industrial_organization = comesa_organization
 			}
 			mio:comesa_organization = {
@@ -7035,6 +8173,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# NOR
 		if = {
 			limit = {
+				NOR_AAT = yes
 				has_military_industrial_organization = NOR_akers_mekaniske_verksted_organization
 			}
 			mio:NOR_akers_mekaniske_verksted_organization = {
@@ -7060,6 +8199,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = NOR
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = NOR_cadillac_organization
 			}
 			mio:NOR_cadillac_organization = {
@@ -7083,6 +8224,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = NOR
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = NOR_karljohansvern_verft_organization
 			}
 			mio:NOR_karljohansvern_verft_organization = {
@@ -7109,6 +8252,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = NOR
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = NOR_kongsberg_vaapenfabrikk_organization
 			}
 			mio:NOR_kongsberg_vaapenfabrikk_organization = {
@@ -7133,6 +8278,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = NOR
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = NOR_marinens_flyvebaatfabrikk_organization
 			}
 			mio:NOR_marinens_flyvebaatfabrikk_organization = {
@@ -7157,6 +8304,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = NOR
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = NOR_norsk_spraengstofindustri_organization
 			}
 			mio:NOR_norsk_spraengstofindustri_organization = {
@@ -7180,6 +8329,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = NOR
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = NOR_raufoss_ammunisjonsfabrikker_organization
 			}
 			mio:NOR_raufoss_ammunisjonsfabrikker_organization = {
@@ -7204,6 +8355,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = NOR
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = NOR_thunes_mekaniske_verksted_organization
 			}
 			mio:NOR_thunes_mekaniske_verksted_organization = {
@@ -7229,6 +8382,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# NZL
 		if = {
 			limit = {
+				original_TAG = NZL
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = NZL_charlton_mw_organization
 			}
 			mio:NZL_charlton_mw_organization = {
@@ -7252,6 +8407,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = NZL
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = NZL_christchurch_workshops_organization
 			}
 			mio:NZL_christchurch_workshops_organization = {
@@ -7275,6 +8432,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = NZL
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = NZL_nz_railways_2_organization
 			}
 			mio:NZL_nz_railways_2_organization = {
@@ -7303,6 +8462,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = NZL
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = NZL_nz_railways_organization
 			}
 			mio:NZL_nz_railways_organization = {
@@ -7326,6 +8487,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = NZL
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = NZL_port_chalmers_shipbuilding_organization
 			}
 			mio:NZL_port_chalmers_shipbuilding_organization = {
@@ -7349,6 +8512,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = NZL
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = NZL_st_mary_bay_ship_organization
 			}
 			mio:NZL_st_mary_bay_ship_organization = {
@@ -7374,6 +8539,12 @@ PRC_OCS_configure_shared_mios_effect = {
 		# OTHER
 		if = {
 			limit = {
+				OR = {
+					original_TAG = LAT
+					original_TAG = LIT
+					original_TAG = EST
+				}
+				has_dlc = "No Step Back"
 				has_military_industrial_organization = BALTIC_RAF_organization
 			}
 			mio:BALTIC_RAF_organization = {
@@ -7400,6 +8571,9 @@ PRC_OCS_configure_shared_mios_effect = {
 		# PER
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				has_dlc = "Arms Against Tyranny"
+				original_tag = PER
 				has_military_industrial_organization = PER_iranian_shipyards_organization
 			}
 			mio:PER_iranian_shipyards_organization = {
@@ -7423,6 +8597,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = PER
 				has_military_industrial_organization = PER_motor_organization
 			}
 			mio:PER_motor_organization = {
@@ -7446,6 +8622,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				has_dlc = "Arms Against Tyranny"
+				original_tag = PER
 				has_military_industrial_organization = PER_qorkhaneh_organization
 			}
 			mio:PER_qorkhaneh_organization = {
@@ -7470,6 +8649,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				has_dlc = "Arms Against Tyranny"
+				original_tag = PER
 				has_military_industrial_organization = PER_shahbaz_organization
 			}
 			mio:PER_shahbaz_organization = {
@@ -7493,6 +8675,9 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				has_dlc = "Arms Against Tyranny"
+				original_tag = PER
 				has_military_industrial_organization = PER_tehran_armor_organization
 			}
 			mio:PER_tehran_armor_organization = {
@@ -7518,6 +8703,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# PHI
 		if = {
 			limit = {
+				has_dlc = "No Compromise, No Surrender"
+				original_tag = PHI
 				has_military_industrial_organization = PHI_cavite_naval_base_organization
 			}
 			mio:PHI_cavite_naval_base_organization = {
@@ -7546,6 +8733,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "No Compromise, No Surrender"
+				original_tag = PHI
 				has_military_industrial_organization = PHI_compania_maritima_de_cebu_organization
 			}
 			mio:PHI_compania_maritima_de_cebu_organization = {
@@ -7577,6 +8766,11 @@ PRC_OCS_configure_shared_mios_effect = {
 		# POL
 		if = {
 			limit = {
+				tag = POL
+				OR = {
+					has_dlc = "Poland: United and Ready"
+					has_dlc = "No Step Back"
+				}
 				has_military_industrial_organization = POL_fb_organization
 			}
 			mio:POL_fb_organization = {
@@ -7601,6 +8795,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = POL
+				OR = {
+					has_dlc = "Poland: United and Ready"
+					has_dlc = "No Step Back"
+				}
 				has_military_industrial_organization = POL_lrl_organization
 			}
 			mio:POL_lrl_organization = {
@@ -7624,6 +8823,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = POL
+				OR = {
+					has_dlc = "Poland: United and Ready"
+					has_dlc = "No Step Back"
+				}
 				has_military_industrial_organization = POL_pws_organization
 			}
 			mio:POL_pws_organization = {
@@ -7648,6 +8852,20 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						tag = POL
+						OR = {
+							has_dlc = "Poland: United and Ready"
+							has_dlc = "No Step Back"
+						}
+					}
+					tag = ROM
+					AND = {
+						has_dlc = "Peace For Our Time"
+						tag = CZE
+					}
+				}
 				has_military_industrial_organization = POL_pzinz_organization
 			}
 			mio:POL_pzinz_organization = {
@@ -7672,6 +8890,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = POL
+				OR = {
+					has_dlc = "Poland: United and Ready"
+					has_dlc = "No Step Back"
+				}
 				has_military_industrial_organization = POL_pzl_organization
 			}
 			mio:POL_pzl_organization = {
@@ -7696,6 +8919,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = POL
+				OR = {
+					has_dlc = "Poland: United and Ready"
+					has_dlc = "No Step Back"
+				}
 				has_military_industrial_organization = POL_smpa_organization
 			}
 			mio:POL_smpa_organization = {
@@ -7719,6 +8947,19 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						tag = POL
+						OR = {
+							has_dlc = "Poland: United and Ready"
+							has_dlc = "No Step Back"
+						}
+					}
+					AND = {
+						has_dlc = "Peace For Our Time"
+						tag = CZE
+					}
+				}
 				has_military_industrial_organization = POL_stocznia_gdynia_organization
 			}
 			mio:POL_stocznia_gdynia_organization = {
@@ -7744,6 +8985,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# POR
 		if = {
 			limit = {
+				tag = POR
 				has_military_industrial_organization = POR_arsenal_alfeite_organization
 			}
 			mio:POR_arsenal_alfeite_organization = {
@@ -7767,6 +9009,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = POR
 				has_military_industrial_organization = POR_fabrica_material_guerra_organization
 			}
 			mio:POR_fabrica_material_guerra_organization = {
@@ -7790,6 +9034,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = POR
 				has_military_industrial_organization = POR_fma_organization
 			}
 			mio:POR_fma_organization = {
@@ -7813,6 +9059,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = POR
 				has_military_industrial_organization = POR_fnmal_organization
 			}
 			mio:POR_fnmal_organization = {
@@ -7837,6 +9085,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = POR
 				has_military_industrial_organization = POR_ogma_organization
 			}
 			mio:POR_ogma_organization = {
@@ -7861,6 +9111,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = POR
 				has_military_industrial_organization = POR_ogme_organization
 			}
 			mio:POR_ogme_organization = {
@@ -7886,6 +9138,11 @@ PRC_OCS_configure_shared_mios_effect = {
 		# PRC
 		if = {
 			limit = {
+				OR = {
+					tag = PRC
+					original_tag = PRC
+				}
+				has_dlc = "No Compromise, No Surrender"
 				has_military_industrial_organization = PRC_dalian_shipbuilding_company_organization
 			}
 			mio:PRC_dalian_shipbuilding_company_organization = {
@@ -7912,6 +9169,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = PRC
+					original_tag = PRC
+				}
+				has_dlc = "No Compromise, No Surrender"
 				has_military_industrial_organization = PRC_factory_617_organization
 			}
 			mio:PRC_factory_617_organization = {
@@ -7936,6 +9198,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = PRC
+					original_tag = PRC
+				}
+				has_dlc = "No Compromise, No Surrender"
 				has_military_industrial_organization = PRC_first_tractor_company_organization
 			}
 			mio:PRC_first_tractor_company_organization = {
@@ -7960,6 +9227,12 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = PRC
+					original_tag = PRC
+				}
+				has_dlc = "No Compromise, No Surrender"
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = PRC_harbin_aircraft_industry_group_organization
 			}
 			mio:PRC_harbin_aircraft_industry_group_organization = {
@@ -7987,6 +9260,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = PRC
+					original_tag = PRC
+				}
+				has_dlc = "No Compromise, No Surrender"
 				has_military_industrial_organization = PRC_huangyadong_arsenal_organization
 			}
 			mio:PRC_huangyadong_arsenal_organization = {
@@ -8012,6 +9290,12 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = PRC
+					original_tag = PRC
+				}
+				has_dlc = "No Compromise, No Surrender"
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = PRC_shenyang_aircraft_corporation_organization
 			}
 			mio:PRC_shenyang_aircraft_corporation_organization = {
@@ -8037,6 +9321,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = PRC
+					original_tag = PRC
+				}
+				has_dlc = "No Compromise, No Surrender"
 				has_military_industrial_organization = PRC_shipbuilding_industry_bureau_organization
 			}
 			mio:PRC_shipbuilding_industry_bureau_organization = {
@@ -8064,6 +9353,18 @@ PRC_OCS_configure_shared_mios_effect = {
 		# RAJ
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				OR = {
+					ROOT = {
+						original_tag = BAN
+					}
+					ROOT = {
+						original_tag = PAK
+					}
+					ROOT = {
+						original_tag = RAJ
+					}
+				}
 				has_military_industrial_organization = RAJ_ammunition_factory_khadki_organization
 			}
 			mio:RAJ_ammunition_factory_khadki_organization = {
@@ -8092,6 +9393,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_avro_organization
 			}
 			mio:RAJ_avro_organization = {
@@ -8116,6 +9419,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_cammell_laird_organization
 			}
 			mio:RAJ_cammell_laird_organization = {
@@ -8139,6 +9444,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_crossley_motors_organization
 			}
 			mio:RAJ_crossley_motors_organization = {
@@ -8162,6 +9469,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_de_havilland_organization
 			}
 			mio:RAJ_de_havilland_organization = {
@@ -8186,6 +9495,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_fairey_aviation_organization
 			}
 			mio:RAJ_fairey_aviation_organization = {
@@ -8209,6 +9520,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = RAJ
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = RAJ_garden_reach_shipbuilders_organization
 			}
 			mio:RAJ_garden_reach_shipbuilders_organization = {
@@ -8232,6 +9545,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_harland_wolff_organization
 			}
 			mio:RAJ_harland_wolff_organization = {
@@ -8255,6 +9570,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_hawker_organization
 			}
 			mio:RAJ_hawker_organization = {
@@ -8279,6 +9596,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = RAJ
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = RAJ_hindustan_aircraft_organization
 			}
 			mio:RAJ_hindustan_aircraft_organization = {
@@ -8303,6 +9622,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = RAJ
+				has_dlc = "Together for Victory"
+				NOT = {
+					has_dlc = "Graveyard of Empires"
+				}
 				has_military_industrial_organization = RAJ_ishapore_rifle_factory_organization
 			}
 			mio:RAJ_ishapore_rifle_factory_organization = {
@@ -8327,6 +9651,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_john_brown_organization
 			}
 			mio:RAJ_john_brown_organization = {
@@ -8351,6 +9677,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = RAJ
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = RAJ_mazagon_dock_limited_organization
 			}
 			mio:RAJ_mazagon_dock_limited_organization = {
@@ -8374,6 +9702,11 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = RAJ
+				has_dlc = "Together for Victory"
+				NOT = {
+					has_dlc = "Graveyard of Empires"
+				}
 				has_military_industrial_organization = RAJ_ordnance_factories_board_organization
 			}
 			mio:RAJ_ordnance_factories_board_organization = {
@@ -8397,6 +9730,18 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				OR = {
+					ROOT = {
+						original_tag = BAN
+					}
+					ROOT = {
+						original_tag = PAK
+					}
+					ROOT = {
+						original_tag = RAJ
+					}
+				}
 				has_military_industrial_organization = RAJ_ordnance_factory_kanpur_organization
 			}
 			mio:RAJ_ordnance_factory_kanpur_organization = {
@@ -8422,6 +9767,18 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				OR = {
+					ROOT = {
+						original_tag = BAN
+					}
+					ROOT = {
+						original_tag = PAK
+					}
+					ROOT = {
+						original_tag = RAJ
+					}
+				}
 				has_military_industrial_organization = RAJ_ordnance_factory_medak_organization
 			}
 			mio:RAJ_ordnance_factory_medak_organization = {
@@ -8447,6 +9804,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = RAJ
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = RAJ_scindia_shipyard_organization
 			}
 			mio:RAJ_scindia_shipyard_organization = {
@@ -8470,6 +9829,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = RAJ
+				has_dlc = "Arms Against Tyranny"
 				has_military_industrial_organization = RAJ_supermarine_organization
 			}
 			mio:RAJ_supermarine_organization = {
@@ -8496,6 +9857,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_vauxhall_organization
 			}
 			mio:RAJ_vauxhall_organization = {
@@ -8519,6 +9882,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					ROOT = {
+						original_tag = BAN
+					}
+					ROOT = {
+						original_tag = PAK
+					}
+					ROOT = {
+						original_tag = RAJ
+					}
+				}
 				has_military_industrial_organization = RAJ_vickers_armstrong_organization
 			}
 			mio:RAJ_vickers_armstrong_organization = {
@@ -8542,6 +9916,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Graveyard of Empires"
+				original_tag = RAJ
 				has_military_industrial_organization = RAJ_yarrow_shipbuilders_organization
 			}
 			mio:RAJ_yarrow_shipbuilders_organization = {
@@ -8567,6 +9943,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# ROM
 		if = {
 			limit = {
+				tag = ROM
+				has_dlc = "Death or Dishonor"
 				has_military_industrial_organization = ROM_Braila_organization
 			}
 			mio:ROM_Braila_organization = {
@@ -8590,6 +9968,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
 				has_military_industrial_organization = ROM_constanta_shipyard_organization
 			}
 			mio:ROM_constanta_shipyard_organization = {
@@ -8613,6 +9992,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
 				has_military_industrial_organization = ROM_cugir_organization
 			}
 			mio:ROM_cugir_organization = {
@@ -8637,6 +10017,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
+				has_dlc = "Death or Dishonor"
 				has_military_industrial_organization = ROM_galati_shipyard_organization
 			}
 			mio:ROM_galati_shipyard_organization = {
@@ -8661,6 +10043,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
 				has_military_industrial_organization = ROM_iar_organization
 			}
 			mio:ROM_iar_organization = {
@@ -8686,6 +10069,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
+				has_dlc = "Death or Dishonor"
 				has_military_industrial_organization = ROM_icar_organization
 			}
 			mio:ROM_icar_organization = {
@@ -8709,6 +10094,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
+				has_dlc = "Death or Dishonor"
 				has_military_industrial_organization = ROM_leonidas_works_organization
 			}
 			mio:ROM_leonidas_works_organization = {
@@ -8732,6 +10119,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
 				has_military_industrial_organization = ROM_malaxa_organization
 			}
 			mio:ROM_malaxa_organization = {
@@ -8755,6 +10143,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
 				has_military_industrial_organization = ROM_resita_works_organization
 			}
 			mio:ROM_resita_works_organization = {
@@ -8778,6 +10167,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = ROM
+				has_dlc = "Death or Dishonor"
 				has_military_industrial_organization = ROM_set_organization
 			}
 			mio:ROM_set_organization = {
@@ -8803,6 +10194,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# SAF
 		if = {
 			limit = {
+				original_TAG = SAF
+				has_dlc = "Together for Victory"
 				has_military_industrial_organization = SAF_iscor_organization
 			}
 			mio:SAF_iscor_organization = {
@@ -8828,6 +10221,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# SIA
 		if = {
 			limit = {
+				original_TAG = SIA
 				has_military_industrial_organization = SIA_bangkok_dock_organization
 			}
 			mio:SIA_bangkok_dock_organization = {
@@ -8851,6 +10245,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = SIA
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = SIA_chaiseri_organization
 			}
 			mio:SIA_chaiseri_organization = {
@@ -8874,6 +10270,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_TAG = SIA
+				has_dlc = "Thunder at Our Gates"
 				has_military_industrial_organization = SIA_thai_rung_organization
 			}
 			mio:SIA_thai_rung_organization = {
@@ -8899,6 +10297,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# SLO
 		if = {
 			limit = {
+				tag = SLO
 				has_military_industrial_organization = SLO_povazska_bystrica_organization
 			}
 			mio:SLO_povazska_bystrica_organization = {
@@ -8922,6 +10321,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "Peace For Our Time"
+				tag = SLO
 				has_military_industrial_organization = SLO_svit_organization
 			}
 			mio:SLO_svit_organization = {
@@ -8945,6 +10346,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = SLO
 				has_military_industrial_organization = SLO_zbrojnica_roth_organization
 			}
 			mio:SLO_zbrojnica_roth_organization = {
@@ -8971,6 +10373,13 @@ PRC_OCS_configure_shared_mios_effect = {
 		# SOV
 		if = {
 			limit = {
+				OR = {
+					original_tag = SOV
+					AND = {
+						original_tag = CHI
+						has_dlc = "No Compromise, No Surrender"
+					}
+				}
 				has_military_industrial_organization = SOV_astrov_design_bureau_organization
 			}
 			mio:SOV_astrov_design_bureau_organization = {
@@ -8994,6 +10403,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = SOV
 				has_military_industrial_organization = SOV_black_sea_shipyard_organization
 			}
 			mio:SOV_black_sea_shipyard_organization = {
@@ -9022,6 +10432,30 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SOV
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = ARG
+						has_dlc = "Trial of Allegiance"
+					}
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+					AND = {
+						tag = AFG
+						has_dlc = "Graveyard of Empires"
+					}
+					NOR_AAT = yes
+				}
 				has_military_industrial_organization = SOV_gaz_organization
 			}
 			mio:SOV_gaz_organization = {
@@ -9045,6 +10479,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SOV
+					AND = {
+						tag = GRE
+						has_dlc = "Battle for the Bosporus"
+					}
+				}
 				has_military_industrial_organization = SOV_grabin_design_bureau_organization
 			}
 			mio:SOV_grabin_design_bureau_organization = {
@@ -9068,6 +10509,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SOV
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+				}
 				has_military_industrial_organization = SOV_ilyushin_design_bureau_organization
 			}
 			mio:SOV_ilyushin_design_bureau_organization = {
@@ -9092,6 +10540,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = SOV
+					AND = {
+						tag = BEL
+						has_dlc = Gotterdammerung
+					}
+					AND = {
+						tag = AST
+						has_dlc = "Thunder at Our Gates"
+					}
+				}
 				has_military_industrial_organization = SOV_kirov_organization
 			}
 			mio:SOV_kirov_organization = {
@@ -9115,6 +10574,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = SOV
 				has_military_industrial_organization = SOV_kolomna_organization
 			}
 			mio:SOV_kolomna_organization = {
@@ -9143,6 +10603,21 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SOV
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = ARG
+						has_dlc = "Trial of Allegiance"
+					}
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = SOV_mig_design_bureau_organization
 			}
 			mio:SOV_mig_design_bureau_organization = {
@@ -9167,6 +10642,25 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SOV
+					AND = {
+						tag = MEX
+						has_dlc = "Man the Guns"
+					}
+					AND = {
+						OR = {
+							is_literally_china = yes
+							tag = MAN
+						}
+						has_dlc = "Waking the Tiger"
+					}
+					NOR_AAT = yes
+					AND = {
+						original_tag = PHI
+						has_dlc = "No Compromise, No Surrender"
+					}
+				}
 				has_military_industrial_organization = SOV_morozov_design_bureau_organization
 			}
 			mio:SOV_morozov_design_bureau_organization = {
@@ -9190,6 +10684,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SOV
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = SOV_mytishchy_machine_building_plant_organization
 			}
 			mio:SOV_mytishchy_machine_building_plant_organization = {
@@ -9216,6 +10717,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SOV
+					AND = {
+						tag = BUL
+						has_dlc = "Battle for the Bosporus"
+					}
+				}
 				has_military_industrial_organization = SOV_nevskoye_design_bureau_organization
 			}
 			mio:SOV_nevskoye_design_bureau_organization = {
@@ -9262,6 +10770,22 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SOV
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = ARG
+						has_dlc = "Trial of Allegiance"
+					}
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+					NOR_AAT = yes
+				}
 				has_military_industrial_organization = SOV_rubin_design_bureau_organization
 			}
 			mio:SOV_rubin_design_bureau_organization = {
@@ -9285,6 +10809,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = SOV
 				has_military_industrial_organization = SOV_sevastopol_marine_plant_organization
 			}
 			mio:SOV_sevastopol_marine_plant_organization = {
@@ -9310,6 +10835,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = SOV
 				has_military_industrial_organization = SOV_tula_arms_plant_organization
 			}
 			mio:SOV_tula_arms_plant_organization = {
@@ -9334,6 +10860,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = SOV
 				has_military_industrial_organization = SOV_tupolev_design_bureau_organization
 			}
 			mio:SOV_tupolev_design_bureau_organization = {
@@ -9360,6 +10887,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					original_tag = SOV
+					AND = {
+						tag = AST
+						has_dlc = "Thunder at Our Gates"
+					}
+				}
 				has_military_industrial_organization = SOV_yakovlev_design_bureau_organization
 			}
 			mio:SOV_yakovlev_design_bureau_organization = {
@@ -9385,6 +10919,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# SPR
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = SPR
 				has_military_industrial_organization = SPR_casa_organization
 			}
 			mio:SPR_casa_organization = {
@@ -9409,6 +10945,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+				tag = SPR
 				has_military_industrial_organization = SPR_casa_vanilla_organization
 			}
 			mio:SPR_casa_vanilla_organization = {
@@ -9432,6 +10972,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = SPR
 				has_military_industrial_organization = SPR_esperanza_y_cia_organization
 			}
 			mio:SPR_esperanza_y_cia_organization = {
@@ -9455,6 +10997,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = SPR
 				has_military_industrial_organization = SPR_euskalduna_organization
 			}
 			mio:SPR_euskalduna_organization = {
@@ -9479,6 +11023,16 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						has_dlc = "La Resistance"
+						tag = SPR
+					}
+					AND = {
+						has_dlc = "By Blood Alone"
+						tag = SWI
+					}
+				}
 				has_military_industrial_organization = SPR_hispano_aviacion_organization
 			}
 			mio:SPR_hispano_aviacion_organization = {
@@ -9503,6 +11057,16 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					AND = {
+						has_dlc = "La Resistance"
+						tag = SPR
+					}
+					AND = {
+						has_dlc = "By Blood Alone"
+						tag = SWI
+					}
+				}
 				has_military_industrial_organization = SPR_hispano_suiza_organization
 			}
 			mio:SPR_hispano_suiza_organization = {
@@ -9526,6 +11090,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = SPR
 				has_military_industrial_organization = SPR_llama_gabilondo_y_cia_organization
 			}
 			mio:SPR_llama_gabilondo_y_cia_organization = {
@@ -9549,6 +11115,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = SPR
 				has_military_industrial_organization = SPR_secn_organization
 			}
 			mio:SPR_secn_organization = {
@@ -9572,6 +11140,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+				tag = SPR
 				has_military_industrial_organization = SPR_secn_vanilla_organization
 			}
 			mio:SPR_secn_vanilla_organization = {
@@ -9595,6 +11167,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				tag = SPR
 				has_military_industrial_organization = SPR_star_bonifacio_echeverria_organization
 			}
 			mio:SPR_star_bonifacio_echeverria_organization = {
@@ -9621,6 +11195,18 @@ PRC_OCS_configure_shared_mios_effect = {
 		# SWE
 		if = {
 			limit = {
+				OR = {
+					tag = SWE
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = PER
+						has_dlc = "Graveyard of Empires"
+						has_dlc = "Arms Against Tyranny"
+					}
+				}
 				has_military_industrial_organization = SWE_bofors_organization
 			}
 			mio:SWE_bofors_organization = {
@@ -9647,6 +11233,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SWE
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = SWE_gotaverken_organization
 			}
 			mio:SWE_gotaverken_organization = {
@@ -9671,6 +11264,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = SWE
 				has_military_industrial_organization = SWE_husqvarna_organization
 			}
 			mio:SWE_husqvarna_organization = {
@@ -9695,6 +11289,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = SWE
 				has_military_industrial_organization = SWE_kockums_organization
 			}
 			mio:SWE_kockums_organization = {
@@ -9719,6 +11314,17 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SWE
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = SWE_landsverk_organization
 			}
 			mio:SWE_landsverk_organization = {
@@ -9743,6 +11349,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SWE
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = SWE_saab_organization
 			}
 			mio:SWE_saab_organization = {
@@ -9768,6 +11381,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				has_dlc = "La Resistance"
+				OR = {
+					tag = SWE
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = SWE_scania_vabis_organization
 			}
 			mio:SWE_scania_vabis_organization = {
@@ -9791,6 +11412,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = SWE
+					AND = {
+						tag = ETH
+						has_dlc = "By Blood Alone"
+					}
+				}
 				has_military_industrial_organization = SWE_volvo_organization
 			}
 			mio:SWE_volvo_organization = {
@@ -9816,6 +11444,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# SWI
 		if = {
 			limit = {
+				tag = SWI
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = SWI_berna_organization
 			}
 			mio:SWI_berna_organization = {
@@ -9839,6 +11469,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = SWI
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = SWI_eidgenossische_FW_organization
 			}
 			mio:SWI_eidgenossische_FW_organization = {
@@ -9862,6 +11494,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = SWI
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = SWI_eidgenossische_WF_organization
 			}
 			mio:SWI_eidgenossische_WF_organization = {
@@ -9885,6 +11519,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = SWI
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = SWI_oerlikon_organization
 			}
 			mio:SWI_oerlikon_organization = {
@@ -9908,6 +11544,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = SWI
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = SWI_sig_organization
 			}
 			mio:SWI_sig_organization = {
@@ -9932,6 +11570,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = SWI
+				has_dlc = "By Blood Alone"
 				has_military_industrial_organization = SWI_werner_risch_organization
 			}
 			mio:SWI_werner_risch_organization = {
@@ -9957,6 +11597,8 @@ PRC_OCS_configure_shared_mios_effect = {
 		# TUR
 		if = {
 			limit = {
+				tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_cgt_organization
 			}
 			mio:TUR_cgt_organization = {
@@ -9980,6 +11622,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_gok_okulu_organization
 			}
 			mio:TUR_gok_okulu_organization = {
@@ -10008,6 +11652,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
 				has_military_industrial_organization = TUR_golcuk_nsy_organization
 			}
 			mio:TUR_golcuk_nsy_organization = {
@@ -10031,6 +11676,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
 				has_military_industrial_organization = TUR_istanbul_military_industries_organization
 			}
 			mio:TUR_istanbul_military_industries_organization = {
@@ -10055,6 +11701,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_killigil_endustrileri_organization
 			}
 			mio:TUR_killigil_endustrileri_organization = {
@@ -10078,6 +11726,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_koc_ticaret_as_defense_industry_organization
 			}
 			mio:TUR_koc_ticaret_as_defense_industry_organization = {
@@ -10101,6 +11751,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_koc_ticaret_as_shipyard_organization
 			}
 			mio:TUR_koc_ticaret_as_shipyard_organization = {
@@ -10124,6 +11776,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
+				NOT = {
+					has_dlc = "Battle for the Bosporus"
+				}
 				has_military_industrial_organization = TUR_ktf_organization
 			}
 			mio:TUR_ktf_organization = {
@@ -10148,6 +11804,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_nud_organization
 			}
 			mio:TUR_nud_organization = {
@@ -10172,6 +11830,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_thk_bftb_organization
 			}
 			mio:TUR_thk_bftb_organization = {
@@ -10196,6 +11856,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
+				NOT = {
+					has_dlc = "Battle for the Bosporus"
+				}
 				has_military_industrial_organization = TUR_thk_organization
 			}
 			mio:TUR_thk_organization = {
@@ -10220,6 +11884,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_ticaret_organization
 			}
 			mio:TUR_ticaret_organization = {
@@ -10243,6 +11909,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_tomtasch_organization
 			}
 			mio:TUR_tomtasch_organization = {
@@ -10267,6 +11935,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = TUR
+				has_dlc = "Battle for the Bosporus"
 				has_military_industrial_organization = TUR_tulomsas_organization
 			}
 			mio:TUR_tulomsas_organization = {
@@ -10292,6 +11962,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# USA
 		if = {
 			limit = {
+				tag = USA
 				has_military_industrial_organization = USA_army_ordnance_department_organization
 			}
 			mio:USA_army_ordnance_department_organization = {
@@ -10317,6 +11988,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = USA
 				has_military_industrial_organization = USA_baldwin_locomotive_works_organization
 			}
 			mio:USA_baldwin_locomotive_works_organization = {
@@ -10345,6 +12017,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = USA
 				has_military_industrial_organization = USA_boeing_organization
 			}
 			mio:USA_boeing_organization = {
@@ -10369,6 +12042,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = USA
 				has_military_industrial_organization = USA_brooklyn_naval_yard_organization
 			}
 			mio:USA_brooklyn_naval_yard_organization = {
@@ -10394,6 +12068,15 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					AND = {
+						tag = MEX
+						has_dlc = "Man the Guns"
+					}
+					NOR_AAT = yes
+					PHI_SEA = yes
+				}
 				has_military_industrial_organization = USA_chrysler_organization
 			}
 			mio:USA_chrysler_organization = {
@@ -10419,6 +12102,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = USA
 				has_military_industrial_organization = USA_douglas_aircraft_company_organization
 			}
 			mio:USA_douglas_aircraft_company_organization = {
@@ -10444,6 +12128,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					PHI_SEA = yes
+				}
 				has_military_industrial_organization = USA_electric_boat_company_organization
 			}
 			mio:USA_electric_boat_company_organization = {
@@ -10469,6 +12157,41 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					AND = {
+						tag = POL
+						OR = {
+							has_dlc = "Poland: United and Ready"
+							has_dlc = "No Step Back"
+						}
+					}
+					AND = {
+						tag = ROM
+						has_dlc = "Death or Dishonor"
+					}
+					tag = MEX
+					AND = {
+						tag = GRE
+						has_dlc = "Battle for the Bosporus"
+					}
+					AND = {
+						OR = {
+							original_TAG = LAT
+							original_TAG = LIT
+							original_TAG = EST
+						}
+						has_dlc = "No Step Back"
+					}
+					AND = {
+						original_TAG = BRA
+						has_dlc = "Arms Against Tyranny"
+					}
+					AND = {
+						original_tag = PHI
+						has_dlc = "No Compromise, No Surrender"
+					}
+				}
 				has_military_industrial_organization = USA_ford_motor_company_organization
 			}
 			mio:USA_ford_motor_company_organization = {
@@ -10492,6 +12215,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = USA
 				has_military_industrial_organization = USA_grumman_organization
 			}
 			mio:USA_grumman_organization = {
@@ -10516,6 +12240,10 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					PHI_SEA = yes
+				}
 				has_military_industrial_organization = USA_lockheed_organization
 			}
 			mio:USA_lockheed_organization = {
@@ -10541,6 +12269,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = USA_marmon_herrington_organization
 			}
 			mio:USA_marmon_herrington_organization = {
@@ -10564,6 +12299,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+				}
 				has_military_industrial_organization = USA_newport_news_shipbuilding_organization
 			}
 			mio:USA_newport_news_shipbuilding_organization = {
@@ -10588,6 +12330,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = USA
 				has_military_industrial_organization = USA_norfolk_naval_yard_organization
 			}
 			mio:USA_norfolk_naval_yard_organization = {
@@ -10613,6 +12356,14 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					AND = {
+						tag = BRA
+						has_dlc = "Trial of Allegiance"
+					}
+					PHI_SEA = yes
+				}
 				has_military_industrial_organization = USA_north_american_aviation_organization
 			}
 			mio:USA_north_american_aviation_organization = {
@@ -10640,6 +12391,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					AND = {
+						original_tag = PHI
+						has_dlc = "No Compromise, No Surrender"
+					}
+				}
 				has_military_industrial_organization = USA_rock_island_arsenal_organization
 			}
 			mio:USA_rock_island_arsenal_organization = {
@@ -10663,6 +12421,8 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				original_tag = USA
+				has_dlc = Gotterdammerung
 				has_military_industrial_organization = USA_sikorsky_organization
 			}
 			mio:USA_sikorsky_organization = {
@@ -10681,6 +12441,13 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				OR = {
+					tag = USA
+					AND = {
+						original_tag = PHI
+						has_dlc = "No Compromise, No Surrender"
+					}
+				}
 				has_military_industrial_organization = USA_springfield_armory_organization
 			}
 			mio:USA_springfield_armory_organization = {
@@ -10707,6 +12474,7 @@ PRC_OCS_configure_shared_mios_effect = {
 		# YUG
 		if = {
 			limit = {
+				tag = YUG
 				has_military_industrial_organization = YUG_ikarus_organization
 			}
 			mio:YUG_ikarus_organization = {
@@ -10731,6 +12499,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = YUG
 				has_military_industrial_organization = YUG_jadransko_brodogradiliste_organization
 			}
 			mio:YUG_jadransko_brodogradiliste_organization = {
@@ -10754,6 +12523,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = YUG
 				has_military_industrial_organization = YUG_rogozarski_organization
 			}
 			mio:YUG_rogozarski_organization = {
@@ -10778,6 +12548,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = YUG
 				has_military_industrial_organization = YUG_zastava_arms_organization
 			}
 			mio:YUG_zastava_arms_organization = {
@@ -10802,6 +12573,7 @@ PRC_OCS_configure_shared_mios_effect = {
 
 		if = {
 			limit = {
+				tag = YUG
 				has_military_industrial_organization = YUG_zmaj_organization
 			}
 			mio:YUG_zmaj_organization = {

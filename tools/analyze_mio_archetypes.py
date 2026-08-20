@@ -71,6 +71,7 @@ class Organization:
     remove_count: int
     exact_hash: str
     shape_hash: str
+    allowed_guard: tuple[str, ...] | None = None
 
 
 def tokenize(text: str) -> list[str]:
@@ -177,6 +178,111 @@ def blocks(block: Block, key: str) -> list[Block]:
 
 def bare_values(block: Block) -> list[str]:
     return [entry.value for entry in block.entries if isinstance(entry, Bare)]
+
+
+# v2.8 #7: keys observed in vanilla MIO `allowed` blocks (country-scope triggers).
+# Guards copy the allowed content verbatim; FROM and unknown keys opt out.
+ALLOWED_GUARD_KEYS = frozenset(
+    {
+        "AND",
+        "NOT",
+        "OR",
+        "ROOT",
+        "NOR_AAT",
+        "PHI_SEA",
+        "always",
+        "has_dlc",
+        "is_debug",
+        "is_literally_china",
+        "is_literally_china_not_prc",
+        "original_TAG",
+        "original_tag",
+        "tag",
+    }
+)
+
+
+def _atom_text(value: str) -> str:
+    """Render a scalar value for script output: bare tokens stay bare, anything
+    else (spaces, punctuation — e.g. multi-word DLC names) is quoted."""
+    if re.fullmatch(r"[A-Za-z0-9_@.\-]+", value):
+        return value
+    return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def render_assignments(block: Block, indent: int) -> list[str]:
+    pad = "\t" * indent
+    lines: list[str] = []
+    for entry in block.entries:
+        if isinstance(entry, Assignment):
+            if isinstance(entry.value, Block):
+                lines.append(f"{pad}{entry.key} = {{")
+                lines.extend(render_assignments(entry.value, indent + 1))
+                lines.append(f"{pad}}}")
+            else:
+                lines.append(f"{pad}{entry.key} = {_atom_text(entry.value.value)}")
+        else:
+            lines.append(f"{pad}{entry.value}")
+    return lines
+
+
+def prc_dual_coverage(block: Block) -> Block:
+    """Rewrite direct `tag = PRC` / `original_tag = PRC` scalars into
+    `OR = { tag = PRC original_tag = PRC }` (red line 3: PRC 判断双覆盖，
+    与本 MOD PRC 层口径一致；仅作用于守卫复制内容，不改原版语义键)。"""
+    entries: list[Assignment | Bare] = []
+    for entry in block.entries:
+        if isinstance(entry, Assignment):
+            if (
+                isinstance(entry.value, Atom)
+                and entry.value.value == "PRC"
+                and entry.key in ("tag", "original_tag")
+            ):
+                entries.append(
+                    Assignment(
+                        "OR",
+                        Block(
+                            (
+                                Assignment("tag", Atom("PRC")),
+                                Assignment("original_tag", Atom("PRC")),
+                            )
+                        ),
+                    )
+                )
+            elif isinstance(entry.value, Block):
+                entries.append(
+                    Assignment(entry.key, prc_dual_coverage(entry.value))
+                )
+            else:
+                entries.append(entry)
+        else:
+            entries.append(entry)
+    return Block(tuple(entries))
+
+
+def allowed_guard_lines(block: Block) -> tuple[str, ...] | None:
+    """Render the org's `allowed` blocks as country-scope guard content.
+
+    Returns None when any block uses FROM (event-context dependent) or an
+    unknown key (future vanilla additions must be reviewed before reuse);
+    the generator then keeps the plain ownership guard.
+    """
+
+    def nested_keys(entry_block: Block) -> set[str]:
+        found: set[str] = set()
+        for entry in entry_block.entries:
+            if isinstance(entry, Assignment):
+                found.add(entry.key)
+                if isinstance(entry.value, Block):
+                    found |= nested_keys(entry.value)
+        return found
+
+    rendered: list[str] = []
+    for allowed in blocks(block, "allowed"):
+        if "FROM" in nested_keys(allowed) or not nested_keys(allowed) <= ALLOWED_GUARD_KEYS:
+            return None
+        rendered.extend(render_assignments(prc_dual_coverage(allowed), 0))
+    return tuple(rendered) or None
 
 
 def value_repr(value: Atom | Block, variables: dict[str, str]) -> object:
@@ -377,6 +483,7 @@ def load_organizations(
             remove_count=len(removed_tokens(block)),
             exact_hash=stable_hash(exact_fingerprint(traits)),
             shape_hash=stable_hash(shape_fingerprint(traits)),
+            allowed_guard=allowed_guard_lines(block),
         )
         resolving.remove(token)
         resolved[token] = organization

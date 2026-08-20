@@ -269,14 +269,20 @@ def ignored_sample_organizations(inventory: dict) -> set[str]:
         for row in sample["rows"]
         if not row["unlocked_traits"]
     }
-def render_route(token: str, traits: list[str]) -> list[str]:
+def render_route(
+    token: str, traits: list[str], guard_lines: tuple[str, ...] | None = None
+) -> list[str]:
     if not traits:
         raise ValueError(f"{token}: empty route")
     t = "\t"
+    limit_content: list[str] = []
+    if guard_lines:
+        limit_content.extend(f"{t*4}{line}" for line in guard_lines)
+    limit_content.append(f"{t*4}has_military_industrial_organization = {token}")
     lines = [
         f"{t*2}if = {{",
         f"{t*3}limit = {{",
-        f"{t*4}has_military_industrial_organization = {token}",
+        *limit_content,
         f"{t*3}}}",
         f"{t*3}mio:{token} = {{",
         f"{t*4}if = {{",
@@ -335,13 +341,19 @@ def build(vanilla_root: Path | None = None) -> tuple[str, dict]:
         if country != last_country:
             lines.extend(["", f"\t\t# {country}"])
             last_country = country
-        lines.extend(render_route(token, traits))
+        lines.extend(render_route(token, traits, orgs[token].allowed_guard))
     lines.extend(["\t}", "}", ""])
     stats = {
         "organizations": len(routes),
         "traits": sum(len(route) for route in routes.values()),
         "route_sources": dict(sources),
         "countries": len({ar.country_code(orgs[token]) for token in routes}),
+        "dlc_guarded_organizations": sum(
+            1
+            for token in routes
+            if orgs[token].allowed_guard
+            and any("has_dlc" in line for line in orgs[token].allowed_guard)
+        ),
         "excluded_prc_organizations": sorted(excluded_prc),
         "ignored_sample_organizations": sorted(ignored_samples),
         "source_repairs": repairs,
