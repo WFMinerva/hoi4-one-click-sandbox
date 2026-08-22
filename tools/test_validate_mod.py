@@ -856,6 +856,168 @@ class ValidatorRegressionTests(unittest.TestCase):
                 f"{sorted(torpedo_side & traits)}",
             )
 
+    def test_v29_batch3_contracts(self) -> None:
+        """v2.9 批次 3：F12 全国军工厂、F5 加速建设、F4 主要建筑＋电网
+        通用化（D2）、F3 法案菜单（事件 72–74）、F2 意识形态（支持度＋
+        set_ideology 尝试，事件 76）。"""
+
+        def block_text(text: str, header: str) -> str:
+            start = text.index(header)
+            depth = 0
+            brace = text.index("{", start)
+            for index in range(brace, len(text)):
+                if text[index] == "{":
+                    depth += 1
+                elif text[index] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        return text[start : index + 1]
+            raise AssertionError(f"unterminated block: {header}")
+
+        decision_text = validator.read_utf8(
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        )
+        new_decisions = (
+            "PRC_OCS_queue_arms_factories",
+            "PRC_OCS_boost_construction",
+            "PRC_OCS_queue_major_structures",
+            "PRC_OCS_set_economy_law",
+            "PRC_OCS_set_trade_law",
+            "PRC_OCS_set_conscription_law",
+            "PRC_OCS_max_ideology_support",
+        )
+        for name in new_decisions:
+            block = block_text(decision_text, f"{name} = {{")
+            self.assertIn("is_ai = no", block)
+            self.assertIn("ai_will_do = { factor = 0 }", block)
+
+        # F5: decision-level construction-speed modifier.
+        boost = block_text(decision_text, "PRC_OCS_boost_construction = {")
+        self.assertIn("days_remove = 365", boost)
+        for key in (
+            "production_speed_rail_way_factor = 10",
+            "production_speed_radar_station_factor = 10",
+            "production_speed_rocket_site_factor = 10",
+            "production_speed_bunker_factor = 10",
+            "production_speed_coastal_bunker_factor = 10",
+            "production_speed_infrastructure_factor = 10",
+            "production_speed_arms_factory_factor = 10",
+        ):
+            self.assertIn(key, boost)
+
+        # F2: ideology support maxed + switch menu event 76.
+        ideology = block_text(decision_text, "PRC_OCS_max_ideology_support = {")
+        for present in (
+            "add_popularity = { ideology = democratic popularity = 5 }",
+            "add_popularity = { ideology = fascism popularity = 5 }",
+            "add_popularity = { ideology = communism popularity = 5 }",
+            "add_popularity = { ideology = non_aligned popularity = 5 }",
+            "country_event = { id = PRC_OCS.76 }",
+        ):
+            self.assertIn(present, ideology)
+
+        # F3: law menus referenced from decisions.
+        for decision, event_id in (
+            ("PRC_OCS_set_economy_law", "PRC_OCS.72"),
+            ("PRC_OCS_set_trade_law", "PRC_OCS.73"),
+            ("PRC_OCS_set_conscription_law", "PRC_OCS.74"),
+        ):
+            block = block_text(decision_text, f"{decision} = {{")
+            self.assertIn(
+                f"country_event = {{ id = {event_id} }}", block
+            )
+
+        # Construction effects: arms factories + major structures.
+        effect_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_construction_effects.txt"
+        )
+        arms = block_text(
+            effect_text, "PRC_OCS_queue_arms_factories_effect = {"
+        )
+        self.assertIn("add_building_construction = { type = arms_factory level = 1 }", arms)
+        self.assertIn("has_state_flag = PRC_OCS_refinery_target_complete", arms)
+        self.assertIn("country_event = { id = PRC_OCS.71 }", arms)
+        major = block_text(
+            effect_text, "PRC_OCS_queue_major_structures_effect = {"
+        )
+        for present in (
+            "type = bunker",
+            "type = naval_supply_hub",
+            "type = nuclear_reactor",
+            "type = commercial_nuclear_reactor",
+            "country_event = { id = PRC_OCS.75 }",
+        ):
+            self.assertIn(present, major)
+
+        # D2: power grid generalized — the grid chain must sit outside the
+        # PRC-only branch; the PRC branch keeps only the supply nodes.
+        transport = block_text(
+            effect_text, "PRC_OCS_queue_transport_and_bases_effect = {"
+        )
+        prc_branch = block_text(transport, "\tif = {\n\t\tlimit = {\n\t\t\tOR = {\n\t\t\t\ttag = PRC")
+        self.assertIn("PRC_OCS_build_target_supply_nodes_effect", prc_branch)
+        self.assertNotIn("energy_infrastructure", prc_branch)
+        self.assertNotIn("industrial_infrastructure", prc_branch)
+
+        # Events 71-76 defined; law menus offer ideas; ideology menu switches.
+        events_text = validator.read_utf8(
+            validator.ROOT / "events" / "PRC_OCS_events.txt"
+        )
+        for event_id in ("PRC_OCS.71", "PRC_OCS.72", "PRC_OCS.73", "PRC_OCS.74", "PRC_OCS.75", "PRC_OCS.76"):
+            self.assertIn(f"id = {event_id}", events_text)
+        for present in (
+            "add_ideas = war_economy",
+            "add_ideas = free_trade",
+            "add_ideas = extensive_conscription",
+            "set_ideology = democratic",
+            "set_ideology = non_aligned",
+        ):
+            self.assertIn(present, events_text)
+
+        # Regression guard: the v2.6 air/naval prototype-choice menus must
+        # keep their original event ids (a renumbering bug once retargeted
+        # them to the batch-3 completion notices).
+        self.assertIn(
+            "country_event = { id = PRC_OCS.14 }",
+            block_text(
+                decision_text, "PRC_OCS_choose_air_special_project_bonuses = {"
+            ),
+        )
+        self.assertIn(
+            "country_event = { id = PRC_OCS.18 }",
+            block_text(
+                decision_text, "PRC_OCS_choose_naval_special_project_bonuses = {"
+            ),
+        )
+
+        # Loc-reference consistency: each batch-3 event references its own
+        # 71-76 series keys, and the four menu events use .desc (the .d key
+        # is taken by option d). Titles/descs must resolve in both yml files.
+        for language in ("english", "simp_chinese"):
+            loc = validator.read_utf8(
+                validator.ROOT
+                / "localisation"
+                / language
+                / "PRC_OCS_l_english.yml"
+                if language == "english"
+                else validator.ROOT
+                / "localisation"
+                / "simp_chinese"
+                / "PRC_OCS_l_simp_chinese.yml"
+            )
+            for key in (
+                "PRC_OCS.71.t", "PRC_OCS.71.d", "PRC_OCS.71.a",
+                "PRC_OCS.72.t", "PRC_OCS.72.desc", "PRC_OCS.72.a",
+                "PRC_OCS.73.t", "PRC_OCS.73.desc", "PRC_OCS.73.a",
+                "PRC_OCS.74.t", "PRC_OCS.74.desc", "PRC_OCS.74.a",
+                "PRC_OCS.75.t", "PRC_OCS.75.d", "PRC_OCS.75.a",
+                "PRC_OCS.76.t", "PRC_OCS.76.desc", "PRC_OCS.76.a",
+            ):
+                self.assertIn(key + ":0", loc, f"{language}: {key}")
+
     def test_v28_shared_mio_dlc_guards_contract(self) -> None:
         """v2.8 #7: 生成器按原版 allowed 生成机构守卫；PRC 引用双覆盖；FROM 豁免。"""
         scripts = parsed_repository()

@@ -35,6 +35,10 @@ PRC_OCS_refresh_industrial_priority_flags_effect = {
 		limit = { industrial_complex > 19 }
 		set_state_flag = PRC_OCS_civilian_industry_queued
 	}
+	if = {
+		limit = { arms_factory > 19 }
+		set_state_flag = PRC_OCS_arms_factories_queued
+	}
 }
 
 PRC_OCS_unlock_all_shared_slots_effect = {
@@ -403,8 +407,76 @@ PRC_OCS_queue_transport_and_bases_effect = {
 		}
 	}
 
-	# PRC enhancement layer only: preserve the verified dual-grid logic and the
-	# 23 fixed Chinese supply hubs. Other countries never receive either effect.
+	# v2.9-test3 (D2): power grids generalized to every player country. The
+	# dual-grid priority chain below is the former PRC-only block, moved out
+	# of the PRC branch; the 23 fixed Chinese supply hubs stay PRC-only.
+	every_owned_state = {
+		limit = { is_controlled_by = ROOT }
+		PRC_OCS_refresh_industrial_priority_flags_effect = yes
+
+		if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_power_grid_queued }
+			}
+			if = {
+				limit = {
+					OR = {
+						energy_infrastructure > 0
+						industrial_infrastructure > 0
+					}
+				}
+				set_state_flag = PRC_OCS_power_grid_queued
+			}
+			else_if = {
+				limit = {
+					has_state_flag = PRC_OCS_refinery_target_complete
+					has_state_flag = PRC_OCS_fuel_silo_target_complete
+					has_state_flag = PRC_OCS_civilian_industry_queued
+					has_resources_amount = {
+						resource = oil
+						amount > 0
+					}
+					free_building_slots = {
+						building = industrial_infrastructure
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = industrial_infrastructure
+					level = 1
+				}
+				set_state_flag = PRC_OCS_power_grid_queued
+				ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
+			}
+			else_if = {
+				limit = {
+					has_state_flag = PRC_OCS_refinery_target_complete
+					has_state_flag = PRC_OCS_fuel_silo_target_complete
+					has_state_flag = PRC_OCS_civilian_industry_queued
+					NOT = {
+						has_resources_amount = {
+							resource = oil
+							amount > 0
+						}
+					}
+					free_building_slots = {
+						building = energy_infrastructure
+						size > 0
+						include_locked = no
+					}
+				}
+				add_building_construction = {
+					type = energy_infrastructure
+					level = 1
+				}
+				set_state_flag = PRC_OCS_power_grid_queued
+				ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
+			}
+		}
+	}
+
+	# PRC enhancement layer only: the 23 fixed Chinese supply hubs.
 	if = {
 		limit = {
 			OR = {
@@ -412,73 +484,6 @@ PRC_OCS_queue_transport_and_bases_effect = {
 				original_tag = PRC
 			}
 		}
-
-		every_owned_state = {
-			limit = { is_controlled_by = ROOT }
-			PRC_OCS_refresh_industrial_priority_flags_effect = yes
-
-			if = {
-				limit = {
-					NOT = { has_state_flag = PRC_OCS_power_grid_queued }
-				}
-				if = {
-					limit = {
-						OR = {
-							energy_infrastructure > 0
-							industrial_infrastructure > 0
-						}
-					}
-					set_state_flag = PRC_OCS_power_grid_queued
-				}
-				else_if = {
-					limit = {
-						has_state_flag = PRC_OCS_refinery_target_complete
-						has_state_flag = PRC_OCS_fuel_silo_target_complete
-						has_state_flag = PRC_OCS_civilian_industry_queued
-						has_resources_amount = {
-							resource = oil
-							amount > 0
-						}
-						free_building_slots = {
-							building = industrial_infrastructure
-							size > 0
-							include_locked = no
-						}
-					}
-					add_building_construction = {
-						type = industrial_infrastructure
-						level = 1
-					}
-					set_state_flag = PRC_OCS_power_grid_queued
-					ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
-				}
-				else_if = {
-					limit = {
-						has_state_flag = PRC_OCS_refinery_target_complete
-						has_state_flag = PRC_OCS_fuel_silo_target_complete
-						has_state_flag = PRC_OCS_civilian_industry_queued
-						NOT = {
-							has_resources_amount = {
-								resource = oil
-								amount > 0
-							}
-						}
-						free_building_slots = {
-							building = energy_infrastructure
-							size > 0
-							include_locked = no
-						}
-					}
-					add_building_construction = {
-						type = energy_infrastructure
-						level = 1
-					}
-					set_state_flag = PRC_OCS_power_grid_queued
-					ROOT = { set_country_flag = PRC_OCS_transport_bases_changed }
-				}
-			}
-		}
-
 		PRC_OCS_build_target_supply_nodes_effect = yes
 	}
 
@@ -866,5 +871,148 @@ PRC_OCS_build_target_supply_nodes_effect = {
 				province = 7803
 			}
 		}
+	}
+}
+
+# v2.9-test3 batch 3 (F12): nationwide military-factory program; mirrors the
+# civilian-industry pattern (petrochemical prerequisite, five per click,
+# repeatable to the engine cap of 20). Owned and controlled states only.
+PRC_OCS_queue_arms_factories_effect = {
+	clr_country_flag = PRC_OCS_arms_factories_changed
+
+	every_owned_state = {
+		limit = { is_controlled_by = ROOT }
+		PRC_OCS_unlock_current_state_shared_slots_effect = yes
+		PRC_OCS_refresh_industrial_priority_flags_effect = yes
+
+		if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_arms_factories_queued }
+				has_state_flag = PRC_OCS_refinery_target_complete
+				has_state_flag = PRC_OCS_fuel_silo_target_complete
+			}
+
+			clr_state_flag = PRC_OCS_arms_factory_1_added
+			clr_state_flag = PRC_OCS_arms_factory_2_added
+			clr_state_flag = PRC_OCS_arms_factory_3_added
+			clr_state_flag = PRC_OCS_arms_factory_4_added
+			clr_state_flag = PRC_OCS_arms_factory_5_added
+
+			if = {
+				limit = {
+					arms_factory < 20
+					free_building_slots = { building = arms_factory size > 0 include_locked = no }
+				}
+				add_building_construction = { type = arms_factory level = 1 }
+				set_state_flag = PRC_OCS_arms_factory_1_added
+				ROOT = { set_country_flag = PRC_OCS_arms_factories_changed }
+			}
+			if = {
+				limit = {
+					arms_factory < 20
+					free_building_slots = { building = arms_factory size > 0 include_locked = no }
+				}
+				add_building_construction = { type = arms_factory level = 1 }
+				set_state_flag = PRC_OCS_arms_factory_2_added
+				ROOT = { set_country_flag = PRC_OCS_arms_factories_changed }
+			}
+			if = {
+				limit = {
+					arms_factory < 20
+					free_building_slots = { building = arms_factory size > 0 include_locked = no }
+				}
+				add_building_construction = { type = arms_factory level = 1 }
+				set_state_flag = PRC_OCS_arms_factory_3_added
+				ROOT = { set_country_flag = PRC_OCS_arms_factories_changed }
+			}
+			if = {
+				limit = {
+					arms_factory < 20
+					free_building_slots = { building = arms_factory size > 0 include_locked = no }
+				}
+				add_building_construction = { type = arms_factory level = 1 }
+				set_state_flag = PRC_OCS_arms_factory_4_added
+				ROOT = { set_country_flag = PRC_OCS_arms_factories_changed }
+			}
+			if = {
+				limit = {
+					arms_factory < 20
+					free_building_slots = { building = arms_factory size > 0 include_locked = no }
+				}
+				add_building_construction = { type = arms_factory level = 1 }
+				set_state_flag = PRC_OCS_arms_factory_5_added
+				ROOT = { set_country_flag = PRC_OCS_arms_factories_changed }
+			}
+
+			if = {
+				limit = { arms_factory > 19 }
+				set_state_flag = PRC_OCS_arms_factories_queued
+			}
+		}
+	}
+
+	if = {
+		limit = { has_country_flag = PRC_OCS_arms_factories_changed }
+		country_event = { id = PRC_OCS.71 }
+		clr_country_flag = PRC_OCS_arms_factories_changed
+	}
+}
+
+# v2.9-test3 batch 3 (F4): major structures — land forts (bunker,
+# province cap 10), naval supply hubs (province cap 1, coastal) and
+# nuclear / commercial nuclear reactors (state cap 1). Owned and
+# controlled states only.
+PRC_OCS_queue_major_structures_effect = {
+	clr_country_flag = PRC_OCS_major_structures_changed
+
+	every_owned_state = {
+		limit = { is_controlled_by = ROOT }
+		if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_major_structures_queued }
+			}
+
+			add_building_construction = {
+				type = bunker
+				level = 10
+				province = {
+					all_provinces = yes
+				}
+			}
+			if = {
+				limit = { is_coastal = yes }
+				add_building_construction = {
+					type = naval_supply_hub
+					level = 1
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					nuclear_reactor < 1
+					free_building_slots = { building = nuclear_reactor size > 0 include_locked = no }
+				}
+				add_building_construction = { type = nuclear_reactor level = 1 }
+			}
+			if = {
+				limit = {
+					commercial_nuclear_reactor < 1
+					free_building_slots = { building = commercial_nuclear_reactor size > 0 include_locked = no }
+				}
+				add_building_construction = { type = commercial_nuclear_reactor level = 1 }
+			}
+
+			set_state_flag = PRC_OCS_major_structures_queued
+			ROOT = { set_country_flag = PRC_OCS_major_structures_changed }
+		}
+	}
+
+	if = {
+		limit = { has_country_flag = PRC_OCS_major_structures_changed }
+		country_event = { id = PRC_OCS.75 }
+		clr_country_flag = PRC_OCS_major_structures_changed
 	}
 }

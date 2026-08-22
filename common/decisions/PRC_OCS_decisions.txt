@@ -189,15 +189,9 @@ PRC_OCS_category = {
 					is_controlled_by = ROOT
 					NOT = { has_state_flag = PRC_OCS_transport_bases_queued }
 				}
-				AND = {
-					OR = {
-						tag = PRC
-						original_tag = PRC
-					}
-					any_owned_state = {
-						is_controlled_by = ROOT
-						NOT = { has_state_flag = PRC_OCS_power_grid_queued }
-					}
+				any_owned_state = {
+					is_controlled_by = ROOT
+					NOT = { has_state_flag = PRC_OCS_power_grid_queued }
 				}
 			}
 		}
@@ -288,6 +282,144 @@ PRC_OCS_category = {
 			}
 		}
 		complete_effect = { PRC_OCS_queue_civilian_industry_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test3 batch 3 (F12): nationwide military factories, mirroring the
+	# civilian-industry pattern (petrochemical prerequisite, five per click,
+	# repeatable to the engine cap of 20).
+	PRC_OCS_queue_arms_factories = {
+		icon = generic_industry
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+				tooltip = PRC_OCS_queue_arms_factories_available_tt
+				any_owned_state = {
+					is_controlled_by = ROOT
+					NOT = { has_state_flag = PRC_OCS_arms_factories_queued }
+					has_state_flag = PRC_OCS_refinery_target_complete
+					has_state_flag = PRC_OCS_fuel_silo_target_complete
+				}
+			}
+		}
+		complete_effect = { PRC_OCS_queue_arms_factories_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test3 batch 3 (F5): construction speed boost, decision-level
+	# modifier modeled on PRC_OCS_boost_supply_construction. User explicitly
+	# rejected one-click full build-out; this only speeds construction.
+	PRC_OCS_boost_construction = {
+		icon = generic_construction
+		cost = 0
+		days_remove = 365
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		modifier = {
+			production_speed_rail_way_factor = 10
+			production_speed_radar_station_factor = 10
+			production_speed_rocket_site_factor = 10
+			production_speed_bunker_factor = 10
+			production_speed_coastal_bunker_factor = 10
+			production_speed_infrastructure_factor = 10
+			production_speed_air_base_factor = 10
+			production_speed_naval_base_factor = 10
+			production_speed_arms_factory_factor = 10
+			production_speed_industrial_complex_factor = 10
+			production_speed_dockyard_factor = 10
+			production_speed_supply_node_factor = 10
+			production_speed_energy_infrastructure_factor = 10
+			production_speed_industrial_infrastructure_factor = 10
+		}
+		# The entire effect is the decision-level modifier above (days_remove).
+		complete_effect = { }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test3 batch 3 (F4): major structures — land forts (bunker,
+	# province cap 10), nuclear reactor / commercial nuclear reactor
+	# (state cap 1) and naval supply hubs (province cap 1).
+	PRC_OCS_queue_major_structures = {
+		icon = generic_construction
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_owned_state = {
+				is_controlled_by = ROOT
+				NOT = { has_state_flag = PRC_OCS_major_structures_queued }
+			}
+		}
+		complete_effect = { PRC_OCS_queue_major_structures_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test3 batch 3 (F3): law switching menus (repeatable, free choice).
+	PRC_OCS_set_economy_law = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { country_event = { id = PRC_OCS.72 } }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_set_trade_law = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { country_event = { id = PRC_OCS.73 } }
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_set_conscription_law = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { country_event = { id = PRC_OCS.74 } }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test3 batch 3 (F2): max out ideology support, then offer a
+	# ruling-party switch menu (set_ideology, no vanilla precedent; kept
+	# behind the menu so a failed effect can be removed without touching
+	# the support part).
+	PRC_OCS_max_ideology_support = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = {
+			add_popularity = { ideology = democratic popularity = 5 }
+			add_popularity = { ideology = fascism popularity = 5 }
+			add_popularity = { ideology = communism popularity = 5 }
+			add_popularity = { ideology = non_aligned popularity = 5 }
+			country_event = { id = PRC_OCS.76 }
+		}
 		ai_will_do = { factor = 0 }
 	}
 	PRC_OCS_raise_24_infantry_divisions = {
