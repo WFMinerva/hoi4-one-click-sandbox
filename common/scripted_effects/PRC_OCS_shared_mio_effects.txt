@@ -697,19 +697,16 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:AUS_ELIN_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
+						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
 					}
-					complete_mio_trait = generic_mio_trait_decalin_fueled_torpedo
-					complete_mio_trait = generic_mio_trait_advanced_sonar
-					complete_mio_trait = generic_mio_trait_high_powered_engines
-					complete_mio_trait = generic_mio_trait_submarine_mass_production
-					complete_mio_trait = generic_mio_trait_deck_guns
+					complete_mio_trait = generic_mio_trait_long_range_raiding
+					complete_mio_trait = generic_mio_trait_advanced_periscope
+					complete_mio_trait = generic_mio_trait_efficient_fuel_engines
+					complete_mio_trait = generic_mio_trait_emergency_main_ballast_tank_blow
 					complete_mio_trait = generic_mio_trait_highly_efficient_diesel_electric_propulsion_systems
-					complete_mio_trait = generic_mio_trait_large_torpedo_banks
+					complete_mio_trait = generic_mio_trait_radar_warning_receiver
+					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
-					complete_mio_trait = generic_mio_trait_high_capacity_mine_storage
-					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
-					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -4970,21 +4967,18 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:GER_hdw_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
+						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
 					}
-					complete_mio_trait = generic_mio_trait_decalin_fueled_torpedo
+					complete_mio_trait = generic_mio_trait_long_range_raiding
 					complete_mio_trait = GER_mio_trait_saddle_tanks
-					complete_mio_trait = generic_mio_trait_advanced_sonar
-					complete_mio_trait = generic_mio_trait_high_powered_engines
-					complete_mio_trait = generic_mio_trait_submarine_mass_production
+					complete_mio_trait = generic_mio_trait_advanced_periscope
+					complete_mio_trait = generic_mio_trait_efficient_fuel_engines
 					complete_mio_trait = GER_mio_trait_excellent_diving_performance
-					complete_mio_trait = generic_mio_trait_deck_guns
+					complete_mio_trait = generic_mio_trait_emergency_main_ballast_tank_blow
 					complete_mio_trait = generic_mio_trait_highly_efficient_diesel_electric_propulsion_systems
-					complete_mio_trait = generic_mio_trait_large_torpedo_banks
+					complete_mio_trait = generic_mio_trait_radar_warning_receiver
+					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
-					complete_mio_trait = generic_mio_trait_high_capacity_mine_storage
-					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
-					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -6542,19 +6536,16 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:IRQ_submarine_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
+						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
 					}
-					complete_mio_trait = generic_mio_trait_decalin_fueled_torpedo
-					complete_mio_trait = generic_mio_trait_advanced_sonar
-					complete_mio_trait = generic_mio_trait_high_powered_engines
-					complete_mio_trait = generic_mio_trait_submarine_mass_production
-					complete_mio_trait = generic_mio_trait_deck_guns
+					complete_mio_trait = generic_mio_trait_long_range_raiding
+					complete_mio_trait = generic_mio_trait_advanced_periscope
+					complete_mio_trait = generic_mio_trait_efficient_fuel_engines
+					complete_mio_trait = generic_mio_trait_emergency_main_ballast_tank_blow
 					complete_mio_trait = generic_mio_trait_highly_efficient_diesel_electric_propulsion_systems
-					complete_mio_trait = generic_mio_trait_large_torpedo_banks
+					complete_mio_trait = generic_mio_trait_radar_warning_receiver
+					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
-					complete_mio_trait = generic_mio_trait_high_capacity_mine_storage
-					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
-					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -6773,19 +6764,16 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:ITA_cantieri_navali_tosi_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
+						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
 					}
-					complete_mio_trait = generic_mio_trait_decalin_fueled_torpedo
-					complete_mio_trait = generic_mio_trait_advanced_sonar
-					complete_mio_trait = generic_mio_trait_high_powered_engines
-					complete_mio_trait = generic_mio_trait_submarine_mass_production
-					complete_mio_trait = generic_mio_trait_deck_guns
+					complete_mio_trait = generic_mio_trait_long_range_raiding
+					complete_mio_trait = generic_mio_trait_advanced_periscope
+					complete_mio_trait = generic_mio_trait_efficient_fuel_engines
+					complete_mio_trait = generic_mio_trait_emergency_main_ballast_tank_blow
 					complete_mio_trait = generic_mio_trait_highly_efficient_diesel_electric_propulsion_systems
-					complete_mio_trait = generic_mio_trait_large_torpedo_banks
+					complete_mio_trait = generic_mio_trait_radar_warning_receiver
+					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
-					complete_mio_trait = generic_mio_trait_high_capacity_mine_storage
-					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
-					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -7393,19 +7381,16 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:JAP_mitsubishi_kobe_shipyard_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
+						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
 					}
-					complete_mio_trait = generic_mio_trait_decalin_fueled_torpedo
-					complete_mio_trait = generic_mio_trait_advanced_sonar
-					complete_mio_trait = generic_mio_trait_high_powered_engines
-					complete_mio_trait = generic_mio_trait_submarine_mass_production
-					complete_mio_trait = generic_mio_trait_deck_guns
+					complete_mio_trait = generic_mio_trait_long_range_raiding
+					complete_mio_trait = generic_mio_trait_advanced_periscope
+					complete_mio_trait = generic_mio_trait_efficient_fuel_engines
+					complete_mio_trait = generic_mio_trait_emergency_main_ballast_tank_blow
 					complete_mio_trait = generic_mio_trait_highly_efficient_diesel_electric_propulsion_systems
-					complete_mio_trait = generic_mio_trait_large_torpedo_banks
+					complete_mio_trait = generic_mio_trait_radar_warning_receiver
+					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
-					complete_mio_trait = generic_mio_trait_high_capacity_mine_storage
-					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
-					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -12068,20 +12053,16 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:USA_electric_boat_company_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
+						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
 					}
-					complete_mio_trait = generic_mio_trait_decalin_fueled_torpedo
-					complete_mio_trait = generic_mio_trait_advanced_sonar
-					complete_mio_trait = generic_mio_trait_high_powered_engines
-					complete_mio_trait = generic_mio_trait_submarine_mass_production
-					complete_mio_trait = generic_mio_trait_deck_guns
+					complete_mio_trait = generic_mio_trait_long_range_raiding
+					complete_mio_trait = generic_mio_trait_advanced_periscope
+					complete_mio_trait = generic_mio_trait_efficient_fuel_engines
+					complete_mio_trait = generic_mio_trait_emergency_main_ballast_tank_blow
 					complete_mio_trait = generic_mio_trait_highly_efficient_diesel_electric_propulsion_systems
-					complete_mio_trait = generic_mio_trait_large_torpedo_banks
-					complete_mio_trait = USA_mio_trait_gould_centrifugal_pump
+					complete_mio_trait = generic_mio_trait_radar_warning_receiver
+					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
-					complete_mio_trait = generic_mio_trait_high_capacity_mine_storage
-					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
-					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}

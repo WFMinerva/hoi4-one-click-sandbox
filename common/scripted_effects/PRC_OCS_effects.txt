@@ -48,6 +48,8 @@ PRC_OCS_add_points_effect = {
 # v2.0b: generic countries now receive neutral equipment designs, eight division
 # templates and the full supported stockpile. PRC retains its Chinese design names,
 # advisers and configured MIO traits. Existing divisions are never changed here.
+# v2.9-test2: preset designs/templates and the stockpile split out into the
+# independent decisions PRC_OCS_create_preset_designs / PRC_OCS_add_stockpile.
 PRC_OCS_initialize_effect = {
 	PRC_OCS_research_all_effect = yes
 	PRC_OCS_configure_doctrines_effect = yes
@@ -63,16 +65,10 @@ PRC_OCS_initialize_effect = {
 		}
 		PRC_OCS_appoint_advisors_effect = yes
 		PRC_OCS_configure_mios_effect = yes
-		PRC_OCS_create_variants_effect = yes
-		PRC_OCS_create_templates_effect = yes
-		PRC_OCS_add_stockpile_effect = yes
 		set_country_flag = PRC_OCS_initialized
 		country_event = { id = PRC_OCS.1 }
 	}
 	else = {
-		PRC_OCS_create_generic_variants_effect = yes
-		PRC_OCS_create_generic_templates_effect = yes
-		PRC_OCS_add_generic_stockpile_effect = yes
 		set_country_flag = PRC_OCS_initialized
 		country_event = { id = PRC_OCS.7 }
 	}

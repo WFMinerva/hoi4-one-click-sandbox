@@ -17,6 +17,78 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	# v2.9-test2 batch 2 (S1/F1): independent buttons split out of initialize —
+	# usable regardless of PRC_OCS_initialized.
+	PRC_OCS_add_stockpile = {
+		icon = generic_strength
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = PRC
+						original_tag = PRC
+					}
+				}
+				PRC_OCS_add_stockpile_effect = yes
+			}
+			else = {
+				PRC_OCS_add_generic_stockpile_effect = yes
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_create_preset_designs = {
+		icon = generic_production
+		cost = 0
+		days_remove = 1
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = PRC_OCS_preset_designs_created }
+		}
+		available = { is_ai = no }
+		complete_effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = PRC
+						original_tag = PRC
+					}
+				}
+				PRC_OCS_create_variants_effect = yes
+				PRC_OCS_create_templates_effect = yes
+			}
+			else = {
+				PRC_OCS_create_generic_variants_effect = yes
+				PRC_OCS_create_generic_templates_effect = yes
+			}
+			set_country_flag = PRC_OCS_preset_designs_created
+		}
+		ai_will_do = { factor = 0 }
+	}
+
+	PRC_OCS_max_stability = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = {
+			add_stability = 5
+			add_war_support = 5
+		}
+		ai_will_do = { factor = 0 }
+	}
+
 	PRC_OCS_resupply = {
 		icon = generic_industry
 		cost = 0

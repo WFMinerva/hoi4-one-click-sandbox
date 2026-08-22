@@ -230,6 +230,58 @@ def _parent_chain(
     return add
 
 
+# v2.9-test2 D12: submarine stealth side (left) vs torpedo side (right).
+# Derived from vanilla generic_submarine_organization: mutually-exclusive
+# roots long_range_raiding (stealth) <-> decalin_fueled_torpedo (torpedo).
+# Classification is by bonus direction (visibility/range vs torpedo/speed)
+# rather than a pure BFS, because any_parent cross-references
+# (highly_efficient/open_cycle share parents, simplified_pressure_hull
+# requires both sides) make a plain tree diffusion ambiguous.
+SUBMARINE_STEALTH_TRAITS = frozenset({
+    "generic_mio_trait_long_range_raiding",
+    "generic_mio_trait_efficient_fuel_engines",
+    "generic_mio_trait_highly_efficient_diesel_electric_propulsion_systems",
+    "generic_mio_trait_experimental_anechoic_tiles",
+    "generic_mio_trait_advanced_periscope",
+    "generic_mio_trait_emergency_main_ballast_tank_blow",
+    "generic_mio_trait_radar_warning_receiver",
+    "generic_mio_trait_crash_dive_flood_tanks",
+})
+SUBMARINE_TORPEDO_TRAITS = frozenset({
+    "generic_mio_trait_decalin_fueled_torpedo",
+    "generic_mio_trait_high_powered_engines",
+    "generic_mio_trait_open_cycle_propulsion",
+    "generic_mio_trait_improved_torpedo_detonators",
+    "generic_mio_trait_submarine_mass_production",
+    "generic_mio_trait_advanced_sonar",
+    "generic_mio_trait_deck_guns",
+    "generic_mio_trait_large_torpedo_banks",
+    "generic_mio_trait_high_capacity_mine_storage",
+    "generic_mio_trait_simplified_pressure_hull_design",
+})
+
+
+def check_submarine_side_coverage(orgs: dict[str, ar.Organization]) -> None:
+    """Every generic_ trait of the vanilla submarine archetype must fall into
+    exactly one side; a vanilla update adding traits fails loudly here
+    instead of silently misrouting submarines."""
+    base = orgs.get("generic_submarine_organization")
+    if base is None:
+        return
+    overlap = SUBMARINE_STEALTH_TRAITS & SUBMARINE_TORPEDO_TRAITS
+    if overlap:
+        raise ValueError(f"submarine side overlap: {sorted(overlap)}")
+    generic_traits = {
+        token for token in base.traits if token.startswith("generic_mio_trait_")
+    }
+    missing = generic_traits - (SUBMARINE_STEALTH_TRAITS | SUBMARINE_TORPEDO_TRAITS)
+    if missing:
+        raise ValueError(
+            "submarine archetype traits not classified into a side: "
+            + ", ".join(sorted(missing))
+        )
+
+
 def apply_org_type_preferences(
     org: ar.Organization, selected: set[str], orgs: dict[str, ar.Organization]
 ) -> set[str]:
@@ -237,10 +289,12 @@ def apply_org_type_preferences(
     Applied to every route (generated maximum and sample-based preferred
     routes alike): drops the research traits of support-equipment
     manufacturers (useless once the mod grants all technologies), prefers the
-    anti-personnel assault-gun ammunition over the anti-armor one, and
-    guarantees the production-techniques and long-range-fighter improvements
-    for long-range aircraft manufacturers. Falls back to the unmodified route
-    whenever the preference cannot be satisfied legally."""
+    anti-personnel assault-gun ammunition over the anti-armor one, guarantees
+    the production-techniques and long-range-fighter improvements for
+    long-range aircraft manufacturers, and (v2.9-test2 D12) reroutes submarine
+    manufacturers to the stealth side instead of the torpedo side. Falls back
+    to the unmodified route whenever the preference cannot be satisfied
+    legally."""
     base = set(selected)
     chain: set[str] = set()
     current: str | None = org.include
@@ -251,7 +305,8 @@ def apply_org_type_preferences(
     is_support = "generic_support_equipment_organization" in chain
     is_assault = "generic_assault_guns_organization" in chain
     is_range = "generic_range_focused_aircraft_organization" in chain
-    if not (is_support or is_assault or is_range):
+    is_submarine = "generic_submarine_organization" in chain
+    if not (is_support or is_assault or is_range or is_submarine):
         return base
     drop: set[str] = set()
     ensure: set[str] = set()
@@ -269,19 +324,33 @@ def apply_org_type_preferences(
             "generic_mio_trait_advanced_production_techniques",
             "generic_mio_trait_long_range_fighters",
         }
+    if is_submarine:
+        drop = set(SUBMARINE_TORPEDO_TRAITS)
+        ensure = set(SUBMARINE_STEALTH_TRAITS)
     candidate = prune(base - drop, org.traits)
-    for token in sorted(ensure):
-        if token in candidate or token not in org.traits:
-            continue
-        add = _parent_chain(org, token, candidate)
-        if add is None:
-            continue
-        conflicts = set()
-        for extra in add:
-            conflicts |= related(
-                org.traits[extra], "mutually_exclusive", set(org.traits)
-            ) & candidate
-        candidate = prune((candidate - conflicts) | add, org.traits)
+    # Fixpoint loop: ensure-items may depend (any_parent) on other ensure-items
+    # that sort later (e.g. anechoic_tiles on highly_efficient_diesel_electric),
+    # so a single pass would silently skip them.
+    pending_ensure = set(ensure)
+    while pending_ensure:
+        progressed = False
+        for token in sorted(pending_ensure):
+            if token in candidate or token not in org.traits:
+                pending_ensure.discard(token)
+                continue
+            add = _parent_chain(org, token, candidate)
+            if add is None:
+                continue
+            conflicts = set()
+            for extra in add:
+                conflicts |= related(
+                    org.traits[extra], "mutually_exclusive", set(org.traits)
+                ) & candidate
+            candidate = prune((candidate - conflicts) | add, org.traits)
+            pending_ensure.discard(token)
+            progressed = True
+        if not progressed:
+            break
     try:
         validate_selected(org, candidate)
     except ValueError:
@@ -389,6 +458,7 @@ def build(vanilla_root: Path | None = None) -> tuple[str, dict]:
     orgs, duplicates, repairs = ar.load_organizations(organizations_dir)
     if duplicates:
         raise ValueError(f"duplicate organizations: {duplicates}")
+    check_submarine_side_coverage(orgs)
     inventory = json.loads(INVENTORY.read_text(encoding="utf-8"))
     preferred = preferred_routes(inventory, orgs)
     excluded_prc = set(ar.covered_tokens(PRC_EFFECT))

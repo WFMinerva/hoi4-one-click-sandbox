@@ -1,7 +1,7 @@
-version="2.9-test1"
+version="2.9-test2"
 tags={
 	"Gameplay"
 	"Utilities"
 }
-name="开局一键爽玩 / One-Click Sandbox Start v2.9-test1"
+name="开局一键爽玩 / One-Click Sandbox Start v2.9-test2"
 supported_version="1.19.*"

@@ -226,6 +226,8 @@ class ValidatorRegressionTests(unittest.TestCase):
                  "PRC_OCS_nuclear_special_project_choices_done",
              "PRC_OCS_choose_rocket_special_project_bonuses":
                  "PRC_OCS_rocket_special_project_choices_done",
+             "PRC_OCS_create_preset_designs":
+                 "PRC_OCS_preset_designs_created",
          }
         special_project_decisions = {
             name: flag
@@ -474,14 +476,14 @@ class ValidatorRegressionTests(unittest.TestCase):
             "PRC": 7,
         }
         expected_trait_counts = {
-            "GER": 313,
+            "GER": 310,
             "ENG": 177,
-            "JAP": 259,
+            "JAP": 256,
             "SOV": 191,
             "AST": 164,
             "CZE": 176,
-            "ITA": 198,
-            "USA": 194,
+            "ITA": 195,
+            "USA": 190,
             "PRC": 81,
         }
         observed_companies = set()
@@ -521,7 +523,7 @@ class ValidatorRegressionTests(unittest.TestCase):
                 [traits[-1]],
             )
         self.assertEqual(len(observed_companies), 444)
-        self.assertEqual(completed_trait_count, 4877)
+        self.assertEqual(completed_trait_count, 4858)
         for prefix, expected in expected_company_counts.items():
             self.assertEqual(company_counts_by_prefix.get(prefix), expected)
         for prefix, expected in expected_trait_counts.items():
@@ -724,6 +726,135 @@ class ValidatorRegressionTests(unittest.TestCase):
             "generic_mio_trait_advanced_production_techniques", focke_wulf
         )
         self.assertIn("generic_mio_trait_long_range_fighters", focke_wulf)
+
+    def test_v29_batch2_contracts(self) -> None:
+        """v2.9 批次 2：S1 从初始化拆出独立按钮（库存/预设装备设计）、F1
+        稳定度战争支援决议、D12 潜艇 MIO 隐蔽侧路线（互斥根全链扩散）。"""
+
+        def block_text(text: str, header: str) -> str:
+            start = text.index(header)
+            depth = 0
+            brace = text.index("{", start)
+            for index in range(brace, len(text)):
+                if text[index] == "{":
+                    depth += 1
+                elif text[index] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        return text[start : index + 1]
+            raise AssertionError(f"unterminated block: {header}")
+
+        decision_text = validator.read_utf8(
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        )
+        for name in (
+            "PRC_OCS_add_stockpile",
+            "PRC_OCS_create_preset_designs",
+            "PRC_OCS_max_stability",
+        ):
+            self.assertIn(f"{name} = {{", decision_text)
+            block = block_text(decision_text, f"{name} = {{")
+            # human-only guard on every new decision
+            self.assertIn("is_ai = no", block)
+            self.assertIn("ai_will_do = { factor = 0 }", block)
+        # S1-a stockpile button: independent of the initialized flag.
+        stockpile = block_text(decision_text, "PRC_OCS_add_stockpile = {")
+        self.assertNotIn("has_country_flag", stockpile)
+        # F1: stability/war-support button adds 500 of each.
+        stability = block_text(decision_text, "PRC_OCS_max_stability = {")
+        self.assertIn("add_stability = 5", stability)
+        self.assertIn("add_war_support = 5", stability)
+        self.assertNotIn("has_country_flag", stability)
+
+        # S1 split: initialize no longer creates designs/templates/stockpile.
+        effect_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_effects.txt"
+        )
+        initialize = block_text(effect_text, "PRC_OCS_initialize_effect = {")
+        for absent in (
+            "PRC_OCS_create_variants_effect",
+            "PRC_OCS_create_templates_effect",
+            "PRC_OCS_add_stockpile_effect",
+            "PRC_OCS_create_generic_variants_effect",
+            "PRC_OCS_create_generic_templates_effect",
+            "PRC_OCS_add_generic_stockpile_effect",
+        ):
+            self.assertNotIn(absent, initialize)
+        for present in (
+            "PRC_OCS_research_all_effect",
+            "PRC_OCS_configure_doctrines_effect",
+            "PRC_OCS_configure_spirits_effect",
+            "PRC_OCS_configure_shared_mios_effect",
+        ):
+            self.assertIn(present, initialize)
+
+        # D12: submarine manufacturers take the stealth side.
+        shared_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_shared_mio_effects.txt"
+        )
+
+        def route_traits(company: str) -> list[str]:
+            # From the has_military_industrial_organization line, non-greedy
+            # until the mio: block; tolerates nested DLC-guard limits.
+            branch = re.search(
+                rf"(?s)has_military_industrial_organization = {re.escape(company)}"
+                rf".*?mio:{re.escape(company)}\s*=\s*\{{"
+                rf"(?P<body>.*?)\n\t\t\t\t\}}",
+                shared_text,
+            )
+            self.assertIsNotNone(branch, f"company branch not found: {company}")
+            return re.findall(
+                r"complete_mio_trait = ([A-Za-z0-9_-]+)",
+                branch.group("body"),
+            )
+
+        stealth_side = {
+            "generic_mio_trait_long_range_raiding",
+            "generic_mio_trait_efficient_fuel_engines",
+            "generic_mio_trait_highly_efficient_diesel_electric_propulsion_systems",
+            "generic_mio_trait_experimental_anechoic_tiles",
+            "generic_mio_trait_advanced_periscope",
+            "generic_mio_trait_emergency_main_ballast_tank_blow",
+            "generic_mio_trait_radar_warning_receiver",
+            "generic_mio_trait_crash_dive_flood_tanks",
+        }
+        torpedo_side = {
+            "generic_mio_trait_decalin_fueled_torpedo",
+            "generic_mio_trait_high_powered_engines",
+            "generic_mio_trait_open_cycle_propulsion",
+            "generic_mio_trait_improved_torpedo_detonators",
+            "generic_mio_trait_submarine_mass_production",
+            "generic_mio_trait_advanced_sonar",
+            "generic_mio_trait_deck_guns",
+            "generic_mio_trait_large_torpedo_banks",
+            "generic_mio_trait_high_capacity_mine_storage",
+            "generic_mio_trait_simplified_pressure_hull_design",
+        }
+        for company in (
+            "AUS_ELIN_organization",
+            "GER_hdw_organization",
+            "IRQ_submarine_organization",
+            "ITA_cantieri_navali_tosi_organization",
+            "JAP_mitsubishi_kobe_shipyard_organization",
+            "USA_electric_boat_company_organization",
+        ):
+            traits = set(route_traits(company))
+            self.assertTrue(
+                stealth_side.issubset(traits),
+                f"{company}: missing stealth traits "
+                f"{sorted(stealth_side - traits)}",
+            )
+            self.assertTrue(
+                torpedo_side.isdisjoint(traits),
+                f"{company}: torpedo traits still present "
+                f"{sorted(torpedo_side & traits)}",
+            )
 
     def test_v28_shared_mio_dlc_guards_contract(self) -> None:
         """v2.8 #7: 生成器按原版 allowed 生成机构守卫；PRC 引用双覆盖；FROM 豁免。"""
