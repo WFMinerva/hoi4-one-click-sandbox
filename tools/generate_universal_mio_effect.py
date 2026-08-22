@@ -187,7 +187,10 @@ def maximum_legal_route(traits: dict[str, dict]) -> set[str]:
         if any(left in chosen and right in chosen for left, right in pairs):
             continue
         selected = prune(always | chosen, traits)
-        score = sum(trait_strength(traits[token]) for token in selected)
+        # Iterate in sorted order: float addition is not associative, so a
+        # raw set iteration would make the score (and thus the tie-break)
+        # depend on PYTHONHASHSEED across processes.
+        score = sum(trait_strength(traits[token]) for token in sorted(selected))
         tie = tuple(sorted(selected))
         if (
             best_score is None
@@ -204,6 +207,86 @@ def maximum_legal_route(traits: dict[str, dict]) -> set[str]:
             best_score = score
             best_tie = tie
     return best
+
+
+def _parent_chain(
+    org: ar.Organization, token: str, base: set[str]
+) -> set[str] | None:
+    """Return token plus every ancestor trait required so all_parents and
+    any_parent constraints hold, or None when the chain is unsatisfiable."""
+    valid = set(org.traits)
+    add: set[str] = {token}
+    queue = [token]
+    while queue:
+        current = queue.pop()
+        data = org.traits[current]
+        missing_all = related(data, "all_parents", valid) - base - add
+        if missing_all:
+            add |= missing_all
+            queue.extend(missing_all)
+        any_parents = related(data, "any_parent", valid)
+        if any_parents and not (any_parents & (base | add)):
+            return None
+    return add
+
+
+def apply_org_type_preferences(
+    org: ar.Organization, selected: set[str], orgs: dict[str, ar.Organization]
+) -> set[str]:
+    """Adjust a route by organization type (v2.9 player feedback T2).
+    Applied to every route (generated maximum and sample-based preferred
+    routes alike): drops the research traits of support-equipment
+    manufacturers (useless once the mod grants all technologies), prefers the
+    anti-personnel assault-gun ammunition over the anti-armor one, and
+    guarantees the production-techniques and long-range-fighter improvements
+    for long-range aircraft manufacturers. Falls back to the unmodified route
+    whenever the preference cannot be satisfied legally."""
+    base = set(selected)
+    chain: set[str] = set()
+    current: str | None = org.include
+    while current and current not in chain:
+        chain.add(current)
+        parent = orgs.get(current)
+        current = parent.include if parent else None
+    is_support = "generic_support_equipment_organization" in chain
+    is_assault = "generic_assault_guns_organization" in chain
+    is_range = "generic_range_focused_aircraft_organization" in chain
+    if not (is_support or is_assault or is_range):
+        return base
+    drop: set[str] = set()
+    ensure: set[str] = set()
+    if is_support:
+        drop = {
+            "generic_mio_trait_research_program",
+            "generic_mio_trait_private_scientists_program",
+        }
+        ensure = {"generic_mio_trait_efficient_scale_up"}
+    if is_assault:
+        drop = {"generic_mio_trait_light_assault_gun_anti_tank_combo"}
+        ensure = {"generic_mio_trait_light_assault_gun_improved_cannon_stabilization"}
+    if is_range:
+        ensure = {
+            "generic_mio_trait_advanced_production_techniques",
+            "generic_mio_trait_long_range_fighters",
+        }
+    candidate = prune(base - drop, org.traits)
+    for token in sorted(ensure):
+        if token in candidate or token not in org.traits:
+            continue
+        add = _parent_chain(org, token, candidate)
+        if add is None:
+            continue
+        conflicts = set()
+        for extra in add:
+            conflicts |= related(
+                org.traits[extra], "mutually_exclusive", set(org.traits)
+            ) & candidate
+        candidate = prune((candidate - conflicts) | add, org.traits)
+    try:
+        validate_selected(org, candidate)
+    except ValueError:
+        return base
+    return candidate
 
 
 def validate_selected(org: ar.Organization, selected: set[str]) -> None:
@@ -231,7 +314,7 @@ def order_route(org: ar.Organization, selected: set[str]) -> list[str]:
     result = []
     while pending:
         eligible = []
-        for token in pending:
+        for token in sorted(pending):
             data = org.traits[token]
             all_parents = related(data, "all_parents", set(org.traits))
             any_parents = related(data, "any_parent", set(org.traits))
@@ -321,6 +404,10 @@ def build(vanilla_root: Path | None = None) -> tuple[str, dict]:
         else:
             selected = maximum_legal_route(org.traits)
             sources["generated_maximum"] += 1
+        # v2.9 T2: type preferences apply to every route (including the
+        # sample-based ones) so the player-visible fixes are consistent
+        # across all countries, not only the generated remainder.
+        selected = apply_org_type_preferences(org, selected, orgs)
         routes[org.token] = order_route(org, selected)
 
     lines = [

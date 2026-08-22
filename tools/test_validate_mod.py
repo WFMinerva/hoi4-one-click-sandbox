@@ -474,15 +474,15 @@ class ValidatorRegressionTests(unittest.TestCase):
             "PRC": 7,
         }
         expected_trait_counts = {
-            "GER": 319,
+            "GER": 313,
             "ENG": 177,
-            "JAP": 261,
+            "JAP": 259,
             "SOV": 191,
-            "AST": 168,
-            "CZE": 178,
-            "ITA": 200,
-            "USA": 192,
-            "PRC": 85,
+            "AST": 164,
+            "CZE": 176,
+            "ITA": 198,
+            "USA": 194,
+            "PRC": 81,
         }
         observed_companies = set()
         completed_trait_count = 0
@@ -521,7 +521,7 @@ class ValidatorRegressionTests(unittest.TestCase):
                 [traits[-1]],
             )
         self.assertEqual(len(observed_companies), 444)
-        self.assertEqual(completed_trait_count, 4944)
+        self.assertEqual(completed_trait_count, 4877)
         for prefix, expected in expected_company_counts.items():
             self.assertEqual(company_counts_by_prefix.get(prefix), expected)
         for prefix, expected in expected_trait_counts.items():
@@ -597,6 +597,133 @@ class ValidatorRegressionTests(unittest.TestCase):
             "PRC_OCS_complete_shared_mio_traits",
             [assignment.key for assignment in category.assignments],
         )
+
+    def test_v29_batch1_contracts(self) -> None:
+        """v2.9 批次 1：B7 沿海民用按钮去掉船厂前置；T1 学说/精神预设换
+        决战计划-优势火力系；T2 共享 MIO 按组织类型偏好（support 研究线
+        移除、突击炮人员弹药、长程飞机补两项）。"""
+        # B7: the civilian-industry decision no longer requires the coastal
+        # dockyard flag anywhere (decision available + scripted effect).
+        decision_text = validator.read_utf8(
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        )
+        effect_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_construction_effects.txt"
+        )
+
+        def block_text(text: str, header: str) -> str:
+            start = text.index(header)
+            depth = 0
+            brace = text.index("{", start)
+            for index in range(brace, len(text)):
+                if text[index] == "{":
+                    depth += 1
+                elif text[index] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        return text[start : index + 1]
+            raise AssertionError(f"unterminated block: {header}")
+
+        civilian_decision = block_text(
+            decision_text, "PRC_OCS_queue_civilian_industry = {"
+        )
+        civilian_effect = block_text(
+            effect_text, "PRC_OCS_queue_civilian_industry_effect = {"
+        )
+        transport_effect = block_text(
+            effect_text, "PRC_OCS_queue_transport_and_bases_effect = {"
+        )
+        for text in (civilian_decision, civilian_effect, transport_effect):
+            self.assertNotIn("PRC_OCS_coastal_dockyards_queued", text)
+
+        # T1: doctrine/spirit preset keys.
+        doctrine_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_research_effects.txt"
+        )
+        for present in (
+            "set_grand_doctrine = grand_battleplan",
+            "set_grand_doctrine = superior_firepower",
+            "set_sub_doctrine = commandos",
+            "set_sub_doctrine = infiltration_tactics",
+            "set_sub_doctrine = air_subdoctrine_fighter_bombers",
+            "set_sub_doctrine = air_subdoctrine_flying_artillery",
+            "set_sub_doctrine = air_subdoctrine_heavy_aircraft_focus",
+        ):
+            self.assertIn(present, doctrine_text)
+        for absent in (
+            "set_grand_doctrine = mass_assault",
+            "set_sub_doctrine = peoples_war",
+            "set_sub_doctrine = guerilla_war",
+            "set_sub_doctrine = air_subdoctrine_fighter_central_field",
+            "set_sub_doctrine = air_subdoctrine_naval_strike_tactics",
+            "set_sub_doctrine = air_subdoctrine_open_ocean_air_patrol",
+        ):
+            self.assertNotIn(absent, doctrine_text)
+        for present in (
+            "add_ideas = superior_firepower_army_spirit",
+            "add_ideas = grand_battleplan_army_spirit",
+            "add_ideas = reserve_officers_spirit",
+        ):
+            self.assertIn(present, doctrine_text)
+        for absent in (
+            "add_ideas = mass_assault_academy_spirit",
+            "add_ideas = living_off_the_land_army_spirit",
+        ):
+            self.assertNotIn(absent, doctrine_text)
+
+        # T2: typed route preferences in the generated shared table.
+        shared_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_shared_mio_effects.txt"
+        )
+        self.assertNotIn(
+            "complete_mio_trait = generic_mio_trait_research_program",
+            shared_text,
+        )
+
+        def route_traits(company: str) -> list[str]:
+            branch = re.search(
+                rf"(?s)limit\s*=\s*\{{[^}}]*"
+                rf"has_military_industrial_organization = {re.escape(company)}"
+                rf"[^}}]*\}}.*?mio:{re.escape(company)}\s*=\s*\{{"
+                rf"(?P<body>.*?)\n\t\t\t\t\}}",
+                shared_text,
+            )
+            self.assertIsNotNone(branch, f"company branch not found: {company}")
+            return re.findall(
+                r"complete_mio_trait = ([A-Za-z0-9_-]+)",
+                branch.group("body"),
+            )
+
+        irq_support = route_traits("IRQ_support_organization")
+        self.assertIn("generic_mio_trait_efficient_scale_up", irq_support)
+        self.assertNotIn("generic_mio_trait_research_program", irq_support)
+        self.assertNotIn(
+            "generic_mio_trait_private_scientists_program", irq_support
+        )
+        hun_mavag = route_traits("HUN_mavag_assault_guns_organization")
+        self.assertIn(
+            "generic_mio_trait_light_assault_gun_improved_cannon_stabilization",
+            hun_mavag,
+        )
+        self.assertNotIn(
+            "generic_mio_trait_light_assault_gun_anti_tank_combo", hun_mavag
+        )
+        # Long-range aircraft manufacturers keep both improvements
+        # (sample-based routes like GER_focke_wulf are covered too).
+        focke_wulf = route_traits("GER_focke_wulf_organization")
+        self.assertIn(
+            "generic_mio_trait_advanced_production_techniques", focke_wulf
+        )
+        self.assertIn("generic_mio_trait_long_range_fighters", focke_wulf)
 
     def test_v28_shared_mio_dlc_guards_contract(self) -> None:
         """v2.8 #7: 生成器按原版 allowed 生成机构守卫；PRC 引用双覆盖；FROM 豁免。"""

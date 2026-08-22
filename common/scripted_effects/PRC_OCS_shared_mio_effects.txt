@@ -227,7 +227,7 @@ PRC_OCS_configure_shared_mios_effect = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_heavy_tank_specialization }
 					}
 					complete_mio_trait = generic_mio_trait_battle_tank_specifications
-					complete_mio_trait = generic_mio_trait_dual_engine_redundancy
+					complete_mio_trait = generic_mio_trait_single_engine
 					complete_mio_trait = ARG_mio_trait_dreams_of_a_domestic_tank
 					complete_mio_trait = generic_mio_trait_adaptable_turret_ring
 					complete_mio_trait = generic_mio_trait_anti_tank_role
@@ -524,20 +524,16 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:AST_lysaght_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_research_program }
+						NOT = { is_mio_trait_completed = generic_mio_trait_efficient_scale_up }
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
 					complete_mio_trait = generic_mio_trait_high_quality_material_blend
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = AST_mio_trait_corrugated_iron_ingenuity
 					complete_mio_trait = AST_mio_trait_integrated_steelworks
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_research_program
+					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
 		}
@@ -756,9 +752,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					limit = {
 						NOT = { is_mio_trait_completed = AUS_mio_trait_modular_construction }
 					}
-					complete_mio_trait = generic_mio_trait_closed_chassi
 					complete_mio_trait = generic_mio_trait_composite_cargo_bed
 					complete_mio_trait = generic_mio_trait_medium_machinegun_mounts
+					complete_mio_trait = generic_mio_trait_open_chassi
 					complete_mio_trait = generic_mio_trait_all_wheel_drive
 					complete_mio_trait = generic_mio_trait_bulletproof_panels
 					complete_mio_trait = generic_mio_trait_high_powered_engine
@@ -847,9 +843,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					limit = {
 						NOT = { is_mio_trait_completed = AUS_mio_trait_high_quality_mass_production }
 					}
-					complete_mio_trait = generic_mio_trait_closed_chassi
 					complete_mio_trait = generic_mio_trait_composite_cargo_bed
 					complete_mio_trait = generic_mio_trait_medium_machinegun_mounts
+					complete_mio_trait = generic_mio_trait_open_chassi
 					complete_mio_trait = generic_mio_trait_all_wheel_drive
 					complete_mio_trait = generic_mio_trait_armored_pulpit_mount
 					complete_mio_trait = generic_mio_trait_bulletproof_panels
@@ -1195,7 +1191,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:BEL_renard_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_fighter_interceptors }
+						NOT = { is_mio_trait_completed = generic_mio_trait_stiffened_wings }
 					}
 					complete_mio_trait = generic_mio_trait_bigger_engines
 					complete_mio_trait = generic_mio_trait_cantilever_wing_structure
@@ -1209,8 +1205,8 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = BEL_mio_trait_browning_collaboration
 					complete_mio_trait = BEL_mio_trait_stampe_et_renard
 					complete_mio_trait = generic_mio_trait_gunboat
+					complete_mio_trait = generic_mio_trait_subsidiary_suppliers
 					complete_mio_trait = generic_mio_trait_stiffened_wings
-					complete_mio_trait = generic_mio_trait_fighter_interceptors
 				}
 			}
 		}
@@ -1334,13 +1330,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -1721,13 +1713,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -1988,9 +1976,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					limit = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_mounted_light_anti_tank_gun }
 					}
-					complete_mio_trait = generic_mio_trait_closed_chassi
 					complete_mio_trait = generic_mio_trait_composite_cargo_bed
 					complete_mio_trait = generic_mio_trait_medium_machinegun_mounts
+					complete_mio_trait = generic_mio_trait_open_chassi
 					complete_mio_trait = generic_mio_trait_all_wheel_drive
 					complete_mio_trait = generic_mio_trait_armored_pulpit_mount
 					complete_mio_trait = generic_mio_trait_bulletproof_panels
@@ -2114,13 +2102,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -2377,7 +2361,7 @@ PRC_OCS_configure_shared_mios_effect = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_heavy_tank_specialization }
 					}
 					complete_mio_trait = generic_mio_trait_battle_tank_specifications
-					complete_mio_trait = generic_mio_trait_dual_engine_redundancy
+					complete_mio_trait = generic_mio_trait_single_engine
 					complete_mio_trait = generic_mio_trait_adaptable_turret_ring
 					complete_mio_trait = generic_mio_trait_anti_tank_role
 					complete_mio_trait = generic_mio_trait_interleaved_track_wheels
@@ -2511,13 +2495,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -2713,6 +2693,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					limit = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_tactical_bombers }
 					}
+					complete_mio_trait = generic_mio_trait_advanced_production_techniques
 					complete_mio_trait = generic_mio_trait_extra_cargo_doors
 					complete_mio_trait = generic_mio_trait_high_capacity_ammunition
 					complete_mio_trait = generic_mio_trait_large_rudders_and_flaps
@@ -2722,6 +2703,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_long_range_modifications
 					complete_mio_trait = generic_mio_trait_low_drag_wings
 					complete_mio_trait = generic_mio_trait_anti_interception_tactics
+					complete_mio_trait = generic_mio_trait_long_range_fighters
 					complete_mio_trait = generic_mio_trait_strafing_techniques
 					complete_mio_trait = generic_mio_trait_heavy_fighters
 					complete_mio_trait = generic_mio_trait_high_explosive_payload
@@ -3071,18 +3053,14 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:CZE_zbrojovka_vsetin_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_research_program }
+						NOT = { is_mio_trait_completed = generic_mio_trait_efficient_scale_up }
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
 					complete_mio_trait = generic_mio_trait_high_quality_material_blend
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
-					complete_mio_trait = generic_mio_trait_research_program
+					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
 		}
@@ -3957,13 +3935,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -3980,7 +3954,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:FIN_crichton_vulcan_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_unescorted_raider_requirements }
+						NOT = { is_mio_trait_completed = generic_mio_trait_raider_escort_requirements }
 					}
 					complete_mio_trait = generic_mio_trait_high_speed_raiding
 					complete_mio_trait = FIN_mio_trait_deep_sea_raiders
@@ -3992,11 +3966,11 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_raiding_submarines
 					complete_mio_trait = FIN_mio_trait_andros_engines
 					complete_mio_trait = FIN_mio_trait_wartsila_engine_production
-					complete_mio_trait = generic_mio_trait_high_quality_optics
 					complete_mio_trait = generic_mio_trait_large_torpedo_banks
 					complete_mio_trait = generic_mio_trait_long_range_engagement_ethos
+					complete_mio_trait = generic_mio_trait_spotting_tops
+					complete_mio_trait = generic_mio_trait_mass_produced_raiders
 					complete_mio_trait = generic_mio_trait_raider_escort_requirements
-					complete_mio_trait = generic_mio_trait_unescorted_raider_requirements
 				}
 			}
 		}
@@ -4663,7 +4637,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_assault_gun_improved_tracks
 					complete_mio_trait = generic_mio_trait_fully_cast_turret_assault_gun
 					complete_mio_trait = generic_mio_trait_light_assault_gun_10_5_iefh_ammunition
-					complete_mio_trait = generic_mio_trait_light_assault_gun_anti_tank_combo
+					complete_mio_trait = generic_mio_trait_light_assault_gun_improved_cannon_stabilization
 					complete_mio_trait = generic_mio_medium_assault_gun_low_slung_superstructure_and_fighting_compartment
 					complete_mio_trait = GER_mio_trait_panzerjager
 				}
@@ -4754,20 +4728,14 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:GER_carl_walther_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_research_program }
+						NOT = { is_mio_trait_completed = generic_mio_trait_efficient_scale_up }
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
 					complete_mio_trait = generic_mio_trait_high_quality_material_blend
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
-					complete_mio_trait = GER_mio_trait_innovative_safety_features
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
-					complete_mio_trait = GER_mio_trait_policiary_equipment
-					complete_mio_trait = generic_mio_trait_research_program
+					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
 		}
@@ -5851,17 +5819,12 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = HUN_mio_trait_danuvia_two_part_lever_delayed_blowback_bolt
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = HUN_mio_trait_danuvia_improved_stock
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
-					complete_mio_trait = HUN_mio_trait_danuvia_motorcycles
 					complete_mio_trait = HUN_mio_trait_heavy_mauser_rounds
 				}
 			}
@@ -6043,7 +6006,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_assault_gun_improved_tracks
 					complete_mio_trait = generic_mio_trait_fully_cast_turret_assault_gun
 					complete_mio_trait = generic_mio_trait_light_assault_gun_10_5_iefh_ammunition
-					complete_mio_trait = generic_mio_trait_light_assault_gun_anti_tank_combo
+					complete_mio_trait = generic_mio_trait_light_assault_gun_improved_cannon_stabilization
 					complete_mio_trait = generic_mio_medium_assault_gun_low_slung_superstructure_and_fighting_compartment
 					complete_mio_trait = generic_mio_medium_assault_gun_rocket_tubes
 				}
@@ -6224,13 +6187,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -6303,7 +6262,7 @@ PRC_OCS_configure_shared_mios_effect = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_heavy_tank_specialization }
 					}
 					complete_mio_trait = generic_mio_trait_battle_tank_specifications
-					complete_mio_trait = generic_mio_trait_dual_engine_redundancy
+					complete_mio_trait = generic_mio_trait_single_engine
 					complete_mio_trait = generic_mio_trait_adaptable_turret_ring
 					complete_mio_trait = generic_mio_trait_anti_tank_role
 					complete_mio_trait = generic_mio_trait_interleaved_track_wheels
@@ -6613,13 +6572,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -6750,18 +6705,14 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:ITA_brescia_arsenal_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_research_program }
+						NOT = { is_mio_trait_completed = generic_mio_trait_efficient_scale_up }
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
 					complete_mio_trait = generic_mio_trait_high_quality_material_blend
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
-					complete_mio_trait = generic_mio_trait_research_program
+					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
 		}
@@ -6944,6 +6895,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					limit = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_tactical_bombers }
 					}
+					complete_mio_trait = generic_mio_trait_advanced_production_techniques
 					complete_mio_trait = generic_mio_trait_extra_cargo_doors
 					complete_mio_trait = generic_mio_trait_high_capacity_ammunition
 					complete_mio_trait = generic_mio_trait_large_rudders_and_flaps
@@ -6953,6 +6905,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_long_range_modifications
 					complete_mio_trait = generic_mio_trait_low_drag_wings
 					complete_mio_trait = generic_mio_trait_anti_interception_tactics
+					complete_mio_trait = generic_mio_trait_long_range_fighters
 					complete_mio_trait = generic_mio_trait_strafing_techniques
 					complete_mio_trait = ITA_mio_trait_high_altitude_fighter_development
 					complete_mio_trait = generic_mio_trait_heavy_fighters
@@ -7187,6 +7140,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					limit = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_tactical_bombers }
 					}
+					complete_mio_trait = generic_mio_trait_advanced_production_techniques
 					complete_mio_trait = generic_mio_trait_extra_cargo_doors
 					complete_mio_trait = generic_mio_trait_high_capacity_ammunition
 					complete_mio_trait = generic_mio_trait_large_rudders_and_flaps
@@ -7196,6 +7150,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_long_range_modifications
 					complete_mio_trait = generic_mio_trait_low_drag_wings
 					complete_mio_trait = generic_mio_trait_anti_interception_tactics
+					complete_mio_trait = generic_mio_trait_long_range_fighters
 					complete_mio_trait = generic_mio_trait_strafing_techniques
 					complete_mio_trait = generic_mio_trait_heavy_fighters
 					complete_mio_trait = generic_mio_trait_high_explosive_payload
@@ -7223,7 +7178,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_assault_gun_improved_tracks
 					complete_mio_trait = generic_mio_trait_fully_cast_turret_assault_gun
 					complete_mio_trait = generic_mio_trait_light_assault_gun_10_5_iefh_ammunition
-					complete_mio_trait = generic_mio_trait_light_assault_gun_anti_tank_combo
+					complete_mio_trait = generic_mio_trait_light_assault_gun_improved_cannon_stabilization
 					complete_mio_trait = generic_mio_medium_assault_gun_low_slung_superstructure_and_fighting_compartment
 				}
 			}
@@ -7499,19 +7454,15 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:JAP_nagoya_arsenal_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_research_program }
+						NOT = { is_mio_trait_completed = generic_mio_trait_efficient_scale_up }
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
 					complete_mio_trait = JAP_mio_trait_military_arsenal_trait
 					complete_mio_trait = generic_mio_trait_high_quality_material_blend
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
-					complete_mio_trait = generic_mio_trait_research_program
+					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
 		}
@@ -8315,13 +8266,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -8365,7 +8312,7 @@ PRC_OCS_configure_shared_mios_effect = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_heavy_tank_specialization }
 					}
 					complete_mio_trait = generic_mio_trait_battle_tank_specifications
-					complete_mio_trait = generic_mio_trait_dual_engine_redundancy
+					complete_mio_trait = generic_mio_trait_single_engine
 					complete_mio_trait = generic_mio_trait_adaptable_turret_ring
 					complete_mio_trait = generic_mio_trait_anti_tank_role
 					complete_mio_trait = generic_mio_trait_interleaved_track_wheels
@@ -9020,13 +8967,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -9274,15 +9217,11 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
 					complete_mio_trait = PRC_huangyadong_arsenal_cave_industry_trait
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = PRC_huangyadong_arsenal_jewell_in_the_crown_trait
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -9301,7 +9240,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:PRC_shenyang_aircraft_corporation_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_fighter_interceptors }
+						NOT = { is_mio_trait_completed = generic_mio_trait_stiffened_wings }
 					}
 					complete_mio_trait = generic_mio_trait_bigger_engines
 					complete_mio_trait = generic_mio_trait_cantilever_wing_structure
@@ -9312,9 +9251,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_shortened_wings
 					complete_mio_trait = PRC_shenyang_aircraft_corporation_factory_112_trait
 					complete_mio_trait = generic_mio_trait_gunboat
+					complete_mio_trait = generic_mio_trait_subsidiary_suppliers
 					complete_mio_trait = PRC_shenyang_aircraft_corporation_domestic_jet_manufacturer_trait
 					complete_mio_trait = generic_mio_trait_stiffened_wings
-					complete_mio_trait = generic_mio_trait_fighter_interceptors
 				}
 			}
 		}
@@ -9836,7 +9775,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:RAJ_supermarine_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_fighter_interceptors }
+						NOT = { is_mio_trait_completed = generic_mio_trait_stiffened_wings }
 					}
 					complete_mio_trait = generic_mio_trait_bigger_engines
 					complete_mio_trait = generic_mio_trait_cantilever_wing_structure
@@ -9848,9 +9787,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_shortened_wings
 					complete_mio_trait = ENG_mio_trait_elliptical_wings
 					complete_mio_trait = generic_mio_trait_gunboat
+					complete_mio_trait = generic_mio_trait_subsidiary_suppliers
 					complete_mio_trait = ENG_mio_trait_supercharger
 					complete_mio_trait = generic_mio_trait_stiffened_wings
-					complete_mio_trait = generic_mio_trait_fighter_interceptors
 				}
 			}
 		}
@@ -9867,7 +9806,7 @@ PRC_OCS_configure_shared_mios_effect = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_heavy_tank_specialization }
 					}
 					complete_mio_trait = generic_mio_trait_battle_tank_specifications
-					complete_mio_trait = generic_mio_trait_dual_engine_redundancy
+					complete_mio_trait = generic_mio_trait_single_engine
 					complete_mio_trait = generic_mio_trait_adaptable_turret_ring
 					complete_mio_trait = generic_mio_trait_anti_tank_role
 					complete_mio_trait = generic_mio_trait_interleaved_track_wheels
@@ -10104,7 +10043,7 @@ PRC_OCS_configure_shared_mios_effect = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_heavy_tank_specialization }
 					}
 					complete_mio_trait = generic_mio_trait_battle_tank_specifications
-					complete_mio_trait = generic_mio_trait_dual_engine_redundancy
+					complete_mio_trait = generic_mio_trait_single_engine
 					complete_mio_trait = generic_mio_trait_adaptable_turret_ring
 					complete_mio_trait = generic_mio_trait_anti_tank_role
 					complete_mio_trait = generic_mio_trait_interleaved_track_wheels
@@ -10255,7 +10194,7 @@ PRC_OCS_configure_shared_mios_effect = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_heavy_tank_specialization }
 					}
 					complete_mio_trait = generic_mio_trait_battle_tank_specifications
-					complete_mio_trait = generic_mio_trait_dual_engine_redundancy
+					complete_mio_trait = generic_mio_trait_single_engine
 					complete_mio_trait = generic_mio_trait_adaptable_turret_ring
 					complete_mio_trait = generic_mio_trait_anti_tank_role
 					complete_mio_trait = generic_mio_trait_interleaved_track_wheels
@@ -10332,13 +10271,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -11101,13 +11036,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_trait_anti_tank_rifle
 					complete_mio_trait = generic_mio_trait_material_recycling
-					complete_mio_trait = generic_mio_trait_private_scientists_program
-					complete_mio_trait = generic_mio_trait_private_tenders
 					complete_mio_trait = generic_mio_trait_scrap_melting
 					complete_mio_trait = generic_mio_trait_single_shot_man_portable_anti_tank_system
 					complete_mio_trait = generic_mio_trait_mass_production
-					complete_mio_trait = generic_mio_trait_pontoons
-					complete_mio_trait = generic_mio_trait_small_sidearms
 					complete_mio_trait = generic_mio_trait_efficient_scale_up
 				}
 			}
@@ -11334,9 +11265,9 @@ PRC_OCS_configure_shared_mios_effect = {
 					}
 					complete_mio_trait = generic_mio_sloping_armor
 					complete_mio_trait = generic_mio_trait_improved_boogies
-					complete_mio_trait = generic_mio_engine_optimization
 					complete_mio_trait = generic_mio_lighter_materials
 					complete_mio_trait = generic_mio_quality_assurance_routines
+					complete_mio_trait = generic_mio_reduced_fuel_usage
 					complete_mio_trait = generic_mio_enlarged_breech
 					complete_mio_trait = generic_mio_improved_ventilation
 					complete_mio_trait = generic_mio_gunner_sight_improvements
@@ -11894,7 +11825,7 @@ PRC_OCS_configure_shared_mios_effect = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_heavy_tank_specialization }
 					}
 					complete_mio_trait = generic_mio_trait_battle_tank_specifications
-					complete_mio_trait = generic_mio_trait_dual_engine_redundancy
+					complete_mio_trait = generic_mio_trait_single_engine
 					complete_mio_trait = generic_mio_trait_adaptable_turret_ring
 					complete_mio_trait = generic_mio_trait_anti_tank_role
 					complete_mio_trait = generic_mio_trait_interleaved_track_wheels
@@ -12371,6 +12302,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					limit = {
 						NOT = { is_mio_trait_completed = generic_mio_trait_tactical_bombers }
 					}
+					complete_mio_trait = generic_mio_trait_advanced_production_techniques
 					complete_mio_trait = generic_mio_trait_extra_cargo_doors
 					complete_mio_trait = generic_mio_trait_high_capacity_ammunition
 					complete_mio_trait = generic_mio_trait_large_rudders_and_flaps
@@ -12380,6 +12312,7 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_long_range_modifications
 					complete_mio_trait = generic_mio_trait_low_drag_wings
 					complete_mio_trait = generic_mio_trait_anti_interception_tactics
+					complete_mio_trait = generic_mio_trait_long_range_fighters
 					complete_mio_trait = generic_mio_trait_strafing_techniques
 					complete_mio_trait = generic_mio_trait_heavy_fighters
 					complete_mio_trait = generic_mio_trait_high_explosive_payload
