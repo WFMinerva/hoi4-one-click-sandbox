@@ -1,0 +1,51 @@
+[h1]开局一键爽玩 | One-Click Sandbox Start[/h1]
+
+面向《钢铁雄心 IV》单人沙盒的零政治点开局工具。把重复的研究、政治、外交、装备、编制和建设操作整理为仅限玩家执行的决议；AI不会使用，不覆盖原版国策、历史与事件链。
+
+[h2]v2.9 更新要点[/h2]
+[list]
+[*]新增按年份研究；一键全科技剔除33项隐藏史前科技，并补齐无线电、计算机、火控、工业等无年份科技
+[*]新增稳定度/战争支持、自治度、顺从度、国际关系、意识形态与国体、法案、战争借口及特殊规则控制
+[*]预设设计与巨量库存拆分，补齐舰载机、战术轰炸机和驱逐/巡洋/战列/航母/潜艇设计
+[*]新增全国军工厂与独立电网；要塞群和大型设施拆分；建设加速提高到5000%
+[*]大型设施优先建设民用核反应堆；完成核能特殊科研不再重复补建普通核反应堆
+[*]修复工厂拆除后无法补建、自治度与顺从度刷错；潜艇MIO路线补齐，好感提高到+1000
+[/list]
+
+[h2]核心功能[/h2]
+[list]
+[*]科技、预设学说、军种精神、MIO路线、装备设计、编制与库存快速配置
+[*]特殊科研项目一键完成，并可逐项选择原型奖励
+[*]全国工业、交通基地、电网、要塞、大型设施与占领区开发
+[*]一键骷髅师、补给站加速、点数经验补充、间谍情报条线
+[/list]
+
+[h2]兼容性与说明[/h2]
+[list]
+[*]适配 Hearts of Iron IV 1.19.*；建议保持最新热修
+[*]特殊科研与民用核反应堆需《Götterdämmerung》；间谍条线需《La Resistance》
+[*]全部决议0政治点且AI不会执行；建议避免与大型全面改造MOD同时使用
+[/list]
+
+[h2]作者与源码[/h2]
+[list]
+[*][url=https://github.com/WFMinerva][b]GitHub：WFMinerva / HAPPYADONG[/b][/url]
+[*][url=https://steamcommunity.com/profiles/76561198024627348][b]Steam主页：HAPPYADONG[/b][/url]
+[/list]
+
+[h1]English Description[/h1]
+
+Player-only, zero-political-power decisions for a fast single-player sandbox start. The mod does not replace vanilla focus trees, history, or event chains, and the AI cannot use its decisions.
+
+[h2]New in v2.9[/h2]
+[list]
+[*]Year-based research buttons; hidden legacy techs removed and missing no-year technologies restored
+[*]New controls for stability, war support, autonomy, compliance, relations, ideology, laws, war goals, and special rules
+[*]Preset designs separated from stockpiles; new carrier aircraft, tactical bomber, and five ship-design families
+[*]Separate military-industry, power-grid, fortress, and large-facility tools; construction boost raised to 5000%
+[*]Commercial reactors are preferred with Götterdämmerung; nuclear special projects no longer add a conflicting normal reactor
+[*]Factory rebuild, autonomy/compliance errors, submarine MIO routes, and relation bonuses fixed
+[/list]
+
+[h2]Compatibility[/h2]
+Hearts of Iron IV 1.19.*; Götterdämmerung is required for special projects and commercial reactors; La Resistance is required for intelligence features. Avoid combining with large overhaul mods.

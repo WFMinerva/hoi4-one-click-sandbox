@@ -1451,6 +1451,20 @@ class ValidatorRegressionTests(unittest.TestCase):
         nuclear_at = block.index("type = nuclear_reactor")
         self.assertLess(commercial_at, nuclear_at)
         self.assertIn("else_if = {", block)
+        unlock_at = block.index("commercial_nuclear_reactor_tech = 1")
+        state_loop_at = block.index("every_owned_state = {")
+        self.assertLess(unlock_at, state_loop_at)
+        self.assertIn('limit = { has_dlc = "Gotterdammerung" }', block)
+        self.assertIn("popup = no", block[unlock_at:state_loop_at])
+        self.assertIn(
+            "free_building_slots = { building = commercial_nuclear_reactor size > 0 include_locked = no }",
+            block,
+        )
+        self.assertIn("PRC_OCS_major_structures_state_changed", block)
+        self.assertIn(
+            "limit = { has_state_flag = PRC_OCS_major_structures_state_changed }",
+            block,
+        )
         special_text = validator.read_utf8(
             validator.ROOT
             / "common"
