@@ -32,7 +32,10 @@ import json
 import re
 from pathlib import Path
 
-from tools import analyze_special_project_choices as A
+if __package__:
+    from tools import analyze_special_project_choices as A
+else:
+    import analyze_special_project_choices as A
 
 ROOT = Path(__file__).resolve().parents[1]
 JSON = ROOT / "docs" / "analysis" / "v2.6_特殊科研互斥选项清单.json"
@@ -56,6 +59,7 @@ SPEC_ZH = {"air": "空军", "land": "陆军", "naval": "海军", "nuclear": "核
 MENU_IDS = {"air": 50, "naval": 51, "land": 48, "nuclear": 49, "rocket": 52}
 FIRST_EVENT_ID = 22
 FIRST_EVENT_ID_V28 = 54
+EVENT_PICTURE = "GFX_report_event_generic_research_lab"
 
 
 def _flag(reward: str) -> str:
@@ -63,7 +67,7 @@ def _flag(reward: str) -> str:
     return f"PRC_OCS_{reward}_choice_done"
 
 
-def _bonus_name(reward: str, option_token: str) -> str:
+def bonus_name(reward: str, option_token: str) -> str:
     """Unique add_equipment_bonus name for a reworked option."""
     return f"PRC_OCS_{reward}_{option_token}_bonus"
 
@@ -107,7 +111,7 @@ def _rework_effect(text: str, reward: str, option_token: str) -> str:
         if entry.key == "equipment_bonus" and isinstance(entry.value, A.Block):
             add_block = A.Block(
                 (
-                    A.Assignment("name", A.Atom(_bonus_name(reward, option_token))),
+                    A.Assignment("name", A.Atom(bonus_name(reward, option_token))),
                     A.Assignment("bonus", entry.value),
                 )
             )
@@ -139,7 +143,7 @@ def _group_event_lines(
     lines.append(f" id = PRC_OCS.{eid}")
     lines.append(f" title = PRC_OCS.{eid}.t")
     lines.append(f" desc = PRC_OCS.{eid}.d")
-    lines.append(" picture = GFX_report_event_generic_research")
+    lines.append(f" picture = {EVENT_PICTURE}")
     lines.append(" is_triggered_only = yes")
     lines.append("")
     letter = "a"

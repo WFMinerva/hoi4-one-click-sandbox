@@ -11,7 +11,7 @@ country_event = {
 	id = PRC_OCS.14
 	title = PRC_OCS.14.t
 	desc = PRC_OCS.14.d
-	picture = GFX_report_event_generic_research
+	picture = GFX_report_event_generic_research_lab
 	is_triggered_only = yes
 
 	option = {
@@ -48,7 +48,7 @@ country_event = {
 	id = PRC_OCS.15
 	title = PRC_OCS.15.t
 	desc = PRC_OCS.15.d
-	picture = GFX_report_event_generic_research
+	picture = GFX_report_event_generic_research_lab
 	is_triggered_only = yes
 
 	option = {

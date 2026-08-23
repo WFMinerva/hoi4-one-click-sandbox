@@ -39,6 +39,30 @@ python tools/generate_universal_mio_effect.py --check
 
 第二条命令是检查器自身的回归测试，第三条命令确认共享 MIO 生成器与已提交产物一致；两者分别拦截结构规则回归和生成产物漂移。静态检查不能替代实机测试。推送到 GitHub 后，CI（`.github/workflows/validate.yml`）会再次运行三项检查、实际生成发布包，并连续构建两次确认 ZIP 哈希一致。 CI 的 MIO 检查在 runner 无 HOI4 原版目录时使用 --check --no-vanilla 与提交清单。
 
+## CWTools 本地语义检查
+
+`tools/run_cwtools.ps1` 提供可复现的本地语义检查，不依赖 Docker、全局安装或 `cwtools-action`。脚本固定并校验以下供应链输入：
+
+- CWTools Rust release `v2.6.1` Windows x86_64 资产，SHA-256 `ab6d69b3216870e688c1e77e6a3a1ed6960558971ce816dca63f5c6f4411554c`；该资产内二进制的 `--version` 实际回报 `cwtools 2.6.0`，记录此差异但以发布资产哈希为固定依据；
+- HOI4 rules commit `ab1fda2a599ab4318d6f24ecba380e579e37006a`，codeload ZIP SHA-256 `e06f44412f88471a403bbfc37e332a66373b20feccef43f1e2125d9697240a48`。
+
+首次运行会下载到 `%LOCALAPPDATA%\OCS\cwtools`，之后每次仍校验归档哈希；原版路径沿用 `tools/hoi4_paths.py` 的 `--vanilla`、`HOI4_VANILLA_PATH` 和已知位置解析规则。报告写入已忽略的 `artifacts/cwtools/`。
+
+```powershell
+# 首次下载并扫描；第一阶段默认不阻断，便于观察规则噪音
+powershell -ExecutionPolicy Bypass -File .\tools\run_cwtools.ps1
+
+# 已有缓存时完全离线；错误级诊断使命令失败，可作本地门禁
+powershell -ExecutionPolicy Bypass -File .\tools\run_cwtools.ps1 -Offline -FailOn error
+
+# 跨机器显式指定原版目录
+powershell -ExecutionPolicy Bypass -File .\tools\run_cwtools.ps1 -VanillaPath 'D:\SteamLibrary\steamapps\common\Hearts of Iron IV'
+```
+
+`tools/cwtools_ignore_hashes.txt` 只保留一个精确诊断哈希：规则包把 1.19.2 原版已使用的 `ingame_set_template_counter` 判为未知字段。不得按错误码或文件通配抑制；规则或游戏版本更新后应先用 `-RefreshVanillaCache` 重跑并重新审计。当前不接入旧 `cwtools-action` 或提交原版缓存：其浮动 Docker/CLI/rules 与旧 HOI4 缓存不满足可复现和原版版权边界。
+
+已知生成债：`generate_special_project_choice_events.py` 全量重跑会按原版清单重写映射，丢失后来手工补入的事件 70 映射，并回退事件 43/44 的既有 tooltip 修复；在该生成器完成专项修复前，不得把其全量输出直接覆盖当前产物。仅运行 `finish_choice_events.py` 已验证为幂等，会保留并重建事件 70 与自检本地化。
+
 ## 实机回归
 
 每轮实测按 `docs/testing/实机回归归档制度.md` 归档入库（强制可复核，2026-08-19 起）：

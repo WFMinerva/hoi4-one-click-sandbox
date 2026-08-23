@@ -3,7 +3,7 @@ country_event = {
  id = PRC_OCS.22
  title = PRC_OCS.22.t
  desc = PRC_OCS.22.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -113,7 +113,7 @@ country_event = {
  id = PRC_OCS.23
  title = PRC_OCS.23.t
  desc = PRC_OCS.23.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -176,7 +176,7 @@ country_event = {
  id = PRC_OCS.24
  title = PRC_OCS.24.t
  desc = PRC_OCS.24.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -286,7 +286,7 @@ country_event = {
  id = PRC_OCS.25
  title = PRC_OCS.25.t
  desc = PRC_OCS.25.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -396,7 +396,7 @@ country_event = {
  id = PRC_OCS.26
  title = PRC_OCS.26.t
  desc = PRC_OCS.26.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -428,7 +428,7 @@ country_event = {
  id = PRC_OCS.27
  title = PRC_OCS.27.t
  desc = PRC_OCS.27.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -482,7 +482,7 @@ country_event = {
  id = PRC_OCS.28
  title = PRC_OCS.28.t
  desc = PRC_OCS.28.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -514,7 +514,7 @@ country_event = {
  id = PRC_OCS.29
  title = PRC_OCS.29.t
  desc = PRC_OCS.29.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -574,7 +574,7 @@ country_event = {
  id = PRC_OCS.30
  title = PRC_OCS.30.t
  desc = PRC_OCS.30.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -632,7 +632,7 @@ country_event = {
  id = PRC_OCS.31
  title = PRC_OCS.31.t
  desc = PRC_OCS.31.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -709,7 +709,7 @@ country_event = {
  id = PRC_OCS.32
  title = PRC_OCS.32.t
  desc = PRC_OCS.32.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -815,7 +815,7 @@ country_event = {
  id = PRC_OCS.33
  title = PRC_OCS.33.t
  desc = PRC_OCS.33.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -929,7 +929,7 @@ country_event = {
  id = PRC_OCS.34
  title = PRC_OCS.34.t
  desc = PRC_OCS.34.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1037,7 +1037,7 @@ country_event = {
  id = PRC_OCS.35
  title = PRC_OCS.35.t
  desc = PRC_OCS.35.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1147,7 +1147,7 @@ country_event = {
  id = PRC_OCS.36
  title = PRC_OCS.36.t
  desc = PRC_OCS.36.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1255,7 +1255,7 @@ country_event = {
  id = PRC_OCS.37
  title = PRC_OCS.37.t
  desc = PRC_OCS.37.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1342,7 +1342,7 @@ country_event = {
  id = PRC_OCS.38
  title = PRC_OCS.38.t
  desc = PRC_OCS.38.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1433,7 +1433,7 @@ country_event = {
  id = PRC_OCS.39
  title = PRC_OCS.39.t
  desc = PRC_OCS.39.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1543,7 +1543,7 @@ country_event = {
  id = PRC_OCS.40
  title = PRC_OCS.40.t
  desc = PRC_OCS.40.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1602,7 +1602,7 @@ country_event = {
  id = PRC_OCS.41
  title = PRC_OCS.41.t
  desc = PRC_OCS.41.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1716,7 +1716,7 @@ country_event = {
  id = PRC_OCS.42
  title = PRC_OCS.42.t
  desc = PRC_OCS.42.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1824,7 +1824,7 @@ country_event = {
  id = PRC_OCS.43
  title = PRC_OCS.43.t
  desc = PRC_OCS.43.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1869,7 +1869,7 @@ country_event = {
  id = PRC_OCS.44
  title = PRC_OCS.44.t
  desc = PRC_OCS.44.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1914,7 +1914,7 @@ country_event = {
  id = PRC_OCS.45
  title = PRC_OCS.45.t
  desc = PRC_OCS.45.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1955,7 +1955,7 @@ country_event = {
  id = PRC_OCS.46
  title = PRC_OCS.46.t
  desc = PRC_OCS.46.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -1990,7 +1990,7 @@ country_event = {
  id = PRC_OCS.47
  title = PRC_OCS.47.t
  desc = PRC_OCS.47.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2051,7 +2051,7 @@ country_event = {
  id = PRC_OCS.54
  title = PRC_OCS.54.t
  desc = PRC_OCS.54.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2109,7 +2109,7 @@ country_event = {
  id = PRC_OCS.55
  title = PRC_OCS.55.t
  desc = PRC_OCS.55.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2159,7 +2159,7 @@ country_event = {
  id = PRC_OCS.56
  title = PRC_OCS.56.t
  desc = PRC_OCS.56.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2211,7 +2211,7 @@ country_event = {
  id = PRC_OCS.57
  title = PRC_OCS.57.t
  desc = PRC_OCS.57.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2261,7 +2261,7 @@ country_event = {
  id = PRC_OCS.58
  title = PRC_OCS.58.t
  desc = PRC_OCS.58.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2312,7 +2312,7 @@ country_event = {
  id = PRC_OCS.59
  title = PRC_OCS.59.t
  desc = PRC_OCS.59.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2354,7 +2354,7 @@ country_event = {
  id = PRC_OCS.60
  title = PRC_OCS.60.t
  desc = PRC_OCS.60.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2397,7 +2397,7 @@ country_event = {
  id = PRC_OCS.61
  title = PRC_OCS.61.t
  desc = PRC_OCS.61.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2449,7 +2449,7 @@ country_event = {
  id = PRC_OCS.62
  title = PRC_OCS.62.t
  desc = PRC_OCS.62.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2502,7 +2502,7 @@ country_event = {
  id = PRC_OCS.63
  title = PRC_OCS.63.t
  desc = PRC_OCS.63.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2555,7 +2555,7 @@ country_event = {
  id = PRC_OCS.64
  title = PRC_OCS.64.t
  desc = PRC_OCS.64.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2601,7 +2601,7 @@ country_event = {
  id = PRC_OCS.65
  title = PRC_OCS.65.t
  desc = PRC_OCS.65.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2663,7 +2663,7 @@ country_event = {
  id = PRC_OCS.66
  title = PRC_OCS.66.t
  desc = PRC_OCS.66.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2725,7 +2725,7 @@ country_event = {
  id = PRC_OCS.67
  title = PRC_OCS.67.t
  desc = PRC_OCS.67.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2769,7 +2769,7 @@ country_event = {
  id = PRC_OCS.68
  title = PRC_OCS.68.t
  desc = PRC_OCS.68.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2821,7 +2821,7 @@ country_event = {
  id = PRC_OCS.69
  title = PRC_OCS.69.t
  desc = PRC_OCS.69.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2862,7 +2862,7 @@ country_event = {
  id = PRC_OCS.70
  title = PRC_OCS.70.t
  desc = PRC_OCS.70.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -2900,7 +2900,7 @@ country_event = {
  id = PRC_OCS.48
  title = PRC_OCS.48.t
  desc = PRC_OCS.48.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -3021,7 +3021,7 @@ country_event = {
  id = PRC_OCS.49
  title = PRC_OCS.49.t
  desc = PRC_OCS.49.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -3062,7 +3062,7 @@ country_event = {
  id = PRC_OCS.50
  title = PRC_OCS.50.t
  desc = PRC_OCS.50.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -3111,7 +3111,7 @@ country_event = {
  id = PRC_OCS.51
  title = PRC_OCS.51.t
  desc = PRC_OCS.51.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {
@@ -3296,7 +3296,7 @@ country_event = {
  id = PRC_OCS.52
  title = PRC_OCS.52.t
  desc = PRC_OCS.52.d
- picture = GFX_report_event_generic_research
+ picture = GFX_report_event_generic_research_lab
  is_triggered_only = yes
 
  option = {

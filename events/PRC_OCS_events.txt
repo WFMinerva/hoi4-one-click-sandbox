@@ -4,7 +4,7 @@ country_event = {
 	id = PRC_OCS.1
 	title = PRC_OCS.1.t
 	desc = PRC_OCS.1.d
-	picture = GFX_report_event_generic_research
+	picture = GFX_report_event_generic_research_lab
 	is_triggered_only = yes
 
 	option = {
@@ -76,7 +76,7 @@ country_event = {
 	id = PRC_OCS.7
 	title = PRC_OCS.7.t
 	desc = PRC_OCS.7.d
-	picture = GFX_report_event_generic_research
+	picture = GFX_report_event_generic_research_lab
 	is_triggered_only = yes
 
 	option = {
@@ -136,7 +136,7 @@ country_event = {
 	id = PRC_OCS.12
 	title = PRC_OCS.12.t
 	desc = PRC_OCS.12.d
-	picture = GFX_report_event_generic_research
+	picture = GFX_report_event_generic_research_lab
 	is_triggered_only = yes
 
 	option = {
@@ -247,7 +247,7 @@ country_event = {
 	id = PRC_OCS.86
 	title = PRC_OCS.86.t
 	desc = PRC_OCS.86.d
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	# v2.9-test6 (D5): every ideology gets two independent options — max out
@@ -275,7 +275,7 @@ country_event = {
 	id = PRC_OCS.87
 	title = PRC_OCS.87.t
 	desc = PRC_OCS.87.d
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -299,7 +299,7 @@ country_event = {
 	id = PRC_OCS.79
 	title = PRC_OCS.79.t
 	desc = PRC_OCS.79.d
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -321,7 +321,7 @@ country_event = {
 	id = PRC_OCS.94
 	title = PRC_OCS.94.t
 	desc = PRC_OCS.94.d
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -333,7 +333,7 @@ country_event = {
 	id = PRC_OCS.72
 	title = PRC_OCS.72.t
 	desc = PRC_OCS.72.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -358,7 +358,7 @@ country_event = {
 	id = PRC_OCS.88
 	title = PRC_OCS.88.t
 	desc = PRC_OCS.88.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -383,7 +383,7 @@ country_event = {
 	id = PRC_OCS.89
 	title = PRC_OCS.89.t
 	desc = PRC_OCS.89.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -407,7 +407,7 @@ country_event = {
 	id = PRC_OCS.73
 	title = PRC_OCS.73.t
 	desc = PRC_OCS.73.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -432,7 +432,7 @@ country_event = {
 	id = PRC_OCS.90
 	title = PRC_OCS.90.t
 	desc = PRC_OCS.90.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -457,7 +457,7 @@ country_event = {
 	id = PRC_OCS.91
 	title = PRC_OCS.91.t
 	desc = PRC_OCS.91.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -477,7 +477,7 @@ country_event = {
 	id = PRC_OCS.74
 	title = PRC_OCS.74.t
 	desc = PRC_OCS.74.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -502,7 +502,7 @@ country_event = {
 	id = PRC_OCS.92
 	title = PRC_OCS.92.t
 	desc = PRC_OCS.92.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {
@@ -527,7 +527,7 @@ country_event = {
 	id = PRC_OCS.93
 	title = PRC_OCS.93.t
 	desc = PRC_OCS.93.desc
-	picture = GFX_report_event_generic_politics
+	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
 
 	option = {

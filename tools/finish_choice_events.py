@@ -7,7 +7,7 @@ generate_special_project_choice_events.py, then:
   1. Appends the five dispatch menus (48 land, 49 nuclear, 50 air, 51 naval,
      52 rocket) to events/PRC_OCS_choice_events_more.txt.
   2. Rebuilds the generated bilingual localisation block (group events 22-47
-     and 54-69, and menus 48-52).
+     and 54-69, menus 48-52, and named equipment bonuses).
 
 Each dispatch menu shows one option per unpicked reward group and returns to
 itself, so the player can pick groups in any order. The tail option (z) is
@@ -25,10 +25,16 @@ import json
 import re
 from pathlib import Path
 
+if __package__:
+    from tools.generate_special_project_choice_events import EVENT_PICTURE, bonus_name
+else:
+    from generate_special_project_choice_events import EVENT_PICTURE, bonus_name
+
 ROOT = Path(__file__).resolve().parents[1]
 EVENTS = ROOT / "events" / "PRC_OCS_choice_events_more.txt"
 MAPPING = ROOT / "docs" / "analysis" / "v2.6_特殊科研组事件映射.json"
 MAPPING_V28 = ROOT / "docs" / "analysis" / "v2.8_特殊科研组事件映射.json"
+INVENTORY_V28 = ROOT / "docs" / "analysis" / "v2.8_特殊科研互斥选项清单.json"
 LOC_EN = ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml"
 LOC_ZH = ROOT / "localisation" / "simp_chinese" / "PRC_OCS_l_simp_chinese.yml"
 
@@ -561,6 +567,18 @@ MENU_DESC_ZH = "请逐一选择剩余的互斥原型产物奖励。"
 Z_LABEL_EN = "All remaining bonuses picked"
 Z_LABEL_ZH = "全部剩余原型奖励已选定"
 
+GENERIC_BONUS_INFO = {
+    "PRC_OCS_generic_armor_bonus_1": ("Generic armor package — armor", "通用装甲方案·装甲"),
+    "PRC_OCS_generic_armor_bonus_2": ("Generic armor package — hardness", "通用装甲方案·装甲率"),
+    "PRC_OCS_generic_armor_bonus_3": ("Generic armor package — combined", "通用装甲方案·综合"),
+    "PRC_OCS_generic_engine_bonus_1": ("Generic engine package — speed", "通用发动机方案·速度"),
+    "PRC_OCS_generic_engine_bonus_2": ("Generic engine package — reliability", "通用发动机方案·可靠性"),
+    "PRC_OCS_generic_engine_bonus_3": ("Generic engine package — combined", "通用发动机方案·综合"),
+    "PRC_OCS_generic_artillery_bonus_1": ("Generic artillery package — soft attack", "通用火炮方案·软攻"),
+    "PRC_OCS_generic_artillery_bonus_2": ("Generic artillery package — anti-armor", "通用火炮方案·反装甲"),
+    "PRC_OCS_generic_artillery_bonus_3": ("Generic artillery package — combined", "通用火炮方案·综合"),
+}
+
 
 def _option_letter(index: int) -> str:
     """Menu option letter. 'd' (desc), 't' (title) and 'z' (tail option) are
@@ -575,16 +593,22 @@ def _mapping() -> list[dict]:
     return v26 + v28
 
 
-def _strip_generated_block(path: Path) -> str:
-    """Return text with the previously generated localisation block removed."""
+def _split_generated_block(path: Path) -> tuple[str, list[str]]:
+    """Split the generated block while preserving later self-test keys."""
     lines = path.read_text(encoding="utf-8-sig").splitlines()
     start = next(
         (i for i, line in enumerate(lines) if re.match(r"^\s*PRC_OCS\.22\.t", line)),
         None,
     )
+    suffix: list[str] = []
     if start is not None:
+        suffix = [
+            line
+            for line in lines[start:]
+            if re.match(r"^\s*PRC_OCS_selftest\.", line)
+        ]
         lines = lines[:start]
-    return "\n".join(lines).rstrip() + "\n"
+    return "\n".join(lines).rstrip() + "\n", suffix
 
 
 def _strip_events_menu_block(ev: str) -> str:
@@ -616,7 +640,7 @@ def main() -> None:
         menu_lines.append(f" id = PRC_OCS.{menu_id}")
         menu_lines.append(f" title = PRC_OCS.{menu_id}.t")
         menu_lines.append(f" desc = PRC_OCS.{menu_id}.d")
-        menu_lines.append(" picture = GFX_report_event_generic_research")
+        menu_lines.append(f" picture = {EVENT_PICTURE}")
         menu_lines.append(" is_triggered_only = yes")
         menu_lines.append("")
         for index, item in enumerate(entries):
@@ -686,12 +710,39 @@ def main() -> None:
         en_rows.append(f" PRC_OCS.{menu_id}.z:0 \"{Z_LABEL_EN}\"")
         zh_rows.append(f" PRC_OCS.{menu_id}.z:0 \"{Z_LABEL_ZH}\"")
 
+    inventory_v28 = {
+        group["reward"]: group
+        for group in json.loads(INVENTORY_V28.read_text(encoding="utf-8"))
+    }
+    for item in json.loads(MAPPING_V28.read_text(encoding="utf-8")):
+        group = inventory_v28.get(item["reward"])
+        if group is None:
+            continue
+        _title_en, _title_zh, menu_en, menu_zh, opts_en, opts_zh = GROUP_INFO[
+            item["eid"]
+        ]
+        for index, option in enumerate(group["options"]):
+            if "equipment_bonus" not in (option.get("effect") or ""):
+                continue
+            key = bonus_name(item["reward"], option["token"])
+            en_rows.append(f' {key}:0 "{menu_en} — {opts_en[index]}"')
+            zh_rows.append(f' {key}:0 "{menu_zh}·{opts_zh[index]}"')
+
+    for key, (label_en, label_zh) in GENERIC_BONUS_INFO.items():
+        en_rows.append(f' {key}:0 "{label_en}"')
+        zh_rows.append(f' {key}:0 "{label_zh}"')
+
     for path, rows in ((LOC_EN, en_rows), (LOC_ZH, zh_rows)):
-        text = _strip_generated_block(path)
+        text, suffix = _split_generated_block(path)
         text += "\n".join(rows) + "\n"
+        if suffix:
+            text += "\n".join(suffix) + "\n"
         path.write_text(text, encoding="utf-8-sig")
 
-    print("Done: menus 48-52 appended, localisation block 22-47 + 54-69 regenerated.")
+    print(
+        "Done: menus 48-52 appended; localisation block and equipment-bonus "
+        "names regenerated."
+    )
 
 
 if __name__ == "__main__":

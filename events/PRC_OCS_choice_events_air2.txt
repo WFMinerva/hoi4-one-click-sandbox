@@ -4,7 +4,7 @@ country_event = {
 	id = PRC_OCS.16
 	title = PRC_OCS.16.t
 	desc = PRC_OCS.16.d
-	picture = GFX_report_event_generic_research
+	picture = GFX_report_event_generic_research_lab
 	is_triggered_only = yes
 
 	option = {
@@ -123,7 +123,7 @@ country_event = {
 	id = PRC_OCS.17
 	title = PRC_OCS.17.t
 	desc = PRC_OCS.17.d
-	picture = GFX_report_event_generic_research
+	picture = GFX_report_event_generic_research_lab
 	is_triggered_only = yes
 
 	option = {

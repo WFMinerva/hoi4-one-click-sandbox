@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import os
 from pathlib import Path
 
@@ -51,3 +52,15 @@ def resolve_vanilla_path(explicit: Path | None = None) -> Path:
         "未找到 HOI4 原版目录；请传入 --vanilla <路径>，"
         f"或设置环境变量 {ENV_NAME}"
     )
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--vanilla", type=Path, help="HOI4 原版根目录")
+    args = parser.parse_args(argv)
+    print(resolve_vanilla_path(args.vanilla))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
