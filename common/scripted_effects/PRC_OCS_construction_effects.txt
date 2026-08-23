@@ -215,6 +215,10 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -224,6 +228,10 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -233,6 +241,10 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -242,6 +254,10 @@ PRC_OCS_queue_coastal_dockyards_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					dockyard < 20
 					free_building_slots = { building = dockyard size > 0 include_locked = no }
 				}
@@ -305,6 +321,10 @@ PRC_OCS_queue_civilian_industry_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -314,6 +334,10 @@ PRC_OCS_queue_civilian_industry_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -323,6 +347,10 @@ PRC_OCS_queue_civilian_industry_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -332,6 +360,10 @@ PRC_OCS_queue_civilian_industry_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					industrial_complex < 20
 					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
 				}
@@ -909,6 +941,10 @@ PRC_OCS_queue_arms_factories_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					arms_factory < 20
 					free_building_slots = { building = arms_factory size > 0 include_locked = no }
 				}
@@ -918,6 +954,10 @@ PRC_OCS_queue_arms_factories_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					arms_factory < 20
 					free_building_slots = { building = arms_factory size > 0 include_locked = no }
 				}
@@ -927,6 +967,10 @@ PRC_OCS_queue_arms_factories_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					arms_factory < 20
 					free_building_slots = { building = arms_factory size > 0 include_locked = no }
 				}
@@ -936,6 +980,10 @@ PRC_OCS_queue_arms_factories_effect = {
 			}
 			if = {
 				limit = {
+					OR = {
+						has_country_flag = PRC_OCS_build_lot_5
+						NOT = { has_country_flag = PRC_OCS_build_lot_1 }
+					}
 					arms_factory < 20
 					free_building_slots = { building = arms_factory size > 0 include_locked = no }
 				}

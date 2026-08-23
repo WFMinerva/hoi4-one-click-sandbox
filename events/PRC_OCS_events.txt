@@ -594,3 +594,22 @@ country_event = {
 		set_ideology = non_aligned
 	}
 }
+
+country_event = {
+	id = PRC_OCS.77
+	title = PRC_OCS.77.t
+	desc = PRC_OCS.77.d
+	picture = GFX_report_event_generic_construction_site
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.77.a
+		set_country_flag = PRC_OCS_build_lot_5
+		clr_country_flag = PRC_OCS_build_lot_1
+	}
+	option = {
+		name = PRC_OCS.77.b
+		set_country_flag = PRC_OCS_build_lot_1
+		clr_country_flag = PRC_OCS_build_lot_5
+	}
+}

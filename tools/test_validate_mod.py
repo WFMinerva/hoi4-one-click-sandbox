@@ -1018,6 +1018,99 @@ class ValidatorRegressionTests(unittest.TestCase):
             ):
                 self.assertIn(key + ":0", loc, f"{language}: {key}")
 
+    def test_v29_batch4_contracts(self) -> None:
+        """v2.9 批次 4：F14 特种部队分支、F13 建设档位 1/5（事件 77）、
+        F8 PRC 全量顾问（65）、F17 按年份科技（10 组 effect＋10 决议）。"""
+
+        def block_text(text: str, header: str) -> str:
+            start = text.index(header)
+            depth = 0
+            brace = text.index("{", start)
+            for index in range(brace, len(text)):
+                if text[index] == "{":
+                    depth += 1
+                elif text[index] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        return text[start : index + 1]
+            raise AssertionError(f"unterminated block: {header}")
+
+        # F14: special-forces branches.
+        doctrine_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_research_effects.txt"
+        )
+        for present in (
+            "set_sub_doctrine = marines_2",
+            "set_sub_doctrine = mountaineers_2",
+            "set_sub_doctrine = paratroopers_2",
+        ):
+            self.assertIn(present, doctrine_text)
+
+        # F13: build-lot decision + event 77 + lot condition in effects.
+        decision_text = validator.read_utf8(
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        )
+        lot = block_text(decision_text, "PRC_OCS_set_build_lot = {")
+        self.assertIn("is_ai = no", lot)
+        self.assertIn("ai_will_do = { factor = 0 }", lot)
+        self.assertIn("country_event = { id = PRC_OCS.77 }", lot)
+        effect_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_construction_effects.txt"
+        )
+        for effect_name in (
+            "PRC_OCS_queue_civilian_industry_effect",
+            "PRC_OCS_queue_arms_factories_effect",
+            "PRC_OCS_queue_coastal_dockyards_effect",
+        ):
+            block = block_text(effect_text, f"{effect_name} = {{")
+            self.assertGreaterEqual(block.count("has_country_flag = PRC_OCS_build_lot_5"), 4)
+        events_text = validator.read_utf8(
+            validator.ROOT / "events" / "PRC_OCS_events.txt"
+        )
+        self.assertIn("id = PRC_OCS.77", events_text)
+        self.assertIn("set_country_flag = PRC_OCS_build_lot_1", events_text)
+
+        # F8: full PRC advisor roster (65 deduplicated tokens).
+        mio_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_mio_effects.txt"
+        )
+        advisors = block_text(mio_text, "PRC_OCS_appoint_advisors_effect = {")
+        self.assertGreaterEqual(advisors.count("add_ideas = PRC_"), 65)
+        for present in (
+            "add_ideas = PRC_mao_zedong",
+            "add_ideas = PRC_zhou_enlai",
+            "add_ideas = PRC_liu_bocheng",
+            "add_ideas = PRC_liu_yalou",
+        ):
+            self.assertIn(present, advisors)
+
+        # F17: 10 year buckets + 10 decisions.
+        year_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_year_tech_effects.txt"
+        )
+        for year in ("1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945"):
+            self.assertIn(f"PRC_OCS_research_year_{year}_effect = {{", year_text)
+            self.assertIn(
+                f"PRC_OCS_research_year_{year} = {{", decision_text
+            )
+            self.assertIn(
+                f"PRC_OCS_research_year_{year}_effect = yes", decision_text
+            )
+        # spot-check a known 1936 tech and a known 1945+ tech are bucketed
+        self.assertIn("basic_heavy_battery = 1", year_text)
+
     def test_v28_shared_mio_dlc_guards_contract(self) -> None:
         """v2.8 #7: 生成器按原版 allowed 生成机构守卫；PRC 引用双覆盖；FROM 豁免。"""
         scripts = parsed_repository()

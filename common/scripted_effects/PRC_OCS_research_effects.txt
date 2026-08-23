@@ -307,6 +307,8 @@ PRC_OCS_configure_doctrines_effect = {
 	set_sub_doctrine = air_subdoctrine_tactical_battlefield_support
 	set_sub_doctrine = air_subdoctrine_heavy_aircraft_focus
 	set_sub_doctrine = marines_2
+	set_sub_doctrine = mountaineers_2
+	set_sub_doctrine = paratroopers_2
 }
 
 PRC_OCS_configure_spirits_effect = {

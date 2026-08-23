@@ -89,6 +89,136 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	# v2.9-test4 batch 4 (F17): research only the 1936 bucket.
+	PRC_OCS_research_year_1936 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1936_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1937 bucket.
+	PRC_OCS_research_year_1937 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1937_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1938 bucket.
+	PRC_OCS_research_year_1938 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1938_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1939 bucket.
+	PRC_OCS_research_year_1939 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1939_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1940 bucket.
+	PRC_OCS_research_year_1940 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1940_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1941 bucket.
+	PRC_OCS_research_year_1941 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1941_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1942 bucket.
+	PRC_OCS_research_year_1942 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1942_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1943 bucket.
+	PRC_OCS_research_year_1943 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1943_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1944 bucket.
+	PRC_OCS_research_year_1944 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1944_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test4 batch 4 (F17): research only the 1945 bucket.
+	PRC_OCS_research_year_1945 = {
+		icon = generic_research
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_research_year_1945_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
 	PRC_OCS_resupply = {
 		icon = generic_industry
 		cost = 0
@@ -157,6 +287,19 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+
+	# v2.9-test4 batch 4 (F13): construction lot 1/5 selector.
+	PRC_OCS_set_build_lot = {
+		icon = generic_construction
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { country_event = { id = PRC_OCS.77 } }
+		ai_will_do = { factor = 0 }
+	}
 	PRC_OCS_unlock_all_shared_slots = {
 		icon = generic_construction
 		cost = 0
