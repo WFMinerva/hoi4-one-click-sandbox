@@ -3,8 +3,9 @@
 
 PRC_OCS_adjust_subject_autonomy_effect = {
 	# As overlord: lower every subject's autonomy to integrated puppet.
-	every_subject = {
-		PREV = {
+	every_other_country = {
+		limit = { is_subject_of = ROOT }
+		ROOT = {
 			set_autonomy = {
 				target = PREV
 				autonomy_state = autonomy_integrated_puppet

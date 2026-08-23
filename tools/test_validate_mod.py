@@ -649,7 +649,8 @@ class ValidatorRegressionTests(unittest.TestCase):
             / "PRC_OCS_research_effects.txt"
         )
         for present in (
-            "set_grand_doctrine = grand_battleplan",
+            # v2.9-test5: exactly one land grand doctrine (superior_firepower
+            # wins; grand_battleplan would be overwritten by the engine).
             "set_grand_doctrine = superior_firepower",
             "set_sub_doctrine = commandos",
             "set_sub_doctrine = infiltration_tactics",
@@ -660,6 +661,7 @@ class ValidatorRegressionTests(unittest.TestCase):
             self.assertIn(present, doctrine_text)
         for absent in (
             "set_grand_doctrine = mass_assault",
+            "set_grand_doctrine = grand_battleplan",
             "set_sub_doctrine = peoples_war",
             "set_sub_doctrine = guerilla_war",
             "set_sub_doctrine = air_subdoctrine_fighter_central_field",
@@ -905,16 +907,12 @@ class ValidatorRegressionTests(unittest.TestCase):
         ):
             self.assertIn(key, boost)
 
-        # F2: ideology support maxed + switch menu event 76.
+        # F2: ideology pick-one menu (event 86; set_ideology switch dropped —
+        # not a vanilla effect; add_popularity values must stay <= 1.0).
         ideology = block_text(decision_text, "PRC_OCS_max_ideology_support = {")
-        for present in (
-            "add_popularity = { ideology = democratic popularity = 5 }",
-            "add_popularity = { ideology = fascism popularity = 5 }",
-            "add_popularity = { ideology = communism popularity = 5 }",
-            "add_popularity = { ideology = non_aligned popularity = 5 }",
-            "country_event = { id = PRC_OCS.76 }",
-        ):
-            self.assertIn(present, ideology)
+        self.assertIn("country_event = { id = PRC_OCS.86 }", ideology)
+        self.assertNotIn("add_popularity", ideology)
+        self.assertNotIn("PRC_OCS.76", ideology)
 
         # F3: law menus referenced from decisions.
         for decision, event_id in (
@@ -966,16 +964,30 @@ class ValidatorRegressionTests(unittest.TestCase):
         events_text = validator.read_utf8(
             validator.ROOT / "events" / "PRC_OCS_events.txt"
         )
-        for event_id in ("PRC_OCS.71", "PRC_OCS.72", "PRC_OCS.73", "PRC_OCS.74", "PRC_OCS.75", "PRC_OCS.76"):
+        for event_id in ("PRC_OCS.71", "PRC_OCS.72", "PRC_OCS.73", "PRC_OCS.74", "PRC_OCS.75"):
             self.assertIn(f"id = {event_id}", events_text)
         for present in (
             "add_ideas = war_economy",
             "add_ideas = free_trade",
             "add_ideas = extensive_conscription",
-            "set_ideology = democratic",
-            "set_ideology = non_aligned",
         ):
             self.assertIn(present, events_text)
+        # set_ideology is not a vanilla effect; it must never come back.
+        self.assertNotIn("set_ideology", events_text)
+        # F2 event 86 (page 1) offers three ideologies; 87 (page 2) the rest.
+        event86 = block_text(events_text, "country_event = {\n\tid = PRC_OCS.86")
+        for present in (
+            "add_popularity = { ideology = democratic popularity = 1.0 }",
+            "add_popularity = { ideology = fascism popularity = 1.0 }",
+            "add_popularity = { ideology = communism popularity = 1.0 }",
+            "country_event = { id = PRC_OCS.87 }",
+        ):
+            self.assertIn(present, event86)
+        event87 = block_text(events_text, "country_event = {\n\tid = PRC_OCS.87")
+        self.assertIn(
+            "add_popularity = { ideology = neutrality popularity = 1.0 }",
+            event87,
+        )
 
         # Regression guard: the v2.6 air/naval prototype-choice menus must
         # keep their original event ids (a renumbering bug once retargeted

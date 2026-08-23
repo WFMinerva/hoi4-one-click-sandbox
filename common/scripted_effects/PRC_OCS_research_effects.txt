@@ -374,7 +374,9 @@ PRC_OCS_research_all_effect = {
 }
 
 PRC_OCS_configure_doctrines_effect = {
-	set_grand_doctrine = grand_battleplan
+	# v2.9-test5: the engine allows exactly one grand doctrine per category;
+	# superior_firepower wins. The grand-battleplan army spirit is still
+	# applied below (ideas bypass the doctrine prerequisite).
 	set_grand_doctrine = superior_firepower
 	set_grand_doctrine = new_base_strike
 	set_grand_doctrine = new_battlefield_support

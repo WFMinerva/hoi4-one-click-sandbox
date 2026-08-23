@@ -181,379 +181,11 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = PRC_OCS.72
-	title = PRC_OCS.72.t
-	desc = PRC_OCS.72.desc
-	picture = GFX_report_event_generic_politics
-	is_triggered_only = yes
 
-	option = {
-		name = PRC_OCS.72.a
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = undisturbed_isolation
-	}
-	option = {
-		name = PRC_OCS.72.b
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = isolation
-	}
-	option = {
-		name = PRC_OCS.72.c
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = civilian_economy
-	}
-	option = {
-		name = PRC_OCS.72.d
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = low_economic_mobilisation
-	}
-	option = {
-		name = PRC_OCS.72.e
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = partial_economic_mobilisation
-	}
-	option = {
-		name = PRC_OCS.72.f
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = war_economy
-	}
-	option = {
-		name = PRC_OCS.72.g
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = tot_economic_mobilisation
-	}
-	option = {
-		name = PRC_OCS.72.h
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = totaler_krieg_economy
-	}
-	option = {
-		name = PRC_OCS.72.i
-		remove_ideas = {
-			undisturbed_isolation
-			isolation
-			civilian_economy
-			low_economic_mobilisation
-			partial_economic_mobilisation
-			war_economy
-			tot_economic_mobilisation
-			totaler_krieg_economy
-			national_defense_state
-		}
-		add_ideas = national_defense_state
-	}
-	option = {
-		name = PRC_OCS.72.j
-	}
-}
 
-country_event = {
-	id = PRC_OCS.73
-	title = PRC_OCS.73.t
-	desc = PRC_OCS.73.desc
-	picture = GFX_report_event_generic_politics
-	is_triggered_only = yes
 
-	option = {
-		name = PRC_OCS.73.a
-		remove_ideas = {
-			uncontrolled_exports
-			free_trade
-			export_focus
-			limited_exports
-			autarkic_economy
-			autarkic_economy_improved
-			closed_economy
-			special_economic_zones
-		}
-		add_ideas = uncontrolled_exports
-	}
-	option = {
-		name = PRC_OCS.73.b
-		remove_ideas = {
-			uncontrolled_exports
-			free_trade
-			export_focus
-			limited_exports
-			autarkic_economy
-			autarkic_economy_improved
-			closed_economy
-			special_economic_zones
-		}
-		add_ideas = free_trade
-	}
-	option = {
-		name = PRC_OCS.73.c
-		remove_ideas = {
-			uncontrolled_exports
-			free_trade
-			export_focus
-			limited_exports
-			autarkic_economy
-			autarkic_economy_improved
-			closed_economy
-			special_economic_zones
-		}
-		add_ideas = export_focus
-	}
-	option = {
-		name = PRC_OCS.73.d
-		remove_ideas = {
-			uncontrolled_exports
-			free_trade
-			export_focus
-			limited_exports
-			autarkic_economy
-			autarkic_economy_improved
-			closed_economy
-			special_economic_zones
-		}
-		add_ideas = limited_exports
-	}
-	option = {
-		name = PRC_OCS.73.e
-		remove_ideas = {
-			uncontrolled_exports
-			free_trade
-			export_focus
-			limited_exports
-			autarkic_economy
-			autarkic_economy_improved
-			closed_economy
-			special_economic_zones
-		}
-		add_ideas = autarkic_economy
-	}
-	option = {
-		name = PRC_OCS.73.f
-		remove_ideas = {
-			uncontrolled_exports
-			free_trade
-			export_focus
-			limited_exports
-			autarkic_economy
-			autarkic_economy_improved
-			closed_economy
-			special_economic_zones
-		}
-		add_ideas = autarkic_economy_improved
-	}
-	option = {
-		name = PRC_OCS.73.g
-		remove_ideas = {
-			uncontrolled_exports
-			free_trade
-			export_focus
-			limited_exports
-			autarkic_economy
-			autarkic_economy_improved
-			closed_economy
-			special_economic_zones
-		}
-		add_ideas = closed_economy
-	}
-	option = {
-		name = PRC_OCS.73.h
-		remove_ideas = {
-			uncontrolled_exports
-			free_trade
-			export_focus
-			limited_exports
-			autarkic_economy
-			autarkic_economy_improved
-			closed_economy
-			special_economic_zones
-		}
-		add_ideas = special_economic_zones
-	}
-	option = {
-		name = PRC_OCS.73.i
-	}
-}
 
-country_event = {
-	id = PRC_OCS.74
-	title = PRC_OCS.74.t
-	desc = PRC_OCS.74.desc
-	picture = GFX_report_event_generic_politics
-	is_triggered_only = yes
 
-	option = {
-		name = PRC_OCS.74.a
-		remove_ideas = {
-			disarmed_nation
-			volunteer_only
-			limited_conscription
-			extensive_conscription
-			service_by_requirement
-			all_adults_serve
-			scraping_the_barrel
-		}
-		add_ideas = disarmed_nation
-	}
-	option = {
-		name = PRC_OCS.74.b
-		remove_ideas = {
-			disarmed_nation
-			volunteer_only
-			limited_conscription
-			extensive_conscription
-			service_by_requirement
-			all_adults_serve
-			scraping_the_barrel
-		}
-		add_ideas = volunteer_only
-	}
-	option = {
-		name = PRC_OCS.74.c
-		remove_ideas = {
-			disarmed_nation
-			volunteer_only
-			limited_conscription
-			extensive_conscription
-			service_by_requirement
-			all_adults_serve
-			scraping_the_barrel
-		}
-		add_ideas = limited_conscription
-	}
-	option = {
-		name = PRC_OCS.74.d
-		remove_ideas = {
-			disarmed_nation
-			volunteer_only
-			limited_conscription
-			extensive_conscription
-			service_by_requirement
-			all_adults_serve
-			scraping_the_barrel
-		}
-		add_ideas = extensive_conscription
-	}
-	option = {
-		name = PRC_OCS.74.e
-		remove_ideas = {
-			disarmed_nation
-			volunteer_only
-			limited_conscription
-			extensive_conscription
-			service_by_requirement
-			all_adults_serve
-			scraping_the_barrel
-		}
-		add_ideas = service_by_requirement
-	}
-	option = {
-		name = PRC_OCS.74.f
-		remove_ideas = {
-			disarmed_nation
-			volunteer_only
-			limited_conscription
-			extensive_conscription
-			service_by_requirement
-			all_adults_serve
-			scraping_the_barrel
-		}
-		add_ideas = all_adults_serve
-	}
-	option = {
-		name = PRC_OCS.74.g
-		remove_ideas = {
-			disarmed_nation
-			volunteer_only
-			limited_conscription
-			extensive_conscription
-			service_by_requirement
-			all_adults_serve
-			scraping_the_barrel
-		}
-		add_ideas = scraping_the_barrel
-	}
-	option = {
-		name = PRC_OCS.74.h
-	}
-}
 
 country_event = {
 	id = PRC_OCS.75
@@ -567,33 +199,7 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = PRC_OCS.76
-	title = PRC_OCS.76.t
-	desc = PRC_OCS.76.desc
-	picture = GFX_report_event_generic_politics
-	is_triggered_only = yes
 
-	option = {
-		name = PRC_OCS.76.a
-	}
-	option = {
-		name = PRC_OCS.76.b
-		set_ideology = democratic
-	}
-	option = {
-		name = PRC_OCS.76.c
-		set_ideology = fascism
-	}
-	option = {
-		name = PRC_OCS.76.d
-		set_ideology = communism
-	}
-	option = {
-		name = PRC_OCS.76.e
-		set_ideology = non_aligned
-	}
-}
 
 country_event = {
 	id = PRC_OCS.77
@@ -613,3 +219,277 @@ country_event = {
 		clr_country_flag = PRC_OCS_build_lot_5
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+country_event = {
+	id = PRC_OCS.86
+	title = PRC_OCS.86.t
+	desc = PRC_OCS.86.d
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.86.a
+		add_popularity = { ideology = democratic popularity = 1.0 }
+	}
+	option = {
+		name = PRC_OCS.86.b
+		add_popularity = { ideology = fascism popularity = 1.0 }
+	}
+	option = {
+		name = PRC_OCS.86.c
+		add_popularity = { ideology = communism popularity = 1.0 }
+	}
+	option = {
+		name = PRC_OCS.86.f
+		country_event = { id = PRC_OCS.87 }
+	}
+}
+country_event = {
+	id = PRC_OCS.87
+	title = PRC_OCS.87.t
+	desc = PRC_OCS.87.d
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.87.a
+		add_popularity = { ideology = neutrality popularity = 1.0 }
+	}
+	option = {
+		name = PRC_OCS.87.b
+	}
+}
+
+country_event = {
+	id = PRC_OCS.72
+	title = PRC_OCS.72.t
+	desc = PRC_OCS.72.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.72.a
+		add_ideas = undisturbed_isolation
+	}
+	option = {
+		name = PRC_OCS.72.b
+		add_ideas = isolation
+	}
+	option = {
+		name = PRC_OCS.72.c
+		add_ideas = civilian_economy
+	}
+	option = {
+		name = PRC_OCS.72.f
+		country_event = { id = PRC_OCS.88 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.88
+	title = PRC_OCS.88.t
+	desc = PRC_OCS.88.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.88.a
+		add_ideas = low_economic_mobilisation
+	}
+	option = {
+		name = PRC_OCS.88.b
+		add_ideas = partial_economic_mobilisation
+	}
+	option = {
+		name = PRC_OCS.88.c
+		add_ideas = war_economy
+	}
+	option = {
+		name = PRC_OCS.88.f
+		country_event = { id = PRC_OCS.89 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.89
+	title = PRC_OCS.89.t
+	desc = PRC_OCS.89.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.89.a
+		add_ideas = tot_economic_mobilisation
+	}
+	option = {
+		name = PRC_OCS.89.b
+		add_ideas = totaler_krieg_economy
+	}
+	option = {
+		name = PRC_OCS.89.c
+		add_ideas = national_defense_state
+	}
+	option = {
+		name = PRC_OCS.89.d
+	}
+}
+
+country_event = {
+	id = PRC_OCS.73
+	title = PRC_OCS.73.t
+	desc = PRC_OCS.73.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.73.a
+		add_ideas = uncontrolled_exports
+	}
+	option = {
+		name = PRC_OCS.73.b
+		add_ideas = free_trade
+	}
+	option = {
+		name = PRC_OCS.73.c
+		add_ideas = export_focus
+	}
+	option = {
+		name = PRC_OCS.73.f
+		country_event = { id = PRC_OCS.90 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.90
+	title = PRC_OCS.90.t
+	desc = PRC_OCS.90.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.90.a
+		add_ideas = limited_exports
+	}
+	option = {
+		name = PRC_OCS.90.b
+		add_ideas = autarkic_economy
+	}
+	option = {
+		name = PRC_OCS.90.c
+		add_ideas = autarkic_economy_improved
+	}
+	option = {
+		name = PRC_OCS.90.f
+		country_event = { id = PRC_OCS.91 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.91
+	title = PRC_OCS.91.t
+	desc = PRC_OCS.91.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.91.a
+		add_ideas = closed_economy
+	}
+	option = {
+		name = PRC_OCS.91.b
+		add_ideas = special_economic_zones
+	}
+	option = {
+		name = PRC_OCS.91.c
+	}
+}
+
+country_event = {
+	id = PRC_OCS.74
+	title = PRC_OCS.74.t
+	desc = PRC_OCS.74.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.74.a
+		add_ideas = disarmed_nation
+	}
+	option = {
+		name = PRC_OCS.74.b
+		add_ideas = volunteer_only
+	}
+	option = {
+		name = PRC_OCS.74.c
+		add_ideas = limited_conscription
+	}
+	option = {
+		name = PRC_OCS.74.f
+		country_event = { id = PRC_OCS.92 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.92
+	title = PRC_OCS.92.t
+	desc = PRC_OCS.92.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.92.a
+		add_ideas = extensive_conscription
+	}
+	option = {
+		name = PRC_OCS.92.b
+		add_ideas = service_by_requirement
+	}
+	option = {
+		name = PRC_OCS.92.c
+		add_ideas = all_adults_serve
+	}
+	option = {
+		name = PRC_OCS.92.f
+		country_event = { id = PRC_OCS.93 }
+	}
+}
+
+country_event = {
+	id = PRC_OCS.93
+	title = PRC_OCS.93.t
+	desc = PRC_OCS.93.desc
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.93.a
+		add_ideas = scraping_the_barrel
+	}
+	option = {
+		name = PRC_OCS.93.b
+	}
+}
+

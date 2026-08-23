@@ -600,6 +600,7 @@ PRC_OCS_category = {
 	# ruling-party switch menu (set_ideology, no vanilla precedent; kept
 	# behind the menu so a failed effect can be removed without touching
 	# the support part).
+		# v2.9-test5: pick one ideology to max out (engine keeps total at 100).
 	PRC_OCS_max_ideology_support = {
 		icon = generic_political_discourse
 		cost = 0
@@ -608,13 +609,7 @@ PRC_OCS_category = {
 		fire_only_once = no
 		visible = { is_ai = no }
 		available = { is_ai = no }
-		complete_effect = {
-			add_popularity = { ideology = democratic popularity = 5 }
-			add_popularity = { ideology = fascism popularity = 5 }
-			add_popularity = { ideology = communism popularity = 5 }
-			add_popularity = { ideology = non_aligned popularity = 5 }
-			country_event = { id = PRC_OCS.76 }
-		}
+		complete_effect = { country_event = { id = PRC_OCS.86 } }
 		ai_will_do = { factor = 0 }
 	}
 	PRC_OCS_raise_24_infantry_divisions = {
@@ -1137,5 +1132,4 @@ PRC_OCS_category = {
 		}
 		ai_will_do = { factor = 0 }
 	}
-
 }
