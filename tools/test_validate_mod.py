@@ -1111,6 +1111,113 @@ class ValidatorRegressionTests(unittest.TestCase):
         # spot-check a known 1936 tech and a known 1945+ tech are bucketed
         self.assertIn("basic_heavy_battery = 1", year_text)
 
+    def test_v29_batch5_contracts(self) -> None:
+        """v2.9 批次 5：C8 科技补齐（≥369 键）、C1 自治度、C2 关系、
+        C3 顺从度、C4–C7 特殊规则（set_rule 八条＋战争借口）。"""
+
+        def block_text(text: str, header: str) -> str:
+            start = text.index(header)
+            depth = 0
+            brace = text.index("{", start)
+            for index in range(brace, len(text)):
+                if text[index] == "{":
+                    depth += 1
+                elif text[index] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        return text[start : index + 1]
+            raise AssertionError(f"unterminated block: {header}")
+
+        # C8: research_all extended with the national-focus granted techs.
+        research_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_research_effects.txt"
+        )
+        research_all = block_text(research_text, "PRC_OCS_research_all_effect = {")
+        self.assertGreaterEqual(research_all.count(" = 1"), 369)
+        for present in (
+            "HUN_light_infantry_tech = 1",
+            "mountain_defensive_training = 1",
+            "early_fighter = 1",
+            "basic_submarine = 1",
+        ):
+            self.assertIn(present, research_all)
+
+        # C1-C7 effects file.
+        political_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_political_effects.txt"
+        )
+        autonomy = block_text(
+            political_text, "PRC_OCS_adjust_subject_autonomy_effect = {"
+        )
+        self.assertIn("set_autonomy = {", autonomy)
+        self.assertIn("autonomy_integrated_puppet", autonomy)
+        self.assertIn("overlord = {", autonomy)
+        relations = block_text(
+            political_text, "PRC_OCS_improve_relations_effect = {"
+        )
+        self.assertIn("every_other_country = {", relations)
+        self.assertIn("cheat_opinion_modifier_good", relations)
+        compliance = block_text(
+            political_text, "PRC_OCS_max_compliance_effect = {"
+        )
+        self.assertIn("every_controlled_state = {", compliance)
+        self.assertIn("add_compliance = 100", compliance)
+        self.assertIn("set_resistance = 0", compliance)
+        rules = block_text(
+            political_text, "PRC_OCS_unlock_special_rules_effect = {"
+        )
+        for rule in (
+            "can_send_volunteers",
+            "can_create_factions",
+            "can_join_factions",
+            "can_boost_other_ideologies",
+            "can_generate_female_aces",
+            "can_generate_female_unit_leaders",
+            "can_generate_female_country_leaders",
+            "can_use_kamikaze_pilots",
+        ):
+            self.assertIn(f"set_rule = {{ {rule} = yes }}", rules)
+        self.assertIn("create_wargoal = {", rules)
+        self.assertIn("type = annex_everything", rules)
+
+        # Decisions + guards.
+        decision_text = validator.read_utf8(
+            validator.ROOT / "common" / "decisions" / "PRC_OCS_decisions.txt"
+        )
+        for name in (
+            "PRC_OCS_adjust_subject_autonomy",
+            "PRC_OCS_improve_relations",
+            "PRC_OCS_max_compliance",
+            "PRC_OCS_unlock_special_rules",
+        ):
+            block = block_text(decision_text, f"{name} = {{")
+            self.assertIn("is_ai = no", block)
+            self.assertIn("ai_will_do = { factor = 0 }", block)
+
+        # Bilingual loc for the four decisions.
+        for language, path in (
+            ("en", validator.ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml"),
+            ("zh", validator.ROOT / "localisation" / "simp_chinese" / "PRC_OCS_l_simp_chinese.yml"),
+        ):
+            loc = validator.read_utf8(path)
+            for key in (
+                "PRC_OCS_adjust_subject_autonomy",
+                "PRC_OCS_adjust_subject_autonomy_desc",
+                "PRC_OCS_improve_relations",
+                "PRC_OCS_improve_relations_desc",
+                "PRC_OCS_max_compliance",
+                "PRC_OCS_max_compliance_desc",
+                "PRC_OCS_unlock_special_rules",
+                "PRC_OCS_unlock_special_rules_desc",
+            ):
+                self.assertIn(key + ":0", loc, f"{language}: {key}")
+
     def test_v28_shared_mio_dlc_guards_contract(self) -> None:
         """v2.8 #7: 生成器按原版 allowed 生成机构守卫；PRC 引用双覆盖；FROM 豁免。"""
         scripts = parsed_repository()

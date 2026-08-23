@@ -1,0 +1,59 @@
+# v2.9-test5 batch 5 (C1-C7): political/diplomatic sandbox tools.
+# C1 autonomy, C2 relations, C3 compliance, C4-C7 special rules.
+
+PRC_OCS_adjust_subject_autonomy_effect = {
+	# As overlord: lower every subject's autonomy to integrated puppet.
+	every_subject = {
+		PREV = {
+			set_autonomy = {
+				target = PREV
+				autonomy_state = autonomy_integrated_puppet
+				freedom_level = 0.1
+			}
+		}
+	}
+	# As subject: raise own autonomy through the overlord.
+	overlord = {
+		set_autonomy = {
+			target = ROOT
+			autonomy_state = autonomy_collaboration_government
+			freedom_level = 0.9
+		}
+	}
+}
+
+PRC_OCS_improve_relations_effect = {
+	every_other_country = {
+		add_opinion_modifier = {
+			target = ROOT
+			modifier = cheat_opinion_modifier_good
+		}
+	}
+}
+
+PRC_OCS_max_compliance_effect = {
+	every_controlled_state = {
+		add_compliance = 100
+		set_resistance = 0
+	}
+}
+
+PRC_OCS_unlock_special_rules_effect = {
+	set_rule = { can_send_volunteers = yes }
+	set_rule = { can_create_factions = yes }
+	set_rule = { can_join_factions = yes }
+	set_rule = { can_boost_other_ideologies = yes }
+	set_rule = { can_generate_female_aces = yes }
+	set_rule = { can_generate_female_unit_leaders = yes }
+	set_rule = { can_generate_female_country_leaders = yes }
+	set_rule = { can_use_kamikaze_pilots = yes }
+	# Wargoals against every other country (sandbox semantics).
+	every_other_country = {
+		ROOT = {
+			create_wargoal = {
+				type = annex_everything
+				target = PREV
+			}
+		}
+	}
+}

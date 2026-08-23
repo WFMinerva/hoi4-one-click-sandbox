@@ -300,6 +300,58 @@ PRC_OCS_category = {
 		complete_effect = { country_event = { id = PRC_OCS.77 } }
 		ai_will_do = { factor = 0 }
 	}
+	# v2.9-test5 batch 5 (C1-C7).
+	PRC_OCS_adjust_subject_autonomy = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_adjust_subject_autonomy_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test5 batch 5 (C1-C7).
+	PRC_OCS_improve_relations = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_improve_relations_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test5 batch 5 (C1-C7).
+	PRC_OCS_max_compliance = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_max_compliance_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test5 batch 5 (C1-C7).
+	PRC_OCS_unlock_special_rules = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = { PRC_OCS_unlock_special_rules_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
 	PRC_OCS_unlock_all_shared_slots = {
 		icon = generic_construction
 		cost = 0
