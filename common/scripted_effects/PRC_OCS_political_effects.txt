@@ -1,20 +1,32 @@
 # v2.9-test5 batch 5 (C1-C7): political/diplomatic sandbox tools.
+# v2.9-test6 (D1/D2): subject-side autonomy goes through every_other_country
+# + is_subject_of (overlord is not a valid scripted-effect event target, see
+# v2.9-test5 player error.log); overlord-side freedom_level dropped to 0 so
+# the vanilla "integrate" button unlocks; compliance only touches occupied
+# (controlled but not owned) states.
 # C1 autonomy, C2 relations, C3 compliance, C4-C7 special rules.
 
 PRC_OCS_adjust_subject_autonomy_effect = {
-	# As overlord: lower every subject's autonomy to integrated puppet.
+	# As overlord: lower every subject's autonomy to integrated puppet and
+	# zero the freedom level so the vanilla "integrate" (annex) button
+	# unlocks in the subject UI. No scripted annex is used: annexing would
+	# lose commanders/armies/fleets (player feedback 2026-08-23 B4).
 	every_other_country = {
 		limit = { is_subject_of = ROOT }
 		ROOT = {
 			set_autonomy = {
 				target = PREV
 				autonomy_state = autonomy_integrated_puppet
-				freedom_level = 0.1
+				freedom_level = 0
 			}
 		}
 	}
-	# As subject: raise own autonomy through the overlord.
-	overlord = {
+	# As subject: raise own autonomy through the overlord. `overlord` is not
+	# a valid event target in scripted effects, so walk every_other_country
+	# and match the country ROOT is a subject of (symmetric to the block
+	# above; the limit passes for exactly one country).
+	every_other_country = {
+		limit = { ROOT = { is_subject_of = PREV } }
 		set_autonomy = {
 			target = ROOT
 			autonomy_state = autonomy_collaboration_government
@@ -27,13 +39,17 @@ PRC_OCS_improve_relations_effect = {
 	every_other_country = {
 		add_opinion_modifier = {
 			target = ROOT
-			modifier = cheat_opinion_modifier_good
+			modifier = PRC_OCS_opinion_good
 		}
 	}
 }
 
 PRC_OCS_max_compliance_effect = {
+	# Occupied states only (controlled but not owned): compliance/resistance
+	# exist only there, and add_compliance on other states spams the
+	# error.log ("does not have resistance", v2.9-test5 player logs ×190).
 	every_controlled_state = {
+		limit = { NOT = { is_owned_by = ROOT } }
 		add_compliance = 100
 		set_resistance = 0
 	}
@@ -48,13 +64,6 @@ PRC_OCS_unlock_special_rules_effect = {
 	set_rule = { can_generate_female_unit_leaders = yes }
 	set_rule = { can_generate_female_country_leaders = yes }
 	set_rule = { can_use_kamikaze_pilots = yes }
-	# Wargoals against every other country (sandbox semantics).
-	every_other_country = {
-		ROOT = {
-			create_wargoal = {
-				type = annex_everything
-				target = PREV
-			}
-		}
-	}
+	# v2.9-test6 (F2): the annex wargoal moved to the dedicated
+	# PRC_OCS_create_wargoals decision (player feedback 2026-08-23 B4).
 }

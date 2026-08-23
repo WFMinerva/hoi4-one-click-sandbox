@@ -351,6 +351,123 @@ PRC_OCS_create_variants_effect = {
 		}
 	}
 	create_equipment_variant = {
+		name = "舰载战斗机 III型"
+		type = cv_small_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = aircraft_cannon_2_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = armor_plate_small
+			special_type_slot_2 = cannon_defense_turret
+			special_type_slot_3 = armor_plate_small
+			special_type_slot_4 = self_sealing_fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "舰载支援机 III型"
+		type = cv_small_plane_cas_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = tank_buster_2
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = dive_brakes_small
+			special_type_slot_2 = armor_plate_small
+			fixed_auxiliary_weapon_slot_2 = rocket_rails
+			special_type_slot_3 = self_sealing_fuel_tanks_small
+			fixed_auxiliary_weapon_slot_3 = rocket_rails
+			special_type_slot_4 = drop_tanks
+		}
+	}
+	create_equipment_variant = {
+		name = "战术轰炸机 III型"
+		type = medium_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		design_team = mio:PRC_peoples_aviation_company_of_china_organization
+		modules = {
+			fixed_main_weapon_slot = medium_bomb_bay
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = fuel_tanks_medium
+		}
+	}
+	create_equipment_variant = {
+		name = "47型驱逐舰"
+		type = ship_hull_light_4
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = light_ship_engine_4
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_torpedo_slot = ship_torpedo_4
+			fixed_ship_battery_slot = ship_light_battery_4
+		}
+	}
+	create_equipment_variant = {
+		name = "47型巡洋舰"
+		type = ship_hull_cruiser_4
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = cruiser_ship_engine_4
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_cruiser_4
+			fixed_ship_battery_slot = ship_medium_battery_2
+		}
+	}
+	create_equipment_variant = {
+		name = "47型战列舰"
+		type = ship_hull_heavy_4
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = heavy_ship_engine_4
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_bb_3
+			fixed_ship_battery_slot = ship_heavy_battery_3
+		}
+	}
+	create_equipment_variant = {
+		name = "47型航空母舰"
+		type = ship_hull_carrier_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = carrier_ship_engine_4
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_deck_space
+		}
+	}
+	create_equipment_variant = {
+		name = "47型潜艇"
+		type = ship_hull_submarine_4
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = sub_ship_engine_4
+			fixed_ship_torpedo_slot = ship_torpedo_sub_3
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_sub_snorkel_1
+			rear_1_custom_slot = ship_torpedo_sub_3
+		}
+	}
+	create_equipment_variant = {
 		name = "43式自行加榴炮"
 		type = medium_tank_artillery_chassis_3
 		parent_version = 0
@@ -759,6 +876,120 @@ PRC_OCS_create_generic_variants_effect = {
 			special_type_slot_2 = fuel_tanks_small
 			special_type_slot_3 = fuel_tanks_small
 			special_type_slot_4 = fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "先进舰载战斗机"
+		type = cv_small_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = aircraft_cannon_2_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = armor_plate_small
+			special_type_slot_2 = cannon_defense_turret
+			special_type_slot_3 = armor_plate_small
+			special_type_slot_4 = self_sealing_fuel_tanks_small
+		}
+	}
+	create_equipment_variant = {
+		name = "先进舰载支援机"
+		type = cv_small_plane_cas_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = tank_buster_2
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = dive_brakes_small
+			special_type_slot_2 = armor_plate_small
+			fixed_auxiliary_weapon_slot_2 = rocket_rails
+			special_type_slot_3 = self_sealing_fuel_tanks_small
+			fixed_auxiliary_weapon_slot_3 = rocket_rails
+			special_type_slot_4 = drop_tanks
+		}
+	}
+	create_equipment_variant = {
+		name = "先进战术轰炸机"
+		type = medium_plane_airframe_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_main_weapon_slot = medium_bomb_bay
+			engine_type_slot = engine_4_2x
+			special_type_slot_1 = fuel_tanks_medium
+		}
+	}
+	create_equipment_variant = {
+		name = "先进驱逐舰"
+		type = ship_hull_light_4
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = light_ship_engine_4
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_torpedo_slot = ship_torpedo_4
+			fixed_ship_battery_slot = ship_light_battery_4
+		}
+	}
+	create_equipment_variant = {
+		name = "先进巡洋舰"
+		type = ship_hull_cruiser_4
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = cruiser_ship_engine_4
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_cruiser_4
+			fixed_ship_battery_slot = ship_medium_battery_2
+		}
+	}
+	create_equipment_variant = {
+		name = "先进战列舰"
+		type = ship_hull_heavy_4
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = heavy_ship_engine_4
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_armor_slot = ship_armor_bb_3
+			fixed_ship_battery_slot = ship_heavy_battery_3
+		}
+	}
+	create_equipment_variant = {
+		name = "先进航空母舰"
+		type = ship_hull_carrier_3
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = carrier_ship_engine_4
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_secondaries_slot = ship_secondaries_2
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_deck_space
+		}
+	}
+	create_equipment_variant = {
+		name = "先进潜艇"
+		type = ship_hull_submarine_4
+		parent_version = 0
+		allow_without_tech = yes
+		modules = {
+			fixed_ship_engine_slot = sub_ship_engine_4
+			fixed_ship_torpedo_slot = ship_torpedo_sub_3
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_sub_snorkel_1
+			rear_1_custom_slot = ship_torpedo_sub_3
 		}
 	}
 	create_equipment_variant = {

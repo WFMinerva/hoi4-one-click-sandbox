@@ -388,7 +388,12 @@ PRC_OCS_complete_nuclear_special_projects_effect = {
 			complete_special_project = sp:sp_nuclear_reactor
 			# Script completion skips the free level-1 reactor normally built
 			# in the facility state; grant it in the capital instead.
+			# v2.9-test6 (D6): skip the grant when the capital already has a
+			# commercial reactor (same "reactors" slot; commercial first).
 			capital_scope = {
+				limit = {
+					NOT = { commercial_nuclear_reactor > 0 }
+				}
 				add_building_construction = {
 					type = nuclear_reactor
 					level = 1

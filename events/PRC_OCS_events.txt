@@ -250,17 +250,21 @@ country_event = {
 	picture = GFX_report_event_generic_politics
 	is_triggered_only = yes
 
+	# v2.9-test6 (D5): every ideology gets two independent options — max out
+	# support (engine keeps total at 100, one pick only) and switch the
+	# ruling party (set_politics, official effect). Splitting the two avoids
+	# blocking national focuses that require a different ideology.
 	option = {
 		name = PRC_OCS.86.a
 		add_popularity = { ideology = democratic popularity = 1.0 }
 	}
 	option = {
 		name = PRC_OCS.86.b
-		add_popularity = { ideology = fascism popularity = 1.0 }
+		set_politics = { ruling_party = democratic }
 	}
 	option = {
 		name = PRC_OCS.86.c
-		add_popularity = { ideology = communism popularity = 1.0 }
+		add_popularity = { ideology = fascism popularity = 1.0 }
 	}
 	option = {
 		name = PRC_OCS.86.f
@@ -276,10 +280,52 @@ country_event = {
 
 	option = {
 		name = PRC_OCS.87.a
-		add_popularity = { ideology = neutrality popularity = 1.0 }
+		set_politics = { ruling_party = fascism }
 	}
 	option = {
 		name = PRC_OCS.87.b
+		add_popularity = { ideology = communism popularity = 1.0 }
+	}
+	option = {
+		name = PRC_OCS.87.c
+		set_politics = { ruling_party = communism }
+	}
+	option = {
+		name = PRC_OCS.87.f
+		country_event = { id = PRC_OCS.79 }
+	}
+}
+country_event = {
+	id = PRC_OCS.79
+	title = PRC_OCS.79.t
+	desc = PRC_OCS.79.d
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.79.a
+		add_popularity = { ideology = neutrality popularity = 1.0 }
+	}
+	option = {
+		name = PRC_OCS.79.b
+		set_politics = { ruling_party = neutrality }
+	}
+	option = {
+		name = PRC_OCS.79.f
+		country_event = { id = PRC_OCS.86 }
+	}
+}
+
+
+country_event = {
+	id = PRC_OCS.94
+	title = PRC_OCS.94.t
+	desc = PRC_OCS.94.d
+	picture = GFX_report_event_generic_politics
+	is_triggered_only = yes
+
+	option = {
+		name = PRC_OCS.94.a
 	}
 }
 

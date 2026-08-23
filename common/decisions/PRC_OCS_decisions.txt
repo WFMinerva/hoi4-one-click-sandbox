@@ -18,7 +18,9 @@ PRC_OCS_category = {
 	}
 
 	# v2.9-test2 batch 2 (S1/F1): independent buttons split out of initialize —
-	# usable regardless of PRC_OCS_initialized.
+	# usable regardless of PRC_OCS_initialized. v2.9-test6 (F1): stockpiles
+	# require the preset designs first (player feedback 2026-08-23 A2), so the
+	# button stays disabled until PRC_OCS_create_preset_designs ran.
 	PRC_OCS_add_stockpile = {
 		icon = generic_strength
 		cost = 0
@@ -26,7 +28,10 @@ PRC_OCS_category = {
 		days_re_enable = 1
 		fire_only_once = no
 		visible = { is_ai = no }
-		available = { is_ai = no }
+		available = {
+			is_ai = no
+			has_country_flag = PRC_OCS_preset_designs_created
+		}
 		complete_effect = {
 			if = {
 				limit = {
@@ -352,6 +357,33 @@ PRC_OCS_category = {
 		ai_will_do = { factor = 0 }
 	}
 
+	# v2.9-test6 (F2): dedicated wargoal button split from the special-rules
+	# unlock (player feedback 2026-08-23 B4: must be its own button). It
+	# grants annex war goals against every other country AND makes the
+	# diplomacy "justify war goal" button usable for every target via the
+	# can_only_justify_war_on_threat_country rule.
+	PRC_OCS_create_wargoals = {
+		icon = generic_political_discourse
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = { is_ai = no }
+		complete_effect = {
+			set_rule = { can_only_justify_war_on_threat_country = no }
+			every_other_country = {
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+					}
+				}
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
 	PRC_OCS_unlock_all_shared_slots = {
 		icon = generic_construction
 		cost = 0
@@ -379,18 +411,32 @@ PRC_OCS_category = {
 		visible = { is_ai = no }
 		available = {
 			is_ai = no
-			OR = {
-				any_owned_state = {
-					is_controlled_by = ROOT
-					NOT = { has_state_flag = PRC_OCS_transport_bases_queued }
-				}
-				any_owned_state = {
-					is_controlled_by = ROOT
-					NOT = { has_state_flag = PRC_OCS_power_grid_queued }
-				}
+			any_owned_state = {
+				is_controlled_by = ROOT
+				NOT = { has_state_flag = PRC_OCS_transport_bases_queued }
 			}
 		}
 		complete_effect = { PRC_OCS_queue_transport_and_bases_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test6 (D11): dedicated one-click power grid (industrial grid on
+	# oil states, energy grid elsewhere); no industrial-target prereqs.
+	PRC_OCS_queue_power_grids = {
+		icon = generic_construction
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_owned_state = {
+				is_controlled_by = ROOT
+				NOT = { has_state_flag = PRC_OCS_power_grid_queued }
+			}
+		}
+		complete_effect = { PRC_OCS_queue_power_grids_effect = yes }
 		ai_will_do = { factor = 0 }
 	}
 
@@ -517,21 +563,28 @@ PRC_OCS_category = {
 		fire_only_once = no
 		visible = { is_ai = no }
 		available = { is_ai = no }
+		# v2.9-test6 (F3): factor raised to 50 (+5000%); nuclear reactors,
+		# fuel silos and synthetic refineries added (vanilla modifier keys
+		# exist). commercial_nuclear_reactor / naval_supply_hub have no
+		# production_speed_*_factor key in vanilla — not covered.
 		modifier = {
-			production_speed_rail_way_factor = 10
-			production_speed_radar_station_factor = 10
-			production_speed_rocket_site_factor = 10
-			production_speed_bunker_factor = 10
-			production_speed_coastal_bunker_factor = 10
-			production_speed_infrastructure_factor = 10
-			production_speed_air_base_factor = 10
-			production_speed_naval_base_factor = 10
-			production_speed_arms_factory_factor = 10
-			production_speed_industrial_complex_factor = 10
-			production_speed_dockyard_factor = 10
-			production_speed_supply_node_factor = 10
-			production_speed_energy_infrastructure_factor = 10
-			production_speed_industrial_infrastructure_factor = 10
+			production_speed_rail_way_factor = 50
+			production_speed_radar_station_factor = 50
+			production_speed_rocket_site_factor = 50
+			production_speed_bunker_factor = 50
+			production_speed_coastal_bunker_factor = 50
+			production_speed_infrastructure_factor = 50
+			production_speed_air_base_factor = 50
+			production_speed_naval_base_factor = 50
+			production_speed_arms_factory_factor = 50
+			production_speed_industrial_complex_factor = 50
+			production_speed_dockyard_factor = 50
+			production_speed_supply_node_factor = 50
+			production_speed_energy_infrastructure_factor = 50
+			production_speed_industrial_infrastructure_factor = 50
+			production_speed_nuclear_reactor_factor = 50
+			production_speed_fuel_silo_factor = 50
+			production_speed_synthetic_refinery_factor = 50
 		}
 		# The entire effect is the decision-level modifier above (days_remove).
 		complete_effect = { }
@@ -556,6 +609,26 @@ PRC_OCS_category = {
 			}
 		}
 		complete_effect = { PRC_OCS_queue_major_structures_effect = yes }
+		ai_will_do = { factor = 0 }
+	}
+
+	# v2.9-test6 (F4): dedicated land-fortress button (bunker to province
+	# cap 10), split from the major-structures decision; own one-time flag.
+	PRC_OCS_queue_fortresses = {
+		icon = generic_fortification
+		cost = 0
+		days_remove = 1
+		days_re_enable = 1
+		fire_only_once = no
+		visible = { is_ai = no }
+		available = {
+			is_ai = no
+			any_owned_state = {
+				is_controlled_by = ROOT
+				NOT = { has_state_flag = PRC_OCS_fortresses_queued }
+			}
+		}
+		complete_effect = { PRC_OCS_queue_fortresses_effect = yes }
 		ai_will_do = { factor = 0 }
 	}
 

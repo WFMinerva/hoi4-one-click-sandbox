@@ -697,7 +697,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:AUS_ELIN_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
+						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
 					}
 					complete_mio_trait = generic_mio_trait_long_range_raiding
 					complete_mio_trait = generic_mio_trait_advanced_periscope
@@ -707,6 +707,8 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_radar_warning_receiver
 					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
+					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
+					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -4967,7 +4969,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:GER_hdw_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
+						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
 					}
 					complete_mio_trait = generic_mio_trait_long_range_raiding
 					complete_mio_trait = GER_mio_trait_saddle_tanks
@@ -4979,6 +4981,8 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_radar_warning_receiver
 					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
+					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
+					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -6536,7 +6540,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:IRQ_submarine_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
+						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
 					}
 					complete_mio_trait = generic_mio_trait_long_range_raiding
 					complete_mio_trait = generic_mio_trait_advanced_periscope
@@ -6546,6 +6550,8 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_radar_warning_receiver
 					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
+					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
+					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -6764,7 +6770,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:ITA_cantieri_navali_tosi_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
+						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
 					}
 					complete_mio_trait = generic_mio_trait_long_range_raiding
 					complete_mio_trait = generic_mio_trait_advanced_periscope
@@ -6774,6 +6780,8 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_radar_warning_receiver
 					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
+					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
+					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -7381,7 +7389,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:JAP_mitsubishi_kobe_shipyard_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
+						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
 					}
 					complete_mio_trait = generic_mio_trait_long_range_raiding
 					complete_mio_trait = generic_mio_trait_advanced_periscope
@@ -7391,6 +7399,8 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_radar_warning_receiver
 					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
+					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
+					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}
@@ -12053,7 +12063,7 @@ PRC_OCS_configure_shared_mios_effect = {
 			mio:USA_electric_boat_company_organization = {
 				if = {
 					limit = {
-						NOT = { is_mio_trait_completed = generic_mio_trait_experimental_anechoic_tiles }
+						NOT = { is_mio_trait_completed = generic_mio_trait_simplified_pressure_hull_design }
 					}
 					complete_mio_trait = generic_mio_trait_long_range_raiding
 					complete_mio_trait = generic_mio_trait_advanced_periscope
@@ -12063,6 +12073,8 @@ PRC_OCS_configure_shared_mios_effect = {
 					complete_mio_trait = generic_mio_trait_radar_warning_receiver
 					complete_mio_trait = generic_mio_trait_crash_dive_flood_tanks
 					complete_mio_trait = generic_mio_trait_experimental_anechoic_tiles
+					complete_mio_trait = generic_mio_trait_improved_torpedo_detonators
+					complete_mio_trait = generic_mio_trait_simplified_pressure_hull_design
 				}
 			}
 		}

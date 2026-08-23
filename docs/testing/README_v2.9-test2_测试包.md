@@ -10,7 +10,7 @@
   - 「启动一键爽玩开局」保留核心（科技＋学说＋精神＋共享 MIO），不再自动创建设计/编制/库存；已初始化存档不受影响（新按钮独立可用）。
 - **F1 稳定度与战争支援拉满**：新决议直接各 +500（必定满值），独立于一键开局，不干扰内战玩法；可重复点击。
 - **D12 潜艇 MIO 隐蔽线重开**（T2 第 4 条，4.1.1 重开）：生成器对潜艇类制造商（include 链含 `generic_submarine_organization`，共 6 家：AUS_ELIN/GER_hdw/IRQ_submarine/ITA_cantieri_navali_tosi/JAP_mitsubishi_kobe_shipyard/USA_electric_boat_company）应用类型偏好——按互斥根（`long_range_raiding` 隐蔽 ↔ `decalin_fueled_torpedo` 鱼雷）沿 parent 链扩散分类（加成方向归类，覆盖断言兜底），鱼雷侧整体 drop、隐蔽侧整体确保（含 `simplified_pressure_hull_design` 汇合点因鱼雷侧缺失自动剔除）；优先级高于 F7「最强路线」评分。
-  - 产物基准不变：本机原版 1.19.2.0（d245 构建）；重建后 444 机构、**4858** 特质（上版 4877，差异＝潜艇 6 家鱼雷侧换隐蔽侧净值 −19）。
+  - 产物基准不变：本机原版 1.19.2.0（d245 构建）；重建后 444 机构、**4858** 特质（上版 4877，差异＝潜艇 6 家鱼雷侧换隐蔽侧净值 −19）。〔v2.9-test6 D10 复核注：本行保留 test2 构建时留底值 4858；test6 起潜艇侧并入两跨侧特质，计数为 4870。〕
 
 ## 测试边界
 

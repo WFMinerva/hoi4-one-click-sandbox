@@ -476,14 +476,14 @@ class ValidatorRegressionTests(unittest.TestCase):
             "PRC": 7,
         }
         expected_trait_counts = {
-            "GER": 310,
+            "GER": 312,
             "ENG": 177,
-            "JAP": 256,
+            "JAP": 258,
             "SOV": 191,
             "AST": 164,
             "CZE": 176,
-            "ITA": 195,
-            "USA": 190,
+            "ITA": 197,
+            "USA": 192,
             "PRC": 81,
         }
         observed_companies = set()
@@ -523,7 +523,7 @@ class ValidatorRegressionTests(unittest.TestCase):
                 [traits[-1]],
             )
         self.assertEqual(len(observed_companies), 444)
-        self.assertEqual(completed_trait_count, 4858)
+        self.assertEqual(completed_trait_count, 4870)
         for prefix, expected in expected_company_counts.items():
             self.assertEqual(company_counts_by_prefix.get(prefix), expected)
         for prefix, expected in expected_trait_counts.items():
@@ -762,9 +762,12 @@ class ValidatorRegressionTests(unittest.TestCase):
             # human-only guard on every new decision
             self.assertIn("is_ai = no", block)
             self.assertIn("ai_will_do = { factor = 0 }", block)
-        # S1-a stockpile button: independent of the initialized flag.
+        # S1-a stockpile button: v2.9-test6 (F1) requires the preset designs
+        # first (player feedback 2026-08-23 A2), but stays independent of the
+        # initialized flag.
         stockpile = block_text(decision_text, "PRC_OCS_add_stockpile = {")
-        self.assertNotIn("has_country_flag", stockpile)
+        self.assertIn("has_country_flag = PRC_OCS_preset_designs_created", stockpile)
+        self.assertNotIn("PRC_OCS_initialized", stockpile)
         # F1: stability/war-support button adds 500 of each.
         stability = block_text(decision_text, "PRC_OCS_max_stability = {")
         self.assertIn("add_stability = 5", stability)
@@ -796,7 +799,9 @@ class ValidatorRegressionTests(unittest.TestCase):
         ):
             self.assertIn(present, initialize)
 
-        # D12: submarine manufacturers take the stealth side.
+        # D12: submarine manufacturers take the stealth side. v2.9-test6
+        # (D10): improved_torpedo_detonators and simplified_pressure_hull_design
+        # are reachable from the stealth chain and stay on it.
         shared_text = validator.read_utf8(
             validator.ROOT
             / "common"
@@ -828,18 +833,18 @@ class ValidatorRegressionTests(unittest.TestCase):
             "generic_mio_trait_emergency_main_ballast_tank_blow",
             "generic_mio_trait_radar_warning_receiver",
             "generic_mio_trait_crash_dive_flood_tanks",
+            "generic_mio_trait_improved_torpedo_detonators",
+            "generic_mio_trait_simplified_pressure_hull_design",
         }
         torpedo_side = {
             "generic_mio_trait_decalin_fueled_torpedo",
             "generic_mio_trait_high_powered_engines",
             "generic_mio_trait_open_cycle_propulsion",
-            "generic_mio_trait_improved_torpedo_detonators",
             "generic_mio_trait_submarine_mass_production",
             "generic_mio_trait_advanced_sonar",
             "generic_mio_trait_deck_guns",
             "generic_mio_trait_large_torpedo_banks",
             "generic_mio_trait_high_capacity_mine_storage",
-            "generic_mio_trait_simplified_pressure_hull_design",
         }
         for company in (
             "AUS_ELIN_organization",
@@ -886,6 +891,7 @@ class ValidatorRegressionTests(unittest.TestCase):
             "PRC_OCS_queue_arms_factories",
             "PRC_OCS_boost_construction",
             "PRC_OCS_queue_major_structures",
+            "PRC_OCS_queue_fortresses",
             "PRC_OCS_set_economy_law",
             "PRC_OCS_set_trade_law",
             "PRC_OCS_set_conscription_law",
@@ -897,16 +903,28 @@ class ValidatorRegressionTests(unittest.TestCase):
             self.assertIn("ai_will_do = { factor = 0 }", block)
 
         # F5: decision-level construction-speed modifier.
+        # v2.9-test6 (F3): factor 10 -> 50; nuclear reactor / fuel silo /
+        # synthetic refinery keys added (vanilla keys exist).
         boost = block_text(decision_text, "PRC_OCS_boost_construction = {")
         self.assertIn("days_remove = 365", boost)
         for key in (
-            "production_speed_rail_way_factor = 10",
-            "production_speed_radar_station_factor = 10",
-            "production_speed_rocket_site_factor = 10",
-            "production_speed_bunker_factor = 10",
-            "production_speed_coastal_bunker_factor = 10",
-            "production_speed_infrastructure_factor = 10",
-            "production_speed_arms_factory_factor = 10",
+            "production_speed_rail_way_factor = 50",
+            "production_speed_radar_station_factor = 50",
+            "production_speed_rocket_site_factor = 50",
+            "production_speed_bunker_factor = 50",
+            "production_speed_coastal_bunker_factor = 50",
+            "production_speed_infrastructure_factor = 50",
+            "production_speed_air_base_factor = 50",
+            "production_speed_naval_base_factor = 50",
+            "production_speed_arms_factory_factor = 50",
+            "production_speed_industrial_complex_factor = 50",
+            "production_speed_dockyard_factor = 50",
+            "production_speed_supply_node_factor = 50",
+            "production_speed_energy_infrastructure_factor = 50",
+            "production_speed_industrial_infrastructure_factor = 50",
+            "production_speed_nuclear_reactor_factor = 50",
+            "production_speed_fuel_silo_factor = 50",
+            "production_speed_synthetic_refinery_factor = 50",
         ):
             self.assertIn(key, boost)
 
@@ -944,24 +962,39 @@ class ValidatorRegressionTests(unittest.TestCase):
         major = block_text(
             effect_text, "PRC_OCS_queue_major_structures_effect = {"
         )
+        # v2.9-test6 (F4): bunker moved to the dedicated fortresses effect.
+        self.assertNotIn("type = bunker", major)
         for present in (
-            "type = bunker",
             "type = naval_supply_hub",
             "type = nuclear_reactor",
             "type = commercial_nuclear_reactor",
             "country_event = { id = PRC_OCS.75 }",
         ):
             self.assertIn(present, major)
+        fortresses = block_text(
+            effect_text, "PRC_OCS_queue_fortresses_effect = {"
+        )
+        self.assertIn("type = bunker", fortresses)
+        self.assertIn("level = 10", fortresses)
+        self.assertIn("has_state_flag = PRC_OCS_fortresses_queued", fortresses)
 
-        # D2: power grid generalized — the grid chain must sit outside the
-        # PRC-only branch; the PRC branch keeps only the supply nodes.
+        # v2.9-test6 (D11): the power-grid chain moved out of transport/bases
+        # into the dedicated queue_power_grids effect; the transport effect
+        # keeps only bases/infrastructure and the PRC supply hubs.
         transport = block_text(
             effect_text, "PRC_OCS_queue_transport_and_bases_effect = {"
         )
+        self.assertNotIn("energy_infrastructure", transport)
+        self.assertNotIn("industrial_infrastructure", transport)
         prc_branch = block_text(transport, "\tif = {\n\t\tlimit = {\n\t\t\tOR = {\n\t\t\t\ttag = PRC")
         self.assertIn("PRC_OCS_build_target_supply_nodes_effect", prc_branch)
-        self.assertNotIn("energy_infrastructure", prc_branch)
-        self.assertNotIn("industrial_infrastructure", prc_branch)
+        grids = block_text(effect_text, "PRC_OCS_queue_power_grids_effect = {")
+        self.assertIn("type = industrial_infrastructure", grids)
+        self.assertIn("type = energy_infrastructure", grids)
+        self.assertIn("has_state_flag = PRC_OCS_power_grid_queued", grids)
+        grid_decision = block_text(decision_text, "PRC_OCS_queue_power_grids = {")
+        self.assertIn("is_ai = no", grid_decision)
+        self.assertIn("ai_will_do = { factor = 0 }", grid_decision)
 
         # Events 71-76 defined; law menus offer ideas; ideology menu switches.
         events_text = validator.read_utf8(
@@ -977,20 +1010,33 @@ class ValidatorRegressionTests(unittest.TestCase):
             self.assertIn(present, events_text)
         # set_ideology is not a vanilla effect; it must never come back.
         self.assertNotIn("set_ideology", events_text)
-        # F2 event 86 (page 1) offers three ideologies; 87 (page 2) the rest.
+        # v2.9-test6 (D5): F2 event 86 (page 1) offers democratic max/switch
+        # and fascism max; 87 (page 2) fascism switch, communism max/switch;
+        # 79 (page 3) non-aligned max/switch. Every pick is split into a
+        # support option and a ruling-party switch option.
         event86 = block_text(events_text, "country_event = {\n\tid = PRC_OCS.86")
         for present in (
             "add_popularity = { ideology = democratic popularity = 1.0 }",
             "add_popularity = { ideology = fascism popularity = 1.0 }",
-            "add_popularity = { ideology = communism popularity = 1.0 }",
+            "set_politics = { ruling_party = democratic }",
             "country_event = { id = PRC_OCS.87 }",
         ):
             self.assertIn(present, event86)
         event87 = block_text(events_text, "country_event = {\n\tid = PRC_OCS.87")
-        self.assertIn(
+        for present in (
+            "add_popularity = { ideology = communism popularity = 1.0 }",
+            "set_politics = { ruling_party = fascism }",
+            "set_politics = { ruling_party = communism }",
+            "country_event = { id = PRC_OCS.79 }",
+        ):
+            self.assertIn(present, event87)
+        event79 = block_text(events_text, "country_event = {\n\tid = PRC_OCS.79")
+        for present in (
             "add_popularity = { ideology = neutrality popularity = 1.0 }",
-            event87,
-        )
+            "set_politics = { ruling_party = neutrality }",
+            "country_event = { id = PRC_OCS.86 }",
+        ):
+            self.assertIn(present, event79)
 
         # Regression guard: the v2.6 air/naval prototype-choice menus must
         # keep their original event ids (a renumbering bug once retargeted
@@ -1029,9 +1075,11 @@ class ValidatorRegressionTests(unittest.TestCase):
                 "PRC_OCS.73.t", "PRC_OCS.73.desc", "PRC_OCS.73.a",
                 "PRC_OCS.74.t", "PRC_OCS.74.desc", "PRC_OCS.74.a",
                 "PRC_OCS.75.t", "PRC_OCS.75.d", "PRC_OCS.75.a",
-                "PRC_OCS.76.t", "PRC_OCS.76.desc", "PRC_OCS.76.a",
             ):
                 self.assertIn(key + ":0", loc, f"{language}: {key}")
+            # v2.9-test6 (K3): event 76 was removed in v2.9-test5; its loc
+            # keys must stay gone (orphan cleanup).
+            self.assertNotIn("PRC_OCS.76.", loc, f"{language}: 76 orphan")
 
     def test_v29_batch4_contracts(self) -> None:
         """v2.9 批次 4：F14 特种部队分支、F13 建设档位 1/5（事件 77）、
@@ -1151,6 +1199,7 @@ class ValidatorRegressionTests(unittest.TestCase):
             raise AssertionError(f"unterminated block: {header}")
 
         # C8: research_all extended with the national-focus granted techs.
+        # v2.9-test6 (D7): hidden legacy techs removed again (336 keys).
         research_text = validator.read_utf8(
             validator.ROOT
             / "common"
@@ -1158,14 +1207,19 @@ class ValidatorRegressionTests(unittest.TestCase):
             / "PRC_OCS_research_effects.txt"
         )
         research_all = block_text(research_text, "PRC_OCS_research_all_effect = {")
-        self.assertGreaterEqual(research_all.count(" = 1"), 369)
+        self.assertGreaterEqual(research_all.count(" = 1"), 336)
         for present in (
             "HUN_light_infantry_tech = 1",
             "mountain_defensive_training = 1",
-            "early_fighter = 1",
-            "basic_submarine = 1",
         ):
             self.assertIn(present, research_all)
+        for gone in (
+            "early_fighter = 1",
+            "basic_submarine = 1",
+            "gwtank = 1",
+            "fighter1 = 1",
+        ):
+            self.assertNotIn(gone, research_all)
 
         # C1-C7 effects file.
         political_text = validator.read_utf8(
@@ -1179,16 +1233,34 @@ class ValidatorRegressionTests(unittest.TestCase):
         )
         self.assertIn("set_autonomy = {", autonomy)
         self.assertIn("autonomy_integrated_puppet", autonomy)
-        self.assertIn("overlord = {", autonomy)
+        # v2.9-test6 (D1): `overlord` is not a valid scripted-effect event
+        # target (player error.log ×3); the subject-side path walks
+        # every_other_country and matches ROOT's overlord via is_subject_of.
+        self.assertNotIn("overlord = {", autonomy)
+        self.assertIn("is_subject_of = PREV", autonomy)
+        self.assertIn("freedom_level = 0", autonomy)
         relations = block_text(
             political_text, "PRC_OCS_improve_relations_effect = {"
         )
         self.assertIn("every_other_country = {", relations)
-        self.assertIn("cheat_opinion_modifier_good", relations)
+        # v2.9-test6 (D12): custom permanent +1000 opinion modifier.
+        self.assertIn("PRC_OCS_opinion_good", relations)
+        self.assertNotIn("cheat_opinion_modifier_good", relations)
+        opinion_file = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "opinion_modifiers"
+            / "PRC_OCS_opinion_modifiers.txt"
+        )
+        self.assertIn("PRC_OCS_opinion_good = {", opinion_file)
+        self.assertIn("value = 1000", opinion_file)
         compliance = block_text(
             political_text, "PRC_OCS_max_compliance_effect = {"
         )
         self.assertIn("every_controlled_state = {", compliance)
+        # v2.9-test6 (D2): occupied states only (controlled but not owned);
+        # add_compliance elsewhere spams "does not have resistance".
+        self.assertIn("NOT = { is_owned_by = ROOT }", compliance)
         self.assertIn("add_compliance = 100", compliance)
         self.assertIn("set_resistance = 0", compliance)
         rules = block_text(
@@ -1205,8 +1277,9 @@ class ValidatorRegressionTests(unittest.TestCase):
             "can_use_kamikaze_pilots",
         ):
             self.assertIn(f"set_rule = {{ {rule} = yes }}", rules)
-        self.assertIn("create_wargoal = {", rules)
-        self.assertIn("type = annex_everything", rules)
+        # v2.9-test6 (F2): the annex wargoal moved to the dedicated
+        # PRC_OCS_create_wargoals decision.
+        self.assertNotIn("create_wargoal = {", rules)
 
         # Decisions + guards.
         decision_text = validator.read_utf8(
@@ -1217,10 +1290,15 @@ class ValidatorRegressionTests(unittest.TestCase):
             "PRC_OCS_improve_relations",
             "PRC_OCS_max_compliance",
             "PRC_OCS_unlock_special_rules",
+            "PRC_OCS_create_wargoals",
         ):
             block = block_text(decision_text, f"{name} = {{")
             self.assertIn("is_ai = no", block)
             self.assertIn("ai_will_do = { factor = 0 }", block)
+        wargoals = block_text(decision_text, "PRC_OCS_create_wargoals = {")
+        self.assertIn("set_rule = { can_only_justify_war_on_threat_country = no }", wargoals)
+        self.assertIn("create_wargoal = {", wargoals)
+        self.assertIn("type = annex_everything", wargoals)
 
         # Bilingual loc for the four decisions.
         for language, path in (
@@ -1237,8 +1315,271 @@ class ValidatorRegressionTests(unittest.TestCase):
                 "PRC_OCS_max_compliance_desc",
                 "PRC_OCS_unlock_special_rules",
                 "PRC_OCS_unlock_special_rules_desc",
+                "PRC_OCS_create_wargoals",
+                "PRC_OCS_create_wargoals_desc",
             ):
                 self.assertIn(key + ":0", loc, f"{language}: {key}")
+
+    def test_v29_test6_d3_flag_clearing_contract(self) -> None:
+        """v2.9-test6 (D3): refresh clears every completion flag when the
+        state drops back below the threshold, so the repeatable factory
+        decisions re-arm after manual demolition."""
+        text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_construction_effects.txt"
+        )
+        start = text.index("PRC_OCS_refresh_industrial_priority_flags_effect = {")
+        depth = 0
+        brace = text.index("{", start)
+        end = None
+        for index in range(brace, len(text)):
+            if text[index] == "{":
+                depth += 1
+            elif text[index] == "}":
+                depth -= 1
+                if depth == 0:
+                    end = index + 1
+                    break
+        block = text[start:end]
+        # Every set_state_flag has a matching clr_state_flag in the same
+        # block (refinery/fuel_silo/dockyard/industrial_complex/arms_factory).
+        for flag in (
+            "PRC_OCS_refinery_target_complete",
+            "PRC_OCS_fuel_silo_target_complete",
+            "PRC_OCS_coastal_dockyards_queued",
+            "PRC_OCS_civilian_industry_queued",
+            "PRC_OCS_arms_factories_queued",
+        ):
+            self.assertIn(f"set_state_flag = {flag}", block)
+            self.assertIn(f"clr_state_flag = {flag}", block)
+        self.assertEqual(block.count("clr_state_flag ="), 5)
+
+    def test_v29_test6_f5_law_labels_contract(self) -> None:
+        """v2.9-test6 (F5): law-menu option labels match the official Chinese
+        localisation; special-law source annotation present in the desc."""
+        zh = validator.read_utf8(
+            validator.ROOT
+            / "localisation"
+            / "simp_chinese"
+            / "PRC_OCS_l_simp_chinese.yml"
+        )
+        for label in (
+            "与世隔绝", "孤立主义", "前期动员", "部分动员", "总动员",
+            "总体战", "国家防卫体制", "重视出口", "非军事化国家",
+            "志愿兵役制", "按要求服兵役", "所有成人服兵役", "榨干他们",
+        ):
+            self.assertIn(f'"{label}"', zh, label)
+        self.assertIn("自给自足来自德国国策", zh)
+        self.assertIn("拉满支持度", zh)
+        self.assertIn("切换国体", zh)
+        en = validator.read_utf8(
+            validator.ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml"
+        )
+        for label in (
+            '"Undisturbed Isolation"', '"Isolation"', '"Early Mobilisation"',
+            '"Partial Mobilisation"', '"Total Mobilisation"',
+            '"Totaler Krieg"', '"Export Focus"', '"Volunteer Only"',
+            '"Scraping the Barrel"',
+        ):
+            self.assertIn(label, en, label)
+        self.assertIn("Autarky from Germany", en)
+
+    def test_v29_test6_d5_ideology_contract(self) -> None:
+        """v2.9-test6 (D5): ideology menu splits max-out-support from
+        ruling-party switch (set_politics, official effect); three pages of
+        ≤4 options each; the 86.e orphan loc key is gone."""
+        events_text = validator.read_utf8(
+            validator.ROOT / "events" / "PRC_OCS_events.txt"
+        )
+        for party in ("democratic", "fascism", "communism", "neutrality"):
+            self.assertIn(f"set_politics = {{ ruling_party = {party} }}", events_text)
+        for ideology in ("democratic", "fascism", "communism", "neutrality"):
+            self.assertIn(
+                f"add_popularity = {{ ideology = {ideology} popularity = 1.0 }}",
+                events_text,
+            )
+        self.assertIn("id = PRC_OCS.79", events_text)
+        self.assertNotIn("set_ideology", events_text)
+        for language, path in (
+            ("en", validator.ROOT / "localisation" / "english" / "PRC_OCS_l_english.yml"),
+            ("zh", validator.ROOT / "localisation" / "simp_chinese" / "PRC_OCS_l_simp_chinese.yml"),
+        ):
+            loc = validator.read_utf8(path)
+            self.assertNotIn("PRC_OCS.86.e", loc, f"{language}: orphan 86.e")
+            for key in (
+                "PRC_OCS.86.t",
+                "PRC_OCS.86.a",
+                "PRC_OCS.86.b",
+                "PRC_OCS.87.a",
+                "PRC_OCS.87.c",
+                "PRC_OCS.79.t",
+                "PRC_OCS.79.a",
+                "PRC_OCS.79.b",
+                "PRC_OCS.79.f",
+            ):
+                self.assertIn(key + ":0", loc, f"{language}: {key}")
+
+    def test_v29_test6_d6_reactor_contract(self) -> None:
+        """v2.9-test6 (D6): nuclear and commercial reactors share the state
+        "reactors" slot; the queue picks commercial first with nuclear as
+        else_if fallback, and the special-project capital grant skips when a
+        commercial reactor already exists."""
+        construction_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_construction_effects.txt"
+        )
+        start = construction_text.index(
+            "PRC_OCS_queue_major_structures_effect = {"
+        )
+        depth = 0
+        brace = construction_text.index("{", start)
+        end = None
+        for index in range(brace, len(construction_text)):
+            if construction_text[index] == "{":
+                depth += 1
+            elif construction_text[index] == "}":
+                depth -= 1
+                if depth == 0:
+                    end = index + 1
+                    break
+        block = construction_text[start:end]
+        commercial_at = block.index("type = commercial_nuclear_reactor")
+        nuclear_at = block.index("type = nuclear_reactor")
+        self.assertLess(commercial_at, nuclear_at)
+        self.assertIn("else_if = {", block)
+        special_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_special_project_effects.txt"
+        )
+        start = special_text.index(
+            "PRC_OCS_complete_nuclear_special_projects_effect = {"
+        )
+        depth = 0
+        brace = special_text.index("{", start)
+        end = None
+        for index in range(brace, len(special_text)):
+            if special_text[index] == "{":
+                depth += 1
+            elif special_text[index] == "}":
+                depth -= 1
+                if depth == 0:
+                    end = index + 1
+                    break
+        reactor_grant = special_text[start:end]
+        self.assertIn("NOT = { commercial_nuclear_reactor > 0 }", reactor_grant)
+
+    def test_v29_test6_d7_d8_tech_contract(self) -> None:
+        """v2.9-test6 (D7/D8): hidden legacy technologies are excluded from
+        research_all and every year bucket; player point-checked no-start_year
+        technologies land in the expected year buckets."""
+        research_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_research_effects.txt"
+        )
+        year_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_year_tech_effects.txt"
+        )
+        legacy = (
+            "gwtank", "basic_light_tank", "improved_light_tank",
+            "advanced_light_tank", "basic_medium_tank", "basic_heavy_tank",
+            "improved_heavy_tank", "amphibious_tank", "amphibious_tank_2",
+            "improved_light_spaa", "early_fighter", "fighter1", "cv_fighter2",
+            "naval_bomber1", "naval_bomber2", "naval_bomber3", "suicide_craft",
+            "suicide_charge", "transport", "early_carrier", "basic_carrier",
+            "early_battleship", "early_light_cruiser", "basic_light_cruiser",
+            "basic_heavy_cruiser", "improved_destroyer", "coastal_defense_ships",
+            "panzerschiffe", "ship_hull_super_heavy", "basic_submarine",
+            "improved_submarine", "advanced_submarine", "pre_dreadnoughts",
+        )
+        for key in legacy:
+            self.assertIsNone(
+                re.search(rf"^\s*{key}\s*=\s*1\s*$", research_text, re.M),
+                f"legacy key still in research_all: {key}",
+            )
+            self.assertIsNone(
+                re.search(rf"^\s*{key}\s*=\s*1\s*$", year_text, re.M),
+                f"legacy key still in year buckets: {key}",
+            )
+        # Player point-checked no-start_year techs in the year buckets.
+        def bucket(name: str) -> str:
+            start = year_text.index(f"PRC_OCS_research_year_{name}_effect = {{")
+            depth = 0
+            brace = year_text.index("{", start)
+            end = None
+            for index in range(brace, len(year_text)):
+                if year_text[index] == "{":
+                    depth += 1
+                elif year_text[index] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        end = index + 1
+                        break
+            return year_text[start:end]
+
+        for key in (
+            "radio", "mechanical_computing", "basic_fire_control_system",
+            "damage_control_1", "excavation1", "concentrated_industry",
+            "dispersed_industry",
+        ):
+            self.assertIn(f"{key} = 1", bucket("1936"), key)
+        self.assertIn("improved_fire_control_system = 1", bucket("1938"))
+        self.assertIn("advanced_fire_control_system = 1", bucket("1939"))
+        # NSB-era current chassis keys must survive (not legacy).
+        self.assertIn("gwtank_chassis = 1", research_text)
+
+    def test_v29_test6_d9_variant_contract(self) -> None:
+        """v2.9-test6 (D9): preset designs cover carrier fighters, carrier
+        support, tactical bombers and all five top ship hulls in BOTH the PRC
+        and the generic branches; the stockpile effects grant the new
+        aircraft variants (ships stay out of stockpiles, engine limitation)."""
+        equipment_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_equipment_effects.txt"
+        )
+        new_types = (
+            "cv_small_plane_airframe_3",
+            "cv_small_plane_cas_airframe_3",
+            "medium_plane_airframe_3",
+            "ship_hull_light_4",
+            "ship_hull_cruiser_4",
+            "ship_hull_heavy_4",
+            "ship_hull_carrier_3",
+            "ship_hull_submarine_4",
+        )
+        for tech in new_types:
+            # once in the PRC branch, once in the generic branch
+            self.assertEqual(
+                equipment_text.count(f"type = {tech}"), 2, tech
+            )
+        # PRC branch uses the PRC aviation MIO as design team; generic does not.
+        prc_aviation = "mio:PRC_peoples_aviation_company_of_china_organization"
+        self.assertGreaterEqual(equipment_text.count(prc_aviation), 3)
+        stockpile_text = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_stockpile_effects.txt"
+        )
+        for tech in ("cv_small_plane_airframe_3", "cv_small_plane_cas_airframe_3",
+                     "medium_plane_airframe_3"):
+            self.assertEqual(
+                stockpile_text.count(f"type = {tech}"), 2, tech
+            )
+        # Ships cannot be stockpiled (hulls are not equipment).
+        self.assertNotIn("ship_hull_", stockpile_text)
 
     def test_v28_shared_mio_dlc_guards_contract(self) -> None:
         """v2.8 #7: 生成器按原版 allowed 生成机构守卫；PRC 引用双覆盖；FROM 豁免。"""

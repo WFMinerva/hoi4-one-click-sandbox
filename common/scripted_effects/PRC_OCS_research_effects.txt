@@ -304,37 +304,18 @@ PRC_OCS_research_all_effect = {
 		SWI_saint_bernard_tech = 1
 		TOA_jungle_pioneers_support_tech = 1
 		ToA_river_boats_tech = 1
-		advanced_light_tank = 1
-		advanced_submarine = 1
-		amphibious_tank = 1
-		amphibious_tank_2 = 1
-		basic_carrier = 1
-		basic_heavy_cruiser = 1
-		basic_heavy_tank = 1
-		basic_light_cruiser = 1
-		basic_light_tank = 1
-		basic_medium_tank = 1
-		basic_submarine = 1
+
 		bicycle_infantry = 1
 		blackshirt_assault_battalion_tech = 1
 		camelry = 1
 		camicie_nere_security_militias = 1
-		coastal_defense_ships = 1
-		cv_fighter2 = 1
+
 		desert_training_tech = 1
-		early_battleship = 1
-		early_carrier = 1
-		early_fighter = 1
-		early_light_cruiser = 1
+
 		elephantry = 1
-		fighter1 = 1
-		gwtank = 1
+
 		hills_training_tech = 1
-		improved_destroyer = 1
-		improved_heavy_tank = 1
-		improved_light_spaa = 1
-		improved_light_tank = 1
-		improved_submarine = 1
+
 		jungle_heavy_tanks = 1
 		jungle_tanks = 1
 		jungle_training_tech = 1
@@ -349,24 +330,21 @@ PRC_OCS_research_all_effect = {
 		mountain_tanks = 1
 		mountain_warfare = 1
 		mountain_warfare_militias_tech = 1
-		naval_bomber1 = 1
-		naval_bomber2 = 1
-		naval_bomber3 = 1
+
 		northern_territory_recon_support_tech = 1
-		panzerschiffe = 1
+
 		penal_infantry = 1
-		pre_dreadnoughts = 1
+
 		revolutionary_mass_assault = 1
 		sami_pathfinders_tech = 1
-		ship_hull_super_heavy = 1
+
 		sturmtruppe_battalion_tech = 1
-		suicide_charge = 1
-		suicide_craft = 1
+
 		tank_landing_craft = 1
 		tech_recon_focus_bonus = 1
 		tech_special_forces = 1
 		the_thunder_at_our_gates_artillery = 1
-		transport = 1
+
 		uranium_tipped_bullets = 1
 		urban_training_tech = 1
 		winter_logistics_support_tech = 1

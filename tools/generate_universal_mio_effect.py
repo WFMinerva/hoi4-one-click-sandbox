@@ -246,18 +246,23 @@ SUBMARINE_STEALTH_TRAITS = frozenset({
     "generic_mio_trait_emergency_main_ballast_tank_blow",
     "generic_mio_trait_radar_warning_receiver",
     "generic_mio_trait_crash_dive_flood_tanks",
+    # v2.9-test6 (D10): improved_torpedo_detonators is reachable from the
+    # stealth chain (any_parent includes highly_efficient_diesel_electric)
+    # and simplified_pressure_hull_design needs it (all_parents =
+    # anechoic + improved_torpedo); both stay on the stealth side so the
+    # reroute keeps them (player feedback 2026-08-23 B3).
+    "generic_mio_trait_improved_torpedo_detonators",
+    "generic_mio_trait_simplified_pressure_hull_design",
 })
 SUBMARINE_TORPEDO_TRAITS = frozenset({
     "generic_mio_trait_decalin_fueled_torpedo",
     "generic_mio_trait_high_powered_engines",
     "generic_mio_trait_open_cycle_propulsion",
-    "generic_mio_trait_improved_torpedo_detonators",
     "generic_mio_trait_submarine_mass_production",
     "generic_mio_trait_advanced_sonar",
     "generic_mio_trait_deck_guns",
     "generic_mio_trait_large_torpedo_banks",
     "generic_mio_trait_high_capacity_mine_storage",
-    "generic_mio_trait_simplified_pressure_hull_design",
 })
 
 
