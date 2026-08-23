@@ -1,71 +1,25 @@
 # v2.9-test4 batch 4 (F8): every vanilla PRC advisor role (deduplicated; extracted from common/characters/PRC.txt).
+# v2.9-test5 (F8 slot-fit): one advisor per engine slot — political 3,
+# theorist 1, army/navy/air chief 3, high command 3 (10 total).
+# Engine advisor slots are hard-coded; adding more than the slot count is
+# undefined (ignored/overwritten), so the roster is slot-fitted.
 PRC_OCS_appoint_advisors_effect = {
-	add_ideas = PRC_bo_gu
-	add_ideas = PRC_bo_yibo
-	add_ideas = PRC_cai_chang
-	add_ideas = PRC_chang_qiankun
-	add_ideas = PRC_chen_changhao
-	add_ideas = PRC_chen_geng
-	add_ideas = PRC_chen_shaomin
-	add_ideas = PRC_chen_tanqiu
-	add_ideas = PRC_chen_yi
-	add_ideas = PRC_chen_yun
-	add_ideas = PRC_chu_qing
-	add_ideas = PRC_deng_fa
-	add_ideas = PRC_deng_xiaoping
-	add_ideas = PRC_deng_ye_peng
-	add_ideas = PRC_deng_yingchao
-	add_ideas = PRC_deng_zihiu
-	add_ideas = PRC_dong_biwu
-	add_ideas = PRC_fang_zeyi
-	add_ideas = PRC_gao_gang
-	add_ideas = PRC_gao_qiu
-	add_ideas = PRC_he_cheng
-	add_ideas = PRC_he_yuandang
-	add_ideas = PRC_hsia_tian
-	add_ideas = PRC_kang_sheng
-	add_ideas = PRC_li_lisan
-	add_ideas = PRC_li_xiannian
-	add_ideas = PRC_li_zhen
-	add_ideas = PRC_liang_shen
-	add_ideas = PRC_lin_bojiu
-	add_ideas = PRC_lin_boqu
-	add_ideas = PRC_liu_bocheng
-	add_ideas = PRC_liu_shaoqi
-	add_ideas = PRC_liu_yalou
-	add_ideas = PRC_liu_yuti
-	add_ideas = PRC_luo_ruiqing
-	add_ideas = PRC_luo_shunchu
-	add_ideas = PRC_ma_jin
+	# political_advisor (3)
 	add_ideas = PRC_mao_zedong
-	add_ideas = PRC_mao_zedong_theorist
-	add_ideas = PRC_mao_zemin
-	add_ideas = PRC_nie_rongzhen
-	add_ideas = PRC_otto_braun
-	add_ideas = PRC_pavel_mif
-	add_ideas = PRC_ren_bishi
-	add_ideas = PRC_shao_shiping
-	add_ideas = PRC_su_yu
-	add_ideas = PRC_wang_jiaxiang
-	add_ideas = PRC_wang_ming
-	add_ideas = PRC_wang_shiwei
-	add_ideas = PRC_wu_han
-	add_ideas = PRC_wu_yuzhang
-	add_ideas = PRC_xie_juezai
-	add_ideas = PRC_xu_teli
-	add_ideas = PRC_xu_xiangqian
-	add_ideas = PRC_yang_shangkun
-	add_ideas = PRC_yang_zhicheng
-	add_ideas = PRC_ye_jianying
-	add_ideas = PRC_zhang_guotao
-	add_ideas = PRC_zhang_guotao_theorist
-	add_ideas = PRC_zhang_wei
-	add_ideas = PRC_zhang_wentian
 	add_ideas = PRC_zhou_enlai
+	add_ideas = PRC_deng_xiaoping
+	# theorist (1)
+	add_ideas = PRC_liu_bocheng
+	# army_chief / navy_chief / air_chief (3)
 	add_ideas = PRC_zhu_de
-	add_ideas = PRC_ziao_jingguang
-	add_ideas = PRC_zuo_quan
+	add_ideas = PRC_luo_shunchu
+	add_ideas = PRC_liu_yalou
+	# high_command (3)
+	add_ideas = PRC_xu_xiangqian
+	add_ideas = PRC_chen_yi
+	add_ideas = PRC_li_xiannian
 }
+
 
 
 PRC_OCS_configure_mios_effect = {

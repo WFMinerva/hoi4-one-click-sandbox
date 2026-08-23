@@ -401,9 +401,15 @@ PRC_OCS_configure_doctrines_effect = {
 PRC_OCS_configure_spirits_effect = {
 	add_ideas = branch_independence_spirit
 	add_ideas = battlefield_air_interdiction_spirit
+	# v2.9-test5: three army-spirit slots, one each —
+	# academy: superior_firepower_academy_spirit (add_ideas bypasses the
+	# military-academy prerequisite, matching v2.8 behaviour),
+	# army: superior_firepower_army_spirit,
+	# command: direct_fire_support_army_spirit (v2.8 legacy, SP-artillery
+	# bonus; machine-gunner pick). grand_battleplan_army_spirit needs a
+	# doctrine we no longer set.
+	add_ideas = superior_firepower_academy_spirit
 	add_ideas = superior_firepower_army_spirit
-	add_ideas = grand_battleplan_army_spirit
-	add_ideas = reserve_officers_spirit
 	add_ideas = direct_fire_support_army_spirit
 	add_ideas = base_strike_academy_spirit
 	add_ideas = naval_reform_spirit

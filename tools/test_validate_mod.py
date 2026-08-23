@@ -670,14 +670,17 @@ class ValidatorRegressionTests(unittest.TestCase):
         ):
             self.assertNotIn(absent, doctrine_text)
         for present in (
+            "add_ideas = superior_firepower_academy_spirit",
             "add_ideas = superior_firepower_army_spirit",
-            "add_ideas = grand_battleplan_army_spirit",
-            "add_ideas = reserve_officers_spirit",
+            "add_ideas = direct_fire_support_army_spirit",
         ):
             self.assertIn(present, doctrine_text)
         for absent in (
             "add_ideas = mass_assault_academy_spirit",
             "add_ideas = living_off_the_land_army_spirit",
+            "add_ideas = grand_battleplan_army_spirit",
+            "add_ideas = smoke_and_fire_spirit",
+            "add_ideas = reserve_officers_spirit",
         ):
             self.assertNotIn(absent, doctrine_text)
 
@@ -1088,7 +1091,8 @@ class ValidatorRegressionTests(unittest.TestCase):
         self.assertIn("id = PRC_OCS.77", events_text)
         self.assertIn("set_country_flag = PRC_OCS_build_lot_1", events_text)
 
-        # F8: full PRC advisor roster (65 deduplicated tokens).
+        # F8: slot-fitted PRC advisor roster (10 = political 3 + theorist 1
+        # + chiefs 3 + high command 3; engine slots are hard-coded).
         mio_text = validator.read_utf8(
             validator.ROOT
             / "common"
@@ -1096,12 +1100,18 @@ class ValidatorRegressionTests(unittest.TestCase):
             / "PRC_OCS_mio_effects.txt"
         )
         advisors = block_text(mio_text, "PRC_OCS_appoint_advisors_effect = {")
-        self.assertGreaterEqual(advisors.count("add_ideas = PRC_"), 65)
+        self.assertEqual(advisors.count("add_ideas = PRC_"), 10)
         for present in (
             "add_ideas = PRC_mao_zedong",
             "add_ideas = PRC_zhou_enlai",
+            "add_ideas = PRC_deng_xiaoping",
             "add_ideas = PRC_liu_bocheng",
+            "add_ideas = PRC_zhu_de",
+            "add_ideas = PRC_luo_shunchu",
             "add_ideas = PRC_liu_yalou",
+            "add_ideas = PRC_xu_xiangqian",
+            "add_ideas = PRC_chen_yi",
+            "add_ideas = PRC_li_xiannian",
         ):
             self.assertIn(present, advisors)
 
