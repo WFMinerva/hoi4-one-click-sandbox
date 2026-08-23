@@ -2739,6 +2739,37 @@ class ValidatorRegressionTests(unittest.TestCase):
             publish_workshop.vdf_escape('a\\b"c\r\nd'),
             'a\\\\b\\"c\nd',
         )
+        self.assertEqual(
+            publish_workshop.mod_title(),
+            "开局一键爽玩 / One-Click Sandbox Start v2.9",
+        )
+        description = publish_workshop.description_file("2.9").read_text(
+            encoding="utf-8-sig"
+        )
+        self.assertIn(
+            publish_workshop.ESSENTIAL_DESCRIPTION_OPENING,
+            description,
+        )
+
+    def test_workshop_vdf_updates_title_description_and_changenote(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_name:
+            root = Path(temp_name)
+            content = root / "content"
+            content.mkdir()
+            (content / "thumbnail.png").write_bytes(b"preview")
+            vdf = publish_workshop.build_vdf(
+                content,
+                root,
+                "开局一键爽玩 / One-Click Sandbox Start v9.9",
+                "description",
+                "changenote",
+            ).read_text(encoding="utf-8")
+            self.assertIn(
+                '"title"\t\t"开局一键爽玩 / One-Click Sandbox Start v9.9"',
+                vdf,
+            )
+            self.assertIn('"description"\t\t"description"', vdf)
+            self.assertIn('"changenote"\t\t"changenote"', vdf)
 
     # ---- 实机监测机制（A 立项）契约 ----
 

@@ -112,7 +112,7 @@ Git 标签必须指向能够直接重建该版本正式包的最后一个提交�
 
 ## 工坊上传
 
-推荐使用仓库自带脚本 `tools/publish_workshop.py`（自动同步暂存目录、按当期 `docs/publishing/Steam工坊中文简介_v2.x_BBCode.txt` 生成 VDF 的 description 与 changenote，再调用 steamcmd）：
+推荐使用仓库自带脚本 `tools/publish_workshop.py`（自动同步暂存目录；从 `descriptor.mod` 的 `name` 生成 VDF `title`；按当期 `docs/publishing/Steam工坊中文简介_v2.x_BBCode.txt` 生成 `description` 与 `changenote`，再调用 steamcmd）。简介必须保留以“不想每次开局都重复输入控制台……”开头的两段核心文案；脚本缺标题或核心开头时失败关闭：
 
 ```powershell
 # 路径说明：单位机安装于 D:\steamcmd；F:\steamcmd 是家用机（Codex 维护环境）记录的路径，
@@ -137,7 +137,7 @@ cmd /c start "OCS Workshop Upload" cmd /K "D:\steamcmd\steamcmd.exe +login <账�
 steamcmd 注意事项：
 
 - 始终更新已有物品 `3767025052`，不要新建工坊条目，否则订阅数被分流。
-- steamcmd 更新内容、预览图和 changenote；在 VDF 中加入 `title`/`description` 字段可一并更新工坊标题和简介（不加则保持现状；标签仍需网页手动编辑）。简介文案在 `docs/publishing/`。
+- steamcmd 更新内容、预览图和 changenote；本仓脚本必须在 VDF 中同时写入 `title` 与 `description`，一并更新工坊标题和简介。简介文案在 `docs/publishing/`；上传前应查看生成的 VDF，核对标题版本号、核心开头、完整简介和更新摘要。
 - VDF 中的路径用正斜杠（单位机 `D:/steamcmd/...`，家用机 `F:/steamcmd/...`）：反斜杠序列如 `\t` 会被 VDF 解析器转义成制表符，导致 `Failed to read preview file`。
 - 密码和 Steam Guard 验证码不要写进命令行，按提示交互输入；命令中的用户名直接写账号名本身（PowerShell 里 `<` `>` 是保留符号，带尖括号会报语法错误）。
 - 上传成功标志：输出 `Committing update...Success`，或 steamcmd 日志中 `Upload finished ... : OK`。

@@ -29,6 +29,11 @@ MOD_ITEMS = (
 WORKSHOP_ID = "3767025052"
 APPID = "394360"
 CONTENT_FOLDER_NAME = "OCS_one_click_sandbox_start_v2_0"
+ESSENTIAL_DESCRIPTION_OPENING = (
+    "不想每次开局都重复输入控制台、研究科技学说、配置军工机构、重建设计编制，"
+    "再逐地块安排工厂、机场、基建、炼油厂、船坞建设？\n\n"
+    "本MOD通过零政治点决议快速完成沙盒开局——但绝不会超过正常游戏过程中能达到的程度，拒绝魔改！"
+)
 
 
 def as_posix(path: pathlib.Path) -> str:
@@ -40,6 +45,14 @@ def mod_version() -> str:
     match = re.search(r'(?m)^\s*version\s*=\s*"([^"]+)"', text)
     if not match:
         raise SystemExit("descriptor.mod 缺少 version 字段")
+    return match.group(1)
+
+
+def mod_title() -> str:
+    text = (ROOT / "descriptor.mod").read_text(encoding="utf-8-sig")
+    match = re.search(r'(?m)^\s*name\s*=\s*"([^"]+)"', text)
+    if not match:
+        raise SystemExit("descriptor.mod 缺少 name 字段")
     return match.group(1)
 
 
@@ -117,6 +130,7 @@ def vdf_escape(value: str) -> str:
 def build_vdf(
     content_dir: pathlib.Path,
     steamcmd_dir: pathlib.Path,
+    title: str,
     description: str,
     changenote: str,
 ) -> pathlib.Path:
@@ -129,6 +143,7 @@ def build_vdf(
         f'\t"publishedfileid"\t"{WORKSHOP_ID}"\n'
         f'\t"contentfolder"\t\t"{as_posix(content_dir)}"\n'
         f'\t"previewfile"\t\t"{preview}"\n'
+        f'\t"title"\t\t"{vdf_escape(title)}"\n'
         f'\t"description"\t\t"{vdf_escape(description)}"\n'
         f'\t"changenote"\t\t"{vdf_escape(changenote)}"\n'
         "}\n"
@@ -147,6 +162,12 @@ def validate_sources(version: str) -> tuple[pathlib.Path, pathlib.Path]:
         raise SystemExit(f"缺少工坊简介：{description}")
     if not changenote.is_file():
         raise SystemExit(f"缺少工坊更新摘要：{changenote}")
+    description_text = description.read_text(encoding="utf-8-sig")
+    if ESSENTIAL_DESCRIPTION_OPENING not in description_text:
+        raise SystemExit(
+            "工坊简介缺少维护者指定的核心开头，拒绝上传；"
+            "不得擅自重写该段文案"
+        )
     return description, changenote
 
 
@@ -193,6 +214,7 @@ def main() -> int:
         raise SystemExit(f"找不到 steamcmd：{steamcmd_exe}")
 
     version = mod_version()
+    title = mod_title()
     tag = ensure_repository_preconditions(version)
     description_path, changenote_path = validate_sources(version)
     run_release_gate()
@@ -206,7 +228,7 @@ def main() -> int:
     changenote = changenote_path.read_text(encoding="utf-8-sig").strip()
     if not description or not changenote:
         raise SystemExit("工坊简介或更新摘要为空")
-    vdf = build_vdf(content_dir, steamcmd_dir, description, changenote)
+    vdf = build_vdf(content_dir, steamcmd_dir, title, description, changenote)
     print(f"VDF 已生成：{vdf}")
 
     if args.prepare_only:
