@@ -27,7 +27,7 @@ jobs:
         # 测试版/正式版包名，否则 glob 匹配为空导致 sha256sum 失败；
         # glob 带版本号避免 dist 残留多版本包时多行哈希干扰比对。
         run: |
-          version="$(grep -m1 -oE 'version="[^"]+"' descriptor.mod | cut -d'"' -f2)"
+          version="$(grep -m1 -oE '^version="[^"]+"' descriptor.mod | cut -d'"' -f2)"
           case "$version" in *test*) pkg="测试版" ;; *) pkg="正式版" ;; esac
           first_hash="$(sha256sum dist/*_v${version}_${pkg}.zip | cut -d ' ' -f 1)"
           python tools/build_release.py
