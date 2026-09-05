@@ -68,17 +68,25 @@ LEGACY_KEYS = frozenset({
 
 # v2.9-test6 (D8): player point-checked technologies without a start_year.
 # Forced into the bucket the player expects them under.
+# v2.9-test7 (B1, player feedback 2026-08-24): the follow-up tiers of the
+# damage-control / fire-control-methods lines join their tier-1s in 1936;
+# improved_heavy_armor_scheme moves 1938 -> 1936 (player point-checked twice:
+# "36年缺失", expects the whole early line under the 1936 button).
 FORCED_BUCKETS: dict[str, str] = {
     "radio": "1936",
     "mechanical_computing": "1936",
     "basic_fire_control_system": "1936",
     "damage_control_1": "1936",
+    "damage_control_2": "1936",
+    "damage_control_3": "1936",
     "excavation1": "1936",
     "concentrated_industry": "1936",
     "dispersed_industry": "1936",
     "fire_control_methods_1": "1936",
+    "fire_control_methods_2": "1936",
+    "fire_control_methods_3": "1936",
+    "improved_heavy_armor_scheme": "1936",
     "improved_fire_control_system": "1938",
-    "improved_heavy_armor_scheme": "1938",
     "advanced_fire_control_system": "1939",
 }
 

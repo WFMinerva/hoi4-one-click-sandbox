@@ -989,8 +989,15 @@ class ValidatorRegressionTests(unittest.TestCase):
         prc_branch = block_text(transport, "\tif = {\n\t\tlimit = {\n\t\t\tOR = {\n\t\t\t\ttag = PRC")
         self.assertIn("PRC_OCS_build_target_supply_nodes_effect", prc_branch)
         grids = block_text(effect_text, "PRC_OCS_queue_power_grids_effect = {")
+        # v2.9-test7 (F1): high-capacity grid (大容量电网) everywhere; the
+        # two vanilla grids are mutually exclusive (infrastructure_keystone).
         self.assertIn("type = industrial_infrastructure", grids)
-        self.assertIn("type = energy_infrastructure", grids)
+        self.assertNotIn("type = energy_infrastructure", grids)
+        # States already holding either grid are flagged without building
+        # (keystone slot occupied -> free_building_slots reads 0), else the
+        # decision would stay available on them forever.
+        self.assertIn("energy_infrastructure > 0", grids)
+        self.assertIn("industrial_infrastructure > 0", grids)
         self.assertIn("has_state_flag = PRC_OCS_power_grid_queued", grids)
         grid_decision = block_text(decision_text, "PRC_OCS_queue_power_grids = {")
         self.assertIn("is_ai = no", grid_decision)
@@ -1243,7 +1250,8 @@ class ValidatorRegressionTests(unittest.TestCase):
             political_text, "PRC_OCS_improve_relations_effect = {"
         )
         self.assertIn("every_other_country = {", relations)
-        # v2.9-test6 (D12): custom permanent +1000 opinion modifier.
+        # v2.9-test6 (D12): custom permanent opinion modifier.
+        # v2.9-test7 (F4): raised to 5000 per player point-check.
         self.assertIn("PRC_OCS_opinion_good", relations)
         self.assertNotIn("cheat_opinion_modifier_good", relations)
         opinion_file = validator.read_utf8(
@@ -1253,7 +1261,7 @@ class ValidatorRegressionTests(unittest.TestCase):
             / "PRC_OCS_opinion_modifiers.txt"
         )
         self.assertIn("PRC_OCS_opinion_good = {", opinion_file)
-        self.assertIn("value = 1000", opinion_file)
+        self.assertIn("value = 5000", opinion_file)
         compliance = block_text(
             political_text, "PRC_OCS_max_compliance_effect = {"
         )
@@ -1280,6 +1288,11 @@ class ValidatorRegressionTests(unittest.TestCase):
         # v2.9-test6 (F2): the annex wargoal moved to the dedicated
         # PRC_OCS_create_wargoals decision.
         self.assertNotIn("create_wargoal = {", rules)
+        # v2.9-test7 (F2): the justify-unlock rule belongs to the
+        # special-rules button, not the wargoal button.
+        self.assertIn(
+            "set_rule = { can_only_justify_war_on_threat_country = no }", rules
+        )
 
         # Decisions + guards.
         decision_text = validator.read_utf8(
@@ -1296,7 +1309,7 @@ class ValidatorRegressionTests(unittest.TestCase):
             self.assertIn("is_ai = no", block)
             self.assertIn("ai_will_do = { factor = 0 }", block)
         wargoals = block_text(decision_text, "PRC_OCS_create_wargoals = {")
-        self.assertIn("set_rule = { can_only_justify_war_on_threat_country = no }", wargoals)
+        self.assertNotIn("can_only_justify_war_on_threat_country", wargoals)
         self.assertIn("create_wargoal = {", wargoals)
         self.assertIn("type = annex_everything", wargoals)
 
@@ -1543,8 +1556,10 @@ class ValidatorRegressionTests(unittest.TestCase):
 
         for key in (
             "radio", "mechanical_computing", "basic_fire_control_system",
-            "damage_control_1", "excavation1", "concentrated_industry",
-            "dispersed_industry",
+            "damage_control_1", "damage_control_2", "damage_control_3",
+            "excavation1", "concentrated_industry", "dispersed_industry",
+            "fire_control_methods_1", "fire_control_methods_2",
+            "fire_control_methods_3", "improved_heavy_armor_scheme",
         ):
             self.assertIn(f"{key} = 1", bucket("1936"), key)
         self.assertIn("improved_fire_control_system = 1", bucket("1938"))
@@ -1953,6 +1968,45 @@ class ValidatorRegressionTests(unittest.TestCase):
         self.assertNotIn("43式喷火预备", equipment_text)
         for parent_version in (1, 2, 3, 4):
             self.assertIn(f"parent_version = {parent_version}", equipment_text)
+
+        # v2.9-test7 (F5): evolution equipment (helicopter / armored support
+        # vehicles / flame tank) is granted by the stockpile effects behind
+        # the evolved flag — never by the variant-creation effect itself.
+        def block_text(text: str, header: str) -> str:
+            start = text.index(header)
+            depth = 0
+            brace = text.index("{", start)
+            for index in range(brace, len(text)):
+                if text[index] == "{":
+                    depth += 1
+                elif text[index] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        return text[start : index + 1]
+            raise AssertionError(f"unterminated block: {header}")
+
+        evolved_block = block_text(
+            equipment_text, "PRC_OCS_create_evolved_variants_effect = {"
+        )
+        self.assertNotIn("add_equipment_to_stockpile", evolved_block)
+        stockpile_file = validator.read_utf8(
+            validator.ROOT
+            / "common"
+            / "scripted_effects"
+            / "PRC_OCS_stockpile_effects.txt"
+        )
+        for effect_name in (
+            "PRC_OCS_add_stockpile_effect = {",
+            "PRC_OCS_add_generic_stockpile_effect = {",
+        ):
+            branch = block_text(stockpile_file, effect_name)
+            self.assertIn(
+                "has_country_flag = PRC_OCS_special_project_forces_evolved",
+                branch,
+            )
+            self.assertIn("type = helicopter_equipment_1", branch)
+            self.assertIn("type = armored_support_vehicle_1", branch)
+            self.assertIn("type = medium_tank_flame_chassis_3", branch)
 
         template_root = scripts[
             validator.ROOT
@@ -2753,7 +2807,9 @@ class ValidatorRegressionTests(unittest.TestCase):
         )
         self.assertEqual(
             publish_workshop.mod_title(),
-            "开局一键爽玩 / One-Click Sandbox Start v2.9",
+            # test-phase descriptor title; flip back to the release title
+            # (e.g. "… v3.0") when the version line is finalized.
+            "开局一键爽玩 / One-Click Sandbox Start v2.9-test7",
         )
         description = publish_workshop.description_file("2.9").read_text(
             encoding="utf-8-sig"

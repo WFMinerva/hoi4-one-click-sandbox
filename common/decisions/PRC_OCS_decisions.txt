@@ -358,10 +358,10 @@ PRC_OCS_category = {
 	}
 
 	# v2.9-test6 (F2): dedicated wargoal button split from the special-rules
-	# unlock (player feedback 2026-08-23 B4: must be its own button). It
-	# grants annex war goals against every other country AND makes the
-	# diplomacy "justify war goal" button usable for every target via the
-	# can_only_justify_war_on_threat_country rule.
+	# unlock (player feedback 2026-08-23 B4: must be its own button).
+	# v2.9-test7 (F2, player feedback 2026-08-24): the justify-unlock rule
+	# moved back into the special-rules button; this decision now only
+	# grants annex war goals against every other country.
 	PRC_OCS_create_wargoals = {
 		icon = generic_political_discourse
 		cost = 0
@@ -371,7 +371,6 @@ PRC_OCS_category = {
 		visible = { is_ai = no }
 		available = { is_ai = no }
 		complete_effect = {
-			set_rule = { can_only_justify_war_on_threat_country = no }
 			every_other_country = {
 				ROOT = {
 					create_wargoal = {

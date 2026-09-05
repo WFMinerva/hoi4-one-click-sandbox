@@ -64,6 +64,11 @@ PRC_OCS_unlock_special_rules_effect = {
 	set_rule = { can_generate_female_unit_leaders = yes }
 	set_rule = { can_generate_female_country_leaders = yes }
 	set_rule = { can_use_kamikaze_pilots = yes }
+	# v2.9-test7 (F2, player feedback 2026-08-24): justifying war goals on
+	# countries that generated no world tension is a RULE unlock, so it
+	# belongs here instead of the wargoal button — this makes the diplomacy
+	# "justify war goal" button usable for every target.
+	set_rule = { can_only_justify_war_on_threat_country = no }
 	# v2.9-test6 (F2): the annex wargoal moved to the dedicated
 	# PRC_OCS_create_wargoals decision (player feedback 2026-08-23 B4).
 }

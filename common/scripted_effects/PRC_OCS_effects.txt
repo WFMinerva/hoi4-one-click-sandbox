@@ -37,12 +37,14 @@ PRC_OCS_resupply_effect = {
 	}
 }
 
+# v2.9-test7 (F3, player feedback 2026-08-24): every point type grants 99999
+# per click (was CP 100 / XP 999, which still required repeat clicking).
 PRC_OCS_add_points_effect = {
 	add_political_power = 99999
-	add_command_power = 100
-	army_experience = 999
-	navy_experience = 999
-	air_experience = 999
+	add_command_power = 99999
+	army_experience = 99999
+	navy_experience = 99999
+	air_experience = 99999
 }
 
 # v2.0b: generic countries now receive neutral equipment designs, eight division

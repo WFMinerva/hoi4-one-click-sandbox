@@ -1,15 +1,18 @@
 # v1.2b: Fully unlock each controlled state's shared industrial slots.
-# Adding 25 once is clipped by the engine hard cap of 25, so states with
-# different initial unlock progress all finish at the same maximum.
+# Adding in one shot is clipped by the engine's shared-slot cap, so states
+# with different initial unlock progress all finish at the same maximum.
 # v1.2c: Every construction decision can independently unlock the current
 # controlled state's shared slots to the engine hard cap. This removes the
 # hidden requirement to click the dedicated slot decision first.
+# v2.9-test7 (B5, player feedback 2026-08-24): grant 100 instead of 25 —
+# some mods raise the shared-slot cap beyond the vanilla 25 and 25 left
+# slots locked there; the engine clips the excess where the cap is lower.
 PRC_OCS_unlock_current_state_shared_slots_effect = {
 	if = {
 		limit = {
 			NOT = { has_state_flag = PRC_OCS_all_shared_slots_unlocked }
 		}
-		add_extra_state_shared_building_slots = 25
+		add_extra_state_shared_building_slots = 100
 		set_state_flag = PRC_OCS_all_shared_slots_unlocked
 	}
 }
@@ -68,7 +71,7 @@ PRC_OCS_unlock_all_shared_slots_effect = {
 			limit = {
 				NOT = { has_state_flag = PRC_OCS_all_shared_slots_unlocked }
 			}
-			add_extra_state_shared_building_slots = 25
+			add_extra_state_shared_building_slots = 100
 			set_state_flag = PRC_OCS_all_shared_slots_unlocked
 			ROOT = { set_country_flag = PRC_OCS_shared_slots_changed }
 		}
@@ -491,64 +494,46 @@ PRC_OCS_queue_transport_and_bases_effect = {
 # targets and never triggered for regular play (player feedback 2026-08-23
 # B4); grids now build unconditionally — industrial grid on oil states,
 # energy grid elsewhere.
+# v2.9-test7 (F1, player feedback 2026-08-24): build the high-capacity grid
+# (industrial_infrastructure = 大容量电网) in every state instead of the old
+# oil-branch split (energy_infrastructure = 强化电网). Vanilla buildings
+# 00_buildings.txt: the two grids share level_cap group infrastructure_keystone
+# (state_max = 1), so a state can only ever hold one of them — no point
+# keeping two branches.
 PRC_OCS_queue_power_grids_effect = {
 	clr_country_flag = PRC_OCS_power_grids_changed
 
 	every_owned_state = {
 		limit = { is_controlled_by = ROOT }
+		# States that already hold EITHER grid (old saves, manual builds):
+		# their keystone slot is occupied, so free_building_slots for the
+		# other grid reads 0 — without this branch they would never get the
+		# flag and the decision would stay "available" on them forever.
 		if = {
 			limit = {
 				NOT = { has_state_flag = PRC_OCS_power_grid_queued }
+				OR = {
+					energy_infrastructure > 0
+					industrial_infrastructure > 0
+				}
 			}
-			if = {
-				limit = {
-					OR = {
-						energy_infrastructure > 0
-						industrial_infrastructure > 0
-					}
+			set_state_flag = PRC_OCS_power_grid_queued
+		}
+		else_if = {
+			limit = {
+				NOT = { has_state_flag = PRC_OCS_power_grid_queued }
+				free_building_slots = {
+					building = industrial_infrastructure
+					size > 0
+					include_locked = no
 				}
-				set_state_flag = PRC_OCS_power_grid_queued
 			}
-			else_if = {
-				limit = {
-					has_resources_amount = {
-						resource = oil
-						amount > 0
-					}
-					free_building_slots = {
-						building = industrial_infrastructure
-						size > 0
-						include_locked = no
-					}
-				}
-				add_building_construction = {
-					type = industrial_infrastructure
-					level = 1
-				}
-				set_state_flag = PRC_OCS_power_grid_queued
-				ROOT = { set_country_flag = PRC_OCS_power_grids_changed }
+			add_building_construction = {
+				type = industrial_infrastructure
+				level = 1
 			}
-			else_if = {
-				limit = {
-					NOT = {
-						has_resources_amount = {
-							resource = oil
-							amount > 0
-						}
-					}
-					free_building_slots = {
-						building = energy_infrastructure
-						size > 0
-						include_locked = no
-					}
-				}
-				add_building_construction = {
-					type = energy_infrastructure
-					level = 1
-				}
-				set_state_flag = PRC_OCS_power_grid_queued
-				ROOT = { set_country_flag = PRC_OCS_power_grids_changed }
-			}
+			set_state_flag = PRC_OCS_power_grid_queued
+			ROOT = { set_country_flag = PRC_OCS_power_grids_changed }
 		}
 	}
 

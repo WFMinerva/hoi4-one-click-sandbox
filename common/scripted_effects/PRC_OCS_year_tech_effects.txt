@@ -54,6 +54,8 @@ PRC_OCS_research_year_1936_effect = {
 		concentrated_industry = 1
 		construction1 = 1
 		damage_control_1 = 1
+		damage_control_2 = 1
+		damage_control_3 = 1
 		dispersed_industry = 1
 		early_bombs = 1
 		early_ship_hull_carrier = 1
@@ -68,11 +70,14 @@ PRC_OCS_research_year_1936_effect = {
 		engines_2 = 1
 		excavation1 = 1
 		fire_control_methods_1 = 1
+		fire_control_methods_2 = 1
+		fire_control_methods_3 = 1
 		fuel_refining = 1
 		fuel_silos = 1
 		gw_artillery = 1
 		gwtank_chassis = 1
 		improved_depth_charges = 1
+		improved_heavy_armor_scheme = 1
 		improved_light_tank_chassis = 1
 		improved_naval_mines = 1
 		improved_ship_torpedo_launcher = 1
@@ -146,7 +151,6 @@ PRC_OCS_research_year_1938_effect = {
 		degaussing = 1
 		engine_tech_2 = 1
 		improved_fire_control_system = 1
-		improved_heavy_armor_scheme = 1
 		improved_radio = 1
 		infantry_weapons2 = 1
 		land_fort_tech_1 = 1
@@ -361,5 +365,5 @@ PRC_OCS_research_year_1945_effect = {
 	}
 }
 
-# 31 technologies skipped (no start_year, late row): HUN_light_infantry_tech, MUN_anti_tank_development_tech, MUN_camo_netting, MUN_horska_artillery, MUN_improved_supply_dumps, MUN_intergrate_fortification_engineers, MUN_recon_in_force, PHI_battalion_combat_teams, SWE_bofors_antitank_gun, SWI_mountaineer_paratroopers_tech, SWI_saint_bernard_tech, camicie_nere_security_militias
+# 27 technologies skipped (no start_year, late row): HUN_light_infantry_tech, MUN_anti_tank_development_tech, MUN_camo_netting, MUN_horska_artillery, MUN_improved_supply_dumps, MUN_intergrate_fortification_engineers, MUN_recon_in_force, PHI_battalion_combat_teams, SWE_bofors_antitank_gun, SWI_mountaineer_paratroopers_tech, SWI_saint_bernard_tech, camicie_nere_security_militias
 # 0 legacy technologies excluded: 

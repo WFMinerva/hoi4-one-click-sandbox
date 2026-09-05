@@ -1,8 +1,10 @@
 # v2.9-test6 (D12): permanent large opinion bonus replacing the vanilla
 # cheat_opinion_modifier_good (value 200) — player feedback 2026-08-23 B4
 # asked for ~1000. No days field: permanent, like the vanilla cheat key.
+# v2.9-test7 (F4, player feedback 2026-08-24): raised to 5000 per player
+# point-check ("正常游玩时仍要进行额外操作").
 opinion_modifiers = {
 	PRC_OCS_opinion_good = {
-		value = 1000
+		value = 5000
 	}
 }

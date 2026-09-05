@@ -184,6 +184,27 @@ PRC_OCS_add_generic_stockpile_effect = {
 		amount = 1000000
 		variant_name = "先进轻型坦克"
 	}
+	# v2.9-test7 (F5, player feedback 2026-08-24): evolution equipment moved
+	# here from the evolved-variants effect; it only exists after the
+	# special-project forces evolution ran (its designs are created there),
+	# so the grants stay behind its completion flag.
+	if = {
+		limit = { has_country_flag = PRC_OCS_special_project_forces_evolved }
+		add_equipment_to_stockpile = {
+			type = helicopter_equipment_1
+			amount = 1000000
+		}
+		add_equipment_to_stockpile = {
+			type = armored_support_vehicle_1
+			amount = 1000000
+			variant_name = "装甲支援车"
+		}
+		add_equipment_to_stockpile = {
+			type = medium_tank_flame_chassis_3
+			amount = 1000000
+			variant_name = "中型喷火坦克 III型"
+		}
+	}
 }
 
 PRC_OCS_add_stockpile_effect = {
@@ -366,5 +387,24 @@ PRC_OCS_add_stockpile_effect = {
 		type = light_tank_chassis_3
 		amount = 1000000
 		variant_name = "41式"
+	}
+	# v2.9-test7 (F5): same guarded evolution-equipment grants as the
+	# generic branch (see PRC_OCS_add_generic_stockpile_effect).
+	if = {
+		limit = { has_country_flag = PRC_OCS_special_project_forces_evolved }
+		add_equipment_to_stockpile = {
+			type = helicopter_equipment_1
+			amount = 1000000
+		}
+		add_equipment_to_stockpile = {
+			type = armored_support_vehicle_1
+			amount = 1000000
+			variant_name = "装甲支援车"
+		}
+		add_equipment_to_stockpile = {
+			type = medium_tank_flame_chassis_3
+			amount = 1000000
+			variant_name = "中型喷火坦克 III型"
+		}
 	}
 }
