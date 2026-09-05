@@ -2671,9 +2671,21 @@ class ValidatorRegressionTests(unittest.TestCase):
         validator.check_version_metadata(version, errors)
         self.assertEqual(errors, [])
 
+        # 新契约（2026-09-05 起）：薄入口 AGENTS.md 与发布细节权威
+        # docs/DEVELOPMENT.md 不登记版本号；二者缺失版本标记也必须通过。
+        agents_text = validator.read_utf8(validator.ROOT / "AGENTS.md")
+        development_text = validator.read_utf8(
+            validator.ROOT / "docs" / "DEVELOPMENT.md"
+        )
+        self.assertNotIn(f"当前稳定基准：**v{version}**", agents_text)
+        self.assertNotIn(f"v{version} 是当前稳定基准", development_text)
+
+        # 反向失败保护：承担版本职责的文件（以当前状态权威 README_FIRST
+        # 为代表）缺失或过期标记时仍必须失败，不得只删断言。
         stale_errors: list[str] = []
         validator.check_version_metadata("9.9", stale_errors)
         self.assertTrue(any("v9.9" in error for error in stale_errors))
+        self.assertTrue(any("README_FIRST" in error for error in stale_errors))
 
     def test_explicit_vanilla_path_is_machine_independent(self) -> None:
         with tempfile.TemporaryDirectory() as temp_name:

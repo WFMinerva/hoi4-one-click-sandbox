@@ -1,10 +1,10 @@
 # 开发与发布流程
 
-> 总入口与状态快照见根目录 `AGENTS.md`；本文档是构建、验证、发布与工坊上传的权威流程。
+> 当前状态（版本、发布状态、Manifest、分支概况）见 `docs/maintenance/README_FIRST.md`（唯一人类可读权威入口）；项目入口与修改红线见根 `AGENTS.md`。本文档是构建、验证、实机回归、发布与工坊上传细节的唯一权威流程。
 
 ## 稳定基准
 
-v2.9 是当前稳定基准，在 v2.8 之上扩展按年份研究、政治外交与法案控制、装备设计/库存、全国建设与大型设施，并接入固定供应链的 CWTools 本地语义检查。后续修改必须基于当前仓库，不得退回旧版本覆盖正式线。v2.9-test6 统一清单只对已有证据逐项记载；未填写项目不得倒推为实机通过。
+当前稳定基准与发布状态见 `docs/maintenance/README_FIRST.md`（唯一人类可读权威入口，本文不重复登记版本号）。后续修改必须基于当前仓库，不得退回旧版本覆盖正式线。回归证据边界纪律不变：统一清单只对已有证据逐项记载；未填写项目不得倒推为实机通过。
 
 历史标签说明：旧 `v2.0` 标签误落在源码导入之前，只含 `README.md`，不能用于恢复 MOD；真正的 v2.0 源码基准是提交 `9593154`，补充标签为 `v2.0-source-baseline`。已公开的错误标签不强制移动，避免破坏已有克隆中的引用。
 
@@ -25,7 +25,7 @@ v2.6 也是已知历史例外：官方附件 SHA-256 `484030065363ab1366604d17e2
 
 ```powershell
 python tools/validate_mod.py
-python -m unittest tools/test_validate_mod.py
+python -m unittest tools.test_validate_mod
 python tools/generate_universal_mio_effect.py --check
 ```
 
@@ -99,14 +99,14 @@ python tools/build_release.py
 - `packaging/OCS_one_click_sandbox_start_v2_0.mod`
 - `CHANGELOG.md`
 - README 与发布文案中的版本信息
-- `AGENTS.md`、`docs/DEVELOPMENT.md`、`docs/maintenance/README_FIRST.md` 与 `docs/maintenance/测试状态与回归清单.md` 的当前稳定基准
+- `docs/maintenance/README_FIRST.md` 的当前稳定基准与发布状态——版本、Manifest、分支概况等完整当前状态的唯一人类可读权威在此；根 `README.md` 面向用户的当前版本信息、`docs/maintenance/测试状态与回归清单.md` 的当前稳定线标题、`CHANGELOG.md` 的版本史为各自职责内标记（校验器契约照查），不是第二份完整状态
 - `docs/publishing/v<版本>工坊更新摘要.txt`（供工坊上传脚本生成 changenote）
 
 正式发版顺序固定为：
 
 `修改源码 → 静态检查 → 实机回归 → 更新文档与发布文案 → 构建 ZIP → 核对 SHA-256 → 维护者确认 → 创建 Git 标签与 GitHub Release`
 
-正式标签一旦创建，该版本会进入 ZIP 的 MOD 内容、外层 .mod 与 docs/baseline/ 配套文档即冻结。上传后才获得的 Manifest、下载状态等信息只更新 AGENTS.md 和维护文档，不回写已发布版本的包内基准文档；否则同一标签将无法重建同一 SHA-256。v2.6 的混合换行问题是已记录的历史例外，不作为后续版本放宽门禁的先例。
+正式标签一旦创建，该版本会进入 ZIP 的 MOD 内容、外层 .mod 与 docs/baseline/ 配套文档即冻结。上传后才获得的 Manifest、下载状态等当前发布状态只回写 `docs/maintenance/README_FIRST.md`；版本历史或实机证据确属相关时，才分别记入 `docs/maintenance/功能与版本交接单.md`、`docs/maintenance/测试状态与回归清单.md`；不回写已发布版本的包内基准文档，否则同一标签将无法重建同一 SHA-256。v2.6 的混合换行问题是已记录的历史例外，不作为后续版本放宽门禁的先例。
 
 Git 标签必须指向能够直接重建该版本正式包的最后一个提交，禁止先打标签再补构建器或基准文档。只有实机验证通过并由维护者确认后，才能创建正式 Git 标签和 GitHub Release。自 v2.4 起 GitHub Release 挂正式包 ZIP 附件（ASCII 文件名 + 中文显示名），便于维护取用；既有附件文件名规则参考故障排查经验。下载入口仍以 Steam 创意工坊（物品 ID `3767025052`）为主。
 
@@ -132,7 +132,7 @@ python tools/publish_workshop.py --steamcmd D:\steamcmd\steamcmd.exe --prepare-o
 cmd /c start "OCS Workshop Upload" cmd /K "D:\steamcmd\steamcmd.exe +login <账号> +workshop_build_item D:\steamcmd\hoi4_ocs_workshop.vdf +quit"
 ```
 
-上传成功后从 `D:\steamcmd\logs\workshop_log.txt` 判读：应含 `Upload finished for workshop item 3767025052 : OK` 与 `Uploaded new content ( ManifestID xxx )`；把 Manifest 号同步到 `AGENTS.md` 与 `docs/maintenance/`，不得回写已经进入正式 ZIP 的 `docs/baseline/` 配套文档。
+上传成功后从 `D:\steamcmd\logs\workshop_log.txt` 判读：应含 `Upload finished for workshop item 3767025052 : OK` 与 `Uploaded new content ( ManifestID xxx )`；把 Manifest 号回写到 `docs/maintenance/README_FIRST.md` 的当前发布状态，不得回写已经进入正式 ZIP 的 `docs/baseline/` 配套文档。
 
 steamcmd 注意事项：
 

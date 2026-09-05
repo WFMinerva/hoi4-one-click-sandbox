@@ -86,7 +86,14 @@ def descriptor_value(text: str, key: str) -> str | None:
 
 
 def check_version_metadata(version: str, errors: list[str]) -> None:
-    """Keep stable-release entrypoints aligned with descriptor.mod."""
+    """Keep stable-release entrypoints aligned with descriptor.mod.
+
+    当前稳定状态的主要检查对象是 docs/maintenance/README_FIRST.md
+    （当前状态唯一人类可读权威入口）。根 AGENTS.md 与 docs/DEVELOPMENT.md
+    自 2026-09-05 起不再登记版本号（薄入口/发布细节职责分工），
+    故不对二者要求版本标记；README 公开版本信息、测试清单版本证据、
+    CHANGELOG 与版本配套文件的职责内标记继续检查。
+    """
     if "test" in version.casefold():
         return
 
@@ -95,8 +102,6 @@ def check_version_metadata(version: str, errors: list[str]) -> None:
             ROOT / "README.md",
             (f"- 当前稳定基准：v{version}", f"v{version} 是当前稳定基准。"),
         ),
-        (ROOT / "AGENTS.md", (f"当前稳定基准：**v{version}**",)),
-        (ROOT / "docs" / "DEVELOPMENT.md", (f"v{version} 是当前稳定基准",)),
         (
             ROOT / "docs" / "maintenance" / "README_FIRST.md",
             (
